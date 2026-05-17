@@ -1,0 +1,132 @@
+/* ==========================================================================
+   FEATURE 1: SYLLABUS NAVIGATOR GRID
+   ========================================================================== */
+.syllabus-navigator {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.subject-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.subject-card {
+  background: #121316; /* Deep tactical dark canvas */
+  border: 1px solid #22252a;
+  border-radius: 8px;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Active Subject Card Styling (Biochemistry) */
+.subject-card.active-subject {
+  border-color: #3b2d15; /* Subtle amber boundary hint */
+}
+
+.subject-card.active-subject:hover {
+  border-color: #d4af37; /* Clean, glowing accent gold border on hover */
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Muted Placeholder Cards Styling (Anatomy & Physiology) */
+.subject-card.muted-subject {
+  opacity: 0.6;
+  background: #0d0e10;
+  border-style: dashed;
+}
+
+/* Card Header Components */
+.subject-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.subject-tag {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+.subject-tag.live {
+  background: rgba(235, 87, 87, 0.1);
+  color: #eb5757;
+  border: 1px solid rgba(235, 87, 87, 0.2);
+}
+
+.subject-tag.coming-soon {
+  background: rgba(255, 255, 255, 0.04);
+  color: #888e96;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.subject-code {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.8rem;
+  color: #666d75;
+}
+
+/* Content Components */
+.subject-card h3 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+}
+
+.subject-card p {
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: #a0a5ad;
+  margin-bottom: 1.75rem;
+  flex-grow: 1;
+}
+
+/* Card Footer Components */
+.subject-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #1c1e22;
+  padding-top: 1rem;
+  font-size: 0.85rem;
+}
+
+.module-count {
+  font-family: 'IBM Plex Mono', monospace;
+  color: #666d75;
+}
+
+.subject-link {
+  color: #d4af37;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.subject-link:hover {
+  color: #fff;
+}
+
+.lock-icon {
+  color: #495057;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+/* Mobile Responsive Tweaks */
+@media (max-width: 768px) {
+  .subject-grid {
+    grid-template-columns: 1fr; /* Stacks cleanly layout on smaller screens */
+    gap: 1rem;
+  }
+}
