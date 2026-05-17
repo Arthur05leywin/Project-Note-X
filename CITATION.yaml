@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: "If you utilize this infrastructure framework or reference these modules, please cite it as below."
+authors:
+  - name: "Project X Development Team"
+title: "WBUHS Biochemistry Ranker Revision Storefront Infrastructure"
+version: 1.0.0
+date-released: 2026-05-17
+url: "https://github.com/yourusername/project-x-storefront"
