@@ -713,6 +713,24 @@ main {
   color: var(--text-3);
 }
 
+.footer-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+  font-size: 0.8rem;
+}
+
+.footer-links a {
+  color: var(--text-3);
+  transition: color 150ms ease;
+}
+
+.footer-links a:hover {
+  color: var(--text-2);
+}
+
 /* Module Showcase */
 .showcase-section {
   padding-top: 2rem;
