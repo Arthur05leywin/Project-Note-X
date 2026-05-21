@@ -1,0 +1,4369 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Module 07 — Biological Oxidation | KIMS Biochem</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&amp;family=JetBrains+Mono:wght@400;600&amp;family=Crimson+Pro:ital,wght@0,400;0,600;1,400&amp;display=swap"
+      rel="stylesheet"
+    />
+    
+      
+    
+    
+    
+    
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300..900;1,300..900&family=IBM+Plex+Mono:ital,wght@0,100..700;1,100..700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Sora:wght@100..800&display=swap');
+
+/* ==========================================
+   DYNAMIC MULTI-THEME VARIABLE ENGINE
+   ========================================== */
+
+/* Theme 1: Premium Gold (Default / Classic Modules 1-3 & Module 5-X) */
+:root, body.theme-gold {
+  --bg: #0d0f14;
+  --surface: #13161e;
+  --surface2: #1a1e2a;
+  --surface3: #222736;
+  --border: #252a38;
+  --border2: #343b4f;
+  --accent: #e8c84a;
+  --accent2: #4ae8b0;
+  --accent3: #e84a7a;
+  --accent4: #4a9ee8;
+  --text: #e8eaf0;
+  --muted: #8a90a8;
+  --white: #ffffff;
+  --rls: #e84a7a;
+  --gold: #e8c84a;
+  --rose: #e84a7a;
+  --purple: #bf81ff;
+  --blue: #4a9ee8;
+  --green: #4ae8b0;
+  --orange: #ffa552;
+}
+
+/* Theme 2: Premium Crimson (Module 4 & 4-X) */
+body.theme-crimson {
+  --bg: #0a0a0f;
+  --surface: #111118;
+  --surface2: #18181f;
+  --surface3: #1e1e28;
+  --border: #252535;
+  --border2: #34344a;
+  --accent: #e8334a;
+  --accent2: #ff5268;
+  --accent3: #ff8595;
+  --accent4: #4a9ee8;
+  --text: #e8eaf0;
+  --muted: #8a90a8;
+  --white: #ffffff;
+  --rls: #ff8595;
+  --gold: #f4c464;
+  --rose: #e8334a;
+  --purple: #c084fc;
+  --blue: #60a5fa;
+  --green: #4ade80;
+  --orange: #fb923c;
+}
+
+/* Theme 3: Premium Emerald (Module 5 Modern) */
+body.theme-emerald {
+  --bg: #08100f;
+  --surface: #0f1a18;
+  --surface2: #152220;
+  --surface3: #1c2d2a;
+  --border: #1e3530;
+  --border2: #2a4540;
+  --accent: #00c897;
+  --accent2: #2ddcaa;
+  --accent3: #80ffe8;
+  --accent4: #60a5fa;
+  --text: #e2ede9;
+  --muted: #8aada6;
+  --white: #ffffff;
+  --rls: #ff6b8a;
+  --gold: #f4c464;
+  --rose: #ff6b8a;
+  --purple: #c084fc;
+  --blue: #60a5fa;
+  --green: #4ade80;
+  --orange: #fb923c;
+}
+
+/* Theme 4: Premium Indigo (Modules 6, 8, 9, 10) */
+body.theme-indigo {
+  --bg: #080c14;
+  --surface: #0d1220;
+  --surface2: #121828;
+  --surface3: #182030;
+  --border: #1e293b;
+  --border2: #334155;
+  --accent: #6366f1;
+  --accent2: #818cf8;
+  --accent3: #c084fc;
+  --accent4: #38bdf8;
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --white: #ffffff;
+  --rls: #f43f5e;
+  --gold: #fbbf24;
+  --rose: #f43f5e;
+  --purple: #c084fc;
+  --blue: #38bdf8;
+  --green: #34d399;
+  --orange: #fb923c;
+}
+
+/* Theme 5: Premium Amber (Modules 7 & 7-X) */
+body.theme-amber {
+  --bg: #080a0e;
+  --surface: #0e1118;
+  --surface2: #141820;
+  --surface3: #1a2030;
+  --border: #1e2530;
+  --border2: #2a3545;
+  --accent: #f59e0b;
+  --accent2: #fbbf24;
+  --accent3: #fb923c;
+  --accent4: #34d399;
+  --text: #f3f4f6;
+  --muted: #9ca3af;
+  --white: #ffffff;
+  --rls: #ef4444;
+  --gold: #fbbf24;
+  --rose: #ef4444;
+  --purple: #a855f7;
+  --blue: #3b82f6;
+  --green: #10b981;
+  --orange: #f97316;
+}
+
+/* ==========================================
+   GLOBAL STRUCTURE & FONTS
+   ========================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Typography Isolation */
+body {
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  overflow-x: hidden;
+  font-size: 14px;
+}
+
+body.theme-gold {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 14px;
+}
+
+body.theme-crimson,
+body.theme-emerald,
+body.theme-indigo,
+body.theme-amber {
+  font-family: "Sora", sans-serif;
+  font-size: 15px;
+}
+
+strong {
+  color: var(--white);
+}
+
+p {
+  margin-bottom: 12px;
+  color: var(--text);
+  line-height: 1.8;
+}
+
+/* Custom Webkit Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
+}
+
+
+/* ==========================================
+   CLASSIC LAYOUT SELECTORS (Modules 1-3)
+   ========================================== */
+
+.cover {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 60px;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg);
+  page-break-after: always;
+}
+
+.cover::before {
+  content: "";
+  position: absolute;
+  top: -200px;
+  right: -200px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(232, 200, 74, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cover::after {
+  content: "";
+  position: absolute;
+  bottom: -100px;
+  left: -100px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(74, 232, 176, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cover-tag {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  border: 1px solid var(--accent);
+  padding: 4px 12px;
+  margin-bottom: 40px;
+  display: inline-block;
+}
+
+.cover h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(42px, 8vw, 72px);
+  font-weight: 900;
+  line-height: 1.05;
+  color: var(--white);
+  margin-bottom: 10px;
+}
+
+.cover h1 span {
+  color: var(--accent);
+}
+
+.cover-sub {
+  font-size: 18px;
+  color: var(--muted);
+  margin-bottom: 50px;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.cover-meta {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.cover-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cover-meta-label {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.cover-meta-value {
+  font-size: 13px;
+  color: var(--accent2);
+  font-weight: 500;
+}
+
+.cover-divider {
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  margin: 30px 0;
+}
+
+.cover-pyq-badge {
+  position: absolute;
+  top: 60px;
+  right: 60px;
+  background: var(--accent);
+  color: var(--bg);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 8px 16px;
+  letter-spacing: 1px;
+}
+
+.page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 50px 60px;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 30px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.section-number {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 2px;
+}
+
+.section-title {
+  font-family: "Playfair Display", serif;
+  font-size: 28px;
+  color: var(--white);
+  font-weight: 700;
+}
+
+.section-title span {
+  color: var(--accent);
+}
+
+.pyq-box {
+  background: rgba(232, 200, 74, 0.08);
+  border-left: 3px solid var(--accent);
+  padding: 16px 20px;
+  margin-bottom: 30px;
+  border-radius: 0 6px 6px 0;
+}
+
+.pyq-box-label {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.pyq-box ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pyq-box ul li {
+  background: rgba(232, 200, 74, 0.15);
+  color: var(--accent);
+  font-size: 11px;
+  font-family: "IBM Plex Mono", monospace;
+  padding: 3px 10px;
+  border-radius: 2px;
+}
+
+.big-picture {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 28px;
+}
+
+.big-picture-label {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  color: var(--accent2);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.flowchart-container {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 30px;
+  margin: 24px 0;
+}
+
+.flowchart-title {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+/* Classic Comparison Tables */
+.comp-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 13px;
+}
+
+.comp-table th {
+  background: var(--surface2);
+  padding: 12px 16px;
+  text-align: left;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--border);
+}
+
+.comp-table th:nth-child(2) { color: var(--accent2); }
+.comp-table th:nth-child(3) { color: var(--accent3); }
+.comp-table th:nth-child(4) { color: var(--accent4); }
+
+.comp-table td {
+  padding: 11px 16px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+  line-height: 1.6;
+}
+
+.comp-table tr:hover td {
+  background: var(--surface);
+}
+
+.comp-table td:first-child {
+  font-weight: 600;
+  color: var(--muted);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.key-fact {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  background: var(--surface);
+  border-radius: 6px;
+  padding: 14px 18px;
+  margin: 10px 0;
+}
+
+.key-fact-icon {
+  font-size: 16px;
+  margin-top: 1px;
+  flex-shrink: 0;
+}
+
+.key-fact-text {
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.key-fact-text strong {
+  color: var(--accent);
+}
+
+.mnemonic {
+  background: linear-gradient(135deg, rgba(74, 232, 176, 0.08), rgba(232, 200, 74, 0.05));
+  border: 1px solid rgba(74, 232, 176, 0.3);
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin: 20px 0;
+}
+
+.mnemonic-label {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  color: var(--accent2);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.mnemonic-text {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--white);
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.mnemonic-expand {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.rls-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(232, 200, 74, 0.15);
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  padding: 3px 10px;
+  border-radius: 3px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+/* Classic Viva section */
+.viva-section {
+  background: var(--surface);
+  border-radius: 8px;
+  padding: 28px;
+  margin: 30px 0;
+  border: 1px solid var(--border);
+}
+
+.viva-label {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.viva-label::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+div.viva-q {
+  margin-bottom: 18px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--border);
+}
+
+div.viva-q:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.viva-q-text {
+  font-weight: 600;
+  color: var(--accent);
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.viva-q-text span {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  background: rgba(232, 200, 74, 0.15);
+  padding: 2px 8px;
+  margin-right: 8px;
+  border-radius: 2px;
+}
+
+.viva-a-text {
+  font-size: 13px;
+  color: var(--text);
+  line-height: 1.7;
+  padding-left: 16px;
+  border-left: 2px solid var(--border);
+}
+
+.section-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 40px 0;
+}
+
+h2.topic-head {
+  font-family: "Playfair Display", serif;
+  font-size: 22px;
+  color: var(--white);
+  margin: 28px 0 14px;
+}
+
+h3.sub-head {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent2);
+  margin: 20px 0 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: "IBM Plex Mono", monospace;
+}
+
+.graph-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px;
+  margin: 16px 0;
+}
+
+.graph-label {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  color: var(--accent4);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
+svg text {
+  font-family: "IBM Plex Mono", monospace;
+}
+
+.examiner-fav {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(232, 74, 122, 0.15);
+  border: 1px solid var(--accent3);
+  color: var(--accent3);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  padding: 2px 9px;
+  border-radius: 3px;
+  letter-spacing: 1px;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+
+/* ==========================================
+   MODERN LAYOUT SELECTORS (Modules 4-10)
+   ========================================== */
+
+/* Modern Hero Block */
+.hero {
+  background: linear-gradient(135deg, #050e0c 0%, #0d1f1a 50%, var(--bg) 100%);
+  border-bottom: 1px solid var(--border2);
+  padding: 3rem 1.5rem 2.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-crimson .hero {
+  background: linear-gradient(135deg, #100609 0%, #200d12 50%, var(--bg) 100%);
+}
+.theme-indigo .hero {
+  background: linear-gradient(135deg, #060910 0%, #0d1222 50%, var(--bg) 100%);
+}
+.theme-amber .hero {
+  background: linear-gradient(135deg, #100a06 0%, #20140d 50%, var(--bg) 100%);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 360px;
+  height: 360px;
+  background: radial-gradient(circle, rgba(0, 200, 151, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.theme-crimson .hero::before { background: radial-gradient(circle, rgba(232, 51, 74, 0.12) 0%, transparent 70%); }
+.theme-indigo .hero::before { background: radial-gradient(circle, rgba(99, 102, 241, 0.12) 0%, transparent 70%); }
+.theme-amber .hero::before { background: radial-gradient(circle, rgba(245, 158, 11, 0.12) 0%, transparent 70%); }
+
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: -40px;
+  left: 15%;
+  width: 240px;
+  height: 240px;
+  background: radial-gradient(circle, rgba(244, 196, 100, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.module-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0, 200, 151, 0.12);
+  border: 1px solid rgba(0, 200, 151, 0.35);
+  color: var(--accent2);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  padding: 4px 12px;
+  border-radius: 3px;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+.theme-crimson .module-tag {
+  background: rgba(232, 51, 74, 0.12);
+  border-color: rgba(232, 51, 74, 0.35);
+}
+.theme-indigo .module-tag {
+  background: rgba(99, 102, 241, 0.12);
+  border-color: rgba(99, 102, 241, 0.35);
+}
+.theme-amber .module-tag {
+  background: rgba(245, 158, 11, 0.12);
+  border-color: rgba(245, 158, 11, 0.35);
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.7); }
+}
+
+.hero h1 {
+  font-family: "Crimson Pro", serif;
+  font-size: clamp(2rem, 6vw, 3.2rem);
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.15;
+  margin-bottom: 0.5rem;
+}
+
+.hero h1 span {
+  color: var(--accent);
+}
+
+.hero-sub {
+  color: var(--text2);
+  font-size: 13px;
+  font-family: "JetBrains Mono", monospace;
+  letter-spacing: 0.5px;
+  margin-bottom: 1.5rem;
+}
+
+.hero-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pill {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-family: "JetBrains Mono", monospace;
+}
+
+/* Table of Contents */
+.toc {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  margin: 1.5rem;
+  padding: 1.25rem;
+  border-radius: 6px;
+}
+
+.toc-title {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 6px;
+}
+
+.toc a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 13px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.toc a:hover {
+  color: var(--accent2);
+  background: rgba(0, 200, 151, 0.08);
+}
+.theme-crimson .toc a:hover { background: rgba(232, 51, 74, 0.08); }
+.theme-indigo .toc a:hover { background: rgba(99, 102, 241, 0.08); }
+.theme-amber .toc a:hover { background: rgba(245, 158, 11, 0.08); }
+
+.toc-num {
+  color: var(--accent);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+}
+
+.content {
+  padding: 0 1.5rem 3rem;
+}
+
+/* Modern Section Headers */
+.content .section-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 2.5rem 0 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.content .section-num {
+  background: var(--accent);
+  color: var(--bg);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  font-weight: 700;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.content .section-header h2 {
+  font-family: "Crimson Pro", serif;
+  font-size: clamp(1.3rem, 4vw, 1.8rem);
+  font-weight: 600;
+  color: var(--text);
+}
+
+.content .section-header h2 em {
+  color: var(--accent2);
+  font-style: normal;
+}
+
+/* Modern Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  font-family: "JetBrains Mono", monospace;
+  padding: 2px 7px;
+  border-radius: 3px;
+  vertical-align: middle;
+  margin-left: 4px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.badge-rls {
+  background: rgba(255, 107, 138, 0.18);
+  color: var(--rose);
+  border: 1px solid rgba(255, 107, 138, 0.35);
+}
+.badge-pyq {
+  background: rgba(96, 165, 250, 0.15);
+  color: var(--blue);
+  border: 1px solid rgba(96, 165, 250, 0.3);
+}
+.badge-fav {
+  background: rgba(244, 196, 100, 0.15);
+  color: var(--gold);
+  border: 1px solid rgba(244, 196, 100, 0.3);
+}
+.badge-new {
+  background: rgba(74, 222, 128, 0.15);
+  color: var(--green);
+  border: 1px solid rgba(74, 222, 128, 0.3);
+}
+
+/* Modern Cards */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.card-title {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card-title::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* Flowcharts - Merged and Dynamic */
+.flowchart {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin: 1rem 0;
+  overflow-x: auto;
+}
+
+.flow-title {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent2);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.flow-title::before {
+  content: "▶";
+  font-size: 8px;
+}
+
+.flow-h {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+}
+
+.flow-box {
+  flex: 1 1 auto;
+  background: var(--surface3);
+  border: 1.5px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 13px;
+  text-align: center;
+  min-width: 110px;
+  line-height: 1.4;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+}
+
+.flow-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border-color: var(--accent);
+}
+
+.flow-box.accent, .flow-box.yellow {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(0, 200, 151, 0.08);
+}
+.theme-crimson .flow-box.accent { background: rgba(232, 51, 74, 0.08); }
+.theme-indigo .flow-box.accent { background: rgba(99, 102, 241, 0.08); }
+.theme-amber .flow-box.accent { background: rgba(245, 158, 11, 0.08); }
+
+.flow-box.gold {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: rgba(244, 196, 100, 0.08);
+}
+.flow-box.rose, .flow-box.red {
+  border-color: var(--rose);
+  color: var(--rose);
+  background: rgba(255, 107, 138, 0.08);
+}
+.flow-box.purple {
+  border-color: var(--purple);
+  color: var(--purple);
+  background: rgba(192, 132, 252, 0.08);
+}
+.flow-box.blue {
+  border-color: var(--blue);
+  color: var(--blue);
+  background: rgba(96, 165, 250, 0.08);
+}
+.flow-box.green {
+  border-color: var(--green);
+  color: var(--green);
+  background: rgba(74, 222, 128, 0.08);
+}
+.flow-box.white {
+  border-color: var(--text);
+  color: var(--text);
+}
+
+.flow-box .box-label {
+  font-size: 10px;
+  color: var(--muted);
+  font-family: "JetBrains Mono", monospace;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.flow-box .box-sub {
+  font-size: 11px;
+  color: var(--muted);
+  display: block;
+  margin-top: 2px;
+}
+
+.arrow {
+  color: var(--accent);
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.arrow-down {
+  text-align: center;
+  color: var(--accent);
+  font-size: 18px;
+  margin: 4px 0;
+}
+
+.flow-v {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.flow-v .flow-box {
+  width: 100%;
+  max-width: 500px;
+}
+
+.flow-v .arrow-down {
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+}
+
+/* Modern Tables (Scoped to .table-wrap) */
+.table-wrap {
+  overflow-x: auto;
+  margin: 1rem 0;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.table-wrap table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-wrap th {
+  background: var(--surface3);
+  color: var(--accent2);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 2px solid var(--accent);
+}
+
+.table-wrap td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+  vertical-align: top;
+}
+
+.table-wrap tr:hover td {
+  background: rgba(0, 200, 151, 0.04);
+}
+.theme-crimson .table-wrap tr:hover td { background: rgba(232, 51, 74, 0.04); }
+.theme-indigo .table-wrap tr:hover td { background: rgba(99, 102, 241, 0.04); }
+.theme-amber .table-wrap tr:hover td { background: rgba(245, 158, 11, 0.04); }
+
+.table-wrap td:first-child {
+  color: var(--accent2);
+  font-weight: 600;
+}
+
+/* Modern Clinical & Mnemonic boxes inside .content */
+.content .clinical-box {
+  background: linear-gradient(135deg, rgba(96, 165, 250, 0.05), rgba(96, 165, 250, 0.02));
+  border: 1px solid rgba(96, 165, 250, 0.25);
+  border-left: 4px solid var(--blue);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+}
+
+.content .clinical-box .cbox-title {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--blue);
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.content .clinical-box .cbox-title::before {
+  content: "🩺";
+}
+
+.mnemonic-box {
+  background: linear-gradient(135deg, rgba(244, 196, 100, 0.06), rgba(244, 196, 100, 0.02));
+  border: 1px solid rgba(244, 196, 100, 0.28);
+  border-left: 4px solid var(--gold);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+}
+
+.mnemonic-box .mbox-title {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.mnemonic-box .mbox-title::before {
+  content: "🧠";
+}
+
+.mnemonic-highlight {
+  background: rgba(244, 196, 100, 0.1);
+  border: 1px dashed rgba(244, 196, 100, 0.3);
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-family: "Crimson Pro", serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--gold);
+  margin: 6px 0;
+  letter-spacing: 1px;
+}
+
+.eq-box {
+  background: linear-gradient(135deg, rgba(192, 132, 252, 0.06), rgba(192, 132, 252, 0.02));
+  border: 1px solid rgba(192, 132, 252, 0.28);
+  border-left: 4px solid var(--purple);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+}
+
+.eq-box .eq-title {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--purple);
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.eq-box .eq-title::before {
+  content: "📝";
+}
+
+.eq-statement {
+  background: var(--surface3);
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-family: "Crimson Pro", serif;
+  font-size: 15px;
+  font-style: italic;
+  color: var(--text);
+  margin-bottom: 10px;
+  border-left: 3px solid var(--purple);
+}
+
+.eq-answer ol {
+  margin-left: 18px;
+}
+
+.eq-answer li {
+  margin-bottom: 6px;
+  font-size: 13px;
+}
+
+.eq-answer li span {
+  color: var(--purple);
+  font-weight: 600;
+}
+
+.keypoint {
+  background: rgba(0, 200, 151, 0.07);
+  border: 1px solid rgba(0, 200, 151, 0.22);
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin: 8px 0;
+  font-size: 13px;
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+.theme-crimson .keypoint { background: rgba(232, 51, 74, 0.07); border-color: rgba(232, 51, 74, 0.22); }
+.theme-indigo .keypoint { background: rgba(99, 102, 241, 0.07); border-color: rgba(99, 102, 241, 0.22); }
+.theme-amber .keypoint { background: rgba(245, 158, 11, 0.07); border-color: rgba(245, 158, 11, 0.22); }
+
+.keypoint::before {
+  content: "⚡";
+  flex-shrink: 0;
+}
+
+.warn-box {
+  background: rgba(251, 146, 60, 0.07);
+  border: 1px solid rgba(251, 146, 60, 0.28);
+  border-left: 4px solid var(--orange);
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin: 8px 0;
+  font-size: 13px;
+  display: flex;
+  gap: 8px;
+}
+
+.warn-box::before {
+  content: "⚠️";
+  flex-shrink: 0;
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 2rem 0;
+}
+
+ul.checklist {
+  list-style: none;
+  margin: 0.5rem 0;
+}
+
+ul.checklist li::before {
+  content: "✦ ";
+  color: var(--accent);
+}
+
+ul.checklist li {
+  margin-bottom: 4px;
+  font-size: 13px;
+}
+
+.hl { color: var(--accent2); font-weight: 600; }
+.hl-gold { color: var(--gold); font-weight: 600; }
+.hl-rose { color: var(--rose); font-weight: 600; }
+.hl-blue { color: var(--blue); font-weight: 600; }
+.hl-purple { color: var(--purple); font-weight: 600; }
+.hl-green { color: var(--green); font-weight: 600; }
+
+/* Modern Atom Cards */
+.atom-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+  margin: 1rem 0;
+}
+
+.atom-card {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem;
+  transition: border-color 0.2s;
+}
+
+.atom-card:hover {
+  border-color: var(--accent);
+}
+
+.atom-head {
+  font-family: "Crimson Pro", serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.atom-sub {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+/* Modern Viva Section details */
+.viva-title-bar {
+  background: rgba(0, 200, 151, 0.1);
+  border: 1px solid rgba(0, 200, 151, 0.28);
+  border-radius: 6px 6px 0 0;
+  padding: 10px 14px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--accent2);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.theme-crimson .viva-title-bar { background: rgba(232, 51, 74, 0.1); border-color: rgba(232, 51, 74, 0.28); }
+.theme-indigo .viva-title-bar { background: rgba(99, 102, 241, 0.1); border-color: rgba(99, 102, 241, 0.28); }
+.theme-amber .viva-title-bar { background: rgba(245, 158, 11, 0.1); border-color: rgba(245, 158, 11, 0.28); }
+
+.viva-title-bar::before {
+  content: "💬";
+  font-size: 14px;
+}
+
+.content details {
+  border: 1px solid var(--border);
+  border-top: none;
+  overflow: hidden;
+}
+
+.content details:last-child {
+  border-radius: 0 0 6px 6px;
+}
+
+.content summary {
+  padding: 10px 14px;
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--text);
+  background: var(--surface);
+  list-style: none;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  user-select: none;
+  transition: background 0.2s;
+}
+
+.content summary:hover {
+  background: var(--surface2);
+}
+
+.content summary::before {
+  content: "▶";
+  color: var(--accent);
+  font-size: 10px;
+  margin-top: 3px;
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+
+.content details[open] > summary::before {
+  transform: rotate(90deg);
+}
+
+.viva-q {
+  font-weight: 600;
+  flex: 1;
+}
+
+.viva-year {
+  color: var(--blue);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  flex-shrink: 0;
+}
+
+.viva-ans {
+  padding: 12px 16px 14px;
+  background: var(--surface2);
+  font-size: 13px;
+  line-height: 1.75;
+  border-top: 1px solid var(--border);
+}
+
+.viva-ans p {
+  margin-bottom: 6px;
+}
+
+.viva-ans ul {
+  margin: 6px 0 6px 16px;
+}
+
+.viva-ans li {
+  margin-bottom: 4px;
+}
+
+.viva-ans strong {
+  color: var(--accent2);
+}
+
+.viva-ans em {
+  color: var(--gold);
+  font-style: normal;
+  font-weight: 600;
+}
+
+.drug-tag {
+  display: inline-block;
+  background: rgba(255, 107, 138, 0.12);
+  border: 1px solid rgba(255, 107, 138, 0.3);
+  color: var(--rose);
+  font-size: 10px;
+  padding: 1px 6px;
+  border-radius: 3px;
+  font-family: "JetBrains Mono", monospace;
+  margin-left: 4px;
+}
+
+
+/* ==========================================
+   SHARED INTERACTIVE ELEMENTS & UTILS
+   ========================================== */
+
+.progress-bar {
+  height: 3px;
+  background: linear-gradient(to right, var(--accent), var(--accent2), var(--accent4));
+  border-radius: 2px;
+  margin-bottom: 2rem;
+  animation: load 1.5s ease forwards;
+}
+
+@keyframes load {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+.formula {
+  font-family: "JetBrains Mono", monospace;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 6px 12px;
+  margin: 6px 0;
+  color: var(--accent);
+  font-size: 13px;
+  display: block;
+}
+
+.top-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(232, 200, 74, 0.35);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  transition: all 0.2s ease-in-out;
+}
+
+.top-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(232, 200, 74, 0.5);
+}
+
+.theme-emerald .top-btn { box-shadow: 0 4px 15px rgba(0, 200, 151, 0.35); }
+.theme-emerald .top-btn:hover { box-shadow: 0 6px 20px rgba(0, 200, 151, 0.5); }
+
+/* Footer */
+.footer {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  text-align: center;
+  padding: 2rem 1.5rem;
+  color: var(--muted);
+  font-size: 12px;
+  font-family: "JetBrains Mono", monospace;
+  margin-top: 60px;
+}
+
+.footer p {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 1px;
+}
+
+.footer .kims-tag {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+
+/* ==========================================
+   📱 COMPREHENSIVE RESPONSIVE ENGINE
+   ========================================== */
+
+@media (max-width: 768px) {
+  /* Classic Cover page mobile enhancements */
+  .cover {
+    padding: 40px 20px 48px;
+    min-height: 100vh;
+    justify-content: flex-start;
+  }
+  
+  .cover-pyq-badge {
+    position: static !important;
+    display: inline-block !important;
+    align-self: flex-start !important;
+    margin-bottom: 24px !important;
+    padding: 6px 12px !important;
+    font-size: 10px !important;
+  }
+
+  .cover-tag {
+    margin-bottom: 24px !important;
+  }
+
+  .cover h1 {
+    font-size: clamp(32px, 7vw, 48px) !important;
+    margin-bottom: 12px !important;
+  }
+
+  .cover-sub {
+    font-size: 15px !important;
+    margin-bottom: 36px !important;
+    line-height: 1.5 !important;
+  }
+
+  .cover-divider {
+    margin: 20px 0 !important;
+  }
+
+  .cover-meta {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+    width: 100% !important;
+  }
+
+  .cover-meta-item {
+    gap: 2px !important;
+  }
+
+  /* Modern Hero mobile adjustments */
+  .hero {
+    padding: 2rem 1rem;
+  }
+
+  /* Page Wrapper and Main Content Spacing */
+  .page {
+    padding: 24px 16px !important;
+    max-width: 100% !important;
+  }
+
+  .content {
+    padding: 0 1rem 2rem;
+  }
+  
+  .flowchart-container,
+  .flowchart,
+  .clinical-box,
+  .mnemonic-box,
+  .eq-box,
+  .big-picture,
+  .viva-section,
+  .mnemonic,
+  .graph-box,
+  .warn-box {
+    padding: 20px 16px !important;
+    margin: 20px 0 !important;
+  }
+
+  /* Typography Adjustments */
+  h2.topic-head,
+  .content .section-header h2 {
+    font-size: 20px !important;
+    margin: 24px 0 12px !important;
+  }
+
+  h3.sub-head {
+    font-size: 12px !important;
+    margin: 16px 0 8px !important;
+  }
+
+  /* Table of Contents Mobile layout */
+  .toc {
+    margin: 1rem 0;
+    width: auto;
+    display: block;
+  }
+
+  /* Flowcharts mobile layout */
+  .flow-row, .flow-h {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    gap: 6px !important;
+  }
+
+  .flow-box {
+    width: 100% !important;
+    min-width: unset !important;
+    max-width: 100% !important;
+    padding: 12px 16px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    border-right: 1.5px solid var(--border) !important;
+    box-sizing: border-box !important;
+  }
+
+  .flow-arrow, .arrow {
+    display: inline-block !important;
+    transform: rotate(90deg) !important;
+    margin: 8px 0 !important;
+    text-align: center !important;
+  }
+
+  .flow-arrow.down, .arrow-down {
+    transform: none !important;
+    margin: 8px 0 !important;
+    max-width: 100% !important;
+  }
+
+  /* Classic Comparison Tables & Modern Tables responsive scroll */
+  .comp-table, .table-wrap {
+    display: block !important;
+    width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 6px !important;
+    margin: 16px 0 !important;
+  }
+
+  .comp-table th, 
+  .comp-table td,
+  .table-wrap th,
+  .table-wrap td {
+    padding: 10px 12px !important;
+    font-size: 12px !important;
+  }
+
+  .comp-table::-webkit-scrollbar,
+  .table-wrap::-webkit-scrollbar {
+    height: 4px !important;
+  }
+  .comp-table::-webkit-scrollbar-track,
+  .table-wrap::-webkit-scrollbar-track {
+    background: var(--bg) !important;
+  }
+  .comp-table::-webkit-scrollbar-thumb,
+  .table-wrap::-webkit-scrollbar-thumb {
+    background: var(--border) !important;
+    border-radius: 2px !important;
+  }
+
+  /* Layout helpers */
+  .two-col, .atom-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .clinical-box ul li {
+    display: block !important;
+    position: relative !important;
+    padding-left: 16px !important;
+    font-size: 12px !important;
+  }
+  
+  .clinical-box ul li::before {
+    position: absolute !important;
+    left: 0 !important;
+    top: 2px !important;
+  }
+
+  /* Accordions / Viva Spacing */
+  summary.viva-q-text,
+  .content summary {
+    padding: 12px 0 !important;
+    font-size: 13px !important;
+  }
+
+  .viva-a-text,
+  .viva-ans {
+    padding-left: 12px !important;
+    font-size: 12px !important;
+    margin-top: 6px !important;
+  }
+}
+
+
+/* ==========================================
+   🖨️ PREMIUM PRINT-TO-PDF ENGINE (Ctrl+P)
+   ========================================== */
+
+@media print {
+  :root, body.theme-gold, body.theme-crimson, body.theme-emerald, body.theme-indigo, body.theme-amber {
+    --bg: #ffffff;
+    --surface: #f8f9fa;
+    --surface2: #e9ecef;
+    --surface3: #dee2e6;
+    --border: #dee2e6;
+    --border2: #ced4da;
+    --accent: #000000;
+    --accent2: #000000;
+    --accent3: #000000;
+    --accent4: #000000;
+    --text: #111111;
+    --text2: #222222;
+    --text3: #333333;
+    --muted: #495057;
+    --white: #000000;
+    --rls: #000000;
+    --gold: #000000;
+    --rose: #000000;
+    --purple: #000000;
+    --blue: #000000;
+    --green: #000000;
+    --orange: #000000;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+    color: #000000 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  @page {
+    size: A4 portrait;
+    margin: 12mm 15mm;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #111111 !important;
+    font-size: 11pt !important;
+    line-height: 1.4 !important;
+  }
+
+  p {
+    font-size: 11pt !important;
+    line-height: 1.4 !important;
+    margin-bottom: 8px !important;
+  }
+
+  /* Cover Page exact single A4 layout */
+  .cover {
+    min-height: unset !important;
+    height: 260mm !important;
+    max-height: 100vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    padding: 40px !important;
+    box-sizing: border-box !important;
+    border: 2px solid #000000 !important;
+    background: #ffffff !important;
+    page-break-after: always !important;
+    break-after: page !important;
+    position: relative !important;
+  }
+
+  .cover::before,
+  .cover::after {
+    display: none !important;
+  }
+
+  .cover-tag {
+    border-color: #000000 !important;
+    margin-bottom: 25px !important;
+    padding: 4px 10px !important;
+    font-size: 10px !important;
+  }
+
+  .cover h1 {
+    font-size: 44px !important;
+    line-height: 1.1 !important;
+    color: #000000 !important;
+    margin-bottom: 10px !important;
+  }
+
+  .cover h1 span {
+    color: #000000 !important;
+  }
+
+  .cover-sub {
+    font-size: 15px !important;
+    color: #495057 !important;
+    margin-bottom: 30px !important;
+  }
+
+  .cover-divider {
+    width: 60px !important;
+    height: 2px !important;
+    background: #000000 !important;
+    margin: 20px 0 !important;
+  }
+
+  .cover-meta {
+    gap: 30px !important;
+  }
+
+  .cover-meta-value {
+    font-size: 12px !important;
+  }
+
+  .cover-pyq-badge {
+    position: absolute !important;
+    top: 40px !important;
+    right: 40px !important;
+    border: 1px solid #000000 !important;
+    background: #ffffff !important;
+    padding: 6px 12px !important;
+    font-size: 10px !important;
+  }
+
+  /* Modern Hero formatting for print */
+  .hero {
+    background: none !important;
+    border-bottom: 2px solid #000000 !important;
+    padding: 1rem 0 !important;
+  }
+  
+  .hero::before, .hero::after {
+    display: none !important;
+  }
+
+  .module-tag {
+    background: #ffffff !important;
+    border: 1px solid #000000 !important;
+    color: #000000 !important;
+  }
+  .module-tag .dot {
+    display: none !important;
+  }
+
+  .pill {
+    background: #ffffff !important;
+    border: 1px solid #000000 !important;
+  }
+
+  /* Page Wrapper Spacing */
+  .page {
+    padding: 10px 0 !important;
+    max-width: 100% !important;
+  }
+
+  .content {
+    padding: 0 !important;
+  }
+
+  .section-divider {
+    margin: 20px 0 !important;
+    border-color: #dee2e6 !important;
+  }
+
+  /* Heading orphans preventions */
+  .section-header,
+  .content .section-header,
+  h2.topic-head,
+  h3.sub-head {
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+    margin-top: 15px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .section-header, .content .section-header {
+    padding-bottom: 8px !important;
+    margin-bottom: 15px !important;
+    border-bottom: 1.5px solid #000000 !important;
+  }
+
+  .section-title {
+    font-size: 20px !important;
+    color: #000000 !important;
+  }
+
+  .content .section-num {
+    background: none !important;
+    border: 2px solid #000000 !important;
+    color: #000000 !important;
+  }
+
+  h2.topic-head {
+    font-size: 16px !important;
+    border-bottom: 1px solid #dee2e6 !important;
+    padding-bottom: 4px !important;
+  }
+
+  h3.sub-head {
+    font-size: 11px !important;
+    margin-top: 12px !important;
+  }
+
+  /* Avoid cutting boxes across page breaks */
+  .pyq-box,
+  .big-picture,
+  .clinical-box,
+  .content .clinical-box,
+  .mnemonic-box,
+  .eq-box,
+  .flowchart-container,
+  .flowchart,
+  .comp-table,
+  .table-wrap,
+  .key-fact,
+  .mnemonic,
+  .viva-section,
+  .warn-box,
+  .atom-card,
+  details,
+  details.viva-q,
+  tr,
+  blockquote {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .pyq-box,
+  .big-picture,
+  .clinical-box,
+  .content .clinical-box,
+  .mnemonic-box,
+  .eq-box,
+  .flowchart-container,
+  .flowchart,
+  .viva-section,
+  .mnemonic,
+  .warn-box {
+    padding: 12px 16px !important;
+    margin: 10px 0 !important;
+    border-radius: 4px !important;
+    border: 1px solid #000000 !important;
+    background: #f8f9fa !important;
+  }
+
+  .pyq-box { background: #fbf8eb !important; }
+  .clinical-box, .content .clinical-box { background: #fdf5f7 !important; }
+  .warn-box { background: #fff9f3 !important; }
+  .mnemonic, .mnemonic-box { background: #f4fbf7 !important; }
+  .eq-box { background: #fdfbff !important; }
+
+  .pyq-box ul li {
+    background: #e9ecef !important;
+    border: 1px solid #dee2e6 !important;
+    padding: 2px 6px !important;
+    font-size: 10px !important;
+  }
+
+  /* Flowcharts print layout */
+  .flow-box {
+    padding: 6px 12px !important;
+    font-size: 11px !important;
+    min-width: 110px !important;
+    border: 1px solid #000000 !important;
+    background: #ffffff !important;
+  }
+
+  .flow-arrow, .arrow {
+    font-size: 14px !important;
+  }
+  .flow-arrow.down, .arrow-down {
+    margin: 1px 0 !important;
+    font-size: 16px !important;
+  }
+
+  /* Comparison Tables print */
+  .comp-table th, .table-wrap th {
+    padding: 8px 10px !important;
+    font-size: 10px !important;
+    border-bottom: 2px solid #000000 !important;
+    background: #e9ecef !important;
+  }
+
+  .comp-table td, .table-wrap td {
+    padding: 7px 10px !important;
+    font-size: 11px !important;
+    line-height: 1.3 !important;
+    border-bottom: 1px solid #dee2e6 !important;
+    background: #ffffff !important;
+  }
+
+  /* Viva Sections print: details tags auto-expand */
+  details, details.viva-q {
+    display: block !important;
+    border: 1px solid #000000 !important;
+    margin-bottom: 12px !important;
+  }
+
+  summary, summary.viva-q-text {
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    margin-bottom: 6px !important;
+    display: block !important;
+  }
+
+  summary::before, summary.viva-q-text::after, details[open] summary::before {
+    display: none !important;
+  }
+
+  details:not([open]) > *:not(summary) {
+    display: block !important; /* Force print answer display */
+  }
+
+  .viva-a-text, .viva-ans {
+    display: block !important;
+    font-size: 11.5px !important;
+    line-height: 1.4 !important;
+    padding-left: 12px !important;
+    border-left: 2px solid #000000 !important;
+    color: #111111 !important;
+  }
+
+  /* Hide print-unfriendly components */
+  .top-btn,
+  .progress-bar,
+  .toc {
+    display: none !important;
+  }
+
+  /* Clean print footer */
+  .footer {
+    border-top: 1px solid #000000 !important;
+    margin-top: 30px !important;
+    padding: 20px !important;
+    background: #ffffff !important;
+  }
+}
+    </style>
+</head>
+  <body class="theme-amber">
+    <!-- HERO -->
+    <div class="hero">
+      <div class="module-tag"><span class="dot"></span>MODULE 07</div>
+      <h1>Biological<br /><span>Oxidation</span></h1>
+      <p class="hero-sub">WBUHS BIOCHEMISTRY · PAPER 2 · KIMS KRISHNANAGAR</p>
+      <div class="hero-pills">
+        <span class="pill">Redox Potential</span>
+        <span class="pill">ETC Complexes I–IV</span>
+        <span class="pill">Chemiosmotic Theory</span>
+        <span class="pill">ATP Synthase</span>
+        <span class="pill">ETC Inhibitors</span>
+        <span class="pill">Uncouplers</span>
+        <span class="pill">Malate Shuttle</span>
+        <span class="pill">G3P Shuttle</span>
+        <span class="pill">Brown Adipose Tissue</span>
+        <span class="pill">Xenobiotics</span>
+        <span class="pill">Free Radicals</span>
+        <span class="pill">Antioxidants</span>
+      </div>
+    </div>
+    <!-- TOC -->
+    <div class="toc">
+      <div class="toc-title">▸ Quick Navigate</div>
+      <div class="toc-grid">
+        <a href="#s1"
+          ><span class="toc-num">01</span> Redox Potential &amp; Overview</a
+        >
+        <a href="#s2"><span class="toc-num">02</span> ETC — 4 Complexes</a>
+        <a href="#s3"
+          ><span class="toc-num">03</span> Mobile Carriers (CoQ &amp; Cyt C)</a
+        >
+        <a href="#s4"
+          ><span class="toc-num">04</span> Chemiosmotic Theory &amp; ATP
+          Synthase</a
+        >
+        <a href="#s5"><span class="toc-num">05</span> ATP Yield Calculation</a>
+        <a href="#s6"><span class="toc-num">06</span> ETC Inhibitors</a>
+        <a href="#s7"
+          ><span class="toc-num">07</span> Uncouplers of Oxidative
+          Phosphorylation</a
+        >
+        <a href="#s8"><span class="toc-num">08</span> Membrane Shuttles</a>
+        <a href="#s9"
+          ><span class="toc-num">09</span> Brown Adipose Tissue &amp;
+          Thermogenin</a
+        >
+        <a href="#s10"
+          ><span class="toc-num">10</span> Xenobiotics &amp; Cytochrome P450</a
+        >
+        <a href="#s11"
+          ><span class="toc-num">11</span> Free Radicals &amp; Antioxidants</a
+        >
+        <a href="#s12"><span class="toc-num">12</span> Viva Q&amp;A</a>
+        <a href="#s13"><span class="toc-num">13</span> EQ Templates</a>
+      </div>
+    </div>
+    <div class="content">
+      <div class="progress-bar"></div>
+      <!-- ════════════ S1: REDOX POTENTIAL & OVERVIEW ════════════ -->
+      <div id="s1">
+        <div class="section-header">
+          <div class="section-num">01</div>
+          <h2>Redox Potential <em>&amp; Overview</em></h2>
+        </div>
+        <div class="keypoint">
+          Biological oxidation = removal of electrons (or H atoms) from
+          metabolic substrates. Unlike combustion, energy released in a
+          <strong>controlled, stepwise</strong> manner → captured as ATP. Final
+          electron acceptor = <strong>O₂</strong> → forms H₂O.
+        </div>
+        <div class="card">
+          <div class="card-title">
+            Standard Redox Potential (E°')
+            <span class="badge badge-pyq">PYQ 2012-S</span>
+          </div>
+          <div class="two-col">
+            <div>
+              <ul class="checklist">
+                <li>
+                  Measure of tendency of a compound to
+                  <strong>donate electrons</strong> (reducing agent)
+                </li>
+                <li>
+                  Measured in <strong>Volts (V)</strong> at pH 7, 25°C, 1M
+                  concentrations
+                </li>
+                <li>
+                  More <strong>negative E°'</strong> = stronger reducing agent =
+                  better electron donor
+                </li>
+                <li>
+                  More <strong>positive E°'</strong> = stronger oxidising agent
+                  = better electron acceptor
+                </li>
+                <li>
+                  Electrons flow from
+                  <strong>low (negative) → high (positive) E°'</strong>
+                </li>
+                <li>
+                  ΔG° = −nFΔE°' (n = electrons, F = Faraday constant 96,500
+                  J/V·mol)
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p
+                style="
+                  font-size: 13px;
+                  font-weight: 600;
+                  color: var(--accent2);
+                  margin-bottom: 8px;
+                "
+              >
+                Key E°' Values (approximate):
+              </p>
+              <div class="table-wrap" style="margin: 0">
+                <table style="font-size: 12px">
+                  <tr>
+                    <th>Couple</th>
+                    <th>E°' (V)</th>
+                  </tr>
+                  <tr>
+                    <td>NAD⁺/NADH</td>
+                    <td style="color: var(--rose)">−0.32</td>
+                  </tr>
+                  <tr>
+                    <td>FAD/FADH₂</td>
+                    <td style="color: var(--rose)">−0.22</td>
+                  </tr>
+                  <tr>
+                    <td>CoQ/CoQH₂</td>
+                    <td style="color: var(--accent2)">+0.04</td>
+                  </tr>
+                  <tr>
+                    <td>Cyt c (Fe³⁺/Fe²⁺)</td>
+                    <td style="color: var(--accent2)">+0.23</td>
+                  </tr>
+                  <tr>
+                    <td>O₂/H₂O</td>
+                    <td style="color: var(--teal)">+0.82</td>
+                  </tr>
+                </table>
+              </div>
+              <p style="font-size: 11px; color: var(--text2); margin-top: 6px">
+                Total ΔE°' = +0.82 − (−0.32) =
+                <strong style="color: var(--teal)">+1.14 V</strong> → highly
+                spontaneous
+              </p>
+            </div>
+          </div>
+          <div class="mnemonic-box" style="margin-top: 8px">
+            <div class="mbox-title">Memory Hook</div>
+            <div class="mnemonic-highlight">
+              "Electrons run downhill — from NADH (most negative) to O₂ (most
+              positive) — like water flowing to the sea."
+            </div>
+          </div>
+        </div>
+        <!-- Big picture flowchart -->
+        <div class="flowchart">
+          <div class="flow-title">
+            Master Overview — Flow of Reducing Equivalents
+          </div>
+          <div class="flow-v">
+            <div class="flow-box gold">
+              <span class="lbl"
+                >Metabolic Substrates (Glycolysis, TCA, β-Oxidation)</span
+              >
+              Oxidation → <strong>NADH + H⁺</strong> and
+              <strong>FADH₂</strong> produced (reducing equivalents = electron
+              carriers)
+            </div>
+            <div class="flow-step-label">
+              ↓ Enter inner mitochondrial membrane
+            </div>
+            <div class="flow-box accent">
+              <span class="lbl"
+                >Electron Transport Chain (ETC) — Complexes I → II → CoQ → III →
+                Cyt C → IV</span
+              >
+              Electrons passed sequentially. Energy released at 3 proton-pumping
+              sites → H⁺ pumped into intermembrane space
+            </div>
+            <div class="flow-step-label">
+              ↓ Proton gradient (electrochemical) drives ATP synthase
+            </div>
+            <div class="flow-box teal">
+              <span class="lbl"
+                >Oxidative Phosphorylation (Complex V — ATP Synthase)</span
+              >
+              H⁺ flows back through F₀F₁-ATPase →
+              <strong>ADP + Pi → ATP</strong>
+            </div>
+            <div class="flow-step-label">
+              ↓ Electrons + H⁺ + O₂ (Complex IV)
+            </div>
+            <div class="flow-box green">
+              <span class="lbl">Terminal Oxidation</span>
+              <strong>4H⁺ + 4e⁻ + O₂ → 2H₂O</strong> (catalysed by Cytochrome c
+              Oxidase)
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <!-- ════════════ S2: ETC COMPLEXES ════════════ -->
+      <div id="s2">
+        <div class="section-header">
+          <div class="section-num">02</div>
+          <h2>ETC — <em>The 4 Complexes</em></h2>
+        </div>
+        <div class="keypoint">
+          All ETC complexes are embedded in the
+          <strong>inner mitochondrial membrane (IMM)</strong>. The IMM is
+          impermeable to H⁺, ions, and most polar molecules — this is ESSENTIAL
+          for the proton gradient. Location: Cristae of mitochondria.
+        </div>
+        <div class="card">
+          <div class="card-title">
+            Complex I — NADH Dehydrogenase
+            <span class="badge badge-fav">⭐ PYQ 2014-S, 2016-S, 2023</span>
+          </div>
+          <div class="complex-card">
+            <div class="complex-header c1">
+              ⚡ COMPLEX I (NADH : CoQ Oxidoreductase)
+            </div>
+            <ul class="checklist">
+              <li>
+                <strong>Substrate:</strong> NADH + H⁺ (from TCA, β-oxidation,
+                glycolysis via shuttle)
+              </li>
+              <li>
+                <strong>Electron carrier components:</strong> FMN (flavin
+                mononucleotide) + 8–9 Iron-Sulfur (Fe-S) clusters
+              </li>
+              <li><strong>Reaction:</strong> NADH + H⁺ + CoQ → NAD⁺ + CoQH₂</li>
+              <li>
+                <strong>Protons pumped:</strong> 4 H⁺ per NADH (matrix →
+                intermembrane space)
+              </li>
+              <li><strong>ATP yield:</strong> Contributes ~2.5 ATP per NADH</li>
+              <li>
+                <strong>Inhibitor:</strong>
+                <span class="drug-tag">Rotenone</span> (rat/fish poison),
+                <span class="drug-tag">Amytal</span> (barbiturate),
+                <span class="drug-tag">Metformin</span> (partial inhibition)
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">
+            Complex II — Succinate Dehydrogenase
+            <span class="badge badge-pyq">PYQ 2016-S</span>
+          </div>
+          <div class="complex-card">
+            <div class="complex-header c2">
+              ⚡ COMPLEX II (Succinate : CoQ Oxidoreductase)
+            </div>
+            <ul class="checklist">
+              <li>
+                <strong>Substrate:</strong> FADH₂ (generated by succinate
+                dehydrogenase in TCA — same enzyme!)
+              </li>
+              <li>
+                <strong>Electron carrier components:</strong> FAD + Fe-S
+                clusters + Cytochrome b₅₆₀
+              </li>
+              <li>
+                <strong>Reaction:</strong> Succinate + FAD → Fumarate + FADH₂ →
+                passes electrons to CoQ
+              </li>
+              <li>
+                <strong>Protons pumped:</strong>
+                <span class="hl-rose">ZERO</span> — does NOT pump protons →
+                explains lower ATP yield from FADH₂
+              </li>
+              <li><strong>ATP yield:</strong> ~1.5 ATP per FADH₂</li>
+              <li>
+                <strong>Inhibitor:</strong>
+                <span class="drug-tag">Malonate</span> (competitive inhibitor of
+                succinate dehydrogenase — classic biochemistry experiment)
+              </li>
+            </ul>
+          </div>
+          <div class="warn-box">
+            Complex II is the ONLY ETC complex that does NOT pump protons. This
+            is why FADH₂ gives fewer ATP than NADH. Exam trap!
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">
+            Complex III — Cytochrome bc₁ Complex
+            <span class="badge badge-fav">⭐ PYQ 2014-S, 2016-S, 2023</span>
+          </div>
+          <div class="complex-card">
+            <div class="complex-header c3">
+              ⚡ COMPLEX III (CoQH₂ : Cytochrome c Oxidoreductase)
+            </div>
+            <ul class="checklist">
+              <li>
+                <strong>Substrate:</strong> CoQH₂ (reduced ubiquinone from
+                Complex I and II)
+              </li>
+              <li>
+                <strong>Components:</strong> Cytochrome b (with bL and bH
+                haems), Rieske Fe-S protein, Cytochrome c₁
+              </li>
+              <li>
+                <strong>Mechanism:</strong> Q cycle — CoQH₂ donates 2e⁻ and 2H⁺;
+                electrons transferred via Cyt b → Cyt c₁ → Cyt c (mobile
+                carrier)
+              </li>
+              <li>
+                <strong>Protons pumped:</strong> 4 H⁺ per 2 electrons (Q cycle
+                effectively doubles pumping)
+              </li>
+              <li>
+                <strong>Inhibitor:</strong>
+                <span class="drug-tag">Antimycin A</span> (antibiotic),
+                <span class="drug-tag">BAL (British Anti-Lewisite)</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">
+            Complex IV — Cytochrome c Oxidase
+            <span class="badge badge-fav">⭐ PYQ Multiple Years</span>
+          </div>
+          <div class="complex-card">
+            <div class="complex-header c4">
+              ⚡ COMPLEX IV (Cytochrome c Oxidase — Terminal Oxidase)
+            </div>
+            <ul class="checklist">
+              <li>
+                <strong>Substrate:</strong> Reduced Cytochrome c (accepts 4
+                electrons one at a time)
+              </li>
+              <li>
+                <strong>Components:</strong> Cu_A, Cytochrome a, Cytochrome a₃,
+                Cu_B (binuclear centre a₃-CuB is O₂ binding site)
+              </li>
+              <li>
+                <strong>Reaction:</strong> 4 Cyt c(Fe²⁺) + 4H⁺ + O₂ → 4 Cyt
+                c(Fe³⁺) + 2H₂O
+              </li>
+              <li>
+                <strong>Protons pumped:</strong> 2 H⁺ per 2 electrons (= 4 H⁺
+                per O₂)
+              </li>
+              <li>
+                <strong>Inhibitor:</strong>
+                <span class="drug-tag">Cyanide (CN⁻)</span>,
+                <span class="drug-tag">Azide</span>,
+                <span class="drug-tag">CO</span>,
+                <span class="drug-tag">H₂S</span> — all bind Fe³⁺ of Cyt a₃ →
+                block terminal electron transfer → LETHAL
+              </li>
+            </ul>
+          </div>
+          <div class="clinical-box" style="margin-top: 8px">
+            <div class="cbox-title">Cyanide Poisoning — Mechanism</div>
+            <p>
+              CN⁻ binds tightly to the Fe³⁺ of cytochrome a₃ (Complex IV) →
+              prevents electron transfer to O₂ → ETC stops → ATP production
+              stops → cell death. Tissues that die fastest: brain and heart
+              (highest O₂ demand). <strong>Treatment:</strong> Hydroxocobalamin
+              (binds CN⁻) or Nitrites (generate metHb that competes with CN⁻) +
+              Thiosulphate (converts CN⁻ → thiocyanate).
+            </p>
+          </div>
+        </div>
+        <!-- Summary table -->
+        <div class="card">
+          <div class="card-title">
+            ETC Complexes — Summary Table
+            <span class="badge badge-fav">⭐ Exam Favourite</span>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <tr>
+                <th>Complex</th>
+                <th>Name</th>
+                <th>Electron Donor</th>
+                <th>Electron Acceptor</th>
+                <th>H⁺ Pumped</th>
+                <th>Inhibitor</th>
+              </tr>
+              <tr>
+                <td>I</td>
+                <td>NADH Dehydrogenase</td>
+                <td>NADH</td>
+                <td>CoQ</td>
+                <td>4 H⁺</td>
+                <td>Rotenone, Amytal</td>
+              </tr>
+              <tr>
+                <td>II</td>
+                <td>Succinate Dehydrogenase</td>
+                <td>FADH₂</td>
+                <td>CoQ</td>
+                <td class="hl-rose">0 (ZERO!)</td>
+                <td>Malonate</td>
+              </tr>
+              <tr>
+                <td>III</td>
+                <td>Cytochrome bc₁</td>
+                <td>CoQH₂</td>
+                <td>Cyt c</td>
+                <td>4 H⁺</td>
+                <td>Antimycin A</td>
+              </tr>
+              <tr>
+                <td>IV</td>
+                <td>Cytochrome c Oxidase</td>
+                <td>Cyt c</td>
+                <td>O₂</td>
+                <td>2 H⁺</td>
+                <td>CN⁻, CO, Azide</td>
+              </tr>
+              <tr>
+                <td>V</td>
+                <td>ATP Synthase (F₀F₁)</td>
+                <td>H⁺ gradient</td>
+                <td>—</td>
+                <td>—</td>
+                <td>Oligomycin</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <!-- ════════════ S3: MOBILE CARRIERS ════════════ -->
+      <div id="s3">
+        <div class="section-header">
+          <div class="section-num">03</div>
+          <h2>Mobile Carriers <em>— CoQ &amp; Cytochrome C</em></h2>
+        </div>
+        <div class="keypoint">
+          Two mobile carriers connect the ETC complexes by diffusing within or
+          along the inner mitochondrial membrane.
+          <strong
+            >PYQ 2013-S asked specifically: "Ubiquinone and Cytochrome C have
+            special role in respiratory chain as mobile carriers."</strong
+          >
+        </div>
+        <div class="two-col">
+          <div class="card">
+            <div class="card-title">Coenzyme Q (Ubiquinone / CoQ)</div>
+            <ul class="checklist">
+              <li>
+                <strong>Nature:</strong> Lipid-soluble benzoquinone with
+                isoprenoid tail (CoQ10 in humans — 10 isoprene units)
+              </li>
+              <li>
+                <strong>Location:</strong> Freely mobile within the lipid
+                bilayer of IMM
+              </li>
+              <li>
+                <strong>Function:</strong> Collects electrons from both Complex
+                I and Complex II → delivers to Complex III
+              </li>
+              <li>
+                <strong>Redox forms:</strong> Oxidised (Q) → semiquinone (Q•⁻,
+                radical) → fully reduced (QH₂ / ubiquinol)
+              </li>
+              <li>
+                <strong>Special role:</strong> Acts as an antioxidant — can
+                quench free radicals directly
+              </li>
+              <li>
+                <strong>CoQ10 as supplement:</strong> Used in heart failure —
+                replenishes CoQ10 which ↓ in aging and statin use
+              </li>
+            </ul>
+          </div>
+          <div class="card">
+            <div class="card-title">
+              Cytochrome c <span class="badge badge-pyq">PYQ 2013-S, 2024</span>
+            </div>
+            <ul class="checklist">
+              <li>
+                <strong>Nature:</strong> Small peripheral membrane protein (12
+                kDa), loosely associated with outer face of IMM
+              </li>
+              <li>
+                <strong>Location:</strong> Intermembrane space — mobile along
+                membrane surface
+              </li>
+              <li>
+                <strong>Function:</strong> Transfers electrons from Complex III
+                → Complex IV (one electron at a time — Fe²⁺ ↔ Fe³⁺)
+              </li>
+              <li>
+                <strong>Special role in APOPTOSIS:</strong> Release of Cyt c
+                from mitochondria → cytoplasm → activates
+                <strong>Apaf-1 → Caspase-9 → Caspase-3 cascade</strong> →
+                programmed cell death.
+                <span class="badge badge-pyq">PYQ 2024</span>
+              </li>
+              <li>
+                <strong>EQ trigger:</strong> "Cytochrome C has important role in
+                apoptosis" [2024]
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <!-- ════════════ S4: CHEMIOSMOTIC THEORY & ATP SYNTHASE ════════════ -->
+      <div id="s4">
+        <div class="section-header">
+          <div class="section-num">04</div>
+          <h2>Chemiosmotic Theory <em>&amp; ATP Synthase</em></h2>
+        </div>
+        <div class="keypoint">
+          Proposed by Peter Mitchell (1961) — Nobel Prize 1978. Key insight:
+          Energy from electron transport is stored as a
+          <strong>proton electrochemical gradient</strong> (proton motive
+          force), not as a chemical intermediate.
+          <span class="badge badge-fav">⭐ PYQ 2010, 2023</span>
+        </div>
+        <div class="card">
+          <div class="card-title">
+            Mitchell's Chemiosmotic Hypothesis
+            <span class="badge badge-fav">⭐ PYQ 2010, 2023</span>
+          </div>
+          <div class="flowchart" style="margin: 0">
+            <div class="flow-title">Mechanism of Oxidative Phosphorylation</div>
+            <div class="flow-v">
+              <div class="flow-box accent">
+                <span class="lbl">Step 1 — Electron Transport</span>
+                Complexes I, III, IV pump H⁺ from
+                <strong>matrix → intermembrane space (IMS)</strong><br />
+                <span class="sub"
+                  >Builds proton gradient: IMS is acidic (high [H⁺]) + positive;
+                  Matrix is alkaline + negative</span
+                >
+              </div>
+              <div class="flow-step-label">
+                ↓ Creates Proton Motive Force (PMF) = ΔpH + ΔΨ (membrane
+                potential)
+              </div>
+              <div class="flow-box gold">
+                <span class="lbl">Step 2 — Proton Motive Force (PMF)</span>
+                Two components: <strong>Chemical gradient (ΔpH)</strong> = ~0.75
+                V + <strong>Electrical gradient (ΔΨ)</strong> = ~0.14 V<br />
+                Total PMF ≈ <strong>0.22 V</strong> (or ~200 mV) across IMM
+              </div>
+              <div class="flow-step-label">
+                ↓ H⁺ can ONLY re-enter matrix through ATP Synthase (F₀F₁)
+              </div>
+              <div class="flow-box teal">
+                <span class="lbl"
+                  >Step 3 — ATP Synthesis (F₀F₁ ATPase / Complex V)</span
+                >
+                H⁺ flows down gradient through F₀ (rotor in membrane) → rotates
+                c-ring → mechanical energy transmitted to F₁ (in matrix) →
+                conformational changes in β-subunits →
+                <strong>ADP + Pi → ATP</strong>
+              </div>
+            </div>
+          </div>
+          <div class="clinical-box" style="margin-top: 8px">
+            <div class="cbox-title">
+              Key Requirement — Intact Mitochondrial Membrane
+            </div>
+            <p>
+              The IMM must be <strong>intact and impermeable to H⁺</strong> for
+              the gradient to be maintained. If the membrane is disrupted
+              (detergents, mechanical damage) or if H⁺ is allowed to leak back
+              without going through ATP synthase → gradient dissipates → no ATP
+              synthesis → energy released as heat. This is how
+              <strong>uncouplers</strong> work.
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">
+            F₀F₁ ATP Synthase — Structure
+            <span class="badge badge-pyq">PYQ 2019-S "F0F1 ATPase"</span>
+          </div>
+          <div class="two-col">
+            <div>
+              <p
+                style="
+                  font-size: 13px;
+                  font-weight: 600;
+                  color: var(--accent2);
+                  margin-bottom: 6px;
+                "
+              >
+                F₀ (membrane sector):
+              </p>
+              <ul class="checklist">
+                <li>Embedded in IMM — forms the H⁺ channel</li>
+                <li>Subunits: a, b₂, c-ring (9–12 c subunits)</li>
+                <li>
+                  H⁺ flows through interface between a-subunit and c-ring →
+                  drives rotation
+                </li>
+                <li>
+                  <strong>Oligomycin</strong> blocks H⁺ channel of F₀ → stops
+                  ATP synthesis
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p
+                style="
+                  font-size: 13px;
+                  font-weight: 600;
+                  color: var(--teal);
+                  margin-bottom: 6px;
+                "
+              >
+                F₁ (matrix sector — catalytic):
+              </p>
+              <ul class="checklist">
+                <li>α₃β₃γδε arrangement</li>
+                <li>
+                  β-subunits are catalytic — have 3 conformations: Open (O),
+                  Loose (L), Tight (T)
+                </li>
+                <li>
+                  Binding change mechanism: rotation of γ-subunit changes β
+                  conformation → releases ATP
+                </li>
+                <li>
+                  <strong>~3 H⁺ per ATP synthesised</strong> (each rotation
+                  makes 3 ATP from 3 β-subunits)
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="mnemonic-box" style="margin-top: 8px">
+            <div class="mbox-title">ATP Synthase Analogy</div>
+            <div class="mnemonic-highlight">
+              "F₀ is the water wheel (H⁺ spins it), F₁ is the generator
+              (converts spin → ATP). Mitchell's dam = the IMM."
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <!-- ════════════ S5: ATP YIELD ════════════ -->
+      <div id="s5">
+        <div class="section-header">
+          <div class="section-num">05</div>
+          <h2>ATP Yield <em>Calculation</em></h2>
+        </div>
+        <div class="keypoint">
+          Modern P/O ratios (NADH = 2.5 ATP, FADH₂ = 1.5 ATP) — based on H⁺/ATP
+          ratio of ATP synthase. Older textbooks used 3 and 2 — WBUHS may still
+          accept these. Know both!
+          <span class="badge badge-fav">⭐ Frequently calculated</span>
+        </div>
+        <div class="card">
+          <div class="card-title">
+            Complete Oxidation of Glucose — ATP Tally
+          </div>
+          <div class="table-wrap">
+            <table>
+              <tr>
+                <th>Stage</th>
+                <th>NADH</th>
+                <th>FADH₂</th>
+                <th>GTP/ATP (direct)</th>
+                <th>ATP from NADH (×2.5)</th>
+                <th>ATP from FADH₂ (×1.5)</th>
+              </tr>
+              <tr>
+                <td>Glycolysis (cytoplasm)</td>
+                <td>2 NADH</td>
+                <td>—</td>
+                <td>2 ATP</td>
+                <td>5* (via shuttle)</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Pyruvate → Acetyl-CoA (×2)</td>
+                <td>2 NADH</td>
+                <td>—</td>
+                <td>—</td>
+                <td>5</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>TCA Cycle (×2 turns)</td>
+                <td>6 NADH</td>
+                <td>2 FADH₂</td>
+                <td>2 GTP</td>
+                <td>15</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td><strong>TOTAL</strong></td>
+                <td><strong>10 NADH</strong></td>
+                <td><strong>2 FADH₂</strong></td>
+                <td><strong>4</strong></td>
+                <td><strong>25</strong></td>
+                <td><strong>3</strong></td>
+              </tr>
+            </table>
+          </div>
+          <div
+            style="
+              background: var(--surface2);
+              border: 1px solid var(--border);
+              border-radius: 6px;
+              padding: 12px 16px;
+              margin-top: 8px;
+              font-size: 13px;
+            "
+          >
+            <strong style="color: var(--teal)"
+              >Total ATP = 25 + 3 + 4 =
+              <span style="font-size: 16px">32 ATP</span></strong
+            >
+            (modern calculation)<br />
+            <span style="color: var(--text2); font-size: 12px"
+              >Older calculation: 10 NADH × 3 = 30 + 2 FADH₂ × 2 = 4 + 4 =
+              <strong>38 ATP</strong> (still accepted in WBUHS)</span
+            ><br />
+            <span style="color: var(--rose); font-size: 11px"
+              >*Cytoplasmic NADH: if via Malate shuttle → 2.5 ATP; if via
+              Glycerophosphate shuttle → 1.5 ATP</span
+            >
+          </div>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <!-- ════════════ S6: ETC INHIBITORS ════════════ -->
+      <div id="s6">
+        <div class="section-header">
+          <div class="section-num">06</div>
+          <h2>ETC <em>Inhibitors</em></h2>
+        </div>
+        <div class="keypoint">
+          ETC inhibitors <strong>BLOCK electron flow</strong> → both electron
+          transport AND ATP synthesis stop simultaneously. The proton gradient
+          cannot form. This is different from uncouplers (which allow electron
+          flow but uncouple it from ATP synthesis).
+        </div>
+        <div class="table-wrap">
+          <table>
+            <tr>
+              <th>Inhibitor</th>
+              <th>Site (Complex)</th>
+              <th>Mechanism</th>
+              <th>Clinical/Toxicological Relevance</th>
+            </tr>
+            <tr>
+              <td>Rotenone</td>
+              <td>Complex I</td>
+              <td>
+                Blocks electron transfer from Fe-S to CoQ. Lipophilic — crosses
+                membranes easily
+              </td>
+              <td>
+                Rat/fish poison; used in research. Linked to Parkinson's disease
+                (mitochondrial toxin)
+              </td>
+            </tr>
+            <tr>
+              <td>Amytal (Amobarbital)</td>
+              <td>Complex I</td>
+              <td>Same as rotenone — blocks Fe-S → CoQ step</td>
+              <td>
+                Barbiturate sedative — high doses cause respiratory failure via
+                ETC inhibition
+              </td>
+            </tr>
+            <tr>
+              <td>Metformin</td>
+              <td>Complex I (mild)</td>
+              <td>
+                Partial inhibition → ↓ NADH oxidation → ↑ AMPK → ↓
+                gluconeogenesis
+              </td>
+              <td>
+                First-line diabetes drug; rarely causes lactic acidosis via
+                complex I inhibition
+              </td>
+            </tr>
+            <tr>
+              <td>Malonate</td>
+              <td>Complex II</td>
+              <td>
+                Competitive inhibitor of succinate dehydrogenase (structural
+                analogue of succinate)
+              </td>
+              <td>
+                Classic competitive inhibition experiment (overcome by excess
+                succinate)
+              </td>
+            </tr>
+            <tr>
+              <td>Antimycin A</td>
+              <td>Complex III</td>
+              <td>
+                Binds Qi site — blocks CoQH₂ reoxidation in Q cycle → stops Cyt
+                b reduction
+              </td>
+              <td>Fungicide / fish poison; important research tool</td>
+            </tr>
+            <tr>
+              <td>BAL (Dimercaprol)</td>
+              <td>Complex III</td>
+              <td>Chelates Fe-S clusters in Rieske protein</td>
+              <td>
+                Originally developed as antidote for arsenical gas (Lewisite) in
+                WWII; still used in heavy metal poisoning
+              </td>
+            </tr>
+            <tr>
+              <td>Cyanide (CN⁻) <span class="drug-tag">LETHAL</span></td>
+              <td>Complex IV</td>
+              <td>
+                Binds Fe³⁺ of Cyt a₃ → blocks O₂ binding → terminal electron
+                transfer stops
+              </td>
+              <td>
+                Industrial (electroplating), accidental, suicidal. Treatment:
+                hydroxocobalamin + nitrites + thiosulphate
+              </td>
+            </tr>
+            <tr>
+              <td>Carbon Monoxide (CO)</td>
+              <td>Complex IV</td>
+              <td>
+                Binds Fe²⁺ of Cyt a₃ (also binds Hb). 250× affinity for Hb vs O₂
+              </td>
+              <td>
+                Silent killer — house fires, car exhaust. Treatment: 100% O₂ /
+                hyperbaric O₂
+              </td>
+            </tr>
+            <tr>
+              <td>Azide (N₃⁻)</td>
+              <td>Complex IV</td>
+              <td>Same as cyanide — binds Cyt a₃</td>
+              <td>Laboratory use; toxic</td>
+            </tr>
+            <tr>
+              <td>Oligomycin <span class="drug-tag">Antibiotic</span></td>
+              <td>Complex V (F₀)</td>
+              <td>
+                Blocks H⁺ channel of F₀ → H⁺ cannot re-enter → backpressure
+                builds → ETC slows/stops. NOT an ETC inhibitor per se — inhibits
+                the ATPase
+              </td>
+              <td>
+                <span class="badge badge-new">NEW 2025 PYQ</span> "Oligomycin
+                can inhibit respiratory chain" [2025]. Indirect inhibition.
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="mnemonic-box">
+          <div class="mbox-title">Inhibitor Sites Mnemonic</div>
+          <div class="mnemonic-highlight">
+            "Rotenone Ruins I, Malonate Murders II, Antimycin Attacks III,
+            Cyanide Crushes IV, Oligomycin Obliterates V"
+          </div>
+          <p style="font-size: 12px; color: var(--text2); margin-top: 4px">
+            R-M-A-C-O → "Really Murderous Animals Chase Owners"
+          </p>
+        </div>
+        <div class="warn-box">
+          <div>
+            <strong>Exam Trap [PYQ 2025]:</strong> "Oligomycin and cyanide can
+            inhibit respiratory chain." Oligomycin inhibits ATP synthase
+            (Complex V), NOT ETC directly. But because it blocks H⁺ re-entry,
+            the gradient builds up → backpressure → ETC slows. So it INDIRECTLY
+            inhibits the chain. Cyanide directly blocks Complex IV. Know the
+            distinction!
+          </div>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <!-- ════════════ S7: UNCOUPLERS ════════════ -->
+      <div id="s7">
+        <div class="section-header">
+          <div class="section-num">07</div>
+          <h2>Uncouplers <em>of Oxidative Phosphorylation</em></h2>
+        </div>
+        <div class="keypoint">
+          Uncouplers allow the ETC to continue working (electrons still flow, O₂
+          still consumed) but the proton gradient is dissipated as
+          <strong>HEAT</strong> instead of making ATP. They act as H⁺ carriers —
+          transporting protons across the IMM bypassing ATP synthase.
+          <span class="badge badge-fav">⭐ PYQ 2019, 2022</span>
+        </div>
+        <div class="card">
+          <div class="card-title">How Uncouplers Work</div>
+          <div class="flowchart" style="margin: 0">
+            <div class="flow-title">Uncoupling Mechanism</div>
+            <div class="flow-v">
+              <div class="flow-box accent">
+                Normal: H⁺ pumped out → gradient builds → H⁺ can ONLY return via
+                F₀F₁ → ATP made
+              </div>
+              <div class="flow-step-label">↓ Uncoupler added</div>
+              <div class="flow-box rose">
+                Uncoupler (e.g., DNP) picks up H⁺ from IMS (protonated,
+                lipophilic) → diffuses through IMM → releases H⁺ into matrix
+                (deprotonated, moves back)<br />
+                <span class="sub"
+                  >Net result: H⁺ gradient DISSIPATED. ATP synthase starved of
+                  H⁺. ETC continues but energy = HEAT</span
+                >
+              </div>
+              <div class="flow-step-label">↓ Result</div>
+              <div class="flow-box gold">
+                ↑ O₂ consumption + ↑ Heat production + ↓ ATP synthesis + ↑
+                Metabolic rate (to compensate) + ↑ Body temperature
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <tr>
+              <th>Uncoupler</th>
+              <th>Mechanism</th>
+              <th>Clinical/Physiological Relevance</th>
+            </tr>
+            <tr>
+              <td>
+                2,4-Dinitrophenol (DNP) <span class="drug-tag">TOXIC</span>
+              </td>
+              <td>
+                Lipophilic weak acid — carries H⁺ across IMM as H-DNP; releases
+                in matrix as DNP⁻. Classic experimental uncoupler
+              </td>
+              <td>
+                <span class="badge badge-pyq">PYQ 2022</span> Used illegally as
+                weight-loss drug in 1930s. Causes hyperthermia, sweating,
+                tachycardia. LETHAL — narrow toxic:therapeutic ratio. Banned
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Thermogenin (UCP-1) <span class="drug-tag">PHYSIOLOGICAL</span>
+              </td>
+              <td>
+                Uncoupling Protein-1 in brown adipose tissue — natural H⁺
+                channel in IMM — regulated by norepinephrine and fatty acids
+              </td>
+              <td>
+                Non-shivering thermogenesis in newborns, hibernating animals.
+                Activated by cold → ↑ fatty acid oxidation → heat.
+                <span class="badge badge-pyq">PYQ 2011, 2016-S</span>
+              </td>
+            </tr>
+            <tr>
+              <td>Long-chain Fatty Acids</td>
+              <td>
+                Act as weak acid protonophores at high concentrations — carry H⁺
+                across IMM
+              </td>
+              <td>
+                Physiological modulation of coupling efficiency in
+                mitochondria-rich tissues
+              </td>
+            </tr>
+            <tr>
+              <td>Valinomycin</td>
+              <td>
+                Ionophore for K⁺ — dissipates membrane potential (ΔΨ) rather
+                than ΔpH
+              </td>
+              <td>Research tool; not clinically relevant</td>
+            </tr>
+            <tr>
+              <td>FCCP (Carbonyl cyanide p-trifluoromethoxyphenylhydrazone)</td>
+              <td>
+                Most potent experimental protonophore — completely uncouples at
+                nM concentrations
+              </td>
+              <td>
+                Research tool for studying mitochondrial respiration (Seahorse
+                assay)
+              </td>
+            </tr>
+            <tr>
+              <td>High-dose Aspirin (Salicylate)</td>
+              <td>Weak acid — protonophore at high concentrations</td>
+              <td>
+                Aspirin overdose → fever (hyperthermia) + uncoupling + metabolic
+                acidosis. Partially explains fever in salicylate toxicity
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="mnemonic-box">
+          <div class="mbox-title">
+            Inhibitor vs Uncoupler — The Key Difference
+          </div>
+          <div class="mnemonic-highlight">
+            "Inhibitor: blocks BOTH electron flow AND ATP synthesis (chain
+            stops). Uncoupler: allows electron flow but STEALS the H⁺ gradient →
+            heat not ATP."
+          </div>
+          <p style="font-size: 12px; color: var(--text2); margin-top: 4px">
+            Think: Inhibitor = traffic jam. Uncoupler = road exists but leads
+            nowhere useful.
+          </p>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <!-- ════════════ S8: MEMBRANE SHUTTLES ════════════ -->
+      <div id="s8">
+        <div class="section-header">
+          <div class="section-num">08</div>
+          <h2>Membrane <em>Shuttles</em></h2>
+        </div>
+        <div class="keypoint">
+          The IMM is impermeable to NADH. Cytoplasmic NADH (from glycolysis)
+          must transfer its electrons into the mitochondria via one of two
+          shuttle systems.
+          <span class="badge badge-fav">⭐ PYQ 2010-S (Malate), 2014</span>
+        </div>
+        <div class="two-col">
+          <div class="card">
+            <div class="card-title">
+              Malate-Aspartate Shuttle
+              <span class="badge badge-fav">⭐ PYQ 2010-S, 2014</span>
+            </div>
+            <div class="flowchart" style="margin: 0; padding: 1rem">
+              <div class="flow-title">Malate-Aspartate Shuttle</div>
+              <div class="flow-v">
+                <div class="flow-box accent" style="font-size: 12px">
+                  <span class="lbl">CYTOPLASM</span>
+                  NADH + OAA → Malate (by MDH) + NAD⁺ [NADH oxidised]
+                </div>
+                <div class="flow-step-label">
+                  ↓ Malate enters mitochondria via malate-α-KG antiporter
+                </div>
+                <div class="flow-box teal" style="font-size: 12px">
+                  <span class="lbl">MITOCHONDRIAL MATRIX</span>
+                  Malate → OAA (by MDH) + NADH [NADH regenerated in matrix]
+                </div>
+                <div class="flow-step-label">
+                  ↓ OAA → Aspartate (transamination) → exported → back to OAA in
+                  cytoplasm
+                </div>
+                <div class="flow-box gold" style="font-size: 12px">
+                  Net: 1 cytoplasmic NADH = 1 mitochondrial NADH →
+                  <strong>2.5 ATP</strong>
+                </div>
+              </div>
+            </div>
+            <p style="font-size: 12px; color: var(--text2); margin-top: 8px">
+              Active in: <strong>Heart, liver, kidney</strong> (high metabolic
+              activity tissues with abundant aspartate aminotransferase)
+            </p>
+          </div>
+          <div class="card">
+            <div class="card-title">Glycerophosphate Shuttle (G3P Shuttle)</div>
+            <div class="flowchart" style="margin: 0; padding: 1rem">
+              <div class="flow-title">Glycerol-3-Phosphate Shuttle</div>
+              <div class="flow-v">
+                <div class="flow-box accent" style="font-size: 12px">
+                  <span class="lbl">CYTOPLASM</span>
+                  NADH + DHAP → Glycerol-3-P (by cytoplasmic G3P dehydrogenase)
+                  + NAD⁺
+                </div>
+                <div class="flow-step-label">
+                  ↓ Glycerol-3-P transfers electrons to FAD on inner
+                  mitochondrial membrane
+                </div>
+                <div class="flow-box rose" style="font-size: 12px">
+                  <span class="lbl"
+                    >INNER MITOCHONDRIAL MEMBRANE (outer face)</span
+                  >
+                  Glycerol-3-P + FAD → DHAP + FADH₂ (mitochondrial G3P
+                  dehydrogenase)
+                </div>
+                <div class="flow-step-label">
+                  ↓ FADH₂ feeds electrons to CoQ → Complex III onwards
+                </div>
+                <div class="flow-box gold" style="font-size: 12px">
+                  Net: 1 cytoplasmic NADH → FADH₂ →
+                  <strong>1.5 ATP only</strong>
+                </div>
+              </div>
+            </div>
+            <p style="font-size: 12px; color: var(--text2); margin-top: 8px">
+              Active in:
+              <strong>Brain, skeletal muscle, white adipose tissue</strong>
+              (quick but less efficient)
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">
+            Comparing the Two Shuttles
+            <span class="badge badge-pyq">PYQ 2014</span>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <tr>
+                <th>Feature</th>
+                <th>Malate-Aspartate</th>
+                <th>Glycerophosphate</th>
+              </tr>
+              <tr>
+                <td>End product in mitochondria</td>
+                <td>NADH (mitochondrial)</td>
+                <td>FADH₂</td>
+              </tr>
+              <tr>
+                <td>ATP yield per cytoplasmic NADH</td>
+                <td class="hl-teal">2.5 ATP</td>
+                <td class="hl-rose">1.5 ATP</td>
+              </tr>
+              <tr>
+                <td>Reversibility</td>
+                <td>Reversible</td>
+                <td>Irreversible</td>
+              </tr>
+              <tr>
+                <td>Key enzyme</td>
+                <td>MDH + Aspartate aminotransferase</td>
+                <td>Glycerol-3-phosphate dehydrogenase</td>
+              </tr>
+              <tr>
+                <td>Tissues</td>
+                <td>Heart, liver, kidney</td>
+                <td>Brain, skeletal muscle</td>
+              </tr>
+              <tr>
+                <td>Complexity</td>
+                <td>More complex (2 enzymes each side)</td>
+                <td>Simpler</td>
+              </tr>
+            </table>
+          </div>
+          <div class="mnemonic-box" style="margin-top: 8px">
+            <div class="mbox-title">Shuttle Memory Hook</div>
+            <div class="mnemonic-highlight">
+              "Malate shuttle = More ATP (2.5) — heart loves efficiency.
+              Glycerophosphate = Less ATP (1.5) — brain accepts less because
+              it's faster."
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <!-- ════════════ S9: BROWN ADIPOSE TISSUE ════════════ -->
+      <div id="s9">
+        <div class="section-header">
+          <div class="section-num">09</div>
+          <h2>Brown Adipose Tissue <em>&amp; Thermogenin</em></h2>
+        </div>
+        <div class="keypoint">
+          Brown fat generates heat (thermogenesis) WITHOUT shivering via
+          controlled uncoupling. Key protein: Thermogenin (UCP-1).
+          <span class="badge badge-fav"
+            >⭐ PYQ 2011, 2016-S "Brown fat = non-shivering thermogenesis in
+            newborn"</span
+          >
+        </div>
+        <div class="card">
+          <div class="card-title">
+            BAT vs White Adipose Tissue
+            <span class="badge badge-pyq">PYQ 2011, 2016-S, 2022</span>
+          </div>
+          <div class="two-col">
+            <div>
+              <p
+                style="
+                  font-size: 13px;
+                  font-weight: 600;
+                  color: var(--accent2);
+                  margin-bottom: 6px;
+                "
+              >
+                Why brown fat is BROWN:
+              </p>
+              <ul class="checklist">
+                <li>
+                  Rich in mitochondria → iron in cytochromes → brown colour
+                </li>
+                <li>
+                  Multilocular fat droplets (multiple small → WAT has one large)
+                </li>
+                <li>Dense capillary network for heat dissipation</li>
+                <li>High UCP-1 (Thermogenin) content in IMM</li>
+              </ul>
+            </div>
+            <div>
+              <p
+                style="
+                  font-size: 13px;
+                  font-weight: 600;
+                  color: var(--teal);
+                  margin-bottom: 6px;
+                "
+              >
+                UCP-1 Activation Cascade:
+              </p>
+              <ul class="checklist">
+                <li>
+                  Cold exposure → Sympathetic NS → Norepinephrine released
+                </li>
+                <li>
+                  β₃-adrenergic receptor → Adenylate cyclase → ↑ cAMP → PKA →
+                  Lipase activated → TAG → FFA released
+                </li>
+                <li>
+                  FFA bind to UCP-1 → channel opens → H⁺ floods back into matrix
+                  → heat generated
+                </li>
+                <li>FFA also = fuel for β-oxidation → sustains ETC</li>
+              </ul>
+            </div>
+          </div>
+          <div class="clinical-box" style="margin-top: 8px">
+            <div class="cbox-title">Clinical Relevance of BAT</div>
+            <p>
+              <strong>Newborns:</strong> Critical for survival — cannot shiver
+              (underdeveloped muscle). BAT around neck, between shoulder blades,
+              around kidneys provides thermogenesis. Premature babies lack
+              sufficient BAT → hypothermia risk.<br />
+              <strong>Adults:</strong> BAT persists around clavicle, mediastinum
+              — more active in cold-adapted individuals. Active area of research
+              for obesity treatment. ↑ BAT activity = ↑ energy expenditure =
+              possible anti-obesity target.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <!-- ════════════ S10: XENOBIOTICS ════════════ -->
+      <div id="s10">
+        <div class="section-header">
+          <div class="section-num">10</div>
+          <h2>Xenobiotics <em>&amp; Cytochrome P450</em></h2>
+        </div>
+        <div class="keypoint">
+          Xenobiotics = foreign compounds (drugs, pollutants, food additives)
+          not produced by normal metabolism. Biotransformation makes them
+          water-soluble for excretion. Primary site:
+          <strong>Liver smooth ER</strong>.
+          <span class="badge badge-pyq">PYQ 2016-S, 2023</span>
+        </div>
+        <div class="card">
+          <div class="card-title">
+            Phases of Xenobiotic Metabolism
+            <span class="badge badge-fav">⭐ PYQ 2016-S, 2023, 2025</span>
+          </div>
+          <div class="flowchart" style="margin: 0">
+            <div class="flow-title">
+              Biotransformation — Phase I and Phase II
+            </div>
+            <div class="flow-v">
+              <div class="flow-box accent">
+                <span class="lbl">PHASE I — Functionalisation Reactions</span>
+                Introduce or unmask a functional group (-OH, -NH₂, -SH,
+                -COOH)<br />
+                Reactions: Oxidation (most common — via CYP450), Reduction,
+                Hydrolysis<br />
+                <span class="sub"
+                  >Location: SER of hepatocytes. May activate or inactivate
+                  drugs. May produce toxic/reactive intermediates.</span
+                >
+              </div>
+              <div class="flow-step-label">
+                ↓ Phase I product usually slightly more polar — then conjugated
+                in Phase II
+              </div>
+              <div class="flow-box gold">
+                <span class="lbl"
+                  >PHASE II — Conjugation Reactions (Biosynthetic)</span
+                >
+                Add large polar group to Phase I product → highly water-soluble
+                → urinary/biliary excretion<br />
+                Reactions: Glucuronidation (UDP-glucuronate — most common),
+                Sulphation, Glutathione conjugation, Acetylation, Methylation,
+                Amino acid conjugation (glycine, glutamine)<br />
+                <span class="sub"
+                  >All Phase II reactions increase molecular weight and water
+                  solubility.</span
+                >
+              </div>
+              <div class="flow-step-label">
+                ↓ Water-soluble metabolite excreted in urine or bile
+              </div>
+              <div class="flow-box teal">
+                Phase III (transport): ABC transporters (P-glycoprotein, MRP)
+                export conjugates out of hepatocytes → bile or blood → kidney →
+                excretion
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">
+            Cytochrome P450 (CYP) System
+            <span class="badge badge-fav">⭐ PYQ 2013, 2014-S, 2019, 2025</span>
+          </div>
+          <div class="two-col">
+            <div>
+              <p
+                style="
+                  font-size: 13px;
+                  font-weight: 600;
+                  color: var(--accent2);
+                  margin-bottom: 6px;
+                "
+              >
+                Structure &amp; Location:
+              </p>
+              <ul class="checklist">
+                <li>
+                  Haemoproteins — Fe in porphyrin ring absorbs at 450 nm when
+                  bound to CO (hence "P450")
+                </li>
+                <li>
+                  Location: SER of liver (also intestine, lung, adrenal cortex)
+                </li>
+                <li>
+                  ~57 CYP genes in humans; CYP1A2, CYP2C9, CYP2D6, CYP3A4 handle
+                  most drugs
+                </li>
+                <li>CYP3A4 = most abundant hepatic CYP (~30–40% of total)</li>
+              </ul>
+            </div>
+            <div>
+              <p
+                style="
+                  font-size: 13px;
+                  font-weight: 600;
+                  color: var(--teal);
+                  margin-bottom: 6px;
+                "
+              >
+                Overall Reaction:
+              </p>
+              <div class="flow-box gold" style="font-size: 12px">
+                RH + O₂ + NADPH + H⁺ → R-OH + H₂O + NADP⁺<br /><br />
+                Requires: <strong>NADPH-CYP450 reductase</strong> (FAD + FMN
+                containing) as electron donor, and <strong>O₂</strong
+                ><br /><br />
+                One O atom → hydroxylation of substrate (R-OH)<br />
+                Other O atom → water
+              </div>
+              <p style="font-size: 12px; color: var(--text2); margin-top: 8px">
+                This is a
+                <strong>monooxygenase / mixed-function oxidase</strong>
+                reaction.
+              </p>
+            </div>
+          </div>
+          <div class="clinical-box" style="margin-top: 8px">
+            <div class="cbox-title">CYP450 — Clinical Importance</div>
+            <p>
+              <strong>Drug interactions:</strong> CYP inducers (rifampicin,
+              carbamazepine, phenytoin, St John's Wort) → ↑ CYP expression →
+              faster drug metabolism → ↓ drug levels → therapeutic failure. CYP
+              inhibitors (fluconazole, erythromycin, grapefruit juice) → ↓ drug
+              metabolism → ↑ drug levels → toxicity.<br />
+              <strong>Steroid synthesis:</strong> CYP enzymes in adrenal cortex
+              perform multiple hydroxylation steps (CYP11A1, CYP21A2,
+              CYP11B1).<br />
+              <strong>Carcinogen activation:</strong> Benzo[a]pyrene (tobacco
+              smoke) → CYP1A1 → reactive epoxide → binds DNA → mutation →
+              cancer.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <!-- ════════════ S11: FREE RADICALS & ANTIOXIDANTS ════════════ -->
+      <div id="s11">
+        <div class="section-header">
+          <div class="section-num">11</div>
+          <h2>Free Radicals <em>&amp; Antioxidants</em></h2>
+        </div>
+        <div class="keypoint">
+          Free radicals = molecules with unpaired electron in outer orbital →
+          highly reactive, seek to pair electron → chain reactions of damage.
+          Major source in biology:
+          <strong>mitochondrial ETC leakage</strong> (1–3% of electrons escape →
+          superoxide O₂•⁻).
+          <span class="badge badge-pyq">PYQ 2011-S, 2012-S, 2014, 2015-S</span>
+        </div>
+        <div class="card">
+          <div class="card-title">
+            Reactive Oxygen Species (ROS) — Generation &amp; Damage
+            <span class="badge badge-pyq">PYQ 2019</span>
+          </div>
+          <div class="flowchart" style="margin: 0">
+            <div class="flow-title">ROS Cascade</div>
+            <div class="flow-v">
+              <div class="flow-box rose">
+                <span class="lbl">Primary ROS — Superoxide (O₂•⁻)</span>
+                O₂ + e⁻ → O₂•⁻ (via Complex I/III leakage, NADPH oxidase in
+                phagocytes, xanthine oxidase)
+              </div>
+              <div class="flow-step-label">
+                ↓ Superoxide Dismutase (SOD) — Cu-Zn in cytoplasm, Mn in
+                mitochondria
+              </div>
+              <div class="flow-box gold">
+                <span class="lbl">H₂O₂ — Hydrogen Peroxide</span>
+                2 O₂•⁻ + 2H⁺ → H₂O₂ + O₂ (catalysed by SOD). H₂O₂ is not a
+                radical but is reactive
+              </div>
+              <div class="flow-step-label">↓ Fe²⁺ (Fenton reaction) or Cu⁺</div>
+              <div class="flow-box rose">
+                <span class="lbl">Hydroxyl Radical (•OH) — MOST REACTIVE</span>
+                H₂O₂ + Fe²⁺ → •OH + OH⁻ + Fe³⁺ (Fenton reaction). Cannot be
+                detoxified by any enzyme — attacks DNA, proteins, lipids
+              </div>
+            </div>
+          </div>
+          <div class="two-col" style="margin-top: 8px">
+            <div>
+              <p
+                style="
+                  font-size: 13px;
+                  font-weight: 600;
+                  color: var(--rose);
+                  margin-bottom: 6px;
+                "
+              >
+                Targets of ROS Damage:
+              </p>
+              <ul class="checklist">
+                <li>
+                  <strong>DNA:</strong> 8-oxoguanine, strand breaks → mutations,
+                  cancer
+                </li>
+                <li>
+                  <strong>Lipids:</strong> Lipid peroxidation — chain reaction
+                  destroying membrane PUFAs → Malondialdehyde (MDA) — marker of
+                  oxidative stress
+                </li>
+                <li>
+                  <strong>Proteins:</strong> Carbonylation, cross-linking,
+                  enzyme inactivation
+                </li>
+                <li>
+                  <strong>Carbohydrates:</strong> Glycoxidation → AGEs (advanced
+                  glycation end-products) in diabetes
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p
+                style="
+                  font-size: 13px;
+                  font-weight: 600;
+                  color: var(--teal);
+                  margin-bottom: 6px;
+                "
+              >
+                Beneficial ROS Actions:
+              </p>
+              <ul class="checklist">
+                <li>
+                  <strong>Phagocyte respiratory burst:</strong> NADPH oxidase
+                  generates O₂•⁻ → kills bacteria (neutrophils, macrophages)
+                </li>
+                <li>
+                  <strong>Signal transduction:</strong> H₂O₂ acts as second
+                  messenger — activates NF-κB, AP-1
+                </li>
+                <li>
+                  <strong>Apoptosis:</strong> ROS can trigger programmed cell
+                  death → tumour suppression
+                </li>
+                <li>
+                  EQ trigger: "Free radicals may have some beneficial role"
+                  [2015-S]; "Macrophages show beneficial effects by generating
+                  free radicals" [2021]
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">
+            Antioxidant Defences
+            <span class="badge badge-pyq">PYQ 2011-S, 2012-S, 2014</span>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <tr>
+                <th>Antioxidant</th>
+                <th>Type</th>
+                <th>Mechanism</th>
+                <th>Clinical Note</th>
+              </tr>
+              <tr>
+                <td>Superoxide Dismutase (SOD)</td>
+                <td>Enzymatic</td>
+                <td>
+                  O₂•⁻ → H₂O₂ + O₂. Cu-Zn SOD (cytoplasm), Mn-SOD
+                  (mitochondria), EC-SOD (extracellular)
+                </td>
+                <td>ALS linked to mutant Cu-Zn SOD. First line defence</td>
+              </tr>
+              <tr>
+                <td>Catalase</td>
+                <td>Enzymatic</td>
+                <td>2 H₂O₂ → 2 H₂O + O₂. Located in peroxisomes</td>
+                <td>
+                  G6PD deficiency → ↓ NADPH → ↓ GSH → ↓ catalase support → RBC
+                  haemolysis
+                </td>
+              </tr>
+              <tr>
+                <td>Glutathione Peroxidase (GPx)</td>
+                <td>Enzymatic</td>
+                <td>
+                  H₂O₂ + 2 GSH → 2 GSSG + 2 H₂O (uses selenium — selenocysteine
+                  in active site)
+                </td>
+                <td>
+                  Requires NADPH to regenerate GSH (via glutathione reductase).
+                  Links to HMP shunt
+                </td>
+              </tr>
+              <tr>
+                <td>Vitamin E (α-Tocopherol)</td>
+                <td>Non-enzymatic (lipid-soluble)</td>
+                <td>
+                  Scavenges lipid peroxyl radicals (LOO•) in cell membranes →
+                  chain-breaking antioxidant → Vit E radical regenerated by Vit
+                  C
+                </td>
+                <td>
+                  Deficiency → haemolytic anaemia in newborns, spinocerebellar
+                  ataxia. Works in membranes
+                </td>
+              </tr>
+              <tr>
+                <td>Vitamin C (Ascorbate)</td>
+                <td>Non-enzymatic (water-soluble)</td>
+                <td>
+                  Scavenges O₂•⁻, •OH, peroxyl radicals in aqueous phase.
+                  Regenerates Vit E from Vit E radical
+                </td>
+                <td>
+                  Also cofactor for prolyl hydroxylase (collagen), dopamine
+                  hydroxylase, enhances iron absorption
+                </td>
+              </tr>
+              <tr>
+                <td>Glutathione (GSH)</td>
+                <td>Non-enzymatic (thiol)</td>
+                <td>
+                  Tripeptide (γ-Glu-Cys-Gly). Cys thiol donates electrons.
+                  Reduced by glutathione reductase (NADPH-dependent)
+                </td>
+                <td>
+                  Detoxification (Phase II, paracetamol toxicity), membrane
+                  protection.
+                  <span class="badge badge-pyq">PYQ 2016-S, 2022</span>
+                </td>
+              </tr>
+              <tr>
+                <td>β-Carotene</td>
+                <td>Non-enzymatic</td>
+                <td>
+                  Quenches singlet oxygen (¹O₂) — excited form of O₂.
+                  Pro-vitamin A
+                </td>
+                <td>
+                  High-dose supplements may increase cancer risk in smokers
+                  (paradox)
+                </td>
+              </tr>
+              <tr>
+                <td>Uric Acid</td>
+                <td>Non-enzymatic</td>
+                <td>
+                  Scavenges peroxyl radicals, •OH, and complexes iron. Major
+                  antioxidant in human plasma
+                </td>
+                <td>High uric acid = antioxidant paradox — also causes gout</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <!-- ════════════ S12: VIVA Q&A ════════════ -->
+      <div id="s12">
+        <div class="section-header">
+          <div class="section-num">12</div>
+          <h2>Viva <em>Q&amp;A</em></h2>
+        </div>
+        <div class="viva-section">
+          <div class="viva-title-bar">ETC &amp; ATP Synthesis</div>
+          <details>
+            <summary>
+              <span class="viva-q"
+                >How do inhibitors of ETC differ from uncouplers of oxidative
+                phosphorylation?</span
+              ><span class="viva-year">PYQ 2011, 2015-S</span>
+            </summary>
+            <div class="viva-ans">
+              <p>
+                <strong>ETC Inhibitors</strong> block electron flow at specific
+                complexes → NO electrons flow → NO proton gradient forms → NO
+                ATP + NO O₂ consumed. Complete shutdown.
+              </p>
+              <p>
+                Examples: Rotenone (Complex I), Antimycin A (Complex III),
+                Cyanide (Complex IV).
+              </p>
+              <p>
+                <strong>Uncouplers</strong> allow electron flow to continue (O₂
+                IS consumed) but dissipate the proton gradient as heat instead
+                of making ATP. They are protonophores — carry H⁺ across IMM
+                bypassing F₀F₁.
+              </p>
+              <p>
+                Examples: DNP (2,4-dinitrophenol), Thermogenin/UCP-1
+                (physiological), Salicylate.
+              </p>
+              <p>
+                <em
+                  >Key exam point: Uncoupler → ↑ O₂ consumption + ↑ heat + ↓
+                  ATP. Inhibitor → ↓ O₂ consumption + ↓ heat + ↓ ATP.</em
+                >
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              <span class="viva-q"
+                >Explain the chemiosmotic theory of oxidative
+                phosphorylation.</span
+              ><span class="viva-year">PYQ 2010, 2023</span>
+            </summary>
+            <div class="viva-ans">
+              <p>
+                <strong
+                  >Peter Mitchell's Chemiosmotic Hypothesis (1961):</strong
+                >
+              </p>
+              <ul>
+                <li>
+                  Energy of electron transport is conserved as an
+                  <strong>electrochemical proton gradient</strong> (proton
+                  motive force, PMF) across the IMM
+                </li>
+                <li>
+                  ETC complexes I, III, IV pump H⁺ from matrix → IMS → creates
+                  pH gradient (ΔpH) + electrical potential (ΔΨ)
+                </li>
+                <li>
+                  IMM is impermeable to H⁺ → gradient cannot dissipate except
+                  through F₀F₁-ATPase
+                </li>
+                <li>
+                  H⁺ flows back through F₀ → rotates c-ring → γ-subunit of F₁
+                  rotates → β-subunit conformational changes (Open → Loose →
+                  Tight) → ATP released
+                </li>
+                <li>
+                  ~3 H⁺ per ATP synthesised; ~10 H⁺ pumped per NADH oxidised
+                </li>
+              </ul>
+              <p>
+                <em
+                  >Evidence: (1) Isolated mitoplasts can make ATP if artificial
+                  pH gradient applied. (2) Oligomycin blocks H⁺ channel → blocks
+                  ATP synthesis but also slows ETC (backpressure). (3) Membrane
+                  vesicles with bacteriorhodopsin + ATP synthase make ATP on
+                  light exposure — pure H⁺ gradient → ATP.</em
+                >
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              <span class="viva-q"
+                >What is the role of Cytochrome C in ETC and in apoptosis?</span
+              ><span class="viva-year">PYQ 2013-S, 2024</span>
+            </summary>
+            <div class="viva-ans">
+              <p>
+                <strong>Role in ETC:</strong> Mobile electron carrier —
+                transfers electrons from Complex III (Cyt bc₁) to Complex IV
+                (Cyt c oxidase). Small peripheral protein (12 kDa) loosely
+                associated with outer face of IMM in the IMS. Transfers one
+                electron at a time via Fe²⁺/Fe³⁺ redox cycle.
+              </p>
+              <p>
+                <strong
+                  >Role in Apoptosis (Intrinsic/Mitochondrial pathway):</strong
+                >
+              </p>
+              <ul>
+                <li>
+                  Pro-apoptotic signals (DNA damage, oxidative stress) → Bax/Bak
+                  oligomerise in outer mitochondrial membrane → MOMP
+                  (mitochondrial outer membrane permeabilisation)
+                </li>
+                <li>Cyt c released into cytoplasm</li>
+                <li>
+                  Cytoplasmic Cyt c + Apaf-1 + dATP → Apoptosome (heptameric
+                  wheel)
+                </li>
+                <li>
+                  Apoptosome recruits and activates Procaspase-9 → active
+                  Caspase-9 → activates effector Caspase-3 → cell dismantled
+                </li>
+              </ul>
+              <p>
+                <em
+                  >Thus Cyt c is a dual-function protein: life (ATP production)
+                  and death (apoptosis).</em
+                >
+              </p>
+            </div>
+          </details>
+        </div>
+        <div class="viva-section">
+          <div class="viva-title-bar">
+            Brown Fat, Shuttles &amp; Xenobiotics
+          </div>
+          <details>
+            <summary>
+              <span class="viva-q"
+                >How does brown adipose tissue generate heat? What is
+                thermogenin?</span
+              ><span class="viva-year">PYQ 2011, 2016-S</span>
+            </summary>
+            <div class="viva-ans">
+              <p>
+                Brown adipose tissue (BAT) generates heat by
+                <strong>non-shivering thermogenesis</strong> through controlled
+                uncoupling of oxidative phosphorylation.
+              </p>
+              <p>
+                <strong>Thermogenin (UCP-1 — Uncoupling Protein 1):</strong>
+              </p>
+              <ul>
+                <li>
+                  A proton channel/carrier protein in the IMM of BAT
+                  mitochondria
+                </li>
+                <li>
+                  Normally closed — activated by: (a) Free fatty acids released
+                  during lipolysis, (b) Norepinephrine via β₃-adrenergic
+                  receptor → cAMP → PKA → lipase activation
+                </li>
+                <li>
+                  When activated, allows H⁺ to flow back from IMS to matrix
+                  bypassing F₀F₁-ATPase
+                </li>
+                <li>Result: Proton gradient → heat (not ATP)</li>
+                <li>
+                  Simultaneously, FFA released from TAG serve as fuel for
+                  β-oxidation → sustains ETC and H⁺ pumping
+                </li>
+              </ul>
+              <p>
+                <em
+                  >Clinical importance: Newborns (especially premature) depend
+                  on BAT for thermoregulation — cannot shiver. Around
+                  neck/scapular region.</em
+                >
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              <span class="viva-q"
+                >What is the difference between Phase I and Phase II reactions
+                in xenobiotic metabolism?</span
+              ><span class="viva-year">PYQ 2016-S, 2023</span>
+            </summary>
+            <div class="viva-ans">
+              <p>
+                <strong>Phase I (Functionalisation):</strong> Introduces or
+                exposes a functional group (-OH, -NH₂, -COOH) on the xenobiotic.
+                Reactions: oxidation (CYP450 monooxygenase — most common),
+                reduction, hydrolysis. Makes molecule slightly more polar. May
+                produce reactive/toxic intermediates. Location: smooth ER of
+                liver.
+              </p>
+              <p>
+                <strong>Phase II (Conjugation/Biosynthetic):</strong> Adds large
+                polar group to the Phase I product. Reactions:
+              </p>
+              <ul>
+                <li>
+                  Glucuronidation (UDP-glucuronate — most common in humans)
+                </li>
+                <li>
+                  Sulphation (PAPS — 3'-phosphoadenosine-5'-phosphosulphate)
+                </li>
+                <li>
+                  Glutathione conjugation (GSH — protects against reactive
+                  intermediates)
+                </li>
+                <li>
+                  Acetylation (acetyl-CoA — by N-acetyltransferase, e.g.,
+                  isoniazid)
+                </li>
+                <li>Amino acid conjugation (glycine for bile acids)</li>
+                <li>Methylation (SAM donor)</li>
+              </ul>
+              <p>
+                <em
+                  >Phase II always makes compound MORE water-soluble → excretion
+                  in urine or bile. "Conjugation reactions are generally
+                  detoxification reactions."</em
+                >
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              <span class="viva-q"
+                >Why is the malate-aspartate shuttle more efficient than the
+                glycerophosphate shuttle?</span
+              ><span class="viva-year">PYQ 2014</span>
+            </summary>
+            <div class="viva-ans">
+              <p>
+                Both shuttles transfer cytoplasmic NADH electrons into the
+                mitochondria (since IMM is impermeable to NADH).
+              </p>
+              <p>
+                <strong>Malate-aspartate shuttle:</strong> Cytoplasmic NADH →
+                converted to mitochondrial NADH (equivalent) → enters ETC at
+                Complex I → generates <strong>2.5 ATP per NADH</strong>.
+              </p>
+              <p>
+                <strong>Glycerophosphate shuttle:</strong> Cytoplasmic NADH →
+                converted to FADH₂ (on IMM by mitochondrial G3P dehydrogenase) →
+                enters ETC at CoQ (bypasses Complex I) → generates only
+                <strong>1.5 ATP per NADH</strong>.
+              </p>
+              <p>
+                Difference: Malate-aspartate delivers electrons to NAD⁺ in
+                matrix (enters via Complex I = 2.5 ATP). G3P shuttle delivers to
+                FAD (enters via CoQ = 1.5 ATP). Complex I proton-pumping step is
+                bypassed in G3P shuttle → fewer ATP made.
+              </p>
+              <p>
+                <em
+                  >Malate-aspartate: heart muscle, liver (high metabolic
+                  demand). G3P shuttle: brain, skeletal muscle (faster but less
+                  efficient).</em
+                >
+              </p>
+            </div>
+          </details>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <!-- ════════════ S13: EQ TEMPLATES ════════════ -->
+      <div id="s13">
+        <div class="section-header">
+          <div class="section-num">13</div>
+          <h2>Essay Question <em>Templates</em></h2>
+        </div>
+        <div class="viva-section" style="margin-bottom: 1rem">
+          <div
+            class="viva-title-bar"
+            style="
+              background: rgba(192, 132, 252, 0.1);
+              border-color: rgba(192, 132, 252, 0.28);
+              color: var(--purple);
+            "
+          >
+            📝 EQ — Chemiosmotic Theory Explains Mechanism of Oxidative
+            Phosphorylation [PYQ 2023]
+          </div>
+          <details class="eq-detail">
+            <summary>
+              <span class="viva-q"
+                >The chemiosmotic theory explains the mechanism of oxidative
+                phosphorylation.</span
+              ><span class="viva-year">PYQ 2023</span>
+            </summary>
+            <div class="viva-ans">
+              <ol>
+                <li>
+                  <span>Proposed by:</span> Peter Mitchell (1961) — Nobel Prize
+                  in Chemistry (1978). Unified explanation for how electron
+                  transport is coupled to ATP synthesis.
+                </li>
+                <li>
+                  <span>Core Concept:</span> Energy from electron transport is
+                  not stored as a phosphorylated intermediate (as was previously
+                  thought) but as an
+                  <strong>electrochemical proton gradient</strong> across the
+                  inner mitochondrial membrane.
+                </li>
+                <li>
+                  <span>Proton Pumping:</span> Complexes I, III, and IV use
+                  energy from electron transfer to pump H⁺ from the matrix into
+                  the intermembrane space. This creates: (a) Chemical gradient:
+                  ΔpH (IMS is acidic, matrix is alkaline); (b) Electrical
+                  gradient: ΔΨ (IMS positive, matrix negative). Together these
+                  constitute the
+                  <strong>Proton Motive Force (PMF ≈ 200 mV)</strong>.
+                </li>
+                <li>
+                  <span>ATP Synthesis:</span> H⁺ can only re-enter the matrix
+                  through F₀F₁-ATP synthase. The flow of H⁺ through F₀ rotates
+                  the c-ring → γ-subunit rotation in F₁ → conformational changes
+                  in three β-subunits (Open→Loose→Tight) → ADP + Pi → ATP
+                  released. Approximately 3 H⁺ per ATP synthesised.
+                </li>
+                <li>
+                  <span>Key Requirement:</span> Intact, impermeable IMM is
+                  essential. If membrane disrupted (e.g., by detergents) or
+                  protons bypass F₀ (e.g., via uncouplers like DNP/Thermogenin)
+                  → PMF dissipated as heat → no ATP synthesis.
+                </li>
+                <li>
+                  <span>Experimental Evidence:</span> (a) Mitoplasts make ATP
+                  when artificial pH gradient applied without any substrates;
+                  (b) Reconstituted liposomes with bacteriorhodopsin + ATP
+                  synthase make ATP on illumination; (c) Oligomycin blocks F₀ H⁺
+                  channel → ATP synthesis stops and ETC slows due to
+                  backpressure.
+                </li>
+              </ol>
+            </div>
+          </details>
+        </div>
+        <div class="viva-section" style="margin-bottom: 1rem">
+          <div
+            class="viva-title-bar"
+            style="
+              background: rgba(192, 132, 252, 0.1);
+              border-color: rgba(192, 132, 252, 0.28);
+              color: var(--purple);
+            "
+          >
+            📝 EQ — 2,4-Dinitrophenol Functions as Uncoupler of Respiratory
+            Chain [PYQ 2022]
+          </div>
+          <details class="eq-detail">
+            <summary>
+              <span class="viva-q"
+                >2,4-Dinitrophenol functions as an uncoupler of the respiratory
+                chain.</span
+              ><span class="viva-year">PYQ 2022</span>
+            </summary>
+            <div class="viva-ans">
+              <ol>
+                <li>
+                  <span>Definition of Uncoupler:</span> A compound that allows
+                  electron transport (and O₂ consumption) to continue but
+                  prevents the proton gradient from driving ATP synthesis — the
+                  free energy is released as heat.
+                </li>
+                <li>
+                  <span>Chemical Nature of DNP:</span> 2,4-Dinitrophenol is a
+                  lipophilic weak acid (pKa ~4.0). At physiological pH, it can
+                  exist in protonated form (neutral, lipophilic — crosses IMM)
+                  and deprotonated form (charged, cannot cross).
+                </li>
+                <li>
+                  <span>Mechanism:</span> In the IMS (acidic, high H⁺): DNP⁻
+                  picks up H⁺ → becomes HDNP (neutral, lipophilic) → diffuses
+                  through IMM into matrix → releases H⁺ (becomes DNP⁻ again in
+                  alkaline matrix) → cycles back. Net effect: H⁺ transferred
+                  from IMS to matrix bypassing F₀F₁ → gradient dissipated as
+                  heat.
+                </li>
+                <li>
+                  <span>Consequences:</span> ↑ O₂ consumption (ETC uninhibited),
+                  ↑ heat production (hyperthermia), ↓ ATP synthesis (ADP
+                  accumulates → stimulates ETC further), ↑ substrate oxidation
+                  (TCA, β-oxidation stimulated).
+                </li>
+                <li>
+                  <span>Historical Use and Toxicity:</span> Used as weight-loss
+                  drug in 1930s — weight loss because fats and carbohydrates
+                  oxidised but ATP not made → stored energy wasted as heat.
+                  BANNED due to fatalities from hyperthermia, cataracts,
+                  peripheral neuropathy. Narrow toxic range.
+                </li>
+                <li>
+                  <span>Physiological Analogue:</span> Thermogenin/UCP-1 in
+                  brown adipose tissue performs the same function under
+                  controlled, physiologically beneficial circumstances
+                  (non-shivering thermogenesis in newborns and cold-adapted
+                  individuals).
+                </li>
+              </ol>
+            </div>
+          </details>
+        </div>
+        <div class="viva-section" style="margin-bottom: 1rem">
+          <div
+            class="viva-title-bar"
+            style="
+              background: rgba(192, 132, 252, 0.1);
+              border-color: rgba(192, 132, 252, 0.28);
+              color: var(--purple);
+            "
+          >
+            📝 EQ — Brown Adipose Tissue Promotes Thermogenesis [PYQ 2011,
+            2016-S, 2022]
+          </div>
+          <details class="eq-detail">
+            <summary>
+              <span class="viva-q"
+                >Brown adipose tissue promotes thermogenesis.</span
+              ><span class="viva-year">PYQ 2011, 2016-S, 2022</span>
+            </summary>
+            <div class="viva-ans">
+              <ol>
+                <li>
+                  <span>Structural Basis:</span> BAT is brown due to abundant
+                  mitochondria (iron-rich cytochromes), multilocular lipid
+                  droplets, dense capillarity, and high expression of UCP-1
+                  (thermogenin) in the IMM. White adipose has one large lipid
+                  droplet, few mitochondria.
+                </li>
+                <li>
+                  <span>Mechanism (UCP-1 pathway):</span> Cold exposure →
+                  sympathetic NS → norepinephrine → β₃-adrenergic receptor → Gs
+                  protein → adenylate cyclase → ↑ cAMP → PKA →
+                  phosphorylates/activates hormone-sensitive lipase → TAG
+                  hydrolysis → free fatty acids released.
+                </li>
+                <li>
+                  <span>UCP-1 Activation:</span> Free fatty acids directly
+                  activate UCP-1 (an uncoupling protein that forms an H⁺ channel
+                  in IMM). H⁺ flows from IMS → matrix through UCP-1, bypassing
+                  F₀F₁. Proton gradient dissipated → ATP NOT made → energy
+                  released as HEAT.
+                </li>
+                <li>
+                  <span>Simultaneous Fuel Supply:</span> The same FFA released
+                  by lipolysis enter β-oxidation → acetyl-CoA → TCA → generates
+                  NADH/FADH₂ → feeds ETC → maintains H⁺ pumping → sustains
+                  thermogenesis.
+                </li>
+                <li>
+                  <span>Physiological Importance:</span> Non-shivering
+                  thermogenesis in newborns (cannot shiver — underdeveloped
+                  muscle). BAT located around neck, interscapular region,
+                  kidneys. Premature infants lack sufficient BAT → hypothermia.
+                  Also active in hibernating mammals, cold-adapted adults.
+                </li>
+                <li>
+                  <span>Therapeutic Potential:</span> Activating BAT (via
+                  β₃-agonists, cold exposure) increases energy expenditure →
+                  potential anti-obesity strategy. Active area of research — BAT
+                  persists in adults around clavicle and mediastinum.
+                </li>
+              </ol>
+            </div>
+          </details>
+        </div>
+        <!-- HIGH YIELD QUICKFIRE -->
+        <div class="viva-section" style="margin-top: 1.5rem">
+          <div class="viva-title-bar">
+            🔥 Exam Day High-Yield Quickfire — Module 07
+          </div>
+          <details>
+            <summary>
+              <span class="viva-q">Which complex does NOT pump protons?</span>
+            </summary>
+            <div class="viva-ans">
+              <p>
+                Complex II (Succinate Dehydrogenase) — also enters at CoQ not
+                Complex I
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary><span class="viva-q">Cyanide mechanism</span></summary>
+            <div class="viva-ans">
+              <p>
+                Binds Fe³⁺ of Cytochrome a₃ (Complex IV) → blocks electron
+                transfer to O₂
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary><span class="viva-q">Oligomycin target</span></summary>
+            <div class="viva-ans">
+              <p>
+                F₀ subunit of ATP synthase — blocks H⁺ channel → indirectly
+                slows ETC
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary><span class="viva-q">Rotenone target</span></summary>
+            <div class="viva-ans">
+              <p>Complex I — blocks Fe-S → CoQ electron transfer</p>
+            </div>
+          </details>
+          <details>
+            <summary><span class="viva-q">Antimycin A target</span></summary>
+            <div class="viva-ans">
+              <p>Complex III — blocks Q cycle (Qi site)</p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              <span class="viva-q">Malate shuttle ATP yield</span>
+            </summary>
+            <div class="viva-ans">
+              <p>2.5 ATP per cytoplasmic NADH (delivers NADH to matrix)</p>
+            </div>
+          </details>
+          <details>
+            <summary><span class="viva-q">G3P shuttle ATP yield</span></summary>
+            <div class="viva-ans">
+              <p>
+                1.5 ATP per cytoplasmic NADH (delivers FADH₂, bypasses Complex
+                I)
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary><span class="viva-q">Thermogenin location</span></summary>
+            <div class="viva-ans">
+              <p>Inner mitochondrial membrane of brown adipose tissue</p>
+            </div>
+          </details>
+          <details>
+            <summary><span class="viva-q">DNP mechanism</span></summary>
+            <div class="viva-ans">
+              <p>
+                Lipophilic protonophore — carries H⁺ across IMM → dissipates
+                gradient as heat
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              <span class="viva-q">Most common Phase II reaction</span>
+            </summary>
+            <div class="viva-ans">
+              <p>Glucuronidation (UDP-glucuronate donor)</p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              <span class="viva-q">CYP450 overall reaction</span>
+            </summary>
+            <div class="viva-ans">
+              <p>RH + O₂ + NADPH → R-OH + H₂O + NADP⁺ (monooxygenase)</p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              <span class="viva-q">Superoxide dismutase converts...</span>
+            </summary>
+            <div class="viva-ans">
+              <p>O₂•⁻ → H₂O₂ (then Catalase/GPx → H₂O)</p>
+            </div>
+          </details>
+          <details>
+            <summary><span class="viva-q">Most reactive ROS</span></summary>
+            <div class="viva-ans">
+              <p>
+                Hydroxyl radical (•OH) — generated by Fenton reaction (Fe²⁺ +
+                H₂O₂)
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary><span class="viva-q">Cyt c dual role</span></summary>
+            <div class="viva-ans">
+              <p>
+                ETC: electron carrier (Complex III → IV). Apoptosis: activates
+                apoptosome → caspase cascade
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              <span class="viva-q">P/O ratio for NADH vs FADH₂</span>
+            </summary>
+            <div class="viva-ans">
+              <p>NADH = 2.5 ATP; FADH₂ = 1.5 ATP (modern values)</p>
+            </div>
+          </details>
+        </div>
+        <!-- MNEMONICS -->
+        <div class="card" style="margin-top: 1rem">
+          <div class="card-title">Module 07 Master Mnemonics</div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+              gap: 10px;
+              margin-top: 8px;
+            "
+          >
+            <div class="mnemonic-box" style="margin: 0">
+              <div class="mbox-title">ETC Inhibitors by Complex</div>
+              <div class="mnemonic-highlight">
+                "Rotenone Murders Antimycin's Cyanide Oligomycin" — I, II, III,
+                IV, V
+              </div>
+            </div>
+            <div class="mnemonic-box" style="margin: 0">
+              <div class="mbox-title">H⁺ Pumping Complexes</div>
+              <div class="mnemonic-highlight">
+                "1, 3, 4 pump protons — Complex 2 does ZERO" (I pump 4, III pump
+                4, IV pump 2)
+              </div>
+            </div>
+            <div class="mnemonic-box" style="margin: 0">
+              <div class="mbox-title">Shuttles</div>
+              <div class="mnemonic-highlight">
+                "Malate = More ATP (heart). Glycerophosphate = Less ATP (brain
+                accepts less)"
+              </div>
+            </div>
+            <div class="mnemonic-box" style="margin: 0">
+              <div class="mbox-title">Phase II Reactions</div>
+              <div class="mnemonic-highlight">
+                "GGSMA" — Glucuronidation, Glutathione, Sulphation, Methylation,
+                Acetylation/Amino acid conjugation
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /content -->
+    <div class="footer">
+      <p>MODULE 07 · BIOLOGICAL OXIDATION</p>
+      <p style="margin-top: 4px">
+        KIMS Krishnanagar Biochem Notes · WBUHS · NMO Bengal PYQs 2010–2025
+      </p>
+      <p style="margin-top: 4px; color: var(--accent); font-size: 11px">
+        Compiled for personal academic use · PYQ-referenced from Somsubhra Ghosh
+        NMO Bengal PDF · Mobile-optimised
+      </p>
+    </div>
+    <button
+      class="top-btn"
+      onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+    >
+      ↑
+    </button>
+    <script>
+      document.querySelectorAll("details").forEach((d) => {
+        d.addEventListener("toggle", () => {
+          if (d.open) {
+            const c = d.querySelector(".viva-ans");
+            if (c) c.style.animation = "fadeIn .2s ease";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,4662 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Module 04 — Protein Chemistry & Haemoglobin | KIMS Biochem Notes
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=JetBrains+Mono:wght@400;600&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+    
+      
+    
+    
+    
+    
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300..900;1,300..900&family=IBM+Plex+Mono:ital,wght@0,100..700;1,100..700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Sora:wght@100..800&display=swap');
+
+/* ==========================================
+   DYNAMIC MULTI-THEME VARIABLE ENGINE
+   ========================================== */
+
+/* Theme 1: Premium Gold (Default / Classic Modules 1-3 & Module 5-X) */
+:root, body.theme-gold {
+  --bg: #0d0f14;
+  --surface: #13161e;
+  --surface2: #1a1e2a;
+  --surface3: #222736;
+  --border: #252a38;
+  --border2: #343b4f;
+  --accent: #e8c84a;
+  --accent2: #4ae8b0;
+  --accent3: #e84a7a;
+  --accent4: #4a9ee8;
+  --text: #e8eaf0;
+  --muted: #8a90a8;
+  --white: #ffffff;
+  --rls: #e84a7a;
+  --gold: #e8c84a;
+  --rose: #e84a7a;
+  --purple: #bf81ff;
+  --blue: #4a9ee8;
+  --green: #4ae8b0;
+  --orange: #ffa552;
+}
+
+/* Theme 2: Premium Crimson (Module 4 & 4-X) */
+body.theme-crimson {
+  --bg: #0a0a0f;
+  --surface: #111118;
+  --surface2: #18181f;
+  --surface3: #1e1e28;
+  --border: #252535;
+  --border2: #34344a;
+  --accent: #e8334a;
+  --accent2: #ff5268;
+  --accent3: #ff8595;
+  --accent4: #4a9ee8;
+  --text: #e8eaf0;
+  --muted: #8a90a8;
+  --white: #ffffff;
+  --rls: #ff8595;
+  --gold: #f4c464;
+  --rose: #e8334a;
+  --purple: #c084fc;
+  --blue: #60a5fa;
+  --green: #4ade80;
+  --orange: #fb923c;
+}
+
+/* Theme 3: Premium Emerald (Module 5 Modern) */
+body.theme-emerald {
+  --bg: #08100f;
+  --surface: #0f1a18;
+  --surface2: #152220;
+  --surface3: #1c2d2a;
+  --border: #1e3530;
+  --border2: #2a4540;
+  --accent: #00c897;
+  --accent2: #2ddcaa;
+  --accent3: #80ffe8;
+  --accent4: #60a5fa;
+  --text: #e2ede9;
+  --muted: #8aada6;
+  --white: #ffffff;
+  --rls: #ff6b8a;
+  --gold: #f4c464;
+  --rose: #ff6b8a;
+  --purple: #c084fc;
+  --blue: #60a5fa;
+  --green: #4ade80;
+  --orange: #fb923c;
+}
+
+/* Theme 4: Premium Indigo (Modules 6, 8, 9, 10) */
+body.theme-indigo {
+  --bg: #080c14;
+  --surface: #0d1220;
+  --surface2: #121828;
+  --surface3: #182030;
+  --border: #1e293b;
+  --border2: #334155;
+  --accent: #6366f1;
+  --accent2: #818cf8;
+  --accent3: #c084fc;
+  --accent4: #38bdf8;
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --white: #ffffff;
+  --rls: #f43f5e;
+  --gold: #fbbf24;
+  --rose: #f43f5e;
+  --purple: #c084fc;
+  --blue: #38bdf8;
+  --green: #34d399;
+  --orange: #fb923c;
+}
+
+/* Theme 5: Premium Amber (Modules 7 & 7-X) */
+body.theme-amber {
+  --bg: #080a0e;
+  --surface: #0e1118;
+  --surface2: #141820;
+  --surface3: #1a2030;
+  --border: #1e2530;
+  --border2: #2a3545;
+  --accent: #f59e0b;
+  --accent2: #fbbf24;
+  --accent3: #fb923c;
+  --accent4: #34d399;
+  --text: #f3f4f6;
+  --muted: #9ca3af;
+  --white: #ffffff;
+  --rls: #ef4444;
+  --gold: #fbbf24;
+  --rose: #ef4444;
+  --purple: #a855f7;
+  --blue: #3b82f6;
+  --green: #10b981;
+  --orange: #f97316;
+}
+
+/* ==========================================
+   GLOBAL STRUCTURE & FONTS
+   ========================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Typography Isolation */
+body {
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  overflow-x: hidden;
+  font-size: 14px;
+}
+
+body.theme-gold {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 14px;
+}
+
+body.theme-crimson,
+body.theme-emerald,
+body.theme-indigo,
+body.theme-amber {
+  font-family: "Sora", sans-serif;
+  font-size: 15px;
+}
+
+strong {
+  color: var(--white);
+}
+
+p {
+  margin-bottom: 12px;
+  color: var(--text);
+  line-height: 1.8;
+}
+
+/* Custom Webkit Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
+}
+
+
+/* ==========================================
+   CLASSIC LAYOUT SELECTORS (Modules 1-3)
+   ========================================== */
+
+.cover {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 60px;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg);
+  page-break-after: always;
+}
+
+.cover::before {
+  content: "";
+  position: absolute;
+  top: -200px;
+  right: -200px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(232, 200, 74, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cover::after {
+  content: "";
+  position: absolute;
+  bottom: -100px;
+  left: -100px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(74, 232, 176, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cover-tag {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  border: 1px solid var(--accent);
+  padding: 4px 12px;
+  margin-bottom: 40px;
+  display: inline-block;
+}
+
+.cover h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(42px, 8vw, 72px);
+  font-weight: 900;
+  line-height: 1.05;
+  color: var(--white);
+  margin-bottom: 10px;
+}
+
+.cover h1 span {
+  color: var(--accent);
+}
+
+.cover-sub {
+  font-size: 18px;
+  color: var(--muted);
+  margin-bottom: 50px;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.cover-meta {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.cover-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cover-meta-label {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.cover-meta-value {
+  font-size: 13px;
+  color: var(--accent2);
+  font-weight: 500;
+}
+
+.cover-divider {
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  margin: 30px 0;
+}
+
+.cover-pyq-badge {
+  position: absolute;
+  top: 60px;
+  right: 60px;
+  background: var(--accent);
+  color: var(--bg);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 8px 16px;
+  letter-spacing: 1px;
+}
+
+.page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 50px 60px;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 30px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.section-number {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 2px;
+}
+
+.section-title {
+  font-family: "Playfair Display", serif;
+  font-size: 28px;
+  color: var(--white);
+  font-weight: 700;
+}
+
+.section-title span {
+  color: var(--accent);
+}
+
+.pyq-box {
+  background: rgba(232, 200, 74, 0.08);
+  border-left: 3px solid var(--accent);
+  padding: 16px 20px;
+  margin-bottom: 30px;
+  border-radius: 0 6px 6px 0;
+}
+
+.pyq-box-label {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.pyq-box ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pyq-box ul li {
+  background: rgba(232, 200, 74, 0.15);
+  color: var(--accent);
+  font-size: 11px;
+  font-family: "IBM Plex Mono", monospace;
+  padding: 3px 10px;
+  border-radius: 2px;
+}
+
+.big-picture {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 28px;
+}
+
+.big-picture-label {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  color: var(--accent2);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.flowchart-container {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 30px;
+  margin: 24px 0;
+}
+
+.flowchart-title {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+/* Classic Comparison Tables */
+.comp-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 13px;
+}
+
+.comp-table th {
+  background: var(--surface2);
+  padding: 12px 16px;
+  text-align: left;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--border);
+}
+
+.comp-table th:nth-child(2) { color: var(--accent2); }
+.comp-table th:nth-child(3) { color: var(--accent3); }
+.comp-table th:nth-child(4) { color: var(--accent4); }
+
+.comp-table td {
+  padding: 11px 16px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+  line-height: 1.6;
+}
+
+.comp-table tr:hover td {
+  background: var(--surface);
+}
+
+.comp-table td:first-child {
+  font-weight: 600;
+  color: var(--muted);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.key-fact {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  background: var(--surface);
+  border-radius: 6px;
+  padding: 14px 18px;
+  margin: 10px 0;
+}
+
+.key-fact-icon {
+  font-size: 16px;
+  margin-top: 1px;
+  flex-shrink: 0;
+}
+
+.key-fact-text {
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.key-fact-text strong {
+  color: var(--accent);
+}
+
+.mnemonic {
+  background: linear-gradient(135deg, rgba(74, 232, 176, 0.08), rgba(232, 200, 74, 0.05));
+  border: 1px solid rgba(74, 232, 176, 0.3);
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin: 20px 0;
+}
+
+.mnemonic-label {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  color: var(--accent2);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.mnemonic-text {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--white);
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.mnemonic-expand {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.rls-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(232, 200, 74, 0.15);
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  padding: 3px 10px;
+  border-radius: 3px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+/* Classic Viva section */
+.viva-section {
+  background: var(--surface);
+  border-radius: 8px;
+  padding: 28px;
+  margin: 30px 0;
+  border: 1px solid var(--border);
+}
+
+.viva-label {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.viva-label::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+div.viva-q {
+  margin-bottom: 18px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--border);
+}
+
+div.viva-q:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.viva-q-text {
+  font-weight: 600;
+  color: var(--accent);
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.viva-q-text span {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  background: rgba(232, 200, 74, 0.15);
+  padding: 2px 8px;
+  margin-right: 8px;
+  border-radius: 2px;
+}
+
+.viva-a-text {
+  font-size: 13px;
+  color: var(--text);
+  line-height: 1.7;
+  padding-left: 16px;
+  border-left: 2px solid var(--border);
+}
+
+.section-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 40px 0;
+}
+
+h2.topic-head {
+  font-family: "Playfair Display", serif;
+  font-size: 22px;
+  color: var(--white);
+  margin: 28px 0 14px;
+}
+
+h3.sub-head {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent2);
+  margin: 20px 0 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: "IBM Plex Mono", monospace;
+}
+
+.graph-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px;
+  margin: 16px 0;
+}
+
+.graph-label {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  color: var(--accent4);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
+svg text {
+  font-family: "IBM Plex Mono", monospace;
+}
+
+.examiner-fav {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(232, 74, 122, 0.15);
+  border: 1px solid var(--accent3);
+  color: var(--accent3);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  padding: 2px 9px;
+  border-radius: 3px;
+  letter-spacing: 1px;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+
+/* ==========================================
+   MODERN LAYOUT SELECTORS (Modules 4-10)
+   ========================================== */
+
+/* Modern Hero Block */
+.hero {
+  background: linear-gradient(135deg, #050e0c 0%, #0d1f1a 50%, var(--bg) 100%);
+  border-bottom: 1px solid var(--border2);
+  padding: 3rem 1.5rem 2.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-crimson .hero {
+  background: linear-gradient(135deg, #100609 0%, #200d12 50%, var(--bg) 100%);
+}
+.theme-indigo .hero {
+  background: linear-gradient(135deg, #060910 0%, #0d1222 50%, var(--bg) 100%);
+}
+.theme-amber .hero {
+  background: linear-gradient(135deg, #100a06 0%, #20140d 50%, var(--bg) 100%);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 360px;
+  height: 360px;
+  background: radial-gradient(circle, rgba(0, 200, 151, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.theme-crimson .hero::before { background: radial-gradient(circle, rgba(232, 51, 74, 0.12) 0%, transparent 70%); }
+.theme-indigo .hero::before { background: radial-gradient(circle, rgba(99, 102, 241, 0.12) 0%, transparent 70%); }
+.theme-amber .hero::before { background: radial-gradient(circle, rgba(245, 158, 11, 0.12) 0%, transparent 70%); }
+
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: -40px;
+  left: 15%;
+  width: 240px;
+  height: 240px;
+  background: radial-gradient(circle, rgba(244, 196, 100, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.module-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0, 200, 151, 0.12);
+  border: 1px solid rgba(0, 200, 151, 0.35);
+  color: var(--accent2);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  padding: 4px 12px;
+  border-radius: 3px;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+.theme-crimson .module-tag {
+  background: rgba(232, 51, 74, 0.12);
+  border-color: rgba(232, 51, 74, 0.35);
+}
+.theme-indigo .module-tag {
+  background: rgba(99, 102, 241, 0.12);
+  border-color: rgba(99, 102, 241, 0.35);
+}
+.theme-amber .module-tag {
+  background: rgba(245, 158, 11, 0.12);
+  border-color: rgba(245, 158, 11, 0.35);
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.7); }
+}
+
+.hero h1 {
+  font-family: "Crimson Pro", serif;
+  font-size: clamp(2rem, 6vw, 3.2rem);
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.15;
+  margin-bottom: 0.5rem;
+}
+
+.hero h1 span {
+  color: var(--accent);
+}
+
+.hero-sub {
+  color: var(--text2);
+  font-size: 13px;
+  font-family: "JetBrains Mono", monospace;
+  letter-spacing: 0.5px;
+  margin-bottom: 1.5rem;
+}
+
+.hero-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pill {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-family: "JetBrains Mono", monospace;
+}
+
+/* Table of Contents */
+.toc {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  margin: 1.5rem;
+  padding: 1.25rem;
+  border-radius: 6px;
+}
+
+.toc-title {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 6px;
+}
+
+.toc a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 13px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.toc a:hover {
+  color: var(--accent2);
+  background: rgba(0, 200, 151, 0.08);
+}
+.theme-crimson .toc a:hover { background: rgba(232, 51, 74, 0.08); }
+.theme-indigo .toc a:hover { background: rgba(99, 102, 241, 0.08); }
+.theme-amber .toc a:hover { background: rgba(245, 158, 11, 0.08); }
+
+.toc-num {
+  color: var(--accent);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+}
+
+.content {
+  padding: 0 1.5rem 3rem;
+}
+
+/* Modern Section Headers */
+.content .section-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 2.5rem 0 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.content .section-num {
+  background: var(--accent);
+  color: var(--bg);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  font-weight: 700;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.content .section-header h2 {
+  font-family: "Crimson Pro", serif;
+  font-size: clamp(1.3rem, 4vw, 1.8rem);
+  font-weight: 600;
+  color: var(--text);
+}
+
+.content .section-header h2 em {
+  color: var(--accent2);
+  font-style: normal;
+}
+
+/* Modern Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  font-family: "JetBrains Mono", monospace;
+  padding: 2px 7px;
+  border-radius: 3px;
+  vertical-align: middle;
+  margin-left: 4px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.badge-rls {
+  background: rgba(255, 107, 138, 0.18);
+  color: var(--rose);
+  border: 1px solid rgba(255, 107, 138, 0.35);
+}
+.badge-pyq {
+  background: rgba(96, 165, 250, 0.15);
+  color: var(--blue);
+  border: 1px solid rgba(96, 165, 250, 0.3);
+}
+.badge-fav {
+  background: rgba(244, 196, 100, 0.15);
+  color: var(--gold);
+  border: 1px solid rgba(244, 196, 100, 0.3);
+}
+.badge-new {
+  background: rgba(74, 222, 128, 0.15);
+  color: var(--green);
+  border: 1px solid rgba(74, 222, 128, 0.3);
+}
+
+/* Modern Cards */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.card-title {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card-title::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* Flowcharts - Merged and Dynamic */
+.flowchart {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin: 1rem 0;
+  overflow-x: auto;
+}
+
+.flow-title {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent2);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.flow-title::before {
+  content: "▶";
+  font-size: 8px;
+}
+
+.flow-h {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+}
+
+.flow-box {
+  flex: 1 1 auto;
+  background: var(--surface3);
+  border: 1.5px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 13px;
+  text-align: center;
+  min-width: 110px;
+  line-height: 1.4;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+}
+
+.flow-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border-color: var(--accent);
+}
+
+.flow-box.accent, .flow-box.yellow {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(0, 200, 151, 0.08);
+}
+.theme-crimson .flow-box.accent { background: rgba(232, 51, 74, 0.08); }
+.theme-indigo .flow-box.accent { background: rgba(99, 102, 241, 0.08); }
+.theme-amber .flow-box.accent { background: rgba(245, 158, 11, 0.08); }
+
+.flow-box.gold {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: rgba(244, 196, 100, 0.08);
+}
+.flow-box.rose, .flow-box.red {
+  border-color: var(--rose);
+  color: var(--rose);
+  background: rgba(255, 107, 138, 0.08);
+}
+.flow-box.purple {
+  border-color: var(--purple);
+  color: var(--purple);
+  background: rgba(192, 132, 252, 0.08);
+}
+.flow-box.blue {
+  border-color: var(--blue);
+  color: var(--blue);
+  background: rgba(96, 165, 250, 0.08);
+}
+.flow-box.green {
+  border-color: var(--green);
+  color: var(--green);
+  background: rgba(74, 222, 128, 0.08);
+}
+.flow-box.white {
+  border-color: var(--text);
+  color: var(--text);
+}
+
+.flow-box .box-label {
+  font-size: 10px;
+  color: var(--muted);
+  font-family: "JetBrains Mono", monospace;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.flow-box .box-sub {
+  font-size: 11px;
+  color: var(--muted);
+  display: block;
+  margin-top: 2px;
+}
+
+.arrow {
+  color: var(--accent);
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.arrow-down {
+  text-align: center;
+  color: var(--accent);
+  font-size: 18px;
+  margin: 4px 0;
+}
+
+.flow-v {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.flow-v .flow-box {
+  width: 100%;
+  max-width: 500px;
+}
+
+.flow-v .arrow-down {
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+}
+
+/* Modern Tables (Scoped to .table-wrap) */
+.table-wrap {
+  overflow-x: auto;
+  margin: 1rem 0;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.table-wrap table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-wrap th {
+  background: var(--surface3);
+  color: var(--accent2);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 2px solid var(--accent);
+}
+
+.table-wrap td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+  vertical-align: top;
+}
+
+.table-wrap tr:hover td {
+  background: rgba(0, 200, 151, 0.04);
+}
+.theme-crimson .table-wrap tr:hover td { background: rgba(232, 51, 74, 0.04); }
+.theme-indigo .table-wrap tr:hover td { background: rgba(99, 102, 241, 0.04); }
+.theme-amber .table-wrap tr:hover td { background: rgba(245, 158, 11, 0.04); }
+
+.table-wrap td:first-child {
+  color: var(--accent2);
+  font-weight: 600;
+}
+
+/* Modern Clinical & Mnemonic boxes inside .content */
+.content .clinical-box {
+  background: linear-gradient(135deg, rgba(96, 165, 250, 0.05), rgba(96, 165, 250, 0.02));
+  border: 1px solid rgba(96, 165, 250, 0.25);
+  border-left: 4px solid var(--blue);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+}
+
+.content .clinical-box .cbox-title {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--blue);
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.content .clinical-box .cbox-title::before {
+  content: "🩺";
+}
+
+.mnemonic-box {
+  background: linear-gradient(135deg, rgba(244, 196, 100, 0.06), rgba(244, 196, 100, 0.02));
+  border: 1px solid rgba(244, 196, 100, 0.28);
+  border-left: 4px solid var(--gold);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+}
+
+.mnemonic-box .mbox-title {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.mnemonic-box .mbox-title::before {
+  content: "🧠";
+}
+
+.mnemonic-highlight {
+  background: rgba(244, 196, 100, 0.1);
+  border: 1px dashed rgba(244, 196, 100, 0.3);
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-family: "Crimson Pro", serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--gold);
+  margin: 6px 0;
+  letter-spacing: 1px;
+}
+
+.eq-box {
+  background: linear-gradient(135deg, rgba(192, 132, 252, 0.06), rgba(192, 132, 252, 0.02));
+  border: 1px solid rgba(192, 132, 252, 0.28);
+  border-left: 4px solid var(--purple);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+}
+
+.eq-box .eq-title {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--purple);
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.eq-box .eq-title::before {
+  content: "📝";
+}
+
+.eq-statement {
+  background: var(--surface3);
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-family: "Crimson Pro", serif;
+  font-size: 15px;
+  font-style: italic;
+  color: var(--text);
+  margin-bottom: 10px;
+  border-left: 3px solid var(--purple);
+}
+
+.eq-answer ol {
+  margin-left: 18px;
+}
+
+.eq-answer li {
+  margin-bottom: 6px;
+  font-size: 13px;
+}
+
+.eq-answer li span {
+  color: var(--purple);
+  font-weight: 600;
+}
+
+.keypoint {
+  background: rgba(0, 200, 151, 0.07);
+  border: 1px solid rgba(0, 200, 151, 0.22);
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin: 8px 0;
+  font-size: 13px;
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+.theme-crimson .keypoint { background: rgba(232, 51, 74, 0.07); border-color: rgba(232, 51, 74, 0.22); }
+.theme-indigo .keypoint { background: rgba(99, 102, 241, 0.07); border-color: rgba(99, 102, 241, 0.22); }
+.theme-amber .keypoint { background: rgba(245, 158, 11, 0.07); border-color: rgba(245, 158, 11, 0.22); }
+
+.keypoint::before {
+  content: "⚡";
+  flex-shrink: 0;
+}
+
+.warn-box {
+  background: rgba(251, 146, 60, 0.07);
+  border: 1px solid rgba(251, 146, 60, 0.28);
+  border-left: 4px solid var(--orange);
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin: 8px 0;
+  font-size: 13px;
+  display: flex;
+  gap: 8px;
+}
+
+.warn-box::before {
+  content: "⚠️";
+  flex-shrink: 0;
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 2rem 0;
+}
+
+ul.checklist {
+  list-style: none;
+  margin: 0.5rem 0;
+}
+
+ul.checklist li::before {
+  content: "✦ ";
+  color: var(--accent);
+}
+
+ul.checklist li {
+  margin-bottom: 4px;
+  font-size: 13px;
+}
+
+.hl { color: var(--accent2); font-weight: 600; }
+.hl-gold { color: var(--gold); font-weight: 600; }
+.hl-rose { color: var(--rose); font-weight: 600; }
+.hl-blue { color: var(--blue); font-weight: 600; }
+.hl-purple { color: var(--purple); font-weight: 600; }
+.hl-green { color: var(--green); font-weight: 600; }
+
+/* Modern Atom Cards */
+.atom-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+  margin: 1rem 0;
+}
+
+.atom-card {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem;
+  transition: border-color 0.2s;
+}
+
+.atom-card:hover {
+  border-color: var(--accent);
+}
+
+.atom-head {
+  font-family: "Crimson Pro", serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.atom-sub {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+/* Modern Viva Section details */
+.viva-title-bar {
+  background: rgba(0, 200, 151, 0.1);
+  border: 1px solid rgba(0, 200, 151, 0.28);
+  border-radius: 6px 6px 0 0;
+  padding: 10px 14px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--accent2);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.theme-crimson .viva-title-bar { background: rgba(232, 51, 74, 0.1); border-color: rgba(232, 51, 74, 0.28); }
+.theme-indigo .viva-title-bar { background: rgba(99, 102, 241, 0.1); border-color: rgba(99, 102, 241, 0.28); }
+.theme-amber .viva-title-bar { background: rgba(245, 158, 11, 0.1); border-color: rgba(245, 158, 11, 0.28); }
+
+.viva-title-bar::before {
+  content: "💬";
+  font-size: 14px;
+}
+
+.content details {
+  border: 1px solid var(--border);
+  border-top: none;
+  overflow: hidden;
+}
+
+.content details:last-child {
+  border-radius: 0 0 6px 6px;
+}
+
+.content summary {
+  padding: 10px 14px;
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--text);
+  background: var(--surface);
+  list-style: none;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  user-select: none;
+  transition: background 0.2s;
+}
+
+.content summary:hover {
+  background: var(--surface2);
+}
+
+.content summary::before {
+  content: "▶";
+  color: var(--accent);
+  font-size: 10px;
+  margin-top: 3px;
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+
+.content details[open] > summary::before {
+  transform: rotate(90deg);
+}
+
+.viva-q {
+  font-weight: 600;
+  flex: 1;
+}
+
+.viva-year {
+  color: var(--blue);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  flex-shrink: 0;
+}
+
+.viva-ans {
+  padding: 12px 16px 14px;
+  background: var(--surface2);
+  font-size: 13px;
+  line-height: 1.75;
+  border-top: 1px solid var(--border);
+}
+
+.viva-ans p {
+  margin-bottom: 6px;
+}
+
+.viva-ans ul {
+  margin: 6px 0 6px 16px;
+}
+
+.viva-ans li {
+  margin-bottom: 4px;
+}
+
+.viva-ans strong {
+  color: var(--accent2);
+}
+
+.viva-ans em {
+  color: var(--gold);
+  font-style: normal;
+  font-weight: 600;
+}
+
+.drug-tag {
+  display: inline-block;
+  background: rgba(255, 107, 138, 0.12);
+  border: 1px solid rgba(255, 107, 138, 0.3);
+  color: var(--rose);
+  font-size: 10px;
+  padding: 1px 6px;
+  border-radius: 3px;
+  font-family: "JetBrains Mono", monospace;
+  margin-left: 4px;
+}
+
+
+/* ==========================================
+   SHARED INTERACTIVE ELEMENTS & UTILS
+   ========================================== */
+
+.progress-bar {
+  height: 3px;
+  background: linear-gradient(to right, var(--accent), var(--accent2), var(--accent4));
+  border-radius: 2px;
+  margin-bottom: 2rem;
+  animation: load 1.5s ease forwards;
+}
+
+@keyframes load {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+.formula {
+  font-family: "JetBrains Mono", monospace;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 6px 12px;
+  margin: 6px 0;
+  color: var(--accent);
+  font-size: 13px;
+  display: block;
+}
+
+.top-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(232, 200, 74, 0.35);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  transition: all 0.2s ease-in-out;
+}
+
+.top-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(232, 200, 74, 0.5);
+}
+
+.theme-emerald .top-btn { box-shadow: 0 4px 15px rgba(0, 200, 151, 0.35); }
+.theme-emerald .top-btn:hover { box-shadow: 0 6px 20px rgba(0, 200, 151, 0.5); }
+
+/* Footer */
+.footer {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  text-align: center;
+  padding: 2rem 1.5rem;
+  color: var(--muted);
+  font-size: 12px;
+  font-family: "JetBrains Mono", monospace;
+  margin-top: 60px;
+}
+
+.footer p {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 1px;
+}
+
+.footer .kims-tag {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+
+/* ==========================================
+   📱 COMPREHENSIVE RESPONSIVE ENGINE
+   ========================================== */
+
+@media (max-width: 768px) {
+  /* Classic Cover page mobile enhancements */
+  .cover {
+    padding: 40px 20px 48px;
+    min-height: 100vh;
+    justify-content: flex-start;
+  }
+  
+  .cover-pyq-badge {
+    position: static !important;
+    display: inline-block !important;
+    align-self: flex-start !important;
+    margin-bottom: 24px !important;
+    padding: 6px 12px !important;
+    font-size: 10px !important;
+  }
+
+  .cover-tag {
+    margin-bottom: 24px !important;
+  }
+
+  .cover h1 {
+    font-size: clamp(32px, 7vw, 48px) !important;
+    margin-bottom: 12px !important;
+  }
+
+  .cover-sub {
+    font-size: 15px !important;
+    margin-bottom: 36px !important;
+    line-height: 1.5 !important;
+  }
+
+  .cover-divider {
+    margin: 20px 0 !important;
+  }
+
+  .cover-meta {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+    width: 100% !important;
+  }
+
+  .cover-meta-item {
+    gap: 2px !important;
+  }
+
+  /* Modern Hero mobile adjustments */
+  .hero {
+    padding: 2rem 1rem;
+  }
+
+  /* Page Wrapper and Main Content Spacing */
+  .page {
+    padding: 24px 16px !important;
+    max-width: 100% !important;
+  }
+
+  .content {
+    padding: 0 1rem 2rem;
+  }
+  
+  .flowchart-container,
+  .flowchart,
+  .clinical-box,
+  .mnemonic-box,
+  .eq-box,
+  .big-picture,
+  .viva-section,
+  .mnemonic,
+  .graph-box,
+  .warn-box {
+    padding: 20px 16px !important;
+    margin: 20px 0 !important;
+  }
+
+  /* Typography Adjustments */
+  h2.topic-head,
+  .content .section-header h2 {
+    font-size: 20px !important;
+    margin: 24px 0 12px !important;
+  }
+
+  h3.sub-head {
+    font-size: 12px !important;
+    margin: 16px 0 8px !important;
+  }
+
+  /* Table of Contents Mobile layout */
+  .toc {
+    margin: 1rem 0;
+    width: auto;
+    display: block;
+  }
+
+  /* Flowcharts mobile layout */
+  .flow-row, .flow-h {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    gap: 6px !important;
+  }
+
+  .flow-box {
+    width: 100% !important;
+    min-width: unset !important;
+    max-width: 100% !important;
+    padding: 12px 16px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    border-right: 1.5px solid var(--border) !important;
+    box-sizing: border-box !important;
+  }
+
+  .flow-arrow, .arrow {
+    display: inline-block !important;
+    transform: rotate(90deg) !important;
+    margin: 8px 0 !important;
+    text-align: center !important;
+  }
+
+  .flow-arrow.down, .arrow-down {
+    transform: none !important;
+    margin: 8px 0 !important;
+    max-width: 100% !important;
+  }
+
+  /* Classic Comparison Tables & Modern Tables responsive scroll */
+  .comp-table, .table-wrap {
+    display: block !important;
+    width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 6px !important;
+    margin: 16px 0 !important;
+  }
+
+  .comp-table th, 
+  .comp-table td,
+  .table-wrap th,
+  .table-wrap td {
+    padding: 10px 12px !important;
+    font-size: 12px !important;
+  }
+
+  .comp-table::-webkit-scrollbar,
+  .table-wrap::-webkit-scrollbar {
+    height: 4px !important;
+  }
+  .comp-table::-webkit-scrollbar-track,
+  .table-wrap::-webkit-scrollbar-track {
+    background: var(--bg) !important;
+  }
+  .comp-table::-webkit-scrollbar-thumb,
+  .table-wrap::-webkit-scrollbar-thumb {
+    background: var(--border) !important;
+    border-radius: 2px !important;
+  }
+
+  /* Layout helpers */
+  .two-col, .atom-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .clinical-box ul li {
+    display: block !important;
+    position: relative !important;
+    padding-left: 16px !important;
+    font-size: 12px !important;
+  }
+  
+  .clinical-box ul li::before {
+    position: absolute !important;
+    left: 0 !important;
+    top: 2px !important;
+  }
+
+  /* Accordions / Viva Spacing */
+  summary.viva-q-text,
+  .content summary {
+    padding: 12px 0 !important;
+    font-size: 13px !important;
+  }
+
+  .viva-a-text,
+  .viva-ans {
+    padding-left: 12px !important;
+    font-size: 12px !important;
+    margin-top: 6px !important;
+  }
+}
+
+
+/* ==========================================
+   🖨️ PREMIUM PRINT-TO-PDF ENGINE (Ctrl+P)
+   ========================================== */
+
+@media print {
+  :root, body.theme-gold, body.theme-crimson, body.theme-emerald, body.theme-indigo, body.theme-amber {
+    --bg: #ffffff;
+    --surface: #f8f9fa;
+    --surface2: #e9ecef;
+    --surface3: #dee2e6;
+    --border: #dee2e6;
+    --border2: #ced4da;
+    --accent: #000000;
+    --accent2: #000000;
+    --accent3: #000000;
+    --accent4: #000000;
+    --text: #111111;
+    --text2: #222222;
+    --text3: #333333;
+    --muted: #495057;
+    --white: #000000;
+    --rls: #000000;
+    --gold: #000000;
+    --rose: #000000;
+    --purple: #000000;
+    --blue: #000000;
+    --green: #000000;
+    --orange: #000000;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+    color: #000000 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  @page {
+    size: A4 portrait;
+    margin: 12mm 15mm;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #111111 !important;
+    font-size: 11pt !important;
+    line-height: 1.4 !important;
+  }
+
+  p {
+    font-size: 11pt !important;
+    line-height: 1.4 !important;
+    margin-bottom: 8px !important;
+  }
+
+  /* Cover Page exact single A4 layout */
+  .cover {
+    min-height: unset !important;
+    height: 260mm !important;
+    max-height: 100vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    padding: 40px !important;
+    box-sizing: border-box !important;
+    border: 2px solid #000000 !important;
+    background: #ffffff !important;
+    page-break-after: always !important;
+    break-after: page !important;
+    position: relative !important;
+  }
+
+  .cover::before,
+  .cover::after {
+    display: none !important;
+  }
+
+  .cover-tag {
+    border-color: #000000 !important;
+    margin-bottom: 25px !important;
+    padding: 4px 10px !important;
+    font-size: 10px !important;
+  }
+
+  .cover h1 {
+    font-size: 44px !important;
+    line-height: 1.1 !important;
+    color: #000000 !important;
+    margin-bottom: 10px !important;
+  }
+
+  .cover h1 span {
+    color: #000000 !important;
+  }
+
+  .cover-sub {
+    font-size: 15px !important;
+    color: #495057 !important;
+    margin-bottom: 30px !important;
+  }
+
+  .cover-divider {
+    width: 60px !important;
+    height: 2px !important;
+    background: #000000 !important;
+    margin: 20px 0 !important;
+  }
+
+  .cover-meta {
+    gap: 30px !important;
+  }
+
+  .cover-meta-value {
+    font-size: 12px !important;
+  }
+
+  .cover-pyq-badge {
+    position: absolute !important;
+    top: 40px !important;
+    right: 40px !important;
+    border: 1px solid #000000 !important;
+    background: #ffffff !important;
+    padding: 6px 12px !important;
+    font-size: 10px !important;
+  }
+
+  /* Modern Hero formatting for print */
+  .hero {
+    background: none !important;
+    border-bottom: 2px solid #000000 !important;
+    padding: 1rem 0 !important;
+  }
+  
+  .hero::before, .hero::after {
+    display: none !important;
+  }
+
+  .module-tag {
+    background: #ffffff !important;
+    border: 1px solid #000000 !important;
+    color: #000000 !important;
+  }
+  .module-tag .dot {
+    display: none !important;
+  }
+
+  .pill {
+    background: #ffffff !important;
+    border: 1px solid #000000 !important;
+  }
+
+  /* Page Wrapper Spacing */
+  .page {
+    padding: 10px 0 !important;
+    max-width: 100% !important;
+  }
+
+  .content {
+    padding: 0 !important;
+  }
+
+  .section-divider {
+    margin: 20px 0 !important;
+    border-color: #dee2e6 !important;
+  }
+
+  /* Heading orphans preventions */
+  .section-header,
+  .content .section-header,
+  h2.topic-head,
+  h3.sub-head {
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+    margin-top: 15px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .section-header, .content .section-header {
+    padding-bottom: 8px !important;
+    margin-bottom: 15px !important;
+    border-bottom: 1.5px solid #000000 !important;
+  }
+
+  .section-title {
+    font-size: 20px !important;
+    color: #000000 !important;
+  }
+
+  .content .section-num {
+    background: none !important;
+    border: 2px solid #000000 !important;
+    color: #000000 !important;
+  }
+
+  h2.topic-head {
+    font-size: 16px !important;
+    border-bottom: 1px solid #dee2e6 !important;
+    padding-bottom: 4px !important;
+  }
+
+  h3.sub-head {
+    font-size: 11px !important;
+    margin-top: 12px !important;
+  }
+
+  /* Avoid cutting boxes across page breaks */
+  .pyq-box,
+  .big-picture,
+  .clinical-box,
+  .content .clinical-box,
+  .mnemonic-box,
+  .eq-box,
+  .flowchart-container,
+  .flowchart,
+  .comp-table,
+  .table-wrap,
+  .key-fact,
+  .mnemonic,
+  .viva-section,
+  .warn-box,
+  .atom-card,
+  details,
+  details.viva-q,
+  tr,
+  blockquote {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .pyq-box,
+  .big-picture,
+  .clinical-box,
+  .content .clinical-box,
+  .mnemonic-box,
+  .eq-box,
+  .flowchart-container,
+  .flowchart,
+  .viva-section,
+  .mnemonic,
+  .warn-box {
+    padding: 12px 16px !important;
+    margin: 10px 0 !important;
+    border-radius: 4px !important;
+    border: 1px solid #000000 !important;
+    background: #f8f9fa !important;
+  }
+
+  .pyq-box { background: #fbf8eb !important; }
+  .clinical-box, .content .clinical-box { background: #fdf5f7 !important; }
+  .warn-box { background: #fff9f3 !important; }
+  .mnemonic, .mnemonic-box { background: #f4fbf7 !important; }
+  .eq-box { background: #fdfbff !important; }
+
+  .pyq-box ul li {
+    background: #e9ecef !important;
+    border: 1px solid #dee2e6 !important;
+    padding: 2px 6px !important;
+    font-size: 10px !important;
+  }
+
+  /* Flowcharts print layout */
+  .flow-box {
+    padding: 6px 12px !important;
+    font-size: 11px !important;
+    min-width: 110px !important;
+    border: 1px solid #000000 !important;
+    background: #ffffff !important;
+  }
+
+  .flow-arrow, .arrow {
+    font-size: 14px !important;
+  }
+  .flow-arrow.down, .arrow-down {
+    margin: 1px 0 !important;
+    font-size: 16px !important;
+  }
+
+  /* Comparison Tables print */
+  .comp-table th, .table-wrap th {
+    padding: 8px 10px !important;
+    font-size: 10px !important;
+    border-bottom: 2px solid #000000 !important;
+    background: #e9ecef !important;
+  }
+
+  .comp-table td, .table-wrap td {
+    padding: 7px 10px !important;
+    font-size: 11px !important;
+    line-height: 1.3 !important;
+    border-bottom: 1px solid #dee2e6 !important;
+    background: #ffffff !important;
+  }
+
+  /* Viva Sections print: details tags auto-expand */
+  details, details.viva-q {
+    display: block !important;
+    border: 1px solid #000000 !important;
+    margin-bottom: 12px !important;
+  }
+
+  summary, summary.viva-q-text {
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    margin-bottom: 6px !important;
+    display: block !important;
+  }
+
+  summary::before, summary.viva-q-text::after, details[open] summary::before {
+    display: none !important;
+  }
+
+  details:not([open]) > *:not(summary) {
+    display: block !important; /* Force print answer display */
+  }
+
+  .viva-a-text, .viva-ans {
+    display: block !important;
+    font-size: 11.5px !important;
+    line-height: 1.4 !important;
+    padding-left: 12px !important;
+    border-left: 2px solid #000000 !important;
+    color: #111111 !important;
+  }
+
+  /* Hide print-unfriendly components */
+  .top-btn,
+  .progress-bar,
+  .toc {
+    display: none !important;
+  }
+
+  /* Clean print footer */
+  .footer {
+    border-top: 1px solid #000000 !important;
+    margin-top: 30px !important;
+    padding: 20px !important;
+    background: #ffffff !important;
+  }
+}
+    </style>
+</head>
+  <body class="theme-crimson">
+    <!-- HERO -->
+    <div class="hero">
+      <div class="module-tag"><span class="dot"></span>MODULE 04</div>
+      <h1>Protein Chemistry<br /><span>&</span> Haemoglobin</h1>
+      <p class="hero-sub">WBUHS BIOCHEMISTRY · PAPER 1 · KIMS KRISHNANAGAR</p>
+      <div class="hero-pills">
+        <span class="pill">1° – 4° Structure</span>
+        <span class="pill">α-Helix · β-Sheet</span>
+        <span class="pill">Hb vs Mb</span>
+        <span class="pill">O₂ Dissociation</span>
+        <span class="pill">2,3-BPG · Bohr Effect</span>
+        <span class="pill">HbS · HbF · HbA</span>
+        <span class="pill">Haem Degradation</span>
+        <span class="pill">Bilirubin Metabolism</span>
+        <span class="pill">Plasma Proteins</span>
+        <span class="pill">Electrophoresis</span>
+      </div>
+    </div>
+
+    <!-- TOC -->
+    <div class="toc">
+      <div class="toc-title">▸ Quick Navigate</div>
+      <div class="toc-grid">
+        <a href="#s1"
+          ><span class="toc-num">01</span> Protein Structure Levels</a
+        >
+        <a href="#s2"><span class="toc-num">02</span> α-Helix & β-Sheet</a>
+        <a href="#s3"><span class="toc-num">03</span> Hb vs Myoglobin</a>
+        <a href="#s4"><span class="toc-num">04</span> O₂ Dissociation Curve</a>
+        <a href="#s5"><span class="toc-num">05</span> 2,3-BPG & Bohr Effect</a>
+        <a href="#s6"><span class="toc-num">06</span> HbA · HbS · HbF</a>
+        <a href="#s7"><span class="toc-num">07</span> Haem Degradation</a>
+        <a href="#s8"><span class="toc-num">08</span> Bilirubin Metabolism</a>
+        <a href="#s9"><span class="toc-num">09</span> Plasma Proteins</a>
+        <a href="#s10"><span class="toc-num">10</span> Electrophoresis</a>
+        <a href="#s11"><span class="toc-num">11</span> Viva Q&A</a>
+        <a href="#s12"><span class="toc-num">12</span> EQ Templates</a>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="progress-bar"></div>
+
+      <!-- ══════════════════════════════════════════════════════ -->
+      <!-- SECTION 1: PROTEIN STRUCTURE LEVELS -->
+      <!-- ══════════════════════════════════════════════════════ -->
+      <div id="s1">
+        <div class="section-header">
+          <div class="section-num">01</div>
+          <h2>Levels of Protein <em>Structure</em></h2>
+        </div>
+
+        <div class="keypoint">
+          4 levels exist.
+          <strong>Primary → Secondary → Tertiary → Quaternary</strong>. Each
+          higher level depends on the one below it.
+        </div>
+
+        <div class="protein-levels">
+          <div class="protein-level-card">
+            <div class="level-num" style="color: var(--accent)">1°</div>
+            <div class="level-name">Primary Structure</div>
+            <div class="level-bond">Peptide Bond (Covalent)</div>
+            <div class="level-detail">
+              Linear sequence of amino acids. Determined by the gene.
+              <strong>Sanger's method</strong> identifies it. Example: Insulin
+              (51 AA)
+            </div>
+          </div>
+          <div class="protein-level-card">
+            <div class="level-num" style="color: var(--gold)">2°</div>
+            <div class="level-name">Secondary Structure</div>
+            <div class="level-bond">H-bonds (backbone NH···CO)</div>
+            <div class="level-detail">
+              Regular repeating patterns: <strong>α-helix</strong>,
+              <strong>β-pleated sheet</strong>, β-turns. Stabilised by hydrogen
+              bonds between backbone atoms.
+            </div>
+          </div>
+          <div class="protein-level-card">
+            <div class="level-num" style="color: var(--teal)">3°</div>
+            <div class="level-name">Tertiary Structure</div>
+            <div class="level-bond">
+              Hydrophobic + H-bond + IonicBond + Disulphide
+            </div>
+            <div class="level-detail">
+              3D folding of a single polypeptide. Hydrophobic core. Disulphide
+              bonds (covalent). Determines biological function.
+            </div>
+          </div>
+          <div class="protein-level-card">
+            <div class="level-num" style="color: var(--purple)">4°</div>
+            <div class="level-name">Quaternary Structure</div>
+            <div class="level-bond">Non-covalent + some S-S</div>
+            <div class="level-detail">
+              Assembly of 2+ polypeptide subunits. Example:
+              <strong>Haemoglobin (α₂β₂)</strong>. Not all proteins have this
+              level.
+            </div>
+          </div>
+        </div>
+
+        <div class="mnemonic-box">
+          <div class="mbox-title">Mnemonic — Bonds by Level</div>
+          <div class="mnemonic-highlight">
+            "Pretty Smart Tertiary Queens" → Peptide, Stable H-bonds, Three
+            types (hydrophobic+H+ionic+S-S), Quaternary = all of the above
+          </div>
+          <p style="font-size: 12px; color: var(--text2); margin-top: 6px">
+            Or simpler: <strong>1° Peptide</strong> →
+            <strong>2° Hydrogen</strong> →
+            <strong
+              >3° Multiple (HISD: Hydrophobic, Ionic, S-S, Disulphide)</strong
+            >
+            → <strong>4° Same as 3° but between chains</strong>
+          </p>
+        </div>
+
+        <div class="clinical-box">
+          <div class="cbox-title">
+            Clinical Correlation — Why Primary Structure Matters
+          </div>
+          <p>
+            A single amino acid substitution in primary structure → disease. In
+            <strong>Sickle Cell Anaemia</strong>, Glu→Val at position 6 of
+            β-globin chain creates HbS. This demonstrates that
+            <em>primary structure determines function</em> — a core biochemistry
+            principle.
+          </p>
+        </div>
+
+        <!-- Forces stabilising protein -->
+        <div class="card">
+          <div class="card-title">Forces Stabilising Protein Structure</div>
+          <div class="table-wrap">
+            <table>
+              <tr>
+                <th>Force</th>
+                <th>Type</th>
+                <th>Where It Acts</th>
+                <th>Disrupted By</th>
+              </tr>
+              <tr>
+                <td>Peptide bond</td>
+                <td>Covalent</td>
+                <td>1° (backbone)</td>
+                <td>Proteases</td>
+              </tr>
+              <tr>
+                <td>H-bond</td>
+                <td>Non-covalent</td>
+                <td>2°, 3°</td>
+                <td>Urea, heat</td>
+              </tr>
+              <tr>
+                <td>Hydrophobic interactions</td>
+                <td>Non-covalent</td>
+                <td>3°</td>
+                <td>Detergents, organic solvents</td>
+              </tr>
+              <tr>
+                <td>Ionic/electrostatic</td>
+                <td>Non-covalent</td>
+                <td>3°</td>
+                <td>pH change, salt</td>
+              </tr>
+              <tr>
+                <td>Disulphide bond (-S-S-)</td>
+                <td>Covalent</td>
+                <td>3° (surface/interior)</td>
+                <td>Reducing agents (β-ME, DTT)</td>
+              </tr>
+              <tr>
+                <td>Van der Waals</td>
+                <td>Non-covalent</td>
+                <td>3°, 4°</td>
+                <td>Weak, easily disrupted</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="warn-box">
+          <span
+            ><strong>Denaturation</strong> disrupts 2°, 3°, 4° structure but NOT
+            1° (peptide bonds remain intact). Renaturation is possible if 1° is
+            intact.</span
+          >
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- ══════════════════════════════════════════════════════ -->
+      <!-- SECTION 2: α-HELIX & β-SHEET -->
+      <!-- ══════════════════════════════════════════════════════ -->
+      <div id="s2">
+        <div class="section-header">
+          <div class="section-num">02</div>
+          <h2><em>α-Helix</em> & β-Pleated Sheet</h2>
+        </div>
+
+        <div class="two-col">
+          <!-- ALPHA HELIX CARD -->
+          <div class="card">
+            <div class="card-title">
+              α-Helix <span class="badge badge-fav">⭐ Examiner Fav</span>
+            </div>
+            <ul class="checklist">
+              <li>Right-handed helix (most proteins)</li>
+              <li><strong>3.6 amino acids</strong> per turn</li>
+              <li>Rise per residue: <strong>1.5 Å</strong></li>
+              <li>Pitch (rise per turn): <strong>5.4 Å</strong></li>
+              <li>
+                H-bonds: between <strong>NH of residue n</strong> and
+                <strong>C=O of residue n-4</strong>
+              </li>
+              <li>H-bonds run <strong>parallel to helix axis</strong></li>
+              <li>R-groups point <strong>outward</strong> from helix</li>
+              <li>
+                Disrupted by: Proline (no NH), Glycine (too flexible), charged
+                R-groups
+              </li>
+            </ul>
+            <div class="clinical-box" style="margin-top: 10px">
+              <div class="cbox-title">Example Proteins</div>
+              <p>
+                <strong>Keratin</strong> (hair, nails): nearly entirely
+                α-helical, coiled-coil structure
+              </p>
+              <p style="margin-top: 4px">
+                <strong>Myoglobin</strong>: 8 α-helical segments (A–H)
+              </p>
+            </div>
+          </div>
+
+          <!-- BETA SHEET CARD -->
+          <div class="card">
+            <div class="card-title">
+              β-Pleated Sheet
+              <span class="badge badge-pyq">PYQ 2017, 2018</span>
+            </div>
+            <ul class="checklist">
+              <li>Extended, zigzag conformation</li>
+              <li>
+                Two types: <strong>Parallel</strong> and
+                <strong>Antiparallel</strong>
+              </li>
+              <li>
+                H-bonds run <strong>perpendicular to chain direction</strong>
+              </li>
+              <li>Antiparallel: stronger H-bonds (more stable)</li>
+              <li>R-groups alternate: above and below sheet plane</li>
+              <li>Rise per residue: <strong>3.5 Å</strong></li>
+            </ul>
+            <div class="table-wrap" style="margin-top: 10px">
+              <table>
+                <tr>
+                  <th>Feature</th>
+                  <th>Parallel</th>
+                  <th>Antiparallel</th>
+                </tr>
+                <tr>
+                  <td>Chain direction</td>
+                  <td>Same</td>
+                  <td>Opposite</td>
+                </tr>
+                <tr>
+                  <td>H-bond angle</td>
+                  <td>Bent</td>
+                  <td>Linear</td>
+                </tr>
+                <tr>
+                  <td>Stability</td>
+                  <td>Less</td>
+                  <td>More</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROTEIN SHAPE COMPARISON -->
+        <div class="card" style="margin-top: 0">
+          <div class="card-title">Fibrous vs Globular Proteins</div>
+          <div class="table-wrap">
+            <table>
+              <tr>
+                <th>Property</th>
+                <th>Fibrous (Structural)</th>
+                <th>Globular (Functional)</th>
+              </tr>
+              <tr>
+                <td>Shape</td>
+                <td>Long, rod-like</td>
+                <td>Spherical/compact</td>
+              </tr>
+              <tr>
+                <td>Solubility</td>
+                <td>Insoluble in water</td>
+                <td>Soluble</td>
+              </tr>
+              <tr>
+                <td>Dominant 2° structure</td>
+                <td>α-helix (keratin) or β-sheet (fibroin)</td>
+                <td>Mix of helix, sheet, coil</td>
+              </tr>
+              <tr>
+                <td>Role</td>
+                <td>Structure (hair, tendons, silk)</td>
+                <td>Enzyme, transport, Hb, Ab</td>
+              </tr>
+              <tr>
+                <td>Example</td>
+                <td>Keratin, Collagen, Fibroin</td>
+                <td>Haemoglobin, Myoglobin, Lysozyme</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- ══════════════════════════════════════════════════════ -->
+      <!-- SECTION 3: HAEMOGLOBIN vs MYOGLOBIN -->
+      <!-- ══════════════════════════════════════════════════════ -->
+      <div id="s3">
+        <div class="section-header">
+          <div class="section-num">03</div>
+          <h2>Haemoglobin <em>vs</em> Myoglobin</h2>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <tr>
+              <th>Feature</th>
+              <th>Haemoglobin (Hb)</th>
+              <th>Myoglobin (Mb)</th>
+            </tr>
+            <tr>
+              <td>Location</td>
+              <td>RBCs (blood)</td>
+              <td>Muscle cells</td>
+            </tr>
+            <tr>
+              <td>Subunits</td>
+              <td>Tetramer: <strong>α₂β₂</strong> (HbA)</td>
+              <td>Monomer (1 chain)</td>
+            </tr>
+            <tr>
+              <td>MW</td>
+              <td>~68,000 Da</td>
+              <td>~17,000 Da</td>
+            </tr>
+            <tr>
+              <td>Haem groups</td>
+              <td>4 (one per subunit)</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>O₂ affinity curve</td>
+              <td><strong>Sigmoidal (S-shaped)</strong></td>
+              <td><strong>Hyperbolic</strong></td>
+            </tr>
+            <tr>
+              <td>Cooperativity</td>
+              <td>Yes (allosteric)</td>
+              <td>No (no cooperativity)</td>
+            </tr>
+            <tr>
+              <td>Bohr effect</td>
+              <td><strong>Yes</strong> (CO₂ & H⁺ ↓ affinity)</td>
+              <td>None</td>
+            </tr>
+            <tr>
+              <td>2,3-BPG effect</td>
+              <td><strong>Yes</strong> (↓ O₂ affinity)</td>
+              <td>None</td>
+            </tr>
+            <tr>
+              <td>Function</td>
+              <td>O₂ <strong>transport</strong></td>
+              <td>O₂ <strong>storage</strong></td>
+            </tr>
+            <tr>
+              <td>P₅₀ (pO₂ at 50% saturation)</td>
+              <td>~26 mmHg (higher = lower affinity)</td>
+              <td>~2 mmHg (lower = higher affinity)</td>
+            </tr>
+            <tr>
+              <td>T-state / R-state</td>
+              <td>T (tense/deoxy), R (relaxed/oxy)</td>
+              <td>N/A (monomer)</td>
+            </tr>
+            <tr>
+              <td>Secondary structure</td>
+              <td>8 α-helical segments per chain</td>
+              <td>8 α-helical segments (A–H)</td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- Haem structure -->
+        <div class="card">
+          <div class="card-title">Haem Group Structure</div>
+          <p style="font-size: 13px; color: var(--text2); margin-bottom: 10px">
+            Haem is a <span class="hl">porphyrin ring</span> (protoporphyrin IX)
+            containing a central <span class="hl">Fe²⁺</span> ion.
+          </p>
+          <div class="flowchart">
+            <div class="flow-title">Haem Architecture</div>
+            <div class="flow-h" style="align-items: flex-start; gap: 12px">
+              <div class="flow-box accent">
+                <span class="box-label">Core</span>
+                Protoporphyrin IX<br />
+                <span class="box-sub">4 pyrrole rings bridged by methine</span>
+              </div>
+              <div class="arrow">→</div>
+              <div class="flow-box gold">
+                <span class="box-label">Central Atom</span>
+                Fe²⁺<br />
+                <span class="box-sub">6 coordination bonds</span>
+              </div>
+              <div class="arrow">→</div>
+              <div class="flow-box teal">
+                <span class="box-label">Bonds</span>
+                4 to N of pyrroles<br />
+                1 to proximal His (F8)<br />
+                1 to O₂ or distal His (E7)
+              </div>
+            </div>
+          </div>
+          <div class="keypoint">
+            <strong
+              >Fe²⁺ (ferrous) binds O₂. Oxidation to Fe³⁺ (ferric) =
+              methaemoglobin</strong
+            >
+            — cannot carry O₂.
+          </div>
+        </div>
+
+        <!-- T and R states -->
+        <div class="card">
+          <div class="card-title">
+            T-State vs R-State (Allosteric Behaviour)
+            <span class="badge badge-fav">⭐ HIGH YIELD</span>
+          </div>
+          <div class="flowchart">
+            <div class="flow-title">Hb Conformational Switch</div>
+            <div class="flow-h">
+              <div class="flow-box" style="border-color: #666">
+                <span class="box-label">T-State (Tense)</span>
+                <strong>Deoxyhaemoglobin</strong><br />
+                <span class="box-sub"
+                  >Low O₂ affinity · Stabilised by 2,3-BPG, H⁺, CO₂, salt
+                  bridges</span
+                >
+              </div>
+              <div class="arrow">⇌</div>
+              <div class="flow-box accent">
+                <span class="box-label">R-State (Relaxed)</span>
+                <strong>Oxyhaemoglobin</strong><br />
+                <span class="box-sub"
+                  >High O₂ affinity · Favoured on O₂ binding</span
+                >
+              </div>
+            </div>
+          </div>
+          <p style="font-size: 13px; color: var(--text2); margin-top: 8px">
+            As first O₂ binds → conformational change → subsequent binding
+            becomes EASIER → <span class="hl">cooperative binding</span> →
+            Sigmoidal curve.
+          </p>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- ══════════════════════════════════════════════════════ -->
+      <!-- SECTION 4: O₂ DISSOCIATION CURVE -->
+      <!-- ══════════════════════════════════════════════════════ -->
+      <div id="s4">
+        <div class="section-header">
+          <div class="section-num">04</div>
+          <h2>O₂ Dissociation <em>Curve</em></h2>
+        </div>
+
+        <!-- SVG Curve -->
+        <div class="curve-container">
+          <div class="flow-title">
+            Oxygen Dissociation Curves — Hb vs Mb vs HbF
+          </div>
+          <svg viewBox="0 0 500 340" xmlns="http://www.w3.org/2000/svg">
+            <!-- Axes -->
+            <line
+              x1="60"
+              y1="290"
+              x2="460"
+              y2="290"
+              stroke="#3a3a4a"
+              stroke-width="1.5"
+            />
+            <line
+              x1="60"
+              y1="30"
+              x2="60"
+              y2="290"
+              stroke="#3a3a4a"
+              stroke-width="1.5"
+            />
+            <!-- Axis labels -->
+            <text
+              x="250"
+              y="320"
+              fill="#6060a0"
+              font-size="11"
+              font-family="JetBrains Mono"
+              text-anchor="middle"
+            >
+              pO₂ (mmHg)
+            </text>
+            <text
+              x="18"
+              y="160"
+              fill="#6060a0"
+              font-size="11"
+              font-family="JetBrains Mono"
+              text-anchor="middle"
+              transform="rotate(-90,18,160)"
+            >
+              % O₂ Saturation
+            </text>
+            <!-- Grid lines -->
+            <line
+              x1="60"
+              y1="160"
+              x2="460"
+              y2="160"
+              stroke="#222230"
+              stroke-width="1"
+              stroke-dasharray="4,4"
+            />
+            <line
+              x1="260"
+              y1="30"
+              x2="260"
+              y2="290"
+              stroke="#222230"
+              stroke-width="1"
+              stroke-dasharray="4,4"
+            />
+            <!-- Y axis ticks -->
+            <text
+              x="48"
+              y="294"
+              fill="#505060"
+              font-size="9"
+              text-anchor="end"
+              font-family="JetBrains Mono"
+            >
+              0
+            </text>
+            <text
+              x="48"
+              y="164"
+              fill="#505060"
+              font-size="9"
+              text-anchor="end"
+              font-family="JetBrains Mono"
+            >
+              50
+            </text>
+            <text
+              x="48"
+              y="35"
+              fill="#505060"
+              font-size="9"
+              text-anchor="end"
+              font-family="JetBrains Mono"
+            >
+              100
+            </text>
+            <!-- X axis ticks -->
+            <text
+              x="60"
+              y="303"
+              fill="#505060"
+              font-size="9"
+              text-anchor="middle"
+              font-family="JetBrains Mono"
+            >
+              0
+            </text>
+            <text
+              x="260"
+              y="303"
+              fill="#505060"
+              font-size="9"
+              text-anchor="middle"
+              font-family="JetBrains Mono"
+            >
+              50
+            </text>
+            <text
+              x="460"
+              y="303"
+              fill="#505060"
+              font-size="9"
+              text-anchor="middle"
+              font-family="JetBrains Mono"
+            >
+              100
+            </text>
+
+            <!-- Myoglobin: Hyperbolic curve (high affinity, left) -->
+            <path
+              d="M 60 290 Q 100 150 180 80 T 460 40"
+              stroke="#4ecdc4"
+              stroke-width="2.5"
+              fill="none"
+              stroke-linecap="round"
+            />
+            <text
+              x="300"
+              y="52"
+              fill="#4ecdc4"
+              font-size="11"
+              font-family="Sora"
+              font-weight="600"
+            >
+              Myoglobin
+            </text>
+            <text
+              x="300"
+              y="64"
+              fill="#4ecdc4"
+              font-size="9"
+              font-family="JetBrains Mono"
+            >
+              (Hyperbolic — High affinity)
+            </text>
+
+            <!-- HbF: Shifted left of HbA (higher affinity) -->
+            <path
+              d="M 60 290 Q 120 280 180 240 Q 230 195 280 130 Q 330 75 460 48"
+              stroke="#a78bfa"
+              stroke-width="2.5"
+              fill="none"
+              stroke-linecap="round"
+            />
+            <text
+              x="165"
+              y="225"
+              fill="#a78bfa"
+              font-size="11"
+              font-family="Sora"
+              font-weight="600"
+            >
+              HbF
+            </text>
+            <text
+              x="165"
+              y="237"
+              fill="#a78bfa"
+              font-size="9"
+              font-family="JetBrains Mono"
+            >
+              (↑ affinity vs HbA)
+            </text>
+
+            <!-- HbA: Classic S-shaped sigmoid -->
+            <path
+              d="M 60 290 Q 130 288 190 270 Q 240 245 270 190 Q 300 135 340 85 Q 390 52 460 42"
+              stroke="#e8334a"
+              stroke-width="3"
+              fill="none"
+              stroke-linecap="round"
+            />
+            <text
+              x="350"
+              y="76"
+              fill="#e8334a"
+              font-size="11"
+              font-family="Sora"
+              font-weight="600"
+            >
+              HbA
+            </text>
+            <text
+              x="350"
+              y="88"
+              fill="#e8334a"
+              font-size="9"
+              font-family="JetBrains Mono"
+            >
+              (Sigmoidal)
+            </text>
+
+            <!-- P50 marker for HbA -->
+            <line
+              x1="145"
+              y1="160"
+              x2="145"
+              y2="290"
+              stroke="#e8334a"
+              stroke-width="1"
+              stroke-dasharray="3,3"
+              opacity="0.6"
+            />
+            <text
+              x="147"
+              y="285"
+              fill="#e8334a"
+              font-size="9"
+              font-family="JetBrains Mono"
+            >
+              P₅₀≈26
+            </text>
+
+            <!-- Bohr effect arrow -->
+            <path
+              d="M 340 120 Q 380 140 400 170"
+              stroke="#f4c464"
+              stroke-width="1.5"
+              fill="none"
+              marker-end="url(#arrow)"
+            />
+            <text
+              x="360"
+              y="115"
+              fill="#f4c464"
+              font-size="9"
+              font-family="JetBrains Mono"
+            >
+              Bohr →
+            </text>
+            <text
+              x="360"
+              y="125"
+              fill="#f4c464"
+              font-size="9"
+              font-family="JetBrains Mono"
+            >
+              Right shift
+            </text>
+
+            <!-- Arrow marker -->
+            <defs>
+              <marker
+                id="arrow"
+                markerWidth="6"
+                markerHeight="6"
+                refX="3"
+                refY="3"
+                orient="auto"
+              >
+                <path d="M0,0 L0,6 L6,3 Z" fill="#f4c464" />
+              </marker>
+            </defs>
+
+            <!-- Legend box -->
+            <rect
+              x="62"
+              y="38"
+              width="160"
+              height="88"
+              fill="#111118"
+              stroke="#2a2a38"
+              stroke-width="1"
+              rx="4"
+            />
+            <text
+              x="72"
+              y="54"
+              fill="#a0a0b8"
+              font-size="10"
+              font-family="JetBrains Mono"
+            >
+              Right shift → ↓ O₂ affinity
+            </text>
+            <text
+              x="72"
+              y="66"
+              fill="#a0a0b8"
+              font-size="10"
+              font-family="JetBrains Mono"
+            >
+              ↑ pCO₂, ↑ H⁺, ↑ temp
+            </text>
+            <text
+              x="72"
+              y="78"
+              fill="#a0a0b8"
+              font-size="10"
+              font-family="JetBrains Mono"
+            >
+              ↑ 2,3-BPG → T state
+            </text>
+            <line x1="72" y1="90" x2="215" y2="90" stroke="#2a2a38" />
+            <text
+              x="72"
+              y="104"
+              fill="#a0a0b8"
+              font-size="10"
+              font-family="JetBrains Mono"
+            >
+              Left shift → ↑ O₂ affinity
+            </text>
+            <text
+              x="72"
+              y="116"
+              fill="#a0a0b8"
+              font-size="10"
+              font-family="JetBrains Mono"
+            >
+              HbF, CO poisoning
+            </text>
+          </svg>
+        </div>
+
+        <div class="two-col">
+          <div class="card">
+            <div class="card-title">
+              Right Shift → ↓ O₂ Affinity (O₂ unloading)
+            </div>
+            <ul class="checklist">
+              <li>↑ pCO₂ (exercise, tissues)</li>
+              <li>↑ H⁺ (acidosis) — Bohr effect</li>
+              <li>↑ Temperature</li>
+              <li>↑ 2,3-BPG</li>
+            </ul>
+            <div class="keypoint" style="margin-top: 8px">
+              Right shift = <strong>MORE O₂ delivered to tissues</strong>. Good
+              in exercise, fever.
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-title">
+              Left Shift → ↑ O₂ Affinity (O₂ hoarding)
+            </div>
+            <ul class="checklist">
+              <li>↓ pCO₂ (hyperventilation)</li>
+              <li>↓ H⁺ (alkalosis)</li>
+              <li>↓ Temperature</li>
+              <li>↓ 2,3-BPG (stored blood)</li>
+              <li>HbF (foetal Hb)</li>
+              <li>CO poisoning</li>
+            </ul>
+            <div class="keypoint" style="margin-top: 8px">
+              Left shift = <strong>Hb grabs O₂ but won't release it</strong>.
+              Dangerous in CO poisoning.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- ══════════════════════════════════════════════════════ -->
+      <!-- SECTION 5: 2,3-BPG & BOHR EFFECT -->
+      <!-- ══════════════════════════════════════════════════════ -->
+      <div id="s5">
+        <div class="section-header">
+          <div class="section-num">05</div>
+          <h2><em>2,3-BPG</em> & Bohr Effect</h2>
+        </div>
+
+        <!-- 2,3-BPG -->
+        <div class="card">
+          <div class="card-title">
+            2,3-Bisphosphoglycerate (2,3-BPG)
+            <span class="badge badge-fav">⭐ PYQ Every Year</span>
+          </div>
+          <div class="flowchart">
+            <div class="flow-title">
+              Rapoport-Luebering Cycle (How 2,3-BPG is Made)
+            </div>
+            <div class="flow-h">
+              <div class="flow-box teal">
+                1,3-BPG<br /><span class="box-sub"
+                  >(Glycolysis intermediate)</span
+                >
+              </div>
+              <div class="arrow">→</div>
+              <div class="flow-box accent">
+                <span class="box-label">Bisphosphoglycerate mutase</span>
+                <strong>2,3-BPG</strong><br />
+                <span class="box-sub">Only in RBCs (no mitochondria)</span>
+              </div>
+              <div class="arrow">→</div>
+              <div class="flow-box gold">
+                3-PG<br /><span class="box-sub">Continues glycolysis</span>
+              </div>
+            </div>
+          </div>
+          <div class="two-col" style="margin-top: 1rem">
+            <div>
+              <p
+                style="
+                  font-size: 13px;
+                  font-weight: 600;
+                  color: var(--accent2);
+                  margin-bottom: 6px;
+                "
+              >
+                Mechanism of Action:
+              </p>
+              <ul class="checklist">
+                <li>
+                  2,3-BPG binds the <strong>central cavity</strong> of Hb
+                  between β-chains
+                </li>
+                <li>Only binds <span class="hl">T-state (deoxyHb)</span></li>
+                <li>Stabilises T-state → ↓ O₂ affinity → right shift</li>
+                <li>
+                  <strong>1 molecule</strong> of 2,3-BPG per 1 Hb molecule
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p
+                style="
+                  font-size: 13px;
+                  font-weight: 600;
+                  color: var(--accent2);
+                  margin-bottom: 6px;
+                "
+              >
+                Clinical Significance:
+              </p>
+              <ul class="checklist">
+                <li>
+                  <strong>High altitude:</strong> ↑ 2,3-BPG → ↑ O₂ delivery to
+                  tissues
+                </li>
+                <li>
+                  <strong>Stored blood:</strong> 2,3-BPG depletes → ↑ O₂
+                  affinity → poor O₂ delivery (transfusion problem)
+                </li>
+                <li><strong>Anaemia:</strong> ↑ 2,3-BPG (compensatory)</li>
+                <li>
+                  <strong>HbF:</strong> doesn't bind 2,3-BPG (γ-chains) → ↑
+                  affinity → foetal O₂ extraction from maternal Hb
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- BOHR EFFECT -->
+        <div class="card">
+          <div class="card-title">
+            Bohr Effect <span class="badge badge-pyq">PYQ 2013, Multiple</span>
+            <span class="badge badge-fav">⭐</span>
+          </div>
+          <div class="keypoint">
+            Definition: The decrease in O₂ affinity of Hb caused by
+            <strong>↑ CO₂ and/or ↑ H⁺</strong>. Facilitates O₂ delivery to
+            metabolically active tissues.
+          </div>
+          <div class="flowchart" style="margin-top: 1rem">
+            <div class="flow-title">Bohr Effect Mechanism</div>
+            <div class="flow-v">
+              <div class="flow-box" style="max-width: 100%">
+                ↑ CO₂ in tissues → CO₂ + H₂O → H₂CO₃ →
+                <strong>H⁺ + HCO₃⁻</strong> (by carbonic anhydrase)
+              </div>
+              <div class="arrow-down">↓</div>
+              <div class="flow-box accent" style="max-width: 100%">
+                H⁺ binds to <strong>Histidine residues</strong> on Hb (β-146
+                His, α-122 His) → forms salt bridges → stabilises
+                <strong>T-state</strong>
+              </div>
+              <div class="arrow-down">↓</div>
+              <div class="flow-box teal" style="max-width: 100%">
+                <strong>↓ O₂ affinity → O₂ released to tissues</strong>
+              </div>
+              <div class="arrow-down">↓</div>
+              <div class="flow-box gold" style="max-width: 100%">
+                In lungs: ↓ CO₂ → salt bridges break → R-state → O₂ loads onto
+                Hb again
+              </div>
+            </div>
+          </div>
+          <div class="mnemonic-box" style="margin-top: 1rem">
+            <div class="mbox-title">Key Concept</div>
+            <div class="mnemonic-highlight">
+              Bohr = "H goes in → O₂ goes out" (tissues); "O₂ goes in → H goes
+              out" (lungs)
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- ══════════════════════════════════════════════════════ -->
+      <!-- SECTION 6: HbA, HbS, HbF -->
+      <!-- ══════════════════════════════════════════════════════ -->
+      <div id="s6">
+        <div class="section-header">
+          <div class="section-num">06</div>
+          <h2>HbA · HbS · <em>HbF</em></h2>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <tr>
+              <th>Hb Type</th>
+              <th>Structure</th>
+              <th>Electrophoresis</th>
+              <th>O₂ Affinity</th>
+              <th>Clinical</th>
+            </tr>
+            <tr>
+              <td>HbA (Adult)</td>
+              <td>α₂β₂</td>
+              <td>Moves fastest toward anode at pH 8.6</td>
+              <td>Normal (P₅₀ 26 mmHg)</td>
+              <td>Normal adult haemoglobin</td>
+            </tr>
+            <tr>
+              <td>HbA₂</td>
+              <td>α₂δ₂</td>
+              <td>Slow band</td>
+              <td>Similar to HbA</td>
+              <td>↑ in β-Thalassaemia (2–3%)</td>
+            </tr>
+            <tr>
+              <td>HbF (Foetal)</td>
+              <td>α₂γ₂</td>
+              <td>Faster than HbS but slower than HbA</td>
+              <td><strong>↑ (P₅₀ ~20 mmHg)</strong></td>
+              <td>
+                ↑ O₂ affinity; normal until 6 months; ↑ in β-Thal, sickle cell
+              </td>
+            </tr>
+            <tr>
+              <td>HbS (Sickle)</td>
+              <td>α₂β₂<sup>S</sup></td>
+              <td>Moves toward cathode (different from HbA)</td>
+              <td>Normal when oxygenated</td>
+              <td>Glu→Val at β6; polymerises when deoxygenated → sickling</td>
+            </tr>
+            <tr>
+              <td>HbM</td>
+              <td>Various α or β mutations at proximal/distal His</td>
+              <td>Abnormal</td>
+              <td>Low (Fe³⁺ locked)</td>
+              <td>Methaemoglobinaemia</td>
+            </tr>
+            <tr>
+              <td>HbA₁c (Glycated)</td>
+              <td>HbA + glucose at β-N-terminal Val</td>
+              <td>Moves ahead of HbA</td>
+              <td>Slightly ↓</td>
+              <td>
+                <strong>Diabetes monitoring</strong> (reflects 8–12 wk glucose)
+              </td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- HbS DEEP DIVE -->
+        <div class="card">
+          <div class="card-title">
+            Sickle Cell Anaemia — Molecular Basis
+            <span class="badge badge-fav">⭐ PYQ Repeatedly</span>
+          </div>
+          <div class="flowchart">
+            <div class="flow-title">HbS Pathophysiology</div>
+            <div class="flow-v">
+              <div class="flow-box accent" style="max-width: 100%">
+                Point mutation: <strong>GAG → GTG</strong> (codon 6, β-globin
+                gene)
+              </div>
+              <div class="arrow-down">↓</div>
+              <div class="flow-box" style="max-width: 100%">
+                <span class="box-label">Amino acid change</span>
+                <strong>Glutamate (charged, hydrophilic)</strong> →
+                <strong>Valine (non-polar, hydrophobic)</strong>
+              </div>
+              <div class="arrow-down">↓</div>
+              <div class="flow-box teal" style="max-width: 100%">
+                Creates a <strong>"sticky patch"</strong> on deoxyHbS surface<br />
+                <span class="box-sub"
+                  >Val fits into complementary hydrophobic pocket on adjacent Hb
+                  molecule</span
+                >
+              </div>
+              <div class="arrow-down">↓</div>
+              <div class="flow-box gold" style="max-width: 100%">
+                <strong>Polymerisation</strong> of deoxyHbS → long fibres →
+                <strong>Sickling</strong> of RBCs
+              </div>
+              <div class="arrow-down">↓</div>
+              <div
+                class="flow-box"
+                style="
+                  max-width: 100%;
+                  border-color: var(--orange);
+                  background: rgba(255, 165, 82, 0.06);
+                  color: var(--orange);
+                "
+              >
+                Haemolytic anaemia + Vaso-occlusion + Organ damage (spleen,
+                kidney, brain)
+              </div>
+            </div>
+          </div>
+          <div class="clinical-box" style="margin-top: 1rem">
+            <div class="cbox-title">Why HbF is Protective in Sickle Cell</div>
+            <p>
+              HbF (α₂γ₂) does NOT polymerise with HbS. High HbF levels (as in
+              neonates, or with hydroxyurea treatment)
+              <strong>inhibit sickling</strong> by diluting HbS polymer
+              formation. This is why symptoms appear only after HbF switches to
+              HbA (~6 months of age).
+            </p>
+          </div>
+          <div class="warn-box" style="margin-top: 8px">
+            <span
+              ><strong>EQ alert:</strong> "Patient with HbS often suffers from
+              anaemia" — answer: haemolytic due to sickling + membrane damage.
+              Sickled cells are rigid and get destroyed in spleen.</span
+            >
+          </div>
+        </div>
+
+        <!-- HbF vs HbA -->
+        <div class="eq-box">
+          <div class="eq-title">
+            EQ Template — HbF has more O₂ affinity than HbA
+          </div>
+          <div class="eq-statement">
+            "HbF has more affinity towards oxygen than HbA." [2019-S]
+          </div>
+          <div class="eq-answer">
+            <ol>
+              <li>
+                <span>Fact:</span> HbF has P₅₀ ~20 mmHg vs HbA P₅₀ ~26 mmHg →
+                lower P₅₀ = higher O₂ affinity
+              </li>
+              <li>
+                <span>Structural Basis:</span> HbF has γ-chains instead of
+                β-chains. γ-chains have Serine at position 143 instead of
+                Histidine (β-143 His)
+              </li>
+              <li>
+                <span>2,3-BPG Interaction:</span> 2,3-BPG binds poorly to
+                γ-chains (Ser 143 creates steric hindrance). Less 2,3-BPG effect
+                → HbF stays in R-state more → ↑ O₂ affinity
+              </li>
+              <li>
+                <span>Physiological Significance:</span> Foetus extracts O₂ from
+                maternal HbA across the placenta. HbF's higher affinity ensures
+                O₂ transfer from maternal to foetal blood
+              </li>
+              <li>
+                <span>Clinical:</span> After birth, γ→β switch occurs; HbF → HbA
+                by 6 months. Persistence of HbF (HPFH) is actually protective in
+                sickle cell and β-thalassaemia
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- ══════════════════════════════════════════════════════ -->
+      <!-- SECTION 7: HAEM DEGRADATION -->
+      <!-- ══════════════════════════════════════════════════════ -->
+      <div id="s7">
+        <div class="section-header">
+          <div class="section-num">07</div>
+          <h2>Haem <em>Degradation</em></h2>
+        </div>
+
+        <div class="flowchart">
+          <div class="flow-title">
+            Haem → Bilirubin → Excretion — Complete Pathway
+          </div>
+          <div class="flow-v">
+            <div class="flow-box accent" style="max-width: 100%">
+              <span class="box-label">Source</span>
+              <strong>Aged RBC (80%) + Myoglobin, Cytochromes (20%)</strong
+              ><br />
+              Destroyed by <strong>Reticuloendothelial System (RES)</strong> —
+              spleen, liver, bone marrow
+            </div>
+            <div class="arrow-down">↓ Haemoglobin</div>
+            <div class="flow-box" style="max-width: 100%; border-color: #888">
+              Globin chains → Amino acids (recycled)<br />
+              <strong>Haem</strong> → enters degradation
+            </div>
+            <div class="arrow-down">
+              ↓ <strong>Haem oxygenase</strong> (RES, needs O₂ + NADPH)
+            </div>
+            <div class="flow-box teal" style="max-width: 100%">
+              <strong>Biliverdin (green)</strong> + Fe²⁺ (recycled) + CO
+              (exhaled)<br />
+              <span class="box-sub"
+                >Porphyrin ring opens at α-methine bridge</span
+              >
+            </div>
+            <div class="arrow-down">
+              ↓ <strong>Biliverdin reductase</strong> (NADPH)
+            </div>
+            <div class="flow-box gold" style="max-width: 100%">
+              <strong>Bilirubin (yellow-orange)</strong><br />
+              <span class="box-sub"
+                >Unconjugated (indirect) · Lipid-soluble · TOXIC</span
+              >
+            </div>
+            <div class="arrow-down">
+              ↓ Binds albumin (2:1) → transported to liver
+            </div>
+            <div class="flow-box purple" style="max-width: 100%">
+              LIVER UPTAKE: bilirubin + 2 × glucuronic acid<br />
+              <span class="box-label"
+                >by UDP-glucuronosyltransferase (UGT1A1)</span
+              >
+              <strong>Bilirubin diglucuronide = Conjugated (direct)</strong> ·
+              Water-soluble · NON-TOXIC
+            </div>
+            <div class="arrow-down">↓ Excreted in bile → small intestine</div>
+            <div class="flow-box green" style="max-width: 100%">
+              <strong>Urobilinogen</strong> (colourless) by intestinal
+              bacteria<br />
+              <span class="box-sub"
+                >80% → stercobilin (brown, faeces) · 20% → reabsorbed
+                (enterohepatic circulation) → urobilinogen in urine</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="mnemonic-box">
+          <div class="mbox-title">Mnemonic — Haem Breakdown Colours</div>
+          <div class="mnemonic-highlight">
+            "Haem Goes Bye-bye, Urine Stays" = Haem → Green (biliverdin) →
+            Bilirubin (yellow) → Urobilinogen → Stercobilin
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- ══════════════════════════════════════════════════════ -->
+      <!-- SECTION 8: BILIRUBIN METABOLISM & JAUNDICE -->
+      <!-- ══════════════════════════════════════════════════════ -->
+      <div id="s8">
+        <div class="section-header">
+          <div class="section-num">08</div>
+          <h2>Bilirubin & <em>Jaundice</em></h2>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <tr>
+              <th>Parameter</th>
+              <th>Haemolytic (Pre-hepatic)</th>
+              <th>Hepatocellular</th>
+              <th>Obstructive (Post-hepatic)</th>
+            </tr>
+            <tr>
+              <td>Serum Unconjugated Bili</td>
+              <td class="hl">↑↑↑</td>
+              <td>↑</td>
+              <td>Normal/slightly ↑</td>
+            </tr>
+            <tr>
+              <td>Serum Conjugated Bili</td>
+              <td>Normal</td>
+              <td>↑</td>
+              <td class="hl">↑↑↑</td>
+            </tr>
+            <tr>
+              <td>Urine Bilirubin</td>
+              <td>Absent (indirect insoluble)</td>
+              <td>Present</td>
+              <td class="hl">Present ↑↑</td>
+            </tr>
+            <tr>
+              <td>Urine Urobilinogen</td>
+              <td class="hl">↑↑↑</td>
+              <td>↑</td>
+              <td>↓/Absent</td>
+            </tr>
+            <tr>
+              <td>Stool colour</td>
+              <td>Dark (↑ stercobilin)</td>
+              <td>Pale</td>
+              <td class="hl">Clay/pale (no bile)</td>
+            </tr>
+            <tr>
+              <td>Urine colour</td>
+              <td>Dark (urobilinogen)</td>
+              <td>Dark</td>
+              <td>Dark (bilirubin)</td>
+            </tr>
+            <tr>
+              <td>ALT/AST</td>
+              <td>Normal</td>
+              <td class="hl">↑↑↑</td>
+              <td>Normal/↑</td>
+            </tr>
+            <tr>
+              <td>Alkaline Phosphatase</td>
+              <td>Normal</td>
+              <td>↑</td>
+              <td class="hl">↑↑↑</td>
+            </tr>
+            <tr>
+              <td>Example</td>
+              <td>G6PD deficiency, Thalassaemia, RBC destruction</td>
+              <td>Hepatitis, Cirrhosis</td>
+              <td>Gallstones, Cholestasis, CA head of pancreas</td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- Neonatal jaundice -->
+        <div class="card">
+          <div class="card-title">
+            Neonatal/Physiological Jaundice
+            <span class="badge badge-pyq">PYQ 2011, 2017, 2021</span>
+          </div>
+          <div class="two-col">
+            <div>
+              <p
+                style="
+                  font-size: 13px;
+                  font-weight: 600;
+                  color: var(--gold);
+                  margin-bottom: 6px;
+                "
+              >
+                Why it Occurs:
+              </p>
+              <ul class="checklist">
+                <li>HbF → HbA switch: massive RBC turnover</li>
+                <li>Immature UGT1A1 in neonatal liver → poor conjugation</li>
+                <li>
+                  Increased enterohepatic circulation (intestinal bacteria
+                  absent)
+                </li>
+                <li>
+                  Albumin less, so less binding → free bili crosses BBB →
+                  <strong>Kernicterus</strong>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p
+                style="
+                  font-size: 13px;
+                  font-weight: 600;
+                  color: var(--teal);
+                  margin-bottom: 6px;
+                "
+              >
+                Phototherapy Mechanism:
+              </p>
+              <ul class="checklist">
+                <li>
+                  Blue light (460 nm) → converts bilirubin (4Z,15Z) →
+                  photoisomers (4Z,15E lumirubin)
+                </li>
+                <li>
+                  Photoisomers are <strong>water-soluble</strong> → can be
+                  excreted in bile/urine WITHOUT conjugation
+                </li>
+                <li>Works without needing UGT1A1 → ideal for neonates</li>
+                <li>
+                  Preferred over phenobarbitone in Crigler-Najjar Type I (no UGT
+                  at all)
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Van den Bergh Reaction -->
+        <div class="card">
+          <div class="card-title">
+            Van den Bergh Reaction <span class="badge badge-pyq">PYQ 2019</span>
+          </div>
+          <div class="two-col">
+            <div>
+              <div
+                class="flow-box teal"
+                style="
+                  padding: 12px;
+                  text-align: left;
+                  font-size: 13px;
+                  margin-bottom: 8px;
+                "
+              >
+                <strong>Direct Reaction</strong><br />
+                = Conjugated bilirubin reacts DIRECTLY with diazo reagent (no
+                alcohol needed)<br />
+                = Water-soluble
+              </div>
+            </div>
+            <div>
+              <div
+                class="flow-box gold"
+                style="padding: 12px; text-align: left; font-size: 13px"
+              >
+                <strong>Indirect Reaction</strong><br />
+                = Unconjugated bilirubin reacts ONLY after adding alcohol
+                (breaks albumin bond)<br />
+                = Lipid-soluble
+              </div>
+            </div>
+          </div>
+          <div class="keypoint" style="margin-top: 8px">
+            <strong>Total bilirubin = Direct + Indirect.</strong> Normal: Total
+            &lt;1 mg/dL, Direct &lt;0.3 mg/dL.
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- ══════════════════════════════════════════════════════ -->
+      <!-- SECTION 9: PLASMA PROTEINS -->
+      <!-- ══════════════════════════════════════════════════════ -->
+      <div id="s9">
+        <div class="section-header">
+          <div class="section-num">09</div>
+          <h2>Plasma <em>Proteins</em></h2>
+        </div>
+
+        <div class="keypoint">
+          Normal Total Plasma Protein: <strong>6–8 g/dL</strong>. Albumin:
+          <strong>3.5–5 g/dL</strong>. A:G ratio: <strong>1.5–2.5:1</strong>
+        </div>
+
+        <div class="table-wrap" style="margin-top: 1rem">
+          <table>
+            <tr>
+              <th>Protein</th>
+              <th>Site of Synthesis</th>
+              <th>Function</th>
+              <th>Clinical Significance</th>
+            </tr>
+            <tr>
+              <td>Albumin</td>
+              <td>Liver</td>
+              <td>Oncotic pressure, transport (bilirubin, FA, drugs, Ca²⁺)</td>
+              <td>↓ in liver disease, nephrotic syndrome → oedema</td>
+            </tr>
+            <tr>
+              <td>α₁-Antitrypsin</td>
+              <td>Liver</td>
+              <td>Inhibits elastase (neutrophil)</td>
+              <td>Deficiency → emphysema, liver disease</td>
+            </tr>
+            <tr>
+              <td>α₂-Macroglobulin</td>
+              <td>Liver</td>
+              <td>Broad-spectrum protease inhibitor</td>
+              <td>↑ in nephrotic syndrome (too large to be lost)</td>
+            </tr>
+            <tr>
+              <td>Transferrin</td>
+              <td>Liver</td>
+              <td>Iron transport (Fe³⁺ binding)</td>
+              <td>↓ in liver disease, malnutrition; ↑ in iron deficiency</td>
+            </tr>
+            <tr>
+              <td>Haptoglobin</td>
+              <td>Liver</td>
+              <td>Binds free Hb → prevents renal damage</td>
+              <td><strong>↓ in haemolysis</strong> (consumed)</td>
+            </tr>
+            <tr>
+              <td>Ceruloplasmin</td>
+              <td>Liver</td>
+              <td>Copper transport (6–7 Cu atoms), ferroxidase activity</td>
+              <td>
+                <strong>↓ in Wilson's disease</strong>; Acute phase reactant
+              </td>
+            </tr>
+            <tr>
+              <td>Fibrinogen</td>
+              <td>Liver</td>
+              <td>Coagulation (→ fibrin by thrombin)</td>
+              <td>↑ in inflammation; Acute phase reactant</td>
+            </tr>
+            <tr>
+              <td>Immunoglobulins</td>
+              <td>Plasma cells (B cells)</td>
+              <td>Antibody function (IgG, IgA, IgM, IgD, IgE)</td>
+              <td>
+                ↑ in infections; ↓ in immunodeficiency; M-spike in myeloma
+              </td>
+            </tr>
+            <tr>
+              <td>Prothrombin</td>
+              <td>Liver (Vit K-dependent)</td>
+              <td>Clotting factor II (→ thrombin)</td>
+              <td>↓ in Vit K deficiency, liver disease</td>
+            </tr>
+            <tr>
+              <td>C-Reactive Protein (CRP)</td>
+              <td>Liver</td>
+              <td>Acute phase reactant; opsonin</td>
+              <td>↑ in infection, inflammation, MI</td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- Acute Phase Reactants -->
+        <div class="card" style="margin-top: 1rem">
+          <div class="card-title">
+            Acute Phase Reactants
+            <span class="badge badge-pyq">PYQ 2014, 2022</span>
+          </div>
+          <div class="two-col">
+            <div>
+              <p
+                style="
+                  font-size: 13px;
+                  font-weight: 600;
+                  color: var(--green);
+                  margin-bottom: 6px;
+                "
+              >
+                Positive APR (↑ in inflammation):
+              </p>
+              <ul class="checklist">
+                <li>CRP, Serum Amyloid A</li>
+                <li>Fibrinogen, Prothrombin</li>
+                <li>Ceruloplasmin, Haptoglobin</li>
+                <li>α₁-Antitrypsin, α₂-Macroglobulin</li>
+                <li>Ferritin, Complement proteins</li>
+              </ul>
+            </div>
+            <div>
+              <p
+                style="
+                  font-size: 13px;
+                  font-weight: 600;
+                  color: var(--accent);
+                  margin-bottom: 6px;
+                "
+              >
+                Negative APR (↓ in inflammation):
+              </p>
+              <ul class="checklist">
+                <li><strong>Albumin</strong></li>
+                <li>Transferrin</li>
+                <li>Transthyretin (Prealbumin)</li>
+                <li>Retinol-binding protein</li>
+              </ul>
+              <div class="keypoint" style="margin-top: 6px">
+                Negative APRs are liver "luxury proteins" — synthesis switches
+                to positive APRs during stress.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hypoalbuminaemia -->
+        <div class="eq-box">
+          <div class="eq-title">
+            EQ Template — Hypoalbuminaemia leads to peripheral oedema [2025]
+          </div>
+          <div class="eq-statement">
+            "Hypoalbuminaemia leads to peripheral oedema."
+          </div>
+          <div class="eq-answer">
+            <ol>
+              <li>
+                <span>Normal role of albumin:</span> Albumin (3.5–5 g/dL) is the
+                principal contributor to
+                <strong>plasma oncotic (colloid osmotic) pressure</strong> (~25
+                mmHg)
+              </li>
+              <li>
+                <span>Oncotic pressure function:</span> Draws water BACK into
+                capillaries from interstitial space (opposing hydrostatic
+                pressure that pushes fluid out)
+              </li>
+              <li>
+                <span>Hypoalbuminaemia:</span> ↓ plasma oncotic pressure →
+                hydrostatic pressure > oncotic pressure → net fluid filtration
+                into interstitium
+              </li>
+              <li>
+                <span>Result:</span> Peripheral oedema (pitting), ascites,
+                pulmonary oedema, periorbital oedema
+              </li>
+              <li>
+                <span>Causes:</span> Liver disease (↓ synthesis), Nephrotic
+                syndrome (↑ loss in urine), Malnutrition (kwashiorkor),
+                Malabsorption
+              </li>
+              <li>
+                <span>Example:</span> Nephrotic syndrome — serum albumin &lt;2.5
+                g/dL → massive generalised oedema (anasarca)
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- ══════════════════════════════════════════════════════ -->
+      <!-- SECTION 10: SERUM PROTEIN ELECTROPHORESIS -->
+      <!-- ══════════════════════════════════════════════════════ -->
+      <div id="s10">
+        <div class="section-header">
+          <div class="section-num">10</div>
+          <h2>Serum Protein <em>Electrophoresis</em></h2>
+        </div>
+
+        <div class="keypoint">
+          At pH 8.6 (alkaline), all serum proteins are
+          <strong>negatively charged</strong> → migrate toward anode (+ve).
+          Separation based on size and charge.
+        </div>
+
+        <!-- SPE DIAGRAM SVG -->
+        <div class="curve-container">
+          <div class="flow-title">
+            Serum Protein Electrophoresis Pattern — Normal vs Pathological
+          </div>
+          <svg viewBox="0 0 520 260" xmlns="http://www.w3.org/2000/svg">
+            <!-- Background -->
+            <rect
+              x="40"
+              y="10"
+              width="470"
+              height="240"
+              fill="#111118"
+              rx="6"
+            />
+            <!-- Axes -->
+            <line
+              x1="50"
+              y1="200"
+              x2="500"
+              y2="200"
+              stroke="#3a3a4a"
+              stroke-width="1.5"
+            />
+            <line
+              x1="50"
+              y1="10"
+              x2="50"
+              y2="200"
+              stroke="#3a3a4a"
+              stroke-width="1.5"
+            />
+            <!-- Labels -->
+            <text
+              x="270"
+              y="230"
+              fill="#505068"
+              font-size="10"
+              text-anchor="middle"
+              font-family="JetBrains Mono"
+            >
+              ← Anode (+)
+            </text>
+            <text
+              x="100"
+              y="230"
+              fill="#505068"
+              font-size="10"
+              text-anchor="middle"
+              font-family="JetBrains Mono"
+            >
+              Cathode (−) →
+            </text>
+
+            <!-- Normal pattern -->
+            <!-- Albumin peak (biggest, leftmost - fastest) -->
+            <path
+              d="M 70 200 Q 85 200 90 195 Q 100 160 115 110 Q 125 75 130 80 Q 140 110 150 160 Q 155 190 165 200"
+              stroke="#e8334a"
+              stroke-width="2"
+              fill="rgba(232,51,74,0.15)"
+            />
+            <text
+              x="118"
+              y="68"
+              fill="#e8334a"
+              font-size="11"
+              font-family="Sora"
+              font-weight="600"
+            >
+              Albumin
+            </text>
+            <text
+              x="118"
+              y="79"
+              fill="#e8334a"
+              font-size="9"
+              font-family="JetBrains Mono"
+            >
+              60%
+            </text>
+
+            <!-- α₁ peak -->
+            <path
+              d="M 175 200 Q 185 200 190 195 Q 195 185 200 178 Q 205 170 210 175 Q 215 182 222 200"
+              stroke="#f4c464"
+              stroke-width="2"
+              fill="rgba(244,196,100,0.15)"
+            />
+            <text
+              x="193"
+              y="162"
+              fill="#f4c464"
+              font-size="9"
+              font-family="Sora"
+              font-weight="600"
+            >
+              α₁
+            </text>
+
+            <!-- α₂ peak (bigger) -->
+            <path
+              d="M 230 200 Q 240 200 245 195 Q 252 180 260 165 Q 268 152 275 158 Q 282 168 288 185 Q 293 195 300 200"
+              stroke="#ffa552"
+              stroke-width="2"
+              fill="rgba(255,165,82,0.15)"
+            />
+            <text
+              x="258"
+              y="148"
+              fill="#ffa552"
+              font-size="9"
+              font-family="Sora"
+              font-weight="600"
+            >
+              α₂
+            </text>
+
+            <!-- β peak -->
+            <path
+              d="M 308 200 Q 318 200 323 194 Q 330 182 338 170 Q 345 160 352 165 Q 358 173 365 188 Q 370 196 378 200"
+              stroke="#4ecdc4"
+              stroke-width="2"
+              fill="rgba(78,205,196,0.12)"
+            />
+            <text
+              x="338"
+              y="153"
+              fill="#4ecdc4"
+              font-size="9"
+              font-family="Sora"
+              font-weight="600"
+            >
+              β
+            </text>
+
+            <!-- γ peak (broad, rightmost - slowest) -->
+            <path
+              d="M 388 200 Q 402 200 410 196 Q 420 190 430 185 Q 442 180 450 183 Q 462 186 472 195 Q 480 200 490 200"
+              stroke="#a78bfa"
+              stroke-width="2"
+              fill="rgba(167,139,250,0.12)"
+            />
+            <text
+              x="432"
+              y="173"
+              fill="#a78bfa"
+              font-size="9"
+              font-family="Sora"
+              font-weight="600"
+            >
+              γ
+            </text>
+
+            <!-- Labels at bottom -->
+            <text
+              x="118"
+              y="218"
+              fill="#6060a0"
+              font-size="8"
+              text-anchor="middle"
+              font-family="JetBrains Mono"
+            >
+              ALB
+            </text>
+            <text
+              x="200"
+              y="218"
+              fill="#6060a0"
+              font-size="8"
+              text-anchor="middle"
+              font-family="JetBrains Mono"
+            >
+              α₁-glob
+            </text>
+            <text
+              x="265"
+              y="218"
+              fill="#6060a0"
+              font-size="8"
+              text-anchor="middle"
+              font-family="JetBrains Mono"
+            >
+              α₂-glob
+            </text>
+            <text
+              x="343"
+              y="218"
+              fill="#6060a0"
+              font-size="8"
+              text-anchor="middle"
+              font-family="JetBrains Mono"
+            >
+              β-glob
+            </text>
+            <text
+              x="435"
+              y="218"
+              fill="#6060a0"
+              font-size="8"
+              text-anchor="middle"
+              font-family="JetBrains Mono"
+            >
+              γ-glob
+            </text>
+
+            <!-- Title -->
+            <text
+              x="270"
+              y="25"
+              fill="#a0a0b8"
+              font-size="11"
+              text-anchor="middle"
+              font-family="JetBrains Mono"
+            >
+              Normal SPE Pattern (pH 8.6, cellulose acetate)
+            </text>
+          </svg>
+        </div>
+
+        <!-- Components Table -->
+        <div class="table-wrap">
+          <table>
+            <tr>
+              <th>Band</th>
+              <th>Proteins Included</th>
+              <th>Normal %</th>
+              <th>↑ in</th>
+              <th>↓ in</th>
+            </tr>
+            <tr>
+              <td>Albumin</td>
+              <td>Albumin only</td>
+              <td>55–65%</td>
+              <td>Dehydration</td>
+              <td>Liver disease, nephrotic, malnutrition, inflammation</td>
+            </tr>
+            <tr>
+              <td>α₁-globulin</td>
+              <td>α₁-Antitrypsin, α₁-glycoprotein</td>
+              <td>2–4%</td>
+              <td>Acute inflammation, pregnancy</td>
+              <td>α₁-Antitrypsin deficiency</td>
+            </tr>
+            <tr>
+              <td>α₂-globulin</td>
+              <td>Haptoglobin, Ceruloplasmin, α₂-Macroglobulin</td>
+              <td>6–12%</td>
+              <td>Nephrotic syndrome (↑ α₂-Macro)</td>
+              <td>Haemolysis (↓ haptoglobin)</td>
+            </tr>
+            <tr>
+              <td>β-globulin</td>
+              <td>Transferrin, β-Lipoprotein, Complement (C3, C4)</td>
+              <td>8–14%</td>
+              <td>Iron deficiency (↑ transferrin), Obstructive jaundice</td>
+              <td>Liver failure</td>
+            </tr>
+            <tr>
+              <td>γ-globulin</td>
+              <td>IgG (predominant), IgA, IgM, IgD, IgE</td>
+              <td>12–22%</td>
+              <td>
+                Infections, autoimmune diseases; <strong>M-spike</strong> in
+                myeloma
+              </td>
+              <td>Immunodeficiency, nephrotic syndrome</td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="clinical-box">
+          <div class="cbox-title">Pathological SPE Patterns</div>
+          <p>
+            <strong>Multiple Myeloma:</strong> Narrow, tall "M-spike"
+            (monoclonal Ig) in γ or β region. ↓ normal Igs (immunoparesis).
+          </p>
+          <p style="margin-top: 6px">
+            <strong>Cirrhosis:</strong> ↓ Albumin + β-γ bridge (IgA bridges β
+            and γ zones). ↑ γ polyclonal.
+          </p>
+          <p style="margin-top: 6px">
+            <strong>Nephrotic Syndrome:</strong> ↓↓ Albumin + ↑ α₂-globulin
+            (α₂-Macroglobulin too big to be lost through GBM) + ↓ γ.
+          </p>
+          <p style="margin-top: 6px">
+            <strong>Acute Inflammation:</strong> ↓ Albumin + ↑ α₁ + ↑ α₂ (acute
+            phase reactants). Fibrinogen absent in serum but present in plasma.
+          </p>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- ══════════════════════════════════════════════════════ -->
+      <!-- SECTION 11: VIVA Q&A -->
+      <!-- ══════════════════════════════════════════════════════ -->
+      <div id="s11">
+        <div class="section-header">
+          <div class="section-num">11</div>
+          <h2>Viva & Exam <em>Q&A</em></h2>
+        </div>
+
+        <div class="viva-section">
+          <div class="viva-title-bar">Protein Structure Vivas</div>
+
+          <details>
+            <summary>
+              <span class="viva-q"
+                >What bonds stabilise quaternary structure of proteins?</span
+              ><span class="viva-year">GROUP A</span>
+            </summary>
+            <div class="viva-ans">
+              <p>
+                Quaternary structure is stabilised by the same
+                <strong>non-covalent forces</strong> that stabilise tertiary
+                structure between adjacent polypeptide chains:
+              </p>
+              <ul>
+                <li>
+                  <strong>Hydrophobic interactions</strong> (predominant at
+                  subunit interfaces)
+                </li>
+                <li><strong>Hydrogen bonds</strong> between chains</li>
+                <li>
+                  <strong>Ionic/electrostatic interactions</strong> (salt
+                  bridges)
+                </li>
+                <li>
+                  <strong>Disulphide bonds</strong> (covalent, e.g., between
+                  chains of IgG)
+                </li>
+              </ul>
+              <p>
+                <em
+                  >Key example: Haemoglobin (α₂β₂) — subunits held mainly by
+                  hydrophobic contacts and 8 ion pairs (salt bridges) in
+                  T-state.</em
+                >
+              </p>
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              <span class="viva-q"
+                >Why can proline not be part of an α-helix?</span
+              ><span class="viva-year">2014</span>
+            </summary>
+            <div class="viva-ans">
+              <p>
+                Proline has a <strong>cyclic pyrrolidine ring</strong> that:
+              </p>
+              <ul>
+                <li>
+                  Has <strong>no NH group</strong> in its peptide bond → cannot
+                  donate H-bond → breaks helix H-bonding pattern
+                </li>
+                <li>
+                  Introduces a <strong>rigid kink/bend</strong> (restricted
+                  rotation around N-Cα bond)
+                </li>
+                <li>Creates steric clash with adjacent residues</li>
+              </ul>
+              <p>
+                <em
+                  >Proline is called a "helix breaker." It frequently occurs at
+                  bends and turns. Collagen is unusual — it forms a triple helix
+                  ONLY because of its Gly-Pro-X repeat.</em
+                >
+              </p>
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              <span class="viva-q"
+                >Define denaturation. Which bonds are broken?</span
+              ><span class="viva-year">Core Concept</span>
+            </summary>
+            <div class="viva-ans">
+              <p>
+                <strong>Denaturation</strong> = Disruption of the native 3D
+                structure of a protein without breaking
+                <strong>peptide bonds</strong> (1° structure intact).
+              </p>
+              <p>
+                Bonds broken: H-bonds, hydrophobic interactions, ionic bonds,
+                sometimes disulphide bonds.
+              </p>
+              <p>
+                Result: Loss of biological activity, altered solubility,
+                viscosity changes.
+              </p>
+              <p>
+                <em
+                  >Agents: Heat, urea/guanidinium (H-bonds), detergents
+                  (hydrophobic), acid/alkali (ionic), reducing agents (S-S
+                  bonds, e.g., β-mercaptoethanol).</em
+                >
+              </p>
+              <p>
+                <strong>Renaturation</strong> is possible if denaturing agent is
+                removed and 1° structure is intact (e.g., ribonuclease A
+                experiment by Anfinsen).
+              </p>
+            </div>
+          </details>
+        </div>
+
+        <div class="viva-section">
+          <div class="viva-title-bar">Haemoglobin Vivas</div>
+
+          <details>
+            <summary>
+              <span class="viva-q"
+                >Why is the O₂ dissociation curve of Hb sigmoidal while Mb is
+                hyperbolic?</span
+              ><span class="viva-year">PYQ 2014, 2016, 2023</span>
+            </summary>
+            <div class="viva-ans">
+              <p>
+                <strong>Myoglobin:</strong> monomer with 1 haem. No
+                cooperativity. Each molecule binds O₂ independently →
+                <em>simple hyperbolic curve</em>. Very high affinity at all pO₂.
+              </p>
+              <p>
+                <strong>Haemoglobin:</strong> tetramer (α₂β₂). Exhibits
+                <strong>positive cooperativity</strong>:
+              </p>
+              <ul>
+                <li>First O₂ binds with LOW affinity (T-state)</li>
+                <li>
+                  Triggers conformational change → R-state → second O₂ binds
+                  more easily
+                </li>
+                <li>
+                  Each successive binding is easier →
+                  <em>sigmoidal (S-shaped) curve</em>
+                </li>
+              </ul>
+              <p>
+                <strong>Physiological significance:</strong> Sigmoid shape means
+                Hb is very efficient — loads O₂ fully in lungs (high pO₂),
+                unloads a large fraction in tissues (low pO₂). Mb's hyperbolic
+                curve means it stays saturated throughout → ideal for O₂
+                storage, not transport.
+              </p>
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              <span class="viva-q"
+                >What is Haemoglobin A1c? Why is it important in diabetes?</span
+              ><span class="viva-year">PYQ 2011, 2018, 2016</span>
+            </summary>
+            <div class="viva-ans">
+              <p>
+                <strong>HbA1c (Glycated Haemoglobin):</strong> Hb with glucose
+                non-enzymatically (spontaneously) attached to the
+                <strong>N-terminal valine</strong> of both β-chains via Schiff
+                base → rearranges to stable ketoamine (Amadori product).
+              </p>
+              <p><strong>Why useful in diabetes:</strong></p>
+              <ul>
+                <li>
+                  RBCs live ~120 days → HbA1c reflects
+                  <strong>average blood glucose over 8–12 weeks</strong>
+                </li>
+                <li>
+                  Unlike fasting glucose (snapshot), HbA1c =
+                  <em>cumulative glycaemic exposure</em>
+                </li>
+                <li>Normal: &lt;5.7%; Pre-diabetes: 5.7–6.4%; DM: ≥6.5%</li>
+                <li>
+                  Target in treated DM: &lt;7% (to prevent microvascular
+                  complications)
+                </li>
+              </ul>
+              <p>
+                <em
+                  >Not affected by short-term glucose fluctuations or time of
+                  day. Limitations: haemolytic anaemia (falsely low), sickle
+                  cell trait may affect accuracy.</em
+                >
+              </p>
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              <span class="viva-q"
+                >What is methaemoglobinaemia? How does it occur?</span
+              ><span class="viva-year">Core</span>
+            </summary>
+            <div class="viva-ans">
+              <p>
+                <strong>Methaemoglobin (MetHb):</strong> Hb in which iron is
+                oxidised from <strong>Fe²⁺ → Fe³⁺</strong>. Fe³⁺ cannot
+                reversibly bind O₂.
+              </p>
+              <p>
+                <strong>Causes:</strong> Oxidising drugs/toxins (dapsone,
+                nitrites, sulphonamides, prilocaine), Congenital HbM
+                (proximal/distal His mutations), NADH-metHb reductase
+                deficiency.
+              </p>
+              <p>
+                <strong>Effect:</strong> ↓ functional Hb + left shift of
+                remaining Hb (cannot release O₂) → tissue hypoxia.
+              </p>
+              <p>
+                <strong>Clinical:</strong> Cyanosis with
+                <em>chocolate brown blood</em>. SpO₂ falsely reads ~85% by pulse
+                oximetry.
+              </p>
+              <p>
+                <strong>Treatment:</strong> Methylene blue (activates
+                NADPH-metHb reductase via G6PD) OR Vitamin C (non-enzymatic
+                reduction).
+              </p>
+            </div>
+          </details>
+        </div>
+
+        <div class="viva-section">
+          <div class="viva-title-bar">Bilirubin & Plasma Protein Vivas</div>
+
+          <details>
+            <summary>
+              <span class="viva-q"
+                >Why does conjugated bilirubin appear in urine but unconjugated
+                does not?</span
+              ><span class="viva-year">PYQ 2019</span>
+            </summary>
+            <div class="viva-ans">
+              <p><strong>Unconjugated bilirubin:</strong></p>
+              <ul>
+                <li>Lipid-soluble, tightly bound to albumin in blood</li>
+                <li>
+                  Too large as albumin complex → NOT filtered by glomerulus
+                </li>
+                <li>
+                  Even if some is free, it binds to tubular cells (not excreted)
+                </li>
+                <li>
+                  Therefore:
+                  <em>absent in urine even when serum levels high</em>
+                  (haemolytic jaundice — "acholouric jaundice")
+                </li>
+              </ul>
+              <p><strong>Conjugated (direct) bilirubin:</strong></p>
+              <ul>
+                <li>Water-soluble (2 glucuronic acids attached)</li>
+                <li>NOT bound to albumin → freely filterable at glomerulus</li>
+                <li>
+                  When serum levels rise → appears in urine (bilirubinuria)
+                </li>
+                <li>Seen in: hepatocellular jaundice, obstructive jaundice</li>
+              </ul>
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              <span class="viva-q"
+                >What are chaperones? What is their role in protein
+                folding?</span
+              ><span class="viva-year">PYQ 2016, 2018</span>
+            </summary>
+            <div class="viva-ans">
+              <p>
+                <strong>Chaperones</strong> are proteins that assist in the
+                correct folding of newly synthesised polypeptides. They do NOT
+                contribute to the final structure (not part of the final
+                protein).
+              </p>
+              <p><strong>Mechanism:</strong></p>
+              <ul>
+                <li>
+                  Bind to exposed <strong>hydrophobic patches</strong> on
+                  unfolded/partially folded proteins
+                </li>
+                <li>
+                  Prevent premature or incorrect interactions (misfolding,
+                  aggregation)
+                </li>
+                <li>
+                  Provide a protected environment for folding (e.g., GroEL/GroES
+                  barrel in bacteria, HSP60 in mitochondria)
+                </li>
+                <li>ATP-dependent (most chaperones use ATP hydrolysis)</li>
+              </ul>
+              <p>
+                <strong>Types:</strong> Hsp70 (cytosol, early folding), Hsp90
+                (steroid receptor stabilisation), Hsp60 (GroEL — barrel type),
+                Calnexin/Calreticulin (ER, glycoprotein folding).
+              </p>
+              <p>
+                <em
+                  >Misfolding despite chaperones → ubiquitin-proteasome
+                  degradation of aberrant proteins. Accumulation of misfolded
+                  proteins → Prion diseases, Alzheimer's, Parkinson's.</em
+                >
+              </p>
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              <span class="viva-q"
+                >What are Bence Jones proteins? Significance?</span
+              ><span class="viva-year">Myeloma</span>
+            </summary>
+            <div class="viva-ans">
+              <p>
+                <strong>Bence Jones proteins:</strong> Free immunoglobulin
+                <strong>light chains</strong> (κ or λ) produced in excess by
+                myeloma plasma cells and excreted in urine.
+              </p>
+              <p>
+                <strong>Detection:</strong> Heat precipitation at 40–60°C,
+                redissolve at 100°C (classic test). Modern: urine protein
+                electrophoresis or immunofixation.
+              </p>
+              <p>
+                <strong>Significance:</strong> Diagnostic of
+                <em>multiple myeloma</em>, Waldenström macroglobulinaemia, or
+                light chain disease. Cause renal tubular damage (cast
+                nephropathy = "myeloma kidney").
+              </p>
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- ══════════════════════════════════════════════════════ -->
+      <!-- SECTION 12: EQ TEMPLATES -->
+      <!-- ══════════════════════════════════════════════════════ -->
+      <div id="s12">
+        <div class="section-header">
+          <div class="section-num">12</div>
+          <h2>Essay Question <em>Templates</em></h2>
+        </div>
+
+        <!-- EQ 1: 2,3-BPG -->
+        <div class="eq-box">
+          <div class="eq-title">
+            EQ — 2,3-BPG helps in delivery of oxygen to tissues [PYQ 2011]
+          </div>
+          <div class="eq-statement">
+            "2,3-BPG helps in delivery of oxygen to the tissues."
+          </div>
+          <div class="eq-answer">
+            <ol>
+              <li>
+                <span>Source:</span> Made from 1,3-BPG in RBCs via
+                Rapoport-Luebering cycle (bisphosphoglycerate mutase).
+                Concentration in RBCs ~4–5 mmol/L (equimolar with Hb)
+              </li>
+              <li>
+                <span>Binding Site:</span> Binds the central cavity of deoxyHb
+                between the β-chains (involves Lys82, His143, His2, Val1 of each
+                β-chain). One molecule per Hb tetramer
+              </li>
+              <li>
+                <span>Mechanism:</span> 2,3-BPG stabilises the
+                <strong>T-state (deoxyHb)</strong> by cross-linking the β-chains
+                with multiple ionic bonds → ↓ O₂ affinity → right shift of ODC
+              </li>
+              <li>
+                <span>Net Effect:</span> At tissue level (low pO₂), Hb releases
+                MORE O₂ than it would without 2,3-BPG → better O₂ unloading
+              </li>
+              <li>
+                <span>Regulatory contexts:</span> ↑ at high altitude
+                (compensatory), in anaemia, in hypoxia. ↓ in stored blood
+                (2,3-DPG depletes → less O₂ delivery → risk in massive
+                transfusion)
+              </li>
+              <li>
+                <span>HbF comparison:</span> HbF (γ-chains) binds 2,3-BPG poorly
+                → higher O₂ affinity → ideal for transplacental O₂ transfer
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- EQ 2: HbS Anaemia -->
+        <div class="eq-box">
+          <div class="eq-title">
+            EQ — Patient with HbS often suffers from anaemia [PYQ 2013, 2017]
+          </div>
+          <div class="eq-statement">
+            "Patient with Hb-S often suffers from anaemia."
+          </div>
+          <div class="eq-answer">
+            <ol>
+              <li>
+                <span>Molecular defect:</span> GAG→GTG mutation in β-globin
+                gene, codon 6. Glu (polar) → Val (non-polar). Creates "sticky
+                patch" on deoxyHbS surface
+              </li>
+              <li>
+                <span>Polymerisation:</span> In low-O₂ conditions, deoxyHbS
+                fibres polymerise → RBCs become sickle-shaped, rigid,
+                non-deformable
+              </li>
+              <li>
+                <span>Haemolysis:</span> Sickled RBCs are rigid → cannot pass
+                through spleen → destroyed by splenic macrophages (extravascular
+                haemolysis). Also intravascular haemolysis due to membrane
+                damage. RBC survival ↓ from 120 days → 20–25 days
+              </li>
+              <li>
+                <span>Vaso-occlusion:</span> Sickled cells block
+                microvasculature → ischaemic pain crises, organ infarction
+                (spleen, kidney, brain, bones)
+              </li>
+              <li>
+                <span>Type of anaemia:</span> Normocytic normochromic haemolytic
+                anaemia with compensatory reticulocytosis
+              </li>
+              <li>
+                <span>Complications:</span> Splenomegaly (early),
+                autosplenectomy (late), aplastic crisis (parvovirus B19),
+                susceptibility to infections (encapsulated organisms)
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- EQ 3: Myoglobin no Bohr Effect -->
+        <div class="eq-box">
+          <div class="eq-title">
+            EQ — Myoglobin does not exhibit Bohr effect [PYQ 2015]
+          </div>
+          <div class="eq-statement">
+            "Myoglobin does not exhibit Bohr effect."
+          </div>
+          <div class="eq-answer">
+            <ol>
+              <li>
+                <span>Bohr effect definition:</span> The decrease in O₂ affinity
+                of Hb when pH drops (↑ H⁺) or pCO₂ rises, mediated via
+                salt-bridge formation in T-state Hb
+              </li>
+              <li>
+                <span>Structural basis of Bohr in Hb:</span> H⁺ protonates
+                histidine residues (β-146 His, α-122 His) → salt bridges form →
+                stabilises T-state → ↓ O₂ affinity
+              </li>
+              <li>
+                <span>Why Mb shows no Bohr effect:</span> Myoglobin is a
+                <strong>monomer</strong> — has no T-state/R-state equilibrium,
+                no cooperative binding, no allosteric subunit communication. The
+                key histidine residues involved in Bohr salt-bridges in Hb are
+                not involved in the same way in monomeric Mb
+              </li>
+              <li>
+                <span>Physiological implication:</span> Mb's function is O₂
+                STORAGE in muscle. It should NOT release O₂ until pO₂ is very
+                low. Hence, being unresponsive to pH/CO₂ changes is appropriate
+              </li>
+              <li>
+                <span>Conclusion:</span> Bohr effect is exclusively an
+                allosteric property of <em>oligomeric haemoglobin</em>, made
+                possible by subunit cooperativity — absent in the monomer
+                myoglobin
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- MNEMONICS SECTION -->
+        <div class="card" style="margin-top: 2rem">
+          <div class="card-title">Master Mnemonics — Module 04</div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+              gap: 10px;
+              margin-top: 8px;
+            "
+          >
+            <div class="mnemonic-box" style="margin: 0">
+              <div class="mbox-title">SPE Bands in Order</div>
+              <div class="mnemonic-highlight">
+                A-AlphA-AlphaB-Beta-Gamma<br />"Angry Aardvarks Always Battle
+                Gorillas"
+              </div>
+              <p style="font-size: 11px; color: var(--text2)">
+                Albumin → α₁ → α₂ → β → γ (anode to cathode)
+              </p>
+            </div>
+            <div class="mnemonic-box" style="margin: 0">
+              <div class="mbox-title">Right Shift Causes (Bohr)</div>
+              <div class="mnemonic-highlight">
+                "CADET face RIGHT"<br />CO₂↑, Acid↑, DPG↑, Exercise, Temp↑
+              </div>
+            </div>
+            <div class="mnemonic-box" style="margin: 0">
+              <div class="mbox-title">Protein Structure Bonds</div>
+              <div class="mnemonic-highlight">
+                1°=Peptide, 2°=H, 3°=HISD<br />(H=H-bond, I=Ionic, S=Sulphide,
+                D=van Der waals)
+              </div>
+            </div>
+            <div class="mnemonic-box" style="margin: 0">
+              <div class="mbox-title">Haem Degradation Products</div>
+              <div class="mnemonic-highlight">
+                "Haem Goes Bright Yellow Under Stress"<br />H→Biliverdin→Bilirubin→Urobilinogen→Stercobilin
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- HIGH YIELD SUMMARY -->
+        <div class="card" style="margin-top: 1rem; border-color: var(--accent)">
+          <div class="card-title">🔥 Exam Day High-Yield Quick Fire</div>
+          <div class="table-wrap">
+            <table>
+              <tr>
+                <th>Topic</th>
+                <th>The Answer Examiner Wants</th>
+              </tr>
+              <tr>
+                <td>Sickle cell mutation</td>
+                <td>GAG→GTG | Glu(6)→Val | β-globin | codon 6</td>
+              </tr>
+              <tr>
+                <td>Why HbF has ↑ O₂ affinity</td>
+                <td>γ-chains bind 2,3-BPG poorly (Ser143 vs His143)</td>
+              </tr>
+              <tr>
+                <td>Bohr effect key residue</td>
+                <td>β-146 Histidine</td>
+              </tr>
+              <tr>
+                <td>2,3-BPG binding site</td>
+                <td>Central cavity between 2 β-chains (T-state only)</td>
+              </tr>
+              <tr>
+                <td>Direct vs Indirect bilirubin test</td>
+                <td>
+                  Van den Bergh — Direct reacts without alcohol; Indirect needs
+                  alcohol
+                </td>
+              </tr>
+              <tr>
+                <td>Neonatal jaundice phototherapy</td>
+                <td>
+                  460 nm blue light converts bili to water-soluble lumirubin
+                </td>
+              </tr>
+              <tr>
+                <td>Haptoglobin function</td>
+                <td>
+                  Binds free Hb in plasma → prevents renal damage → ↓ in
+                  haemolysis
+                </td>
+              </tr>
+              <tr>
+                <td>M-spike on electrophoresis</td>
+                <td>Multiple myeloma — monoclonal Ig spike in γ region</td>
+              </tr>
+              <tr>
+                <td>Ceruloplasmin ↓</td>
+                <td>
+                  Wilson's disease (Cu accumulates in liver, brain, eye:
+                  Kayser-Fleischer rings)
+                </td>
+              </tr>
+              <tr>
+                <td>α-helix residues per turn</td>
+                <td>3.6 residues; 1.5Å rise/residue; 5.4Å pitch</td>
+              </tr>
+              <tr>
+                <td>Prion disease mechanism</td>
+                <td>Misfolding of PrPᶜ → PrPˢᶜ (β-sheet) → aggregation</td>
+              </tr>
+              <tr>
+                <td>Rate limiting step of haem catabolism</td>
+                <td>Haem oxygenase (first step)</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /content -->
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <p>MODULE 04 · PROTEIN CHEMISTRY & HAEMOGLOBIN</p>
+      <p style="margin-top: 4px">
+        KIMS Krishnanagar Biochem Notes · WBUHS · NMO Bengal PYQs 2010–2025
+      </p>
+      <p style="margin-top: 4px; color: var(--accent); font-size: 11px">
+        Compiled for personal academic use
+      </p>
+    </div>
+
+    <button
+      class="top-btn"
+      onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+    >
+      ↑
+    </button>
+
+    <script>
+      // Smooth open/close animation for details
+      document.querySelectorAll("details").forEach((d) => {
+        d.addEventListener("toggle", () => {
+          if (d.open) {
+            const content = d.querySelector(".viva-ans");
+            if (content) {
+              content.style.animation = "fadeIn 0.2s ease";
+            }
+          }
+        });
+      });
+    </script>
+
+    
+  </body>
+</html>

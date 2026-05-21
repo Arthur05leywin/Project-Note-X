@@ -4,3 +4,10 @@
 !.dev.vars.example
 .env*
 !.env.example
+
+# Scratch and Temp files
+extracted_css_raw.txt
+original_module5_styles.css
+scratch_inspect.py
+__pycache__/
+*.pyc

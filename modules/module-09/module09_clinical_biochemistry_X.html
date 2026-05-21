@@ -1,0 +1,3221 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Module 09 — Clinical Biochemistry | Last-Day Revision System</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&amp;family=JetBrains+Mono:wght@400;600&amp;family=Crimson+Pro:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet"/>
+
+    
+    
+    
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300..900;1,300..900&family=IBM+Plex+Mono:ital,wght@0,100..700;1,100..700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Sora:wght@100..800&display=swap');
+
+/* ==========================================
+   DYNAMIC MULTI-THEME VARIABLE ENGINE
+   ========================================== */
+
+/* Theme 1: Premium Gold (Default / Classic Modules 1-3 & Module 5-X) */
+:root, body.theme-gold {
+  --bg: #0d0f14;
+  --surface: #13161e;
+  --surface2: #1a1e2a;
+  --surface3: #222736;
+  --border: #252a38;
+  --border2: #343b4f;
+  --accent: #e8c84a;
+  --accent2: #4ae8b0;
+  --accent3: #e84a7a;
+  --accent4: #4a9ee8;
+  --text: #e8eaf0;
+  --muted: #8a90a8;
+  --white: #ffffff;
+  --rls: #e84a7a;
+  --gold: #e8c84a;
+  --rose: #e84a7a;
+  --purple: #bf81ff;
+  --blue: #4a9ee8;
+  --green: #4ae8b0;
+  --orange: #ffa552;
+}
+
+/* Theme 2: Premium Crimson (Module 4 & 4-X) */
+body.theme-crimson {
+  --bg: #0a0a0f;
+  --surface: #111118;
+  --surface2: #18181f;
+  --surface3: #1e1e28;
+  --border: #252535;
+  --border2: #34344a;
+  --accent: #e8334a;
+  --accent2: #ff5268;
+  --accent3: #ff8595;
+  --accent4: #4a9ee8;
+  --text: #e8eaf0;
+  --muted: #8a90a8;
+  --white: #ffffff;
+  --rls: #ff8595;
+  --gold: #f4c464;
+  --rose: #e8334a;
+  --purple: #c084fc;
+  --blue: #60a5fa;
+  --green: #4ade80;
+  --orange: #fb923c;
+}
+
+/* Theme 3: Premium Emerald (Module 5 Modern) */
+body.theme-emerald {
+  --bg: #08100f;
+  --surface: #0f1a18;
+  --surface2: #152220;
+  --surface3: #1c2d2a;
+  --border: #1e3530;
+  --border2: #2a4540;
+  --accent: #00c897;
+  --accent2: #2ddcaa;
+  --accent3: #80ffe8;
+  --accent4: #60a5fa;
+  --text: #e2ede9;
+  --muted: #8aada6;
+  --white: #ffffff;
+  --rls: #ff6b8a;
+  --gold: #f4c464;
+  --rose: #ff6b8a;
+  --purple: #c084fc;
+  --blue: #60a5fa;
+  --green: #4ade80;
+  --orange: #fb923c;
+}
+
+/* Theme 4: Premium Indigo (Modules 6, 8, 9, 10) */
+body.theme-indigo {
+  --bg: #080c14;
+  --surface: #0d1220;
+  --surface2: #121828;
+  --surface3: #182030;
+  --border: #1e293b;
+  --border2: #334155;
+  --accent: #6366f1;
+  --accent2: #818cf8;
+  --accent3: #c084fc;
+  --accent4: #38bdf8;
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --white: #ffffff;
+  --rls: #f43f5e;
+  --gold: #fbbf24;
+  --rose: #f43f5e;
+  --purple: #c084fc;
+  --blue: #38bdf8;
+  --green: #34d399;
+  --orange: #fb923c;
+}
+
+/* Theme 5: Premium Amber (Modules 7 & 7-X) */
+body.theme-amber {
+  --bg: #080a0e;
+  --surface: #0e1118;
+  --surface2: #141820;
+  --surface3: #1a2030;
+  --border: #1e2530;
+  --border2: #2a3545;
+  --accent: #f59e0b;
+  --accent2: #fbbf24;
+  --accent3: #fb923c;
+  --accent4: #34d399;
+  --text: #f3f4f6;
+  --muted: #9ca3af;
+  --white: #ffffff;
+  --rls: #ef4444;
+  --gold: #fbbf24;
+  --rose: #ef4444;
+  --purple: #a855f7;
+  --blue: #3b82f6;
+  --green: #10b981;
+  --orange: #f97316;
+}
+
+/* ==========================================
+   GLOBAL STRUCTURE & FONTS
+   ========================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Typography Isolation */
+body {
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  overflow-x: hidden;
+  font-size: 14px;
+}
+
+body.theme-gold {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 14px;
+}
+
+body.theme-crimson,
+body.theme-emerald,
+body.theme-indigo,
+body.theme-amber {
+  font-family: "Sora", sans-serif;
+  font-size: 15px;
+}
+
+strong {
+  color: var(--white);
+}
+
+p {
+  margin-bottom: 12px;
+  color: var(--text);
+  line-height: 1.8;
+}
+
+/* Custom Webkit Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
+}
+
+
+/* ==========================================
+   CLASSIC LAYOUT SELECTORS (Modules 1-3)
+   ========================================== */
+
+.cover {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 60px;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg);
+  page-break-after: always;
+}
+
+.cover::before {
+  content: "";
+  position: absolute;
+  top: -200px;
+  right: -200px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(232, 200, 74, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cover::after {
+  content: "";
+  position: absolute;
+  bottom: -100px;
+  left: -100px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(74, 232, 176, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cover-tag {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  border: 1px solid var(--accent);
+  padding: 4px 12px;
+  margin-bottom: 40px;
+  display: inline-block;
+}
+
+.cover h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(42px, 8vw, 72px);
+  font-weight: 900;
+  line-height: 1.05;
+  color: var(--white);
+  margin-bottom: 10px;
+}
+
+.cover h1 span {
+  color: var(--accent);
+}
+
+.cover-sub {
+  font-size: 18px;
+  color: var(--muted);
+  margin-bottom: 50px;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.cover-meta {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.cover-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cover-meta-label {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.cover-meta-value {
+  font-size: 13px;
+  color: var(--accent2);
+  font-weight: 500;
+}
+
+.cover-divider {
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  margin: 30px 0;
+}
+
+.cover-pyq-badge {
+  position: absolute;
+  top: 60px;
+  right: 60px;
+  background: var(--accent);
+  color: var(--bg);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 8px 16px;
+  letter-spacing: 1px;
+}
+
+.page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 50px 60px;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 30px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.section-number {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 2px;
+}
+
+.section-title {
+  font-family: "Playfair Display", serif;
+  font-size: 28px;
+  color: var(--white);
+  font-weight: 700;
+}
+
+.section-title span {
+  color: var(--accent);
+}
+
+.pyq-box {
+  background: rgba(232, 200, 74, 0.08);
+  border-left: 3px solid var(--accent);
+  padding: 16px 20px;
+  margin-bottom: 30px;
+  border-radius: 0 6px 6px 0;
+}
+
+.pyq-box-label {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.pyq-box ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pyq-box ul li {
+  background: rgba(232, 200, 74, 0.15);
+  color: var(--accent);
+  font-size: 11px;
+  font-family: "IBM Plex Mono", monospace;
+  padding: 3px 10px;
+  border-radius: 2px;
+}
+
+.big-picture {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 28px;
+}
+
+.big-picture-label {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  color: var(--accent2);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.flowchart-container {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 30px;
+  margin: 24px 0;
+}
+
+.flowchart-title {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+/* Classic Comparison Tables */
+.comp-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 13px;
+}
+
+.comp-table th {
+  background: var(--surface2);
+  padding: 12px 16px;
+  text-align: left;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--border);
+}
+
+.comp-table th:nth-child(2) { color: var(--accent2); }
+.comp-table th:nth-child(3) { color: var(--accent3); }
+.comp-table th:nth-child(4) { color: var(--accent4); }
+
+.comp-table td {
+  padding: 11px 16px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+  line-height: 1.6;
+}
+
+.comp-table tr:hover td {
+  background: var(--surface);
+}
+
+.comp-table td:first-child {
+  font-weight: 600;
+  color: var(--muted);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.key-fact {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  background: var(--surface);
+  border-radius: 6px;
+  padding: 14px 18px;
+  margin: 10px 0;
+}
+
+.key-fact-icon {
+  font-size: 16px;
+  margin-top: 1px;
+  flex-shrink: 0;
+}
+
+.key-fact-text {
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.key-fact-text strong {
+  color: var(--accent);
+}
+
+.mnemonic {
+  background: linear-gradient(135deg, rgba(74, 232, 176, 0.08), rgba(232, 200, 74, 0.05));
+  border: 1px solid rgba(74, 232, 176, 0.3);
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin: 20px 0;
+}
+
+.mnemonic-label {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  color: var(--accent2);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.mnemonic-text {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--white);
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.mnemonic-expand {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.rls-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(232, 200, 74, 0.15);
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  padding: 3px 10px;
+  border-radius: 3px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+/* Classic Viva section */
+.viva-section {
+  background: var(--surface);
+  border-radius: 8px;
+  padding: 28px;
+  margin: 30px 0;
+  border: 1px solid var(--border);
+}
+
+.viva-label {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.viva-label::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+div.viva-q {
+  margin-bottom: 18px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--border);
+}
+
+div.viva-q:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.viva-q-text {
+  font-weight: 600;
+  color: var(--accent);
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.viva-q-text span {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  background: rgba(232, 200, 74, 0.15);
+  padding: 2px 8px;
+  margin-right: 8px;
+  border-radius: 2px;
+}
+
+.viva-a-text {
+  font-size: 13px;
+  color: var(--text);
+  line-height: 1.7;
+  padding-left: 16px;
+  border-left: 2px solid var(--border);
+}
+
+.section-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 40px 0;
+}
+
+h2.topic-head {
+  font-family: "Playfair Display", serif;
+  font-size: 22px;
+  color: var(--white);
+  margin: 28px 0 14px;
+}
+
+h3.sub-head {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent2);
+  margin: 20px 0 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: "IBM Plex Mono", monospace;
+}
+
+.graph-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px;
+  margin: 16px 0;
+}
+
+.graph-label {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  color: var(--accent4);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
+svg text {
+  font-family: "IBM Plex Mono", monospace;
+}
+
+.examiner-fav {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(232, 74, 122, 0.15);
+  border: 1px solid var(--accent3);
+  color: var(--accent3);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  padding: 2px 9px;
+  border-radius: 3px;
+  letter-spacing: 1px;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+
+/* ==========================================
+   MODERN LAYOUT SELECTORS (Modules 4-10)
+   ========================================== */
+
+/* Modern Hero Block */
+.hero {
+  background: linear-gradient(135deg, #050e0c 0%, #0d1f1a 50%, var(--bg) 100%);
+  border-bottom: 1px solid var(--border2);
+  padding: 3rem 1.5rem 2.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-crimson .hero {
+  background: linear-gradient(135deg, #100609 0%, #200d12 50%, var(--bg) 100%);
+}
+.theme-indigo .hero {
+  background: linear-gradient(135deg, #060910 0%, #0d1222 50%, var(--bg) 100%);
+}
+.theme-amber .hero {
+  background: linear-gradient(135deg, #100a06 0%, #20140d 50%, var(--bg) 100%);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 360px;
+  height: 360px;
+  background: radial-gradient(circle, rgba(0, 200, 151, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.theme-crimson .hero::before { background: radial-gradient(circle, rgba(232, 51, 74, 0.12) 0%, transparent 70%); }
+.theme-indigo .hero::before { background: radial-gradient(circle, rgba(99, 102, 241, 0.12) 0%, transparent 70%); }
+.theme-amber .hero::before { background: radial-gradient(circle, rgba(245, 158, 11, 0.12) 0%, transparent 70%); }
+
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: -40px;
+  left: 15%;
+  width: 240px;
+  height: 240px;
+  background: radial-gradient(circle, rgba(244, 196, 100, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.module-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0, 200, 151, 0.12);
+  border: 1px solid rgba(0, 200, 151, 0.35);
+  color: var(--accent2);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  padding: 4px 12px;
+  border-radius: 3px;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+.theme-crimson .module-tag {
+  background: rgba(232, 51, 74, 0.12);
+  border-color: rgba(232, 51, 74, 0.35);
+}
+.theme-indigo .module-tag {
+  background: rgba(99, 102, 241, 0.12);
+  border-color: rgba(99, 102, 241, 0.35);
+}
+.theme-amber .module-tag {
+  background: rgba(245, 158, 11, 0.12);
+  border-color: rgba(245, 158, 11, 0.35);
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.7); }
+}
+
+.hero h1 {
+  font-family: "Crimson Pro", serif;
+  font-size: clamp(2rem, 6vw, 3.2rem);
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.15;
+  margin-bottom: 0.5rem;
+}
+
+.hero h1 span {
+  color: var(--accent);
+}
+
+.hero-sub {
+  color: var(--text2);
+  font-size: 13px;
+  font-family: "JetBrains Mono", monospace;
+  letter-spacing: 0.5px;
+  margin-bottom: 1.5rem;
+}
+
+.hero-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pill {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-family: "JetBrains Mono", monospace;
+}
+
+/* Table of Contents */
+.toc {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  margin: 1.5rem;
+  padding: 1.25rem;
+  border-radius: 6px;
+}
+
+.toc-title {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 6px;
+}
+
+.toc a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 13px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.toc a:hover {
+  color: var(--accent2);
+  background: rgba(0, 200, 151, 0.08);
+}
+.theme-crimson .toc a:hover { background: rgba(232, 51, 74, 0.08); }
+.theme-indigo .toc a:hover { background: rgba(99, 102, 241, 0.08); }
+.theme-amber .toc a:hover { background: rgba(245, 158, 11, 0.08); }
+
+.toc-num {
+  color: var(--accent);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+}
+
+.content {
+  padding: 0 1.5rem 3rem;
+}
+
+/* Modern Section Headers */
+.content .section-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 2.5rem 0 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.content .section-num {
+  background: var(--accent);
+  color: var(--bg);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  font-weight: 700;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.content .section-header h2 {
+  font-family: "Crimson Pro", serif;
+  font-size: clamp(1.3rem, 4vw, 1.8rem);
+  font-weight: 600;
+  color: var(--text);
+}
+
+.content .section-header h2 em {
+  color: var(--accent2);
+  font-style: normal;
+}
+
+/* Modern Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  font-family: "JetBrains Mono", monospace;
+  padding: 2px 7px;
+  border-radius: 3px;
+  vertical-align: middle;
+  margin-left: 4px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.badge-rls {
+  background: rgba(255, 107, 138, 0.18);
+  color: var(--rose);
+  border: 1px solid rgba(255, 107, 138, 0.35);
+}
+.badge-pyq {
+  background: rgba(96, 165, 250, 0.15);
+  color: var(--blue);
+  border: 1px solid rgba(96, 165, 250, 0.3);
+}
+.badge-fav {
+  background: rgba(244, 196, 100, 0.15);
+  color: var(--gold);
+  border: 1px solid rgba(244, 196, 100, 0.3);
+}
+.badge-new {
+  background: rgba(74, 222, 128, 0.15);
+  color: var(--green);
+  border: 1px solid rgba(74, 222, 128, 0.3);
+}
+
+/* Modern Cards */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.card-title {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card-title::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* Flowcharts - Merged and Dynamic */
+.flowchart {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin: 1rem 0;
+  overflow-x: auto;
+}
+
+.flow-title {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent2);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.flow-title::before {
+  content: "▶";
+  font-size: 8px;
+}
+
+.flow-h {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+}
+
+.flow-box {
+  flex: 1 1 auto;
+  background: var(--surface3);
+  border: 1.5px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 13px;
+  text-align: center;
+  min-width: 110px;
+  line-height: 1.4;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+}
+
+.flow-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border-color: var(--accent);
+}
+
+.flow-box.accent, .flow-box.yellow {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(0, 200, 151, 0.08);
+}
+.theme-crimson .flow-box.accent { background: rgba(232, 51, 74, 0.08); }
+.theme-indigo .flow-box.accent { background: rgba(99, 102, 241, 0.08); }
+.theme-amber .flow-box.accent { background: rgba(245, 158, 11, 0.08); }
+
+.flow-box.gold {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: rgba(244, 196, 100, 0.08);
+}
+.flow-box.rose, .flow-box.red {
+  border-color: var(--rose);
+  color: var(--rose);
+  background: rgba(255, 107, 138, 0.08);
+}
+.flow-box.purple {
+  border-color: var(--purple);
+  color: var(--purple);
+  background: rgba(192, 132, 252, 0.08);
+}
+.flow-box.blue {
+  border-color: var(--blue);
+  color: var(--blue);
+  background: rgba(96, 165, 250, 0.08);
+}
+.flow-box.green {
+  border-color: var(--green);
+  color: var(--green);
+  background: rgba(74, 222, 128, 0.08);
+}
+.flow-box.white {
+  border-color: var(--text);
+  color: var(--text);
+}
+
+.flow-box .box-label {
+  font-size: 10px;
+  color: var(--muted);
+  font-family: "JetBrains Mono", monospace;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.flow-box .box-sub {
+  font-size: 11px;
+  color: var(--muted);
+  display: block;
+  margin-top: 2px;
+}
+
+.arrow {
+  color: var(--accent);
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.arrow-down {
+  text-align: center;
+  color: var(--accent);
+  font-size: 18px;
+  margin: 4px 0;
+}
+
+.flow-v {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.flow-v .flow-box {
+  width: 100%;
+  max-width: 500px;
+}
+
+.flow-v .arrow-down {
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+}
+
+/* Modern Tables (Scoped to .table-wrap) */
+.table-wrap {
+  overflow-x: auto;
+  margin: 1rem 0;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.table-wrap table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-wrap th {
+  background: var(--surface3);
+  color: var(--accent2);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 2px solid var(--accent);
+}
+
+.table-wrap td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+  vertical-align: top;
+}
+
+.table-wrap tr:hover td {
+  background: rgba(0, 200, 151, 0.04);
+}
+.theme-crimson .table-wrap tr:hover td { background: rgba(232, 51, 74, 0.04); }
+.theme-indigo .table-wrap tr:hover td { background: rgba(99, 102, 241, 0.04); }
+.theme-amber .table-wrap tr:hover td { background: rgba(245, 158, 11, 0.04); }
+
+.table-wrap td:first-child {
+  color: var(--accent2);
+  font-weight: 600;
+}
+
+/* Modern Clinical & Mnemonic boxes inside .content */
+.content .clinical-box {
+  background: linear-gradient(135deg, rgba(96, 165, 250, 0.05), rgba(96, 165, 250, 0.02));
+  border: 1px solid rgba(96, 165, 250, 0.25);
+  border-left: 4px solid var(--blue);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+}
+
+.content .clinical-box .cbox-title {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--blue);
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.content .clinical-box .cbox-title::before {
+  content: "🩺";
+}
+
+.mnemonic-box {
+  background: linear-gradient(135deg, rgba(244, 196, 100, 0.06), rgba(244, 196, 100, 0.02));
+  border: 1px solid rgba(244, 196, 100, 0.28);
+  border-left: 4px solid var(--gold);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+}
+
+.mnemonic-box .mbox-title {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.mnemonic-box .mbox-title::before {
+  content: "🧠";
+}
+
+.mnemonic-highlight {
+  background: rgba(244, 196, 100, 0.1);
+  border: 1px dashed rgba(244, 196, 100, 0.3);
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-family: "Crimson Pro", serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--gold);
+  margin: 6px 0;
+  letter-spacing: 1px;
+}
+
+.eq-box {
+  background: linear-gradient(135deg, rgba(192, 132, 252, 0.06), rgba(192, 132, 252, 0.02));
+  border: 1px solid rgba(192, 132, 252, 0.28);
+  border-left: 4px solid var(--purple);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+}
+
+.eq-box .eq-title {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--purple);
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.eq-box .eq-title::before {
+  content: "📝";
+}
+
+.eq-statement {
+  background: var(--surface3);
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-family: "Crimson Pro", serif;
+  font-size: 15px;
+  font-style: italic;
+  color: var(--text);
+  margin-bottom: 10px;
+  border-left: 3px solid var(--purple);
+}
+
+.eq-answer ol {
+  margin-left: 18px;
+}
+
+.eq-answer li {
+  margin-bottom: 6px;
+  font-size: 13px;
+}
+
+.eq-answer li span {
+  color: var(--purple);
+  font-weight: 600;
+}
+
+.keypoint {
+  background: rgba(0, 200, 151, 0.07);
+  border: 1px solid rgba(0, 200, 151, 0.22);
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin: 8px 0;
+  font-size: 13px;
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+.theme-crimson .keypoint { background: rgba(232, 51, 74, 0.07); border-color: rgba(232, 51, 74, 0.22); }
+.theme-indigo .keypoint { background: rgba(99, 102, 241, 0.07); border-color: rgba(99, 102, 241, 0.22); }
+.theme-amber .keypoint { background: rgba(245, 158, 11, 0.07); border-color: rgba(245, 158, 11, 0.22); }
+
+.keypoint::before {
+  content: "⚡";
+  flex-shrink: 0;
+}
+
+.warn-box {
+  background: rgba(251, 146, 60, 0.07);
+  border: 1px solid rgba(251, 146, 60, 0.28);
+  border-left: 4px solid var(--orange);
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin: 8px 0;
+  font-size: 13px;
+  display: flex;
+  gap: 8px;
+}
+
+.warn-box::before {
+  content: "⚠️";
+  flex-shrink: 0;
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 2rem 0;
+}
+
+ul.checklist {
+  list-style: none;
+  margin: 0.5rem 0;
+}
+
+ul.checklist li::before {
+  content: "✦ ";
+  color: var(--accent);
+}
+
+ul.checklist li {
+  margin-bottom: 4px;
+  font-size: 13px;
+}
+
+.hl { color: var(--accent2); font-weight: 600; }
+.hl-gold { color: var(--gold); font-weight: 600; }
+.hl-rose { color: var(--rose); font-weight: 600; }
+.hl-blue { color: var(--blue); font-weight: 600; }
+.hl-purple { color: var(--purple); font-weight: 600; }
+.hl-green { color: var(--green); font-weight: 600; }
+
+/* Modern Atom Cards */
+.atom-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+  margin: 1rem 0;
+}
+
+.atom-card {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem;
+  transition: border-color 0.2s;
+}
+
+.atom-card:hover {
+  border-color: var(--accent);
+}
+
+.atom-head {
+  font-family: "Crimson Pro", serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.atom-sub {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+/* Modern Viva Section details */
+.viva-title-bar {
+  background: rgba(0, 200, 151, 0.1);
+  border: 1px solid rgba(0, 200, 151, 0.28);
+  border-radius: 6px 6px 0 0;
+  padding: 10px 14px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--accent2);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.theme-crimson .viva-title-bar { background: rgba(232, 51, 74, 0.1); border-color: rgba(232, 51, 74, 0.28); }
+.theme-indigo .viva-title-bar { background: rgba(99, 102, 241, 0.1); border-color: rgba(99, 102, 241, 0.28); }
+.theme-amber .viva-title-bar { background: rgba(245, 158, 11, 0.1); border-color: rgba(245, 158, 11, 0.28); }
+
+.viva-title-bar::before {
+  content: "💬";
+  font-size: 14px;
+}
+
+.content details {
+  border: 1px solid var(--border);
+  border-top: none;
+  overflow: hidden;
+}
+
+.content details:last-child {
+  border-radius: 0 0 6px 6px;
+}
+
+.content summary {
+  padding: 10px 14px;
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--text);
+  background: var(--surface);
+  list-style: none;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  user-select: none;
+  transition: background 0.2s;
+}
+
+.content summary:hover {
+  background: var(--surface2);
+}
+
+.content summary::before {
+  content: "▶";
+  color: var(--accent);
+  font-size: 10px;
+  margin-top: 3px;
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+
+.content details[open] > summary::before {
+  transform: rotate(90deg);
+}
+
+.viva-q {
+  font-weight: 600;
+  flex: 1;
+}
+
+.viva-year {
+  color: var(--blue);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  flex-shrink: 0;
+}
+
+.viva-ans {
+  padding: 12px 16px 14px;
+  background: var(--surface2);
+  font-size: 13px;
+  line-height: 1.75;
+  border-top: 1px solid var(--border);
+}
+
+.viva-ans p {
+  margin-bottom: 6px;
+}
+
+.viva-ans ul {
+  margin: 6px 0 6px 16px;
+}
+
+.viva-ans li {
+  margin-bottom: 4px;
+}
+
+.viva-ans strong {
+  color: var(--accent2);
+}
+
+.viva-ans em {
+  color: var(--gold);
+  font-style: normal;
+  font-weight: 600;
+}
+
+.drug-tag {
+  display: inline-block;
+  background: rgba(255, 107, 138, 0.12);
+  border: 1px solid rgba(255, 107, 138, 0.3);
+  color: var(--rose);
+  font-size: 10px;
+  padding: 1px 6px;
+  border-radius: 3px;
+  font-family: "JetBrains Mono", monospace;
+  margin-left: 4px;
+}
+
+
+/* ==========================================
+   SHARED INTERACTIVE ELEMENTS & UTILS
+   ========================================== */
+
+.progress-bar {
+  height: 3px;
+  background: linear-gradient(to right, var(--accent), var(--accent2), var(--accent4));
+  border-radius: 2px;
+  margin-bottom: 2rem;
+  animation: load 1.5s ease forwards;
+}
+
+@keyframes load {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+.formula {
+  font-family: "JetBrains Mono", monospace;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 6px 12px;
+  margin: 6px 0;
+  color: var(--accent);
+  font-size: 13px;
+  display: block;
+}
+
+.top-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(232, 200, 74, 0.35);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  transition: all 0.2s ease-in-out;
+}
+
+.top-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(232, 200, 74, 0.5);
+}
+
+.theme-emerald .top-btn { box-shadow: 0 4px 15px rgba(0, 200, 151, 0.35); }
+.theme-emerald .top-btn:hover { box-shadow: 0 6px 20px rgba(0, 200, 151, 0.5); }
+
+/* Footer */
+.footer {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  text-align: center;
+  padding: 2rem 1.5rem;
+  color: var(--muted);
+  font-size: 12px;
+  font-family: "JetBrains Mono", monospace;
+  margin-top: 60px;
+}
+
+.footer p {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 1px;
+}
+
+.footer .kims-tag {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+
+/* ==========================================
+   📱 COMPREHENSIVE RESPONSIVE ENGINE
+   ========================================== */
+
+@media (max-width: 768px) {
+  /* Classic Cover page mobile enhancements */
+  .cover {
+    padding: 40px 20px 48px;
+    min-height: 100vh;
+    justify-content: flex-start;
+  }
+  
+  .cover-pyq-badge {
+    position: static !important;
+    display: inline-block !important;
+    align-self: flex-start !important;
+    margin-bottom: 24px !important;
+    padding: 6px 12px !important;
+    font-size: 10px !important;
+  }
+
+  .cover-tag {
+    margin-bottom: 24px !important;
+  }
+
+  .cover h1 {
+    font-size: clamp(32px, 7vw, 48px) !important;
+    margin-bottom: 12px !important;
+  }
+
+  .cover-sub {
+    font-size: 15px !important;
+    margin-bottom: 36px !important;
+    line-height: 1.5 !important;
+  }
+
+  .cover-divider {
+    margin: 20px 0 !important;
+  }
+
+  .cover-meta {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+    width: 100% !important;
+  }
+
+  .cover-meta-item {
+    gap: 2px !important;
+  }
+
+  /* Modern Hero mobile adjustments */
+  .hero {
+    padding: 2rem 1rem;
+  }
+
+  /* Page Wrapper and Main Content Spacing */
+  .page {
+    padding: 24px 16px !important;
+    max-width: 100% !important;
+  }
+
+  .content {
+    padding: 0 1rem 2rem;
+  }
+  
+  .flowchart-container,
+  .flowchart,
+  .clinical-box,
+  .mnemonic-box,
+  .eq-box,
+  .big-picture,
+  .viva-section,
+  .mnemonic,
+  .graph-box,
+  .warn-box {
+    padding: 20px 16px !important;
+    margin: 20px 0 !important;
+  }
+
+  /* Typography Adjustments */
+  h2.topic-head,
+  .content .section-header h2 {
+    font-size: 20px !important;
+    margin: 24px 0 12px !important;
+  }
+
+  h3.sub-head {
+    font-size: 12px !important;
+    margin: 16px 0 8px !important;
+  }
+
+  /* Table of Contents Mobile layout */
+  .toc {
+    margin: 1rem 0;
+    width: auto;
+    display: block;
+  }
+
+  /* Flowcharts mobile layout */
+  .flow-row, .flow-h {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    gap: 6px !important;
+  }
+
+  .flow-box {
+    width: 100% !important;
+    min-width: unset !important;
+    max-width: 100% !important;
+    padding: 12px 16px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    border-right: 1.5px solid var(--border) !important;
+    box-sizing: border-box !important;
+  }
+
+  .flow-arrow, .arrow {
+    display: inline-block !important;
+    transform: rotate(90deg) !important;
+    margin: 8px 0 !important;
+    text-align: center !important;
+  }
+
+  .flow-arrow.down, .arrow-down {
+    transform: none !important;
+    margin: 8px 0 !important;
+    max-width: 100% !important;
+  }
+
+  /* Classic Comparison Tables & Modern Tables responsive scroll */
+  .comp-table, .table-wrap {
+    display: block !important;
+    width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 6px !important;
+    margin: 16px 0 !important;
+  }
+
+  .comp-table th, 
+  .comp-table td,
+  .table-wrap th,
+  .table-wrap td {
+    padding: 10px 12px !important;
+    font-size: 12px !important;
+  }
+
+  .comp-table::-webkit-scrollbar,
+  .table-wrap::-webkit-scrollbar {
+    height: 4px !important;
+  }
+  .comp-table::-webkit-scrollbar-track,
+  .table-wrap::-webkit-scrollbar-track {
+    background: var(--bg) !important;
+  }
+  .comp-table::-webkit-scrollbar-thumb,
+  .table-wrap::-webkit-scrollbar-thumb {
+    background: var(--border) !important;
+    border-radius: 2px !important;
+  }
+
+  /* Layout helpers */
+  .two-col, .atom-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .clinical-box ul li {
+    display: block !important;
+    position: relative !important;
+    padding-left: 16px !important;
+    font-size: 12px !important;
+  }
+  
+  .clinical-box ul li::before {
+    position: absolute !important;
+    left: 0 !important;
+    top: 2px !important;
+  }
+
+  /* Accordions / Viva Spacing */
+  summary.viva-q-text,
+  .content summary {
+    padding: 12px 0 !important;
+    font-size: 13px !important;
+  }
+
+  .viva-a-text,
+  .viva-ans {
+    padding-left: 12px !important;
+    font-size: 12px !important;
+    margin-top: 6px !important;
+  }
+}
+
+
+/* ==========================================
+   🖨️ PREMIUM PRINT-TO-PDF ENGINE (Ctrl+P)
+   ========================================== */
+
+@media print {
+  :root, body.theme-gold, body.theme-crimson, body.theme-emerald, body.theme-indigo, body.theme-amber {
+    --bg: #ffffff;
+    --surface: #f8f9fa;
+    --surface2: #e9ecef;
+    --surface3: #dee2e6;
+    --border: #dee2e6;
+    --border2: #ced4da;
+    --accent: #000000;
+    --accent2: #000000;
+    --accent3: #000000;
+    --accent4: #000000;
+    --text: #111111;
+    --text2: #222222;
+    --text3: #333333;
+    --muted: #495057;
+    --white: #000000;
+    --rls: #000000;
+    --gold: #000000;
+    --rose: #000000;
+    --purple: #000000;
+    --blue: #000000;
+    --green: #000000;
+    --orange: #000000;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+    color: #000000 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  @page {
+    size: A4 portrait;
+    margin: 12mm 15mm;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #111111 !important;
+    font-size: 11pt !important;
+    line-height: 1.4 !important;
+  }
+
+  p {
+    font-size: 11pt !important;
+    line-height: 1.4 !important;
+    margin-bottom: 8px !important;
+  }
+
+  /* Cover Page exact single A4 layout */
+  .cover {
+    min-height: unset !important;
+    height: 260mm !important;
+    max-height: 100vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    padding: 40px !important;
+    box-sizing: border-box !important;
+    border: 2px solid #000000 !important;
+    background: #ffffff !important;
+    page-break-after: always !important;
+    break-after: page !important;
+    position: relative !important;
+  }
+
+  .cover::before,
+  .cover::after {
+    display: none !important;
+  }
+
+  .cover-tag {
+    border-color: #000000 !important;
+    margin-bottom: 25px !important;
+    padding: 4px 10px !important;
+    font-size: 10px !important;
+  }
+
+  .cover h1 {
+    font-size: 44px !important;
+    line-height: 1.1 !important;
+    color: #000000 !important;
+    margin-bottom: 10px !important;
+  }
+
+  .cover h1 span {
+    color: #000000 !important;
+  }
+
+  .cover-sub {
+    font-size: 15px !important;
+    color: #495057 !important;
+    margin-bottom: 30px !important;
+  }
+
+  .cover-divider {
+    width: 60px !important;
+    height: 2px !important;
+    background: #000000 !important;
+    margin: 20px 0 !important;
+  }
+
+  .cover-meta {
+    gap: 30px !important;
+  }
+
+  .cover-meta-value {
+    font-size: 12px !important;
+  }
+
+  .cover-pyq-badge {
+    position: absolute !important;
+    top: 40px !important;
+    right: 40px !important;
+    border: 1px solid #000000 !important;
+    background: #ffffff !important;
+    padding: 6px 12px !important;
+    font-size: 10px !important;
+  }
+
+  /* Modern Hero formatting for print */
+  .hero {
+    background: none !important;
+    border-bottom: 2px solid #000000 !important;
+    padding: 1rem 0 !important;
+  }
+  
+  .hero::before, .hero::after {
+    display: none !important;
+  }
+
+  .module-tag {
+    background: #ffffff !important;
+    border: 1px solid #000000 !important;
+    color: #000000 !important;
+  }
+  .module-tag .dot {
+    display: none !important;
+  }
+
+  .pill {
+    background: #ffffff !important;
+    border: 1px solid #000000 !important;
+  }
+
+  /* Page Wrapper Spacing */
+  .page {
+    padding: 10px 0 !important;
+    max-width: 100% !important;
+  }
+
+  .content {
+    padding: 0 !important;
+  }
+
+  .section-divider {
+    margin: 20px 0 !important;
+    border-color: #dee2e6 !important;
+  }
+
+  /* Heading orphans preventions */
+  .section-header,
+  .content .section-header,
+  h2.topic-head,
+  h3.sub-head {
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+    margin-top: 15px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .section-header, .content .section-header {
+    padding-bottom: 8px !important;
+    margin-bottom: 15px !important;
+    border-bottom: 1.5px solid #000000 !important;
+  }
+
+  .section-title {
+    font-size: 20px !important;
+    color: #000000 !important;
+  }
+
+  .content .section-num {
+    background: none !important;
+    border: 2px solid #000000 !important;
+    color: #000000 !important;
+  }
+
+  h2.topic-head {
+    font-size: 16px !important;
+    border-bottom: 1px solid #dee2e6 !important;
+    padding-bottom: 4px !important;
+  }
+
+  h3.sub-head {
+    font-size: 11px !important;
+    margin-top: 12px !important;
+  }
+
+  /* Avoid cutting boxes across page breaks */
+  .pyq-box,
+  .big-picture,
+  .clinical-box,
+  .content .clinical-box,
+  .mnemonic-box,
+  .eq-box,
+  .flowchart-container,
+  .flowchart,
+  .comp-table,
+  .table-wrap,
+  .key-fact,
+  .mnemonic,
+  .viva-section,
+  .warn-box,
+  .atom-card,
+  details,
+  details.viva-q,
+  tr,
+  blockquote {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .pyq-box,
+  .big-picture,
+  .clinical-box,
+  .content .clinical-box,
+  .mnemonic-box,
+  .eq-box,
+  .flowchart-container,
+  .flowchart,
+  .viva-section,
+  .mnemonic,
+  .warn-box {
+    padding: 12px 16px !important;
+    margin: 10px 0 !important;
+    border-radius: 4px !important;
+    border: 1px solid #000000 !important;
+    background: #f8f9fa !important;
+  }
+
+  .pyq-box { background: #fbf8eb !important; }
+  .clinical-box, .content .clinical-box { background: #fdf5f7 !important; }
+  .warn-box { background: #fff9f3 !important; }
+  .mnemonic, .mnemonic-box { background: #f4fbf7 !important; }
+  .eq-box { background: #fdfbff !important; }
+
+  .pyq-box ul li {
+    background: #e9ecef !important;
+    border: 1px solid #dee2e6 !important;
+    padding: 2px 6px !important;
+    font-size: 10px !important;
+  }
+
+  /* Flowcharts print layout */
+  .flow-box {
+    padding: 6px 12px !important;
+    font-size: 11px !important;
+    min-width: 110px !important;
+    border: 1px solid #000000 !important;
+    background: #ffffff !important;
+  }
+
+  .flow-arrow, .arrow {
+    font-size: 14px !important;
+  }
+  .flow-arrow.down, .arrow-down {
+    margin: 1px 0 !important;
+    font-size: 16px !important;
+  }
+
+  /* Comparison Tables print */
+  .comp-table th, .table-wrap th {
+    padding: 8px 10px !important;
+    font-size: 10px !important;
+    border-bottom: 2px solid #000000 !important;
+    background: #e9ecef !important;
+  }
+
+  .comp-table td, .table-wrap td {
+    padding: 7px 10px !important;
+    font-size: 11px !important;
+    line-height: 1.3 !important;
+    border-bottom: 1px solid #dee2e6 !important;
+    background: #ffffff !important;
+  }
+
+  /* Viva Sections print: details tags auto-expand */
+  details, details.viva-q {
+    display: block !important;
+    border: 1px solid #000000 !important;
+    margin-bottom: 12px !important;
+  }
+
+  summary, summary.viva-q-text {
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    margin-bottom: 6px !important;
+    display: block !important;
+  }
+
+  summary::before, summary.viva-q-text::after, details[open] summary::before {
+    display: none !important;
+  }
+
+  details:not([open]) > *:not(summary) {
+    display: block !important; /* Force print answer display */
+  }
+
+  .viva-a-text, .viva-ans {
+    display: block !important;
+    font-size: 11.5px !important;
+    line-height: 1.4 !important;
+    padding-left: 12px !important;
+    border-left: 2px solid #000000 !important;
+    color: #111111 !important;
+  }
+
+  /* Hide print-unfriendly components */
+  .top-btn,
+  .progress-bar,
+  .toc {
+    display: none !important;
+  }
+
+  /* Clean print footer */
+  .footer {
+    border-top: 1px solid #000000 !important;
+    margin-top: 30px !important;
+    padding: 20px !important;
+    background: #ffffff !important;
+  }
+}
+    </style>
+</head>
+<body class="theme-indigo">
+<!-- HERO -->
+<div class="hero">
+<div class="module-tag"><span class="dot"></span>MODULE 09</div>
+<h1>Clinical <br/><span>Biochemistry</span></h1>
+<p class="hero-sub">WBUHS BIOCHEMISTRY · PAPER 2 · KIMS KRISHNANAGAR</p>
+<div class="hero-pills">
+<span class="pill">Acid-Base Balance</span>
+<span class="pill">Blood Buffers</span>
+<span class="pill">Henderson-Hasselbalch</span>
+<span class="pill">Liver Function Tests</span>
+<span class="pill">Renal Function Tests</span>
+<span class="pill">Jaundice</span>
+<span class="pill">Free Radicals &amp; ROS</span>
+<span class="pill">Antioxidants</span>
+<span class="pill">Xenobiotics &amp; Cytochrome P450</span>
+<span class="pill">Plasma Proteins</span>
+<span class="pill">Diabetes Lab Tests</span>
+<span class="pill">Functional Tests</span>
+</div>
+</div>
+<!-- TOC -->
+<div class="toc">
+<div class="toc-title">▸ Quick Navigate</div>
+<div class="toc-grid">
+<a href="#s1"><span class="toc-num">01</span> Acid-Base Balance</a>
+<a href="#s2"><span class="toc-num">02</span> Blood Buffers &amp; H-H Equation</a>
+<a href="#s3"><span class="toc-num">03</span> Acid-Base Disorders</a>
+<a href="#s4"><span class="toc-num">04</span> Anion Gap</a>
+<a href="#s5"><span class="toc-num">05</span> Liver Function Tests (LFT)</a>
+<a href="#s6"><span class="toc-num">06</span> Jaundice &amp; Bilirubin</a>
+<a href="#s7"><span class="toc-num">07</span> Renal Function Tests (RFT)</a>
+<a href="#s8"><span class="toc-num">08</span> Diabetes Lab Tests</a>
+<a href="#s9"><span class="toc-num">09</span> Free Radicals &amp; ROS</a>
+<a href="#s10"><span class="toc-num">10</span> Antioxidants &amp; Detox</a>
+<a href="#s11"><span class="toc-num">11</span> Xenobiotics &amp; Cyt P450</a>
+<a href="#s12"><span class="toc-num">12</span> ELISA &amp; Chromatography</a>
+<a href="#s13"><span class="toc-num">13</span> Viva Q&amp;A</a>
+<a href="#s14"><span class="toc-num">14</span> EQ Templates</a>
+<a href="#s15"><span class="toc-num">15</span> Quickfire Revision Table</a>
+</div>
+</div>
+<div class="content">
+<div class="progress-bar"></div><!-- MASTER PYQ INDEX BOX --><div class="pyq-box">
+<div class="pyq-box-label">Master PYQ Index (2011–2025)</div>
+<ul>
+<li>2011</li>
+<li>2012</li>
+<li>2014</li>
+<li>2015-S</li>
+<li>2016</li>
+<li>2018</li>
+<li>2020</li>
+<li>2022</li>
+<li>2024</li>
+<li>2025</li>
+</ul>
+</div><!-- EXAM PRIORITY MAP --><div class="big-picture" style="margin: 0 0 2rem 0;">
+<div class="big-picture-label">📊 EXAM PRIORITY MAP &amp; USAGE STRATEGY</div>
+<p>
+<strong style="color: var(--rose);">🔴 TIER 1 (High Yield — Must Master):</strong> Acid-Base Disorders (s3), Anion Gap (s4), Liver Function Tests (s5), Jaundice &amp; Bilirubin (s6), Renal Function Tests (s7), Diabetes Lab Tests (s8). Core clinical cases.<br/>
+<strong style="color: var(--accent2);">🟡 TIER 2 (Medium Yield — Review):</strong> Acid-Base Balance (s1), Blood Buffers (s2), Free Radicals &amp; ROS (s9), Antioxidants (s10), Xenobiotics &amp; Cytochrome P450 (s11). Mechanism-oriented bio-systems.<br/>
+<strong style="color: var(--green);">🟢 TIER 3 (Low Yield — Collapsed on Screen):</strong> ELISA &amp; Functional Tests (s12), Essay Question Templates (s14). Fast read, laboratory details and essay structures.
+        </p>
+</div><!-- LAST DAY REVISION MODE --><div class="section-header">
+<div class="section-num" style="background: var(--rose); color: #fff;">00</div>
+<h2>🔥 Last Day Revision Mode</h2>
+</div><div class="clinical-box key-fact" style="border-left-color: var(--rose); background: rgba(248, 113, 113, 0.05); border-color: rgba(248, 113, 113, 0.2);">
+<div class="cbox-title" style="color: var(--rose);">ULTRA-CONCISE EXAM FACTS</div>
+<ul class="checklist">
+<li><strong>Henderson-Hasselbalch:</strong> pH = pKa + log([HCO₃⁻] / [H₂CO₃]). Ratio of HCO₃⁻ to H₂CO₃ must be 20:1 for normal pH (7.40).</li>
+<li><strong>Anion Gap (AG):</strong> AG = Na⁺ - (Cl⁻ + HCO₃⁻). Normal is 8–12 mEq/L. High AG acidosis caused by MUDPILES (Methanol, Uremia, DKA, Propylene glycol, INH, Lactic acidosis, Ethylene glycol, Salicylates).</li>
+<li><strong>Jaundice:</strong> Pre-hepatic (unconjugated hyperbilirubinemia, high urinary urobilinogen, no bile in urine), Hepatic (mixed bilirubinemia, high ALT/AST), Post-hepatic (conjugated hyperbilirubinemia, clay-colored stools, bile in urine, extremely high Alkaline Phosphatase).</li>
+<li><strong>Renal Clearance:</strong> GFR estimated by Creatinine Clearance = (U_cr * V) / P_cr. Normal GFR is ~125 mL/min.</li>
+<li><strong>Diabetes Mellitus:</strong> Fasting Plasma Glucose ≥ 126 mg/dL, 2-hr OGTT ≥ 200 mg/dL, HbA1c ≥ 6.5%. Microalbuminuria is the earliest indicator of diabetic nephropathy.</li>
+<li><strong>Free Radicals:</strong> Superoxide dismutase (SOD) converts O₂⁻ to H₂O₂. Catalase and Glutathione Peroxidase convert H₂O₂ to H₂O.</li>
+</ul>
+</div><div class="section-divider"></div>
+<!-- ════════════════ S1: ACID-BASE BALANCE ════════════════ -->
+<div id="s1">
+<div class="section-header">
+<div class="section-num">01</div>
+<h2>Acid-Base <em>Balance</em></h2>
+</div>
+<div class="keypoint">Normal blood pH = <strong>7.35–7.45</strong>. Maintained by three systems: (1) Buffer systems (immediate, seconds), (2) Respiratory compensation (minutes–hours), (3) Renal compensation (hours–days, most powerful).</div>
+<div class="card">
+<div class="card-title">Normal Arterial Blood Gas (ABG) Values <span class="badge badge-pyq">PYQ 2014-S, 2018-S, 2023</span></div>
+<div class="val-grid">
+<div class="val-box"><span class="val-label">pH</span><span class="val-num">7.35–7.45</span></div>
+<div class="val-box"><span class="val-label">pCO₂</span><span class="val-num">35–45</span><span class="val-unit"> mmHg</span></div>
+<div class="val-box"><span class="val-label">pO₂</span><span class="val-label" style="font-size:10px"></span><span class="val-num">80–100</span><span class="val-unit"> mmHg</span></div>
+<div class="val-box"><span class="val-label">HCO₃⁻</span><span class="val-num">22–26</span><span class="val-unit"> mEq/L</span></div>
+<div class="val-box"><span class="val-label">Base Excess</span><span class="val-num">±2</span><span class="val-unit"> mEq/L</span></div>
+<div class="val-box"><span class="val-label">O₂ Saturation</span><span class="val-num">95–100</span><span class="val-unit"> %</span></div>
+</div>
+</div>
+<div class="flowchart">
+<div class="flow-title">Acid-Base Regulatory Systems — Hierarchy</div>
+<div class="flow-v">
+<div class="flow-box accent">
+<span class="lbl">IMMEDIATE (seconds) — Chemical Buffers</span>
+        HCO₃⁻/H₂CO₃ · Phosphate (HPO₄²⁻/H₂PO₄⁻) · Protein/Haemoglobin · Ammonia buffer in kidney
+        <span class="sub">First line of defence — do NOT eliminate acid, just neutralise it temporarily</span>
+</div>
+<div class="flow-step-label">↓ If insufficient → Respiratory system kicks in</div>
+<div class="flow-box gold">
+<span class="lbl">FAST (minutes to hours) — Respiratory Compensation</span>
+        CO₂ + H₂O ⇌ H₂CO₃ ⇌ H⁺ + HCO₃⁻ (catalysed by carbonic anhydrase)<br/>
+        Acidosis → ↑RR → blow off CO₂ → pH rises<br/>
+        Alkalosis → ↓RR → retain CO₂ → pH falls<br/>
+<span class="sub">Lungs eliminate CO₂ (volatile acid). Fast but not complete correction.</span>
+</div>
+<div class="flow-step-label">↓ If persistent → Renal system — most powerful but slowest</div>
+<div class="flow-box teal">
+<span class="lbl">SLOW but COMPLETE (hours to days) — Renal Compensation</span>
+<strong>Acidosis:</strong> Kidneys ↑ H⁺ excretion (as NH₄⁺ and titratable acid) + ↑ HCO₃⁻ reabsorption<br/>
+<strong>Alkalosis:</strong> Kidneys ↓ H⁺ excretion + ↓ HCO₃⁻ reabsorption + ↑ HCO₃⁻ excretion<br/>
+<span class="sub">Only system that can completely restore normal pH. Carbonic anhydrase inhibitors (acetazolamide) block renal H⁺ secretion.</span>
+</div>
+</div>
+</div>
+<div class="card">
+<div class="card-title">Renal Mechanisms for H⁺ Regulation <span class="badge badge-pyq">PYQ 2019-S, 2025</span></div>
+<div class="two-col">
+<div>
+<p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">H⁺ Secretion (Acidosis — increase all three):</p>
+<ul class="checklist">
+<li><strong>Titratable acidity:</strong> H⁺ + HPO₄²⁻ → H₂PO₄⁻ (phosphate buffer) — excreted in urine</li>
+<li><strong>Ammonium excretion:</strong> Glutamine → Glutamate + NH₃ (in tubular cells) → NH₃ + H⁺ → NH₄⁺ (excreted in urine). Most important during chronic acidosis — can increase 10-fold</li>
+<li><strong>HCO₃⁻ reabsorption:</strong> All filtered HCO₃⁻ reabsorbed (mainly proximal tubule) — mediated by carbonic anhydrase</li>
+</ul>
+</div>
+<div>
+<p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px">Key Renal Facts for Exam:</p>
+<ul class="checklist">
+<li>Proximal tubule: reabsorbs 80–85% of filtered HCO₃⁻</li>
+<li>Distal tubule + collecting duct: fine-tune H⁺ secretion, NH₄⁺ production</li>
+<li>Urine pH can range from <strong>4.5 to 8.5</strong> (wide range = renal power)</li>
+<li>Aldosterone → ↑ H⁺ secretion in collecting duct (explains metabolic alkalosis in hyperaldosteronism)</li>
+<li>Carbonic anhydrase inhibitors (acetazolamide) → ↓ HCO₃⁻ reabsorption → metabolic acidosis</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="divider"></div>
+<!-- ════════════════ S2: BLOOD BUFFERS & HENDERSON-HASSELBALCH ════════════════ -->
+<div id="s2">
+<div class="section-header">
+<div class="section-num">02</div>
+<h2>Blood Buffers &amp; <em>Henderson-Hasselbalch</em></h2>
+</div>
+<div class="card">
+<div class="card-title">Henderson-Hasselbalch Equation <span class="badge badge-fav">⭐ PYQ 2013-S, 2019-S, 2021</span></div>
+<div style="background:var(--surface3);border:1px solid var(--accent);border-radius:8px;padding:1.25rem;text-align:center;margin-bottom:1rem;">
+<p style="font-family:'Crimson Pro',serif;font-size:1.4rem;color:var(--accent2);margin-bottom:8px;">pH = pKa + log [A⁻] / [HA]</p>
+<p style="font-size:13px;color:var(--text2);">For bicarbonate buffer:</p>
+<p style="font-family:'Crimson Pro',serif;font-size:1.4rem;color:var(--gold);">pH = 6.1 + log [HCO₃⁻] / [H₂CO₃]</p>
+<p style="font-size:12px;color:var(--text2);margin-top:6px;">Normal ratio = 20:1 → pH = 6.1 + log 20 = 6.1 + 1.3 = 7.4</p>
+</div>
+<div class="keypoint">The <strong>ratio HCO₃⁻ : H₂CO₃ = 20:1</strong> must be maintained for pH 7.4. Lungs control H₂CO₃ (via CO₂); kidneys control HCO₃⁻. Change either → pH shifts.</div>
+</div>
+<div class="card">
+<div class="card-title">Blood Buffer Systems <span class="badge badge-pyq">PYQ 2019, 2021</span></div>
+<div class="table-wrap">
+<table>
+<tr><th>Buffer System</th><th>Components</th><th>Location</th><th>Capacity</th><th>Key Feature</th></tr>
+<tr><td>Bicarbonate/Carbonic acid</td><td>HCO₃⁻ / H₂CO₃ (= CO₂ dissolved)</td><td>Plasma + RBC</td><td>~53% of total</td><td>Open system — CO₂ expelled by lungs → most physiologically important. pKa 6.1</td></tr>
+<tr><td>Haemoglobin</td><td>HbO₂ / HHb (deoxyHb is better buffer)</td><td>RBC</td><td>~35% of total</td><td>Most powerful intracellular buffer. Histidine residues (pKa 6.0) — imidazole ring. DeoxyHb = stronger base than OxyHb → Haldane effect</td></tr>
+<tr><td>Plasma proteins</td><td>Protein-NH₂ / Protein-COOH</td><td>Plasma</td><td>~7%</td><td>Amphoteric — can act as acid or base. Albumin main contributor</td></tr>
+<tr><td>Phosphate</td><td>HPO₄²⁻ / H₂PO₄⁻</td><td>RBC + urine</td><td>~5%</td><td>pKa 6.8 — ideal buffer for urine. Minor role in blood. Major role in renal H⁺ excretion as titratable acid</td></tr>
+</table>
+</div>
+<div class="mnemonic-box" style="margin-top:8px">
+<div class="mbox-title">Mnemonic — Blood Buffers in Order</div>
+<div class="mnemonic-highlight">"Big Healthy People Play" = Bicarbonate, Haemoglobin, Protein, Phosphate</div>
+</div>
+<div class="clinical-box" style="margin-top:8px">
+<div class="cbox-title">Histidine's Role in Buffering <span class="badge badge-pyq">PYQ 2024</span></div>
+<p>Histidine residues in haemoglobin have imidazole side chains with pKa ~6.0 — ideal for physiological buffering. The β-93 histidine is key. In deoxyHb, the pKa of histidine shifts to ~8.0 → stronger buffer → Bohr effect (H⁺ promotes O₂ release). <strong>Histidine is the only amino acid that buffers at physiological pH.</strong></p>
+</div>
+</div>
+</div>
+<div class="divider"></div>
+<!-- ════════════════ S3: ACID-BASE DISORDERS ════════════════ -->
+<div id="s3">
+<div class="section-header">
+<div class="section-num">03</div>
+<h2>Acid-Base <em>Disorders</em></h2>
+</div>
+<div class="card">
+<div class="card-title">4 Primary Acid-Base Disorders <span class="badge badge-fav">⭐ PYQ Multiple — 2013, 2014-S, 2018-S, 2023</span></div>
+<div class="table-wrap">
+<table>
+<tr><th>Disorder</th><th>Primary Change</th><th>pH</th><th>pCO₂</th><th>HCO₃⁻</th><th>Compensation</th><th>Common Causes</th></tr>
+<tr><td>Metabolic Acidosis</td><td>↓ HCO₃⁻ (or ↑ H⁺)</td><td class="hl-rose">↓</td><td>Normal then ↓</td><td class="hl-rose">↓ (primary)</td><td>Respiratory: ↑RR → ↓pCO₂ (Kussmaul breathing)</td><td>DKA, lactic acidosis, renal failure, diarrhoea (HCO₃⁻ loss), aspirin poisoning</td></tr>
+<tr><td>Metabolic Alkalosis</td><td>↑ HCO₃⁻</td><td class="hl-teal">↑</td><td>Normal then ↑</td><td class="hl-teal">↑ (primary)</td><td>Respiratory: ↓RR → ↑pCO₂</td><td>Vomiting (HCl loss), antacid excess, hyperaldosteronism, diuretics, hypokalaemia</td></tr>
+<tr><td>Respiratory Acidosis</td><td>↑ pCO₂ (hypoventilation)</td><td class="hl-rose">↓</td><td class="hl-rose">↑ (primary)</td><td>Normal then ↑</td><td>Renal: ↑HCO₃⁻ reabsorption + ↑H⁺ excretion</td><td>COPD, respiratory depression (opioids), pneumonia, severe asthma, respiratory failure</td></tr>
+<tr><td>Respiratory Alkalosis</td><td>↓ pCO₂ (hyperventilation)</td><td class="hl-teal">↑</td><td class="hl-teal">↓ (primary)</td><td>Normal then ↓</td><td>Renal: ↓HCO₃⁻ reabsorption + ↓H⁺ excretion</td><td>Anxiety/hyperventilation, high altitude, salicylate poisoning (early), liver failure, sepsis</td></tr>
+</table>
+</div>
+</div>
+<!-- Case-based ABG: persistent vomiting PYQ 2023 -->
+<div class="card">
+<div class="card-title">⚕️ Clinical Case — Persistent Vomiting (ABG Interpretation) <span class="badge badge-fav">⭐ PYQ 2023</span></div>
+<div class="clinical-box">
+<div class="cbox-title">Case: 50-year-old male, persistent vomiting, dehydrated, shallow breathing</div>
+<p><strong>Lab Results:</strong> pH 7.72 · HCO₃⁻ 45 mmol/L · pCO₂ 60 mmHg · Na⁺ 140 mEq/L · K⁺ 2.5 mEq/L · Urine: Acidic</p>
+</div>
+<div class="flowchart" style="margin-top:8px;">
+<div class="flow-title">ABG Interpretation Approach</div>
+<div class="flow-v">
+<div class="flow-box accent">
+<span class="lbl">Step 1: pH?</span>
+          pH 7.72 → <strong>Alkalosis</strong> (normal 7.35–7.45)
+        </div>
+<div class="flow-step-label">↓ Identify primary disturbance</div>
+<div class="flow-box gold">
+<span class="lbl">Step 2: Primary cause?</span>
+          HCO₃⁻ 45 mEq/L (high) → Primary <strong>Metabolic Alkalosis</strong><br/>
+          Cause: Vomiting → loss of HCl from stomach → HCO₃⁻ accumulates
+        </div>
+<div class="flow-step-label">↓ Check compensation</div>
+<div class="flow-box teal">
+<span class="lbl">Step 3: Compensation?</span>
+          pCO₂ 60 mmHg (expected ↑ to retain CO₂) — respiratory compensation: ↓RR → shallow breathing → CO₂ retention → helps bring pH back. <strong>Appropriate respiratory compensation.</strong>
+</div>
+<div class="flow-step-label">↓ Explain secondary findings</div>
+<div class="flow-box purple">
+<span class="lbl">Step 4: Hypokalemia + Acidic urine — Paradoxical?</span>
+<strong>Why hypokalemia?</strong> Vomiting → volume depletion → Aldosterone ↑ → Na⁺ reabsorption + K⁺ and H⁺ excretion → K⁺ loss<br/>
+<strong>Why acidic urine in alkalosis?</strong> K⁺ depleted cells exchange K⁺ for H⁺ → H⁺ moves intracellularly + K⁺ exits → remaining H⁺ in distal tubule excreted in urine → paradoxically acidic urine despite systemic alkalosis (called "paradoxical aciduria")
+        </div>
+</div>
+</div>
+</div>
+<div class="mnemonic-box">
+<div class="mbox-title">ABG Quick Rule</div>
+<div class="mnemonic-highlight">"ROME" = Respiratory Opposite, Metabolic Equal</div>
+<p style="font-size:12px;color:var(--text2);margin-top:6px;">Respiratory acidosis → pH↓ and pCO₂↑ (opposite directions). Metabolic acidosis → pH↓ and HCO₃⁻↓ (same/equal direction). Applies for alkalosis too.</p>
+</div>
+</div>
+<div class="divider"></div>
+<!-- ════════════════ S4: ANION GAP ════════════════ -->
+<div id="s4">
+<div class="section-header">
+<div class="section-num">04</div>
+<h2>Anion <em>Gap</em></h2>
+</div>
+<div class="card">
+<div class="card-title">Anion Gap — Definition &amp; Significance <span class="badge badge-fav">⭐ PYQ 2014-S, 2018-S</span></div>
+<div style="background:var(--surface3);border:1px solid var(--accent);border-radius:8px;padding:1.25rem;text-align:center;margin-bottom:1rem;">
+<p style="font-family:'Crimson Pro',serif;font-size:1.3rem;color:var(--accent2);">Anion Gap = [Na⁺] − ([Cl⁻] + [HCO₃⁻])</p>
+<p style="font-size:13px;color:var(--gold);margin-top:6px;">Normal = 8–16 mEq/L (average 12 mEq/L)</p>
+<p style="font-size:12px;color:var(--text2);margin-top:4px;">Represents unmeasured anions: albumin (main), phosphate, sulphate, organic acids</p>
+</div>
+<div class="table-wrap">
+<table>
+<tr><th>Type</th><th>Anion Gap</th><th>Mechanism</th><th>Causes</th></tr>
+<tr><td>High Anion Gap Metabolic Acidosis (HAGMA)</td><td class="hl-rose">↑ (&gt;16 mEq/L)</td><td>Accumulation of unmeasured anions (organic acids, etc.) while HCO₃⁻ falls</td><td><strong>MUDPILES:</strong> Methanol, Uraemia, DKA, Paraldehyde, Isoniazid/Iron, Lactic acidosis, Ethylene glycol, Salicylates</td></tr>
+<tr><td>Normal Anion Gap Metabolic Acidosis (NAGMA / Hyperchloraemic acidosis)</td><td class="hl-teal">Normal (8–16)</td><td>HCO₃⁻ lost (replaced by Cl⁻ to maintain electroneutrality) → Cl⁻ rises</td><td>Diarrhoea (GI HCO₃⁻ loss), RTA (Renal Tubular Acidosis), acetazolamide, ureterosigmoidostomy, saline infusion</td></tr>
+</table>
+</div>
+<div class="mnemonic-box" style="margin-top:8px">
+<div class="mbox-title">HAGMA Mnemonic</div>
+<div class="mnemonic-highlight">"MUDPILES" = Methanol · Uraemia · DKA · Paraldehyde · Isoniazid/Iron · Lactic acidosis · Ethylene glycol · Salicylates</div>
+</div>
+<div class="warn-box" style="margin-top:8px">
+      Hypoalbuminaemia reduces the anion gap by ~2.5 mEq/L for every 1 g/dL fall in albumin below 4 g/dL. Correct for albumin before interpreting anion gap!
+    </div>
+</div>
+</div>
+<div class="divider"></div>
+<!-- ════════════════ S5: LIVER FUNCTION TESTS ════════════════ -->
+<div id="s5">
+<div class="section-header">
+<div class="section-num">05</div>
+<h2>Liver Function <em>Tests (LFT)</em></h2>
+</div>
+<div class="keypoint">Liver performs 500+ functions — LFTs assess hepatocellular damage, cholestasis, synthetic function, and excretory capacity. No single test is diagnostic alone — always interpret as a panel.</div>
+<div class="card">
+<div class="card-title">LFT Panel — Reference Ranges &amp; Clinical Significance <span class="badge badge-fav">⭐ PYQ 2019, 2024</span></div>
+<div class="table-wrap">
+<table>
+<tr><th>Test</th><th>Normal Range</th><th>What it measures</th><th>Raised in</th><th>Pattern</th></tr>
+<tr><td>Total Bilirubin</td><td>0.2–1.2 mg/dL</td><td>Total haem catabolism product</td><td>All types of jaundice</td><td>See jaundice section</td></tr>
+<tr><td>Direct (Conjugated) Bilirubin</td><td>&lt;0.2 mg/dL</td><td>Glucuronide-conjugated fraction</td><td>Obstructive, hepatocellular</td><td>↑↑ in obstructive/conjugated</td></tr>
+<tr><td>Indirect (Unconjugated) Bilirubin</td><td>0.1–1.0 mg/dL</td><td>Albumin-bound fraction</td><td>Haemolytic jaundice, Gilbert's, neonatal</td><td>↑↑ in haemolytic/unconjugated</td></tr>
+<tr><td>ALT / SGPT</td><td>7–56 U/L</td><td>Alanine aminotransferase — hepatocyte cytoplasm</td><td>Viral hepatitis (most sensitive), drug-induced liver injury</td><td><strong>Most liver-specific</strong>. ALT &gt; AST in viral hepatitis</td></tr>
+<tr><td>AST / SGOT</td><td>10–40 U/L</td><td>Aspartate aminotransferase — liver + heart + muscle</td><td>Hepatitis, MI, muscle disease, alcoholic hepatitis</td><td>AST:ALT &gt; 2 in alcoholic hepatitis</td></tr>
+<tr><td>ALP (Alkaline Phosphatase)</td><td>44–147 U/L</td><td>Bile canaliculi enzyme, also bone/placenta</td><td>Obstructive jaundice (↑↑↑), bone disease, pregnancy</td><td><strong>Best marker of cholestasis</strong></td></tr>
+<tr><td>GGT (γ-Glutamyl Transferase)</td><td>&lt;55 U/L (M), &lt;38 (F)</td><td>Bile duct cells, liver microsomes (induced by alcohol)</td><td>Obstructive jaundice, alcohol abuse, drug induction</td><td>High GGT + normal ALP = alcohol. High both = cholestasis</td></tr>
+<tr><td>Total Protein</td><td>6.0–8.0 g/dL</td><td>Synthetic function</td><td>—</td><td>↓ in chronic liver disease (↓ synthesis)</td></tr>
+<tr><td>Albumin</td><td>3.5–5.0 g/dL</td><td>Synthetic function, long half-life (~20 days)</td><td>—</td><td>↓ in chronic liver disease, malnutrition, nephrotic syndrome</td></tr>
+<tr><td>Prothrombin Time (PT/INR)</td><td>11–14 sec (INR 0.8–1.2)</td><td>Clotting factors II, V, VII, X (liver-synthesised)</td><td>—</td><td>Prolonged in severe liver disease — sensitive marker of synthetic failure</td></tr>
+<tr><td>5'-Nucleotidase</td><td>&lt;17 U/L</td><td>Liver-specific cholestasis marker</td><td>Obstructive liver disease</td><td>Rises with ALP in cholestasis, not in bone disease — differentiates liver vs bone ALP</td></tr>
+</table>
+</div>
+</div>
+<!-- Clinical case from PYQ 2024 -->
+<div class="card">
+<div class="card-title">⚕️ LFT Pattern Interpretation — PYQ 2024 Case</div>
+<div class="clinical-box">
+<div class="cbox-title">Case: Middle-aged woman, dark urine, grey/pale stool, pain abdomen</div>
+<p><strong>Results:</strong> Total Bilirubin 6.2 mg/dL · Direct 5.8 mg/dL · Total Protein 7.2 g/dL · Albumin 3.8 g/dL · AST 26 U/L · ALT 32 U/L · ALP 387 U/L · GGT 35 U/L</p>
+</div>
+<div class="result-box">
+<div class="result-row"><span class="result-param">Total Bilirubin</span><span class="result-val result-high">6.2 mg/dL ↑↑</span><span class="result-interp">Obstructive pattern: predominantly conjugated (direct)</span></div>
+<div class="result-row"><span class="result-param">Direct Bili</span><span class="result-val result-high">5.8 mg/dL ↑↑</span><span class="result-interp">Direct:Total ratio = 94% → obstructive/hepatocellular (not haemolytic)</span></div>
+<div class="result-row"><span class="result-param">ALT / AST</span><span class="result-val result-normal">Normal (32/26)</span><span class="result-interp">No hepatocellular damage → not viral hepatitis; not alcoholic</span></div>
+<div class="result-row"><span class="result-param">ALP</span><span class="result-val result-high">387 U/L ↑↑↑</span><span class="result-interp">Markedly elevated → hallmark of cholestasis/biliary obstruction</span></div>
+<div class="result-row"><span class="result-param">Albumin</span><span class="result-val result-normal">3.8 g/dL (normal)</span><span class="result-interp">Synthetic function preserved → likely acute, not chronic</span></div>
+<div class="result-row"><span class="result-param">Clinical signs</span><span class="result-val">Dark urine + pale stool</span><span class="result-interp">Classic obstructive jaundice: conjugated bili → urine (dark) + no bile to gut (pale stool)</span></div>
+</div>
+<p style="font-size:13px;margin-top:8px;"><strong style="color:var(--accent2);">Diagnosis:</strong> Obstructive (Cholestatic) Jaundice — likely choledocholithiasis (gallstone) or pancreatic head carcinoma. Further tests: USG abdomen, MRCP, ERCP, CA 19-9 if malignancy suspected.</p>
+</div>
+<div class="card">
+<div class="card-title">Why ALP Rises in Obstructive Jaundice? <span class="badge badge-pyq">PYQ Classic Viva</span></div>
+<div class="flowchart" style="margin:0">
+<div class="flow-title">ALP Mechanism in Cholestasis</div>
+<div class="flow-v">
+<div class="flow-box accent">Bile duct obstruction → bile salts accumulate in bile canaliculi</div>
+<div class="flow-step-label">↓ Bile salts are detergents — solubilise membrane-bound enzymes</div>
+<div class="flow-box gold">Bile salts solubilise ALP from bile canalicular membranes → ALP released into blood</div>
+<div class="flow-step-label">↓ Also</div>
+<div class="flow-box teal">Bile salts induce ALP synthesis (transcriptional upregulation) in bile duct cells</div>
+<div class="flow-step-label">↓ Result</div>
+<div class="flow-box rose">Serum ALP rises markedly (3–10× normal) in obstructive jaundice</div>
+</div>
+</div>
+</div>
+</div>
+<div class="divider"></div>
+<!-- ════════════════ S6: JAUNDICE & BILIRUBIN ════════════════ -->
+<div id="s6">
+<div class="section-header">
+<div class="section-num">06</div>
+<h2>Jaundice <em>&amp; Bilirubin</em></h2>
+</div>
+<div class="keypoint">Jaundice = yellowish discoloration of skin, sclerae, and mucous membranes when serum bilirubin &gt;2 mg/dL. Normal serum bilirubin = 0.2–1.2 mg/dL. Clinical jaundice visible at &gt;2 mg/dL.</div>
+<div class="flowchart">
+<div class="flow-title">Bilirubin Metabolism — Complete Pathway</div>
+<div class="flow-v">
+<div class="flow-box accent">
+<span class="lbl">Step 1 — Haem Catabolism (Spleen/RES)</span>
+        Senescent RBCs → Haemoglobin → Haem + Globin<br/>
+        Haem → Haem oxygenase → <strong>Biliverdin</strong> (green) + CO + Fe²⁺<br/>
+        Biliverdin → Biliverdin reductase → <strong>Bilirubin</strong> (yellow, water-insoluble = indirect/unconjugated)
+      </div>
+<div class="flow-step-label">↓ Bound to albumin — transported in blood as indirect bilirubin</div>
+<div class="flow-box gold">
+<span class="lbl">Step 2 — Hepatic Uptake</span>
+        Indirect bilirubin (albumin-bound) → hepatocyte<br/>
+        Dissociates from albumin → binds ligandin (Y protein) + Z protein inside hepatocyte
+      </div>
+<div class="flow-step-label">↓ Conjugation in ER</div>
+<div class="flow-box teal">
+<span class="lbl">Step 3 — Conjugation</span>
+        Bilirubin + 2× UDP-glucuronic acid → <strong>Bilirubin diglucuronide</strong> (direct/conjugated bilirubin)<br/>
+        Enzyme: UDP-glucuronyl transferase (UGT1A1) — <strong>absent in Crigler-Najjar; reduced in Gilbert's</strong><br/>
+        Conjugated bilirubin = water-soluble → can be excreted in bile
+      </div>
+<div class="flow-step-label">↓ Active transport into bile canaliculi (MRP2 transporter) — rate-limiting step</div>
+<div class="flow-box purple">
+<span class="lbl">Step 4 — Intestinal Fate</span>
+        Bilirubin diglucuronide → intestinal bacteria → deconjugation → <strong>Urobilinogen</strong><br/>
+        Urobilinogen: (a) 10–20% absorbed → portal blood → liver (enterohepatic circulation) or kidney → urine (gives urine yellow colour)<br/>
+        (b) Remainder → further reduced → <strong>Stercobilin</strong> → faeces (brown colour)
+      </div>
+</div>
+</div>
+<div class="card">
+<div class="card-title">Types of Jaundice — Differentiation <span class="badge badge-fav">⭐ PYQ 2019, 2024 — Always Comes</span></div>
+<div class="table-wrap">
+<table>
+<tr><th>Feature</th><th>Haemolytic (Pre-hepatic)</th><th>Hepatocellular</th><th>Obstructive (Post-hepatic)</th></tr>
+<tr><td>Cause</td><td>Excess RBC destruction</td><td>Hepatocyte damage (virus, toxin, alcohol)</td><td>Bile duct blockage (stone, tumour, stricture)</td></tr>
+<tr><td>Total Bilirubin</td><td>↑</td><td>↑↑</td><td>↑↑↑</td></tr>
+<tr><td>Indirect (Unconjugated)</td><td class="hl-rose">↑↑ (mainly)</td><td>↑ both</td><td>Normal or slight ↑</td></tr>
+<tr><td>Direct (Conjugated)</td><td>Normal</td><td>↑ both</td><td class="hl-rose">↑↑↑ (mainly)</td></tr>
+<tr><td>Urine Bilirubin</td><td>Absent (indirect can't cross kidney)</td><td>Present</td><td class="hl-rose">Present (dark urine)</td></tr>
+<tr><td>Urine Urobilinogen</td><td class="hl-rose">↑↑↑ (excess Hb → excess urobilinogen)</td><td>↑ (impaired reuptake)</td><td>Absent (no bile reaching gut)</td></tr>
+<tr><td>Stool Colour</td><td>Normal/dark</td><td>Normal or pale</td><td class="hl-rose">Clay/pale (no stercobilin)</td></tr>
+<tr><td>ALP</td><td>Normal</td><td>↑</td><td class="hl-rose">↑↑↑</td></tr>
+<tr><td>ALT/AST</td><td>Normal</td><td class="hl-rose">↑↑↑ (hepatocellular damage)</td><td>Normal/slight ↑</td></tr>
+<tr><td>Van den Bergh test</td><td>Indirect positive only</td><td>Both positive</td><td>Direct positive, delayed indirect</td></tr>
+</table>
+</div>
+</div>
+<div class="two-col">
+<div class="clinical-box">
+<div class="cbox-title">Gilbert's Syndrome</div>
+<p>Mildly reduced UGT1A1 activity (~30% of normal) → mild unconjugated hyperbilirubinaemia, especially after fasting or stress. <strong>Benign</strong>, no liver disease. Serum bilirubin 1.2–3 mg/dL. Fasting test: ↑ bilirubin after 48-hour fast.</p>
+</div>
+<div class="clinical-box">
+<div class="cbox-title">Neonatal Physiological Jaundice + Phototherapy <span class="badge badge-pyq">PYQ 2011, 2017-S</span></div>
+<p>UGT1A1 immature at birth → unconjugated hyperbilirubinaemia → indirect bili (lipid-soluble) crosses BBB → kernicterus. <strong>Phototherapy:</strong> blue light (420–480 nm) converts insoluble bilirubin → lumirubin/photobilirubin (water-soluble, polar isomers) → excreted without conjugation in bile and urine.</p>
+</div>
+</div>
+</div>
+<div class="divider"></div>
+<!-- ════════════════ S7: RENAL FUNCTION TESTS ════════════════ -->
+<div id="s7">
+<div class="section-header">
+<div class="section-num">07</div>
+<h2>Renal Function <em>Tests (RFT)</em></h2>
+</div>
+<div class="card">
+<div class="card-title">Glomerular Filtration Tests <span class="badge badge-fav">⭐ PYQ 2012-S, 2014, 2018, 2022, 2024</span></div>
+<div class="table-wrap">
+<table>
+<tr><th>Test</th><th>Normal Value</th><th>Clinical Significance</th><th>Key Points</th></tr>
+<tr><td>Serum Creatinine</td><td>0.6–1.2 mg/dL (M)<br/>0.5–1.0 (F)</td><td>GFR estimate. More specific than urea for renal function</td><td>Produced at constant rate from muscle creatine. NOT affected by diet or protein intake (unlike urea). Rises late — 50% nephron loss before serum Cr rises</td></tr>
+<tr><td>Blood Urea Nitrogen (BUN)</td><td>7–20 mg/dL (urea 15–40 mg/dL)</td><td>Glomerular function, protein catabolism</td><td>Affected by protein intake, dehydration, GI bleeding (pre-renal). BUN:Cr ratio &gt;20 = pre-renal; &lt;10 = malnutrition</td></tr>
+<tr><td>Creatinine Clearance (CrCl)</td><td>85–125 mL/min (M)<br/>75–115 (F)</td><td>Best clinical estimate of GFR</td><td>Formula: CrCl = (Urine Cr × Volume) / Serum Cr. MDRD and CKD-EPI formulas also used. 24-hour urine collection</td></tr>
+<tr><td>eGFR</td><td>&gt;90 mL/min/1.73m²</td><td>CKD staging (Stage 1–5)</td><td>CKD Stage 3: eGFR 30–59; Stage 4: 15–29; Stage 5 (ESRD): &lt;15</td></tr>
+<tr><td>Uric Acid</td><td>3.5–7.2 mg/dL (M)<br/>2.6–6.0 (F)</td><td>Gout, Von Gierke's, CKD</td><td>Elevated in renal failure, gout, high cell turnover (leukaemia)</td></tr>
+</table>
+</div>
+</div>
+<div class="card">
+<div class="card-title">Why Creatinine is More Specific than Urea <span class="badge badge-fav">⭐ PYQ 2022</span></div>
+<div class="two-col">
+<div>
+<p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">Creatinine:</p>
+<ul class="checklist">
+<li>Produced at constant rate from creatine phosphate in muscle</li>
+<li>Freely filtered at glomerulus</li>
+<li>Minimal tubular secretion (slightly overestimates GFR)</li>
+<li>NOT affected by protein diet, hydration, or GI bleeding</li>
+<li>More specific for renal function</li>
+</ul>
+</div>
+<div>
+<p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px">Urea (BUN) is affected by:</p>
+<ul class="checklist">
+<li>High-protein diet → ↑ urea (pre-renal false positive)</li>
+<li>GI bleeding → protein absorbed → ↑ urea</li>
+<li>Dehydration → ↑ urea</li>
+<li>Liver failure → ↓ urea (decreased synthesis)</li>
+<li>Tubular reabsorption of urea increases with dehydration</li>
+</ul>
+</div>
+</div>
+<div class="clinical-box" style="margin-top:8px">
+<div class="cbox-title">Uremia &amp; Ammonia Toxicity — PYQ 2024</div>
+<p>Chronic renal failure → urea accumulates → gut bacteria convert urea → NH₃ → absorbed → exceeds liver detoxification → hyperammonaemia → inhibits α-KG, glutamate, ATP in brain → encephalopathy (asterixis, confusion). Also: metabolic acidosis (cannot excrete H⁺ + loss of HCO₃⁻ reabsorption), anaemia (↓ erythropoietin), hyperphosphataemia + hypocalcaemia (↓ calcitriol), uraemic frost.</p>
+</div>
+</div>
+<div class="card">
+<div class="card-title">Tubular Function Tests</div>
+<div class="table-wrap">
+<table>
+<tr><th>Test</th><th>Normal</th><th>Raised/Abnormal in</th></tr>
+<tr><td>Urine concentration test (osmolality)</td><td>800–1200 mOsm/kg after dehydration</td><td>Tubular damage: cannot concentrate → dilute urine</td></tr>
+<tr><td>Urine sodium</td><td>&lt;20 mEq/L (pre-renal), &gt;40 (renal)</td><td>Differentiates pre-renal from intrinsic renal failure</td></tr>
+<tr><td>FENa (Fractional excretion of Na⁺)</td><td>&lt;1% = pre-renal; &gt;2% = ATN</td><td>Most useful in distinguishing pre-renal vs ATN</td></tr>
+<tr><td>β₂-Microglobulin (urine)</td><td>&lt;0.3 mg/L</td><td>Tubular damage marker (proximal tubule fails to reabsorb)</td></tr>
+<tr><td>Renal clearance (general)</td><td>CrCl as above</td><td><span class="badge badge-pyq">PYQ 2014, 2018 — "Renal clearance is predictor of impending renal failure"</span></td></tr>
+</table>
+</div>
+</div>
+</div>
+<div class="divider"></div>
+<!-- ════════════════ S8: DIABETES LAB TESTS ════════════════ -->
+<div id="s8">
+<div class="section-header">
+<div class="section-num">08</div>
+<h2>Diabetes <em>Lab Tests</em></h2>
+</div>
+<div class="card">
+<div class="card-title">Diagnostic Criteria (WHO/ADA) &amp; Tests <span class="badge badge-fav">⭐ PYQ 2011-S, 2016, 2018</span></div>
+<div class="table-wrap">
+<table>
+<tr><th>Test</th><th>Normal</th><th>Pre-diabetes</th><th>Diabetes Mellitus</th></tr>
+<tr><td>Fasting plasma glucose (FPG)</td><td>&lt;100 mg/dL</td><td>100–125 (IFG)</td><td>≥126 mg/dL (on 2 occasions)</td></tr>
+<tr><td>2-hr post-OGTT (75 g glucose)</td><td>&lt;140 mg/dL</td><td>140–199 (IGT)</td><td>≥200 mg/dL</td></tr>
+<tr><td>Random plasma glucose</td><td>&lt;140 mg/dL</td><td>—</td><td>≥200 mg/dL + symptoms</td></tr>
+<tr><td>HbA1c</td><td>&lt;5.7%</td><td>5.7–6.4%</td><td>≥6.5%</td></tr>
+</table>
+</div>
+</div>
+<div class="card">
+<div class="card-title">HbA1c — Glycated Haemoglobin <span class="badge badge-fav">⭐ PYQ 2011, 2016, 2018</span></div>
+<div class="two-col">
+<div>
+<p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">Mechanism:</p>
+<ul class="checklist">
+<li>Glucose attaches non-enzymatically to N-terminal valine of β-globin chains (Hb) → <strong>glycation</strong> (Amadori product)</li>
+<li>Rate of glycation is proportional to ambient blood glucose over the lifespan of the RBC</li>
+<li>RBC lifespan = 120 days → HbA1c reflects <strong>average blood glucose over 2–3 months</strong></li>
+<li>HbA1c rises 0.3% for every 30 mg/dL rise in mean plasma glucose</li>
+</ul>
+</div>
+<div>
+<p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px">Clinical significance:</p>
+<ul class="checklist">
+<li>HbA1c &lt;7% = well-controlled diabetes (target)</li>
+<li>NOT affected by short-term glucose fluctuations</li>
+<li>Falsely LOW in haemolytic anaemia (short RBC lifespan), haemorrhage, HbS trait</li>
+<li>Falsely HIGH in iron deficiency anaemia (long RBC lifespan), splenectomy</li>
+<li>Not useful in haemoglobinopathies (HbS, HbC) — use fructosamine instead</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="card">
+<div class="card-title">Oral Glucose Tolerance Test (OGTT) <span class="badge badge-pyq">PYQ 2011-S</span></div>
+<div class="flowchart" style="margin:0">
+<div class="flow-title">OGTT Protocol</div>
+<div class="flow-v">
+<div class="flow-box accent">
+<span class="lbl">Preparation</span>
+          3 days of high-carbohydrate diet (≥150 g/day) + overnight fast (8–14 hours) + no exercise, smoking, drugs
+        </div>
+<div class="flow-step-label">↓ 0 min: Fasting sample taken</div>
+<div class="flow-box gold">
+<span class="lbl">Load</span>
+          75 g anhydrous glucose in 250 mL water (adult) · 1.75 g/kg in children (max 75 g) · Drink within 5 minutes
+        </div>
+<div class="flow-step-label">↓ Blood samples at 30, 60, 90, 120 minutes</div>
+<div class="flow-box teal">
+<span class="lbl">Interpretation</span>
+          Normal: 2-hr value &lt;140 mg/dL · IGT (pre-DM): 140–199 · DM: ≥200 mg/dL
+        </div>
+</div>
+</div>
+</div>
+</div>
+<div class="divider"></div>
+<!-- ════════════════ S9: FREE RADICALS & ROS ════════════════ -->
+<div id="s9">
+<div class="section-header">
+<div class="section-num">09</div>
+<h2>Free Radicals <em>&amp; ROS</em></h2>
+</div>
+<div class="keypoint">A free radical = any species with one or more unpaired electrons in its outermost orbital → highly reactive, short-lived, chain-reaction propagating. Reactive Oxygen Species (ROS) = oxygen-centred free radicals + reactive non-radical oxygen derivatives.</div>
+<div class="card">
+<div class="card-title">Major ROS — Properties &amp; Sources <span class="badge badge-fav">⭐ PYQ 2013, 2015-S, 2019</span></div>
+<div class="table-wrap">
+<table>
+<tr><th>ROS</th><th>Symbol</th><th>Source</th><th>Properties</th></tr>
+<tr><td>Superoxide radical</td><td>O₂•⁻</td><td>ETC (Complex I, III leak), NADPH oxidase (phagocytes), xanthine oxidase</td><td>Moderately reactive. Cannot cross membranes easily. Precursor to H₂O₂ and OH•</td></tr>
+<tr><td>Hydrogen Peroxide</td><td>H₂O₂</td><td>SOD reaction, peroxisomes (fatty acid oxidation), monoamine oxidase</td><td>Not a radical (no unpaired electron) but ROS. Can cross membranes. Generates OH• via Fenton reaction</td></tr>
+<tr><td>Hydroxyl radical</td><td>OH•</td><td>Fenton reaction: Fe²⁺ + H₂O₂ → Fe³⁺ + OH• + OH⁻ (Haber-Weiss)</td><td><strong>Most reactive and most damaging</strong> ROS. No enzyme scavenger — only quenched by vitamin C, E, or contained by antioxidants</td></tr>
+<tr><td>Singlet oxygen</td><td>¹O₂</td><td>Photosensitisation reactions, UV light</td><td>Excited state of O₂. Reacts with unsaturated fatty acids</td></tr>
+<tr><td>Nitric oxide</td><td>NO•</td><td>Nitric oxide synthase (NOS) from arginine</td><td>Free radical — also vasodilator. Can form peroxynitrite (ONOO⁻) with O₂•⁻ → cell damage</td></tr>
+<tr><td>Hypochlorous acid</td><td>HOCl</td><td>Myeloperoxidase in neutrophils (H₂O₂ + Cl⁻)</td><td>Potent bactericidal agent in phagocytes</td></tr>
+</table>
+</div>
+</div>
+<div class="flowchart">
+<div class="flow-title">Free Radical Chain Reaction — Lipid Peroxidation</div>
+<div class="flow-v">
+<div class="flow-box rose">
+<span class="lbl">Initiation</span>
+        OH• + Polyunsaturated Fatty Acid (LH) → L• (lipid radical) + H₂O
+      </div>
+<div class="flow-step-label">↓ Propagation — chain reaction</div>
+<div class="flow-box gold">
+<span class="lbl">Propagation</span>
+        L• + O₂ → LOO• (lipid peroxy radical)<br/>
+        LOO• + LH (new fatty acid) → LOOH (lipid hydroperoxide) + L•<br/>
+<span class="sub">Chain reaction continues — ONE radical can destroy many fatty acids</span>
+</div>
+<div class="flow-step-label">↓ Termination by antioxidants (Vit E)</div>
+<div class="flow-box teal">
+<span class="lbl">Termination</span>
+        LOO• + Vitamin E → LOOH + Vit E• (tocopheroxyl radical, less reactive)<br/>
+        Vit E• + Vit C → Vit E regenerated + ascorbate radical<br/>
+<span class="sub">Chain reaction stops. TBARS (malondialdehyde) formed — used as marker of lipid peroxidation</span>
+</div>
+</div>
+</div>
+<div class="card">
+<div class="card-title">ROS — Beneficial Effects <span class="badge badge-pyq">PYQ 2015-S, 2021</span></div>
+<ul class="checklist">
+<li><strong>Respiratory burst (oxidative burst):</strong> NADPH oxidase in neutrophils/macrophages → O₂•⁻ → HOCl (myeloperoxidase) → kills bacteria. CGD (Chronic Granulomatous Disease) = NADPH oxidase defect → recurrent infections</li>
+<li><strong>Cell signalling:</strong> H₂O₂ acts as second messenger in insulin signalling, NF-κB activation, growth factor receptor signalling</li>
+<li><strong>Thyroid hormone synthesis:</strong> H₂O₂ generated by DUOX (thyroid oxidase) is required for iodination of thyroglobulin</li>
+<li><strong>Nitric oxide:</strong> O₂•⁻-independent — vasodilation, neurotransmission, immune function</li>
+<li><strong>Sperm capacitation:</strong> ROS generated by sperm NADPH oxidase required for hyperactivation</li>
+</ul>
+</div>
+</div>
+<div class="divider"></div>
+<!-- ════════════════ S10: ANTIOXIDANTS ════════════════ -->
+<div id="s10">
+<div class="section-header">
+<div class="section-num">10</div>
+<h2>Antioxidants <em>&amp; Detoxification</em></h2>
+</div>
+<div class="card">
+<div class="card-title">Enzymatic Antioxidants <span class="badge badge-fav">⭐ PYQ 2013, 2014, 2019</span></div>
+<div class="table-wrap">
+<table>
+<tr><th>Enzyme</th><th>Reaction</th><th>Location</th><th>Cofactor</th><th>Significance</th></tr>
+<tr><td>Superoxide Dismutase (SOD)</td><td>2O₂•⁻ + 2H⁺ → H₂O₂ + O₂</td><td>Cytoplasm (Cu/Zn-SOD), Mitochondria (Mn-SOD), Extracellular (Cu/Zn-SOD)</td><td>Cu, Zn (cytoplasmic); Mn (mitochondrial)</td><td>First line of enzymatic defence. SOD1 mutation → familial ALS. SOD converts O₂•⁻ (reactive) → H₂O₂ (less reactive but still dangerous)</td></tr>
+<tr><td>Catalase</td><td>2H₂O₂ → 2H₂O + O₂</td><td>Peroxisomes mainly, RBCs, liver</td><td>Iron (haem-containing)</td><td>Detoxifies H₂O₂ in peroxisomes. Converts H₂O₂ generated during fatty acid β-oxidation. Important in RBCs (no mitochondria)</td></tr>
+<tr><td>Glutathione Peroxidase (GPx)</td><td>ROOH + 2GSH → ROH + GSSG + H₂O<br/>H₂O₂ + 2GSH → 2H₂O + GSSG</td><td>Cytoplasm + mitochondria</td><td>Selenium (Se) — essential trace mineral</td><td>Most important H₂O₂ scavenger in cytoplasm. Requires GSH (reduced glutathione). Se deficiency → ↓ GPx → Keshan disease (cardiomyopathy)</td></tr>
+<tr><td>Glutathione Reductase</td><td>GSSG + NADPH → 2GSH</td><td>Cytoplasm</td><td>NADPH (from HMP shunt)</td><td>Regenerates reduced GSH. Links HMP shunt to ROS defence. G6PD deficiency → ↓ NADPH → ↓ GSH → ↑ oxidative haemolysis</td></tr>
+<tr><td>Thioredoxin Reductase</td><td>Trx(ox) + NADPH → Trx(red)</td><td>Cytoplasm, mitochondria</td><td>Se, FAD, NADPH</td><td>Backup to glutathione system</td></tr>
+</table>
+</div>
+</div>
+<div class="card">
+<div class="card-title">Non-Enzymatic (Dietary) Antioxidants <span class="badge badge-fav">⭐ PYQ 2011-S, 2012-S, 2022</span></div>
+<div class="table-wrap">
+<table>
+<tr><th>Antioxidant</th><th>Mechanism</th><th>Source</th><th>Deficiency / Clinical Note</th></tr>
+<tr><td>Vitamin E (α-Tocopherol)</td><td>Chain-breaking antioxidant — donates H• to LOO• → terminates lipid peroxidation chain. Lipid-soluble → in membranes</td><td>Vegetable oils, nuts, wheat germ</td><td>Deficiency → haemolytic anaemia (in premature neonates), ataxia, neuropathy. Regenerated by Vit C</td></tr>
+<tr><td>Vitamin C (Ascorbic acid)</td><td>Water-soluble radical scavenger. Donates electrons to Vit E radical → regenerates Vit E. Scavenges O₂•⁻, OH•, H₂O₂. Required for prolyl hydroxylase (collagen)</td><td>Citrus fruits, vegetables</td><td>Deficiency → Scurvy. Synergistic with Vit E</td></tr>
+<tr><td>β-Carotene (pro-Vit A)</td><td>Quenches singlet oxygen (¹O₂). Singlet oxygen trapper. Antioxidant especially under low pO₂</td><td>Orange/yellow vegetables, carrots</td><td>High dose supplements may ↑ lung cancer risk in smokers (pro-oxidant at high pO₂). Converted to retinal in gut</td></tr>
+<tr><td>Glutathione (GSH)</td><td>Tripeptide (Gly-Cys-Glu). Thiol (-SH) donates electrons. Substrate for GPx. Conjugates with electrophiles (Phase II detox)</td><td>Synthesised endogenously (liver)</td><td>N-acetylcysteine (NAC) replenishes GSH in paracetamol overdose. Key in detoxification and oxidative defence</td></tr>
+<tr><td>Ubiquinol (CoQ-H₂)</td><td>Reduced form of CoQ10 — scavenges lipid radicals in inner mitochondrial membrane</td><td>Endogenous (mevalonate pathway)</td><td>Statins ↓ CoQ10 synthesis (block mevalonate) → myopathy in some patients</td></tr>
+<tr><td>Selenium</td><td>Integral part of GPx and thioredoxin reductase (selenocysteine residue)</td><td>Meat, seafood, nuts</td><td>Keshan disease (cardiomyopathy — Se-deficient soil in China)</td></tr>
+<tr><td>Uric acid</td><td>Scavenges OH•, singlet oxygen, peroxynitrite in plasma</td><td>Purine catabolism</td><td>Major aqueous-phase antioxidant in human plasma (we lost uricase evolutionarily — may confer antioxidant advantage)</td></tr>
+<tr><td>Ceruloplasmin</td><td>Ferroxidase activity — oxidises Fe²⁺ → Fe³⁺ → prevents Fenton reaction</td><td>Plasma glycoprotein</td><td>Wilson's disease (↓ ceruloplasmin) → ↑ free Cu²⁺ → ↑ oxidative damage</td></tr>
+</table>
+</div>
+</div>
+<div class="flowchart">
+<div class="flow-title">Glutathione Cycle — Antioxidant-Detox Hub</div>
+<div class="flow-v">
+<div class="flow-box gold">
+<span class="lbl">HMP Shunt → NADPH</span>
+        G6PD: G6P → 6-PG + NADPH (essential — only source in RBC)
+      </div>
+<div class="flow-step-label">↓ NADPH powers glutathione reductase</div>
+<div class="flow-box accent">
+<span class="lbl">Glutathione Reductase</span>
+        GSSG (oxidised) + NADPH → 2 GSH (reduced) — maintains pool of reduced glutathione
+      </div>
+<div class="flow-step-label">↓ GSH used by GPx to destroy peroxides</div>
+<div class="flow-box teal">
+<span class="lbl">Glutathione Peroxidase (GPx)</span>
+        H₂O₂ + 2GSH → 2H₂O + GSSG<br/>ROOH + 2GSH → ROH + GSSG + H₂O (lipid peroxides neutralised)
+      </div>
+<div class="flow-step-label">↓ Also — Phase II detox conjugation</div>
+<div class="flow-box purple">
+<span class="lbl">Glutathione S-Transferase (GST)</span>
+        GSH + electrophilic toxin → GSH conjugate → mercapturic acid → excreted in urine<br/>
+<span class="sub">Detoxification of paracetamol, bilirubin, carcinogens</span>
+</div>
+</div>
+</div>
+<div class="clinical-box">
+<div class="cbox-title">Paracetamol (Acetaminophen) Overdose — GSH Connection <span class="badge badge-pyq">PYQ Classic</span></div>
+<p>Therapeutic dose: paracetamol → glucuronide/sulphate conjugates (Phase II). Overdose → CYP2E1 (Phase I) → NAPQI (toxic reactive metabolite). Normal: NAPQI + GSH → non-toxic mercapturic acid. Overdose: GSH depleted → NAPQI binds hepatocyte proteins → hepatocellular necrosis → fulminant hepatic failure. <strong>Treatment: N-Acetylcysteine (NAC)</strong> — replenishes GSH by providing cysteine → cures paracetamol hepatotoxicity if given early.</p>
+</div>
+</div>
+<div class="divider"></div>
+<!-- ════════════════ S11: XENOBIOTICS & CYTOCHROME P450 ════════════════ -->
+<div id="s11">
+<div class="section-header">
+<div class="section-num">11</div>
+<h2>Xenobiotics <em>&amp; Cytochrome P450</em></h2>
+</div>
+<div class="keypoint">Xenobiotic = any chemical foreign to the body (drugs, pollutants, food additives, carcinogens). Biotransformation = enzymatic conversion of xenobiotics to more polar, excretable metabolites. Occurs mainly in liver (SER). Also in intestine, lung, kidney, skin.</div>
+<div class="card">
+<div class="card-title">Phases of Xenobiotic Metabolism <span class="badge badge-fav">⭐ PYQ 2016-S, 2023, 2025</span></div>
+<div class="flowchart" style="margin:0">
+<div class="flow-title">Biotransformation — 2 Phases (Phase III sometimes listed)</div>
+<div class="flow-v">
+<div class="flow-box rose">
+<span class="lbl">PHASE I — Functionalisation (reveal or add reactive group)</span>
+          Reactions: Oxidation (most common), Reduction, Hydrolysis<br/>
+          Enzymes: <strong>Cytochrome P450 (CYP)</strong> monooxygenases (main), monoamine oxidase, alcohol dehydrogenase, esterases<br/>
+          Products: More polar, often still toxic. <strong>NAPQI from paracetamol</strong> = classic toxic Phase I product<br/>
+          Location: Smooth ER (microsomes) of hepatocytes<br/>
+<span class="sub">Makes drug more reactive — NOT always detoxification!</span>
+</div>
+<div class="flow-step-label">↓ Phase I product → Phase II conjugation</div>
+<div class="flow-box teal">
+<span class="lbl">PHASE II — Conjugation (attach a polar group)</span>
+          Reactions: <strong>Glucuronidation</strong> (most common, uses UDPGA) · Sulphation · Acetylation · Methylation · Glutathione conjugation · Glycine conjugation<br/>
+          Products: Highly polar, non-toxic, excretable in urine or bile<br/>
+          Location: Cytosol + ER (glucuronidation in ER)<br/>
+<span class="sub">Usually detoxification. Some conjugates still active (morphine-6-glucuronide is more potent than morphine)</span>
+</div>
+<div class="flow-step-label">↓ (Optional Phase III — transport)</div>
+<div class="flow-box gold">
+<span class="lbl">PHASE III — Elimination/Transport</span>
+          MDR transporters (P-glycoprotein), MRP2, OATP → excrete conjugates into bile or urine<br/>
+<span class="sub">Important for multi-drug resistance in cancer</span>
+</div>
+</div>
+</div>
+</div>
+<div class="card">
+<div class="card-title">Cytochrome P450 System <span class="badge badge-fav">⭐ PYQ 2013, 2013-S, 2014-S, 2019, 2025</span></div>
+<div class="two-col">
+<div>
+<p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">Structure:</p>
+<ul class="checklist">
+<li>Haemoprotein (iron-containing haem) — absorbs light at 450 nm when CO-bound (hence P450)</li>
+<li>Located in smooth ER (microsomes)</li>
+<li>Requires NADPH + O₂ (monooxygenase reaction)</li>
+<li>Reaction: RH + O₂ + NADPH + H⁺ → ROH + H₂O + NADP⁺</li>
+<li>Electron donors: NADPH-CYP reductase (FAD, FMN) + cytochrome b5</li>
+</ul>
+</div>
+<div>
+<p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px">Important CYP isoforms:</p>
+<ul class="checklist">
+<li><strong>CYP1A2:</strong> Caffeine, theophylline, warfarin</li>
+<li><strong>CYP2D6:</strong> Codeine, β-blockers, antidepressants (polymorphic — poor/extensive metabolisers)</li>
+<li><strong>CYP2E1:</strong> Ethanol, paracetamol (generates NAPQI), isoniazid</li>
+<li><strong>CYP3A4:</strong> Most abundant CYP (~50% of drug metabolism) — statins, cyclosporin, midazolam</li>
+</ul>
+</div>
+</div>
+<div class="two-col" style="margin-top:1rem">
+<div>
+<p style="font-size:13px;font-weight:600;color:var(--rose);margin-bottom:6px">CYP Inducers (↑ CYP activity → ↓ drug effect):</p>
+<ul class="checklist">
+<li>Rifampicin, Phenobarbitone, Phenytoin, Carbamazepine, Alcohol (chronic), St John's Wort</li>
+<li>↑ CYP → ↑ drug metabolism → ↓ therapeutic effect (enzyme induction)</li>
+<li>Also → ↑ sex steroid metabolism (OCP failure with rifampicin)</li>
+</ul>
+</div>
+<div>
+<p style="font-size:13px;font-weight:600;color:var(--teal);margin-bottom:6px">CYP Inhibitors (↓ CYP activity → ↑ drug effect/toxicity):</p>
+<ul class="checklist">
+<li>Ketoconazole, Erythromycin, Cimetidine, Grapefruit juice (CYP3A4), Isoniazid, Fluconazole, Acute alcohol</li>
+<li>↓ CYP → ↓ drug metabolism → ↑ plasma levels → toxicity</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="card">
+<div class="card-title">Phase II Reactions — Conjugates <span class="badge badge-pyq">PYQ 2019-S, 2023</span></div>
+<div class="table-wrap">
+<table>
+<tr><th>Reaction</th><th>Conjugating agent</th><th>Enzyme</th><th>Example substrate</th><th>Product excreted via</th></tr>
+<tr><td>Glucuronidation <span class="badge badge-rls">MOST COMMON</span></td><td>UDP-glucuronic acid (UDPGA)</td><td>UDP-glucuronyl transferase (UGT)</td><td>Bilirubin, morphine, paracetamol, steroids, chloramphenicol</td><td>Bile + urine</td></tr>
+<tr><td>Sulphation</td><td>PAPS (3'-phosphoadenosine-5'-phosphosulphate)</td><td>Sulphotransferase</td><td>Paracetamol (therapeutic), steroids</td><td>Urine</td></tr>
+<tr><td>Glutathione conjugation</td><td>Reduced glutathione (GSH)</td><td>Glutathione S-transferase</td><td>NAPQI, halogenated hydrocarbons, epoxides</td><td>Mercapturic acid → urine</td></tr>
+<tr><td>Acetylation</td><td>Acetyl-CoA</td><td>N-acetyltransferase (NAT) — polymorphic</td><td>Isoniazid, sulphonamides, dapsone</td><td>Urine. Slow/fast acetylators</td></tr>
+<tr><td>Glycine conjugation</td><td>Glycine + CoA</td><td>Glycine N-acyltransferase</td><td>Benzoic acid → hippuric acid, bile acids</td><td>Urine</td></tr>
+<tr><td>Methylation</td><td>SAM (S-adenosylmethionine)</td><td>Methyltransferases</td><td>Catecholamines (COMT), histamine (HNMT)</td><td>Urine</td></tr>
+</table>
+</div>
+<div class="mnemonic-box" style="margin-top:8px">
+<div class="mbox-title">Phase II Reactions Mnemonic</div>
+<div class="mnemonic-highlight">"GluSAGMe" = Glucuronidation · Sulphation · Acetylation · Glutathione · Methylation</div>
+</div>
+</div>
+</div>
+<div class="divider"></div>
+<!-- ════════════════ S12: ELISA & CHROMATOGRAPHY ════════════════ -->
+<div id="s12">
+<div class="section-header">
+<div class="section-num">12</div>
+<h2>ELISA <em>&amp; Functional Tests</em></h2>
+</div><details><summary class="viva-q-text">Expand 🟢 TIER 3: ELISA &amp; Functional Tests Details</summary><div class="viva-a-text">
+<div class="card">
+<div class="card-title">ELISA — Enzyme-Linked Immunosorbent Assay <span class="badge badge-fav">⭐ PYQ 2014-S</span></div>
+<div class="flowchart" style="margin:0">
+<div class="flow-title">Sandwich ELISA — Most Common Type</div>
+<div class="flow-v">
+<div class="flow-box accent">
+<span class="lbl">Step 1 — Coat</span>
+          Capture antibody (Ab₁) coated on microtitre plate wells
+        </div>
+<div class="flow-step-label">↓ Block with BSA to prevent non-specific binding</div>
+<div class="flow-box gold">
+<span class="lbl">Step 2 — Add sample</span>
+          Patient sample added → antigen binds to capture Ab₁ → wash away unbound
+        </div>
+<div class="flow-step-label">↓</div>
+<div class="flow-box teal">
+<span class="lbl">Step 3 — Detection antibody</span>
+          Enzyme-linked detection Ab₂ added → binds antigen (different epitope) → wash away unbound
+        </div>
+<div class="flow-step-label">↓</div>
+<div class="flow-box purple">
+<span class="lbl">Step 4 — Substrate &amp; Read</span>
+          Substrate added → enzyme (HRP or ALP) converts → coloured product<br/>
+          OD measured at 450 nm → proportional to antigen concentration
+        </div>
+</div>
+</div>
+<div class="two-col" style="margin-top:1rem">
+<div>
+<p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">ELISA types:</p>
+<ul class="checklist">
+<li><strong>Sandwich ELISA:</strong> Quantifies antigen between 2 antibodies (most common)</li>
+<li><strong>Indirect ELISA:</strong> Detects antibodies in patient serum (HIV screening — ELISA for anti-HIV antibodies)</li>
+<li><strong>Competitive ELISA:</strong> Antigen in sample competes with labelled antigen</li>
+<li><strong>Capture ELISA:</strong> Variant of sandwich, for low-abundance antigens</li>
+</ul>
+</div>
+<div>
+<p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px">Applications:</p>
+<ul class="checklist">
+<li>HIV screening (anti-HIV antibodies)</li>
+<li>HBsAg (Hepatitis B surface antigen)</li>
+<li>Troponin (AMI diagnosis)</li>
+<li>Pregnancy test (β-hCG)</li>
+<li>Tumour markers (PSA, AFP, CA 125)</li>
+<li>Hormones (TSH, LH, FSH)</li>
+<li>Drug levels (digoxin, cyclosporin)</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="card">
+<div class="card-title">Chromatography Principles <span class="badge badge-pyq">PYQ 2017, 2016-S, 2019-S</span></div>
+<div class="table-wrap">
+<table>
+<tr><th>Type</th><th>Stationary Phase</th><th>Mobile Phase</th><th>Principle</th><th>Application</th></tr>
+<tr><td>Ion Exchange Chromatography</td><td>Charged resin (cation: Sephadex; anion: DEAE)</td><td>Buffer of varying ionic strength</td><td>Molecules separated by charge. Cation exchangers bind +ve molecules; anion exchangers bind -ve</td><td>Amino acid analysis, protein purification, HbA1c (Hb variants)</td></tr>
+<tr><td>Gel Filtration (Size Exclusion)</td><td>Porous beads (Sepharose, Sephadex)</td><td>Buffer</td><td>Small molecules enter pores (slow), large excluded (fast). Separates by molecular size/weight</td><td>Molecular weight determination, desalting</td></tr>
+<tr><td>Affinity Chromatography</td><td>Ligand covalently linked to matrix (e.g., lectin, antibody, substrate analogue)</td><td>Buffer → elute with competing ligand</td><td>Highly specific binding between molecule and immobilised ligand. Most specific method</td><td>Antibody purification, enzyme isolation, HbA1c (lectin affinity)</td></tr>
+<tr><td>Thin Layer Chromatography (TLC)</td><td>Silica gel on glass/aluminium plate</td><td>Organic solvent (mobile)</td><td>Rf = distance of spot / distance of solvent front. Separates by polarity</td><td>Lipid separation (phospholipids), drug screening, vitamins</td></tr>
+<tr><td>HPLC</td><td>Fine silica particles</td><td>Pressurised solvent</td><td>High resolution separation at high pressure; UV/fluorescence detection</td><td>Drug analysis, HbA1c (gold standard)</td></tr>
+</table>
+</div>
+</div>
+</div></details></div>
+<div class="divider"></div>
+<!-- ════════════════ S13: VIVA Q&A ════════════════ -->
+<div id="s13">
+<div class="section-header">
+<div class="section-num">13</div>
+<h2>Viva <em>Q&amp;A</em></h2>
+</div>
+<div class="viva-section">
+<div class="viva-title-bar">Acid-Base Balance</div>
+<details>
+<summary><span class="viva-q">Write the Henderson-Hasselbalch equation. How does the kidney maintain acid-base balance?</span><span class="viva-year">PYQ 2019-S</span></summary>
+<div class="viva-ans">
+<p><strong>pH = pKa + log [A⁻]/[HA]</strong></p>
+<p>For bicarbonate buffer: <strong>pH = 6.1 + log [HCO₃⁻] / [H₂CO₃]</strong></p>
+<p>Normal ratio = 20:1 → pH 7.4. Kidneys maintain this by:</p>
+<ul>
+<li><strong>HCO₃⁻ reabsorption:</strong> Tubular cells secrete H⁺ into lumen → H⁺ + filtered HCO₃⁻ → H₂CO₃ → CO₂ → enters cell → recombines → HCO₃⁻ exits basolateral side into blood. Catalysed by carbonic anhydrase at both steps</li>
+<li><strong>Titratable acid excretion:</strong> H⁺ + HPO₄²⁻ → H₂PO₄⁻ in tubular lumen → excreted. Contributes ~20–30 mEq H⁺/day</li>
+<li><strong>NH₄⁺ excretion:</strong> Glutamine → glutaminase → NH₃ + H⁺ → NH₄⁺ → excreted. Increases dramatically (10×) in chronic acidosis — most adaptable system</li>
+</ul>
+<p><em>Exam tip: Always state that only the kidney can COMPLETELY restore pH (not just buffer). Respiratory compensation is faster but incomplete.</em></p>
+</div>
+</details>
+<details>
+<summary><span class="viva-q">What is anion gap? What is its biomedical importance?</span><span class="viva-year">PYQ 2014-S, 2018-S</span></summary>
+<div class="viva-ans">
+<p><strong>Anion gap = [Na⁺] − ([Cl⁻] + [HCO₃⁻]) = 8–16 mEq/L</strong></p>
+<p>Represents unmeasured anions (albumin, phosphate, sulphate, organic acids) that maintain electroneutrality.</p>
+<p><strong>Importance:</strong></p>
+<ul>
+<li>Differentiates causes of metabolic acidosis: High AG = accumulation of unmeasured anions (MUDPILES); Normal AG = HCO₃⁻ loss with Cl⁻ replacement (diarrhoea, RTA)</li>
+<li>Guides treatment: High AG (DKA) → insulin + fluids; High AG (aspirin) → alkalinisation of urine</li>
+<li>Prognosis: Very high AG (&gt;30) suggests severe lactic acidosis → poor prognosis</li>
+</ul>
+<p><em>Correct for albumin: every 1 g/dL drop in albumin below 4 → reduce normal AG by 2.5 mEq/L</em></p>
+</div>
+</details>
+</div>
+<div class="viva-section">
+<div class="viva-title-bar">Liver &amp; Renal Function</div>
+<details>
+<summary><span class="viva-q">Why does ALP increase in obstructive jaundice but not haemolytic jaundice?</span><span class="viva-year">PYQ Classic Viva</span></summary>
+<div class="viva-ans">
+<p><strong>ALP in obstructive jaundice:</strong></p>
+<ul>
+<li>ALP is normally membrane-bound in bile canaliculi of hepatocytes</li>
+<li>Obstruction → bile salts accumulate in canaliculi → bile salts (detergents) solubilise membrane lipids → release membrane-bound ALP into blood</li>
+<li>Also: bile salts induce increased ALP synthesis (transcription) in bile duct epithelium</li>
+<li>Result: ALP rises markedly (3–10× normal)</li>
+</ul>
+<p><strong>Why NOT in haemolytic jaundice:</strong> No bile duct involvement, no bile salt accumulation → ALP not released. Liver's synthetic and excretory function intact.</p>
+<p><em>Key: 5'-nucleotidase distinguishes liver ALP from bone ALP — rises only with liver origin</em></p>
+</div>
+</details>
+<details>
+<summary><span class="viva-q">Why is serum creatinine more specific than plasma urea for renal function?</span><span class="viva-year">PYQ 2022</span></summary>
+<div class="viva-ans">
+<p><strong>Creatinine superiority:</strong></p>
+<ul>
+<li>Produced at constant rate from creatine phosphate in muscle (not affected by diet)</li>
+<li>Freely filtered at glomerulus, minimal tubular secretion → accurate GFR estimate</li>
+<li>Not reabsorbed by tubules</li>
+</ul>
+<p><strong>Urea limitations:</strong></p>
+<ul>
+<li>↑ by: high protein diet, GI bleeding (protein absorbed), dehydration (↑ tubular reabsorption), catabolic states</li>
+<li>↓ by: liver failure (↓ synthesis), malnutrition, pregnancy</li>
+<li>20–40% reabsorbed in proximal tubule (passively) → influenced by flow rate</li>
+</ul>
+<p><em>However: serum Cr rises LATE — 50% of nephron mass lost before Cr rises above normal. Creatinine clearance more sensitive early marker.</em></p>
+</div>
+</details>
+</div>
+<div class="viva-section">
+<div class="viva-title-bar">Free Radicals, Antioxidants &amp; Xenobiotics</div>
+<details>
+<summary><span class="viva-q">What is the role of Superoxide Dismutase? How does it protect cells?</span><span class="viva-year">PYQ 2013</span></summary>
+<div class="viva-ans">
+<p><strong>SOD reaction:</strong> 2O₂•⁻ + 2H⁺ → H₂O₂ + O₂ (dismutation)</p>
+<p><strong>Protection mechanism:</strong></p>
+<ul>
+<li>O₂•⁻ itself moderately reactive but becomes dangerous by generating OH• via Haber-Weiss/Fenton reactions (Fe²⁺ + H₂O₂ → Fe³⁺ + OH•)</li>
+<li>SOD converts O₂•⁻ to H₂O₂ (less reactive, cannot generate OH• without Fe²⁺)</li>
+<li>H₂O₂ then detoxified by catalase (peroxisomes) or GPx (cytoplasm)</li>
+<li>Cu/Zn-SOD = cytoplasm; Mn-SOD = mitochondria (where most O₂•⁻ is generated)</li>
+</ul>
+<p><strong>Clinical link:</strong></p>
+<ul>
+<li>SOD1 (Cu/Zn-SOD) mutations → Familial ALS (amyotrophic lateral sclerosis) — motor neuron disease</li>
+<li>SOD3 deficiency → ↑ cardiovascular oxidative damage</li>
+</ul>
+<p><em>SOD is the first line of enzymatic antioxidant defence — without it, O₂•⁻ accumulates → reacts with NO• → ONOO⁻ (peroxynitrite) → cell death</em></p>
+</div>
+</details>
+<details>
+<summary><span class="viva-q">Explain Phase I and Phase II reactions of xenobiotic metabolism with examples.</span><span class="viva-year">PYQ 2016-S, 2023</span></summary>
+<div class="viva-ans">
+<p><strong>Phase I (Functionalisation):</strong></p>
+<ul>
+<li>Goal: Introduce or unmask a reactive functional group (-OH, -NH₂, -SH) → makes molecule more polar and reactive for Phase II</li>
+<li>Main reaction: Oxidation by CYP450 monooxygenases (SER). Also: reduction, hydrolysis</li>
+<li>NOT always detoxification — can activate procarcinogens (benzo[a]pyrene → epoxide → DNA damage)</li>
+<li>Example: Paracetamol → CYP2E1 → NAPQI (toxic); Codeine → CYP2D6 → Morphine (active)</li>
+</ul>
+<p><strong>Phase II (Conjugation):</strong></p>
+<ul>
+<li>Goal: Conjugate with large polar molecule → high MW, very water-soluble → excrete in bile or urine</li>
+<li>Reactions: Glucuronidation (most common), sulphation, acetylation, glutathione conjugation, glycine conjugation, methylation</li>
+<li>Generally detoxifying — produces non-toxic, excretable products</li>
+<li>Example: Morphine + UDPGA → morphine-6-glucuronide (paradoxically MORE potent); Bilirubin → bilirubin diglucuronide (water-soluble → bile)</li>
+</ul>
+<p><em>Exam trap: Phase I is NOT always detoxification. Phase II is generally (but not always) detoxification.</em></p>
+</div>
+</details>
+<details>
+<summary><span class="viva-q">What is glutathione? Describe its role in detoxification.</span><span class="viva-year">PYQ 2014-S, 2016-S, 2022</span></summary>
+<div class="viva-ans">
+<p><strong>Glutathione (GSH):</strong> Tripeptide — γ-Glutamyl-Cysteinyl-Glycine. The γ-bond (unusual) protects from non-specific proteolysis.</p>
+<p><strong>Roles in detoxification:</strong></p>
+<ul>
+<li><strong>Direct radical scavenging:</strong> GSH + OH• → GS• + H₂O → GS• + GS• → GSSG (oxidised glutathione)</li>
+<li><strong>GPx substrate:</strong> H₂O₂ + 2GSH → 2H₂O + GSSG; ROOH + 2GSH → ROH + GSSG + H₂O</li>
+<li><strong>Phase II conjugation:</strong> GSH + electrophilic toxin (NAPQI, epoxides) → glutathione conjugate → cysteinyl conjugate → mercapturic acid → excreted. Protects DNA and proteins from reactive metabolites</li>
+<li><strong>RBC protection:</strong> ↓ GSH (G6PD deficiency → ↓ NADPH → ↓ GSH regeneration) → Heinz body formation → haemolytic anaemia</li>
+<li><strong>Leukotriene synthesis:</strong> GSH + arachidonic acid pathway → leukotrienes (LTC₄, LTD₄, LTE₄) — inflammatory mediators</li>
+</ul>
+<p><em>N-Acetylcysteine (NAC) is the antidote for paracetamol overdose because it donates cysteine → replenishes GSH → binds NAPQI before it destroys hepatocytes</em></p>
+</div>
+</details>
+</div>
+<div class="viva-section">
+<div class="viva-title-bar">Diabetes &amp; Jaundice</div>
+<details>
+<summary><span class="viva-q">Why is phototherapy used to cure neonatal/physiological jaundice?</span><span class="viva-year">PYQ 2011, 2017-S</span></summary>
+<div class="viva-ans">
+<p><strong>Background:</strong> Neonates have immature UGT1A1 → cannot conjugate bilirubin adequately → unconjugated (indirect) bilirubin accumulates. At high levels → crosses BBB (lipid-soluble) → deposits in basal ganglia → kernicterus (irreversible brain damage).</p>
+<p><strong>Why phototherapy works:</strong></p>
+<ul>
+<li>Blue-green light (420–490 nm; peak efficacy 460 nm) photoexcites unconjugated bilirubin in skin capillaries</li>
+<li>Two photochemical reactions: (a) Photoisomerisation → 4Z,15E-bilirubin (configurational isomer) → more polar, excreted in bile WITHOUT conjugation; (b) Photooxidation → lumirubin (structural isomer) → water-soluble, excreted in urine and bile</li>
+<li>Both products water-soluble → can be excreted without conjugation → safe (cannot cross BBB)</li>
+</ul>
+<p><em>Key point: No liver function required for phototherapy efficacy — therefore works even in UGT-deficient neonates (Crigler-Najjar Type II). Blue light specifically (not white) — hence blue lights in neonatal wards.</em></p>
+</div>
+</details>
+<details>
+<summary><span class="viva-q">How does HbA1c provide information for management of diabetes mellitus?</span><span class="viva-year">PYQ 2016</span></summary>
+<div class="viva-ans">
+<p><strong>Mechanism:</strong> Glucose non-enzymatically glycates N-terminal valine of β-globin → HbA1c (Amadori rearrangement). Rate ∝ ambient blood glucose × time.</p>
+<p><strong>Why it's useful:</strong></p>
+<ul>
+<li>RBC lifespan = 120 days → HbA1c reflects <strong>mean blood glucose over 2–3 months</strong> → not affected by today's meal, stress, or glucose fluctuation</li>
+<li>Fasting blood glucose reflects only the past 8 hours; HbA1c gives the long-term picture</li>
+<li>Target HbA1c &lt;7% → associated with ↓ microvascular complications (DCCT, UKPDS trials)</li>
+<li>Every 1% rise in HbA1c → ↑ risk of MI by 14%, retinopathy by 37%</li>
+</ul>
+<p><strong>Limitations:</strong> Falsely low in haemolytic anaemia, sickle cell disease (short RBC lifespan). Falsely high in iron deficiency anaemia. Not reliable in haemoglobinopathies → use fructosamine instead.</p>
+</div>
+</details>
+</div>
+</div>
+<div class="divider"></div>
+<!-- ════════════════ S14: EQ TEMPLATES ════════════════ -->
+<div id="s14">
+<div class="section-header">
+<div class="section-num">14</div>
+<h2>Essay Question <em>Templates</em></h2>
+</div><details><summary class="viva-q-text">Expand 🟢 TIER 3: Essay Question Templates Details</summary><div class="viva-a-text">
+<div class="eq-box">
+<div class="eq-title">EQ — Acid-Base Balance &amp; Anion Gap [PYQ 2014-S, 2018-S]</div>
+<div class="eq-statement">"Describe how pH of blood is regulated by lung and kidney. Give an account of metabolic acidosis and anion gap."</div>
+<div class="eq-answer">
+<ol>
+<li><span>Normal blood pH:</span> 7.35–7.45. Maintained by three systems acting in sequence — buffers (seconds), respiratory (minutes), renal (hours–days).</li>
+<li><span>Respiratory regulation:</span> Carotid/medullary chemoreceptors sense ↑ H⁺ (or ↑ CO₂) → stimulate respiratory centre → ↑ RR → more CO₂ expelled → [H₂CO₃] falls → pH rises. The converse in alkalosis. Lungs maintain the CO₂ side of the Henderson-Hasselbalch equation.</li>
+<li><span>Renal regulation:</span> Kidneys maintain HCO₃⁻ concentration. Mechanisms: (i) HCO₃⁻ reabsorption (proximal tubule, carbonic anhydrase-dependent); (ii) Titratable acid excretion (H⁺ + phosphate → H₂PO₄⁻); (iii) Ammonium excretion (glutamine → NH₃ → NH₄⁺) — increases 10-fold in chronic acidosis. Only mechanism for COMPLETE pH correction.</li>
+<li><span>Metabolic Acidosis:</span> Primary ↓ HCO₃⁻ → pH falls → respiratory compensation (Kussmaul breathing, ↓ pCO₂). Causes: DKA, lactic acidosis, renal failure, diarrhoea, salicylate poisoning. HbA1c provides long-term glucose monitoring.</li>
+<li><span>Anion Gap:</span> AG = Na⁺ − (Cl⁻ + HCO₃⁻) = 8–16 mEq/L. Represents unmeasured anions. High AG metabolic acidosis (MUDPILES) = accumulation of organic acids displacing HCO₃⁻. Normal AG acidosis = HCO₃⁻ loss with compensatory Cl⁻ retention (hyperchloraemic).</li>
+<li><span>Clinical significance of AG:</span> Distinguishes cause of metabolic acidosis without additional tests. Guides treatment — DKA (insulin); lactic acidosis (treat sepsis/hypoxia); methanol (fomepizole, dialysis). Very high AG (&gt;30) = severe → poor prognosis.</li>
+</ol>
+</div>
+</div>
+<div class="eq-box">
+<div class="eq-title">EQ — Free Radicals Have Beneficial Role [PYQ 2015-S, 2021]</div>
+<div class="eq-statement">"Free radicals may have some beneficial role also."</div>
+<div class="eq-answer">
+<ol>
+<li><span>Definition:</span> Free radicals = species with ≥1 unpaired electron. Reactive Oxygen Species (ROS) include O₂•⁻, H₂O₂, OH•. Harmful in excess but essential in controlled amounts.</li>
+<li><span>Beneficial role — Phagocytosis:</span> NADPH oxidase in neutrophils/macrophages generates O₂•⁻ → dismuted to H₂O₂ → myeloperoxidase + Cl⁻ → HOCl (hypochlorous acid) → potent bactericidal. Essential for innate immunity. Deficiency (CGD) → recurrent life-threatening infections.</li>
+<li><span>Cell signalling:</span> H₂O₂ acts as second messenger — activates NF-κB, MAP kinases, VEGF signalling. Low concentrations regulate insulin receptor signalling (inhibit PTP1B phosphatase → prolong insulin signal). Superoxide regulates vascular tone.</li>
+<li><span>Thyroid hormone synthesis:</span> DUOX (thyroid oxidase) generates H₂O₂ which is essential for thyroid peroxidase-catalysed iodination of thyroglobulin → T3 and T4 synthesis. No H₂O₂ = no thyroid hormone.</li>
+<li><span>Nitric oxide:</span> NO• (a radical) = powerful physiological vasodilator (activates guanylyl cyclase → cGMP → smooth muscle relaxation). Also neurotransmitter and immune effector. Essential for penile erection (PDE5 inhibitors work on this pathway).</li>
+<li><span>Reproductive function:</span> ROS from sperm NADPH oxidase required for sperm capacitation and acrosome reaction → fertilisation. Excessive ROS (from leukocytes in semen) = male infertility.</li>
+<li><span>Examiner tip:</span> Balance is key — physiological ROS at low levels = beneficial; excess ROS (oxidative stress) = damage. Antioxidant defence systems (SOD, catalase, GPx, Vit E, C) maintain this balance.</li>
+</ol>
+</div>
+</div>
+<div class="eq-box">
+<div class="eq-title">EQ — Renal Clearance as Predictor of Renal Failure [PYQ 2014, 2018]</div>
+<div class="eq-statement">"Renal clearance study is a nearly predictor of impending renal failure."</div>
+<div class="eq-answer">
+<ol>
+<li><span>Definition of clearance:</span> Volume of plasma cleared of a substance per unit time (mL/min). CrCl = (Urine Cr × Volume/time) / Plasma Cr. Represents GFR in clinical practice.</li>
+<li><span>Ideal clearance marker:</span> Inulin clearance = true GFR (freely filtered, not secreted, not reabsorbed). For clinical use, creatinine clearance is the standard approximation.</li>
+<li><span>Why clearance detects failure early:</span> Serum creatinine remains in normal range until ~50% of nephron mass is lost (due to compensatory hyperfiltration in remaining nephrons). Creatinine clearance falls progressively as nephrons are lost — detects early renal impairment before serum Cr rises.</li>
+<li><span>CKD staging by GFR:</span> Stage 1 (≥90) → Stage 2 (60–89) → Stage 3a (45–59) → Stage 3b (30–44) → Stage 4 (15–29) → Stage 5/ESRD (&lt;15 mL/min). Clearance study allows staging and guides timing of renal replacement therapy.</li>
+<li><span>Modern formulae:</span> MDRD (Modification of Diet in Renal Disease) and CKD-EPI equations estimate GFR from serum Cr, age, sex, race without 24-hour urine collection. Useful for population screening.</li>
+<li><span>Clinical implications:</span> Drug dosing adjustments required when GFR &lt;60 (metformin, NSAIDs, antibiotics). Early nephrology referral when GFR &lt;30. Dialysis planning when GFR approaching 15.</li>
+</ol>
+</div>
+</div>
+<div class="eq-box">
+<div class="eq-title">EQ — Glutathione is Important Mediator of Detoxification [PYQ 2016-S, 2022]</div>
+<div class="eq-statement">"Glutathione is an important mediator for detoxification of toxic materials in humans."</div>
+<div class="eq-answer">
+<ol>
+<li><span>Structure:</span> Tripeptide — γ-Glu-Cys-Gly. The -SH (thiol) of cysteine is the active group. The unusual γ-glutamyl bond protects from non-specific peptidase digestion. Synthesised in virtually all cells; liver is major site.</li>
+<li><span>Antioxidant role:</span> GPx uses GSH to reduce H₂O₂ → 2H₂O + GSSG. ROOH → ROH + GSSG + H₂O. Regenerated by glutathione reductase (uses NADPH from HMP shunt). Maintains reducing environment in cells.</li>
+<li><span>Phase II detoxification (GST):</span> Glutathione S-transferase conjugates GSH with electrophilic toxins → glutathione conjugate → cysteinyl conjugate → N-acetylcysteine conjugate (mercapturic acid) → excreted in urine. Detoxifies NAPQI (paracetamol), epoxides (carcinogens), disulfiram metabolites.</li>
+<li><span>RBC protection:</span> RBCs produce NADPH only via HMP shunt (G6PD). G6PD deficiency → ↓ NADPH → ↓ GSH regeneration → oxidised Hb → Heinz bodies → haemolytic anaemia.</li>
+<li><span>Leukotriene synthesis:</span> LTC₄ = leukotriene A₄ + GSH (LTC₄ synthase). LTC₄, LTD₄, LTE₄ (cysteinyl leukotrienes) = potent bronchoconstrictors in asthma. GSH is therefore also a precursor for inflammatory mediators.</li>
+<li><span>Clinical application:</span> N-Acetylcysteine (NAC) — antidote for paracetamol overdose (replenishes GSH). Also used in contrast nephropathy prevention. Oral NAC (Mucomyst) for CF (mucolytic — reduces disulphide bonds in mucus).</li>
+</ol>
+</div>
+</div>
+</div></details></div>
+<div class="divider"></div>
+<!-- ════════════════ S15: QUICKFIRE TABLE ════════════════ -->
+<div id="s15">
+<div class="section-header">
+<div class="section-num">15</div>
+<h2>Quickfire <em>Revision Table</em></h2>
+</div>
+<div class="card" style="border-color:var(--accent)">
+<div class="card-title">🔥 Exam Day — High-Yield Module 09</div>
+<div class="table-wrap">
+<table>
+<tr><th>Question</th><th>Answer</th></tr>
+<tr><td>Henderson-Hasselbalch for bicarbonate buffer</td><td>pH = 6.1 + log [HCO₃⁻] / [H₂CO₃]. Normal ratio = 20:1 → pH 7.4</td></tr>
+<tr><td>Normal pH / pCO₂ / HCO₃⁻</td><td>pH 7.35–7.45 / pCO₂ 35–45 mmHg / HCO₃⁻ 22–26 mEq/L</td></tr>
+<tr><td>Most powerful acid-base regulator</td><td>Kidney (slowest but can completely restore pH). Lungs = fast but partial</td></tr>
+<tr><td>Mnemonic for ABG interpretation</td><td>ROME = Respiratory Opposite, Metabolic Equal (pH and primary value directions)</td></tr>
+<tr><td>Anion gap formula + normal</td><td>Na⁺ − (Cl⁻ + HCO₃⁻) = 8–16 mEq/L</td></tr>
+<tr><td>MUDPILES</td><td>Methanol, Uraemia, DKA, Paraldehyde, Isoniazid, Lactic acidosis, Ethylene glycol, Salicylates — all cause High AG metabolic acidosis</td></tr>
+<tr><td>Paradoxical aciduria (persistent vomiting)</td><td>Metabolic alkalosis + hypokalemia → K⁺ exits cells + H⁺ enters → excess H⁺ in tubule → acidic urine despite systemic alkalosis</td></tr>
+<tr><td>Best cholestasis marker</td><td>ALP (Alkaline Phosphatase) + GGT</td></tr>
+<tr><td>Best hepatocellular damage marker</td><td>ALT/SGPT (most liver-specific). AST:ALT &gt;2 in alcoholic hepatitis</td></tr>
+<tr><td>Dark urine + pale stool = ?</td><td>Obstructive jaundice (conjugated bili → urine; no bile → gut → pale stool)</td></tr>
+<tr><td>Why phototherapy in neonatal jaundice</td><td>Blue light converts unconjugated bili → lumirubin/photobilirubin (water-soluble) → excreted without conjugation</td></tr>
+<tr><td>Most specific RFT for GFR</td><td>Creatinine clearance (best clinical estimate). Inulin clearance = true GFR (not clinical)</td></tr>
+<tr><td>Why Cr more specific than urea</td><td>Creatinine = constant rate, diet-independent. Urea = affected by protein intake, dehydration, GI bleeding, liver function</td></tr>
+<tr><td>HbA1c reflects glucose over</td><td>2–3 months (RBC lifespan 120 days). Falsely low in haemolysis</td></tr>
+<tr><td>Most reactive/damaging ROS</td><td>Hydroxyl radical (OH•) — no enzyme scavenger</td></tr>
+<tr><td>SOD reaction</td><td>2O₂•⁻ + 2H⁺ → H₂O₂ + O₂ (Cu/Zn-SOD in cytoplasm, Mn-SOD in mitochondria)</td></tr>
+<tr><td>SOD mutation → disease</td><td>SOD1 mutation → Familial ALS</td></tr>
+<tr><td>GPx cofactor (trace element)</td><td>Selenium (Se). Deficiency → Keshan disease (cardiomyopathy)</td></tr>
+<tr><td>NAC antidote for</td><td>Paracetamol overdose — replenishes GSH to neutralise NAPQI</td></tr>
+<tr><td>CYP2E1 activates</td><td>Paracetamol → NAPQI (toxic). Also activated by chronic alcohol, isoniazid</td></tr>
+<tr><td>Most common Phase II reaction</td><td>Glucuronidation (UDP-glucuronic acid + UGT)</td></tr>
+<tr><td>P450 absorbs light at</td><td>450 nm (when CO-bound) — hence the name CYP450</td></tr>
+<tr><td>Rifampicin + OCP failure — why?</td><td>Rifampicin = CYP inducer → ↑ oestrogen metabolism → ↓ OCP efficacy → contraceptive failure</td></tr>
+<tr><td>ELISA sensitivity type for HIV screening</td><td>Indirect ELISA — detects anti-HIV antibodies in patient serum</td></tr>
+<tr><td>Lipid peroxidation marker</td><td>MDA (malondialdehyde) measured as TBARS (thiobarbituric acid reactive substances)</td></tr>
+</table>
+</div>
+</div>
+<!-- Master Mnemonics -->
+<div class="card" style="margin-top:1rem">
+<div class="card-title">Module 09 Master Mnemonics</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:10px;margin-top:8px">
+<div class="mnemonic-box" style="margin:0">
+<div class="mbox-title">Blood Buffers</div>
+<div class="mnemonic-highlight">"Big Healthy People Play" = Bicarbonate, Haemoglobin, Protein, Phosphate</div>
+</div>
+<div class="mnemonic-box" style="margin:0">
+<div class="mbox-title">ABG Rule</div>
+<div class="mnemonic-highlight">"ROME" = Respiratory Opposite (pH↓/pCO₂↑), Metabolic Equal (pH↓/HCO₃⁻↓)</div>
+</div>
+<div class="mnemonic-box" style="margin:0">
+<div class="mbox-title">High AG Metabolic Acidosis</div>
+<div class="mnemonic-highlight">"MUDPILES" = Methanol, Uraemia, DKA, Paraldehyde, Isoniazid, Lactic acidosis, Ethylene glycol, Salicylates</div>
+</div>
+<div class="mnemonic-box" style="margin:0">
+<div class="mbox-title">Phase II Conjugation</div>
+<div class="mnemonic-highlight">"GluSAGMe" = Glucuronidation, Sulphation, Acetylation, Glutathione, Methylation</div>
+</div>
+</div>
+</div>
+</div><!-- /s15 -->
+</div><!-- /content -->
+<div class="footer">
+<p>MODULE 09 · CLINICAL BIOCHEMISTRY</p>
+<p style="margin-top:4px">KIMS Krishnanagar Biochem Notes · WBUHS · NMO Bengal PYQs 2010–2025</p>
+<p style="margin-top:4px;color:var(--accent);font-size:11px">Compiled for personal academic use · PYQ-first construction · Mobile-optimised</p>
+</div>
+<button class="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script>
+document.querySelectorAll('details').forEach(d=>{
+  d.addEventListener('toggle',()=>{
+    if(d.open){const c=d.querySelector('.viva-ans');if(c)c.style.animation='fadeIn .2s ease';}
+  });
+});
+</script>
+</body>
+</html>

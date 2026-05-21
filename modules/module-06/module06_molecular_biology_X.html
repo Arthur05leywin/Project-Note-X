@@ -1,0 +1,4333 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Module 06 — Molecular Biology &amp; Genetics | Last-Day Revision System</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&amp;family=JetBrains+Mono:wght@400;600&amp;family=Crimson+Pro:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet"/>
+
+    
+    
+    
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300..900;1,300..900&family=IBM+Plex+Mono:ital,wght@0,100..700;1,100..700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Sora:wght@100..800&display=swap');
+
+/* ==========================================
+   DYNAMIC MULTI-THEME VARIABLE ENGINE
+   ========================================== */
+
+/* Theme 1: Premium Gold (Default / Classic Modules 1-3 & Module 5-X) */
+:root, body.theme-gold {
+  --bg: #0d0f14;
+  --surface: #13161e;
+  --surface2: #1a1e2a;
+  --surface3: #222736;
+  --border: #252a38;
+  --border2: #343b4f;
+  --accent: #e8c84a;
+  --accent2: #4ae8b0;
+  --accent3: #e84a7a;
+  --accent4: #4a9ee8;
+  --text: #e8eaf0;
+  --muted: #8a90a8;
+  --white: #ffffff;
+  --rls: #e84a7a;
+  --gold: #e8c84a;
+  --rose: #e84a7a;
+  --purple: #bf81ff;
+  --blue: #4a9ee8;
+  --green: #4ae8b0;
+  --orange: #ffa552;
+}
+
+/* Theme 2: Premium Crimson (Module 4 & 4-X) */
+body.theme-crimson {
+  --bg: #0a0a0f;
+  --surface: #111118;
+  --surface2: #18181f;
+  --surface3: #1e1e28;
+  --border: #252535;
+  --border2: #34344a;
+  --accent: #e8334a;
+  --accent2: #ff5268;
+  --accent3: #ff8595;
+  --accent4: #4a9ee8;
+  --text: #e8eaf0;
+  --muted: #8a90a8;
+  --white: #ffffff;
+  --rls: #ff8595;
+  --gold: #f4c464;
+  --rose: #e8334a;
+  --purple: #c084fc;
+  --blue: #60a5fa;
+  --green: #4ade80;
+  --orange: #fb923c;
+}
+
+/* Theme 3: Premium Emerald (Module 5 Modern) */
+body.theme-emerald {
+  --bg: #08100f;
+  --surface: #0f1a18;
+  --surface2: #152220;
+  --surface3: #1c2d2a;
+  --border: #1e3530;
+  --border2: #2a4540;
+  --accent: #00c897;
+  --accent2: #2ddcaa;
+  --accent3: #80ffe8;
+  --accent4: #60a5fa;
+  --text: #e2ede9;
+  --muted: #8aada6;
+  --white: #ffffff;
+  --rls: #ff6b8a;
+  --gold: #f4c464;
+  --rose: #ff6b8a;
+  --purple: #c084fc;
+  --blue: #60a5fa;
+  --green: #4ade80;
+  --orange: #fb923c;
+}
+
+/* Theme 4: Premium Indigo (Modules 6, 8, 9, 10) */
+body.theme-indigo {
+  --bg: #080c14;
+  --surface: #0d1220;
+  --surface2: #121828;
+  --surface3: #182030;
+  --border: #1e293b;
+  --border2: #334155;
+  --accent: #6366f1;
+  --accent2: #818cf8;
+  --accent3: #c084fc;
+  --accent4: #38bdf8;
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --white: #ffffff;
+  --rls: #f43f5e;
+  --gold: #fbbf24;
+  --rose: #f43f5e;
+  --purple: #c084fc;
+  --blue: #38bdf8;
+  --green: #34d399;
+  --orange: #fb923c;
+}
+
+/* Theme 5: Premium Amber (Modules 7 & 7-X) */
+body.theme-amber {
+  --bg: #080a0e;
+  --surface: #0e1118;
+  --surface2: #141820;
+  --surface3: #1a2030;
+  --border: #1e2530;
+  --border2: #2a3545;
+  --accent: #f59e0b;
+  --accent2: #fbbf24;
+  --accent3: #fb923c;
+  --accent4: #34d399;
+  --text: #f3f4f6;
+  --muted: #9ca3af;
+  --white: #ffffff;
+  --rls: #ef4444;
+  --gold: #fbbf24;
+  --rose: #ef4444;
+  --purple: #a855f7;
+  --blue: #3b82f6;
+  --green: #10b981;
+  --orange: #f97316;
+}
+
+/* ==========================================
+   GLOBAL STRUCTURE & FONTS
+   ========================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Typography Isolation */
+body {
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  overflow-x: hidden;
+  font-size: 14px;
+}
+
+body.theme-gold {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 14px;
+}
+
+body.theme-crimson,
+body.theme-emerald,
+body.theme-indigo,
+body.theme-amber {
+  font-family: "Sora", sans-serif;
+  font-size: 15px;
+}
+
+strong {
+  color: var(--white);
+}
+
+p {
+  margin-bottom: 12px;
+  color: var(--text);
+  line-height: 1.8;
+}
+
+/* Custom Webkit Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
+}
+
+
+/* ==========================================
+   CLASSIC LAYOUT SELECTORS (Modules 1-3)
+   ========================================== */
+
+.cover {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 60px;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg);
+  page-break-after: always;
+}
+
+.cover::before {
+  content: "";
+  position: absolute;
+  top: -200px;
+  right: -200px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(232, 200, 74, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cover::after {
+  content: "";
+  position: absolute;
+  bottom: -100px;
+  left: -100px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(74, 232, 176, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cover-tag {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  border: 1px solid var(--accent);
+  padding: 4px 12px;
+  margin-bottom: 40px;
+  display: inline-block;
+}
+
+.cover h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(42px, 8vw, 72px);
+  font-weight: 900;
+  line-height: 1.05;
+  color: var(--white);
+  margin-bottom: 10px;
+}
+
+.cover h1 span {
+  color: var(--accent);
+}
+
+.cover-sub {
+  font-size: 18px;
+  color: var(--muted);
+  margin-bottom: 50px;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.cover-meta {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.cover-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cover-meta-label {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.cover-meta-value {
+  font-size: 13px;
+  color: var(--accent2);
+  font-weight: 500;
+}
+
+.cover-divider {
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  margin: 30px 0;
+}
+
+.cover-pyq-badge {
+  position: absolute;
+  top: 60px;
+  right: 60px;
+  background: var(--accent);
+  color: var(--bg);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 8px 16px;
+  letter-spacing: 1px;
+}
+
+.page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 50px 60px;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 30px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.section-number {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 2px;
+}
+
+.section-title {
+  font-family: "Playfair Display", serif;
+  font-size: 28px;
+  color: var(--white);
+  font-weight: 700;
+}
+
+.section-title span {
+  color: var(--accent);
+}
+
+.pyq-box {
+  background: rgba(232, 200, 74, 0.08);
+  border-left: 3px solid var(--accent);
+  padding: 16px 20px;
+  margin-bottom: 30px;
+  border-radius: 0 6px 6px 0;
+}
+
+.pyq-box-label {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.pyq-box ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pyq-box ul li {
+  background: rgba(232, 200, 74, 0.15);
+  color: var(--accent);
+  font-size: 11px;
+  font-family: "IBM Plex Mono", monospace;
+  padding: 3px 10px;
+  border-radius: 2px;
+}
+
+.big-picture {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 28px;
+}
+
+.big-picture-label {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  color: var(--accent2);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.flowchart-container {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 30px;
+  margin: 24px 0;
+}
+
+.flowchart-title {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+/* Classic Comparison Tables */
+.comp-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 13px;
+}
+
+.comp-table th {
+  background: var(--surface2);
+  padding: 12px 16px;
+  text-align: left;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--border);
+}
+
+.comp-table th:nth-child(2) { color: var(--accent2); }
+.comp-table th:nth-child(3) { color: var(--accent3); }
+.comp-table th:nth-child(4) { color: var(--accent4); }
+
+.comp-table td {
+  padding: 11px 16px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+  line-height: 1.6;
+}
+
+.comp-table tr:hover td {
+  background: var(--surface);
+}
+
+.comp-table td:first-child {
+  font-weight: 600;
+  color: var(--muted);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.key-fact {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  background: var(--surface);
+  border-radius: 6px;
+  padding: 14px 18px;
+  margin: 10px 0;
+}
+
+.key-fact-icon {
+  font-size: 16px;
+  margin-top: 1px;
+  flex-shrink: 0;
+}
+
+.key-fact-text {
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.key-fact-text strong {
+  color: var(--accent);
+}
+
+.mnemonic {
+  background: linear-gradient(135deg, rgba(74, 232, 176, 0.08), rgba(232, 200, 74, 0.05));
+  border: 1px solid rgba(74, 232, 176, 0.3);
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin: 20px 0;
+}
+
+.mnemonic-label {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  color: var(--accent2);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.mnemonic-text {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--white);
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.mnemonic-expand {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.rls-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(232, 200, 74, 0.15);
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  padding: 3px 10px;
+  border-radius: 3px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+/* Classic Viva section */
+.viva-section {
+  background: var(--surface);
+  border-radius: 8px;
+  padding: 28px;
+  margin: 30px 0;
+  border: 1px solid var(--border);
+}
+
+.viva-label {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.viva-label::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+div.viva-q {
+  margin-bottom: 18px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--border);
+}
+
+div.viva-q:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.viva-q-text {
+  font-weight: 600;
+  color: var(--accent);
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.viva-q-text span {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  background: rgba(232, 200, 74, 0.15);
+  padding: 2px 8px;
+  margin-right: 8px;
+  border-radius: 2px;
+}
+
+.viva-a-text {
+  font-size: 13px;
+  color: var(--text);
+  line-height: 1.7;
+  padding-left: 16px;
+  border-left: 2px solid var(--border);
+}
+
+.section-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 40px 0;
+}
+
+h2.topic-head {
+  font-family: "Playfair Display", serif;
+  font-size: 22px;
+  color: var(--white);
+  margin: 28px 0 14px;
+}
+
+h3.sub-head {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent2);
+  margin: 20px 0 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: "IBM Plex Mono", monospace;
+}
+
+.graph-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px;
+  margin: 16px 0;
+}
+
+.graph-label {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  color: var(--accent4);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
+svg text {
+  font-family: "IBM Plex Mono", monospace;
+}
+
+.examiner-fav {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(232, 74, 122, 0.15);
+  border: 1px solid var(--accent3);
+  color: var(--accent3);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  padding: 2px 9px;
+  border-radius: 3px;
+  letter-spacing: 1px;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+
+/* ==========================================
+   MODERN LAYOUT SELECTORS (Modules 4-10)
+   ========================================== */
+
+/* Modern Hero Block */
+.hero {
+  background: linear-gradient(135deg, #050e0c 0%, #0d1f1a 50%, var(--bg) 100%);
+  border-bottom: 1px solid var(--border2);
+  padding: 3rem 1.5rem 2.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-crimson .hero {
+  background: linear-gradient(135deg, #100609 0%, #200d12 50%, var(--bg) 100%);
+}
+.theme-indigo .hero {
+  background: linear-gradient(135deg, #060910 0%, #0d1222 50%, var(--bg) 100%);
+}
+.theme-amber .hero {
+  background: linear-gradient(135deg, #100a06 0%, #20140d 50%, var(--bg) 100%);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 360px;
+  height: 360px;
+  background: radial-gradient(circle, rgba(0, 200, 151, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.theme-crimson .hero::before { background: radial-gradient(circle, rgba(232, 51, 74, 0.12) 0%, transparent 70%); }
+.theme-indigo .hero::before { background: radial-gradient(circle, rgba(99, 102, 241, 0.12) 0%, transparent 70%); }
+.theme-amber .hero::before { background: radial-gradient(circle, rgba(245, 158, 11, 0.12) 0%, transparent 70%); }
+
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: -40px;
+  left: 15%;
+  width: 240px;
+  height: 240px;
+  background: radial-gradient(circle, rgba(244, 196, 100, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.module-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0, 200, 151, 0.12);
+  border: 1px solid rgba(0, 200, 151, 0.35);
+  color: var(--accent2);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  padding: 4px 12px;
+  border-radius: 3px;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+.theme-crimson .module-tag {
+  background: rgba(232, 51, 74, 0.12);
+  border-color: rgba(232, 51, 74, 0.35);
+}
+.theme-indigo .module-tag {
+  background: rgba(99, 102, 241, 0.12);
+  border-color: rgba(99, 102, 241, 0.35);
+}
+.theme-amber .module-tag {
+  background: rgba(245, 158, 11, 0.12);
+  border-color: rgba(245, 158, 11, 0.35);
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.7); }
+}
+
+.hero h1 {
+  font-family: "Crimson Pro", serif;
+  font-size: clamp(2rem, 6vw, 3.2rem);
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.15;
+  margin-bottom: 0.5rem;
+}
+
+.hero h1 span {
+  color: var(--accent);
+}
+
+.hero-sub {
+  color: var(--text2);
+  font-size: 13px;
+  font-family: "JetBrains Mono", monospace;
+  letter-spacing: 0.5px;
+  margin-bottom: 1.5rem;
+}
+
+.hero-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pill {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-family: "JetBrains Mono", monospace;
+}
+
+/* Table of Contents */
+.toc {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  margin: 1.5rem;
+  padding: 1.25rem;
+  border-radius: 6px;
+}
+
+.toc-title {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 6px;
+}
+
+.toc a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 13px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.toc a:hover {
+  color: var(--accent2);
+  background: rgba(0, 200, 151, 0.08);
+}
+.theme-crimson .toc a:hover { background: rgba(232, 51, 74, 0.08); }
+.theme-indigo .toc a:hover { background: rgba(99, 102, 241, 0.08); }
+.theme-amber .toc a:hover { background: rgba(245, 158, 11, 0.08); }
+
+.toc-num {
+  color: var(--accent);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+}
+
+.content {
+  padding: 0 1.5rem 3rem;
+}
+
+/* Modern Section Headers */
+.content .section-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 2.5rem 0 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.content .section-num {
+  background: var(--accent);
+  color: var(--bg);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  font-weight: 700;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.content .section-header h2 {
+  font-family: "Crimson Pro", serif;
+  font-size: clamp(1.3rem, 4vw, 1.8rem);
+  font-weight: 600;
+  color: var(--text);
+}
+
+.content .section-header h2 em {
+  color: var(--accent2);
+  font-style: normal;
+}
+
+/* Modern Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  font-family: "JetBrains Mono", monospace;
+  padding: 2px 7px;
+  border-radius: 3px;
+  vertical-align: middle;
+  margin-left: 4px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.badge-rls {
+  background: rgba(255, 107, 138, 0.18);
+  color: var(--rose);
+  border: 1px solid rgba(255, 107, 138, 0.35);
+}
+.badge-pyq {
+  background: rgba(96, 165, 250, 0.15);
+  color: var(--blue);
+  border: 1px solid rgba(96, 165, 250, 0.3);
+}
+.badge-fav {
+  background: rgba(244, 196, 100, 0.15);
+  color: var(--gold);
+  border: 1px solid rgba(244, 196, 100, 0.3);
+}
+.badge-new {
+  background: rgba(74, 222, 128, 0.15);
+  color: var(--green);
+  border: 1px solid rgba(74, 222, 128, 0.3);
+}
+
+/* Modern Cards */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.card-title {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card-title::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* Flowcharts - Merged and Dynamic */
+.flowchart {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin: 1rem 0;
+  overflow-x: auto;
+}
+
+.flow-title {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent2);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.flow-title::before {
+  content: "▶";
+  font-size: 8px;
+}
+
+.flow-h {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+}
+
+.flow-box {
+  flex: 1 1 auto;
+  background: var(--surface3);
+  border: 1.5px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 13px;
+  text-align: center;
+  min-width: 110px;
+  line-height: 1.4;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+}
+
+.flow-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border-color: var(--accent);
+}
+
+.flow-box.accent, .flow-box.yellow {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(0, 200, 151, 0.08);
+}
+.theme-crimson .flow-box.accent { background: rgba(232, 51, 74, 0.08); }
+.theme-indigo .flow-box.accent { background: rgba(99, 102, 241, 0.08); }
+.theme-amber .flow-box.accent { background: rgba(245, 158, 11, 0.08); }
+
+.flow-box.gold {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: rgba(244, 196, 100, 0.08);
+}
+.flow-box.rose, .flow-box.red {
+  border-color: var(--rose);
+  color: var(--rose);
+  background: rgba(255, 107, 138, 0.08);
+}
+.flow-box.purple {
+  border-color: var(--purple);
+  color: var(--purple);
+  background: rgba(192, 132, 252, 0.08);
+}
+.flow-box.blue {
+  border-color: var(--blue);
+  color: var(--blue);
+  background: rgba(96, 165, 250, 0.08);
+}
+.flow-box.green {
+  border-color: var(--green);
+  color: var(--green);
+  background: rgba(74, 222, 128, 0.08);
+}
+.flow-box.white {
+  border-color: var(--text);
+  color: var(--text);
+}
+
+.flow-box .box-label {
+  font-size: 10px;
+  color: var(--muted);
+  font-family: "JetBrains Mono", monospace;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.flow-box .box-sub {
+  font-size: 11px;
+  color: var(--muted);
+  display: block;
+  margin-top: 2px;
+}
+
+.arrow {
+  color: var(--accent);
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.arrow-down {
+  text-align: center;
+  color: var(--accent);
+  font-size: 18px;
+  margin: 4px 0;
+}
+
+.flow-v {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.flow-v .flow-box {
+  width: 100%;
+  max-width: 500px;
+}
+
+.flow-v .arrow-down {
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+}
+
+/* Modern Tables (Scoped to .table-wrap) */
+.table-wrap {
+  overflow-x: auto;
+  margin: 1rem 0;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.table-wrap table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-wrap th {
+  background: var(--surface3);
+  color: var(--accent2);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 2px solid var(--accent);
+}
+
+.table-wrap td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+  vertical-align: top;
+}
+
+.table-wrap tr:hover td {
+  background: rgba(0, 200, 151, 0.04);
+}
+.theme-crimson .table-wrap tr:hover td { background: rgba(232, 51, 74, 0.04); }
+.theme-indigo .table-wrap tr:hover td { background: rgba(99, 102, 241, 0.04); }
+.theme-amber .table-wrap tr:hover td { background: rgba(245, 158, 11, 0.04); }
+
+.table-wrap td:first-child {
+  color: var(--accent2);
+  font-weight: 600;
+}
+
+/* Modern Clinical & Mnemonic boxes inside .content */
+.content .clinical-box {
+  background: linear-gradient(135deg, rgba(96, 165, 250, 0.05), rgba(96, 165, 250, 0.02));
+  border: 1px solid rgba(96, 165, 250, 0.25);
+  border-left: 4px solid var(--blue);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+}
+
+.content .clinical-box .cbox-title {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--blue);
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.content .clinical-box .cbox-title::before {
+  content: "🩺";
+}
+
+.mnemonic-box {
+  background: linear-gradient(135deg, rgba(244, 196, 100, 0.06), rgba(244, 196, 100, 0.02));
+  border: 1px solid rgba(244, 196, 100, 0.28);
+  border-left: 4px solid var(--gold);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+}
+
+.mnemonic-box .mbox-title {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.mnemonic-box .mbox-title::before {
+  content: "🧠";
+}
+
+.mnemonic-highlight {
+  background: rgba(244, 196, 100, 0.1);
+  border: 1px dashed rgba(244, 196, 100, 0.3);
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-family: "Crimson Pro", serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--gold);
+  margin: 6px 0;
+  letter-spacing: 1px;
+}
+
+.eq-box {
+  background: linear-gradient(135deg, rgba(192, 132, 252, 0.06), rgba(192, 132, 252, 0.02));
+  border: 1px solid rgba(192, 132, 252, 0.28);
+  border-left: 4px solid var(--purple);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+}
+
+.eq-box .eq-title {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--purple);
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.eq-box .eq-title::before {
+  content: "📝";
+}
+
+.eq-statement {
+  background: var(--surface3);
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-family: "Crimson Pro", serif;
+  font-size: 15px;
+  font-style: italic;
+  color: var(--text);
+  margin-bottom: 10px;
+  border-left: 3px solid var(--purple);
+}
+
+.eq-answer ol {
+  margin-left: 18px;
+}
+
+.eq-answer li {
+  margin-bottom: 6px;
+  font-size: 13px;
+}
+
+.eq-answer li span {
+  color: var(--purple);
+  font-weight: 600;
+}
+
+.keypoint {
+  background: rgba(0, 200, 151, 0.07);
+  border: 1px solid rgba(0, 200, 151, 0.22);
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin: 8px 0;
+  font-size: 13px;
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+.theme-crimson .keypoint { background: rgba(232, 51, 74, 0.07); border-color: rgba(232, 51, 74, 0.22); }
+.theme-indigo .keypoint { background: rgba(99, 102, 241, 0.07); border-color: rgba(99, 102, 241, 0.22); }
+.theme-amber .keypoint { background: rgba(245, 158, 11, 0.07); border-color: rgba(245, 158, 11, 0.22); }
+
+.keypoint::before {
+  content: "⚡";
+  flex-shrink: 0;
+}
+
+.warn-box {
+  background: rgba(251, 146, 60, 0.07);
+  border: 1px solid rgba(251, 146, 60, 0.28);
+  border-left: 4px solid var(--orange);
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin: 8px 0;
+  font-size: 13px;
+  display: flex;
+  gap: 8px;
+}
+
+.warn-box::before {
+  content: "⚠️";
+  flex-shrink: 0;
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 2rem 0;
+}
+
+ul.checklist {
+  list-style: none;
+  margin: 0.5rem 0;
+}
+
+ul.checklist li::before {
+  content: "✦ ";
+  color: var(--accent);
+}
+
+ul.checklist li {
+  margin-bottom: 4px;
+  font-size: 13px;
+}
+
+.hl { color: var(--accent2); font-weight: 600; }
+.hl-gold { color: var(--gold); font-weight: 600; }
+.hl-rose { color: var(--rose); font-weight: 600; }
+.hl-blue { color: var(--blue); font-weight: 600; }
+.hl-purple { color: var(--purple); font-weight: 600; }
+.hl-green { color: var(--green); font-weight: 600; }
+
+/* Modern Atom Cards */
+.atom-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+  margin: 1rem 0;
+}
+
+.atom-card {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem;
+  transition: border-color 0.2s;
+}
+
+.atom-card:hover {
+  border-color: var(--accent);
+}
+
+.atom-head {
+  font-family: "Crimson Pro", serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.atom-sub {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+/* Modern Viva Section details */
+.viva-title-bar {
+  background: rgba(0, 200, 151, 0.1);
+  border: 1px solid rgba(0, 200, 151, 0.28);
+  border-radius: 6px 6px 0 0;
+  padding: 10px 14px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--accent2);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.theme-crimson .viva-title-bar { background: rgba(232, 51, 74, 0.1); border-color: rgba(232, 51, 74, 0.28); }
+.theme-indigo .viva-title-bar { background: rgba(99, 102, 241, 0.1); border-color: rgba(99, 102, 241, 0.28); }
+.theme-amber .viva-title-bar { background: rgba(245, 158, 11, 0.1); border-color: rgba(245, 158, 11, 0.28); }
+
+.viva-title-bar::before {
+  content: "💬";
+  font-size: 14px;
+}
+
+.content details {
+  border: 1px solid var(--border);
+  border-top: none;
+  overflow: hidden;
+}
+
+.content details:last-child {
+  border-radius: 0 0 6px 6px;
+}
+
+.content summary {
+  padding: 10px 14px;
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--text);
+  background: var(--surface);
+  list-style: none;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  user-select: none;
+  transition: background 0.2s;
+}
+
+.content summary:hover {
+  background: var(--surface2);
+}
+
+.content summary::before {
+  content: "▶";
+  color: var(--accent);
+  font-size: 10px;
+  margin-top: 3px;
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+
+.content details[open] > summary::before {
+  transform: rotate(90deg);
+}
+
+.viva-q {
+  font-weight: 600;
+  flex: 1;
+}
+
+.viva-year {
+  color: var(--blue);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  flex-shrink: 0;
+}
+
+.viva-ans {
+  padding: 12px 16px 14px;
+  background: var(--surface2);
+  font-size: 13px;
+  line-height: 1.75;
+  border-top: 1px solid var(--border);
+}
+
+.viva-ans p {
+  margin-bottom: 6px;
+}
+
+.viva-ans ul {
+  margin: 6px 0 6px 16px;
+}
+
+.viva-ans li {
+  margin-bottom: 4px;
+}
+
+.viva-ans strong {
+  color: var(--accent2);
+}
+
+.viva-ans em {
+  color: var(--gold);
+  font-style: normal;
+  font-weight: 600;
+}
+
+.drug-tag {
+  display: inline-block;
+  background: rgba(255, 107, 138, 0.12);
+  border: 1px solid rgba(255, 107, 138, 0.3);
+  color: var(--rose);
+  font-size: 10px;
+  padding: 1px 6px;
+  border-radius: 3px;
+  font-family: "JetBrains Mono", monospace;
+  margin-left: 4px;
+}
+
+
+/* ==========================================
+   SHARED INTERACTIVE ELEMENTS & UTILS
+   ========================================== */
+
+.progress-bar {
+  height: 3px;
+  background: linear-gradient(to right, var(--accent), var(--accent2), var(--accent4));
+  border-radius: 2px;
+  margin-bottom: 2rem;
+  animation: load 1.5s ease forwards;
+}
+
+@keyframes load {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+.formula {
+  font-family: "JetBrains Mono", monospace;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 6px 12px;
+  margin: 6px 0;
+  color: var(--accent);
+  font-size: 13px;
+  display: block;
+}
+
+.top-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(232, 200, 74, 0.35);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  transition: all 0.2s ease-in-out;
+}
+
+.top-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(232, 200, 74, 0.5);
+}
+
+.theme-emerald .top-btn { box-shadow: 0 4px 15px rgba(0, 200, 151, 0.35); }
+.theme-emerald .top-btn:hover { box-shadow: 0 6px 20px rgba(0, 200, 151, 0.5); }
+
+/* Footer */
+.footer {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  text-align: center;
+  padding: 2rem 1.5rem;
+  color: var(--muted);
+  font-size: 12px;
+  font-family: "JetBrains Mono", monospace;
+  margin-top: 60px;
+}
+
+.footer p {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 1px;
+}
+
+.footer .kims-tag {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+
+/* ==========================================
+   📱 COMPREHENSIVE RESPONSIVE ENGINE
+   ========================================== */
+
+@media (max-width: 768px) {
+  /* Classic Cover page mobile enhancements */
+  .cover {
+    padding: 40px 20px 48px;
+    min-height: 100vh;
+    justify-content: flex-start;
+  }
+  
+  .cover-pyq-badge {
+    position: static !important;
+    display: inline-block !important;
+    align-self: flex-start !important;
+    margin-bottom: 24px !important;
+    padding: 6px 12px !important;
+    font-size: 10px !important;
+  }
+
+  .cover-tag {
+    margin-bottom: 24px !important;
+  }
+
+  .cover h1 {
+    font-size: clamp(32px, 7vw, 48px) !important;
+    margin-bottom: 12px !important;
+  }
+
+  .cover-sub {
+    font-size: 15px !important;
+    margin-bottom: 36px !important;
+    line-height: 1.5 !important;
+  }
+
+  .cover-divider {
+    margin: 20px 0 !important;
+  }
+
+  .cover-meta {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+    width: 100% !important;
+  }
+
+  .cover-meta-item {
+    gap: 2px !important;
+  }
+
+  /* Modern Hero mobile adjustments */
+  .hero {
+    padding: 2rem 1rem;
+  }
+
+  /* Page Wrapper and Main Content Spacing */
+  .page {
+    padding: 24px 16px !important;
+    max-width: 100% !important;
+  }
+
+  .content {
+    padding: 0 1rem 2rem;
+  }
+  
+  .flowchart-container,
+  .flowchart,
+  .clinical-box,
+  .mnemonic-box,
+  .eq-box,
+  .big-picture,
+  .viva-section,
+  .mnemonic,
+  .graph-box,
+  .warn-box {
+    padding: 20px 16px !important;
+    margin: 20px 0 !important;
+  }
+
+  /* Typography Adjustments */
+  h2.topic-head,
+  .content .section-header h2 {
+    font-size: 20px !important;
+    margin: 24px 0 12px !important;
+  }
+
+  h3.sub-head {
+    font-size: 12px !important;
+    margin: 16px 0 8px !important;
+  }
+
+  /* Table of Contents Mobile layout */
+  .toc {
+    margin: 1rem 0;
+    width: auto;
+    display: block;
+  }
+
+  /* Flowcharts mobile layout */
+  .flow-row, .flow-h {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    gap: 6px !important;
+  }
+
+  .flow-box {
+    width: 100% !important;
+    min-width: unset !important;
+    max-width: 100% !important;
+    padding: 12px 16px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    border-right: 1.5px solid var(--border) !important;
+    box-sizing: border-box !important;
+  }
+
+  .flow-arrow, .arrow {
+    display: inline-block !important;
+    transform: rotate(90deg) !important;
+    margin: 8px 0 !important;
+    text-align: center !important;
+  }
+
+  .flow-arrow.down, .arrow-down {
+    transform: none !important;
+    margin: 8px 0 !important;
+    max-width: 100% !important;
+  }
+
+  /* Classic Comparison Tables & Modern Tables responsive scroll */
+  .comp-table, .table-wrap {
+    display: block !important;
+    width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 6px !important;
+    margin: 16px 0 !important;
+  }
+
+  .comp-table th, 
+  .comp-table td,
+  .table-wrap th,
+  .table-wrap td {
+    padding: 10px 12px !important;
+    font-size: 12px !important;
+  }
+
+  .comp-table::-webkit-scrollbar,
+  .table-wrap::-webkit-scrollbar {
+    height: 4px !important;
+  }
+  .comp-table::-webkit-scrollbar-track,
+  .table-wrap::-webkit-scrollbar-track {
+    background: var(--bg) !important;
+  }
+  .comp-table::-webkit-scrollbar-thumb,
+  .table-wrap::-webkit-scrollbar-thumb {
+    background: var(--border) !important;
+    border-radius: 2px !important;
+  }
+
+  /* Layout helpers */
+  .two-col, .atom-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .clinical-box ul li {
+    display: block !important;
+    position: relative !important;
+    padding-left: 16px !important;
+    font-size: 12px !important;
+  }
+  
+  .clinical-box ul li::before {
+    position: absolute !important;
+    left: 0 !important;
+    top: 2px !important;
+  }
+
+  /* Accordions / Viva Spacing */
+  summary.viva-q-text,
+  .content summary {
+    padding: 12px 0 !important;
+    font-size: 13px !important;
+  }
+
+  .viva-a-text,
+  .viva-ans {
+    padding-left: 12px !important;
+    font-size: 12px !important;
+    margin-top: 6px !important;
+  }
+}
+
+
+/* ==========================================
+   🖨️ PREMIUM PRINT-TO-PDF ENGINE (Ctrl+P)
+   ========================================== */
+
+@media print {
+  :root, body.theme-gold, body.theme-crimson, body.theme-emerald, body.theme-indigo, body.theme-amber {
+    --bg: #ffffff;
+    --surface: #f8f9fa;
+    --surface2: #e9ecef;
+    --surface3: #dee2e6;
+    --border: #dee2e6;
+    --border2: #ced4da;
+    --accent: #000000;
+    --accent2: #000000;
+    --accent3: #000000;
+    --accent4: #000000;
+    --text: #111111;
+    --text2: #222222;
+    --text3: #333333;
+    --muted: #495057;
+    --white: #000000;
+    --rls: #000000;
+    --gold: #000000;
+    --rose: #000000;
+    --purple: #000000;
+    --blue: #000000;
+    --green: #000000;
+    --orange: #000000;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+    color: #000000 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  @page {
+    size: A4 portrait;
+    margin: 12mm 15mm;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #111111 !important;
+    font-size: 11pt !important;
+    line-height: 1.4 !important;
+  }
+
+  p {
+    font-size: 11pt !important;
+    line-height: 1.4 !important;
+    margin-bottom: 8px !important;
+  }
+
+  /* Cover Page exact single A4 layout */
+  .cover {
+    min-height: unset !important;
+    height: 260mm !important;
+    max-height: 100vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    padding: 40px !important;
+    box-sizing: border-box !important;
+    border: 2px solid #000000 !important;
+    background: #ffffff !important;
+    page-break-after: always !important;
+    break-after: page !important;
+    position: relative !important;
+  }
+
+  .cover::before,
+  .cover::after {
+    display: none !important;
+  }
+
+  .cover-tag {
+    border-color: #000000 !important;
+    margin-bottom: 25px !important;
+    padding: 4px 10px !important;
+    font-size: 10px !important;
+  }
+
+  .cover h1 {
+    font-size: 44px !important;
+    line-height: 1.1 !important;
+    color: #000000 !important;
+    margin-bottom: 10px !important;
+  }
+
+  .cover h1 span {
+    color: #000000 !important;
+  }
+
+  .cover-sub {
+    font-size: 15px !important;
+    color: #495057 !important;
+    margin-bottom: 30px !important;
+  }
+
+  .cover-divider {
+    width: 60px !important;
+    height: 2px !important;
+    background: #000000 !important;
+    margin: 20px 0 !important;
+  }
+
+  .cover-meta {
+    gap: 30px !important;
+  }
+
+  .cover-meta-value {
+    font-size: 12px !important;
+  }
+
+  .cover-pyq-badge {
+    position: absolute !important;
+    top: 40px !important;
+    right: 40px !important;
+    border: 1px solid #000000 !important;
+    background: #ffffff !important;
+    padding: 6px 12px !important;
+    font-size: 10px !important;
+  }
+
+  /* Modern Hero formatting for print */
+  .hero {
+    background: none !important;
+    border-bottom: 2px solid #000000 !important;
+    padding: 1rem 0 !important;
+  }
+  
+  .hero::before, .hero::after {
+    display: none !important;
+  }
+
+  .module-tag {
+    background: #ffffff !important;
+    border: 1px solid #000000 !important;
+    color: #000000 !important;
+  }
+  .module-tag .dot {
+    display: none !important;
+  }
+
+  .pill {
+    background: #ffffff !important;
+    border: 1px solid #000000 !important;
+  }
+
+  /* Page Wrapper Spacing */
+  .page {
+    padding: 10px 0 !important;
+    max-width: 100% !important;
+  }
+
+  .content {
+    padding: 0 !important;
+  }
+
+  .section-divider {
+    margin: 20px 0 !important;
+    border-color: #dee2e6 !important;
+  }
+
+  /* Heading orphans preventions */
+  .section-header,
+  .content .section-header,
+  h2.topic-head,
+  h3.sub-head {
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+    margin-top: 15px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .section-header, .content .section-header {
+    padding-bottom: 8px !important;
+    margin-bottom: 15px !important;
+    border-bottom: 1.5px solid #000000 !important;
+  }
+
+  .section-title {
+    font-size: 20px !important;
+    color: #000000 !important;
+  }
+
+  .content .section-num {
+    background: none !important;
+    border: 2px solid #000000 !important;
+    color: #000000 !important;
+  }
+
+  h2.topic-head {
+    font-size: 16px !important;
+    border-bottom: 1px solid #dee2e6 !important;
+    padding-bottom: 4px !important;
+  }
+
+  h3.sub-head {
+    font-size: 11px !important;
+    margin-top: 12px !important;
+  }
+
+  /* Avoid cutting boxes across page breaks */
+  .pyq-box,
+  .big-picture,
+  .clinical-box,
+  .content .clinical-box,
+  .mnemonic-box,
+  .eq-box,
+  .flowchart-container,
+  .flowchart,
+  .comp-table,
+  .table-wrap,
+  .key-fact,
+  .mnemonic,
+  .viva-section,
+  .warn-box,
+  .atom-card,
+  details,
+  details.viva-q,
+  tr,
+  blockquote {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .pyq-box,
+  .big-picture,
+  .clinical-box,
+  .content .clinical-box,
+  .mnemonic-box,
+  .eq-box,
+  .flowchart-container,
+  .flowchart,
+  .viva-section,
+  .mnemonic,
+  .warn-box {
+    padding: 12px 16px !important;
+    margin: 10px 0 !important;
+    border-radius: 4px !important;
+    border: 1px solid #000000 !important;
+    background: #f8f9fa !important;
+  }
+
+  .pyq-box { background: #fbf8eb !important; }
+  .clinical-box, .content .clinical-box { background: #fdf5f7 !important; }
+  .warn-box { background: #fff9f3 !important; }
+  .mnemonic, .mnemonic-box { background: #f4fbf7 !important; }
+  .eq-box { background: #fdfbff !important; }
+
+  .pyq-box ul li {
+    background: #e9ecef !important;
+    border: 1px solid #dee2e6 !important;
+    padding: 2px 6px !important;
+    font-size: 10px !important;
+  }
+
+  /* Flowcharts print layout */
+  .flow-box {
+    padding: 6px 12px !important;
+    font-size: 11px !important;
+    min-width: 110px !important;
+    border: 1px solid #000000 !important;
+    background: #ffffff !important;
+  }
+
+  .flow-arrow, .arrow {
+    font-size: 14px !important;
+  }
+  .flow-arrow.down, .arrow-down {
+    margin: 1px 0 !important;
+    font-size: 16px !important;
+  }
+
+  /* Comparison Tables print */
+  .comp-table th, .table-wrap th {
+    padding: 8px 10px !important;
+    font-size: 10px !important;
+    border-bottom: 2px solid #000000 !important;
+    background: #e9ecef !important;
+  }
+
+  .comp-table td, .table-wrap td {
+    padding: 7px 10px !important;
+    font-size: 11px !important;
+    line-height: 1.3 !important;
+    border-bottom: 1px solid #dee2e6 !important;
+    background: #ffffff !important;
+  }
+
+  /* Viva Sections print: details tags auto-expand */
+  details, details.viva-q {
+    display: block !important;
+    border: 1px solid #000000 !important;
+    margin-bottom: 12px !important;
+  }
+
+  summary, summary.viva-q-text {
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    margin-bottom: 6px !important;
+    display: block !important;
+  }
+
+  summary::before, summary.viva-q-text::after, details[open] summary::before {
+    display: none !important;
+  }
+
+  details:not([open]) > *:not(summary) {
+    display: block !important; /* Force print answer display */
+  }
+
+  .viva-a-text, .viva-ans {
+    display: block !important;
+    font-size: 11.5px !important;
+    line-height: 1.4 !important;
+    padding-left: 12px !important;
+    border-left: 2px solid #000000 !important;
+    color: #111111 !important;
+  }
+
+  /* Hide print-unfriendly components */
+  .top-btn,
+  .progress-bar,
+  .toc {
+    display: none !important;
+  }
+
+  /* Clean print footer */
+  .footer {
+    border-top: 1px solid #000000 !important;
+    margin-top: 30px !important;
+    padding: 20px !important;
+    background: #ffffff !important;
+  }
+}
+    </style>
+</head>
+<body class="theme-indigo">
+<!-- HERO -->
+<div class="hero">
+<div class="module-tag"><span class="dot"></span>MODULE 06</div>
+<h1>Molecular Biology<br/><span>&amp; Genetics</span></h1>
+<p class="hero-sub">WBUHS BIOCHEMISTRY · PAPER 2 · KIMS KRISHNANAGAR</p>
+<div class="hero-pills">
+<span class="pill">DNA Replication</span>
+<span class="pill">Transcription</span>
+<span class="pill">Translation</span>
+<span class="pill">Lac Operon</span>
+<span class="pill">PCR</span>
+<span class="pill">DNA Repair</span>
+<span class="pill">Mutations</span>
+<span class="pill">Genetic Code</span>
+<span class="pill">Antibiotic Targets</span>
+<span class="pill">Post-translational Modification</span>
+<span class="pill">Recombinant DNA</span>
+</div>
+</div>
+<!-- TOC -->
+<div class="toc">
+<div class="toc-title">▸ Quick Navigate</div>
+<div class="toc-grid">
+<a href="#s1"><span class="toc-num">01</span> DNA Replication</a>
+<a href="#s2"><span class="toc-num">02</span> Transcription</a>
+<a href="#s3"><span class="toc-num">03</span> Genetic Code &amp; tRNA</a>
+<a href="#s4"><span class="toc-num">04</span> Translation</a>
+<a href="#s5"><span class="toc-num">05</span> Lac Operon</a>
+<a href="#s6"><span class="toc-num">06</span> DNA Damage &amp; Repair</a>
+<a href="#s7"><span class="toc-num">07</span> Mutations</a>
+<a href="#s8"><span class="toc-num">08</span> PCR &amp; Recombinant DNA</a>
+<a href="#s9"><span class="toc-num">09</span> Antibiotic Targets</a>
+<a href="#s10"><span class="toc-num">10</span> Post-translational Modifications</a>
+<a href="#s11"><span class="toc-num">11</span> Viva Q&amp;A</a>
+<a href="#s12"><span class="toc-num">12</span> EQ Templates</a>
+</div>
+</div>
+<div class="content">
+<div class="progress-bar"></div><!-- MASTER PYQ INDEX BOX --><div class="pyq-box">
+<div class="pyq-box-label">Master PYQ Index (2011–2025)</div>
+<ul>
+<li>2011</li>
+<li>2013</li>
+<li>2015</li>
+<li>2016-S</li>
+<li>2017</li>
+<li>2018</li>
+<li>2019</li>
+<li>2021</li>
+<li>2023</li>
+<li>2024</li>
+<li>2025</li>
+</ul>
+</div><!-- EXAM PRIORITY MAP --><div class="big-picture" style="margin: 0 0 2rem 0;">
+<div class="big-picture-label">📊 EXAM PRIORITY MAP &amp; USAGE STRATEGY</div>
+<p>
+<strong style="color: var(--rose);">🔴 TIER 1 (High Yield — Must Master):</strong> DNA Replication (s1), Transcription (s2), Translation (s4), Lac Operon Regulation (s5), Mutations (s7), PCR &amp; Recombinant DNA (s8). Core for passing.<br/>
+<strong style="color: var(--accent2);">🟡 TIER 2 (Medium Yield — Review):</strong> Genetic Code &amp; tRNA (s3), DNA Damage &amp; Repair (s6), Antibiotic Targets (s9), Post-translational Modifications (s10). Mechanism-oriented, great for distinction.<br/>
+<strong style="color: var(--green);">🟢 TIER 3 (Low Yield — Collapsed on Screen):</strong> Essay Question Templates (s12). Fast read, mainly for comprehensive reference.
+        </p>
+</div><!-- LAST DAY REVISION MODE --><div class="section-header">
+<div class="section-num" style="background: var(--rose); color: #fff;">00</div>
+<h2>🔥 Last Day Revision Mode</h2>
+</div><div class="clinical-box key-fact" style="border-left-color: var(--rose); background: rgba(248, 113, 113, 0.05); border-color: rgba(248, 113, 113, 0.2);">
+<div class="cbox-title" style="color: var(--rose);">ULTRA-CONCISE EXAM FACTS</div>
+<ul class="checklist">
+<li><strong>Replication Rates:</strong> Prokaryotes (~1000 bp/sec) vs Eukaryotes (~50 bp/sec). Eukaryotes have multiple replication origins, prokaryotes have only one (OriC).</li>
+<li><strong>Transcription Promoters:</strong> Prokaryotes (Pribnow box -10, -35 sequence) vs Eukaryotes (TATA box -25, CAAT box -75).</li>
+<li><strong>Genetic Code Features:</strong> Unambiguous, Degenerate (Wobble hypothesis), Commaless, Non-overlapping, and Universal.</li>
+<li><strong>Translation Costs:</strong> Charging (2 ATP equivalent, tRNA synthetase), Initiation (1 GTP), Elongation (2 GTP/peptide bond), Termination (1 GTP).</li>
+<li><strong>Lac Operon:</strong> Induced by Lactose (allolactose bind repressor → off promoter), Repressed by Glucose (↓ cAMP → ↓ CAP binding).</li>
+<li><strong>PCR Cycles:</strong> Denaturation (94°C), Annealing (55°C), Extension (72°C using Taq Polymerase).</li>
+</ul>
+</div><div class="section-divider"></div>
+<!-- ════════════════════════════════ S1: DNA REPLICATION ════════════════════════════════ -->
+<div id="s1">
+<div class="section-header">
+<div class="section-num">01</div>
+<h2>DNA <em>Replication</em></h2>
+</div>
+<div class="keypoint">
+          Replication is <strong>semi-conservative</strong> (proven by
+          Meselson-Stahl experiment), <strong>bidirectional</strong>, and
+          proceeds <strong>5'→3'</strong> only. Template is read 3'→5'.
+        </div>
+<!-- Prokaryotic Replication -->
+<div class="card">
+<div class="card-title">
+            Prokaryotic (E. coli) Replication — Key Players
+            <span class="badge badge-fav">⭐ PYQ 2012-S, 2019, 2021</span>
+</div>
+<div class="table-wrap">
+<table>
+<tr>
+<th>Protein/Enzyme</th>
+<th>Role</th>
+</tr>
+<tr>
+<td>DnaA protein</td>
+<td>Recognises and binds origin (oriC)</td>
+</tr>
+<tr>
+<td>Helicase (DnaB)</td>
+<td>Unwinds double helix by breaking H-bonds — uses ATP</td>
+</tr>
+<tr>
+<td>SSB proteins</td>
+<td>
+                  Single-Strand Binding proteins — stabilise unwound strands,
+                  prevent re-annealing
+                </td>
+</tr>
+<tr>
+<td>Primase (DnaG)</td>
+<td>
+                  Synthesises RNA primer (8–12 nucleotides) — needed because DNA
+                  pol cannot initiate de novo
+                </td>
+</tr>
+<tr>
+<td>DNA Pol III <span class="badge badge-rls">MAIN</span></td>
+<td>
+                  Primary replicase — fast, processive, 5'→3' synthesis + 3'→5'
+                  proofreading exonuclease
+                </td>
+</tr>
+<tr>
+<td>DNA Pol I</td>
+<td>
+                  Removes RNA primers (5'→3' exonuclease) + fills gap with DNA
+                </td>
+</tr>
+<tr>
+<td>DNA Pol II</td>
+<td>DNA repair only</td>
+</tr>
+<tr>
+<td>DNA Ligase</td>
+<td>
+                  Seals nicks between Okazaki fragments — uses NAD⁺
+                  (prokaryotes) or ATP (eukaryotes)
+                </td>
+</tr>
+<tr>
+<td>Topoisomerase I</td>
+<td>
+                  Relaxes supercoiling — cuts 1 strand, rotates, reseals (no
+                  ATP)
+                </td>
+</tr>
+<tr>
+<td>Topoisomerase II (Gyrase)</td>
+<td>
+                  Relieves positive supercoiling ahead of fork — cuts both
+                  strands — ATP-dependent. Target of
+                  <strong>fluoroquinolones</strong> (prokaryotes) and
+                  <strong>etoposide</strong> (eukaryotes/anticancer)
+                </td>
+</tr>
+</table>
+</div>
+</div>
+<!-- Replication flowchart — mobile safe, NO rotated text -->
+<div class="flowchart">
+<div class="flow-title">Prokaryotic Replication — Step by Step</div>
+<div class="flow-v">
+<div class="flow-box blue" style="border-color: var(--accent)">
+<span class="lbl">Step 1 — Initiation</span>
+<strong>oriC</strong> recognised by DnaA → Helicase loads (DnaB) →
+              Replication bubble forms → Primase adds RNA primers on both
+              strands
+            </div>
+<div class="flow-step-label">↓ Both strands serve as templates</div>
+<div class="flow-box gold">
+<span class="lbl">Step 2 — Elongation</span>
+<strong>Leading strand:</strong> continuous 5'→3' synthesis (DNA
+              Pol III)<br/>
+<strong>Lagging strand:</strong> discontinuous — synthesised as
+              <strong>Okazaki fragments</strong> (1000–2000 nt in prokaryotes,
+              100–200 in eukaryotes), each requires a new primer
+            </div>
+<div class="flow-step-label">
+              ↓ DNA Pol I removes primers, DNA Ligase seals nicks
+            </div>
+<div class="flow-box teal">
+<span class="lbl">Step 3 — Termination</span>
+              Two forks meet at <strong>Ter sequences</strong> (termination
+              sites) → Tus protein arrests helicase → Topoisomerase II
+              decatenates interlocked circles
+            </div>
+</div>
+</div>
+<!-- Eukaryotic vs Prokaryotic -->
+<div class="card">
+<div class="card-title">
+            Prokaryotic vs Eukaryotic Replication
+            <span class="badge badge-pyq">PYQ 2015, 2021</span>
+</div>
+<div class="table-wrap">
+<table>
+<tr>
+<th>Feature</th>
+<th>Prokaryotic</th>
+<th>Eukaryotic</th>
+</tr>
+<tr>
+<td>Origin</td>
+<td>Single (oriC)</td>
+<td>Multiple origins (thousands)</td>
+</tr>
+<tr>
+<td>Speed</td>
+<td>~1000 nt/sec</td>
+<td>~50–100 nt/sec (but multiple origins = faster overall)</td>
+</tr>
+<tr>
+<td>Main polymerase</td>
+<td>DNA Pol III</td>
+<td>DNA Pol δ (lagging), DNA Pol ε (leading)</td>
+</tr>
+<tr>
+<td>Primer removal</td>
+<td>DNA Pol I (5'→3' exonuclease)</td>
+<td>RNase H + FEN1</td>
+</tr>
+<tr>
+<td>Okazaki fragments</td>
+<td>1000–2000 nt</td>
+<td>100–200 nt</td>
+</tr>
+<tr>
+<td>Histones</td>
+<td>Absent</td>
+<td>Present — must reassemble after fork</td>
+</tr>
+<tr>
+<td>Telomere problem</td>
+<td>Circular DNA — no end problem</td>
+<td>
+                  Linear — ends shorten →
+                  <strong>Telomerase</strong> (RNA-dependent DNA pol) extends
+                  them
+                </td>
+</tr>
+<tr>
+<td>Ligase cofactor</td>
+<td>NAD⁺</td>
+<td>ATP</td>
+</tr>
+</table>
+</div>
+<div class="clinical-box" style="margin-top: 8px">
+<div class="cbox-title">Telomerase &amp; Cancer</div>
+<p>
+              Normal somatic cells have no telomerase → chromosomes shorten with
+              each division → senescence.
+              <strong>Cancer cells reactivate telomerase</strong> → maintain
+              telomere length → become immortal. Stem cells also express
+              telomerase. Target for anticancer therapy.
+            </p>
+</div>
+</div>
+</div>
+<div class="divider"></div>
+<!-- ════════════════════════════════ S2: TRANSCRIPTION ════════════════════════════════ -->
+<div id="s2">
+<div class="section-header">
+<div class="section-num">02</div>
+<h2><em>Transcription</em></h2>
+</div>
+<div class="keypoint">
+          Transcription = DNA → RNA. Reads template (antisense) strand
+          <strong>3'→5'</strong>, synthesises mRNA <strong>5'→3'</strong>. No
+          primer needed. Uses <strong>ribonucleotides</strong>. Only a small
+          region of DNA is copied at a time.
+        </div>
+<div class="card">
+<div class="card-title">
+            Prokaryotic Transcription
+            <span class="badge badge-fav">⭐ PYQ 2010, 2013, 2024</span>
+</div>
+<div class="two-col">
+<div>
+<p style="
+                  font-size: 13px;
+                  font-weight: 600;
+                  color: var(--accent2);
+                  margin-bottom: 6px;
+                ">
+                RNA Polymerase (single enzyme does all):
+              </p>
+<ul class="checklist">
+<li>Core enzyme: α₂ββ'ω</li>
+<li>σ (sigma) factor added → holoenzyme</li>
+<li>
+                  σ factor recognises <strong>promoter</strong> (–10 and –35
+                  boxes)
+                </li>
+<li>σ factor dissociates after initiation begins</li>
+</ul>
+</div>
+<div>
+<p style="
+                  font-size: 13px;
+                  font-weight: 600;
+                  color: var(--gold);
+                  margin-bottom: 6px;
+                ">
+                Phases:
+              </p>
+<ul class="checklist">
+<li>
+<strong>Initiation:</strong> Holoenzyme binds promoter → DNA
+                  melts (~17 bp) → first phosphodiester bond forms
+                </li>
+<li>
+<strong>Elongation:</strong> σ released → core enzyme
+                  elongates 5'→3'
+                </li>
+<li>
+<strong>Termination:</strong> Rho-independent (hairpin +
+                  U-run) or Rho-dependent (Rho helicase)
+                </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="card">
+<div class="card-title">
+            Eukaryotic RNA Polymerases
+            <span class="badge badge-pyq">PYQ 2017-S, 2024</span>
+</div>
+<div class="table-wrap">
+<table>
+<tr>
+<th>Polymerase</th>
+<th>Location</th>
+<th>Product</th>
+<th>Inhibitor</th>
+</tr>
+<tr>
+<td>RNA Pol I</td>
+<td>Nucleolus</td>
+<td>28S, 18S, 5.8S rRNA</td>
+<td>Actinomycin D (also Pol II)</td>
+</tr>
+<tr>
+<td>RNA Pol II</td>
+<td>Nucleoplasm</td>
+<td>mRNA (hnRNA) + snRNA</td>
+<td><strong>α-Amanitin</strong> (most sensitive)</td>
+</tr>
+<tr>
+<td>RNA Pol III</td>
+<td>Nucleoplasm</td>
+<td>tRNA, 5S rRNA, snRNA</td>
+<td>α-Amanitin (high concentration)</td>
+</tr>
+</table>
+</div>
+<div class="mnemonic-box" style="margin-top: 8px">
+<div class="mbox-title">Mnemonic — RNA Pol Products</div>
+<div class="mnemonic-highlight">
+              "I make Ribosomal, II makes Messenger, III makes Transfer"
+              (1=rRNA, 2=mRNA, 3=tRNA)
+            </div>
+</div>
+</div>
+<!-- Eukaryotic mRNA processing -->
+<div class="card">
+<div class="card-title">
+            Eukaryotic mRNA Processing (Post-transcriptional)
+            <span class="badge badge-fav">⭐ High Yield</span>
+</div>
+<div class="flowchart" style="margin: 0">
+<div class="flow-title">hnRNA → Mature mRNA</div>
+<div class="flow-v">
+<div class="flow-box accent">
+<span class="lbl">Step 1 — 5' Capping (co-transcriptional)</span>
+                7-methylguanosine cap added to 5' end via 5'–5' triphosphate
+                bridge<br/>
+<span class="sub">Protects from exonucleases; aids ribosome binding; required
+                  for translation</span>
+</div>
+<div class="flow-step-label">↓</div>
+<div class="flow-box gold">
+<span class="lbl">Step 2 — 3' Polyadenylation</span>
+                Cleavage ~20 nt after AAUAAA signal → Poly-A polymerase adds
+                200–250 A residues<br/>
+<span class="sub">Stabilises mRNA; aids nuclear export; facilitates
+                  translation</span>
+</div>
+<div class="flow-step-label">↓</div>
+<div class="flow-box teal">
+<span class="lbl">Step 3 — RNA Splicing (Intron removal)</span>
+                Spliceosome (snRNPs: U1,U2,U4,U5,U6) removes introns via 2-step
+                transesterification<br/>
+<span class="sub">Lariat intermediate formed. Exons join. Alternative splicing
+                  → protein diversity</span>
+</div>
+<div class="flow-step-label">
+                ↓ Export to cytoplasm via nuclear pore
+              </div>
+<div class="flow-box purple">
+                Mature mRNA: 5'cap – 5'UTR – Coding sequence – 3'UTR – Poly-A
+                tail – 3'
+              </div>
+</div>
+</div>
+<div class="clinical-box" style="margin-top: 8px">
+<div class="cbox-title">RNA Editing</div>
+<p>
+<strong>ApoB mRNA editing:</strong> In intestine, C→U editing at
+              codon 2153 of ApoB mRNA → Stop codon →
+              <strong>ApoB-48</strong> (shorter) instead of ApoB-100. ApoB-48 is
+              on chylomicrons; ApoB-100 on VLDL/LDL from liver. Same gene,
+              tissue-specific protein — no alternate splicing.
+            </p>
+</div>
+</div>
+</div>
+<div class="divider"></div>
+<!-- ════════════════════════════════ S3: GENETIC CODE & tRNA ════════════════════════════════ -->
+<div id="s3">
+<div class="section-header">
+<div class="section-num">03</div>
+<h2>Genetic Code <em>&amp; tRNA</em></h2>
+</div>
+<div class="card">
+<div class="card-title">
+            Properties of the Genetic Code
+            <span class="badge badge-pyq">PYQ 2019-S</span>
+</div>
+<div class="table-wrap">
+<table>
+<tr>
+<th>Property</th>
+<th>Meaning</th>
+<th>Exception/Note</th>
+</tr>
+<tr>
+<td>Triplet</td>
+<td>3 bases = 1 codon → 64 codons for 20 amino acids</td>
+<td>No exceptions</td>
+</tr>
+<tr>
+<td>Degenerate/Redundant</td>
+<td>Multiple codons for same amino acid</td>
+<td>3rd base wobble. Trp and Met have only 1 codon each</td>
+</tr>
+<tr>
+<td>Non-overlapping</td>
+<td>Each base belongs to only one codon</td>
+<td>
+                  Some viruses have overlapping reading frames (exception)
+                </td>
+</tr>
+<tr>
+<td>Comma-free</td>
+<td>No "punctuation" between codons, read continuously</td>
+<td>Frameshift mutations disrupt this</td>
+</tr>
+<tr>
+<td>Universal</td>
+<td>Same code in all organisms</td>
+<td>Minor exceptions: mitochondrial code (AUA=Met, UGA=Trp)</td>
+</tr>
+<tr>
+<td>Non-ambiguous</td>
+<td>One codon = only one amino acid</td>
+<td>No exceptions</td>
+</tr>
+<tr>
+<td>Start codon</td>
+<td>AUG (Met; fMet in prokaryotes)</td>
+<td>Rarely GUG (Val) in prokaryotes</td>
+</tr>
+<tr>
+<td>Stop codons</td>
+<td>UAA ("Ochre"), UAG ("Amber"), UGA ("Opal/Umber")</td>
+<td>UGA can encode selenocysteine (21st AA)</td>
+</tr>
+</table>
+</div>
+<div class="mnemonic-box" style="margin-top: 8px">
+<div class="mbox-title">Stop Codons Mnemonic</div>
+<div class="mnemonic-highlight">
+              "UAA = U Are Away, UAG = U Are Gone, UGA = U Go Away"
+            </div>
+<p style="font-size: 12px; color: var(--text2); margin-top: 4px">
+              Or: <strong>UAA (Ochre), UAG (Amber), UGA (Opal)</strong> — "OAO"
+              or think "U-A-A is the usual stop"
+            </p>
+</div>
+</div>
+<!-- tRNA structure -->
+<div class="card">
+<div class="card-title">
+            tRNA Structure <span class="badge badge-pyq">PYQ 2011, 2018-S</span>
+</div>
+<div class="two-col">
+<div>
+<p style="
+                  font-size: 13px;
+                  font-weight: 600;
+                  color: var(--accent2);
+                  margin-bottom: 6px;
+                ">
+                Cloverleaf Structure — 4 Arms:
+              </p>
+<ul class="checklist">
+<li>
+<strong>Acceptor arm (3' CCA):</strong> Amino acid attached to
+                  3'-OH of terminal adenosine. All tRNAs end in CCA-3' (added
+                  post-transcriptionally)
+                </li>
+<li>
+<strong>Anticodon arm:</strong> Contains the 3-base anticodon
+                  that pairs with mRNA codon
+                </li>
+<li>
+<strong>D-arm (DHU arm):</strong> Contains dihydrouridine.
+                  Recognition site for aminoacyl-tRNA synthetase
+                </li>
+<li>
+<strong>TΨC arm:</strong> Contains ribothymidine &amp;
+                  pseudouridine. Ribosome binding
+                </li>
+<li>
+<strong>Variable loop:</strong> Between anticodon and TΨC arms
+                </li>
+</ul>
+</div>
+<div>
+<p style="
+                  font-size: 13px;
+                  font-weight: 600;
+                  color: var(--gold);
+                  margin-bottom: 6px;
+                ">
+                Key Facts:
+              </p>
+<ul class="checklist">
+<li>Smallest RNA (~73–93 nucleotides)</li>
+<li>L-shaped 3D structure (cloverleaf folded)</li>
+<li>~15% of total cellular RNA</li>
+<li>
+<strong>Aminoacyl-tRNA synthetase</strong> (one per amino
+                  acid) charges tRNA — uses ATP (→ AMP + 2Pi)
+                </li>
+<li>
+                  Wobble position = 3rd base of anticodon (5' end of anticodon)
+                  — can pair with multiple bases
+                </li>
+<li>
+                  Initiator tRNA in prokaryotes: <strong>fMet-tRNA</strong>ᶠᴹᵉᵗ
+                  (formyl-methionine)
+                </li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="divider"></div>
+<!-- ════════════════════════════════ S4: TRANSLATION ════════════════════════════════ -->
+<div id="s4">
+<div class="section-header">
+<div class="section-num">04</div>
+<h2><em>Translation</em></h2>
+</div>
+<div class="keypoint">
+          Translation = mRNA → Protein. Occurs at ribosomes. Direction:
+          N-terminus to C-terminus. Reads mRNA <strong>5'→3'</strong>.
+        </div>
+<!-- Ribosome structure -->
+<div class="card">
+<div class="card-title">Ribosome Structure</div>
+<div class="table-wrap">
+<table>
+<tr>
+<th>Feature</th>
+<th>Prokaryotic</th>
+<th>Eukaryotic</th>
+</tr>
+<tr>
+<td>Overall</td>
+<td>70S</td>
+<td>80S</td>
+</tr>
+<tr>
+<td>Small subunit</td>
+<td>30S (16S rRNA + 21 proteins)</td>
+<td>40S (18S rRNA + 33 proteins)</td>
+</tr>
+<tr>
+<td>Large subunit</td>
+<td>50S (23S + 5S rRNA + 31 proteins)</td>
+<td>60S (28S + 5.8S + 5S rRNA + 49 proteins)</td>
+</tr>
+<tr>
+<td>A site</td>
+<td>Aminoacyl-tRNA binding</td>
+<td>Same</td>
+</tr>
+<tr>
+<td>P site</td>
+<td>Peptidyl-tRNA (growing chain)</td>
+<td>Same</td>
+</tr>
+<tr>
+<td>E site</td>
+<td>Exit — empty tRNA leaves</td>
+<td>Same</td>
+</tr>
+</table>
+</div>
+<div class="mnemonic-box" style="margin-top: 8px">
+<div class="mbox-title">Mnemonic — Ribosome Sites</div>
+<div class="mnemonic-highlight">
+              "APE" = A(minoacyl) → P(eptidyl) → E(xit)
+            </div>
+</div>
+</div>
+<!-- Translation flowchart -->
+<div class="flowchart">
+<div class="flow-title">Prokaryotic Translation — 3 Phases</div>
+<div class="flow-v">
+<div class="flow-box accent">
+<span class="lbl">INITIATION — Uses GTP + Initiation Factors (IF1, IF2,
+                IF3)</span>
+              30S + mRNA (Shine-Dalgarno sequence binds 16S rRNA) + fMet-tRNA →
+              30S initiation complex<br/>
+              + 50S subunit → <strong>70S initiation complex</strong><br/>
+<span class="sub">fMet-tRNA enters P site directly (unique to initiation)</span>
+</div>
+<div class="flow-step-label">
+              ↓ Elongation factors EF-Tu (GTP, brings aa-tRNA to A site), EF-Ts
+              (regenerates), EF-G (GTP, translocation)
+            </div>
+<div class="flow-box gold">
+<span class="lbl">ELONGATION — 3 steps per cycle, each costs GTP</span>
+<strong>1. Decoding:</strong> EF-Tu·GTP delivers aminoacyl-tRNA to
+              A site → codon-anticodon check<br/>
+<strong>2. Peptide bond formation:</strong> Peptidyl transferase
+              (23S rRNA — ribozyme!) transfers growing chain from P-tRNA to
+              A-tRNA<br/>
+<strong>3. Translocation:</strong> EF-G·GTP moves ribosome 1 codon
+              (3'→5' on mRNA) → A→P→E shift
+            </div>
+<div class="flow-step-label">
+              ↓ Until stop codon (UAA/UAG/UGA) enters A site
+            </div>
+<div class="flow-box teal">
+<span class="lbl">TERMINATION — Release Factors (RF1 recognises UAA/UAG; RF2
+                recognises UAA/UGA; RF3 is GTPase)</span>
+              RF binds A site → peptidyl transferase catalyses hydrolysis →
+              polypeptide released<br/>
+<span class="sub">Ribosome dissociates: RRF (ribosome recycling factor) + EF-G +
+                IF3</span>
+</div>
+</div>
+</div>
+<!-- Post-translational (covered in s10 in detail) -->
+<div class="card">
+<div class="card-title">
+            Eukaryotic vs Prokaryotic Translation Differences
+          </div>
+<div class="table-wrap">
+<table>
+<tr>
+<th>Feature</th>
+<th>Prokaryotic</th>
+<th>Eukaryotic</th>
+</tr>
+<tr>
+<td>Coupling</td>
+<td>Transcription + Translation coupled (polysome)</td>
+<td>Separated in space/time (nucleus + cytoplasm)</td>
+</tr>
+<tr>
+<td>Initiator tRNA</td>
+<td>fMet-tRNA (formyl-methionine)</td>
+<td>Met-tRNA (NOT formylated)</td>
+</tr>
+<tr>
+<td>mRNA recognition</td>
+<td>Shine-Dalgarno sequence + 30S</td>
+<td>5' cap + Kozak sequence + 40S (cap-dependent scanning)</td>
+</tr>
+<tr>
+<td>Initiation factors</td>
+<td>IF1, IF2, IF3 (3)</td>
+<td>eIF1, eIF2, eIF3, eIF4, eIF5 (many)</td>
+</tr>
+<tr>
+<td>Polycistronic mRNA</td>
+<td>Yes (one mRNA codes multiple proteins)</td>
+<td>Usually monocistronic</td>
+</tr>
+<tr>
+<td>Elongation factors</td>
+<td>EF-Tu, EF-Ts, EF-G</td>
+<td>eEF1α (=EF-Tu), eEF1βγ (=EF-Ts), eEF2 (=EF-G)</td>
+</tr>
+<tr>
+<td>GTP used</td>
+<td>2 per elongation cycle + 1 initiation</td>
+<td>Similar</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="divider"></div>
+<!-- ════════════════════════════════ S5: LAC OPERON ════════════════════════════════ -->
+<div id="s5">
+<div class="section-header">
+<div class="section-num">05</div>
+<h2>Lac Operon <em>Regulation</em></h2>
+</div>
+<div class="keypoint">
+          Lac operon = inducible operon (in E. coli). Regulates genes for
+          lactose metabolism. Has <strong>negative</strong> (repressor) AND
+          <strong>positive</strong> (CAP/cAMP) regulation.
+        </div>
+<div class="card">
+<div class="card-title">Structure of the Lac Operon</div>
+<div class="flowchart" style="margin: 0">
+<div class="flow-title">Lac Operon Architecture</div>
+<div class="flow-h">
+<div class="flow-box" style="
+                  background: rgba(251, 191, 36, 0.08);
+                  border-color: var(--gold);
+                  text-align: center;
+                ">
+<span class="lbl">CAP site</span>Positive control
+              </div>
+<div class="h-arrow">→</div>
+<div class="flow-box accent" style="text-align: center">
+<span class="lbl">Promoter (P)</span>RNA Pol binds
+              </div>
+<div class="h-arrow">→</div>
+<div class="flow-box" style="
+                  background: rgba(248, 113, 113, 0.08);
+                  border-color: var(--rose);
+                  text-align: center;
+                ">
+<span class="lbl">Operator (O)</span>Repressor binds
+              </div>
+<div class="h-arrow">→</div>
+<div class="flow-box teal" style="text-align: center">
+<span class="lbl">lacZ</span>β-galactosidase
+              </div>
+<div class="h-arrow">→</div>
+<div class="flow-box teal" style="text-align: center">
+<span class="lbl">lacY</span>Permease
+              </div>
+<div class="h-arrow">→</div>
+<div class="flow-box teal" style="text-align: center">
+<span class="lbl">lacA</span>Transacetylase
+              </div>
+</div>
+</div>
+</div>
+<!-- 4 states -->
+<div class="card">
+<div class="card-title">
+            4 States of Lac Operon Expression
+            <span class="badge badge-fav">⭐ PYQ 2015, 2018, 2019-S, 2023</span>
+</div>
+<div class="table-wrap">
+<table>
+<tr>
+<th>Condition</th>
+<th>Repressor</th>
+<th>CAP-cAMP</th>
+<th>Transcription</th>
+<th>Logic</th>
+</tr>
+<tr>
+<td>No lactose + Glucose</td>
+<td>Active (binds operator)</td>
+<td>Absent (cAMP low)</td>
+<td class="hl-rose">OFF</td>
+<td>No substrate needed + glucose preferred</td>
+</tr>
+<tr>
+<td>Lactose + Glucose</td>
+<td>Inactive (allolactose removes it)</td>
+<td>Absent (cAMP still low)</td>
+<td style="color: var(--gold); font-weight: 600">LOW</td>
+<td>No repressor BUT no positive activator either</td>
+</tr>
+<tr>
+<td>No lactose + No glucose</td>
+<td>Active (blocks operator)</td>
+<td>Present (cAMP high, CAP binds)</td>
+<td class="hl-rose">OFF</td>
+<td>CAP ready but repressor blocks — no point</td>
+</tr>
+<tr>
+<td>Lactose + No glucose</td>
+<td>Inactive (allolactose)</td>
+<td>Present (cAMP high)</td>
+<td class="hl-teal">MAX ON</td>
+<td>
+                  Repressor gone + CAP activates — cell uses lactose as energy
+                  source
+                </td>
+</tr>
+</table>
+</div>
+<div class="two-col" style="margin-top: 1rem">
+<div>
+<p style="
+                  font-size: 13px;
+                  font-weight: 600;
+                  color: var(--accent2);
+                  margin-bottom: 6px;
+                ">
+                Negative Regulation (Repressor):
+              </p>
+<ul class="checklist">
+<li>
+                  lacI gene encodes <strong>lac repressor</strong> (tetramer)
+                </li>
+<li>
+                  Without lactose: repressor binds operator → blocks RNA Pol →
+                  no transcription
+                </li>
+<li>
+                  Inducer = <strong>allolactose</strong> (isomer of lactose,
+                  formed by β-galactosidase acting on small amounts of lactose)
+                </li>
+<li>
+                  Allolactose binds repressor → conformational change →
+                  repressor released from operator → transcription proceeds
+                </li>
+<li>
+                  IPTG is a gratuitous inducer (non-metabolisable — used in
+                  experiments)
+                </li>
+</ul>
+</div>
+<div>
+<p style="
+                  font-size: 13px;
+                  font-weight: 600;
+                  color: var(--gold);
+                  margin-bottom: 6px;
+                ">
+                Positive Regulation (CAP-cAMP):
+              </p>
+<ul class="checklist">
+<li>
+                  Glucose present → cAMP LOW (adenylate cyclase inhibited) → CAP
+                  cannot bind → low transcription
+                </li>
+<li>
+                  Glucose absent → cAMP HIGH → cAMP binds CAP (catabolite
+                  activator protein = CRP) → CAP-cAMP complex binds CAP site
+                  upstream of promoter
+                </li>
+<li>
+                  CAP bends DNA → RNA Pol binds promoter more efficiently →
+                  <strong>transcription stimulated ~50-fold</strong>
+</li>
+<li>
+                  This is the basis of <strong>catabolite repression</strong> —
+                  glucose represses other sugar operons
+                </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="mnemonic-box">
+<div class="mbox-title">Lac Operon Memory Hook</div>
+<div class="mnemonic-highlight">
+            "No glucose = HIGH cAMP = CAP ON = Operon ready. Lactose present =
+            Repressor OFF = GO. Both needed for MAX transcription."
+          </div>
+</div>
+</div>
+<div class="divider"></div>
+<!-- ════════════════════════════════ S6: DNA DAMAGE & REPAIR ════════════════════════════════ -->
+<div id="s6">
+<div class="section-header">
+<div class="section-num">06</div>
+<h2>DNA Damage <em>&amp; Repair</em></h2>
+</div>
+<div class="card">
+<div class="card-title">
+            Types of DNA Damage
+            <span class="badge badge-pyq">PYQ 2011, 2017, 2023</span>
+</div>
+<div class="table-wrap">
+<table>
+<tr>
+<th>Type</th>
+<th>Cause</th>
+<th>Lesion</th>
+</tr>
+<tr>
+<td>Deamination</td>
+<td>Spontaneous (most common)</td>
+<td>
+                  Cytosine → Uracil; Adenine → Hypoxanthine; 5-methylC → Thymine
+                  (G:C hotspot mutations)
+                </td>
+</tr>
+<tr>
+<td>Depurination</td>
+<td>Spontaneous, acid</td>
+<td>
+                  Loss of purine base — most common spontaneous lesion
+                  (~10,000/cell/day)
+                </td>
+</tr>
+<tr>
+<td>UV radiation</td>
+<td>Sunlight (UV-B, 260 nm)</td>
+<td>
+                  Pyrimidine dimers (TT &gt; TC &gt; CC), 6-4 photoproducts — adjacent
+                  thymines covalently linked
+                </td>
+</tr>
+<tr>
+<td>Alkylation</td>
+<td>Alkylating agents (EMS, MMS, nitrogen mustard)</td>
+<td>
+                  O⁶-methylguanine (mispairs with T) → G:C → A:T transition
+                </td>
+</tr>
+<tr>
+<td>Oxidative damage</td>
+<td>ROS (OH•)</td>
+<td>8-oxoguanine (pairs with A), strand breaks</td>
+</tr>
+<tr>
+<td>Intercalation</td>
+<td>Acridine dyes, ethidium bromide</td>
+<td>Base insertions → frameshift mutations</td>
+</tr>
+<tr>
+<td>Ionising radiation</td>
+<td>X-rays, γ-rays</td>
+<td>Double-strand breaks (most lethal), base damage</td>
+</tr>
+<tr>
+<td>Cross-linking</td>
+<td>Cisplatin, mitomycin C</td>
+<td>Intrastrand or interstrand cross-links</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="card">
+<div class="card-title">
+            DNA Repair Mechanisms
+            <span class="badge badge-fav">⭐ PYQ Multiple Years</span>
+</div>
+<div class="table-wrap">
+<table>
+<tr>
+<th>Mechanism</th>
+<th>Lesion Repaired</th>
+<th>Key Enzymes</th>
+<th>Disease if Defective</th>
+</tr>
+<tr>
+<td>Direct Reversal</td>
+<td>O⁶-methylguanine, UV dimers (prokaryotes)</td>
+<td>
+                  O⁶-methylG methyltransferase; Photolyase (uses visible light)
+                </td>
+<td>—</td>
+</tr>
+<tr>
+<td>Base Excision Repair (BER)</td>
+<td>
+                  Small, non-helix-distorting lesions (uracil, 8-oxoG, abasic
+                  sites)
+                </td>
+<td>
+                  DNA Glycosylase (removes base) → AP Endonuclease → DNA Pol β →
+                  DNA Ligase
+                </td>
+<td>MUTYH-associated polyposis (colon)</td>
+</tr>
+<tr>
+<td>Nucleotide Excision Repair (NER)</td>
+<td>
+                  Bulky, helix-distorting lesions (UV dimers, chemical adducts)
+                </td>
+<td>
+                  UvrABC excinuclease (prokaryotes); XP proteins in eukaryotes;
+                  excises ~12–13 nt (pro) or 24–29 nt (euk)
+                </td>
+<td>
+<strong>Xeroderma Pigmentosum</strong> (XPA–XPG mutations)
+                </td>
+</tr>
+<tr>
+<td>Mismatch Repair (MMR)</td>
+<td>
+                  Replication errors: base mismatches, insertion/deletion loops
+                </td>
+<td>
+                  MutS (recognises), MutL (recruits), MutH (cuts
+                  unmethylated/new strand); MSH2, MLH1 in eukaryotes
+                </td>
+<td>
+<strong>Lynch Syndrome</strong> (HNPCC) — hereditary
+                  colorectal cancer
+                </td>
+</tr>
+<tr>
+<td>Double-Strand Break Repair — NHEJ</td>
+<td>Double-strand breaks (DSBs)</td>
+<td>Ku proteins + DNA-PKcs + ligase IV/XRCC4; error-prone</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Homologous Recombination (HR)</td>
+<td>DSBs in S/G2 phase (template available)</td>
+<td>RAD51, BRCA1/BRCA2; error-free</td>
+<td>BRCA1/2 mutations → breast/ovarian cancer</td>
+</tr>
+<tr>
+<td>Translesion Synthesis</td>
+<td>Replication past unrepaired lesions (SOS response)</td>
+<td>
+                  Error-prone Pol IV, Pol V (prokaryotes); Rev1, Pol η, Pol ι
+                  (eukaryotes)
+                </td>
+<td>Pol η mutations → Xeroderma Pigmentosum variant</td>
+</tr>
+</table>
+</div>
+<div class="clinical-box" style="margin-top: 8px">
+<div class="cbox-title">Xeroderma Pigmentosum — NER defect</div>
+<p>
+              Defect in <strong>NER</strong> → UV-induced pyrimidine dimers not
+              removed → mutations accumulate in skin cells → extreme
+              photosensitivity, freckling, skin cancers (melanoma, SCC, BCC) at
+              very young age. Neurological deterioration in some types. 8
+              complementation groups (XPA–XPG + XPV).
+            </p>
+</div>
+</div>
+<!-- Mismatch vs BER comparison (classic PYQ) -->
+<div class="card">
+<div class="card-title">
+            Mismatch Repair vs Base Excision Repair — Comparison
+            <span class="badge badge-pyq">PYQ 2019-S, 2023</span>
+</div>
+<div class="table-wrap">
+<table>
+<tr>
+<th>Feature</th>
+<th>Mismatch Repair (MMR)</th>
+<th>Base Excision Repair (BER)</th>
+</tr>
+<tr>
+<td>Lesion type</td>
+<td>Replication mismatches, small indels</td>
+<td>Damaged/abnormal bases (uracil, 8-oxoG)</td>
+</tr>
+<tr>
+<td>Strand discrimination</td>
+<td>
+                  Parental (methylated) vs new (unmethylated) in prokaryotes
+                </td>
+<td>N/A — single base removed from damaged strand</td>
+</tr>
+<tr>
+<td>Key initiation</td>
+<td>MutS recognises mismatch → MutL recruits MutH</td>
+<td>
+                  Glycosylase recognises and removes damaged base → AP site
+                </td>
+</tr>
+<tr>
+<td>Excision length</td>
+<td>Long tract (hundreds to thousands of nt)</td>
+<td>Short patch (1 nt) or long patch (2–10 nt)</td>
+</tr>
+<tr>
+<td>Key gap-filling polymerase</td>
+<td>DNA Pol III (pro) / Pol δ (euk)</td>
+<td>DNA Pol β (short patch) / Pol δ,ε (long patch)</td>
+</tr>
+<tr>
+<td>Disease</td>
+<td>Lynch syndrome (MMR gene mutations)</td>
+<td>MUTYH colonic polyposis</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="divider"></div>
+<!-- ════════════════════════════════ S7: MUTATIONS ════════════════════════════════ -->
+<div id="s7">
+<div class="section-header">
+<div class="section-num">07</div>
+<h2><em>Mutations</em></h2>
+</div>
+<div class="table-wrap">
+<table>
+<tr>
+<th>Type</th>
+<th>Definition</th>
+<th>Effect on Protein</th>
+<th>Classic Example</th>
+</tr>
+<tr>
+<td>Silent/Synonymous</td>
+<td>Base change → same amino acid (degenerate code)</td>
+<td>No change</td>
+<td>Most 3rd position changes</td>
+</tr>
+<tr>
+<td>Missense</td>
+<td>Base change → different amino acid</td>
+<td>Altered protein (may be functional or non-functional)</td>
+<td>HbS (Glu→Val), HbM</td>
+</tr>
+<tr>
+<td>Nonsense</td>
+<td>Base change → stop codon</td>
+<td>Premature termination — truncated non-functional protein</td>
+<td>β-Thalassaemia (some forms)</td>
+</tr>
+<tr>
+<td>Frameshift</td>
+<td>
+                Insertion or deletion of 1 or 2 bases — shifts reading frame
+              </td>
+<td>
+                Completely altered protein from mutation onwards; usually ends
+                in premature stop
+              </td>
+<td>
+                Creutzfeldt-Jakob-like if in prion gene; Duchenne MD (exon
+                deletions)
+              </td>
+</tr>
+<tr>
+<td>Transition</td>
+<td>Purine↔Purine (A↔G) or Pyrimidine↔Pyrimidine (C↔T)</td>
+<td>Often missense</td>
+<td>Most common point mutation type</td>
+</tr>
+<tr>
+<td>Transversion</td>
+<td>Purine↔Pyrimidine</td>
+<td>Variable</td>
+<td>Less common than transition</td>
+</tr>
+<tr>
+<td>Trinucleotide repeat expansion</td>
+<td>CAG repeat expansion</td>
+<td>Polyglutamine tract → toxic gain-of-function</td>
+<td>
+                Huntington's (CAG), Fragile X (CGG), Myotonic dystrophy (CTG)
+              </td>
+</tr>
+</table>
+</div>
+<div class="two-col">
+<div class="clinical-box">
+<div class="cbox-title">
+              Sickle Cell — Point Mutation (Missense)
+            </div>
+<p>
+              GAG → GTG (codon 6, β-globin). A→T transversion at 2nd position of
+              codon. Glu (charged) → Val (hydrophobic). Results in HbS
+              polymerisation when deoxygenated.
+            </p>
+<p style="margin-top: 4px">
+<strong>EQ: "Sickle cell anaemia is a molecular disease [2023]"</strong>
+              — first disease understood at molecular level (Linus Pauling,
+              1949).
+            </p>
+</div>
+<div class="clinical-box">
+<div class="cbox-title">Frameshift vs Point Mutation Impact</div>
+<p>
+              Point mutation: changes 1 amino acid (may retain some function —
+              e.g., missense). Frameshift: disrupts ALL downstream amino acids →
+              completely non-functional truncated protein → usually more severe
+              than point mutation.
+            </p>
+</div>
+</div>
+<div class="keypoint">
+<strong>Philadelphia chromosome [PYQ 2023]:</strong> t(9;22)
+          translocation → BCR-ABL fusion gene → constitutively active tyrosine
+          kinase → CML. Imatinib (Gleevec) specifically inhibits BCR-ABL kinase.
+          Example of chromosomal translocation → oncogene activation.
+        </div>
+</div>
+<div class="divider"></div>
+<!-- ════════════════════════════════ S8: PCR & RECOMBINANT DNA ════════════════════════════════ -->
+<div id="s8">
+<div class="section-header">
+<div class="section-num">08</div>
+<h2>PCR <em>&amp; Recombinant DNA</em></h2>
+</div>
+<!-- PCR -->
+<div class="card">
+<div class="card-title">
+            Polymerase Chain Reaction (PCR)
+            <span class="badge badge-fav">⭐ PYQ 2011-S, 2012-S, 2015-S, 2021</span>
+</div>
+<div class="two-col">
+<div>
+<p style="
+                  font-size: 13px;
+                  font-weight: 600;
+                  color: var(--accent2);
+                  margin-bottom: 6px;
+                ">
+                Components Required:
+              </p>
+<ul class="checklist">
+<li>Template DNA</li>
+<li>Two primers (forward + reverse, flanking target)</li>
+<li>
+<strong>Taq polymerase</strong> (thermostable from Thermus
+                  aquaticus) or Pfu
+                </li>
+<li>dNTPs (dATP, dGTP, dCTP, dTTP)</li>
+<li>MgCl₂ (cofactor for Taq)</li>
+<li>Thermocycler</li>
+</ul>
+</div>
+<div>
+<p style="
+                  font-size: 13px;
+                  font-weight: 600;
+                  color: var(--gold);
+                  margin-bottom: 6px;
+                ">
+                Applications:
+              </p>
+<ul class="checklist">
+<li>
+                  Diagnosis of infectious diseases (TB — gold standard [PYQ
+                  2024])
+                </li>
+<li>Prenatal genetic diagnosis</li>
+<li>DNA fingerprinting (forensics, paternity)</li>
+<li>Detection of mutations/SNPs</li>
+<li>Gene cloning / recombinant DNA</li>
+<li>Research: gene expression (RT-PCR)</li>
+<li>Cancer: detect BCR-ABL, HER2 amplification</li>
+</ul>
+</div>
+</div>
+<div class="flowchart" style="margin-top: 1rem">
+<div class="flow-title">
+              PCR Cycle — 3 Steps (Repeated 25–35 cycles → 2ⁿ copies)
+            </div>
+<div class="flow-v">
+<div class="flow-box rose">
+<span class="lbl">Step 1 — Denaturation</span>
+                Heat to <strong>94–96°C</strong> → H-bonds broken → double helix
+                separates into single strands
+              </div>
+<div class="flow-step-label">↓ Rapid cooling</div>
+<div class="flow-box gold">
+<span class="lbl">Step 2 — Annealing</span>
+                Cool to <strong>50–65°C</strong> (depends on primer Tm) →
+                primers bind complementary sequences on each strand
+              </div>
+<div class="flow-step-label">↓ Warm up</div>
+<div class="flow-box teal">
+<span class="lbl">Step 3 — Extension</span>
+                Heat to <strong>72°C</strong> (Taq optimum) → Taq extends from
+                3' end of primer → new DNA strand synthesised 5'→3' <br/><span class="sub" style="margin-top: 4px; display: block"><em>Note: Taq lacks 3'→5' proofreading (error-prone). For
+                    high-fidelity, Pfu polymerase is used.</em></span>
+</div>
+</div>
+</div>
+</div>
+<!-- Recombinant DNA -->
+<div class="card">
+<div class="card-title">
+            Recombinant DNA Technology
+            <span class="badge badge-pyq">PYQ 2010-S, 2017-S</span>
+</div>
+<div class="table-wrap">
+<table>
+<tr>
+<th>Tool</th>
+<th>Function</th>
+<th>Key Detail</th>
+</tr>
+<tr>
+<td>Restriction Endonucleases</td>
+<td>Cut DNA at specific palindromic sequences (4–8 bp)</td>
+<td>
+                  Generate sticky ends (cohesive) or blunt ends. EcoRI:
+                  GAATTC↓CTTAAG. Named: organism-strain-type (e.g., EcoRI = E.
+                  coli R strain, first enzyme)
+                </td>
+</tr>
+<tr>
+<td>DNA Ligase</td>
+<td>Joins cut DNA fragments</td>
+<td>Seals phosphodiester bonds; requires ATP</td>
+</tr>
+<tr>
+<td>Vectors</td>
+<td>Carry foreign DNA into host</td>
+<td>
+                  Plasmids (small), λ phage (medium), cosmids, YAC (yeast
+                  artificial chromosome — largest capacity [PYQ 2022])
+                </td>
+</tr>
+<tr>
+<td>Southern Blotting</td>
+<td>Detect specific DNA sequence</td>
+<td>
+                  DNA → gel electrophoresis → transfer to membrane → probe
+                  hybridisation [PYQ 2022, 2024]
+                </td>
+</tr>
+<tr>
+<td>Northern Blotting</td>
+<td>Detect specific RNA</td>
+<td>RNA → gel → transfer → probe</td>
+</tr>
+<tr>
+<td>Western Blotting</td>
+<td>Detect specific protein</td>
+<td>Protein → SDS-PAGE → transfer → antibody probe</td>
+</tr>
+<tr>
+<td>RFLP</td>
+<td>
+                  Restriction Fragment Length Polymorphism — DNA fingerprinting
+                </td>
+<td>
+                  Individual variation in restriction sites → different fragment
+                  sizes → genetic profiling, paternity, forensics [PYQ 2011]
+                </td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="divider"></div>
+<!-- ════════════════════════════════ S9: ANTIBIOTIC TARGETS ════════════════════════════════ -->
+<div id="s9">
+<div class="section-header">
+<div class="section-num">09</div>
+<h2>Antibiotic <em>Targets</em></h2>
+</div>
+<div class="table-wrap">
+<table>
+<tr>
+<th>Antibiotic</th>
+<th>Target</th>
+<th>Mechanism</th>
+<th>Selective for</th>
+</tr>
+<tr>
+<td>Rifampicin <span class="drug-tag">Anticancer: none</span></td>
+<td>Prokaryotic RNA Pol (β subunit)</td>
+<td>
+                Binds β-subunit → blocks initiation of transcription (not
+                elongation)
+              </td>
+<td>Prokaryotes; TB treatment</td>
+</tr>
+<tr>
+<td>Actinomycin D <span class="drug-tag">Anticancer</span></td>
+<td>DNA (intercalates between G-C)</td>
+<td>
+                Blocks movement of RNA Pol → inhibits transcription elongation
+                in both pro and euk
+              </td>
+<td>Both (anticancer use)</td>
+</tr>
+<tr>
+<td>α-Amanitin (Amanita phalloides)</td>
+<td>RNA Pol II (eukaryotic)</td>
+<td>
+                Tightest binding → blocks translocation of Pol II. Also inhibits
+                Pol III at higher doses; Pol I insensitive
+              </td>
+<td>Eukaryotes; toxin not antibiotic</td>
+</tr>
+<tr>
+<td>Streptomycin</td>
+<td>30S ribosome (16S rRNA / S12 protein)</td>
+<td>
+                Causes misreading of mRNA at A site → wrong aminoacyl-tRNA
+                inserted → abnormal protein synthesis; also blocks initiation
+              </td>
+<td>Prokaryotes</td>
+</tr>
+<tr>
+<td>Tetracycline</td>
+<td>30S ribosome (A site)</td>
+<td>
+                Blocks binding of aminoacyl-tRNA·EF-Tu to A site → no new amino
+                acid added
+              </td>
+<td>Prokaryotes (broad spectrum)</td>
+</tr>
+<tr>
+<td>Chloramphenicol</td>
+<td>50S ribosome (23S rRNA)</td>
+<td>
+                Inhibits peptidyl transferase activity → no peptide bond
+                formation. Acts at A site
+              </td>
+<td>Prokaryotes; also mitochondria</td>
+</tr>
+<tr>
+<td>Erythromycin</td>
+<td>50S ribosome (23S rRNA / L4, L22)</td>
+<td>Blocks translocation (EF-G step) → ribosome stalls</td>
+<td>Prokaryotes</td>
+</tr>
+<tr>
+<td>Linezolid</td>
+<td>50S ribosome (23S rRNA)</td>
+<td>
+                Prevents formation of 70S initiation complex → blocks initiation
+              </td>
+<td>Prokaryotes (MRSA treatment)</td>
+</tr>
+<tr>
+<td>Puromycin</td>
+<td>Both 70S and 80S ribosomes</td>
+<td>
+                Structural analogue of aminoacyl-tRNA → incorporated at A site →
+                premature chain termination (puromycyl-peptide released)
+              </td>
+<td>
+                Both pro &amp; euk → too toxic for clinical use; experimental tool
+              </td>
+</tr>
+<tr>
+<td>Ciprofloxacin</td>
+<td>DNA Gyrase (Topoisomerase II) + Topoisomerase IV</td>
+<td>
+                Stabilises enzyme-DNA cleavage complex → double-strand breaks →
+                bacterial death
+              </td>
+<td>Prokaryotes</td>
+</tr>
+<tr>
+<td>Diphtheria toxin</td>
+<td>EF-2 (eukaryotic EF-G equivalent)</td>
+<td>
+                ADP-ribosylates EF-2 (via NAD⁺) → inactivates it → no
+                translocation → blocks eukaryotic translation
+              </td>
+<td>Eukaryotes only [PYQ 2022]</td>
+</tr>
+</table>
+</div>
+<div class="mnemonic-box">
+<div class="mbox-title">30S Inhibitors vs 50S Inhibitors</div>
+<div class="mnemonic-highlight">
+            "30S: STupid Tetracyclines" = Streptomycin, Tetracycline (+
+            spectinomycin, aminoglycosides)
+          </div>
+<div class="mnemonic-highlight" style="margin-top: 6px">
+            "50S: CELls (50 = Fifty)" = Chloramphenicol, Erythromycin,
+            Linezolid, cLindamycin
+          </div>
+</div>
+</div>
+<div class="divider"></div>
+<!-- ════════════════════════════════ S10: POST-TRANSLATIONAL MODIFICATIONS ════════════════════════════════ -->
+<div id="s10">
+<div class="section-header">
+<div class="section-num">10</div>
+<h2>Post-translational <em>Modifications</em></h2>
+</div>
+<div class="keypoint">
+          PTMs expand the proteome beyond what the genome encodes. They alter
+          protein function, localisation, stability, and interactions.
+        </div>
+<div class="table-wrap">
+<table>
+<tr>
+<th>Modification</th>
+<th>Enzyme/Process</th>
+<th>Example / Significance</th>
+</tr>
+<tr>
+<td>Removal of fMet / signal peptide</td>
+<td>Methionine aminopeptidase / Signal peptidase</td>
+<td>
+                N-terminal processing; signal peptide directs protein to ER
+              </td>
+</tr>
+<tr>
+<td>Phosphorylation</td>
+<td>Protein kinases (Ser, Thr, Tyr)</td>
+<td>
+                Most common reversible PTM; activates/deactivates enzymes (e.g.,
+                glycogen phosphorylase). Reversed by phosphatases
+              </td>
+</tr>
+<tr>
+<td>Glycosylation</td>
+<td>Glycosyltransferases in ER + Golgi</td>
+<td>
+                N-linked (Asn) or O-linked (Ser/Thr); blood group antigens;
+                protein folding (calnexin quality control)
+              </td>
+</tr>
+<tr>
+<td>Hydroxylation</td>
+<td>Prolyl/lysyl hydroxylase (needs Vit C)</td>
+<td>
+                Collagen: hydroxyproline + hydroxylysine for stability and
+                cross-linking. Scurvy = Vit C deficiency = defective collagen
+              </td>
+</tr>
+<tr>
+<td>Carboxylation</td>
+<td>γ-carboxylase (Vit K-dependent)</td>
+<td>
+                Clotting factors II, VII, IX, X, Protein C, S → glutamate →
+                γ-carboxyglutamate → binds Ca²⁺ + phospholipid
+              </td>
+</tr>
+<tr>
+<td>Acetylation</td>
+<td>Acetyltransferases (histone HATs)</td>
+<td>
+                Histone acetylation → chromatin relaxation → ↑ transcription.
+                Protein stability regulation
+              </td>
+</tr>
+<tr>
+<td>Ubiquitination</td>
+<td>E1-E2-E3 ubiquitin ligase cascade</td>
+<td>
+                Tags proteins for proteasomal degradation; also involved in DNA
+                repair, signalling
+              </td>
+</tr>
+<tr>
+<td>Proteolytic cleavage</td>
+<td>Specific proteases</td>
+<td>
+                Insulin (preproinsulin → proinsulin → insulin + C-peptide);
+                zymogen activation (trypsinogen → trypsin)
+              </td>
+</tr>
+<tr>
+<td>Disulphide bond formation</td>
+<td>Protein disulphide isomerase (PDI) in ER</td>
+<td>
+                Stabilises protein 3° structure; IgG has interchain and
+                intrachain S-S bonds
+              </td>
+</tr>
+<tr>
+<td>Myristoylation / Palmitoylation</td>
+<td>N-myristoyltransferase</td>
+<td>
+                Lipid anchor → membrane association of signalling proteins
+                (e.g., Src kinases)
+              </td>
+</tr>
+<tr>
+<td>Methylation</td>
+<td>Methyltransferases</td>
+<td>
+                Histone methylation (gene regulation); DNA methylation
+                (epigenetics, gene silencing)
+              </td>
+</tr>
+<tr>
+<td>ADP-ribosylation</td>
+<td>Bacterial toxins / PARP</td>
+<td>
+                Cholera toxin (Gs protein), Diphtheria toxin (EF-2), Pertussis
+                toxin (Gi)
+              </td>
+</tr>
+</table>
+</div>
+<div class="clinical-box">
+<div class="cbox-title">Collagen PTMs — Vitamin C Connection</div>
+<p>
+            Collagen is unusual: Gly-X-Y repeat. X = often Pro, Y = often Hyp
+            (hydroxyproline). Proline hydroxylation requires Vitamin C
+            (ascorbate) as cofactor for prolyl hydroxylase. Vit C deficiency →
+            under-hydroxylated collagen → unstable triple helix →
+            <strong>Scurvy</strong> (bleeding gums, poor wound healing,
+            perifollicular haemorrhage).
+          </p>
+</div>
+</div>
+<div class="divider"></div>
+<!-- ════════════════════════════════ S11: VIVA Q&A ════════════════════════════════ -->
+<div id="s11">
+<div class="section-header">
+<div class="section-num">11</div>
+<h2>Viva &amp; Exam <em>Q&amp;A</em></h2>
+</div>
+<div class="viva-section">
+<div class="viva-title-bar">Replication &amp; Transcription</div>
+<details>
+<summary>
+<span class="viva-q">Differentiate DNA Polymerase I, II and III in E. coli.</span><span class="viva-year">PYQ 2019, 2021</span>
+</summary>
+<div class="viva-ans">
+<table style="font-size: 12px; width: 100%; margin-top: 4px">
+<tr>
+<th>Feature</th>
+<th>DNA Pol I</th>
+<th>DNA Pol II</th>
+<th>DNA Pol III</th>
+</tr>
+<tr>
+<td>Primary function</td>
+<td>Primer removal + gap fill</td>
+<td>DNA repair</td>
+<td>Main replicase</td>
+</tr>
+<tr>
+<td>Processivity</td>
+<td>Low</td>
+<td>Low</td>
+<td>Very high (β-clamp)</td>
+</tr>
+<tr>
+<td>5'→3' exonuclease</td>
+<td>Yes (removes primers)</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>3'→5' exonuclease (proofreading)</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes (ε subunit)</td>
+</tr>
+<tr>
+<td>Speed</td>
+<td>~20 nt/s</td>
+<td>~5 nt/s</td>
+<td>~1000 nt/s</td>
+</tr>
+</table>
+<p style="margin-top: 8px">
+<em>Key exam point: ONLY Pol I has 5'→3' exonuclease for primer
+                  removal. Pol III is the workhorse. Pol II is the repair
+                  enzyme.</em>
+</p>
+</div>
+</details>
+<details>
+<summary>
+<span class="viva-q">What is a promoter? What are the –10 and –35 boxes?</span><span class="viva-year">PYQ 2024</span>
+</summary>
+<div class="viva-ans">
+<p>
+                A <strong>promoter</strong> is a DNA sequence upstream (5') of a
+                gene where RNA Pol binds to initiate transcription.
+              </p>
+<p><strong>Prokaryotic consensus sequences:</strong></p>
+<ul>
+<li>
+<strong>–35 box:</strong> TTGACA (σ factor recognises this,
+                  initial binding)
+                </li>
+<li>
+<strong>–10 box (Pribnow box):</strong> TATAAT (DNA melting —
+                  rich in A-T, 2 H-bonds, easy to melt)
+                </li>
+</ul>
+<p><strong>Eukaryotic promoter elements (RNA Pol II):</strong></p>
+<ul>
+<li>
+<strong>TATA box</strong> (~–25 bp): TATAAA; bound by
+                  TATA-Binding Protein (TBP, part of TFIID)
+                </li>
+<li>
+<strong>CAAT box</strong> (~–75): GGCCAATCT; enhances basal
+                  transcription
+                </li>
+<li>
+<strong>GC box</strong> (~–90): GGGCGG; bound by Sp1
+                  transcription factor
+                </li>
+<li>
+                  Enhancers: can be thousands of bp away, either orientation —
+                  increase transcription rate
+                </li>
+</ul>
+</div>
+</details>
+</div>
+<div class="viva-section">
+<div class="viva-title-bar">Lac Operon &amp; Regulation</div>
+<details>
+<summary>
+<span class="viva-q">Differentiate positive and negative regulation of the lac
+                operon.</span><span class="viva-year">PYQ 2015, 2023</span>
+</summary>
+<div class="viva-ans">
+<p><strong>Negative regulation (Repressor system):</strong></p>
+<ul>
+<li>
+                  lac repressor (lacI gene product) binds operator → physically
+                  blocks RNA Pol → transcription OFF
+                </li>
+<li>
+                  Allolactose (inducer) binds repressor → allosteric change →
+                  repressor leaves operator → RNA Pol can proceed
+                </li>
+<li>
+                  "Negative" because the regulatory protein (repressor) inhibits
+                  transcription
+                </li>
+</ul>
+<p><strong>Positive regulation (CAP-cAMP system):</strong></p>
+<ul>
+<li>
+                  When glucose absent → adenylate cyclase active → cAMP rises
+                </li>
+<li>
+                  cAMP binds CAP (catabolite activator protein) → conformational
+                  change → CAP-cAMP binds CAP site upstream of promoter
+                </li>
+<li>
+                  CAP bends DNA ~90° → recruits RNA Pol → stabilises RNA
+                  Pol-promoter complex → transcription stimulated ~50×
+                </li>
+<li>
+                  "Positive" because the regulatory complex activates
+                  transcription
+                </li>
+</ul>
+<p>
+<em>Maximum transcription requires BOTH: allolactose removes
+                  repressor (negative control) AND glucose absence provides
+                  CAP-cAMP (positive control).</em>
+</p>
+</div>
+</details>
+</div>
+<div class="viva-section">
+<div class="viva-title-bar">DNA Repair &amp; Mutations</div>
+<details>
+<summary>
+<span class="viva-q">What is Xeroderma Pigmentosum? What is its molecular
+                basis?</span><span class="viva-year">PYQ 2023</span>
+</summary>
+<div class="viva-ans">
+<p>
+<strong>XP</strong> is an autosomal recessive disorder caused by
+                <strong>defective Nucleotide Excision Repair (NER)</strong>.
+              </p>
+<p><strong>Molecular basis:</strong></p>
+<ul>
+<li>
+                  UV radiation (260–280 nm) → pyrimidine dimers (TT, TC dimers)
+                  in skin cell DNA
+                </li>
+<li>
+                  Normal cells: XP proteins (XPA-XPG) recognise the helix
+                  distortion → recruit NER machinery → excise ~24–29 nt around
+                  dimer → fill gap → ligate
+                </li>
+<li>
+                  XP patients: mutation in any XP gene → NER fails → dimers not
+                  repaired → accumulate with each UV exposure
+                </li>
+<li>
+                  Unrepaired dimers → misreading during replication → C→T or
+                  CC→TT transitions (UV signature mutations)
+                </li>
+<li>
+                  Mutations in tumour suppressors (p53) and proto-oncogenes →
+                  skin cancer
+                </li>
+</ul>
+<p>
+<em>8 complementation groups (XPA–XPG = NER defects; XPV = Pol η
+                  deficiency = replication past unrepaired dimers →
+                  error-prone)</em>
+</p>
+</div>
+</details>
+<details>
+<summary>
+<span class="viva-q">What is the difference between a transition and a transversion
+                mutation?</span><span class="viva-year">PYQ 2014-S</span>
+</summary>
+<div class="viva-ans">
+<p>
+<strong>Transition:</strong> Substitution within the same
+                chemical class of base.
+              </p>
+<ul>
+<li>Purine → Purine: A↔G</li>
+<li>Pyrimidine → Pyrimidine: C↔T (or C↔U in RNA)</li>
+<li>More common (2/3 of point mutations)</li>
+<li>
+                  Example: Deamination of 5-methylcytosine → Thymine = C→T
+                  transition; most common spontaneous mutation
+                </li>
+</ul>
+<p>
+<strong>Transversion:</strong> Substitution between different
+                chemical classes.
+              </p>
+<ul>
+<li>Purine → Pyrimidine or vice versa: A↔C, A↔T, G↔C, G↔T</li>
+<li>Less common (1/3 of point mutations)</li>
+<li>
+                  Example: HbS mutation — A→T transversion at codon 6 of
+                  β-globin
+                </li>
+</ul>
+</div>
+</details>
+<details>
+<summary>
+<span class="viva-q">What is p53? Why is it called the "guardian of the
+                genome"?</span><span class="viva-year">PYQ 2019-S, 2025</span>
+</summary>
+<div class="viva-ans">
+<p>
+<strong>p53</strong> is a tumour suppressor protein (encoded by
+                TP53 gene on chromosome 17p13.1).
+              </p>
+<p><strong>Why "guardian of genome":</strong></p>
+<ul>
+<li>
+                  Normally kept at low levels by MDM2-mediated ubiquitination →
+                  proteasomal degradation
+                </li>
+<li>
+                  DNA damage or oncogenic stress → ATM/ATR kinases phosphorylate
+                  p53 → MDM2 cannot bind → p53 stabilised + activated
+                </li>
+<li>
+<strong>G1/S checkpoint:</strong> p53 transcribes p21 (CDK
+                  inhibitor) → CDK2-CyclinE blocked → Rb stays unphosphorylated
+                  → E2F transcription factor not released → cell cannot enter S
+                  phase → time for repair
+                </li>
+<li>
+<strong>Apoptosis:</strong> If damage irreparable → p53
+                  transcribes BAX, PUMA, NOXA → mitochondrial apoptosis pathway
+                </li>
+<li>
+<strong>Senescence:</strong> Chronic activation → permanent
+                  cell cycle arrest
+                </li>
+</ul>
+<p>
+<em>p53 is mutated in ~50% of all human cancers — most frequently
+                  mutated tumour suppressor gene. Li-Fraumeni syndrome =
+                  germline p53 mutation → diverse cancers at young age.</em>
+</p>
+</div>
+</details>
+</div>
+</div>
+<div class="divider"></div>
+<!-- ════════════════════════════════ S12: EQ TEMPLATES ════════════════════════════════ -->
+<div id="s12">
+<div class="section-header">
+<div class="section-num">12</div>
+<h2>Essay Question <em>Templates</em></h2>
+</div><details><summary class="viva-q-text">Expand 🟢 TIER 3: Essay Question Templates Details</summary><div class="viva-a-text">
+<details class="eq-details">
+<summary>
+<div class="eq-title">
+              EQ — Genetic Code is Degenerate [PYQ 2012-S, 2018]
+            </div>
+<div class="eq-statement" style="
+                margin-bottom: 0;
+                border-left: none;
+                padding: 0;
+                background: none;
+                font-style: italic;
+              ">
+              "Genetic code is degenerate."
+            </div>
+</summary>
+<div class="eq-answer">
+<ol>
+<li>
+<span>Definition:</span> Degeneracy (redundancy) means that most
+                amino acids are encoded by more than one codon. There are 64
+                codons (4³) for only 20 amino acids + 3 stop codons.
+              </li>
+<li>
+<span>Distribution:</span> 2 amino acids have only 1 codon:
+                Methionine (AUG — also start) and Tryptophan (UGG). Most others
+                have 2–6 codons (e.g., Leu, Ser, Arg each have 6 codons).
+              </li>
+<li>
+<span>Molecular basis — Wobble hypothesis (Crick):</span> The
+                3rd position (3' end) of the codon is the "wobble position."
+                Unconventional base pairing is tolerated here. A single tRNA can
+                recognise multiple codons differing at the 3rd position.
+                Example: inosine at wobble position of anticodon can pair with
+                U, C, or A.
+              </li>
+<li>
+<span>Why degeneracy is beneficial:</span> Provides protection
+                against point mutations — many base changes at 3rd codon
+                position → same amino acid (silent/synonymous mutation) →
+                protein unchanged. This is "mutational buffering."
+              </li>
+<li>
+<span>Exceptions — non-degenerate:</span> Met and Trp each have
+                only 1 codon → mutations here always result in amino acid
+                change.
+              </li>
+<li>
+<span>Important distinction:</span> Degeneracy ≠ ambiguity. Code
+                is non-ambiguous — one codon specifies only ONE amino acid (no
+                overlap in the other direction).
+              </li>
+</ol>
+</div>
+</details>
+<details class="eq-details">
+<summary>
+<div class="eq-title">
+              EQ — PCR: Steps, Reagents, Applications [PYQ 2011-S, 2021]
+            </div>
+<div class="eq-statement" style="
+                margin-bottom: 0;
+                border-left: none;
+                padding: 0;
+                background: none;
+                font-style: italic;
+              ">
+              "Describe the principles of PCR. Enumerate reagents and
+              applications."
+            </div>
+</summary>
+<div class="eq-answer">
+<ol>
+<li>
+<span>Principle:</span> In vitro amplification of a specific DNA
+                sequence using thermostable DNA polymerase and two
+                oligonucleotide primers. Based on repeated thermal cycling —
+                each cycle doubles the target → exponential amplification (2ⁿ
+                copies after n cycles).
+              </li>
+<li>
+<span>Reagents:</span> Template DNA; forward primer
+                (complementary to one strand); reverse primer (complementary to
+                other strand); Taq polymerase (Thermus aquaticus, stable at
+                95°C); dNTPs; MgCl₂ (cofactor); buffer; thermocycler.
+              </li>
+<li>
+<span>3 Steps per cycle:</span> Denaturation (94–96°C, ~30 sec →
+                strands separate); Annealing (50–65°C, ~30 sec → primers bind);
+                Extension (72°C, ~1 min/kb → Taq synthesises new strand 5'→3').
+              </li>
+<li>
+<span>Product accumulation:</span> First few cycles produce long
+                "background" products. By cycle 3, short "specific" products
+                bounded by primers accumulate exponentially. Typical 30–35
+                cycles → ~10⁸-fold amplification.
+              </li>
+<li>
+<span>Applications:</span> (a) Diagnosis: TB (gold standard),
+                HIV, hepatitis viruses, COVID-19; (b) Forensics: DNA
+                fingerprinting using STRs; (c) Prenatal diagnosis of genetic
+                diseases; (d) Detection of mutations (BRCA1/2, KRAS); (e)
+                Research: cloning, gene expression (RT-PCR); (f) Blood banking:
+                donor screening; (g) Epidemiology: pathogen genotyping.
+              </li>
+<li>
+<span>Limitation:</span> Contamination of even 1 molecule can
+                give false positive; cannot detect unknown sequences without
+                prior sequence information.
+              </li>
+</ol>
+</div>
+</details>
+<details class="eq-details">
+<summary>
+<div class="eq-title">
+              EQ — Sickle Cell Anaemia is a Molecular Disease [PYQ 2023]
+            </div>
+<div class="eq-statement" style="
+                margin-bottom: 0;
+                border-left: none;
+                padding: 0;
+                background: none;
+                font-style: italic;
+              ">
+              "Sickle cell anaemia is a molecular disease."
+            </div>
+</summary>
+<div class="eq-answer">
+<ol>
+<li>
+<span>Historical context:</span> First described as a "molecular
+                disease" by Linus Pauling (1949) using electrophoresis — HbS
+                moves differently from HbA. Mechanism elucidated by Vernon
+                Ingram (1956) — tryptic peptide mapping revealed single amino
+                acid difference.
+              </li>
+<li>
+<span>Genetic defect:</span> Point mutation in β-globin gene
+                (chromosome 11) — single A→T transversion at codon 6 — GAG (Glu)
+                → GTG (Val). This is a missense mutation causing an amino acid
+                substitution.
+              </li>
+<li>
+<span>Structural consequence:</span> Glutamate (charged,
+                hydrophilic) → Valine (non-polar, hydrophobic) at position 6 of
+                β-chain. Creates a hydrophobic "sticky patch" on the surface of
+                deoxyHbS.
+              </li>
+<li>
+<span>Molecular pathology:</span> Deoxygenation → HbS in T-state
+                exposes hydrophobic patch → fits into complementary pocket on
+                adjacent deoxyHbS molecule → polymerisation → long fibrous
+                tactoids → RBC distorts into sickle shape.
+              </li>
+<li>
+<span>Clinical consequences:</span> Haemolytic anaemia (sickled
+                cells destroyed in spleen, RBC lifespan 20 days vs 120 days);
+                vaso-occlusion (rigid sickled cells block microvasculature →
+                pain crises, organ infarction); splenic sequestration and
+                autosplenectomy.
+              </li>
+<li>
+<span>Why "molecular disease":</span> A single nucleotide change
+                in the genome → single amino acid substitution in the protein →
+                altered protein behaviour → systemic disease. Exemplifies the
+                gene → protein → disease paradigm.
+              </li>
+</ol>
+</div>
+</details>
+<!-- HIGH YIELD QUICKFIRE -->
+<div class="card" style="margin-top: 1.5rem; border-color: var(--accent)">
+<div class="card-title">
+            🔥 Exam Day High-Yield Quickfire — Module 06
+          </div>
+<div class="table-wrap">
+<table>
+<tr>
+<th>Question</th>
+<th>Answer</th>
+</tr>
+<tr>
+<td>Main replicase in E. coli</td>
+<td>
+                  DNA Polymerase III (α-subunit synthesises, ε proofreads)
+                </td>
+</tr>
+<tr>
+<td>Primer removal in prokaryotes</td>
+<td>DNA Pol I (5'→3' exonuclease activity)</td>
+</tr>
+<tr>
+<td>Telomerase substrate</td>
+<td>
+                  RNA-dependent DNA polymerase (reverse transcriptase) — extends
+                  chromosome ends in cancer cells + stem cells
+                </td>
+</tr>
+<tr>
+<td>Only RNA Pol in prokaryotes</td>
+<td>One (core α₂ββ'ω + σ = holoenzyme)</td>
+</tr>
+<tr>
+<td>α-Amanitin inhibits</td>
+<td>
+                  RNA Pol II (most sensitive); Pol III (high dose); Pol I
+                  (insensitive)
+                </td>
+</tr>
+<tr>
+<td>Shine-Dalgarno sequence</td>
+<td>
+                  Prokaryotic mRNA sequence that binds 16S rRNA of 30S subunit —
+                  positions ribosome at AUG
+                </td>
+</tr>
+<tr>
+<td>Peptidyl transferase is a...</td>
+<td>
+                  Ribozyme (23S rRNA in prokaryotes, 28S rRNA in eukaryotes)
+                </td>
+</tr>
+<tr>
+<td>Diphtheria toxin target</td>
+<td>ADP-ribosylates EF-2 → blocks eukaryotic translation</td>
+</tr>
+<tr>
+<td>Rifampicin mechanism</td>
+<td>
+                  Inhibits β-subunit of prokaryotic RNA Pol → blocks initiation
+                  of transcription
+                </td>
+</tr>
+<tr>
+<td>p53 checkpoint control</td>
+<td>
+                  Induces p21 (CDK inhibitor) → G1/S arrest for DNA repair; if
+                  irreparable → BAX/PUMA → apoptosis
+                </td>
+</tr>
+<tr>
+<td>Lac operon: max transcription requires</td>
+<td>
+                  Lactose present (removes repressor) + Glucose absent (cAMP↑ →
+                  CAP activated)
+                </td>
+</tr>
+<tr>
+<td>NER disease</td>
+<td>
+                  Xeroderma Pigmentosum (XPA-XPG); pyrimidine dimers unrepaired
+                  → skin cancer
+                </td>
+</tr>
+<tr>
+<td>MMR disease</td>
+<td>
+                  Lynch syndrome (HNPCC) — MSH2, MLH1 mutations → hereditary
+                  colorectal cancer
+                </td>
+</tr>
+<tr>
+<td>Puromycin specificity</td>
+<td>
+                  Inhibits BOTH 70S and 80S → too toxic for therapy;
+                  experimental only
+                </td>
+</tr>
+<tr>
+<td>Southern → Northern → Western</td>
+<td>
+                  DNA → RNA → Protein detection (gene → transcript → protein)
+                </td>
+</tr>
+</table>
+</div>
+</div>
+<!-- Mnemonics wrap-up -->
+<div class="card" style="margin-top: 1rem">
+<div class="card-title">Module 06 Master Mnemonics</div>
+<div style="
+              display: grid;
+              grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+              gap: 10px;
+              margin-top: 8px;
+            ">
+<div class="mnemonic-box" style="margin: 0">
+<div class="mbox-title">Ribosome Sites</div>
+<div class="mnemonic-highlight">
+                "APE" = Aminoacyl → Peptidyl → Exit
+              </div>
+</div>
+<div class="mnemonic-box" style="margin: 0">
+<div class="mbox-title">Stop Codons</div>
+<div class="mnemonic-highlight">
+                "UAA, UAG, UGA — U Are Away, U Are Gone, U Go Away"
+              </div>
+</div>
+<div class="mnemonic-box" style="margin: 0">
+<div class="mbox-title">30S vs 50S Antibiotics</div>
+<div class="mnemonic-highlight">
+                "STupid Tetracyclines" at 30S; "CELLs" (Chloramphenicol,
+                Erythromycin, Linezolid, cLindamycin) at 50S
+              </div>
+</div>
+<div class="mnemonic-box" style="margin: 0">
+<div class="mbox-title">Blotting Methods</div>
+<div class="mnemonic-highlight">
+                "SNoW DRoP" = Southern(DNA), Northern(RNA), Western(Protein)
+              </div>
+</div>
+</div>
+</div>
+</div></details></div>
+<!-- /s12 -->
+</div>
+<!-- /content -->
+<div class="footer">
+<p>MODULE 06 · MOLECULAR BIOLOGY &amp; GENETICS</p>
+<p style="margin-top: 4px">
+        KIMS Krishnanagar Biochem Notes · WBUHS · NMO Bengal PYQs 2010–2025
+      </p>
+<p style="margin-top: 4px; color: var(--accent); font-size: 11px">
+        Compiled for personal academic use · Mobile-optimised — no rotated text
+      </p>
+</div>
+<button class="top-btn" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
+      ↑
+    </button>
+<script>
+      document.querySelectorAll("details").forEach((d) => {
+        d.addEventListener("toggle", () => {
+          if (d.open) {
+            const c = d.querySelector(".viva-ans");
+            if (c) c.style.animation = "fadeIn .2s ease";
+          }
+        });
+      });
+
+      window.addEventListener("beforeprint", () => {
+        document.querySelectorAll("details").forEach((d) => {
+          d.dataset.wasOpen = d.open;
+          d.open = true;
+        });
+      });
+      window.addEventListener("afterprint", () => {
+        document.querySelectorAll("details").forEach((d) => {
+          if (d.dataset.wasOpen !== "true") d.open = false;
+        });
+      });
+    </script>
+</body>
+</html>
