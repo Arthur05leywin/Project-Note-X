@@ -112,7 +112,11 @@ def propagate():
                     head_match = re.search(r'</\s*head\s*>', cleaned_html, flags=re.IGNORECASE)
                     if head_match:
                         idx = head_match.start()
-                        new_style_block = f"    <style>\n{master_css}\n    </style>\n"
+                        # Add fallback external link if missing
+                        if "wbuhs_master_style.css" not in cleaned_html:
+                            new_style_block = f"    <link rel=\"stylesheet\" href=\"wbuhs_master_style.css\">\n    <style>\n{master_css}\n    </style>\n"
+                        else:
+                            new_style_block = f"    <style>\n{master_css}\n    </style>\n"
                         final_html = cleaned_html[:idx] + new_style_block + cleaned_html[idx:]
                         
                         # E. Inject or update the body theme class

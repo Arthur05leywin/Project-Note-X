@@ -1,0 +1,138 @@
+      <div class="graph-box" style="background: #ffffff; padding: 20px; border-radius: 12px; border: 1px solid #e2e8f0; margin: 24px 0;">
+        <div class="graph-label" style="color: #1e293b; font-weight: bold; font-size: 12px; letter-spacing: 1.5px; border-bottom: 2px solid #ef4444; padding-bottom: 6px; margin-bottom: 16px;">FIG 3.1: TEXTBOOK-GRADE CARNITINE SHUTTLE &amp; REGULATION BY MALONYL-CoA</div>
+        <div style="text-align: center;">
+          <svg viewBox="0 0 900 420" width="100%" height="auto" style="background: #ffffff; display: block; margin: 0 auto; max-width: 100%;">
+            <defs>
+              <marker id="arrow-red" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#ef4444" />
+              </marker>
+              <marker id="arrow-orange" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#f97316" />
+              </marker>
+              <marker id="arrow-blue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#0284c7" />
+              </marker>
+              <marker id="arrow-green" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#10b981" />
+              </marker>
+              <marker id="arrow-pink" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#db2777" />
+              </marker>
+            </defs>
+            
+            <style>
+              .lbl-zone { font-family: 'Sora', sans-serif; font-size: 13px; font-weight: 700; fill: #475569; letter-spacing: 2px; }
+              .lbl-title { font-family: 'Sora', sans-serif; font-size: 12px; font-weight: 700; fill: #1e293b; }
+              .lbl-sub { font-family: 'IBM Plex Mono', monospace; font-size: 10px; fill: #64748b; font-weight: 500; }
+              .lbl-flow { font-family: 'IBM Plex Mono', monospace; font-size: 10px; font-weight: bold; }
+              .membrane-txt { font-family: 'Sora', sans-serif; font-size: 9px; font-weight: bold; fill: #64748b; }
+            </style>
+
+            <!-- Grid Boundaries (Light Background) -->
+            <rect x="0" y="0" width="900" height="420" fill="#ffffff" />
+
+            <!-- Cytosol Zone Header -->
+            <rect x="0" y="0" width="260" height="35" fill="#f8fafc" />
+            <text x="130" y="22" text-anchor="middle" class="lbl-zone">CYTOSOL</text>
+            
+            <!-- IMS Zone Header -->
+            <rect x="280" y="0" width="220" height="35" fill="#f1f5f9" />
+            <text x="390" y="22" text-anchor="middle" class="lbl-zone" fill="#0284c7">INTERMEMBRANE SPACE</text>
+
+            <!-- Matrix Zone Header -->
+            <rect x="520" y="0" width="380" height="35" fill="#f8fafc" />
+            <text x="710" y="22" text-anchor="middle" class="lbl-zone" fill="#d97706">MITOCHONDRIAL MATRIX</text>
+
+            <!-- OMM (Outer Mitochondrial Membrane) -->
+            <rect x="260" y="35" width="20" height="385" fill="#e2e8f0" stroke="#cbd5e1" />
+            <text x="272" y="230" text-anchor="middle" class="membrane-txt" transform="rotate(-90 272 230)">OUTER MITOCHONDRIAL MEMBRANE (OMM)</text>
+
+            <!-- IMM (Inner Mitochondrial Membrane) -->
+            <rect x="500" y="35" width="20" height="385" fill="#e2e8f0" stroke="#cbd5e1" />
+            <text x="512" y="230" text-anchor="middle" class="membrane-txt" transform="rotate(-90 512 230)">INNER MITOCHONDRIAL MEMBRANE (IMM)</text>
+
+            <!-- Pathway 1: Fatty Acid Activation in Cytosol -->
+            <rect x="15" y="60" width="90" height="35" rx="6" fill="#f8fafc" stroke="#475569" stroke-width="1.5" />
+            <text x="60" y="81" text-anchor="middle" class="lbl-title">Fatty Acid</text>
+
+            <path d="M 105 77.5 L 155 77.5" stroke="#475569" stroke-width="2" marker-end="url(#arrow-green)" />
+            <text x="130" y="52" text-anchor="middle" class="lbl-flow" fill="#10b981">Thiokinase</text>
+            <text x="130" y="68" text-anchor="middle" class="lbl-sub" style="font-size: 8px;">ATP &rarr; AMP + PPi</text>
+
+            <rect x="160" y="60" width="90" height="35" rx="6" fill="#fff7ed" stroke="#ea580c" stroke-width="2" />
+            <text x="205" y="81" text-anchor="middle" class="lbl-title" fill="#ea580c">Acyl-CoA</text>
+
+            <!-- CPT-I on OMM -->
+            <ellipse cx="270" cy="140" rx="22" ry="40" fill="#fee2e2" stroke="#ef4444" stroke-width="2.5" />
+            <text x="270" y="144" text-anchor="middle" class="lbl-title" fill="#b91c1c">CPT-I</text>
+
+            <!-- Malonyl-CoA Inhibition -->
+            <rect x="25" y="145" width="105" height="38" rx="6" fill="#fce7f3" stroke="#db2777" stroke-width="2" />
+            <text x="77.5" y="163" text-anchor="middle" class="lbl-title" fill="#db2777">Malonyl-CoA</text>
+            <text x="77.5" y="176" text-anchor="middle" class="lbl-sub" fill="#db2777">[Synthesis Active]</text>
+            
+            <path d="M 130 164 C 180 164, 210 155, 240 150" stroke="#db2777" stroke-width="2.5" stroke-dasharray="4,4" fill="none" marker-end="url(#arrow-pink)" />
+            <circle cx="195" cy="158" r="9" fill="#db2777" />
+            <text x="195" y="162" text-anchor="middle" class="lbl-title" fill="#ffffff" style="font-size: 11px;">&times;</text>
+            <text x="195" y="144" text-anchor="middle" class="lbl-flow" fill="#db2777" style="font-size: 8px;">BLOCKS CPT-I</text>
+
+            <!-- CPT-I Reaction Flows -->
+            <!-- Acyl-CoA enters CPT-I -->
+            <path d="M 215 95 C 235 95, 235 115, 245 120" stroke="#ea580c" stroke-width="1.8" fill="none" marker-end="url(#arrow-orange)" />
+            <!-- Free CoA-SH leaves -->
+            <path d="M 245 130 C 230 135, 210 135, 185 135" stroke="#f97316" stroke-width="1.5" fill="none" marker-end="url(#arrow-orange)" />
+            <text x="165" y="139" class="lbl-flow" fill="#ea580c">CoA-SH</text>
+
+            <!-- Carnitine enters CPT-I -->
+            <path d="M 180 230 C 220 230, 235 180, 245 160" stroke="#0284c7" stroke-width="1.8" fill="none" marker-end="url(#arrow-blue)" />
+            <text x="120" y="234" class="lbl-title" fill="#0284c7">Carnitine</text>
+
+            <!-- Acyl-Carnitine exits CPT-I into IMS -->
+            <path d="M 292 140 C 310 140, 315 155, 335 155" stroke="#10b981" stroke-width="1.8" fill="none" marker-end="url(#arrow-green)" />
+            <text x="340" y="152" class="lbl-title" fill="#059669">Acyl-Carnitine</text>
+
+            <!-- Translocase on IMM -->
+            <ellipse cx="510" cy="205" rx="22" ry="50" fill="#e0f2fe" stroke="#0284c7" stroke-width="2.5" />
+            <text x="510" y="202" text-anchor="middle" class="lbl-title" fill="#0369a1">Trans-</text>
+            <text x="510" y="214" text-anchor="middle" class="lbl-title" fill="#0369a1">locase</text>
+
+            <!-- Translocase flows -->
+            <!-- 1. Acyl-Carnitine enters Matrix -->
+            <path d="M 400 190 C 430 190, 460 195, 480 195" stroke="#10b981" stroke-width="2" fill="none" marker-end="url(#arrow-green)" />
+            <path d="M 532 195 C 555 195, 595 185, 625 185" stroke="#10b981" stroke-width="2" fill="none" marker-end="url(#arrow-green)" />
+            <text x="635" y="180" class="lbl-title" fill="#059669">Acyl-Carnitine (Matrix)</text>
+
+            <!-- 2. Free Carnitine leaves Matrix to IMS -->
+            <path d="M 625 240 C 585 240, 560 215, 532 215" stroke="#0284c7" stroke-width="1.8" stroke-dasharray="4,2" fill="none" marker-end="url(#arrow-blue)" />
+            <path d="M 488 215 C 460 215, 420 240, 370 240" stroke="#0284c7" stroke-width="1.8" stroke-dasharray="4,2" fill="none" marker-end="url(#arrow-blue)" />
+            <text x="305" y="254" class="lbl-title" fill="#0284c7">Carnitine (IMS)</text>
+
+            <!-- CPT-II on Matrix side of IMM -->
+            <rect x="545" y="270" width="70" height="50" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="2.5" />
+            <text x="580" y="299" text-anchor="middle" class="lbl-title" fill="#b45309">CPT-II</text>
+
+            <!-- CPT-II Matrix Reactions -->
+            <!-- Acyl-Carnitine enters CPT-II -->
+            <path d="M 660 200 C 640 220, 615 250, 600 265" stroke="#10b981" stroke-width="1.5" fill="none" marker-end="url(#arrow-green)" />
+            
+            <!-- Recycled Carnitine exits CPT-II -->
+            <path d="M 570 270 C 570 250, 610 240, 620 240" stroke="#0284c7" stroke-width="1.5" fill="none" marker-end="url(#arrow-blue)" />
+            <text x="635" y="244" class="lbl-title" fill="#0284c7">Carnitine</text>
+
+            <!-- Matrix CoA-SH enters CPT-II -->
+            <path d="M 690 295 L 623 295" stroke="#f97316" stroke-width="1.5" fill="none" marker-end="url(#arrow-orange)" />
+            <text x="700" y="299" class="lbl-title" fill="#ea580c">CoA-SH</text>
+
+            <!-- Matrix Fatty Acyl-CoA leaves CPT-II -->
+            <path d="M 580 323 C 580 355, 625 355, 650 355" stroke="#ea580c" stroke-width="2" fill="none" marker-end="url(#arrow-orange)" />
+            
+            <rect x="660" y="337" width="125" height="35" rx="6" fill="#fff7ed" stroke="#ea580c" stroke-width="2" />
+            <text x="722.5" y="358" text-anchor="middle" class="lbl-title" fill="#ea580c">Fatty Acyl-CoA</text>
+            
+            <!-- Pathway to Beta-Oxidation -->
+            <path d="M 785 355 L 825 355" stroke="#475569" stroke-width="2" marker-end="url(#arrow-red)" />
+            <rect x="830" y="337" width="60" height="35" rx="6" fill="#f8fafc" stroke="#475569" stroke-width="1.5" />
+            <text x="860" y="358" text-anchor="middle" class="lbl-flow" fill="#475569">&beta;-Oxproper</text>
+          </svg>
+        </div>
+      </div>

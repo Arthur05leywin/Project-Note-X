@@ -4,11 +4,24 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#0d0f14">
-<title>Enzyme Inhibition — WBUHS Biochemistry Notes</title>
+<title>Enzyme Inhibition — MBBS Biochemistry Notes</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧬</text></svg>">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="wbuhs_master_style.css">
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     <style>
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300..900;1,300..900&family=IBM+Plex+Mono:ital,wght@0,100..700;1,100..700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Sora:wght@100..800&display=swap');
@@ -204,6 +217,25 @@ p {
    CLASSIC LAYOUT SELECTORS (Modules 1-3)
    ========================================== */
 
+/* Premium Brand Identity */
+.brand-container {
+  display: block;
+  margin-bottom: 28px;
+  animation: fadeIn 0.8s ease-out;
+}
+.brand-logo {
+  max-width: 200px;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.brand-logo:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(232, 200, 74, 0.15); /* Accent glow on hover */
+}
+
 .cover {
   min-height: 100vh;
   display: flex;
@@ -307,7 +339,7 @@ p {
 
 .cover-pyq-badge {
   position: absolute;
-  top: 60px;
+  top: 120px;
   right: 60px;
   background: var(--accent);
   color: var(--bg);
@@ -1064,6 +1096,54 @@ svg text {
   margin: 4px 0;
 }
 
+.flow-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 12px 0;
+  width: 100%;
+}
+
+.flow-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  font-size: 20px;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.flow-arrow.down {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 8px auto;
+  color: var(--accent);
+  font-size: 20px;
+}
+
+.flow-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.flow-down {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 12px auto;
+  color: var(--accent);
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+}
+
 .flow-v {
   display: flex;
   flex-direction: column;
@@ -1749,6 +1829,100 @@ ul.checklist li {
 
 
 /* ==========================================
+   ⚡ ULTRA-CRISP REVISION CARD ENGINE 
+   ========================================== */
+
+.revision-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  padding: 18px 22px;
+  margin: 16px 0;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.revision-card:hover {
+  border-color: var(--accent2);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
+}
+
+.revision-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 8px;
+}
+
+.revision-card-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.revision-card-title {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.revision-card-title span {
+  color: var(--accent);
+}
+
+.revision-card-body {
+  font-size: 13.5px;
+  line-height: 1.7;
+}
+
+.revision-card-body ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.revision-card-body ul li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+
+.revision-card-body ul li:last-child {
+  margin-bottom: 0;
+}
+
+.revision-card-body ul li::before {
+  content: "✦";
+  position: absolute;
+  left: 0;
+  color: var(--accent2);
+  font-weight: bold;
+}
+
+.revision-card-body ul li strong {
+  color: var(--white);
+}
+
+/* Print Budgeting Classes */
+.print-page-break {
+  display: block;
+}
+
+@media screen {
+  .print-page-break {
+    margin: 30px 0;
+  }
+}
+
+
+/* ==========================================
    🖨️ PREMIUM PRINT-TO-PDF ENGINE (Ctrl+P)
    ========================================== */
 
@@ -1790,7 +1964,7 @@ ul.checklist li {
 
   @page {
     size: A4 portrait;
-    margin: 12mm 15mm;
+    margin: 20mm 15mm 20mm 15mm !important;
   }
 
   body {
@@ -1870,7 +2044,7 @@ ul.checklist li {
 
   .cover-pyq-badge {
     position: absolute !important;
-    top: 40px !important;
+    top: 70px !important;
     right: 40px !important;
     border: 1px solid #000000 !important;
     background: #ffffff !important;
@@ -1976,7 +2150,9 @@ ul.checklist li {
   details,
   details.viva-q,
   tr,
-  blockquote {
+  blockquote,
+  svg,
+  .revision-card-body ul li {
     page-break-inside: avoid !important;
     break-inside: avoid !important;
   }
@@ -1997,6 +2173,52 @@ ul.checklist li {
     border-radius: 4px !important;
     border: 1px solid #000000 !important;
     background: #f8f9fa !important;
+  }
+
+  .revision-card {
+    background: #ffffff !important;
+    border: 1px solid #000000 !important;
+    border-left: 4px solid #000000 !important;
+    border-radius: 4px !important;
+    padding: 12px 16px !important;
+    margin: 10px 0 !important;
+    box-shadow: none !important;
+    page-break-inside: auto !important;
+    break-inside: auto !important;
+    -webkit-box-decoration-break: clone !important;
+    box-decoration-break: clone !important;
+  }
+
+  .revision-card-header {
+    border-bottom: 1px solid #000000 !important;
+    margin-bottom: 8px !important;
+    padding-bottom: 4px !important;
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+  }
+
+  .revision-card-title {
+    color: #000000 !important;
+    font-size: 11pt !important;
+  }
+
+  .revision-card-body ul li {
+    color: #111111 !important;
+    font-size: 10.5pt !important;
+    line-height: 1.4 !important;
+  }
+
+  .revision-card-body ul li::before {
+    color: #000000 !important;
+  }
+
+  .print-page-break {
+    page-break-before: always !important;
+    break-before: page !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
   }
 
   .pyq-box { background: #fbf8eb !important; }
@@ -2091,14 +2313,100 @@ ul.checklist li {
     background: #ffffff !important;
   }
 }
+
+/* ─── Premium Brand Bar ─────────────────────────────── */
+.brand-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 18px 60px;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 10;
+}
+
+.brand-bar-logo {
+  height: 56px;
+  width: auto;
+  border-radius: 6px;
+  object-fit: contain;
+  flex-shrink: 0;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+}
+
+.brand-bar-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.brand-bar-name {
+  font-family: "IBM Plex Mono", "JetBrains Mono", monospace;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--accent, #e8c84a);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.brand-bar-series {
+  font-family: "IBM Plex Mono", "JetBrains Mono", monospace;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+@media print {
+  .brand-bar {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    background: #f8f9fa !important;
+    border-bottom: 1px solid #dee2e6 !important;
+    padding: 10px 40px !important;
+    backdrop-filter: none !important;
+  }
+  .brand-bar-logo {
+    height: 32px !important;
+    filter: grayscale(100%) !important;
+  }
+  .brand-bar-name {
+    color: #000000 !important;
+    font-size: 11px !important;
+    letter-spacing: 2px !important;
+  }
+  .brand-bar-series {
+    color: #495057 !important;
+    font-size: 9px !important;
+  }
+}
+/* ──────────────────────────────────────────────────── */
     </style>
 </head>
 <body class="theme-gold">
 
 <!-- ═══════════════════════════════════ COVER PAGE ═══════════════════════════════════ -->
 <div class="cover">
-  <div class="cover-pyq-badge">PYQ 2010–2025</div>
-  <div class="cover-tag">WBUHS Biochemistry · Module 01</div>
+  <!-- ═══ BRAND BAR ═══ -->
+  <div class="brand-bar">
+    <img src="../../Caffeine &amp; Cadaver.jpg" alt="Caffeine &amp; Cadaver" class="brand-bar-logo">
+    <div class="brand-bar-text">
+      <span class="brand-bar-name">Caffeine &amp; Cadaver</span>
+      <span class="brand-bar-series">MBBS Biochemistry Notes Series</span>
+    </div>
+  </div>
+
+  <!-- Brand Identity -->
+<div class="cover-pyq-badge">PYQ 2010–2025</div>
+  <div class="cover-tag">MBBS Biochemistry · Module 01</div>
   <h1>Enzyme<br><span>Inhibition</span></h1>
   <div class="cover-sub">Kinetics · Inhibitors · Clinical Applications</div>
   <div class="cover-divider"></div>
@@ -2109,11 +2417,11 @@ ul.checklist li {
     </div>
     <div class="cover-meta-item">
       <span class="cover-meta-label">Exam Relevance</span>
-      <span class="cover-meta-value">Group A · B · C · D</span>
+      <span class="cover-meta-value">Core Curriculum Theory & Viva</span>
     </div>
     <div class="cover-meta-item">
       <span class="cover-meta-label">PYQ Frequency</span>
-      <span class="cover-meta-value">10+ times (2010–2025)</span>
+      <span class="cover-meta-value">Standard University Exam High-Yield</span>
     </div>
   </div>
 </div>
@@ -2124,7 +2432,7 @@ ul.checklist li {
 
   <!-- PYQ ALERT -->
   <div class="pyq-box">
-    <div class="pyq-box-label">⭐ Appeared in WBUHS — Years</div>
+    <div class="pyq-box-label">⭐ Appeared in MBBS — Years</div>
     <ul>
       <li>2010-S</li><li>2013</li><li>2013-S</li><li>2014-S</li>
       <li>2015</li><li>2016</li><li>2017</li><li>2018</li>
@@ -2148,11 +2456,203 @@ ul.checklist li {
     </p>
   </div>
 
+    <hr class="section-divider">
+
+  <!-- SECTION 05: ENZYME CATALYSIS & KINETICS -->
+  <div class="section-header" id="enzyme-catalysis-kinetics">
+    <span class="section-number">02</span>
+    <h2 class="section-title">Enzyme Catalysis & <span>Kinetics Derivation</span></h2>
+  </div>
+
+  <div class="big-picture">
+    <div class="big-picture-label">🔑 Thermodynamic Principles</div>
+    <p>
+      Enzymes are biological catalysts that accelerate chemical reactions by <strong>stabilizing the transition state</strong> and lowering the <strong>activation energy (ΔG‡)</strong>. They do not alter the overall free energy change (ΔG) or shift the equilibrium position of the reaction; they simply allow the system to reach equilibrium much faster.
+    </p>
+    <p>
+      The catalytic event occurs within the <strong>Active Site</strong>, a highly specialized three-dimensional cleft or pocket lined with catalytic and binding amino acid residues. Active site binding is explained by Emil Fischer's classic <em>Lock-and-Key Model</em> (rigid complementarity) and Daniel Koshland's modern <em>Induced Fit Model</em> (dynamic conformational change upon ligand binding).
+    </p>
+  </div>
+
+  <h3 class="sub-head">The Briggs-Haldane Steady-State Derivation</h3>
+  <p>
+    To understand how enzyme velocity behaves mathematically, we derive the fundamental <strong>Michaelis-Menten Equation</strong> using the Briggs-Haldane steady-state approximation.
+  </p>
+
+  <div class="flowchart-container">
+    <div class="flowchart-title">// The Reaction Scheme</div>
+    <div class="flow-row">
+      <div class="flow-box white" style="font-size:12px;">Enzyme + Substrate<br>(E + S)</div>
+      <div class="flow-arrow">⇌ (k₁ / k₋₁)</div>
+      <div class="flow-box yellow" style="font-size:12px;">Enzyme-Substrate Complex<br>(ES)</div>
+      <div class="flow-arrow">→ (k₂)</div>
+      <div class="flow-box green" style="font-size:12px;">Enzyme + Product<br>(E + P)</div>
+    </div>
+  </div>
+
+  <div class="key-fact">
+    <span class="key-fact-icon">📐</span>
+    <div class="key-fact-text">
+      <strong>The Steady-State Assumption:</strong> The concentration of the transition state [ES] remains constant over time. Therefore, the rate of ES formation equals the rate of ES breakdown:
+      <div style="font-family:'IBM Plex Mono', monospace; margin: 10px 0; color:var(--accent2); text-align:center;">
+        k₁[E][S] = (k₋₁ + k₂)[ES]
+      </div>
+    </div>
+  </div>
+
+  <div class="key-fact">
+    <span class="key-fact-icon">🧠</span>
+    <div class="key-fact-text">
+      <strong>Defining the Michaelis Constant (Km):</strong> By grouping the rate constants:
+      <div style="font-family:'IBM Plex Mono', monospace; margin: 10px 0; color:var(--accent); text-align:center;">
+        Km = (k₋₁ + k₂) / k₁
+      </div>
+      Substitute Km back: [E][S] = Km[ES].
+    </div>
+  </div>
+
+  <div class="key-fact">
+    <span class="key-fact-icon">💾</span>
+    <div class="key-fact-text">
+      <strong>Conservation of Enzyme:</strong> Since free enzyme [E] cannot be measured directly, we express it in terms of total enzyme [E]t:
+      <div style="font-family:'IBM Plex Mono', monospace; margin: 10px 0; color:var(--accent4); text-align:center;">
+        [E] = [E]t - [ES]
+      </div>
+      Substituting this into the Km equation yields: ([E]t - [ES])[S] = Km [ES].
+    </div>
+  </div>
+
+  <div class="key-fact">
+    <span class="key-fact-icon">🚀</span>
+    <div class="key-fact-text">
+      <strong>Solving for [ES] & Velocity:</strong> Solving for [ES] gives: [ES] = ([E]t[S]) / (Km + [S]).
+      Since velocity v = k₂[ES] and maximum velocity Vmax = k₂[E]t, we multiply both sides by k₂ to arrive at the <strong>Michaelis-Menten Equation</strong>:
+      <div style="font-family:'IBM Plex Mono', monospace; margin: 15px 0; color:var(--white); font-size:18px; font-weight:600; text-align:center;">
+        v = (Vmax · [S]) / (Km + [S])
+      </div>
+      This hyperbolic equation explains that at low [S] ([S] ≪ Km), velocity is first-order, while at high [S] ([S] ≫ Km), the enzyme is saturated and velocity is zero-order (v ≈ Vmax).
+    </div>
+  </div>
+
+  <h3 class="sub-head">Lineweaver-Burk Linearization</h3>
+  <p>
+    Taking the double reciprocal of the Michaelis-Menten equation yields the linear <strong>Lineweaver-Burk Equation</strong>:
+  </p>
+  <div style="font-family:'IBM Plex Mono', monospace; padding:15px; background:var(--surface); border:1px solid var(--border); border-radius:6px; margin: 15px 0; color:var(--accent2); text-align:center; font-size:16px;">
+    1/v = (Km/Vmax) · (1/[S]) + 1/Vmax
+  </div>
+  <p>
+    This allows researchers to plot experimental data as a straight line (y = mx + c), where the Y-intercept represents 1/Vmax and the X-intercept represents -1/Km.
+  </p>
+
   <hr class="section-divider">
 
-  <!-- SECTION 2: TYPES OF INHIBITION — FLOWCHART -->
+  <!-- SECTION 06: ALLOSTERIC REGULATION -->
+  <div class="section-header" id="allosteric-regulation">
+    <span class="section-number">03</span>
+    <h2 class="section-title">Allosteric <span>Regulation & Cooperativity</span></h2>
+  </div>
+
+  <div class="big-picture">
+    <div class="big-picture-label">🌀 Mechanics of Allostery</div>
+    <p>
+      Not all enzymes obey classic Michaelis-Menten kinetics. <strong>Allosteric enzymes</strong> are oligomeric proteins (multiple subunits) that exhibit <strong>cooperativity</strong> — where the binding of a ligand to one active site influences the binding properties of other active sites.
+    </p>
+    <p>
+      Allosteric enzymes display a characteristic <strong>sigmoidal (S-shaped) saturation curve</strong> rather than a hyperbola. They bind effectors at a distinct regulatory pocket called the <strong>allosteric site</strong>, causing conformational shifts that either activate (positive cooperative) or inhibit (negative cooperative) the enzyme.
+    </p>
+  </div>
+
+  <h3 class="sub-head">The Two Models of Cooperativity</h3>
+  <p>
+    Medical biochemistry defines two prominent models explaining allosteric shifts:
+  </p>
+
+  <div class="comp-table-container" style="overflow-x:auto;">
+    <table class="comp-table">
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>Concerted Model (MWC Model)</th>
+          <th>Sequential Model (KNF Model)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Proponents</strong></td>
+          <td>Monod, Wyman, and Changeux</td>
+          <td>Koshland, Némethy, and Filmer</td>
+        </tr>
+        <tr>
+          <td><strong>Subunit States</strong></td>
+          <td>All subunits must exist in the <strong>same state</strong> (either all Tense [T] or all Relaxed [R]). No hybrid states allowed.</td>
+          <td>Subunits can change states <strong>individually</strong>. Hybrid states (some T, some R) are common.</td>
+        </tr>
+        <tr>
+          <td><strong>Symmetry Rule</strong></td>
+          <td>Symmetry is preserved. Binding of a substrate shifts the equilibrium of the entire oligomer between the T-state (low affinity) and R-state (high affinity).</td>
+          <td>Symmetry is not preserved. Substrate binding to one subunit induces a conformational shift only in that subunit, which then sequentially alters neighbors.</td>
+        </tr>
+        <tr>
+          <td><strong>Effector Action</strong></td>
+          <td>Activators stabilize the R-state; inhibitors stabilize the T-state, shifting the S-curve left or right.</td>
+          <td>Binding increases or decreases affinity of neighboring active sites sequentially via induced fit.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <hr class="section-divider">
+
+  <!-- SECTION 07: COVALENT MODIFICATION & ZYMOGENS -->
+  <div class="section-header" id="covalent-modification-zymogens">
+    <span class="section-number">04</span>
+    <h2 class="section-title">Covalent Modification & <span>Zymogen Activation</span></h2>
+  </div>
+
+  <div class="big-picture">
+    <div class="big-picture-label">⚡ Post-Translational Regulation</div>
+    <p>
+      In addition to allosteric effectors, the body uses two highly efficient molecular mechanisms to regulate enzyme activity on demand:
+    </p>
+    <ul>
+      <li><strong>Reversible Covalent Modification:</strong> The addition or removal of a chemical group (most commonly phosphate, via <em>kinases</em> and <em>phosphatases</em>) to specific serine, threonine, or tyrosine residues of the enzyme. For example, glycogen phosphorylase is active when phosphorylated, while glycogen synthase is inactive when phosphorylated.</li>
+      <li><strong>Zymogen Activation (Proteolytic Cleavage):</strong> The irreversible activation of an inactive enzyme precursor (zymogen/proenzyme) by the selective cleavage of one or more peptide bonds. This is crucial for digestive enzymes and blood coagulation factors, preventing them from destroying the cells that synthesize them.</li>
+    </ul>
+  </div>
+
+  <h3 class="sub-head">Zymogen Cascades in Digestion</h3>
+  <p>
+    The classic medical example of zymogen activation is the activation cascade in the duodenum:
+  </p>
+
+  <div class="flowchart-container">
+    <div class="flowchart-title">// Digestive Activation Cascade</div>
+    <div class="flow-row">
+      <div class="flow-box red" style="font-size:12px;">Trypsinogen<br>(Inactive, from Pancreas)</div>
+      <div class="flow-arrow">→ Enteropeptidase (Duodenal wall)</div>
+      <div class="flow-box green" style="font-size:12px;">Active Trypsin<br>(Cleaves hexapeptide)</div>
+    </div>
+    <div class="flow-arrow down">↓ (Autocatalytic & cross-activation)</div>
+    <div style="display:flex; justify-content:space-around; gap:16px; margin-top:12px;">
+      <div class="flow-box green" style="font-size:11px; flex:1;">Chymotrypsinogen → Chymotrypsin</div>
+      <div class="flow-box green" style="font-size:11px; flex:1;">Proelastase → Elastase</div>
+      <div class="flow-box green" style="font-size:11px; flex:1;">Procarboxypeptidase → Carboxypeptidase</div>
+    </div>
+  </div>
+
+  <div class="key-fact">
+    <span class="key-fact-icon">💡</span>
+    <div class="key-fact-text">
+      <strong>Viva Pearl:</strong> If trypsin is prematurely activated inside the pancreas, it causes a catastrophic self-digestion of the organ, clinically presenting as <strong>acute hemorrhagic pancreatitis</strong>. The pancreas protects itself by synthesizing <em>Pancreatic Trypsin Inhibitor (PSTI)</em> to block any trace trypsin.
+    </div>
+  </div>
+
+<hr class="section-divider">
+
+  <!-- SECTION 05: TYPES OF INHIBITION — FLOWCHART -->
   <div class="section-header" id="types-of-inhibition">
-    <span class="section-number">02</span>
+    <span class="section-number">05</span>
     <h2 class="section-title">Types of <span>Inhibition</span></h2>
   </div>
 
@@ -2187,9 +2687,9 @@ ul.checklist li {
 
   <hr class="section-divider">
 
-  <!-- SECTION 3: COMPETITIVE INHIBITION -->
+  <!-- SECTION 06: COMPETITIVE INHIBITION -->
   <div class="section-header" id="competitive-inhibition">
-    <span class="section-number">03</span>
+    <span class="section-number">06</span>
     <h2 class="section-title"><span>Competitive</span> Inhibition <span class="examiner-fav">★ EXAMINER FAV</span></h2>
   </div>
 
@@ -2244,9 +2744,9 @@ ul.checklist li {
 
   <hr class="section-divider">
 
-  <!-- SECTION 4: NON-COMPETITIVE -->
+  <!-- SECTION 07: NON-COMPETITIVE -->
   <div class="section-header" id="non-competitive">
-    <span class="section-number">04</span>
+    <span class="section-number">07</span>
     <h2 class="section-title"><span>Non-Competitive</span> Inhibition</h2>
   </div>
 
@@ -2294,9 +2794,9 @@ ul.checklist li {
 
   <hr class="section-divider">
 
-  <!-- SECTION 5: MASTER COMPARISON TABLE -->
+  <!-- SECTION 08: MASTER COMPARISON TABLE -->
   <div class="section-header" id="comparison-table">
-    <span class="section-number">05</span>
+    <span class="section-number">08</span>
     <h2 class="section-title">Master <span>Comparison Table</span> <span class="examiner-fav">★ EXAMINER FAV</span></h2>
   </div>
 
@@ -2357,9 +2857,9 @@ ul.checklist li {
 
   <hr class="section-divider">
 
-  <!-- SECTION 6: IRREVERSIBLE / SUICIDE INHIBITORS -->
+  <!-- SECTION 09: IRREVERSIBLE / SUICIDE INHIBITORS -->
   <div class="section-header" id="irreversible-suicide">
-    <span class="section-number">06</span>
+    <span class="section-number">09</span>
     <h2 class="section-title">Irreversible & <span>Suicide</span> Inhibitors</h2>
   </div>
 
@@ -2419,9 +2919,9 @@ ul.checklist li {
 
   <hr class="section-divider">
 
-  <!-- SECTION 7: MICHAELIS MENTEN + KM -->
+  <!-- SECTION 13: MICHAELIS MENTEN + KM -->
   <div class="section-header" id="km-vmax">
-    <span class="section-number">07</span>
+    <span class="section-number">10</span>
     <h2 class="section-title">Km & Vmax — <span>The Core Concept</span> <span class="examiner-fav">★ EXAMINER FAV</span></h2>
   </div>
 
@@ -2449,9 +2949,9 @@ ul.checklist li {
 
   <hr class="section-divider">
 
-  <!-- SECTION 8: ISOENZYMES -->
+  <!-- SECTION 14: ISOENZYMES -->
   <div class="section-header" id="isoenzymes">
-    <span class="section-number">08</span>
+    <span class="section-number">11</span>
     <h2 class="section-title"><span>Isoenzymes</span> — LDH & CK <span class="examiner-fav">★ EXAMINER FAV</span></h2>
   </div>
 
@@ -2520,9 +3020,9 @@ ul.checklist li {
 
   <hr class="section-divider">
 
-  <!-- SECTION 9: CLINICAL APPLICATIONS -->
+  <!-- SECTION 15: CLINICAL APPLICATIONS -->
   <div class="section-header" id="clinical-correlations">
-    <span class="section-number">09</span>
+    <span class="section-number">12</span>
     <h2 class="section-title">Clinical <span>Correlations</span></h2>
   </div>
 
@@ -2542,9 +3042,9 @@ ul.checklist li {
 
   <hr class="section-divider">
 
-  <!-- SECTION 10: MNEMONIC -->
+  <!-- SECTION 13: MNEMONIC -->
   <div class="section-header" id="mnemonics">
-    <span class="section-number">10</span>
+    <span class="section-number">13</span>
     <h2 class="section-title">Memory <span>Mnemonics</span></h2>
   </div>
 
@@ -2585,7 +3085,7 @@ ul.checklist li {
 
   <hr class="section-divider">
 
-  <!-- SECTION 11: VIVA Q&A -->
+  <!-- SECTION 14: VIVA Q&A -->
   <div class="viva-section">
     <div class="viva-label" id="viva-qa">🔥 Viva Rapid Fire — Enzyme Inhibition</div>
 
@@ -2624,7 +3124,7 @@ ul.checklist li {
 
   <!-- GROUP D EQ SPECIAL -->
   <div class="section-header" id="group-d">
-    <span class="section-number">12</span>
+    <span class="section-number">15</span>
     <h2 class="section-title">Group-D <span>Essay Questions</span> — How to Answer</h2>
   </div>
 
@@ -2660,7 +3160,7 @@ ul.checklist li {
 
 <!-- FOOTER -->
 <div class="footer">
-  <p style="font-size:14px; font-weight:600; color:var(--white); margin-bottom:8px;">WBUHS Biochemistry — Module 01: Enzyme Inhibition</p>
+  <p style="font-size:14px; font-weight:600; color:var(--white); margin-bottom:8px;">MBBS Biochemistry — Module 01: Enzyme Inhibition</p>
   <p style="margin-top:8px; font-size:12px;">Compiled from PYQ 2010–2025</p>
   <p style="margin-top:12px; color:var(--accent); font-size:13px; font-style:italic;">Crafted with precision to illuminate the pathways of biochemistry and inspire your journey in medicine.</p>
   <p style="margin-top:24px; font-size:12px; display:inline-flex; align-items:center; justify-content:center; gap:6px; background:rgba(232, 200, 74, 0.1); padding:8px 16px; border-radius:20px; border:1px solid var(--accent); color:var(--accent);">

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lipid Metabolism — WBUHS Biochemistry Notes</title>
+    <title>Lipid Metabolism — MBBS Biochemistry Notes</title>
     <link
       rel="icon"
       href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E🧫%3C/text%3E%3C/svg%3E"
@@ -16,6 +16,20 @@
       
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="wbuhs_master_style.css">
     
     
     <style>
@@ -212,6 +226,25 @@ p {
    CLASSIC LAYOUT SELECTORS (Modules 1-3)
    ========================================== */
 
+/* Premium Brand Identity */
+.brand-container {
+  display: block;
+  margin-bottom: 28px;
+  animation: fadeIn 0.8s ease-out;
+}
+.brand-logo {
+  max-width: 200px;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.brand-logo:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(232, 200, 74, 0.15); /* Accent glow on hover */
+}
+
 .cover {
   min-height: 100vh;
   display: flex;
@@ -315,7 +348,7 @@ p {
 
 .cover-pyq-badge {
   position: absolute;
-  top: 60px;
+  top: 120px;
   right: 60px;
   background: var(--accent);
   color: var(--bg);
@@ -1072,6 +1105,54 @@ svg text {
   margin: 4px 0;
 }
 
+.flow-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 12px 0;
+  width: 100%;
+}
+
+.flow-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  font-size: 20px;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.flow-arrow.down {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 8px auto;
+  color: var(--accent);
+  font-size: 20px;
+}
+
+.flow-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.flow-down {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 12px auto;
+  color: var(--accent);
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+}
+
 .flow-v {
   display: flex;
   flex-direction: column;
@@ -1757,6 +1838,100 @@ ul.checklist li {
 
 
 /* ==========================================
+   ⚡ ULTRA-CRISP REVISION CARD ENGINE 
+   ========================================== */
+
+.revision-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  padding: 18px 22px;
+  margin: 16px 0;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.revision-card:hover {
+  border-color: var(--accent2);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
+}
+
+.revision-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 8px;
+}
+
+.revision-card-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.revision-card-title {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.revision-card-title span {
+  color: var(--accent);
+}
+
+.revision-card-body {
+  font-size: 13.5px;
+  line-height: 1.7;
+}
+
+.revision-card-body ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.revision-card-body ul li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+
+.revision-card-body ul li:last-child {
+  margin-bottom: 0;
+}
+
+.revision-card-body ul li::before {
+  content: "✦";
+  position: absolute;
+  left: 0;
+  color: var(--accent2);
+  font-weight: bold;
+}
+
+.revision-card-body ul li strong {
+  color: var(--white);
+}
+
+/* Print Budgeting Classes */
+.print-page-break {
+  display: block;
+}
+
+@media screen {
+  .print-page-break {
+    margin: 30px 0;
+  }
+}
+
+
+/* ==========================================
    🖨️ PREMIUM PRINT-TO-PDF ENGINE (Ctrl+P)
    ========================================== */
 
@@ -1798,7 +1973,7 @@ ul.checklist li {
 
   @page {
     size: A4 portrait;
-    margin: 12mm 15mm;
+    margin: 20mm 15mm 20mm 15mm !important;
   }
 
   body {
@@ -1878,7 +2053,7 @@ ul.checklist li {
 
   .cover-pyq-badge {
     position: absolute !important;
-    top: 40px !important;
+    top: 70px !important;
     right: 40px !important;
     border: 1px solid #000000 !important;
     background: #ffffff !important;
@@ -1984,7 +2159,9 @@ ul.checklist li {
   details,
   details.viva-q,
   tr,
-  blockquote {
+  blockquote,
+  svg,
+  .revision-card-body ul li {
     page-break-inside: avoid !important;
     break-inside: avoid !important;
   }
@@ -2005,6 +2182,52 @@ ul.checklist li {
     border-radius: 4px !important;
     border: 1px solid #000000 !important;
     background: #f8f9fa !important;
+  }
+
+  .revision-card {
+    background: #ffffff !important;
+    border: 1px solid #000000 !important;
+    border-left: 4px solid #000000 !important;
+    border-radius: 4px !important;
+    padding: 12px 16px !important;
+    margin: 10px 0 !important;
+    box-shadow: none !important;
+    page-break-inside: auto !important;
+    break-inside: auto !important;
+    -webkit-box-decoration-break: clone !important;
+    box-decoration-break: clone !important;
+  }
+
+  .revision-card-header {
+    border-bottom: 1px solid #000000 !important;
+    margin-bottom: 8px !important;
+    padding-bottom: 4px !important;
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+  }
+
+  .revision-card-title {
+    color: #000000 !important;
+    font-size: 11pt !important;
+  }
+
+  .revision-card-body ul li {
+    color: #111111 !important;
+    font-size: 10.5pt !important;
+    line-height: 1.4 !important;
+  }
+
+  .revision-card-body ul li::before {
+    color: #000000 !important;
+  }
+
+  .print-page-break {
+    page-break-before: always !important;
+    break-before: page !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
   }
 
   .pyq-box { background: #fbf8eb !important; }
@@ -2099,13 +2322,98 @@ ul.checklist li {
     background: #ffffff !important;
   }
 }
+
+/* ─── Premium Brand Bar ─────────────────────────────── */
+.brand-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 18px 60px;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 10;
+}
+
+.brand-bar-logo {
+  height: 56px;
+  width: auto;
+  border-radius: 6px;
+  object-fit: contain;
+  flex-shrink: 0;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+}
+
+.brand-bar-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.brand-bar-name {
+  font-family: "IBM Plex Mono", "JetBrains Mono", monospace;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--accent, #e8c84a);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.brand-bar-series {
+  font-family: "IBM Plex Mono", "JetBrains Mono", monospace;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+@media print {
+  .brand-bar {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    background: #f8f9fa !important;
+    border-bottom: 1px solid #dee2e6 !important;
+    padding: 10px 40px !important;
+    backdrop-filter: none !important;
+  }
+  .brand-bar-logo {
+    height: 32px !important;
+    filter: grayscale(100%) !important;
+  }
+  .brand-bar-name {
+    color: #000000 !important;
+    font-size: 11px !important;
+    letter-spacing: 2px !important;
+  }
+  .brand-bar-series {
+    color: #495057 !important;
+    font-size: 9px !important;
+  }
+}
+/* ──────────────────────────────────────────────────── */
     </style>
 </head>
   <body class="theme-gold">
     <!-- ═══ COVER ═══ -->
     <div class="cover">
-      <div class="cover-pyq-badge">PYQ 2010–2025</div>
-      <div class="cover-tag">WBUHS Biochemistry · Module 03</div>
+  <!-- ═══ BRAND BAR ═══ -->
+  <div class="brand-bar">
+    <img src="../../Caffeine &amp; Cadaver.jpg" alt="Caffeine &amp; Cadaver" class="brand-bar-logo">
+    <div class="brand-bar-text">
+      <span class="brand-bar-name">Caffeine &amp; Cadaver</span>
+      <span class="brand-bar-series">MBBS Biochemistry Notes Series</span>
+    </div>
+  </div>
+
+<div class="cover-pyq-badge">PYQ 2010–2025</div>
+      <div class="cover-tag">MBBS Biochemistry · Module 03</div>
       <h1>Lipid<br /><span>Metabolism</span></h1>
       <div class="cover-sub">
         β-Oxidation · Ketone Bodies · Cholesterol · Lipoproteins · Fatty Acid
@@ -2132,7 +2440,7 @@ ul.checklist li {
     <!-- ═══ CONTENT ═══ -->
     <div class="page">
       <div class="pyq-box">
-        <div class="pyq-box-label">⭐ Appeared in WBUHS — Years</div>
+        <div class="pyq-box-label">⭐ MBBS PYQ Appearances — Years</div>
         <ul>
           <li>2010</li>
           <li>2010-S</li>
@@ -2262,6 +2570,146 @@ ul.checklist li {
         </div>
       </div>
 
+
+      <div class="graph-box" style="background: #ffffff; padding: 20px; border-radius: 12px; border: 1px solid #e2e8f0; margin: 24px 0;">
+        <div class="graph-label" style="color: #1e293b; font-weight: bold; font-size: 12px; letter-spacing: 1.5px; border-bottom: 2px solid #ef4444; padding-bottom: 6px; margin-bottom: 16px;">FIG 3.1: TEXTBOOK-GRADE CARNITINE SHUTTLE &amp; REGULATION BY MALONYL-CoA</div>
+        <div style="text-align: center;">
+          <svg viewBox="0 0 900 420" width="100%" height="auto" style="background: #ffffff; display: block; margin: 0 auto; max-width: 100%;">
+            <defs>
+              <marker id="arrow-red" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#ef4444" />
+              </marker>
+              <marker id="arrow-orange" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#f97316" />
+              </marker>
+              <marker id="arrow-blue" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#0284c7" />
+              </marker>
+              <marker id="arrow-green" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#10b981" />
+              </marker>
+              <marker id="arrow-pink" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#db2777" />
+              </marker>
+            </defs>
+            
+            <style>
+              .lbl-zone { font-family: 'Sora', sans-serif; font-size: 13px; font-weight: 700; fill: #475569; letter-spacing: 2px; }
+              .lbl-title { font-family: 'Sora', sans-serif; font-size: 12px; font-weight: 700; fill: #1e293b; }
+              .lbl-sub { font-family: 'IBM Plex Mono', monospace; font-size: 10px; fill: #64748b; font-weight: 500; }
+              .lbl-flow { font-family: 'IBM Plex Mono', monospace; font-size: 10px; font-weight: bold; }
+              .membrane-txt { font-family: 'Sora', sans-serif; font-size: 9px; font-weight: bold; fill: #64748b; }
+            </style>
+
+            <!-- Grid Boundaries (Light Background) -->
+            <rect x="0" y="0" width="900" height="420" fill="#ffffff" />
+
+            <!-- Cytosol Zone Header -->
+            <rect x="0" y="0" width="260" height="35" fill="#f8fafc" />
+            <text x="130" y="22" text-anchor="middle" class="lbl-zone">CYTOSOL</text>
+            
+            <!-- IMS Zone Header -->
+            <rect x="280" y="0" width="220" height="35" fill="#f1f5f9" />
+            <text x="390" y="22" text-anchor="middle" class="lbl-zone" fill="#0284c7">INTERMEMBRANE SPACE</text>
+
+            <!-- Matrix Zone Header -->
+            <rect x="520" y="0" width="380" height="35" fill="#f8fafc" />
+            <text x="710" y="22" text-anchor="middle" class="lbl-zone" fill="#d97706">MITOCHONDRIAL MATRIX</text>
+
+            <!-- OMM (Outer Mitochondrial Membrane) -->
+            <rect x="260" y="35" width="20" height="385" fill="#e2e8f0" stroke="#cbd5e1" />
+            <text x="272" y="230" text-anchor="middle" class="membrane-txt" transform="rotate(-90 272 230)">OUTER MITOCHONDRIAL MEMBRANE (OMM)</text>
+
+            <!-- IMM (Inner Mitochondrial Membrane) -->
+            <rect x="500" y="35" width="20" height="385" fill="#e2e8f0" stroke="#cbd5e1" />
+            <text x="512" y="230" text-anchor="middle" class="membrane-txt" transform="rotate(-90 512 230)">INNER MITOCHONDRIAL MEMBRANE (IMM)</text>
+
+            <!-- Pathway 1: Fatty Acid Activation in Cytosol -->
+            <rect x="15" y="60" width="90" height="35" rx="6" fill="#f8fafc" stroke="#475569" stroke-width="1.5" />
+            <text x="60" y="81" text-anchor="middle" class="lbl-title">Fatty Acid</text>
+
+            <path d="M 105 77.5 L 155 77.5" stroke="#475569" stroke-width="2" marker-end="url(#arrow-green)" />
+            <text x="130" y="52" text-anchor="middle" class="lbl-flow" fill="#10b981">Thiokinase</text>
+            <text x="130" y="68" text-anchor="middle" class="lbl-sub" style="font-size: 8px;">ATP &rarr; AMP + PPi</text>
+
+            <rect x="160" y="60" width="90" height="35" rx="6" fill="#fff7ed" stroke="#ea580c" stroke-width="2" />
+            <text x="205" y="81" text-anchor="middle" class="lbl-title" fill="#ea580c">Acyl-CoA</text>
+
+            <!-- CPT-I on OMM -->
+            <ellipse cx="270" cy="140" rx="22" ry="40" fill="#fee2e2" stroke="#ef4444" stroke-width="2.5" />
+            <text x="270" y="144" text-anchor="middle" class="lbl-title" fill="#b91c1c">CPT-I</text>
+
+            <!-- Malonyl-CoA Inhibition -->
+            <rect x="25" y="145" width="105" height="38" rx="6" fill="#fce7f3" stroke="#db2777" stroke-width="2" />
+            <text x="77.5" y="163" text-anchor="middle" class="lbl-title" fill="#db2777">Malonyl-CoA</text>
+            <text x="77.5" y="176" text-anchor="middle" class="lbl-sub" fill="#db2777">[Synthesis Active]</text>
+            
+            <path d="M 130 164 C 180 164, 210 155, 240 150" stroke="#db2777" stroke-width="2.5" stroke-dasharray="4,4" fill="none" marker-end="url(#arrow-pink)" />
+            <circle cx="195" cy="158" r="9" fill="#db2777" />
+            <text x="195" y="162" text-anchor="middle" class="lbl-title" fill="#ffffff" style="font-size: 11px;">&times;</text>
+            <text x="195" y="144" text-anchor="middle" class="lbl-flow" fill="#db2777" style="font-size: 8px;">BLOCKS CPT-I</text>
+
+            <!-- CPT-I Reaction Flows -->
+            <!-- Acyl-CoA enters CPT-I -->
+            <path d="M 215 95 C 235 95, 235 115, 245 120" stroke="#ea580c" stroke-width="1.8" fill="none" marker-end="url(#arrow-orange)" />
+            <!-- Free CoA-SH leaves -->
+            <path d="M 245 130 C 230 135, 210 135, 185 135" stroke="#f97316" stroke-width="1.5" fill="none" marker-end="url(#arrow-orange)" />
+            <text x="165" y="139" class="lbl-flow" fill="#ea580c">CoA-SH</text>
+
+            <!-- Carnitine enters CPT-I -->
+            <path d="M 180 230 C 220 230, 235 180, 245 160" stroke="#0284c7" stroke-width="1.8" fill="none" marker-end="url(#arrow-blue)" />
+            <text x="120" y="234" class="lbl-title" fill="#0284c7">Carnitine</text>
+
+            <!-- Acyl-Carnitine exits CPT-I into IMS -->
+            <path d="M 292 140 C 310 140, 315 155, 335 155" stroke="#10b981" stroke-width="1.8" fill="none" marker-end="url(#arrow-green)" />
+            <text x="340" y="152" class="lbl-title" fill="#059669">Acyl-Carnitine</text>
+
+            <!-- Translocase on IMM -->
+            <ellipse cx="510" cy="205" rx="22" ry="50" fill="#e0f2fe" stroke="#0284c7" stroke-width="2.5" />
+            <text x="510" y="202" text-anchor="middle" class="lbl-title" fill="#0369a1">Trans-</text>
+            <text x="510" y="214" text-anchor="middle" class="lbl-title" fill="#0369a1">locase</text>
+
+            <!-- Translocase flows -->
+            <!-- 1. Acyl-Carnitine enters Matrix -->
+            <path d="M 400 190 C 430 190, 460 195, 480 195" stroke="#10b981" stroke-width="2" fill="none" marker-end="url(#arrow-green)" />
+            <path d="M 532 195 C 555 195, 595 185, 625 185" stroke="#10b981" stroke-width="2" fill="none" marker-end="url(#arrow-green)" />
+            <text x="635" y="180" class="lbl-title" fill="#059669">Acyl-Carnitine (Matrix)</text>
+
+            <!-- 2. Free Carnitine leaves Matrix to IMS -->
+            <path d="M 625 240 C 585 240, 560 215, 532 215" stroke="#0284c7" stroke-width="1.8" stroke-dasharray="4,2" fill="none" marker-end="url(#arrow-blue)" />
+            <path d="M 488 215 C 460 215, 420 240, 370 240" stroke="#0284c7" stroke-width="1.8" stroke-dasharray="4,2" fill="none" marker-end="url(#arrow-blue)" />
+            <text x="305" y="254" class="lbl-title" fill="#0284c7">Carnitine (IMS)</text>
+
+            <!-- CPT-II on Matrix side of IMM -->
+            <rect x="545" y="270" width="70" height="50" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="2.5" />
+            <text x="580" y="299" text-anchor="middle" class="lbl-title" fill="#b45309">CPT-II</text>
+
+            <!-- CPT-II Matrix Reactions -->
+            <!-- Acyl-Carnitine enters CPT-II -->
+            <path d="M 660 200 C 640 220, 615 250, 600 265" stroke="#10b981" stroke-width="1.5" fill="none" marker-end="url(#arrow-green)" />
+            
+            <!-- Recycled Carnitine exits CPT-II -->
+            <path d="M 570 270 C 570 250, 610 240, 620 240" stroke="#0284c7" stroke-width="1.5" fill="none" marker-end="url(#arrow-blue)" />
+            <text x="635" y="244" class="lbl-title" fill="#0284c7">Carnitine</text>
+
+            <!-- Matrix CoA-SH enters CPT-II -->
+            <path d="M 690 295 L 623 295" stroke="#f97316" stroke-width="1.5" fill="none" marker-end="url(#arrow-orange)" />
+            <text x="700" y="299" class="lbl-title" fill="#ea580c">CoA-SH</text>
+
+            <!-- Matrix Fatty Acyl-CoA leaves CPT-II -->
+            <path d="M 580 323 C 580 355, 625 355, 650 355" stroke="#ea580c" stroke-width="2" fill="none" marker-end="url(#arrow-orange)" />
+            
+            <rect x="660" y="337" width="125" height="35" rx="6" fill="#fff7ed" stroke="#ea580c" stroke-width="2" />
+            <text x="722.5" y="358" text-anchor="middle" class="lbl-title" fill="#ea580c">Fatty Acyl-CoA</text>
+            
+            <!-- Pathway to Beta-Oxidation -->
+            <path d="M 785 355 L 825 355" stroke="#475569" stroke-width="2" marker-end="url(#arrow-red)" />
+            <rect x="830" y="337" width="60" height="35" rx="6" fill="#f8fafc" stroke="#475569" stroke-width="1.5" />
+            <text x="860" y="358" text-anchor="middle" class="lbl-flow" fill="#475569">&beta;-Oxproper</text>
+          </svg>
+        </div>
+      </div>
+
       <div class="key-fact">
         <span class="key-fact-icon">⭐</span>
         <div class="key-fact-text">
@@ -2321,24 +2769,81 @@ ul.checklist li {
         </div>
       </div>
 
+      <!-- §2.1 CONCEPTUAL EXPANSION: METABOLIC ENERGETICS & SPECIAL OXIDATIONS -->
+      <div class="big-picture">
+        <div class="big-picture-label">📘 Lynen's Spiral (4-Step Cycle) &amp; Molecular Energetics</div>
+        <p>
+          β-Oxidation of fatty acids is also called <strong>Lynen's spiral</strong>. Long-chain fatty acids are sequentially degraded in a repeating 4-step cyclical spiral process to release 2-carbon Acetyl-CoA units. 
+        </p>
+        <p>
+          <strong>Step 1: Dehydrogenation (FAD-dependent)</strong><br />
+          Acyl-CoA is oxidized by mitochondrial membrane-bound <strong>Acyl-CoA Dehydrogenase</strong> to form trans-&Delta;&sup2;-Enoyl-CoA. Electrons are transferred to FAD &rarr; FADH₂ which feeds into the electron transport chain (yielding <strong>1.5 ATP</strong>).
+        </p>
+        <p>
+          <strong>Step 2: Hydration</strong><br />
+          Hydration of the double bond by <strong>Enoyl-CoA Hydratase</strong> adds water across the trans double bond, yielding L-3-Hydroxyacyl-CoA.
+        </p>
+        <p>
+          <strong>Step 3: Dehydrogenation (NAD-dependent)</strong><br />
+          L-3-Hydroxyacyl-CoA is oxidized by <strong>3-Hydroxyacyl-CoA Dehydrogenase</strong> to yield 3-Ketoacyl-CoA, generating NADH + H&sup2; (yielding <strong>2.5 ATP</strong> in ETC).
+        </p>
+        <p>
+          <strong>Step 4: Thiolytic Cleavage (Thiolase)</strong><br />
+          Cleavage of 3-Ketoacyl-CoA by <strong>Thiolase (needs CoASH)</strong> releases 1 molecule of <strong>Acetyl-CoA</strong> and a Fatty Acyl-CoA molecule that is <strong>2 carbons shorter</strong>. The shortened Fatty Acyl-CoA re-enters the cycle.
+        </p>
+        
+        <div class="key-fact">
+          <span class="key-fact-icon">🔢</span>
+          <div class="key-fact-text">
+            <strong>Pathway Energetics Calculations:</strong><br />
+            &bull; <strong>Acetyl-CoA Yield</strong> = n / 2 (each enters TCA cycle, yielding 10 ATP).<br />
+            &bull; <strong>Number of Cycles</strong> = (n / 2) - 1 (each cycle generates 1 FADH₂ + 1 NADH = 4 ATP).<br />
+            &bull; <strong>Activation Cost</strong> = 2 ATP equivalents (Thiokinase reaction consumes 1 ATP &rarr; AMP + PPi, followed by immediate pyrophosphatase hydrolysis).<br />
+            &bull; <strong>Palmitate (16C)</strong>: 8 Acetyl-CoA (80 ATP) + 7 cycles (28 ATP) = 108 ATP. Net = <strong>106 ATP</strong>.<br />
+            &bull; <strong>Stearate (18C)</strong>: 9 Acetyl-CoA (90 ATP) + 8 cycles (32 ATP) = 122 ATP. Net = <strong>120 ATP</strong>.
+          </div>
+        </div>
+      </div>
+
+      <div class="big-picture">
+        <div class="big-picture-label">💡 Specialty Fatty Acid Oxidations</div>
+        <p>
+          <strong>1. Odd-Chain Fatty Acid Oxidation:</strong><br />
+          Odd-chain fatty acids undergo normal &beta;-oxidation until the final thiolytic cleavage yields one molecule of 3-carbon <strong>Propionyl-CoA</strong> instead of two Acetyl-CoAs. 
+          Propionyl-CoA &rarr; <strong>D-Methylmalonyl-CoA</strong> (via Biotin-dependent <em>Propionyl-CoA Carboxylase</em>, consuming ATP and CO&sup2;) &rarr; L-Methylmalonyl-CoA &rarr; <strong>Succinyl-CoA</strong> (via Vitamin B12-dependent <em>Methylmalonyl-CoA Mutase</em>) &rarr; enters TCA cycle.<br />
+          <strong style="color: var(--accent3)">&bull; Clinical Correlate:</strong> Vitamin B12 deficiency or Mutase enzyme deficiency causes accumulation of methylmalonic acid, leading to severe <strong>Methylmalonic Aciduria</strong>.
+        </p>
+        <p>
+          <strong>2. Peroxisomal &beta;-Oxidation (VLCFA Oxidation):</strong><br />
+          Fatty acids with carbon chains &ge; C&sup2;&sup2; cannot enter the carnitine shuttle and must be oxidized in peroxisomes. The first dehydrogenation step uses <strong>Acyl-CoA Oxidase</strong>, which transfers electrons directly to O&sup2; &rarr; <strong>Hydrogen Peroxide (H&sup2;O&sup2;)</strong> (does not generate ATP). H&sup2;O&sup2; is broken down by <strong>Catalase</strong> to yield nascent oxygen [O] to kill bacteria or convert to H&sup2;O and O&sup2;.<br />
+          <strong style="color: var(--accent3)">&bull; Zellweger Syndrome:</strong> Congenital defect in peroxisomal biogenesis. Causes VLCFA accumulation in tissues, severe hypotonia, hepatomegaly, craniofacial dysmorphism, myelin destruction, and death in infancy. Adrenoleukodystrophy (ALD) is an X-linked defect in peroxisomal membrane VLCFA transporter ABCD1.
+        </p>
+        <p>
+          <strong>3. Unsaturated Fatty Acid Oxidation:</strong><br />
+          Naturally occurring double bonds are in the <strong>cis</strong> configuration, whereas &beta;-oxidation enzymes only recognize the <strong>trans</strong> configuration. 
+          Oxidation requires two additional enzymes: <strong>Isomerase</strong> (converts cis-&Delta;&sup3;-Enoyl-CoA to trans-&Delta;&sup2;-Enoyl-CoA) and <strong>Reductase</strong> (removes double bonds in polyunsaturated fatty acids).<br />
+          <strong style="color: var(--accent3)">&bull; Energetics:</strong> Bypasses the initial FADH₂-generating Acyl-CoA dehydrogenase step, resulting in a <strong>lower energy yield</strong> compared to saturated fatty acids.
+        </p>
+      </div>
+
+
       <h3 class="sub-head">Special Oxidations</h3>
       <ul class="step-list">
         <li class="hl2">
-          <span class="step-num">α</span><strong>α-Oxidation:</strong> Oxidation
-          at α-carbon. For branched-chain fatty acids (e.g. phytanic acid).
-          Requires Phytanoyl-CoA hydroxylase. Defect →
+          <strong>&alpha;-Oxidation:</strong> Oxidation
+          at &alpha;-carbon. For branched-chain fatty acids (e.g. phytanic acid).
+          Requires Phytanoyl-CoA hydroxylase. Defect &rarr;
           <strong>Refsum's disease</strong>.
         </li>
         <li class="hl2">
-          <span class="step-num">ω</span><strong>ω-Oxidation:</strong> Oxidation
-          at terminal (ω) carbon. Minor pathway in ER. Produces dicarboxylic
+          <strong>&omega;-Oxidation:</strong> Oxidation
+          at terminal (&omega;) carbon. Minor pathway in ER. Produces dicarboxylic
           acids. Important in MCAD deficiency.
         </li>
         <li class="hl3">
-          <span class="step-num">PX</span
-          ><strong>Peroxisomal β-Oxidation:</strong> For very long chain FA
-          (>C20). Generates H₂O₂ (catalase destroys it). No ATP produced
-          directly. Defect → <strong>Zellweger syndrome</strong>,
+          <strong>Peroxisomal &beta;-Oxidation:</strong> For very long chain FA
+          (&gt;C20). Generates H&sup2;O&sup2; (catalase destroys it). No ATP produced
+          directly. Defect &rarr; <strong>Zellweger syndrome</strong>,
           <strong>Adrenoleukodystrophy (ALD)</strong>.
         </li>
       </ul>
@@ -2418,9 +2923,15 @@ ul.checklist li {
         <div class="clinical-label">🩺 Ketosis — Clinical Scenarios</div>
         <ul>
           <li>
-            <strong>Starvation ketosis:</strong> Mild — OAA diverted to GNG →
-            Acetyl-CoA cannot enter TCA → ketogenesis. Controlled, compensated.
-            pH usually normal.
+            <strong>Fasting Ketosis (Physiological / Safe):</strong><br />
+            An overnight fast triggers a decrease in glucose &rarr; insulin falls, glucagon rises &rarr; activates Hormone Sensitive Lipase (HSL) to trigger mild adipose lipolysis &rarr; Free Fatty Acids (FFA) are released and transported to the liver &rarr; Liver &beta;-oxidation increases, generating Acetyl-CoA. At the same time, Gluconeogenesis is activated, depleting Oxaloacetate (OAA) &rarr; Acetyl-CoA is diverted from TCA to Ketogenesis.<br />
+            <strong style="color: var(--accent2)">&bull; Safety Mechanism:</strong> A <strong>small amount of circulating insulin remains</strong>, which acts as a molecular brake on lipolysis, preventing it from spiraling out of control. Ketones remain low (&lt; 1 mg/dL) and blood pH remains stable and fully compensated.
+          </li>
+          <li>
+            <strong>Diabetic Ketoacidosis (DKA - Pathological / Unsafe):</strong><br />
+            Seen in uncontrolled Type 1 Diabetes Mellitus. Insulin is <strong>completely absent (zero insulin)</strong> &rarr; lipolysis is thrown into massive, unchecked overdrive &rarr; FFA flooded into the liver &rarr; Acetyl-CoA production explodes. Because insulin is zero, glucose cannot enter cells, making the liver think the body is starving &rarr; Gluconeogenesis is extremely active, depleting OAA completely. Acetyl-CoA cannot enter TCA at all and is converted entirely to Ketones.<br />
+            <strong style="color: var(--accent3)">&bull; Clinical Presentation:</strong> Acidic ketone bodies accumulate massively &rarr; Bicarbonate buffer system is overwhelmed &rarr; blood pH drops, causing severe <strong>High Anion Gap Metabolic Acidosis</strong>. Patients present with <strong>Kussmaul breathing</strong> (deep, rapid breathing to blow off CO&sup2;), fruity acetone breath, profound dehydration, and coma.<br />
+            <strong style="color: var(--accent2)">&bull; Diagnostic &amp; Treatment:</strong> <strong>Gerhardt's Test</strong> is positive for primary acetoacetate. Treatment requires immediate administration of (1) <strong>Glucose + Insulin</strong> (insulin reverses lipolysis) and (2) <strong>NaHCO&sup3;&sup2;</strong> with aggressive electrolyte/fluid resuscitation.
           </li>
           <li>
             <strong>DKA (Diabetic Ketoacidosis):</strong> Severe — No insulin →
@@ -2491,6 +3002,55 @@ ul.checklist li {
             Acetyl-CoA
           </div>
         </div>
+      </div>
+
+
+      <!-- §4.1 DE NOVO LIPOGENESIS ENZYME MACHINERY: ACC & FAS COMPLEX -->
+      <div class="big-picture">
+        <div class="big-picture-label">🔬 Cytoplasmic Shuttle &amp; ACC Regulation</div>
+        <p>
+          De novo fatty acid synthesis occurs in the <strong>cytosol</strong> of the <strong>liver and lactating mammary glands</strong>. Mitochondrial Acetyl-CoA (produced from pyruvate or &beta;-oxidation) cannot cross the inner mitochondrial membrane. 
+        </p>
+        <p>
+          <strong>Citrate Shuttle:</strong><br />
+          Acetyl-CoA is condensed with Oxaloacetate to form <strong>Citrate</strong> (via Citrate Synthase), which exits to the cytoplasm via a tricarboxylate carrier. In the cytosol, <strong>ATP Citrate Lyase</strong> cleaves Citrate back into Acetyl-CoA and Oxaloacetate (consuming ATP).
+        </p>
+        <p>
+          <strong>ACC: The Rate-Limiting Step:</strong><br />
+          Cytoplasmic Acetyl-CoA is converted to Malonyl-CoA by <strong>Acetyl-CoA Carboxylase (ACC)</strong>, the rate-limiting enzyme. 
+          This carboxylation reaction requires three essential components: <strong>ATP, Biotin (Vitamin B7), and CO&sup2;</strong> (as bicarbonate).<br />
+          <strong style="color: var(--accent2)">&bull; Allosteric Regulation:</strong> Activated by <strong>Citrate</strong> (triggers polymerization of inactive monomers into active polymeric filaments) and inhibited by <strong>Palmitoyl-CoA</strong> (triggers depolymerization).<br />
+          <strong style="color: var(--accent2)">&bull; Hormonal Regulation:</strong> <strong>Insulin</strong> dephosphorylates and activates ACC (+), promoting fat storage. <strong>Glucagon and Epinephrine</strong> phosphorylate and inhibit ACC (-) via AMP-activated protein kinase (AMPK) and PKA, shutting down fat synthesis during starvation/stress.
+        </p>
+      </div>
+
+      <div class="big-picture">
+        <div class="big-picture-label">🧬 Fatty Acid Synthase (FAS) Homodimer Complex</div>
+        <p>
+          The remaining steps of lipogenesis are catalyzed by <strong>Fatty Acid Synthase (FAS)</strong>, a multi-enzyme, multi-functional polypeptide complex that functions as a head-to-tail <strong>homodimer</strong>.
+        </p>
+        <p>
+          <strong>Structural Components:</strong><br />
+          Each monomer contains <strong>7 distinct catalytic domains</strong> and an <strong>Acyl Carrier Protein (ACP)</strong> domain. 
+          ACP is loaded with a <strong>Phosphopantetheine</strong> (derived from Vitamin B5) prosthetic group.
+        </p>
+        <p>
+          <strong>Active Sulfhydryl (-SH) Groups:</strong><br />
+          FAS contains two essential -SH groups that must work in close circular coordination:<br />
+          1. <strong>Cysteine-SH</strong> group on the &beta;-Ketoacyl Synthase (KS) enzyme domain of one monomer.<br />
+          2. <strong>Phosphopantetheine-SH</strong> group on the ACP domain of the adjacent monomer.
+        </p>
+        <p>
+          <strong>The 4-Step Cycle (CRDR Mnemonic):</strong><br />
+          Malonyl-CoA units are transferred to the ACP, and the growing acyl chain undergoes a repeating 4-step sequence:<br />
+          1. <strong>Condensation (C)</strong>: Condensation of malonyl-ACP with the acetyl group on Cysteine-SH, releasing CO&sup2; (catalyzed by Ketoacyl Synthase).<br />
+          2. <strong>Reduction (R)</strong>: Reduction of the &beta;-keto group to a &beta;-hydroxy group, using <strong>NADPH</strong> (catalyzed by Ketoacyl Reductase).<br />
+          3. <strong>Dehydration (D)</strong>: Dehydration of the &beta;-hydroxy acyl chain to form a double bond, releasing <strong>H&sup2;O</strong> (catalyzed by Dehydratase).<br />
+          4. <strong>Reduction (R)</strong>: Reduction of the double bond to a saturated single bond, using <strong>NADPH</strong> (catalyzed by Enoyl Reductase).
+        </p>
+        <p>
+          This 4-step cycle repeats <strong>7 times</strong> (adding 2 carbons per cycle) until the 16-carbon <strong>Palmitate</strong> is synthesized, which is cleaved from the complex by <strong>Thioesterase</strong>.
+        </p>
       </div>
 
       <div class="key-fact">
@@ -2629,6 +3189,23 @@ ul.checklist li {
         </div>
       </div>
 
+      <div class="big-picture">
+        <div class="big-picture-label">💊 Detailed Molecular Mechanism: How Statins Lower Blood LDL</div>
+        <p>
+          <strong>Statins</strong> (e.g., Atorvastatin, Rosuvastatin) are structural analogues of HMG-CoA and act as potent <strong>competitive inhibitors</strong> of the rate-limiting enzyme <strong>HMG-CoA Reductase</strong>.
+        </p>
+        <p>
+          <strong>Step-by-Step Liver-to-Blood Response:</strong>
+        </p>
+        <ol class="step-list" style="margin: 15px 0;">
+          <li class="hl"><span class="step-num">1</span><strong>Active Site Competition:</strong> Statins bind directly to the active site of HMG-CoA Reductase, preventing the conversion of HMG-CoA to Mevalonate.</li>
+          <li class="hl"><span class="step-num">2</span><strong>Intracellular Cholesterol Drop:</strong> Synthesis of cholesterol plummets inside hepatocytes.</li>
+          <li class="hl"><span class="step-num">3</span><strong>SREBP-2 Pathway Activation:</strong> Low intracellular cholesterol causes the transcription factor <strong>SREBP-2</strong> (Sterol Regulatory Element Binding Protein-2) to migrate to the nucleus.</li>
+          <li class="hl"><span class="step-num">4</span><strong>LDL Receptor Upregulation:</strong> SREBP-2 upregulates the transcription and synthesis of <strong>LDL Receptors</strong> on the hepatocyte cell membrane.</li>
+          <li class="hl"><span class="step-num">5</span><strong>LDL Blood Clearance:</strong> The increased density of LDL receptors pulls LDL particles (Apo B-100 containing) out of the bloodstream.</li>
+          <li class="hl"><span class="step-num">6</span><strong>Serum Drop:</strong> Circulating <strong>blood LDL level drops dramatically</strong>, lowering cardiovascular plaque risk.</li>
+        </ol>
+      </div>
       <div class="key-fact">
         <span class="key-fact-icon">💊</span>
         <div class="key-fact-text">
@@ -2782,6 +3359,40 @@ ul.checklist li {
           Glucagon/Epinephrine, and breaks down stored fat to release free fatty
           acids into the blood (Fasting state).
         </div>
+      </div>
+
+
+      <div class="big-picture">
+        <div class="big-picture-label">🧡 Tangier Disease (ABCA1 Transporter Defect)</div>
+        <p>
+          <strong>Tangier Disease</strong> is an autosomal recessive disorder caused by mutations in the <strong>ABCA1 transporter</strong> protein.
+        </p>
+        <p>
+          <strong>Pathophysiology:</strong><br />
+          ABCA1 is responsible for pumping free cholesterol out of cells onto lipid-poor Apo A-I (nascent discoidal HDL). Without functional ABCA1, cells cannot export cholesterol &rarr; HDL cannot mature and is rapidly degraded in kidneys.
+        </p>
+        <p>
+          <strong>Clinical Presentation:</strong><br />
+          &bull; <strong>Zero HDL</strong> in blood (or extremely low levels).<br />
+          &bull; Cholesterol esters accumulate in the macrophages of the reticuloendothelial system.<br />
+          &bull; <strong>Massively enlarged bright orange tonsils</strong> (hallmark sign, packed with cholesterol-laden macrophages).<br />
+          &bull; Severe hepatosplenomegaly, peripheral neuropathy, and highly increased risk of premature <strong>Atherosclerosis</strong>.
+        </p>
+      </div>
+
+      <div class="big-picture">
+        <div class="big-picture-label">💓 Lipoprotein Lipase (LPL) Km Rule &amp; Tissue Affinities</div>
+        <p>
+          <strong>Lipoprotein Lipase (LPL)</strong> is anchored to capillaries to hydrolyze TAGs in Chylomicrons and VLDLs. Different tissues express different LPL isoforms with distinct kinetic properties:
+        </p>
+        <p>
+          <strong>Cardiac Muscle LPL: Low Km (High Affinity)</strong><br />
+          The heart relies constantly on fatty acid oxidation for fuel. The low Km of cardiac LPL ensures that the heart can extract TAGs for energy even when circulating blood lipid levels are extremely low.
+        </p>
+        <p>
+          <strong>Adipose Tissue LPL: High Km (Low Affinity)</strong><br />
+          Adipose tissue LPL is regulated by insulin and active only in the postprandial (fed) state. Its high Km ensures that fat storage occurs only when there is an abundance of blood lipids.
+        </p>
       </div>
 
       <div class="key-fact">
@@ -3379,7 +3990,7 @@ ul.checklist li {
           margin-bottom: 8px;
         "
       >
-        WBUHS Biochemistry — Module 03: Lipid Metabolism
+        MBBS Biochemistry — Module 03: Lipid Metabolism
       </p>
       <p>Compiled from PYQ 2010–2025</p>
       <p style="margin-top: 12px; color: var(--accent); font-style: italic">

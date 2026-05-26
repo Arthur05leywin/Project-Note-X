@@ -3,12 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carbohydrate Metabolism — WBUHS Biochemistry Notes</title>
+  <title>Carbohydrate Metabolism — MBBS Biochemistry Notes</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E🔬%3C/text%3E%3C/svg%3E">
   
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <link rel="stylesheet" href="wbuhs_master_style.css">
     
     
     <style>
@@ -205,6 +219,25 @@ p {
    CLASSIC LAYOUT SELECTORS (Modules 1-3)
    ========================================== */
 
+/* Premium Brand Identity */
+.brand-container {
+  display: block;
+  margin-bottom: 28px;
+  animation: fadeIn 0.8s ease-out;
+}
+.brand-logo {
+  max-width: 200px;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.brand-logo:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(232, 200, 74, 0.15); /* Accent glow on hover */
+}
+
 .cover {
   min-height: 100vh;
   display: flex;
@@ -308,7 +341,7 @@ p {
 
 .cover-pyq-badge {
   position: absolute;
-  top: 60px;
+  top: 120px;
   right: 60px;
   background: var(--accent);
   color: var(--bg);
@@ -1065,6 +1098,54 @@ svg text {
   margin: 4px 0;
 }
 
+.flow-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 12px 0;
+  width: 100%;
+}
+
+.flow-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  font-size: 20px;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.flow-arrow.down {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 8px auto;
+  color: var(--accent);
+  font-size: 20px;
+}
+
+.flow-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.flow-down {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 12px auto;
+  color: var(--accent);
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+}
+
 .flow-v {
   display: flex;
   flex-direction: column;
@@ -1750,6 +1831,100 @@ ul.checklist li {
 
 
 /* ==========================================
+   ⚡ ULTRA-CRISP REVISION CARD ENGINE 
+   ========================================== */
+
+.revision-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  padding: 18px 22px;
+  margin: 16px 0;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.revision-card:hover {
+  border-color: var(--accent2);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
+}
+
+.revision-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 8px;
+}
+
+.revision-card-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.revision-card-title {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.revision-card-title span {
+  color: var(--accent);
+}
+
+.revision-card-body {
+  font-size: 13.5px;
+  line-height: 1.7;
+}
+
+.revision-card-body ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.revision-card-body ul li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+
+.revision-card-body ul li:last-child {
+  margin-bottom: 0;
+}
+
+.revision-card-body ul li::before {
+  content: "✦";
+  position: absolute;
+  left: 0;
+  color: var(--accent2);
+  font-weight: bold;
+}
+
+.revision-card-body ul li strong {
+  color: var(--white);
+}
+
+/* Print Budgeting Classes */
+.print-page-break {
+  display: block;
+}
+
+@media screen {
+  .print-page-break {
+    margin: 30px 0;
+  }
+}
+
+
+/* ==========================================
    🖨️ PREMIUM PRINT-TO-PDF ENGINE (Ctrl+P)
    ========================================== */
 
@@ -1791,7 +1966,7 @@ ul.checklist li {
 
   @page {
     size: A4 portrait;
-    margin: 12mm 15mm;
+    margin: 20mm 15mm 20mm 15mm !important;
   }
 
   body {
@@ -1871,7 +2046,7 @@ ul.checklist li {
 
   .cover-pyq-badge {
     position: absolute !important;
-    top: 40px !important;
+    top: 70px !important;
     right: 40px !important;
     border: 1px solid #000000 !important;
     background: #ffffff !important;
@@ -1977,7 +2152,9 @@ ul.checklist li {
   details,
   details.viva-q,
   tr,
-  blockquote {
+  blockquote,
+  svg,
+  .revision-card-body ul li {
     page-break-inside: avoid !important;
     break-inside: avoid !important;
   }
@@ -1998,6 +2175,52 @@ ul.checklist li {
     border-radius: 4px !important;
     border: 1px solid #000000 !important;
     background: #f8f9fa !important;
+  }
+
+  .revision-card {
+    background: #ffffff !important;
+    border: 1px solid #000000 !important;
+    border-left: 4px solid #000000 !important;
+    border-radius: 4px !important;
+    padding: 12px 16px !important;
+    margin: 10px 0 !important;
+    box-shadow: none !important;
+    page-break-inside: auto !important;
+    break-inside: auto !important;
+    -webkit-box-decoration-break: clone !important;
+    box-decoration-break: clone !important;
+  }
+
+  .revision-card-header {
+    border-bottom: 1px solid #000000 !important;
+    margin-bottom: 8px !important;
+    padding-bottom: 4px !important;
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+  }
+
+  .revision-card-title {
+    color: #000000 !important;
+    font-size: 11pt !important;
+  }
+
+  .revision-card-body ul li {
+    color: #111111 !important;
+    font-size: 10.5pt !important;
+    line-height: 1.4 !important;
+  }
+
+  .revision-card-body ul li::before {
+    color: #000000 !important;
+  }
+
+  .print-page-break {
+    page-break-before: always !important;
+    break-before: page !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
   }
 
   .pyq-box { background: #fbf8eb !important; }
@@ -2092,14 +2315,99 @@ ul.checklist li {
     background: #ffffff !important;
   }
 }
+
+/* ─── Premium Brand Bar ─────────────────────────────── */
+.brand-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 18px 60px;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 10;
+}
+
+.brand-bar-logo {
+  height: 56px;
+  width: auto;
+  border-radius: 6px;
+  object-fit: contain;
+  flex-shrink: 0;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+}
+
+.brand-bar-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.brand-bar-name {
+  font-family: "IBM Plex Mono", "JetBrains Mono", monospace;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--accent, #e8c84a);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.brand-bar-series {
+  font-family: "IBM Plex Mono", "JetBrains Mono", monospace;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+@media print {
+  .brand-bar {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    background: #f8f9fa !important;
+    border-bottom: 1px solid #dee2e6 !important;
+    padding: 10px 40px !important;
+    backdrop-filter: none !important;
+  }
+  .brand-bar-logo {
+    height: 32px !important;
+    filter: grayscale(100%) !important;
+  }
+  .brand-bar-name {
+    color: #000000 !important;
+    font-size: 11px !important;
+    letter-spacing: 2px !important;
+  }
+  .brand-bar-series {
+    color: #495057 !important;
+    font-size: 9px !important;
+  }
+}
+/* ──────────────────────────────────────────────────── */
     </style>
 </head>
 <body class="theme-gold">
 
 <!-- ═══════════════ COVER ═══════════════ -->
 <div class="cover">
-  <div class="cover-pyq-badge">PYQ 2010–2025</div>
-  <div class="cover-tag">WBUHS Biochemistry · Module 02</div>
+  <!-- ═══ BRAND BAR ═══ -->
+  <div class="brand-bar">
+    <img src="../../Caffeine &amp; Cadaver.jpg" alt="Caffeine &amp; Cadaver" class="brand-bar-logo">
+    <div class="brand-bar-text">
+      <span class="brand-bar-name">Caffeine &amp; Cadaver</span>
+      <span class="brand-bar-series">MBBS Biochemistry Notes Series</span>
+    </div>
+  </div>
+
+<div class="cover-pyq-badge">PYQ 2010–2025</div>
+  <div class="cover-tag">MBBS Biochemistry · Module 02</div>
   <h1>Carbohydrate<br><span>Metabolism</span></h1>
   <div class="cover-sub">Glycolysis · TCA Cycle · HMP Shunt · Glycogen · Gluconeogenesis</div>
   <div class="cover-divider"></div>
@@ -2118,7 +2426,7 @@ ul.checklist li {
     </div>
     <div class="cover-meta-item">
       <span class="cover-meta-label">Source</span>
-      <span class="cover-meta-value">KIMS Krishnanagar · NMO Bengal PYQ</span>
+      <span class="cover-meta-value">Caffeine &amp; Cadaver · MBBS PYQ</span>
     </div>
   </div>
 </div>
@@ -2128,7 +2436,7 @@ ul.checklist li {
 
   <!-- PYQ YEARS -->
   <div class="pyq-box">
-    <div class="pyq-box-label">⭐ Appeared in WBUHS — Years</div>
+    <div class="pyq-box-label">⭐ MBBS PYQ Appearances — Years</div>
     <ul>
       <li>2010</li><li>2010-S</li><li>2012-S</li><li>2013</li>
       <li>2014-S</li><li>2015-S</li><li>2016</li><li>2016-S</li>
@@ -2184,14 +2492,14 @@ ul.checklist li {
       <div class="flow-box yellow" style="min-width:130px; font-size:11px;">Glycogenesis<br>→ Glycogen</div>
       <div class="flow-box muted" style="min-width:130px; font-size:11px;">Uronic Acid<br>Pathway</div>
     </div>
-    <div class="flow-arrow down" style="margin-left:-220px;">↓</div>
-    <div class="flow-row" style="margin-left:-220px;">
+    <div class="flow-arrow down">↓</div>
+    <div class="flow-row">
       <div class="flow-box green" style="min-width:130px; font-size:11px;">Aerobic:<br>Acetyl-CoA → TCA</div>
       <div class="flow-arrow">←→</div>
       <div class="flow-box red" style="min-width:130px; font-size:11px;">Anaerobic:<br>→ Lactate</div>
     </div>
-    <div class="flow-arrow down" style="margin-left:-220px;">↓</div>
-    <div class="flow-row" style="margin-left:-220px;">
+    <div class="flow-arrow down">↓</div>
+    <div class="flow-row">
       <div class="flow-box yellow" style="min-width:200px; font-size:11px;">TCA Cycle → CO₂ + H₂O<br>+ 38 ATP (net)</div>
     </div>
   </div>
@@ -2209,57 +2517,48 @@ ul.checklist li {
     <p>Glycolysis is the <strong>cytoplasmic, oxygen-independent</strong> breakdown of one molecule of glucose (6C) into <strong>two molecules of pyruvate (3C)</strong>, yielding a net gain of <strong>2 ATP + 2 NADH</strong>.</p>
   </div>
 
-  <div class="flowchart-container">
+  <div class="flowchart-container" style="display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 24px;">
     <div class="flowchart-title">// Glycolysis — 10 Steps Flowchart (Exam-Ready)</div>
 
-    <div class="flow-row">
-      <div class="flow-box yellow"><strong>Glucose</strong> (C6)</div>
-      <div class="flow-arrow">→ ATP↓ (Hexokinase / Glucokinase)</div>
+    <div class="flow-box yellow" style="min-width: 220px; font-weight: bold;">Glucose (C6)</div>
+    <div class="flow-arrow down" style="flex-direction: column; font-size: 11px; margin: 4px 0;">↓ <span style="color:var(--accent); font-weight:600;">Hexokinase / Glucokinase</span> <span style="color:var(--accent3);">[-1 ATP]</span></div>
+
+    <div class="flow-box yellow" style="min-width: 220px;">Glucose-6-Phosphate</div>
+    <div class="flow-arrow down" style="flex-direction: column; font-size: 11px; margin: 4px 0;">↓ <span style="color:var(--muted);">Phosphoglucose isomerase</span></div>
+
+    <div class="flow-box yellow" style="min-width: 220px;">Fructose-6-Phosphate</div>
+    <div class="flow-arrow down" style="flex-direction: column; font-size: 11px; margin: 4px 0;">↓ <span style="color:var(--accent); font-weight:700;">★ PFK-1 (Rate-Limiting)</span> <span style="color:var(--accent3);">[-1 ATP]</span></div>
+
+    <div class="flow-box yellow" style="min-width: 220px; font-weight: bold;">Fructose-1,6-Bisphosphate</div>
+    <div class="flow-arrow down" style="flex-direction: column; font-size: 11px; margin: 4px 0;">↓ <span style="color:var(--muted);">Aldolase</span></div>
+
+    <!-- Split step -->
+    <div class="flow-row" style="gap: 16px; justify-content: center; width: 100%; max-width: 500px; margin: 6px 0;">
+      <div class="flow-box green" style="width: 45%; font-size: 12px;">DHAP</div>
+      <div class="flow-arrow" style="font-size: 12px;">⇌ <span style="font-size: 10px; color: var(--muted); margin: 0 4px;">Isomerase</span> ⇌</div>
+      <div class="flow-box green" style="width: 45%; font-size: 12px;">Glyceraldehyde-3-P<br><small>(×2 from here)</small></div>
     </div>
-    <div class="flow-arrow down">↓</div>
-    <div class="flow-row">
-      <div class="flow-box yellow">Glucose-6-Phosphate</div>
-      <div class="flow-arrow">→ (Phosphoglucose isomerase)</div>
-    </div>
-    <div class="flow-arrow down">↓</div>
-    <div class="flow-row">
-      <div class="flow-box yellow">Fructose-6-Phosphate</div>
-      <div class="flow-arrow">→ ATP↓ <span style="color:var(--accent3); font-size:11px;">★ PFK-1</span></div>
-    </div>
-    <div class="flow-arrow down">↓</div>
-    <div class="flow-row">
-      <div class="flow-box yellow">Fructose-1,6-Bisphosphate</div>
-      <div class="flow-arrow">→ (Aldolase)</div>
-    </div>
-    <div class="flow-arrow down">↓</div>
-    <div class="flow-row" style="gap:16px;">
-      <div class="flow-box green" style="font-size:11px;">DHAP</div>
-      <div class="flow-arrow">⇌ (Isomerase)</div>
-      <div class="flow-box green" style="font-size:11px;">Glyceraldehyde-3-P<br>(×2 from here)</div>
-    </div>
-    <div class="flow-arrow down">↓ NAD⁺→NADH (G3P dehydrogenase)</div>
-    <div class="flow-row">
-      <div class="flow-box green">1,3-BPG (×2)</div>
-      <div class="flow-arrow">→ ATP↑ (Phosphoglycerate kinase)</div>
-    </div>
-    <div class="flow-arrow down">↓</div>
-    <div class="flow-row">
-      <div class="flow-box green">3-Phosphoglycerate (×2)</div>
-      <div class="flow-arrow">→ (Mutase → Enolase)</div>
-    </div>
-    <div class="flow-arrow down">↓</div>
-    <div class="flow-row">
-      <div class="flow-box green">Phosphoenolpyruvate (PEP)</div>
-      <div class="flow-arrow">→ ATP↑ <span style="color:var(--accent3); font-size:11px;">★ Pyruvate Kinase</span></div>
-    </div>
-    <div class="flow-arrow down">↓</div>
-    <div class="flow-row">
-      <div class="flow-box green"><strong>Pyruvate</strong> (×2) ✓</div>
-    </div>
-    <div style="margin-top:16px; display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
-      <div style="font-size:11px; color:var(--accent3); text-align:center; background:rgba(232,74,122,0.08); border:1px solid rgba(232,74,122,0.2); border-radius:5px; padding:8px 14px;">⚡ ATP invested: 2<br>ATP gained: 4<br><strong>Net: +2 ATP</strong></div>
-      <div style="font-size:11px; color:var(--accent2); text-align:center; background:rgba(74,232,176,0.08); border:1px solid rgba(74,232,176,0.2); border-radius:5px; padding:8px 14px;">NADH produced: 2<br>(→ 5 ATP in ETC)</div>
-      <div style="font-size:11px; color:var(--accent); text-align:center; background:rgba(232,200,74,0.08); border:1px solid rgba(232,200,74,0.2); border-radius:5px; padding:8px 14px;">Location: Cytoplasm<br>O₂ required: ✗</div>
+
+    <div class="flow-arrow down" style="flex-direction: column; font-size: 11px; margin: 4px 0;">↓ <span style="color:var(--accent2); font-weight:600;">G3P Dehydrogenase</span> <span style="color:var(--green); font-weight:600;">[+2 NADH]</span></div>
+
+    <div class="flow-box green" style="min-width: 220px; font-weight: bold;">1,3-Bisphosphoglycerate (×2)</div>
+    <div class="flow-arrow down" style="flex-direction: column; font-size: 11px; margin: 4px 0;">↓ <span style="color:var(--accent2); font-weight:600;">Phosphoglycerate kinase</span> <span style="color:var(--gold); font-weight:600;">[+2 ATP]</span></div>
+
+    <div class="flow-box green" style="min-width: 220px;">3-Phosphoglycerate (×2)</div>
+    <div class="flow-arrow down" style="flex-direction: column; font-size: 11px; margin: 4px 0;">↓ <span style="color:var(--muted);">Phosphoglyceromutase</span></div>
+
+    <div class="flow-box green" style="min-width: 220px;">2-Phosphoglycerate (×2)</div>
+    <div class="flow-arrow down" style="flex-direction: column; font-size: 11px; margin: 4px 0;">↓ <span style="color:var(--muted);">Enolase</span> <span style="color:var(--accent3); font-weight:600;">[Inhibited by Fluoride]</span></div>
+
+    <div class="flow-box green" style="min-width: 220px;">Phosphoenolpyruvate (PEP) (×2)</div>
+    <div class="flow-arrow down" style="flex-direction: column; font-size: 11px; margin: 4px 0;">↓ <span style="color:var(--accent); font-weight:700;">★ Pyruvate Kinase</span> <span style="color:var(--gold); font-weight:600;">[+2 ATP]</span></div>
+
+    <div class="flow-box green" style="min-width: 220px; font-weight: bold;">Pyruvate (×2) ✓</div>
+
+    <div style="margin-top: 16px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; width: 100%;">
+      <div style="font-size:11px; color:var(--accent3); text-align:center; background:rgba(232,74,122,0.08); border:1px solid rgba(232,74,122,0.2); border-radius:5px; padding:6px 12px; flex: 1; min-width: 120px;">⚡ ATP invested: 2<br>ATP gained: 4<br><strong>Net: +2 ATP</strong></div>
+      <div style="font-size:11px; color:var(--accent2); text-align:center; background:rgba(74,232,176,0.08); border:1px solid rgba(74,232,176,0.2); border-radius:5px; padding:6px 12px; flex: 1; min-width: 120px;">NADH produced: 2<br>(→ 5 ATP in ETC)</div>
+      <div style="font-size:11px; color:var(--accent); text-align:center; background:rgba(232,200,74,0.08); border:1px solid rgba(232,200,74,0.2); border-radius:5px; padding:6px 12px; flex: 1; min-width: 120px;">Location: Cytoplasm<br>O₂ required: ✗</div>
     </div>
   </div>
 
@@ -2304,6 +2603,59 @@ ul.checklist li {
     <div class="key-fact-text">
       <strong>⚠️ EXAM TRAP — Glycolysis:</strong> Students confuse "rate-limiting" with "first step." PFK-1 (Step 3) is the RLS — NOT Hexokinase (Step 1). Also: the net ATP yield is <strong>2 ATP</strong> (not 4) because 2 are invested first. Anaerobic glycolysis ends in <strong>Lactate</strong>, NOT Ethanol (that is yeast fermentation).
     </div>
+  </div>
+
+  <div class="clinical-box" style="border-left: 3px solid var(--accent); margin-bottom: 28px;">
+    <div class="clinical-label" style="color: var(--accent);">📝 MBBS Essay Blueprint: Glycolysis 10-Mark Answering Protocol</div>
+    <p>If the examiner asks: <em>"Define glycolysis. Describe its pathway, energetics, and regulation. Add a note on its clinical importance/fluoride vial,"</em> use this bulletproof structure to secure a perfect 10/10:</p>
+    <ul style="display:flex; flex-direction:column; gap:8px; list-style:none; padding-left:0; font-size:13px; line-height:1.6;">
+      <li>
+        <strong>1. Definition & Location:</strong> Define as the cytoplasmic, oxygen-independent breakdown of glucose to pyruvate (aerobic) or lactate (anaerobic). State it occurs in all cells, localized in the cytosol.
+      </li>
+      <li>
+        <strong>2. The Pathway Flowchart:</strong> Draw the 10-step flowchart. Bold the <strong>3 irreversible steps</strong> (Step 1: Hexokinase, Step 3: PFK-1, Step 10: Pyruvate Kinase) using double-line arrows or red asterisks.
+      </li>
+      <li>
+        <strong>3. Energetics Accounting Table:</strong> Detail the ATP yield:
+        <table class="comp-table" style="margin: 8px 0; font-size: 11px;">
+          <thead>
+            <tr>
+              <th>Pathway Stage / Step</th>
+              <th>Aerobic Glycolysis</th>
+              <th>Anaerobic Glycolysis</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>ATP Invested</strong></td>
+              <td>-2 ATP (HK & PFK-1 steps)</td>
+              <td>-2 ATP (HK & PFK-1 steps)</td>
+            </tr>
+            <tr>
+              <td><strong>Substrate-Level Phosphorylation</strong></td>
+              <td>+4 ATP (PGK & PK steps ×2)</td>
+              <td>+4 ATP (PGK & PK steps ×2)</td>
+            </tr>
+            <tr>
+              <td><strong>Oxidative Phosphorylation</strong></td>
+              <td>+5 ATP (2 NADH × 2.5 via ETC)</td>
+              <td>0 ATP (NADH consumed by LDH to make lactate)</td>
+            </tr>
+            <tr>
+              <td><strong>Net ATP Yield</strong></td>
+              <td><strong>+7 ATP</strong> (or +5 ATP depending on shuttle)</td>
+              <td><strong>+2 ATP</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <strong>4. Key Regulatory Steps:</strong> Focus on <strong>PFK-1 (Pacemaker)</strong>. Mention its allosteric activators (AMP, F-2,6-BP) and inhibitors (ATP, Citrate), and touch upon Hexokinase vs. Glucokinase.
+      </li>
+      <li>
+        <strong>5. Clinical Correlations:</strong> Briefly explain the mechanism of <strong>Fluoride vials</strong> (Enolase inhibition) and <strong>Rapoport-Luebering Shunt</strong> (RBC specific, 2,3-BPG oxygen delivery).
+      </li>
+    </ul>
   </div>
 
   <hr class="section-divider">
@@ -2437,6 +2789,51 @@ ul.checklist li {
     </div>
   </div>
 
+  <div class="clinical-box" style="border-left: 3px solid var(--accent); margin-bottom: 28px;">
+    <div class="clinical-label" style="color: var(--accent);">📝 MBBS Essay Blueprint: Amphibolic TCA Cycle 10-Mark Answering Protocol</div>
+    <p>If the examiner asks: <em>"TCA cycle is amphibolic in nature. Justify with suitable flowcharts/examples,"</em> use this high-scoring blueprint to secure 10/10 marks:</p>
+    <ul style="display:flex; flex-direction:column; gap:8px; list-style:none; padding-left:0; font-size:13px; line-height:1.6;">
+      <li>
+        <strong>1. Definition:</strong> Define <em>amphibolic</em> as having dual functions—both catabolic (breakdown of Acetyl-CoA to release ATP energy) and anabolic (intermediates drawn off for biosynthetic pathways).
+      </li>
+      <li>
+        <strong>2. Pathway Flowchart:</strong> Draw the TCA cycle circle. Draw outward arrows from intermediates to their anabolic fates and inward arrows showing replenishing reactions.
+      </li>
+      <li>
+        <strong>3. The 4 Key Anabolic Draw-off Vectors:</strong> Provide this exact table to show your mastery:
+        <table class="comp-table" style="margin: 8px 0; font-size: 11px;">
+          <thead>
+            <tr>
+              <th>Intermediate</th>
+              <th>Anabolic Pathway / Fates</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Succinyl-CoA</strong></td>
+              <td>Condenses with glycine to form δ-ALA → <strong>Heme synthesis</strong>.</td>
+            </tr>
+            <tr>
+              <td><strong>Citrate</strong></td>
+              <td>Exported to cytosol to supply Acetyl-CoA for <strong>Fatty Acid</strong> & <strong>Cholesterol</strong> synthesis.</td>
+            </tr>
+            <tr>
+              <td><strong>α-Ketoglutarate</strong></td>
+              <td>Transaminated to <strong>Glutamate</strong> → yields amino acids & <strong>GABA</strong> neurotransmitter.</td>
+            </tr>
+            <tr>
+              <td><strong>Oxaloacetate</strong></td>
+              <td>Transaminated to <strong>Aspartate</strong> → <strong>Purine / Pyrimidine</strong> synthesis, or enters <strong>Gluconeogenesis</strong>.</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <strong>4. Justify Anaplerosis (Crucial to secure full marks):</strong> Explain that drawing off intermediates would drain the cycle and stop energy production. Explain how <strong>Pyruvate Carboxylase</strong> (biotin-dependent, activated by Acetyl-CoA) replenishes OAA to keep the cycle running.
+      </li>
+    </ul>
+  </div>
+
   <hr class="section-divider">
 
   <!-- ── SECTION 5: HMP SHUNT ── -->
@@ -2483,15 +2880,21 @@ ul.checklist li {
     </div>
   </div>
 
-  <div class="clinical-box">
-    <div class="clinical-label">🩺 G6PD Deficiency — Classic PYQ Clinical Case</div>
-    <ul>
-      <li><strong>X-linked recessive</strong> — males more affected</li>
-      <li>G6PD deficiency → ↓ NADPH → ↓ reduced glutathione (GSH) → RBCs cannot neutralise oxidative stress</li>
-      <li>Trigger: Primaquine (antimalarial), Dapsone, fava beans, infection → <strong>Heinz bodies</strong> form → RBC membrane damage → <strong>Haemolytic anaemia</strong></li>
-      <li>Lab: ↓ G6PD activity, Heinz bodies on peripheral smear, ↑ bilirubin (indirect), haemoglobinuria (dark urine)</li>
-      <li><strong>Protection against Malaria</strong> — G6PD deficiency common in malaria-endemic regions</li>
-    </ul>
+  <div class="clinical-box" style="border-left: 3px solid var(--accent3); margin-bottom: 28px;">
+    <div class="clinical-label" style="color: var(--accent3);">🩺 Clinical Vignette Case Study: G6PD Deficiency Hemolytic Crisis</div>
+    <div style="background: rgba(232, 74, 122, 0.03); padding: 12px 16px; border-radius: 6px; border: 1px dashed rgba(232, 74, 122, 0.2); font-size: 13px; line-height: 1.6; color: var(--text); margin-bottom: 12px;">
+      <strong>Case Scenario:</strong> A 19-year-old male MBBS student presents to the medicine OPD with complains of dark, tea-colored urine, generalized weakness, and mild jaundice. He was recently diagnosed with <em>Plasmodium vivax</em> malaria and started on a course of <strong>Primaquine</strong> 48 hours ago.
+      <br><strong>Lab Findings:</strong> Hb: 8.2 g/dL (reduced), Reticulocyte count: 6% (elevated), Peripheral smear shows <strong>Heinz bodies</strong> (aggregated methemoglobin) and <strong>"bite cells"</strong>. Indirect bilirubin is elevated.
+    </div>
+    <div style="margin-top: 14px; font-size: 13px; line-height: 1.6;">
+      <strong style="color: var(--accent);">How to Answer in the Exam:</strong>
+      <ul style="list-style:disc; padding-left:20px; display:flex; flex-direction:column; gap:6px; margin-top:6px; padding-bottom: 0;">
+        <li><strong>Diagnosis:</strong> G6PD deficiency presenting with acute hemolytic anemia triggered by oxidant drug (Primaquine). (Inheritance: <strong>X-linked recessive</strong>).</li>
+        <li><strong>Why mature RBCs are vulnerable:</strong> RBCs have no mitochondria or ribosomes. They cannot synthesize new proteins. Once G6PD degrades over their lifespan, it cannot be replaced. G6PD is their <em>only</em> source of NADPH.</li>
+        <li><strong>Pathophysiology cascade:</strong> Primaquine exposure → generation of reactive oxygen species (ROS) → reduced glutathione (GSH) cannot be regenerated due to lack of NADPH → Methemoglobin precipitates as <strong>Heinz bodies</strong> → splenic macrophages bite out these precipitates, creating <strong>bite cells</strong> and hemolyzing the RBCs.</li>
+        <li><strong>Lab diagnostic caution:</strong> Do <em>not</em> measure G6PD activity during the acute hemolytic phase. Active hemolysis clears the most enzyme-deficient (older) RBCs first, leading to a false-normal result. Test G6PD levels 6-8 weeks after the crisis resolves.</li>
+      </ul>
+    </div>
   </div>
 
   <hr class="section-divider">
@@ -2505,19 +2908,36 @@ ul.checklist li {
   <div class="flowchart-container">
     <div class="flowchart-title">// Glycogenesis — Synthesis Flowchart</div>
     <div class="flow-row">
-      <div class="flow-box muted" style="font-size:11px;"><strong>Glycogenin:</strong> core protein primer that auto-catalyses attachment of the first few glucose molecules.</div>
+      <div class="flow-box muted" style="font-size:11.5px; max-width: 500px; line-height: 1.5; margin: 0 auto;">
+        <strong>Glycogenin:</strong> Core protein primer that auto-catalyzes attachment of the first 8 glucose molecules.
+      </div>
     </div>
-    <div class="flow-arrow down">↓</div>
+    
+    <div class="flow-arrow down" style="margin: 6px 0;">↓</div>
+    
     <div class="flow-row">
       <div class="flow-box yellow">Glucose → G6P → G1P</div>
-      <div class="flow-arrow">→ UTP</div>
-      <div class="flow-box green">UDP-Glucose<br>(activated form)</div>
+      <div class="flow-arrow" style="flex-direction: column; gap: 2px;">
+        <span style="color: var(--accent); font-size: 20px; font-weight: bold;">→</span>
+        <span style="font-size: 10px; color: var(--muted); font-family: 'JetBrains Mono', monospace;">+ UTP</span>
+      </div>
+      <div class="flow-box green">UDP-Glucose<br><small style="color:var(--text-3);">(Activated Form)</small></div>
     </div>
-    <div class="flow-arrow down">↓ Glycogen Synthase <span class="rls-badge" style="font-size:9px;">RLS</span> (adds α-1,4 links)</div>
+    
+    <div class="flow-arrow down" style="flex-direction: column; gap: 2px; margin: 8px 0;">
+      <span style="color: var(--accent); font-size: 20px; font-weight: bold;">↓</span>
+      <span style="font-size: 11px; font-family: 'JetBrains Mono', monospace; font-weight: 500; color: var(--white);">Glycogen Synthase <span class="rls-badge" style="font-size:8px; padding: 1px 3px;">RLS</span></span>
+      <span style="font-size: 10px; color: var(--muted);">(adds α-1,4 linkages)</span>
+    </div>
+    
     <div class="flow-row">
       <div class="flow-box green">Linear Glycogen Chain</div>
-      <div class="flow-arrow">→ Branching Enzyme</div>
-      <div class="flow-box blue">Branched Glycogen<br>(α-1,6 branch points)</div>
+      <div class="flow-arrow" style="flex-direction: column; gap: 2px;">
+        <span style="color: var(--accent); font-size: 20px; font-weight: bold;">→</span>
+        <span style="font-size: 10px; color: var(--white); font-family: 'JetBrains Mono', monospace;">Branching Enzyme</span>
+        <span style="font-size: 9px; color: var(--muted);">(α-1,4 → α-1,6)</span>
+      </div>
+      <div class="flow-box blue">Branched Glycogen<br><small style="color:var(--text-3);">(α-1,6 branch points)</small></div>
     </div>
   </div>
 
@@ -2525,65 +2945,128 @@ ul.checklist li {
     <div class="flowchart-title">// Glycogenolysis — Breakdown Flowchart</div>
     <div class="flow-row">
       <div class="flow-box blue">Glycogen</div>
-      <div class="flow-arrow">→ Phosphorylase <span class="rls-badge" style="font-size:9px;">RLS</span><br>(cleaves α-1,4 links + Pi)</div>
+      <div class="flow-arrow" style="flex-direction: column; gap: 2px;">
+        <span style="color: var(--accent); font-size: 20px; font-weight: bold;">→</span>
+        <span style="font-size: 11px; font-family: 'JetBrains Mono', monospace; font-weight: 500; color: var(--white);">Glycogen Phosphorylase <span class="rls-badge" style="font-size:8px; padding: 1px 3px;">RLS</span></span>
+        <span style="font-size: 10px; color: var(--muted);">(cleaves α-1,4 links using P<sub>i</sub>)</span>
+      </div>
       <div class="flow-box green">G1P → G6P</div>
     </div>
-    <div class="flow-arrow down">↓ (at branch points)</div>
-    <div class="flow-row">
-      <div class="flow-box yellow">Debranching enzyme<br>(α-1,6 glucosidase)</div>
-      <div class="flow-arrow">→ Free glucose released</div>
+    
+    <div class="flow-arrow down" style="flex-direction: column; gap: 2px; margin: 8px 0;">
+      <span style="color: var(--accent); font-size: 20px; font-weight: bold;">↓</span>
+      <span style="font-size: 10.5px; color: var(--accent2); font-weight: 500; font-family: 'JetBrains Mono', monospace;">Debranching Enzyme <small style="color: var(--muted);">(at branch points)</small></span>
     </div>
-    <div style="margin-top:14px; display:flex; gap:16px; flex-wrap:wrap; justify-content:center;">
-      <div style="font-size:12px; color:var(--accent2); background:rgba(74,232,176,0.07); border:1px solid rgba(74,232,176,0.2); border-radius:5px; padding:10px 14px;">
-        <strong>In LIVER:</strong><br>G6P → Glucose (by G6Pase)<br>→ released into blood<br>(maintains blood glucose)
+    
+    <div class="flow-row">
+      <div class="flow-box yellow" style="font-size:11.5px;">Debranching enzyme<br><span style="font-size:9.5px; color:var(--text-3);">(α-1,6 glucosidase domain)</span></div>
+      <div class="flow-arrow" style="flex-direction: column; gap: 2px;">
+        <span style="color: var(--accent); font-size: 20px; font-weight: bold;">→</span>
+        <span style="font-size: 11px; font-weight: 500; color: var(--white);">Free Glucose Released</span>
       </div>
-      <div style="font-size:12px; color:var(--accent); background:rgba(232,200,74,0.07); border:1px solid rgba(232,200,74,0.2); border-radius:5px; padding:10px 14px;">
-        <strong>In MUSCLE:</strong><br>G6P → Glycolysis directly<br>(no G6Pase → can't<br>release free glucose)
+    </div>
+    
+    <div style="margin-top:16px; display:flex; gap:16px; flex-wrap:wrap; justify-content:center; width: 100%;">
+      <div style="font-size:12px; color:var(--accent2); background:rgba(74,232,176,0.05); border:1px solid rgba(74,232,176,0.15); border-radius:6px; padding:12px 16px; min-width: 220px; flex: 1; max-width: 280px; text-align: left;">
+        <strong style="color: var(--accent2); font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase;">In LIVER:</strong>
+        <p style="margin: 6px 0 0 0; color: var(--text); font-size: 12px; line-height: 1.5;">G6P → Glucose <small style="color:var(--text-3);">(by G6Pase)</small><br>→ Released into blood<br><strong>(maintains blood glucose)</strong></p>
+      </div>
+      <div style="font-size:12px; color:var(--accent); background:rgba(232,200,74,0.05); border:1px solid rgba(232,200,74,0.15); border-radius:6px; padding:12px 16px; min-width: 220px; flex: 1; max-width: 280px; text-align: left;">
+        <strong style="color: var(--accent); font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase;">In MUSCLE:</strong>
+        <p style="margin: 6px 0 0 0; color: var(--text); font-size: 12px; line-height: 1.5;">G6P → Glycolysis directly<br><strong>(lacks G6Pase)</strong><br>→ Cannot release free glucose</p>
       </div>
     </div>
   </div>
 
-  <!-- HORMONAL REGULATION FLOWCHART -->
   <div class="flowchart-container">
     <div class="flowchart-title">// Hormonal Regulation via cAMP (Glucagon/Epinephrine)</div>
     <div class="flow-row">
       <div class="flow-box red">Glucagon / Epinephrine</div>
-      <div class="flow-arrow">→ GPCR → Adenylyl cyclase</div>
-    </div>
-    <div class="flow-arrow down">↓</div>
-    <div class="flow-row">
-      <div class="flow-box yellow">ATP → cAMP <span class="rls-badge" style="font-size:9px;">2nd Messenger</span></div>
-      <div class="flow-arrow">→ Protein Kinase A (PKA)</div>
-    </div>
-    <div class="flow-arrow down">↓ PKA phosphorylates:</div>
-    <div class="flow-row" style="gap:20px;">
-      <div style="text-align:center;">
-        <div class="flow-box red" style="font-size:11px; min-width:120px;">Glycogen Synthase<br>→ INACTIVE ✗</div>
-        <div style="font-size:11px; color:var(--muted); margin-top:4px;">↓ Glycogenesis</div>
+      <div class="flow-arrow" style="flex-direction: column; gap: 2px;">
+        <span style="color: var(--accent); font-size: 20px; font-weight: bold;">→</span>
+        <span style="font-size: 10px; color: var(--muted); font-family: 'JetBrains Mono', monospace;">GPCR Activation</span>
       </div>
-      <div style="text-align:center;">
-        <div class="flow-box green" style="font-size:11px; min-width:120px;">Phosphorylase Kinase<br>→ ACTIVE ✓</div>
-        <div style="font-size:11px; color:var(--muted); margin-top:4px;">↑ Glycogenolysis</div>
+      <div class="flow-box yellow" style="font-size: 11.5px;">Adenylyl Cyclase</div>
+    </div>
+    
+    <div class="flow-arrow down" style="margin: 6px 0;">↓</div>
+    
+    <div class="flow-row">
+      <div class="flow-box yellow">ATP → cAMP <span class="rls-badge" style="font-size:8px; padding: 1px 3px;">2nd Messenger</span></div>
+      <div class="flow-arrow" style="flex-direction: column; gap: 2px;">
+        <span style="color: var(--accent); font-size: 20px; font-weight: bold;">→</span>
+        <span style="font-size: 10px; color: var(--muted); font-family: 'JetBrains Mono', monospace;">Activates</span>
+      </div>
+      <div class="flow-box red">Protein Kinase A (PKA)</div>
+    </div>
+    
+    <div class="flow-arrow down" style="flex-direction: column; gap: 2px; margin: 8px 0;">
+      <span style="color: var(--accent); font-size: 20px; font-weight: bold;">↓</span>
+      <span style="font-size: 10.5px; color: var(--accent3); font-weight: 500;">PKA Phosphorylation Cascade</span>
+    </div>
+    
+    <div class="flow-row" style="gap:24px; justify-content: center; width: 100%;">
+      <div style="text-align:center; flex: 1; max-width: 180px;">
+        <div class="flow-box red" style="font-size:11px; min-width:130px; margin: 0 auto;">Glycogen Synthase<br><strong style="color: var(--accent3);">INACTIVE ✗</strong></div>
+        <div style="font-size:11px; color:var(--muted); margin-top:6px; font-weight: 500;">↓ Glycogenesis Arrested</div>
+      </div>
+      <div style="text-align:center; flex: 1; max-width: 180px;">
+        <div class="flow-box green" style="font-size:11px; min-width:130px; margin: 0 auto;">Phosphorylase Kinase<br><strong style="color: var(--accent2);">ACTIVE ✓</strong></div>
+        <div style="font-size:11px; color:var(--muted); margin-top:6px; font-weight: 500;">↑ Glycogenolysis Active</div>
       </div>
     </div>
-    <div class="flow-arrow down">↓</div>
+    
+    <div class="flow-arrow down" style="margin: 8px 0;">↓</div>
+    
     <div class="flow-row">
-      <div class="flow-box yellow"><strong>Net result: Glucose released → Blood glucose ↑</strong></div>
+      <div class="flow-box yellow" style="font-size: 12.5px; border-color: var(--accent);">
+        <strong>Net Clinical Result: Glucose Released → Blood Glucose ↑</strong>
+      </div>
     </div>
-    <div style="margin-top:14px; font-size:12px; color:var(--accent2); text-align:center; background:rgba(74,232,176,0.07); border:1px solid rgba(74,232,176,0.15); border-radius:5px; padding:10px;">
-      <strong>Insulin</strong> has OPPOSITE effect → activates Protein Phosphatase → activates Glycogen Synthase + inactivates Phosphorylase → promotes Glycogenesis
+    
+    <div style="margin-top:16px; font-size:12px; color:var(--accent2); text-align:center; background:rgba(74,232,176,0.05); border:1px solid rgba(74,232,176,0.15); border-radius:6px; padding:12px; line-height: 1.5;">
+      <strong style="color: var(--accent2);">The Insulin Reversal:</strong> Activates Protein Phosphatase 1 (PP1) → dephosphorylates both enzymes → activates Glycogen Synthase and inactivates Phosphorylase → promotes Glycogenesis.
     </div>
   </div>
 
-  <div class="clinical-box">
-    <div class="clinical-label">🩺 Glycogen Storage Diseases (PYQ 2014 Group-B)</div>
-    <ul>
-      <li><strong>Type I — Von Gierke's</strong>: G6Pase deficiency → ↑ Glycogen in liver/kidney → Fasting hypoglycaemia, hepatomegaly, <strong>Hyperuricaemia</strong> (classic PYQ trap)</li>
-      <li><strong>Type II — Pompe's</strong>: Acid maltase (α-1,4 glucosidase in lysosome) deficiency → Cardiomegaly, hypotonia, early death</li>
-      <li><strong>Type III — Cori's</strong>: Debranching enzyme deficiency → Abnormal glycogen with short outer chains</li>
-      <li><strong>Type V — McArdle's</strong>: Muscle phosphorylase deficiency → Exercise intolerance, cramps, no lactate rise after exercise</li>
-      <li><strong>Type VI — Hers'</strong>: Liver phosphorylase deficiency → Mild hypoglycaemia</li>
-    </ul>
+  <div class="big-picture" style="margin-bottom: 28px;">
+    <div class="big-picture-label">🩺 High-Yield Glycogen Storage Disease (GSD) Revision Grid</div>
+    <table class="comp-table">
+      <thead>
+        <tr>
+          <th>GSD Type & Name</th>
+          <th>Defective Enzyme</th>
+          <th>Key Symptoms & Clinical Sign</th>
+          <th>Examiner Trap / High-Yield Fact</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Type I: Von Gierke's</strong></td>
+          <td>Glucose-6-phosphatase (G6Pase)</td>
+          <td>Severe fasting hypoglycemia, hepatomegaly, lactic acidosis.</td>
+          <td><strong>Hyperuricaemia (Gout)</strong> due to shunting of accumulated G6P into the HMP pathway.</td>
+        </tr>
+        <tr>
+          <td><strong>Type II: Pompe's</strong></td>
+          <td>Lysosomal α-1,4-glucosidase (Acid Maltase)</td>
+          <td>Massive <strong>cardiomegaly</strong>, generalized hypotonia.</td>
+          <td><strong>Lysosomal storage disease</strong> (glycogen builds in vacuoles). Blood glucose is normal.</td>
+        </tr>
+        <tr>
+          <td><strong>Type III: Cori's</strong></td>
+          <td>Debranching enzyme (α-1,6-glucosidase)</td>
+          <td>Milder fasting hypoglycemia, hepatomegaly.</td>
+          <td>Accumulation of <strong>limit dextrins</strong> (abnormally short outer branches).</td>
+        </tr>
+        <tr>
+          <td><strong>Type V: McArdle's</strong></td>
+          <td>Muscle Glycogen Phosphorylase</td>
+          <td>Exercise-induced cramps, myoglobinuria (red urine).</td>
+          <td><strong>No rise in blood lactate after exercise</strong> (ischemic exercise test is diagnostic).</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
   <hr class="section-divider">
@@ -2641,6 +3124,74 @@ ul.checklist li {
     </div>
   </div>
 
+  <div class="key-fact" style="border-left: 3px solid var(--accent3); margin-top: 14px; margin-bottom: 14px;">
+    <span class="key-fact-icon">⚠️</span>
+    <div class="key-fact-text">
+      <strong>⚠️ EXAM TRAP — Gluconeogenesis:</strong> Students often write that Gluconeogenesis occurs in the muscle. This is a fatal mistake! <strong>Muscle cannot perform gluconeogenesis</strong> because it lacks the key enzyme <strong>Glucose-6-Phosphatase</strong>. Also, fatty acids (even-chain) <strong>cannot</strong> serve as a precursor for glucose in humans because the Pyruvate Dehydrogenase reaction is irreversible (Acetyl-CoA cannot be converted back to pyruvate).
+    </div>
+  </div>
+
+  <div class="clinical-box" style="border-left: 3px solid var(--accent); margin-top: 20px; margin-bottom: 28px;">
+    <div class="clinical-label" style="color: var(--accent);">📝 MBBS Essay Blueprint: Gluconeogenesis &amp; F-2,6-BP Switch Answering Protocol</div>
+    <p>If the examiner asks: <em>"Define Gluconeogenesis. State its substrates, describe the bypass reactions, energy costs, and the reciprocal regulation by F-2,6-BP switch,"</em> organize your answer using this textbook structure to score maximum marks:</p>
+    <ul style="display:flex; flex-direction:column; gap:8px; list-style:none; padding-left:0; font-size:13px; line-height:1.6;">
+      <li>
+        <strong>1. Definition &amp; Tissue Location:</strong> Synthesis of glucose from non-carbohydrate precursors. Location: primarily <strong>Liver (90%)</strong> and <strong>Kidney cortex (10%)</strong> (NOT muscle!). Subcellular site: compartmentalized between <strong>Mitochondria, Cytosol, and Endoplasmic Reticulum</strong>.
+      </li>
+      <li>
+        <strong>2. Precursors List (GALA-P):</strong> Glycerol (from lipid lipolysis), Amino acids (primarily Alanine/Glucogenic AAs), Lactate (from Cori cycle), Propionate (from odd-chain fatty acids).
+      </li>
+      <li>
+        <strong>3. The 3 Compartmentalized Bypass Reactions:</strong>
+        <table class="comp-table" style="margin: 8px 0; font-size: 11px;">
+          <thead>
+            <tr>
+              <th>Bypass Step</th>
+              <th>Glycolytic Enzyme (Irreversible)</th>
+              <th>Gluconeogenic Bypass Enzymes &amp; Compartment</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Bypass 1</strong></td>
+              <td>Pyruvate Kinase</td>
+              <td>
+                1. <strong>Pyruvate Carboxylase</strong> (Mitochondria; requires Biotin, ATP, CO₂; activated by Acetyl-CoA)<br>
+                2. <strong>PEPCK</strong> (Cytosol; converts OAA to PEP; requires GTP)
+              </td>
+            </tr>
+            <tr>
+              <td><strong>Bypass 2</strong></td>
+              <td>Phosphofructokinase-1 (PFK-1)</td>
+              <td><strong>Fructose-1,6-Bisphosphatase</strong> (Cytosol; allosterically inhibited by F-2,6-BP &amp; AMP)</td>
+            </tr>
+            <tr>
+              <td><strong>Bypass 3</strong></td>
+              <td>Hexokinase / Glucokinase</td>
+              <td><strong>Glucose-6-Phosphatase</strong> (Endoplasmic Reticulum membrane; absent in skeletal muscle)</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <strong>4. Energetic Cost Accounting:</strong> To synthesize <strong>1 mole of glucose from 2 moles of Pyruvate</strong>, it costs exactly <strong>6 high-energy phosphate bonds</strong>:
+        <ul style="margin: 4px 0 0 18px; padding-left: 0; list-style: circle;">
+          <li>2 ATP invested at the <em>Pyruvate Carboxylase</em> reaction (1 per Pyruvate)</li>
+          <li>2 GTP invested at the <em>PEPCK</em> reaction (1 per OAA)</li>
+          <li>2 ATP invested at the <em>1,3-BPG kinase</em> step (reversed)</li>
+          <li><em>Total cost = 4 ATP + 2 GTP = 6 High-Energy Bonds</em> (compared to only 2 ATP produced in glycolysis).</li>
+        </ul>
+      </li>
+      <li>
+        <strong>5. The Reciprocal F-2,6-BP Master Switch:</strong> Describe how the bifunctional enzyme <strong>PFK-2 / FBPase-2</strong> governs the switch:
+        <ul style="margin: 4px 0 0 18px; padding-left: 0; list-style: circle;">
+          <li><strong>Fed State / High Insulin:</strong> Dephosphorylation activates the PFK-2 domain → ↑ F-2,6-BP levels → powerfully activates PFK-1 (stimulates Glycolysis) &amp; inhibits F-1,6-BPase (shuts down GNG).</li>
+          <li><strong>Fasting State / High Glucagon:</strong> GPCR-cAMP-PKA pathway phosphorylates the bifunctional enzyme, activating the FBPase-2 domain → ↓ F-2,6-BP levels → relieves inhibition on F-1,6-BPase (stimulates GNG) &amp; shuts off Glycolysis.</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
   <hr class="section-divider">
 
   <!-- ── SECTION 8: BLOOD GLUCOSE REGULATION ── -->
@@ -2685,36 +3236,94 @@ ul.checklist li {
     <h2 class="section-title">Fructose &amp; Galactose <span>Metabolism</span> <span class="rls-badge">🟡 TIER 2</span></h2>
   </div>
 
-  <div class="flowchart-container">
-    <div class="flowchart-title">// Fructose Metabolism — Normal & Abnormal</div>
-    <div class="flow-row">
-      <div class="flow-box yellow"><strong>Fructose</strong></div>
-      <div class="flow-arrow">→ Fructokinase (liver) → Fructose-1-P</div>
-    </div>
-    <div class="flow-arrow down">↓ Aldolase B → DHAP + Glyceraldehyde</div>
-    <div class="flow-row">
-      <div class="flow-box green">Enters Glycolysis ✓</div>
-    </div>
-    <div style="margin-top:14px; background:rgba(232,74,122,0.06); border:1px solid rgba(232,74,122,0.2); border-radius:5px; padding:12px 14px; font-size:12px;">
-      <strong style="color:var(--accent3);">Essential Fructosuria:</strong> Fructokinase deficiency → fructose in urine. Benign.<br>
-      <strong style="color:var(--accent3);">Hereditary Fructose Intolerance (HFI):</strong> Aldolase B deficiency → Fructose-1-P accumulates → <strong>Hypoglycaemia + liver damage</strong>. Avoid sucrose/fructose.
-    </div>
+  <div class="flowchart-container" style="margin-bottom: 24px;">
+    <div class="flowchart-title">⚖️ Fructose Disorders: Essential Fructosuria vs. Hereditary Fructose Intolerance (HFI)</div>
+    <table class="comp-table" style="font-size: 12px; margin-top: 8px;">
+      <thead>
+        <tr>
+          <th style="width: 20%;">Feature</th>
+          <th style="width: 40%;">Essential Fructosuria</th>
+          <th style="width: 40%;">Hereditary Fructose Intolerance (HFI) <span class="rls-badge" style="background:#e84a7a; color:#fff;">CRITICAL</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Deficient Enzyme</strong></td>
+          <td><strong>Fructokinase</strong> (first step of fructose metabolism)</td>
+          <td><strong>Aldolase B</strong> (cleaves Fructose-1-Phosphate)</td>
+        </tr>
+        <tr>
+          <td><strong>Accumulation</strong></td>
+          <td>Fructose (excreted in urine; not toxic inside cells)</td>
+          <td><strong>Fructose-1-Phosphate (F-1-P)</strong> (trapped inside hepatocytes)</td>
+        </tr>
+        <tr>
+          <td><strong>Pathophysiology</strong></td>
+          <td>Fructose is not phosphorylated; benignly filtered by kidneys or bypassed via Hexokinase. No ATP depletion.</td>
+          <td><strong>Phosphate Trapping:</strong> Buildup of F-1-P sequester-depletes intracellular <strong>inorganic phosphate (P<sub>i</sub>)</strong> and <strong>ATP</strong>. Lack of ATP/P<sub>i</sub> halts Glycogenolysis &amp; Gluconeogenesis!</td>
+        </tr>
+        <tr>
+          <td><strong>Clinical Signs</strong></td>
+          <td><strong>Asymptomatic</strong> (incidentally detected as a reducing sugar in urine; Clinitest positive, glucose stick negative).</td>
+          <td>Severe hypoglycemia, vomiting, jaundice, hepatomegaly, lactic acidosis, proximal renal tubule dysfunction (Fanconi syndrome) upon fructose/sucrose ingestion.</td>
+        </tr>
+        <tr>
+          <td><strong>Dietary Therapy</strong></td>
+          <td>No restriction required. Benign condition.</td>
+          <td>Strict elimination of <strong>Fructose, Sucrose, and Sorbitol</strong> from diet.</td>
+        </tr>
+        <tr>
+          <td><strong>Examiner Trap</strong></td>
+          <td>Fructose gives a positive reducing sugar test (Clinitest). Do not confuse with Diabetes Mellitus (glucose dipstick is negative!).</td>
+          <td>Symptoms appear only after weaning (introduction of fruit juices, honey, or formula milk containing sucrose).</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
-  <div class="flowchart-container">
-    <div class="flowchart-title">// Galactose Metabolism — Normal & Abnormal</div>
-    <div class="flow-row">
-      <div class="flow-box yellow"><strong>Galactose</strong></div>
-      <div class="flow-arrow">→ Galactokinase → Galactose-1-P</div>
-    </div>
-    <div class="flow-arrow down">↓ Galactose-1-P Uridyl Transferase (GALT) → UDP-Galactose → UDP-Glucose → G1P</div>
-    <div class="flow-row">
-      <div class="flow-box green">Enters Glycolysis ✓</div>
-    </div>
-    <div style="margin-top:14px; background:rgba(232,74,122,0.06); border:1px solid rgba(232,74,122,0.2); border-radius:5px; padding:12px 14px; font-size:12px;">
-      <strong style="color:var(--accent3);">Galactosaemia (GALT deficiency):</strong> Galactose-1-P accumulates → liver damage, cataracts (galactitol in lens), intellectual disability. <strong>Newborn screening mandatory.</strong><br>
-      <strong style="color:var(--accent3);">Galactokinase deficiency:</strong> Milder — only cataracts (galactitol accumulates).
-    </div>
+  <div class="flowchart-container" style="margin-bottom: 24px;">
+    <div class="flowchart-title">⚖️ Galactose Disorders: GALK Deficiency vs. Classical Galactosemia (GALT Deficiency)</div>
+    <table class="comp-table" style="font-size: 12px; margin-top: 8px;">
+      <thead>
+        <tr>
+          <th style="width: 20%;">Feature</th>
+          <th style="width: 40%;">Galactokinase (GALK) Deficiency</th>
+          <th style="width: 40%;">Classical Galactosemia (GALT Deficiency) <span class="rls-badge" style="background:#e84a7a; color:#fff;">CRITICAL</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Deficient Enzyme</strong></td>
+          <td><strong>Galactokinase (GALK)</strong> (phosphorylates galactose)</td>
+          <td><strong>Galactose-1-Phosphate Uridyltransferase (GALT)</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Accumulation</strong></td>
+          <td>Galactose (excreted in urine) &amp; <strong>Galactitol</strong> (reduced by Aldose Reductase)</td>
+          <td><strong>Galactose-1-Phosphate</strong> &amp; <strong>Galactitol</strong> (highly toxic)</td>
+        </tr>
+        <tr>
+          <td><strong>Pathophysiology</strong></td>
+          <td>Galactose accumulates and is shunted to Galactitol. Galactitol accumulates in the lens, causing osmotic damage.</td>
+          <td>Galactose-1-P accumulation traps inorganic phosphate and acts as a direct tissue toxin to liver, brain, kidneys, and lens.</td>
+        </tr>
+        <tr>
+          <td><strong>Clinical Signs</strong></td>
+          <td><strong>Mild presentation:</strong> Infantile cataracts, galactosemia, galactosuria. No renal/liver failure or developmental delay.</td>
+          <td><strong>Severe presentation:</strong> Failure to thrive, jaundice, hepatomegaly, infantile cataracts, intellectual disability, and life-threatening <strong>E. coli neonatal sepsis</strong>.</td>
+        </tr>
+        <tr>
+          <td><strong>Dietary Therapy</strong></td>
+          <td>Eliminate galactose and lactose (milk/dairy products) from diet.</td>
+          <td>Strict elimination of <strong>Galactose and Lactose</strong> (human and bovine milk) immediately from birth.</td>
+        </tr>
+        <tr>
+          <td><strong>Examiner Trap</strong></td>
+          <td>Only cataracts are present. No liver damage or developmental delay. Contrast this with classical galactosemia.</td>
+          <td>Symptoms start within the first few days of life, as soon as breastfeeding/milk feeding begins (unlike HFI, which starts later with weaning!).</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
   <hr class="section-divider">
@@ -2878,8 +3487,8 @@ ul.checklist li {
 
 <!-- FOOTER -->
 <div class="footer">
-  <p style="font-size:14px; font-weight:600; color:var(--white); margin-bottom:8px;">WBUHS Biochemistry — Module 02: Carbohydrate Metabolism</p>
-  <p>Compiled from PYQ 2010–2025 · KIMS Krishnanagar · NMO Bengal</p>
+  <p style="font-size:14px; font-weight:600; color:var(--white); margin-bottom:8px;">MBBS Biochemistry — Module 02: Carbohydrate Metabolism</p>
+  <p>Compiled from PYQ 2010–2025 · Caffeine &amp; Cadaver · MBBS</p>
   <p style="margin-top:12px; color:var(--accent2); font-style:italic;">Crafted with precision to illuminate the pathways of biochemistry and inspire your journey in medicine.</p>
   <p style="margin-top:16px; display:inline-flex; align-items:center; justify-content:center; gap:6px; background:rgba(74,232,176,0.08); padding:8px 18px; border-radius:20px; border:1px solid var(--accent2); color:var(--accent2);">
     Made with <span style="color:#e84a7a; font-size:14px;">❤️</span> for you
