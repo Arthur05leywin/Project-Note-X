@@ -9,8 +9,8 @@
   --text: #e4e8ed;
   --text-2: #a8aeb8;
   --text-3: #7a808c;
-  --accent: #4a9eff;
-  --accent-dim: rgba(74, 158, 255, 0.15);
+  --accent: #3a7fc1;
+  --accent-dim: rgba(58, 127, 193, 0.15);
   --success: #3cb87c;
   --success-dim: rgba(60, 184, 124, 0.12);
   --warning: #e5a84b;
@@ -205,8 +205,8 @@ main {
   font-size: 0.8rem;
   font-weight: 500;
   color: var(--accent);
-  text-transform: lowercase;
-  letter-spacing: 0.02em;
+  text-transform: none;
+  letter-spacing: 0.01em;
   margin-bottom: 0.5rem;
 }
 
@@ -449,14 +449,14 @@ main {
   color: var(--text-3);
 }
 
-/* Metric Card Meta Tag */
+/* Metric Card descriptor — plain human label */
 .metric-meta {
   display: block;
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 0.65rem;
+  font-size: 0.75rem;
+  font-weight: 500;
   color: var(--text-3);
-  letter-spacing: 0.08em;
-  margin-bottom: 0.75rem;
+  letter-spacing: 0.01em;
+  margin-bottom: 0.6rem;
   padding-bottom: 0.5rem;
   border-bottom: 1px solid var(--border);
 }
@@ -1044,11 +1044,10 @@ main {
   margin: 0;
 }
 
-/* Timeline Section */
+/* Timeline Section — no background, blends with page */
 .timeline-section {
-  background: var(--surface);
   border-radius: var(--radius);
-  padding: 2.5rem 1.5rem;
+  padding: 2.5rem 0;
   margin-top: 2rem;
 }
 
@@ -1068,8 +1067,8 @@ main {
   font-size: 0.85rem;
   font-weight: 600;
   color: var(--accent);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
+  text-transform: none;
+  letter-spacing: 0.01em;
 }
 
 .timeline-stage p {
