@@ -1,0 +1,659 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Caffeine & Cadaver — Biochemistry Ranker Series. All 10 MBBS Biochemistry modules, two versions each. Built from 15 years of PYQs.">
+    <title>Biochemistry Ranker Series | Caffeine & Cadaver</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      /* ── Page-specific styles ── */
+      .bc-hero {
+        padding: 5rem 0 3rem;
+        border-bottom: 1px solid var(--border);
+      }
+      .bc-hero .section-label { margin-bottom: 0.75rem; }
+      .bc-hero h1 { margin-bottom: 1rem; }
+      .bc-hero p  { max-width: 38rem; }
+
+      /* Bundle card */
+      .bundle-card {
+        margin: 3rem 0;
+        padding: 2.25rem 2rem;
+        border-radius: var(--radius);
+        border: 1px solid rgba(212, 175, 55, 0.35);
+        background: linear-gradient(135deg, #111318 0%, #0d0f12 100%);
+        box-shadow: 0 0 32px rgba(212, 175, 55, 0.07);
+        display: grid;
+        gap: 1.5rem;
+      }
+      @media (min-width: 720px) {
+        .bundle-card { grid-template-columns: 1fr auto; align-items: center; }
+      }
+      .bundle-label {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 0.72rem;
+        color: #c9a84c;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        margin-bottom: 0.5rem;
+      }
+      .bundle-card h2 { font-size: 1.6rem; margin-bottom: 0.5rem; }
+      .bundle-card > div:first-child p { color: var(--text-2); font-size: 0.95rem; max-width: 36rem; }
+      .bundle-tags {
+        display: flex; flex-wrap: wrap; gap: 0.5rem;
+        margin-top: 1rem;
+      }
+      .bundle-tag {
+        font-size: 0.78rem;
+        padding: 0.3rem 0.7rem;
+        border: 1px solid var(--border-2);
+        border-radius: 4px;
+        color: var(--text-3);
+      }
+      .bundle-price-block { text-align: right; }
+      .bundle-price {
+        font-size: 2.8rem;
+        font-weight: 600;
+        color: #c9a84c;
+        line-height: 1;
+        margin-bottom: 0.4rem;
+      }
+      .bundle-price small {
+        display: block;
+        font-size: 0.8rem;
+        color: var(--text-3);
+        font-weight: 400;
+        margin-bottom: 1rem;
+        text-decoration: line-through;
+      }
+      .bundle-save {
+        font-size: 0.78rem;
+        color: var(--success);
+        margin-bottom: 1rem;
+      }
+
+      /* Divider */
+      .series-divider {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin: 2rem 0 1.5rem;
+      }
+      .series-divider span {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 0.72rem;
+        color: var(--text-3);
+        white-space: nowrap;
+      }
+      .series-divider::before,
+      .series-divider::after {
+        content: '';
+        flex: 1;
+        height: 1px;
+        background: var(--border);
+      }
+
+      /* Module row */
+      .module-row {
+        margin-bottom: 1.5rem;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        overflow: hidden;
+        transition: border-color 200ms ease;
+      }
+      .module-row:hover { border-color: var(--border-2); }
+
+      .module-row-header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem 1.25rem;
+        background: var(--surface);
+        border-bottom: 1px solid var(--border);
+      }
+      .module-num {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 0.75rem;
+        color: var(--text-3);
+        flex-shrink: 0;
+      }
+      .module-topic {
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--text);
+      }
+      .module-cards {
+        display: grid;
+        gap: 0;
+      }
+      @media (min-width: 640px) {
+        .module-cards { grid-template-columns: 1fr 1fr; }
+        .module-cards .version-card:first-child {
+          border-right: 1px solid var(--border);
+        }
+      }
+
+      /* Version card */
+      .version-card {
+        padding: 1.25rem 1.5rem;
+        background: var(--bg-2);
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+      }
+      .version-card + .version-card {
+        border-top: 1px solid var(--border);
+      }
+      @media (min-width: 640px) {
+        .version-card + .version-card { border-top: none; }
+      }
+      .version-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 0.68rem;
+        font-weight: 600;
+        padding: 0.2rem 0.5rem;
+        border-radius: 3px;
+        width: fit-content;
+      }
+      .version-badge.masterclass {
+        background: rgba(168, 174, 184, 0.1);
+        color: var(--text-3);
+        border: 1px solid var(--border-2);
+      }
+      .version-badge.version-x {
+        background: rgba(58, 127, 193, 0.12);
+        color: var(--accent);
+        border: 1px solid rgba(58, 127, 193, 0.25);
+      }
+      .version-name {
+        font-size: 0.92rem;
+        font-weight: 600;
+        color: var(--text);
+      }
+      .version-desc {
+        font-size: 0.82rem;
+        color: var(--text-3);
+        line-height: 1.5;
+        flex: 1;
+      }
+      .version-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 0.25rem;
+        padding-top: 0.75rem;
+        border-top: 1px solid var(--border);
+        gap: 0.75rem;
+        flex-wrap: wrap;
+      }
+      .version-price {
+        font-size: 1.35rem;
+        font-weight: 600;
+        color: var(--text);
+      }
+      .version-actions { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+      .btn-sm {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.5rem 1rem;
+        border-radius: var(--radius);
+        font-size: 0.82rem;
+        font-weight: 500;
+        transition: all 180ms cubic-bezier(0.4, 0, 0.2, 1);
+        cursor: pointer;
+        white-space: nowrap;
+      }
+      .btn-sm.primary {
+        background: var(--accent);
+        color: #fff;
+        border: 1px solid var(--accent);
+      }
+      .btn-sm.primary:hover {
+        background: #4a8fd4;
+        border-color: #4a8fd4;
+        transform: translateY(-1px);
+      }
+      .btn-sm.ghost {
+        background: transparent;
+        color: var(--text-2);
+        border: 1px solid var(--border-2);
+      }
+      .btn-sm.ghost:hover {
+        background: var(--surface);
+        color: var(--text);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">
+          <img src="logo-mark.png" alt="C&amp;C" width="32" height="32">
+        </span>
+        <span>Caffeine &amp; Cadaver</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="biochemistry.html">Biochemistry</a>
+        <a href="sample.html">Sample</a>
+        <a href="faq.html">FAQ</a>
+        <a class="nav-cta" href="contact.html">Telegram</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section-shell bc-hero">
+        <p class="section-label">Biochemistry Ranker Series</p>
+        <h1>All 10 modules. Two versions each.</h1>
+        <p>Built from 15 years of MBBS PYQ patterns. Every module comes in a full Masterclass version for complete study flow, and a Version X for rapid PYQ-driven revision before exams.</p>
+      </section>
+
+      <section class="section-shell" style="padding-top: 0;">
+
+        <!-- ── Complete Bundle ── -->
+        <div class="bundle-card">
+          <div>
+            <p class="bundle-label">Best value — Complete bundle</p>
+            <h2>Full Biochemistry Ranker Series</h2>
+            <p>All 10 modules, both versions, all printable PDFs. Covers the complete MBBS 1st Year Biochemistry syllabus — mapped, tiered, and exam-ready.</p>
+            <div class="bundle-tags">
+              <span class="bundle-tag">10 Masterclass modules</span>
+              <span class="bundle-tag">10 Version X modules</span>
+              <span class="bundle-tag">20 printable PDFs</span>
+              <span class="bundle-tag">PYQ 2010–2025</span>
+              <span class="bundle-tag">Viva prep included</span>
+            </div>
+          </div>
+          <div class="bundle-price-block">
+            <div class="bundle-price">₹399</div>
+            <div class="bundle-save">Save ₹91 vs buying individually</div>
+            <a class="btn primary" href="contact.html">Buy Bundle</a>
+          </div>
+        </div>
+
+        <div class="series-divider">
+          <span>Or buy individual modules below — ₹49 each</span>
+        </div>
+
+        <!-- ── Module 01 ── -->
+        <div class="module-row">
+          <div class="module-row-header">
+            <span class="module-num">Module 01</span>
+            <span class="module-topic">Enzyme Inhibition &amp; Kinetics</span>
+          </div>
+          <div class="module-cards">
+            <div class="version-card">
+              <span class="version-badge masterclass">Masterclass</span>
+              <span class="version-name">Enzyme Inhibition — Full Study</span>
+              <p class="version-desc">Complete coverage with mechanisms, Lineweaver-Burk analysis, isoenzymes, and clinical correlations for deep understanding.</p>
+              <div class="version-footer">
+                <span class="version-price">₹49</span>
+                <div class="version-actions">
+                  <a class="btn-sm ghost" href="modules/module-01/enzyme_inhibition_notes.html" target="_blank">Preview</a>
+                  <a class="btn-sm primary" href="contact.html">Buy Now</a>
+                </div>
+              </div>
+            </div>
+            <div class="version-card">
+              <span class="version-badge version-x">Version X — Revision</span>
+              <span class="version-name">Enzyme Inhibition — PYQ Ranker</span>
+              <p class="version-desc">PYQ priority map, tier system, examiner trap boxes, last-day recall strips, and viva prompts. Built for the final 72 hours.</p>
+              <div class="version-footer">
+                <span class="version-price">₹49</span>
+                <div class="version-actions">
+                  <a class="btn-sm ghost" href="modules/module-01/enzyme_inhibition_X.html" target="_blank">Preview</a>
+                  <a class="btn-sm primary" href="contact.html">Buy Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Module 02 ── -->
+        <div class="module-row">
+          <div class="module-row-header">
+            <span class="module-num">Module 02</span>
+            <span class="module-topic">Carbohydrate Metabolism</span>
+          </div>
+          <div class="module-cards">
+            <div class="version-card">
+              <span class="version-badge masterclass">Masterclass</span>
+              <span class="version-name">Carb Metabolism — Full Study</span>
+              <p class="version-desc">Glycolysis, TCA cycle, glycogen metabolism, gluconeogenesis — complete mechanistic coverage with pathway diagrams.</p>
+              <div class="version-footer">
+                <span class="version-price">₹49</span>
+                <div class="version-actions">
+                  <a class="btn-sm ghost" href="modules/module-02/carb_metabolism_notes.html" target="_blank">Preview</a>
+                  <a class="btn-sm primary" href="contact.html">Buy Now</a>
+                </div>
+              </div>
+            </div>
+            <div class="version-card">
+              <span class="version-badge version-x">Version X — Revision</span>
+              <span class="version-name">Carb Metabolism — PYQ Ranker</span>
+              <p class="version-desc">High-frequency PYQ topics tiered by exam appearance. Rate-limiting enzymes, regulation points, and clinical trap questions flagged.</p>
+              <div class="version-footer">
+                <span class="version-price">₹49</span>
+                <div class="version-actions">
+                  <a class="btn-sm ghost" href="modules/module-02/carb_metabolism_notes X.html" target="_blank">Preview</a>
+                  <a class="btn-sm primary" href="contact.html">Buy Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Module 03 ── -->
+        <div class="module-row">
+          <div class="module-row-header">
+            <span class="module-num">Module 03</span>
+            <span class="module-topic">Lipid Metabolism</span>
+          </div>
+          <div class="module-cards">
+            <div class="version-card">
+              <span class="version-badge masterclass">Masterclass</span>
+              <span class="version-name">Lipid Metabolism — Full Study</span>
+              <p class="version-desc">Fatty acid synthesis and oxidation, ketone bodies, cholesterol metabolism, lipoproteins, and bile acid biosynthesis.</p>
+              <div class="version-footer">
+                <span class="version-price">₹49</span>
+                <div class="version-actions">
+                  <a class="btn-sm ghost" href="modules/module-03/lipid_metabolism_notes.html" target="_blank">Preview</a>
+                  <a class="btn-sm primary" href="contact.html">Buy Now</a>
+                </div>
+              </div>
+            </div>
+            <div class="version-card">
+              <span class="version-badge version-x">Version X — Revision</span>
+              <span class="version-name">Lipid Metabolism — PYQ Ranker</span>
+              <p class="version-desc">Lipoprotein classification, β-oxidation steps, HMG-CoA pathway — all mapped to exam frequency with recall strips.</p>
+              <div class="version-footer">
+                <span class="version-price">₹49</span>
+                <div class="version-actions">
+                  <a class="btn-sm ghost" href="modules/module-03/lipid_metabolism_notes_X.html" target="_blank">Preview</a>
+                  <a class="btn-sm primary" href="contact.html">Buy Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Module 04 ── -->
+        <div class="module-row">
+          <div class="module-row-header">
+            <span class="module-num">Module 04</span>
+            <span class="module-topic">Protein &amp; Haemoglobin</span>
+          </div>
+          <div class="module-cards">
+            <div class="version-card">
+              <span class="version-badge masterclass">Masterclass</span>
+              <span class="version-name">Protein &amp; Haemoglobin — Full Study</span>
+              <p class="version-desc">Protein structure, amino acid metabolism, haemoglobin variants, oxygen dissociation curve, and haemoglobinopathies.</p>
+              <div class="version-footer">
+                <span class="version-price">₹49</span>
+                <div class="version-actions">
+                  <a class="btn-sm ghost" href="modules/module-04/module04_protein_haemoglobin.html" target="_blank">Preview</a>
+                  <a class="btn-sm primary" href="contact.html">Buy Now</a>
+                </div>
+              </div>
+            </div>
+            <div class="version-card">
+              <span class="version-badge version-x">Version X — Revision</span>
+              <span class="version-name">Protein &amp; Haemoglobin — PYQ Ranker</span>
+              <p class="version-desc">Bohr effect, 2,3-BPG, sickle cell — exam traps isolated. Amino acid classification and key clinical correlates tiered.</p>
+              <div class="version-footer">
+                <span class="version-price">₹49</span>
+                <div class="version-actions">
+                  <a class="btn-sm ghost" href="modules/module-04/module04_protein_haemoglobin_X.html" target="_blank">Preview</a>
+                  <a class="btn-sm primary" href="contact.html">Buy Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Module 05 ── -->
+        <div class="module-row">
+          <div class="module-row-header">
+            <span class="module-num">Module 05</span>
+            <span class="module-topic">Nucleotide Metabolism</span>
+          </div>
+          <div class="module-cards">
+            <div class="version-card">
+              <span class="version-badge masterclass">Masterclass</span>
+              <span class="version-name">Nucleotide Metabolism — Full Study</span>
+              <p class="version-desc">Purine and pyrimidine synthesis, salvage pathways, degradation, and pharmacological inhibitors at each step.</p>
+              <div class="version-footer">
+                <span class="version-price">₹49</span>
+                <div class="version-actions">
+                  <a class="btn-sm ghost" href="modules/module-05/module05_nucleotide_metabolism.html" target="_blank">Preview</a>
+                  <a class="btn-sm primary" href="contact.html">Buy Now</a>
+                </div>
+              </div>
+            </div>
+            <div class="version-card">
+              <span class="version-badge version-x">Version X — Revision</span>
+              <span class="version-name">Nucleotide Metabolism — PYQ Ranker</span>
+              <p class="version-desc">Gout, HGPRT deficiency, drug targets (methotrexate, allopurinol) — all exam-mapped with last-day recall blocks.</p>
+              <div class="version-footer">
+                <span class="version-price">₹49</span>
+                <div class="version-actions">
+                  <a class="btn-sm ghost" href="modules/module-05/module05_nucleotide_metabolism_X.html" target="_blank">Preview</a>
+                  <a class="btn-sm primary" href="contact.html">Buy Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Module 06 ── -->
+        <div class="module-row">
+          <div class="module-row-header">
+            <span class="module-num">Module 06</span>
+            <span class="module-topic">Molecular Biology</span>
+          </div>
+          <div class="module-cards">
+            <div class="version-card">
+              <span class="version-badge masterclass">Masterclass</span>
+              <span class="version-name">Molecular Biology — Full Study</span>
+              <p class="version-desc">DNA replication, transcription, translation, genetic code, mutations, and recombinant DNA technology with enzyme mechanisms.</p>
+              <div class="version-footer">
+                <span class="version-price">₹49</span>
+                <div class="version-actions">
+                  <a class="btn-sm ghost" href="modules/module-06/module06_molecular_biology.html" target="_blank">Preview</a>
+                  <a class="btn-sm primary" href="contact.html">Buy Now</a>
+                </div>
+              </div>
+            </div>
+            <div class="version-card">
+              <span class="version-badge version-x">Version X — Revision</span>
+              <span class="version-name">Molecular Biology — PYQ Ranker</span>
+              <p class="version-desc">Okazaki fragments, RNA polymerase types, codon chart traps, oncogenes — highest-frequency exam topics compressed.</p>
+              <div class="version-footer">
+                <span class="version-price">₹49</span>
+                <div class="version-actions">
+                  <a class="btn-sm ghost" href="modules/module-06/module06_molecular_biology_X.html" target="_blank">Preview</a>
+                  <a class="btn-sm primary" href="contact.html">Buy Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Module 07 ── -->
+        <div class="module-row">
+          <div class="module-row-header">
+            <span class="module-num">Module 07</span>
+            <span class="module-topic">Biological Oxidation</span>
+          </div>
+          <div class="module-cards">
+            <div class="version-card">
+              <span class="version-badge masterclass">Masterclass</span>
+              <span class="version-name">Biological Oxidation — Full Study</span>
+              <p class="version-desc">Electron transport chain, oxidative phosphorylation, ATP synthesis, mitochondrial membrane transport, and uncouplers.</p>
+              <div class="version-footer">
+                <span class="version-price">₹49</span>
+                <div class="version-actions">
+                  <a class="btn-sm ghost" href="modules/module-07/module07_biological_oxidation.html" target="_blank">Preview</a>
+                  <a class="btn-sm primary" href="contact.html">Buy Now</a>
+                </div>
+              </div>
+            </div>
+            <div class="version-card">
+              <span class="version-badge version-x">Version X — Revision</span>
+              <span class="version-name">Biological Oxidation — PYQ Ranker</span>
+              <p class="version-desc">P/O ratio, Complex I–V inhibitors, chemiosmotic theory, and free radical biochemistry — exam-mapped and trap-flagged.</p>
+              <div class="version-footer">
+                <span class="version-price">₹49</span>
+                <div class="version-actions">
+                  <a class="btn-sm ghost" href="modules/module-07/module07_biological_oxidation_X.html" target="_blank">Preview</a>
+                  <a class="btn-sm primary" href="contact.html">Buy Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Module 08 ── -->
+        <div class="module-row">
+          <div class="module-row-header">
+            <span class="module-num">Module 08</span>
+            <span class="module-topic">Nutrition &amp; Vitamins</span>
+          </div>
+          <div class="module-cards">
+            <div class="version-card">
+              <span class="version-badge masterclass">Masterclass</span>
+              <span class="version-name">Nutrition &amp; Vitamins — Full Study</span>
+              <p class="version-desc">Fat-soluble and water-soluble vitamins, deficiency diseases, coenzyme roles, BMR, and nutritional assessment methods.</p>
+              <div class="version-footer">
+                <span class="version-price">₹49</span>
+                <div class="version-actions">
+                  <a class="btn-sm ghost" href="modules/module-08/module08_nutrition_vitamins.html" target="_blank">Preview</a>
+                  <a class="btn-sm primary" href="contact.html">Buy Now</a>
+                </div>
+              </div>
+            </div>
+            <div class="version-card">
+              <span class="version-badge version-x">Version X — Revision</span>
+              <span class="version-name">Nutrition &amp; Vitamins — PYQ Ranker</span>
+              <p class="version-desc">Deficiency–disease–coenzyme linking tables, night blindness to beri-beri — high-frequency PYQ patterns compressed.</p>
+              <div class="version-footer">
+                <span class="version-price">₹49</span>
+                <div class="version-actions">
+                  <a class="btn-sm ghost" href="modules/module-08/module08_nutrition_vitamins_X.html" target="_blank">Preview</a>
+                  <a class="btn-sm primary" href="contact.html">Buy Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Module 09 ── -->
+        <div class="module-row">
+          <div class="module-row-header">
+            <span class="module-num">Module 09</span>
+            <span class="module-topic">Clinical Biochemistry</span>
+          </div>
+          <div class="module-cards">
+            <div class="version-card">
+              <span class="version-badge masterclass">Masterclass</span>
+              <span class="version-name">Clinical Biochemistry — Full Study</span>
+              <p class="version-desc">Liver function tests, kidney function tests, diabetes markers, tumour markers, and acid-base balance with clinical scenarios.</p>
+              <div class="version-footer">
+                <span class="version-price">₹49</span>
+                <div class="version-actions">
+                  <a class="btn-sm ghost" href="modules/module-09/module09_clinical_biochemistry.html" target="_blank">Preview</a>
+                  <a class="btn-sm primary" href="contact.html">Buy Now</a>
+                </div>
+              </div>
+            </div>
+            <div class="version-card">
+              <span class="version-badge version-x">Version X — Revision</span>
+              <span class="version-name">Clinical Biochemistry — PYQ Ranker</span>
+              <p class="version-desc">HbA1c vs fasting glucose, SGOT/SGPT pattern traps, renal tubular acidosis — clinical MCQ patterns flagged and tiered.</p>
+              <div class="version-footer">
+                <span class="version-price">₹49</span>
+                <div class="version-actions">
+                  <a class="btn-sm ghost" href="modules/module-09/module09_clinical_biochemistry_X.html" target="_blank">Preview</a>
+                  <a class="btn-sm primary" href="contact.html">Buy Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Module 10 ── -->
+        <div class="module-row">
+          <div class="module-row-header">
+            <span class="module-num">Module 10</span>
+            <span class="module-topic">Immunochemistry &amp; Oncogenesis</span>
+          </div>
+          <div class="module-cards">
+            <div class="version-card">
+              <span class="version-badge masterclass">Masterclass</span>
+              <span class="version-name">Immunochemistry &amp; Oncogenesis — Full Study</span>
+              <p class="version-desc">Immunoglobulin structure, complement system, tumour markers, oncogenes, anti-oncogenes, and carcinogenesis mechanisms.</p>
+              <div class="version-footer">
+                <span class="version-price">₹49</span>
+                <div class="version-actions">
+                  <a class="btn-sm ghost" href="modules/module-10/module10_immunochemistry_oncogenesis.html" target="_blank">Preview</a>
+                  <a class="btn-sm primary" href="contact.html">Buy Now</a>
+                </div>
+              </div>
+            </div>
+            <div class="version-card">
+              <span class="version-badge version-x">Version X — Revision</span>
+              <span class="version-name">Immunochemistry &amp; Oncogenesis — PYQ Ranker</span>
+              <p class="version-desc">AFP, CEA, PSA tumour markers, IgM vs IgG patterns, p53 and Rb — exam-frequency mapped with last-day viva prompts.</p>
+              <div class="version-footer">
+                <span class="version-price">₹49</span>
+                <div class="version-actions">
+                  <a class="btn-sm ghost" href="modules/module-10/module10_immunochemistry_oncogenesis_X.html" target="_blank">Preview</a>
+                  <a class="btn-sm primary" href="contact.html">Buy Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-brand-block">
+          <a href="index.html">
+            <img src="logo-full.png" alt="Caffeine &amp; Cadaver" class="brand-logo-full">
+          </a>
+          <p class="footer-tagline">Built for MBBS students in the real exam grind.</p>
+          <p class="footer-contact">arthur5leywin@gmail.com<br>+91 8583808391</p>
+        </div>
+        <div class="footer-links-block">
+          <a href="index.html">Home</a>
+          <a href="sample.html">Sample</a>
+          <a href="packs.html">Packs</a>
+          <a href="faq.html">FAQ</a>
+          <a href="contact.html">Contact</a>
+          <a href="terms.html">Terms &amp; Conditions</a>
+          <a href="refund.html">Cancellation &amp; Refund</a>
+          <a href="delivery.html">Shipping &amp; Delivery</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Caffeine &amp; Cadaver. All rights reserved.</span>
+        <span>Built for MBBS. Not affiliated with any university.</span>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
