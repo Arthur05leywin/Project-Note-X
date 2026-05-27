@@ -1,21 +1,21 @@
 :root {
   color-scheme: dark;
-  --bg: #030014;
-  --bg-2: #0B0424;
-  --surface: #120738;
-  --surface-2: #1D0A57;
-  --border: rgba(217, 70, 239, 0.2);
-  --border-2: rgba(217, 70, 239, 0.4);
-  --text: #FDFBFF;
-  --text-2: #E9D5FF;
-  --text-3: #A78BFA;
-  --accent: #F472B6; /* Neon Pink */
-  --accent-dim: rgba(244, 114, 182, 0.15);
-  --success: #34D399;
-  --success-dim: rgba(52, 211, 153, 0.12);
-  --warning: #FBBF24;
-  --warning-dim: rgba(251, 191, 36, 0.12);
-  --danger: #FB7185;
+  --bg: #151110;
+  --bg-2: #1D1715;
+  --surface: #27201D;
+  --surface-2: #342C28;
+  --border: rgba(0, 180, 216, 0.2);
+  --border-2: rgba(0, 180, 216, 0.4);
+  --text: #FDFCF0; /* Bone white */
+  --text-2: #DCD8C0;
+  --text-3: #90E0EF;
+  --accent: #00B4D8; /* Cadaver Cyan/Teal */
+  --accent-dim: rgba(0, 180, 216, 0.15);
+  --success: #38B000;
+  --success-dim: rgba(56, 176, 0, 0.12);
+  --warning: #F48C06;
+  --warning-dim: rgba(244, 140, 6, 0.12);
+  --danger: #D00000;
   --radius: 12px;
 }
 
@@ -1557,6 +1557,9 @@ main {
 /* Enhancements */
 @keyframes pulseGlow {
   0% { box-shadow: 0 0 15px var(--accent-dim); border-color: var(--border-2); }
+  50% { box-shadow: 0 0 35px rgba(0, 180, 216, 0.4); border-color: var(--accent); }
+  100% { box-shadow: 0 0 15px var(--accent-dim); border-color: var(--border-2); }
+}
   50% { box-shadow: 0 0 35px rgba(244, 114, 182, 0.4); border-color: var(--accent); }
   100% { box-shadow: 0 0 15px var(--accent-dim); border-color: var(--border-2); }
 }
