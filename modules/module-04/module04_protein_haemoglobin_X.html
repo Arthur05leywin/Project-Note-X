@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -28,7 +28,7 @@
     
     
     
-    <link rel="stylesheet" href="MBBS PYQ_master_style.css">
+    <link rel="stylesheet" href="wbuhs_master_style.css">
     
     
     <style>
@@ -3589,63 +3589,67 @@ ul.checklist li {
           <h2>Haem <em>Degradation</em></h2>
         </div>
 
-        <div class="flowchart">
-          <div class="flow-title">
-            Haem → Bilirubin → Excretion — Complete Pathway
-          </div>
-          <div class="flow-v">
-            <div class="flow-box accent" style="max-width: 100%">
-              <span class="box-label">Source</span>
-              <strong>Aged RBC (80%) + Myoglobin, Cytochromes (20%)</strong
-              ><br />
-              Destroyed by <strong>Reticuloendothelial System (RES)</strong> —
-              spleen, liver, bone marrow
-            </div>
-            <div class="arrow-down">↓ Haemoglobin</div>
-            <div class="flow-box" style="max-width: 100%; border-color: #888">
-              Globin chains → Amino acids (recycled)<br />
-              <strong>Haem</strong> → enters degradation
-            </div>
-            <div class="arrow-down">
-              ↓ <strong>Haem oxygenase</strong> (RES, needs O₂ + NADPH)
-            </div>
-            <div class="flow-box teal" style="max-width: 100%">
-              <strong>Biliverdin (green)</strong> + Fe²⁺ (recycled) + CO
-              (exhaled)<br />
-              <span class="box-sub"
-                >Porphyrin ring opens at α-methine bridge</span
-              >
-            </div>
-            <div class="arrow-down">
-              ↓ <strong>Biliverdin reductase</strong> (NADPH)
-            </div>
-            <div class="flow-box gold" style="max-width: 100%">
-              <strong>Bilirubin (yellow-orange)</strong><br />
-              <span class="box-sub"
-                >Unconjugated (indirect) · Lipid-soluble · TOXIC</span
-              >
-            </div>
-            <div class="arrow-down">
-              ↓ Binds albumin (2:1) → transported to liver
-            </div>
-            <div class="flow-box purple" style="max-width: 100%">
-              LIVER UPTAKE: bilirubin + 2 × glucuronic acid<br />
-              <span class="box-label"
-                >by UDP-glucuronosyltransferase (UGT1A1)</span
-              >
-              <strong>Bilirubin diglucuronide = Conjugated (direct)</strong> ·
-              Water-soluble · NON-TOXIC
-            </div>
-            <div class="arrow-down">↓ Excreted in bile → small intestine</div>
-            <div class="flow-box green" style="max-width: 100%">
-              <strong>Urobilinogen</strong> (colourless) by intestinal
-              bacteria<br />
-              <span class="box-sub"
-                >80% → stercobilin (brown, faeces) · 20% → reabsorbed
-                (enterohepatic circulation) → urobilinogen in urine</span
-              >
-            </div>
-          </div>
+              <div class="graph-box" style="background: #ffffff; padding: 20px; border-radius: 12px; border: 1px solid #e2e8f0; margin: 24px 0;">
+        <div class="graph-label" style="color: #1e293b; font-weight: bold; font-size: 12px; letter-spacing: 1.5px; border-bottom: 2px solid #ef4444; padding-bottom: 6px; margin-bottom: 16px;">FIG 4.1: HAEM DEGRADATION PATHWAY</div>
+        <div style="text-align: center;">
+          <svg viewBox="0 0 600 550" width="100%" height="auto" style="background: #ffffff; display: block; margin: 0 auto; max-width: 100%;">
+            <defs>
+              <marker id="arrow-down" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#64748b" />
+              </marker>
+            </defs>
+            
+            <!-- Nodes -->
+            <!-- Source -->
+            <rect x="150" y="20" width="300" height="50" rx="6" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+            <text x="300" y="40" text-anchor="middle" font-family="Sora, sans-serif" font-weight="bold" font-size="12" fill="#0f172a">Aged RBCs (80%) + Cytochromes (20%)</text>
+            <text x="300" y="55" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#475569">Destroyed in RES (Spleen, Macrophages)</text>
+            
+            <!-- Haem -->
+            <rect x="200" y="110" width="200" height="40" rx="6" fill="#fef2f2" stroke="#ef4444" stroke-width="2"/>
+            <text x="300" y="135" text-anchor="middle" font-family="Sora, sans-serif" font-weight="bold" font-size="14" fill="#991b1b">Haem</text>
+            
+            <!-- Biliverdin -->
+            <rect x="200" y="200" width="200" height="50" rx="6" fill="#ecfdf5" stroke="#10b981" stroke-width="2"/>
+            <text x="300" y="220" text-anchor="middle" font-family="Sora, sans-serif" font-weight="bold" font-size="14" fill="#065f46">Biliverdin (Green)</text>
+            <text x="300" y="238" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#047857">Porphyrin ring opened</text>
+            
+            <!-- Bilirubin (Unconjugated) -->
+            <rect x="150" y="300" width="300" height="50" rx="6" fill="#fffbeb" stroke="#f59e0b" stroke-width="2"/>
+            <text x="300" y="320" text-anchor="middle" font-family="Sora, sans-serif" font-weight="bold" font-size="14" fill="#92400e">Bilirubin (Yellow) — Unconjugated</text>
+            <text x="300" y="338" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#b45309">Lipid-soluble · Toxic · Binds Albumin</text>
+            
+            <!-- Bilirubin (Conjugated) -->
+            <rect x="150" y="400" width="300" height="50" rx="6" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="2"/>
+            <text x="300" y="420" text-anchor="middle" font-family="Sora, sans-serif" font-weight="bold" font-size="14" fill="#5b21b6">Bilirubin Diglucuronide — Conjugated</text>
+            <text x="300" y="438" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" fill="#6d28d9">Water-soluble · Non-toxic (In Liver)</text>
+            
+            <!-- Urobilinogen / Stercobilin -->
+            <rect x="150" y="500" width="300" height="40" rx="6" fill="#f4f4f5" stroke="#71717a" stroke-width="2"/>
+            <text x="300" y="525" text-anchor="middle" font-family="Sora, sans-serif" font-weight="bold" font-size="14" fill="#3f3f46">Urobilinogen &rarr; Stercobilin (Brown)</text>
+            
+            <!-- Edges / Arrows -->
+            <line x1="300" y1="70" x2="300" y2="105" stroke="#64748b" stroke-width="2" marker-end="url(#arrow-down)"/>
+            <text x="310" y="92" font-family="IBM Plex Mono, monospace" font-size="10" fill="#64748b">Globin removed</text>
+            
+            <line x1="300" y1="150" x2="300" y2="195" stroke="#64748b" stroke-width="2" marker-end="url(#arrow-down)"/>
+            <text x="310" y="176" font-family="IBM Plex Mono, monospace" font-size="10" fill="#ef4444" font-weight="bold">Haem oxygenase (Needs O₂, NADPH)</text>
+            
+            <line x1="300" y1="250" x2="300" y2="295" stroke="#64748b" stroke-width="2" marker-end="url(#arrow-down)"/>
+            <text x="310" y="276" font-family="IBM Plex Mono, monospace" font-size="10" fill="#10b981" font-weight="bold">Biliverdin reductase (NADPH)</text>
+            
+            <line x1="300" y1="350" x2="300" y2="395" stroke="#64748b" stroke-width="2" marker-end="url(#arrow-down)"/>
+            <text x="310" y="370" font-family="IBM Plex Mono, monospace" font-size="10" fill="#8b5cf6" font-weight="bold">UDP-Glucuronosyltransferase (Liver)</text>
+            <text x="310" y="382" font-family="IBM Plex Mono, monospace" font-size="10" fill="#64748b">+ 2 UDP-Glucuronic Acid</text>
+            
+            <line x1="300" y1="450" x2="300" y2="495" stroke="#64748b" stroke-width="2" marker-end="url(#arrow-down)"/>
+            <text x="310" y="470" font-family="IBM Plex Mono, monospace" font-size="10" fill="#64748b">Excreted in bile &rarr; Intestine</text>
+            <text x="310" y="482" font-family="IBM Plex Mono, monospace" font-size="10" fill="#64748b">(Bacterial action)</text>
+            
+          </svg>
+        </div>
+      </div>
+
         </div>
 
         <div class="mnemonic-box">
@@ -4333,604 +4337,7 @@ ul.checklist li {
       <div class="divider"></div>
 
       <!-- ══════════════════════════════════════════════════════ -->
-      <!-- SECTION 11: VIVA Q&A -->
-      <!-- ══════════════════════════════════════════════════════ -->
-      <div id="s11">
-        <div class="section-header">
-          <div class="section-num">11</div>
-          <h2>Viva & Exam <em>Q&A</em></h2>
-        </div>
-
-        <div class="viva-section">
-          <div class="viva-title-bar">Protein Structure Vivas</div>
-
-          <details>
-            <summary>
-              <span class="viva-q"
-                >What bonds stabilise quaternary structure of proteins?</span
-              ><span class="viva-year">GROUP A</span>
-            </summary>
-            <div class="viva-ans">
-              <p>
-                Quaternary structure is stabilised by the same
-                <strong>non-covalent forces</strong> that stabilise tertiary
-                structure between adjacent polypeptide chains:
-              </p>
-              <ul>
-                <li>
-                  <strong>Hydrophobic interactions</strong> (predominant at
-                  subunit interfaces)
-                </li>
-                <li><strong>Hydrogen bonds</strong> between chains</li>
-                <li>
-                  <strong>Ionic/electrostatic interactions</strong> (salt
-                  bridges)
-                </li>
-                <li>
-                  <strong>Disulphide bonds</strong> (covalent, e.g., between
-                  chains of IgG)
-                </li>
-              </ul>
-              <p>
-                <em
-                  >Key example: Haemoglobin (α₂β₂) — subunits held mainly by
-                  hydrophobic contacts and 8 ion pairs (salt bridges) in
-                  T-state.</em
-                >
-              </p>
-            </div>
-          </details>
-
-          <details>
-            <summary>
-              <span class="viva-q"
-                >Why can proline not be part of an α-helix?</span
-              ><span class="viva-year">2014</span>
-            </summary>
-            <div class="viva-ans">
-              <p>
-                Proline has a <strong>cyclic pyrrolidine ring</strong> that:
-              </p>
-              <ul>
-                <li>
-                  Has <strong>no NH group</strong> in its peptide bond → cannot
-                  donate H-bond → breaks helix H-bonding pattern
-                </li>
-                <li>
-                  Introduces a <strong>rigid kink/bend</strong> (restricted
-                  rotation around N-Cα bond)
-                </li>
-                <li>Creates steric clash with adjacent residues</li>
-              </ul>
-              <p>
-                <em
-                  >Proline is called a "helix breaker." It frequently occurs at
-                  bends and turns. Collagen is unusual — it forms a triple helix
-                  ONLY because of its Gly-Pro-X repeat.</em
-                >
-              </p>
-            </div>
-          </details>
-
-          <details>
-            <summary>
-              <span class="viva-q"
-                >Define denaturation. Which bonds are broken?</span
-              ><span class="viva-year">Core Concept</span>
-            </summary>
-            <div class="viva-ans">
-              <p>
-                <strong>Denaturation</strong> = Disruption of the native 3D
-                structure of a protein without breaking
-                <strong>peptide bonds</strong> (1° structure intact).
-              </p>
-              <p>
-                Bonds broken: H-bonds, hydrophobic interactions, ionic bonds,
-                sometimes disulphide bonds.
-              </p>
-              <p>
-                Result: Loss of biological activity, altered solubility,
-                viscosity changes.
-              </p>
-              <p>
-                <em
-                  >Agents: Heat, urea/guanidinium (H-bonds), detergents
-                  (hydrophobic), acid/alkali (ionic), reducing agents (S-S
-                  bonds, e.g., β-mercaptoethanol).</em
-                >
-              </p>
-              <p>
-                <strong>Renaturation</strong> is possible if denaturing agent is
-                removed and 1° structure is intact (e.g., ribonuclease A
-                experiment by Anfinsen).
-              </p>
-            </div>
-          </details>
-        </div>
-
-        <div class="viva-section">
-          <div class="viva-title-bar">Haemoglobin Vivas</div>
-
-          <details>
-            <summary>
-              <span class="viva-q"
-                >Why is the O₂ dissociation curve of Hb sigmoidal while Mb is
-                hyperbolic?</span
-              ><span class="viva-year">PYQ 2014, 2016, 2023</span>
-            </summary>
-            <div class="viva-ans">
-              <p>
-                <strong>Myoglobin:</strong> monomer with 1 haem. No
-                cooperativity. Each molecule binds O₂ independently →
-                <em>simple hyperbolic curve</em>. Very high affinity at all pO₂.
-              </p>
-              <p>
-                <strong>Haemoglobin:</strong> tetramer (α₂β₂). Exhibits
-                <strong>positive cooperativity</strong>:
-              </p>
-              <ul>
-                <li>First O₂ binds with LOW affinity (T-state)</li>
-                <li>
-                  Triggers conformational change → R-state → second O₂ binds
-                  more easily
-                </li>
-                <li>
-                  Each successive binding is easier →
-                  <em>sigmoidal (S-shaped) curve</em>
-                </li>
-              </ul>
-              <p>
-                <strong>Physiological significance:</strong> Sigmoid shape means
-                Hb is very efficient — loads O₂ fully in lungs (high pO₂),
-                unloads a large fraction in tissues (low pO₂). Mb's hyperbolic
-                curve means it stays saturated throughout → ideal for O₂
-                storage, not transport.
-              </p>
-            </div>
-          </details>
-
-          <details>
-            <summary>
-              <span class="viva-q"
-                >What is Haemoglobin A1c? Why is it important in diabetes?</span
-              ><span class="viva-year">PYQ 2011, 2018, 2016</span>
-            </summary>
-            <div class="viva-ans">
-              <p>
-                <strong>HbA1c (Glycated Haemoglobin):</strong> Hb with glucose
-                non-enzymatically (spontaneously) attached to the
-                <strong>N-terminal valine</strong> of both β-chains via Schiff
-                base → rearranges to stable ketoamine (Amadori product).
-              </p>
-              <p><strong>Why useful in diabetes:</strong></p>
-              <ul>
-                <li>
-                  RBCs live ~120 days → HbA1c reflects
-                  <strong>average blood glucose over 8–12 weeks</strong>
-                </li>
-                <li>
-                  Unlike fasting glucose (snapshot), HbA1c =
-                  <em>cumulative glycaemic exposure</em>
-                </li>
-                <li>Normal: &lt;5.7%; Pre-diabetes: 5.7–6.4%; DM: ≥6.5%</li>
-                <li>
-                  Target in treated DM: &lt;7% (to prevent microvascular
-                  complications)
-                </li>
-              </ul>
-              <p>
-                <em
-                  >Not affected by short-term glucose fluctuations or time of
-                  day. Limitations: haemolytic anaemia (falsely low), sickle
-                  cell trait may affect accuracy.</em
-                >
-              </p>
-            </div>
-          </details>
-
-          <details>
-            <summary>
-              <span class="viva-q"
-                >What is methaemoglobinaemia? How does it occur?</span
-              ><span class="viva-year">Core</span>
-            </summary>
-            <div class="viva-ans">
-              <p>
-                <strong>Methaemoglobin (MetHb):</strong> Hb in which iron is
-                oxidised from <strong>Fe²⁺ → Fe³⁺</strong>. Fe³⁺ cannot
-                reversibly bind O₂.
-              </p>
-              <p>
-                <strong>Causes:</strong> Oxidising drugs/toxins (dapsone,
-                nitrites, sulphonamides, prilocaine), Congenital HbM
-                (proximal/distal His mutations), NADH-metHb reductase
-                deficiency.
-              </p>
-              <p>
-                <strong>Effect:</strong> ↓ functional Hb + left shift of
-                remaining Hb (cannot release O₂) → tissue hypoxia.
-              </p>
-              <p>
-                <strong>Clinical:</strong> Cyanosis with
-                <em>chocolate brown blood</em>. SpO₂ falsely reads ~85% by pulse
-                oximetry.
-              </p>
-              <p>
-                <strong>Treatment:</strong> Methylene blue (activates
-                NADPH-metHb reductase via G6PD) OR Vitamin C (non-enzymatic
-                reduction).
-              </p>
-            </div>
-          </details>
-        </div>
-
-        <div class="viva-section">
-          <div class="viva-title-bar">Bilirubin & Plasma Protein Vivas</div>
-
-          <details>
-            <summary>
-              <span class="viva-q"
-                >Why does conjugated bilirubin appear in urine but unconjugated
-                does not?</span
-              ><span class="viva-year">PYQ 2019</span>
-            </summary>
-            <div class="viva-ans">
-              <p><strong>Unconjugated bilirubin:</strong></p>
-              <ul>
-                <li>Lipid-soluble, tightly bound to albumin in blood</li>
-                <li>
-                  Too large as albumin complex → NOT filtered by glomerulus
-                </li>
-                <li>
-                  Even if some is free, it binds to tubular cells (not excreted)
-                </li>
-                <li>
-                  Therefore:
-                  <em>absent in urine even when serum levels high</em>
-                  (haemolytic jaundice — "acholouric jaundice")
-                </li>
-              </ul>
-              <p><strong>Conjugated (direct) bilirubin:</strong></p>
-              <ul>
-                <li>Water-soluble (2 glucuronic acids attached)</li>
-                <li>NOT bound to albumin → freely filterable at glomerulus</li>
-                <li>
-                  When serum levels rise → appears in urine (bilirubinuria)
-                </li>
-                <li>Seen in: hepatocellular jaundice, obstructive jaundice</li>
-              </ul>
-            </div>
-          </details>
-
-          <details>
-            <summary>
-              <span class="viva-q"
-                >What are chaperones? What is their role in protein
-                folding?</span
-              ><span class="viva-year">PYQ 2016, 2018</span>
-            </summary>
-            <div class="viva-ans">
-              <p>
-                <strong>Chaperones</strong> are proteins that assist in the
-                correct folding of newly synthesised polypeptides. They do NOT
-                contribute to the final structure (not part of the final
-                protein).
-              </p>
-              <p><strong>Mechanism:</strong></p>
-              <ul>
-                <li>
-                  Bind to exposed <strong>hydrophobic patches</strong> on
-                  unfolded/partially folded proteins
-                </li>
-                <li>
-                  Prevent premature or incorrect interactions (misfolding,
-                  aggregation)
-                </li>
-                <li>
-                  Provide a protected environment for folding (e.g., GroEL/GroES
-                  barrel in bacteria, HSP60 in mitochondria)
-                </li>
-                <li>ATP-dependent (most chaperones use ATP hydrolysis)</li>
-              </ul>
-              <p>
-                <strong>Types:</strong> Hsp70 (cytosol, early folding), Hsp90
-                (steroid receptor stabilisation), Hsp60 (GroEL — barrel type),
-                Calnexin/Calreticulin (ER, glycoprotein folding).
-              </p>
-              <p>
-                <em
-                  >Misfolding despite chaperones → ubiquitin-proteasome
-                  degradation of aberrant proteins. Accumulation of misfolded
-                  proteins → Prion diseases, Alzheimer's, Parkinson's.</em
-                >
-              </p>
-            </div>
-          </details>
-
-          <details>
-            <summary>
-              <span class="viva-q"
-                >What are Bence Jones proteins? Significance?</span
-              ><span class="viva-year">Myeloma</span>
-            </summary>
-            <div class="viva-ans">
-              <p>
-                <strong>Bence Jones proteins:</strong> Free immunoglobulin
-                <strong>light chains</strong> (κ or λ) produced in excess by
-                myeloma plasma cells and excreted in urine.
-              </p>
-              <p>
-                <strong>Detection:</strong> Heat precipitation at 40–60°C,
-                redissolve at 100°C (classic test). Modern: urine protein
-                electrophoresis or immunofixation.
-              </p>
-              <p>
-                <strong>Significance:</strong> Diagnostic of
-                <em>multiple myeloma</em>, Waldenström macroglobulinaemia, or
-                light chain disease. Cause renal tubular damage (cast
-                nephropathy = "myeloma kidney").
-              </p>
-            </div>
-          </details>
-        </div>
-      </div>
-
-      <div class="divider"></div>
-
-      <!-- ══════════════════════════════════════════════════════ -->
-      <!-- SECTION 12: EQ TEMPLATES -->
-      <!-- ══════════════════════════════════════════════════════ -->
-      <div id="s12">
-        <div class="section-header">
-          <div class="section-num">12</div>
-          <h2>Essay Question <em>Templates</em></h2>
-        </div>
-
-        <!-- EQ 1: 2,3-BPG -->
-        <div class="eq-box">
-          <div class="eq-title">
-            EQ — 2,3-BPG helps in delivery of oxygen to tissues [PYQ 2011]
           </div>
-          <div class="eq-statement">
-            "2,3-BPG helps in delivery of oxygen to the tissues."
-          </div>
-          <div class="eq-answer">
-            <ol>
-              <li>
-                <span>Source:</span> Made from 1,3-BPG in RBCs via
-                Rapoport-Luebering cycle (bisphosphoglycerate mutase).
-                Concentration in RBCs ~4–5 mmol/L (equimolar with Hb)
-              </li>
-              <li>
-                <span>Binding Site:</span> Binds the central cavity of deoxyHb
-                between the β-chains (involves Lys82, His143, His2, Val1 of each
-                β-chain). One molecule per Hb tetramer
-              </li>
-              <li>
-                <span>Mechanism:</span> 2,3-BPG stabilises the
-                <strong>T-state (deoxyHb)</strong> by cross-linking the β-chains
-                with multiple ionic bonds → ↓ O₂ affinity → right shift of ODC
-              </li>
-              <li>
-                <span>Net Effect:</span> At tissue level (low pO₂), Hb releases
-                MORE O₂ than it would without 2,3-BPG → better O₂ unloading
-              </li>
-              <li>
-                <span>Regulatory contexts:</span> ↑ at high altitude
-                (compensatory), in anaemia, in hypoxia. ↓ in stored blood
-                (2,3-DPG depletes → less O₂ delivery → risk in massive
-                transfusion)
-              </li>
-              <li>
-                <span>HbF comparison:</span> HbF (γ-chains) binds 2,3-BPG poorly
-                → higher O₂ affinity → ideal for transplacental O₂ transfer
-              </li>
-            </ol>
-          </div>
-        </div>
-
-        <!-- EQ 2: HbS Anaemia -->
-        <div class="eq-box">
-          <div class="eq-title">
-            EQ — Patient with HbS often suffers from anaemia [PYQ 2013, 2017]
-          </div>
-          <div class="eq-statement">
-            "Patient with Hb-S often suffers from anaemia."
-          </div>
-          <div class="eq-answer">
-            <ol>
-              <li>
-                <span>Molecular defect:</span> GAG→GTG mutation in β-globin
-                gene, codon 6. Glu (polar) → Val (non-polar). Creates "sticky
-                patch" on deoxyHbS surface
-              </li>
-              <li>
-                <span>Polymerisation:</span> In low-O₂ conditions, deoxyHbS
-                fibres polymerise → RBCs become sickle-shaped, rigid,
-                non-deformable
-              </li>
-              <li>
-                <span>Haemolysis:</span> Sickled RBCs are rigid → cannot pass
-                through spleen → destroyed by splenic macrophages (extravascular
-                haemolysis). Also intravascular haemolysis due to membrane
-                damage. RBC survival ↓ from 120 days → 20–25 days
-              </li>
-              <li>
-                <span>Vaso-occlusion:</span> Sickled cells block
-                microvasculature → ischaemic pain crises, organ infarction
-                (spleen, kidney, brain, bones)
-              </li>
-              <li>
-                <span>Type of anaemia:</span> Normocytic normochromic haemolytic
-                anaemia with compensatory reticulocytosis
-              </li>
-              <li>
-                <span>Complications:</span> Splenomegaly (early),
-                autosplenectomy (late), aplastic crisis (parvovirus B19),
-                susceptibility to infections (encapsulated organisms)
-              </li>
-            </ol>
-          </div>
-        </div>
-
-        <!-- EQ 3: Myoglobin no Bohr Effect -->
-        <div class="eq-box">
-          <div class="eq-title">
-            EQ — Myoglobin does not exhibit Bohr effect [PYQ 2015]
-          </div>
-          <div class="eq-statement">
-            "Myoglobin does not exhibit Bohr effect."
-          </div>
-          <div class="eq-answer">
-            <ol>
-              <li>
-                <span>Bohr effect definition:</span> The decrease in O₂ affinity
-                of Hb when pH drops (↑ H⁺) or pCO₂ rises, mediated via
-                salt-bridge formation in T-state Hb
-              </li>
-              <li>
-                <span>Structural basis of Bohr in Hb:</span> H⁺ protonates
-                histidine residues (β-146 His, α-122 His) → salt bridges form →
-                stabilises T-state → ↓ O₂ affinity
-              </li>
-              <li>
-                <span>Why Mb shows no Bohr effect:</span> Myoglobin is a
-                <strong>monomer</strong> — has no T-state/R-state equilibrium,
-                no cooperative binding, no allosteric subunit communication. The
-                key histidine residues involved in Bohr salt-bridges in Hb are
-                not involved in the same way in monomeric Mb
-              </li>
-              <li>
-                <span>Physiological implication:</span> Mb's function is O₂
-                STORAGE in muscle. It should NOT release O₂ until pO₂ is very
-                low. Hence, being unresponsive to pH/CO₂ changes is appropriate
-              </li>
-              <li>
-                <span>Conclusion:</span> Bohr effect is exclusively an
-                allosteric property of <em>oligomeric haemoglobin</em>, made
-                possible by subunit cooperativity — absent in the monomer
-                myoglobin
-              </li>
-            </ol>
-          </div>
-        </div>
-
-        <!-- MNEMONICS SECTION -->
-        <div class="card" style="margin-top: 2rem">
-          <div class="card-title">Master Mnemonics — Module 04</div>
-          <div
-            style="
-              display: grid;
-              grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-              gap: 10px;
-              margin-top: 8px;
-            "
-          >
-            <div class="mnemonic-box" style="margin: 0">
-              <div class="mbox-title">SPE Bands in Order</div>
-              <div class="mnemonic-highlight">
-                A-AlphA-AlphaB-Beta-Gamma<br />"Angry Aardvarks Always Battle
-                Gorillas"
-              </div>
-              <p style="font-size: 11px; color: var(--text2)">
-                Albumin → α₁ → α₂ → β → γ (anode to cathode)
-              </p>
-            </div>
-            <div class="mnemonic-box" style="margin: 0">
-              <div class="mbox-title">Right Shift Causes (Bohr)</div>
-              <div class="mnemonic-highlight">
-                "CADET face RIGHT"<br />CO₂↑, Acid↑, DPG↑, Exercise, Temp↑
-              </div>
-            </div>
-            <div class="mnemonic-box" style="margin: 0">
-              <div class="mbox-title">Protein Structure Bonds</div>
-              <div class="mnemonic-highlight">
-                1°=Peptide, 2°=H, 3°=HISD<br />(H=H-bond, I=Ionic, S=Sulphide,
-                D=van Der waals)
-              </div>
-            </div>
-            <div class="mnemonic-box" style="margin: 0">
-              <div class="mbox-title">Haem Degradation Products</div>
-              <div class="mnemonic-highlight">
-                "Haem Goes Bright Yellow Under Stress"<br />H→Biliverdin→Bilirubin→Urobilinogen→Stercobilin
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- HIGH YIELD SUMMARY -->
-        <div class="card" style="margin-top: 1rem; border-color: var(--accent)">
-          <div class="card-title">🔥 Exam Day High-Yield Quick Fire</div>
-          <div class="table-wrap">
-            <table>
-              <tr>
-                <th>Topic</th>
-                <th>The Answer Examiner Wants</th>
-              </tr>
-              <tr>
-                <td>Sickle cell mutation</td>
-                <td>GAG→GTG | Glu(6)→Val | β-globin | codon 6</td>
-              </tr>
-              <tr>
-                <td>Why HbF has ↑ O₂ affinity</td>
-                <td>γ-chains bind 2,3-BPG poorly (Ser143 vs His143)</td>
-              </tr>
-              <tr>
-                <td>Bohr effect key residue</td>
-                <td>β-146 Histidine</td>
-              </tr>
-              <tr>
-                <td>2,3-BPG binding site</td>
-                <td>Central cavity between 2 β-chains (T-state only)</td>
-              </tr>
-              <tr>
-                <td>Direct vs Indirect bilirubin test</td>
-                <td>
-                  Van den Bergh — Direct reacts without alcohol; Indirect needs
-                  alcohol
-                </td>
-              </tr>
-              <tr>
-                <td>Neonatal jaundice phototherapy</td>
-                <td>
-                  460 nm blue light converts bili to water-soluble lumirubin
-                </td>
-              </tr>
-              <tr>
-                <td>Haptoglobin function</td>
-                <td>
-                  Binds free Hb in plasma → prevents renal damage → ↓ in
-                  haemolysis
-                </td>
-              </tr>
-              <tr>
-                <td>M-spike on electrophoresis</td>
-                <td>Multiple myeloma — monoclonal Ig spike in γ region</td>
-              </tr>
-              <tr>
-                <td>Ceruloplasmin ↓</td>
-                <td>
-                  Wilson's disease (Cu accumulates in liver, brain, eye:
-                  Kayser-Fleischer rings)
-                </td>
-              </tr>
-              <tr>
-                <td>α-helix residues per turn</td>
-                <td>3.6 residues; 1.5Å rise/residue; 5.4Å pitch</td>
-              </tr>
-              <tr>
-                <td>Prion disease mechanism</td>
-                <td>Misfolding of PrPᶜ → PrPˢᶜ (β-sheet) → aggregation</td>
-              </tr>
-              <tr>
-                <td>Rate limiting step of haem catabolism</td>
-                <td>Haem oxygenase (first step)</td>
-              </tr>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
     <!-- /content -->
 
     <!-- FOOTER -->
@@ -4964,7 +4371,5 @@ ul.checklist li {
         });
       });
     </script>
-
-    
   </body>
 </html>
