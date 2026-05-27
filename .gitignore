@@ -14,4 +14,8 @@ __pycache__/
 
 # Books, PYQs, and Modules
 *.pdf
-modules/
+modules/*
+!modules/module-01/
+modules/module-01/*
+!modules/module-01/enzyme_inhibition_X.html
+!modules/module-01/wbuhs_master_style.css
