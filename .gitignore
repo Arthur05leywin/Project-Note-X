@@ -11,3 +11,7 @@ original_module5_styles.css
 scratch_inspect.py
 __pycache__/
 *.pyc
+
+# Books, PYQs, and Modules
+*.pdf
+modules/
