@@ -20,7 +20,9 @@ import os
 import sys
 from pathlib import Path
 
-# ─── Configuration ────────────────────────────────────────────────────────────
+sys.stdout.reconfigure(encoding='utf-8')
+
+# 🎨 Configuration ────────────────────────────────────────────────────────────
 
 ROOT = Path(__file__).parent
 MODULES_DIR = ROOT / "modules"

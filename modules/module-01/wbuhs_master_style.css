@@ -2361,5 +2361,8 @@ ul.checklist li {
     color: #495057 !important;
     font-size: 9px !important;
   }
+  .d-print-none {
+    display: none !important;
+  }
 }
 /* ──────────────────────────────────────────────────── */

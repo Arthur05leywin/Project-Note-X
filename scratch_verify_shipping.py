@@ -1,19 +1,39 @@
 import os
 import re
+import sys
+from bs4 import BeautifulSoup
+
+sys.stdout.reconfigure(encoding='utf-8')
 
 ROOT_DIR = r"c:\Users\sayan\Downloads\biochem Note X"
 
-files_to_check = [
-    os.path.join(ROOT_DIR, "modules", "module-01", "enzyme_inhibition_notes.html"),
-    os.path.join(ROOT_DIR, "modules", "module-01", "enzyme_inhibition_X.html"),
-    os.path.join(ROOT_DIR, "modules", "module-02", "carb_metabolism_notes.html"),
-    os.path.join(ROOT_DIR, "modules", "module-02", "carb_metabolism_notes X.html"),
-    os.path.join(ROOT_DIR, "modules", "module-03", "lipid_metabolism_notes.html"),
-    os.path.join(ROOT_DIR, "modules", "module-03", "lipid_metabolism_notes_X.html")
+SHIPPING_MODULES = [
+    "modules/module-01/enzyme_inhibition_notes.html",
+    "modules/module-01/enzyme_inhibition_X.html",
+    "modules/module-02/carb_metabolism_notes.html",
+    "modules/module-02/carb_metabolism_notes X.html",
+    "modules/module-03/lipid_metabolism_notes.html",
+    "modules/module-03/lipid_metabolism_notes_X.html",
+    "modules/module-04/module04_protein_haemoglobin.html",
+    "modules/module-04/module04_protein_haemoglobin_X.html",
+    "modules/module-05/module05_nucleotide_metabolism.html",
+    "modules/module-05/module05_nucleotide_metabolism_X.html",
+    "modules/module-06/module06_molecular_biology.html",
+    "modules/module-06/module06_molecular_biology_X.html",
+    "modules/module-07/module07_biological_oxidation.html",
+    "modules/module-07/module07_biological_oxidation_X.html",
+    "modules/module-08/module08_nutrition_vitamins.html",
+    "modules/module-08/module08_nutrition_vitamins_X.html",
+    "modules/module-09/module09_clinical_biochemistry.html",
+    "modules/module-09/module09_clinical_biochemistry_X.html",
+    "modules/module-10/module10_immunochemistry_oncogenesis.html",
+    "modules/module-10/module10_immunochemistry_oncogenesis_X.html"
 ]
 
+files_to_check = [os.path.join(ROOT_DIR, *path.split('/')) for path in SHIPPING_MODULES]
+
 print("======================================================================")
-print("[START] Programmatic Shipping Verification Pipeline (Modules 01, 02 & 03)")
+print("[START] Programmatic Shipping Verification Pipeline (Modules 01 - 06)")
 print("======================================================================\n")
 
 all_passed = True
