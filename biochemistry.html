@@ -29,14 +29,13 @@
       .bc-hero h1 { margin-bottom: 1rem; }
       .bc-hero p  { max-width: 38rem; }
 
-      /* Bundle card */
       .bundle-card {
         margin: 3rem 0;
         padding: 2.25rem 2rem;
         border-radius: var(--radius);
-        border: 1px solid rgba(212, 175, 55, 0.35);
-        background: linear-gradient(135deg, #111318 0%, #0d0f12 100%);
-        box-shadow: 0 0 32px rgba(212, 175, 55, 0.07);
+        border: 1px solid var(--border);
+        background: linear-gradient(135deg, var(--surface) 0%, var(--surface-2) 100%);
+        box-shadow: 0 0 32px rgba(0, 0, 0, 0.05);
         display: grid;
         gap: 1.5rem;
       }
@@ -68,7 +67,7 @@
       .bundle-price {
         font-size: 2.8rem;
         font-weight: 600;
-        color: #c9a84c;
+        color: var(--text);
         line-height: 1;
         margin-bottom: 0.4rem;
       }
@@ -259,6 +258,7 @@
       <nav class="site-nav">
         <a href="index.html">Home</a>
         <a class="active" href="biochemistry.html">Biochemistry</a>
+        <a href="anatomy.html">Anatomy</a>
         <a href="sample.html">Sample</a>
         <a href="faq.html">FAQ</a>
         <a class="nav-cta" href="contact.html">Contact</a>
