@@ -1,0 +1,3408 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Module 10 — Immunochemistry &amp; Oncogenesis | Last-Day Revision System</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&amp;family=JetBrains+Mono:wght@400;600&amp;family=Crimson+Pro:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="mbbs_master_style.css" rel="stylesheet"/>
+<link href="wbuhs_master_style.css" rel="stylesheet"/> <style>
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300..900;1,300..900&family=IBM+Plex+Mono:ital,wght@0,100..700;1,100..700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Sora:wght@100..800&display=swap');
+
+/* ==========================================
+   DYNAMIC MULTI-THEME VARIABLE ENGINE
+   ========================================== */
+
+/* Theme 1: Premium Gold (Default / Classic Modules 1-3 & Module 5-X) */
+:root, body.theme-gold {
+  --bg: #0d0f14;
+  --surface: #13161e;
+  --surface2: #1a1e2a;
+  --surface3: #222736;
+  --border: #252a38;
+  --border2: #343b4f;
+  --accent: #e8c84a;
+  --accent2: #4ae8b0;
+  --accent3: #e84a7a;
+  --accent4: #4a9ee8;
+  --text: #e8eaf0;
+  --muted: #8a90a8;
+  --white: #ffffff;
+  --rls: #e84a7a;
+  --gold: #e8c84a;
+  --rose: #e84a7a;
+  --purple: #bf81ff;
+  --blue: #4a9ee8;
+  --green: #4ae8b0;
+  --orange: #ffa552;
+}
+
+/* Theme 2: Premium Crimson (Module 4 & 4-X) */
+body.theme-crimson {
+  --bg: #0a0a0f;
+  --surface: #111118;
+  --surface2: #18181f;
+  --surface3: #1e1e28;
+  --border: #252535;
+  --border2: #34344a;
+  --accent: #e8334a;
+  --accent2: #ff5268;
+  --accent3: #ff8595;
+  --accent4: #4a9ee8;
+  --text: #e8eaf0;
+  --muted: #8a90a8;
+  --white: #ffffff;
+  --rls: #ff8595;
+  --gold: #f4c464;
+  --rose: #e8334a;
+  --purple: #c084fc;
+  --blue: #60a5fa;
+  --green: #4ade80;
+  --orange: #fb923c;
+}
+
+/* Theme 3: Premium Emerald (Module 5 Modern) */
+body.theme-emerald {
+  --bg: #08100f;
+  --surface: #0f1a18;
+  --surface2: #152220;
+  --surface3: #1c2d2a;
+  --border: #1e3530;
+  --border2: #2a4540;
+  --accent: #00c897;
+  --accent2: #2ddcaa;
+  --accent3: #80ffe8;
+  --accent4: #60a5fa;
+  --text: #e2ede9;
+  --muted: #8aada6;
+  --white: #ffffff;
+  --rls: #ff6b8a;
+  --gold: #f4c464;
+  --rose: #ff6b8a;
+  --purple: #c084fc;
+  --blue: #60a5fa;
+  --green: #4ade80;
+  --orange: #fb923c;
+}
+
+/* Theme 4: Premium Indigo (Modules 6, 8, 9, 10) */
+body.theme-indigo {
+  --bg: #080c14;
+  --surface: #0d1220;
+  --surface2: #121828;
+  --surface3: #182030;
+  --border: #1e293b;
+  --border2: #334155;
+  --accent: #6366f1;
+  --accent2: #818cf8;
+  --accent3: #c084fc;
+  --accent4: #38bdf8;
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --white: #ffffff;
+  --rls: #f43f5e;
+  --gold: #fbbf24;
+  --rose: #f43f5e;
+  --purple: #c084fc;
+  --blue: #38bdf8;
+  --green: #34d399;
+  --orange: #fb923c;
+}
+
+/* Theme 5: Premium Amber (Modules 7 & 7-X) */
+body.theme-amber {
+  --bg: #080a0e;
+  --surface: #0e1118;
+  --surface2: #141820;
+  --surface3: #1a2030;
+  --border: #1e2530;
+  --border2: #2a3545;
+  --accent: #f59e0b;
+  --accent2: #fbbf24;
+  --accent3: #fb923c;
+  --accent4: #34d399;
+  --text: #f3f4f6;
+  --muted: #9ca3af;
+  --white: #ffffff;
+  --rls: #ef4444;
+  --gold: #fbbf24;
+  --rose: #ef4444;
+  --purple: #a855f7;
+  --blue: #3b82f6;
+  --green: #10b981;
+  --orange: #f97316;
+}
+
+/* ==========================================
+   GLOBAL STRUCTURE & FONTS
+   ========================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Typography Isolation */
+body {
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  overflow-x: hidden;
+  font-size: 14px;
+}
+
+body.theme-gold {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 14px;
+}
+
+body.theme-crimson,
+body.theme-emerald,
+body.theme-indigo,
+body.theme-amber {
+  font-family: "Sora", sans-serif;
+  font-size: 15px;
+}
+
+strong {
+  color: var(--white);
+}
+
+p {
+  margin-bottom: 12px;
+  color: var(--text);
+  line-height: 1.8;
+}
+
+/* Custom Webkit Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
+}
+
+
+/* ==========================================
+   CLASSIC LAYOUT SELECTORS (Modules 1-3)
+   ========================================== */
+
+/* Premium Brand Identity */
+.brand-container {
+  display: block;
+  margin-bottom: 28px;
+  animation: fadeIn 0.8s ease-out;
+}
+.brand-logo {
+  max-width: 200px;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.brand-logo:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(232, 200, 74, 0.15); /* Accent glow on hover */
+}
+
+.cover {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 60px;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg);
+  page-break-after: always;
+}
+
+.cover::before {
+  content: "";
+  position: absolute;
+  top: -200px;
+  right: -200px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(232, 200, 74, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cover::after {
+  content: "";
+  position: absolute;
+  bottom: -100px;
+  left: -100px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(74, 232, 176, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cover-tag {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  border: 1px solid var(--accent);
+  padding: 4px 12px;
+  margin-bottom: 40px;
+  display: inline-block;
+}
+
+.cover h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(42px, 8vw, 72px);
+  font-weight: 900;
+  line-height: 1.05;
+  color: var(--white);
+  margin-bottom: 10px;
+}
+
+.cover h1 span {
+  color: var(--accent);
+}
+
+.cover-sub {
+  font-size: 18px;
+  color: var(--muted);
+  margin-bottom: 50px;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.cover-meta {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.cover-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cover-meta-label {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.cover-meta-value {
+  font-size: 13px;
+  color: var(--accent2);
+  font-weight: 500;
+}
+
+.cover-divider {
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  margin: 30px 0;
+}
+
+.cover-pyq-badge {
+  position: absolute;
+  top: 120px;
+  right: 60px;
+  background: var(--accent);
+  color: var(--bg);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 8px 16px;
+  letter-spacing: 1px;
+}
+
+.page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 50px 60px;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 30px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.section-number {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 2px;
+}
+
+.section-title {
+  font-family: "Playfair Display", serif;
+  font-size: 28px;
+  color: var(--white);
+  font-weight: 700;
+}
+
+.section-title span {
+  color: var(--accent);
+}
+
+.pyq-box {
+  background: rgba(232, 200, 74, 0.08);
+  border-left: 3px solid var(--accent);
+  padding: 16px 20px;
+  margin-bottom: 30px;
+  border-radius: 0 6px 6px 0;
+}
+
+.pyq-box-label {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.pyq-box ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pyq-box ul li {
+  background: rgba(232, 200, 74, 0.15);
+  color: var(--accent);
+  font-size: 11px;
+  font-family: "IBM Plex Mono", monospace;
+  padding: 3px 10px;
+  border-radius: 2px;
+}
+
+.big-picture {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 28px;
+}
+
+.big-picture-label {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  color: var(--accent2);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.flowchart-container {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 30px;
+  margin: 24px 0;
+}
+
+.flowchart-title {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+/* Classic Comparison Tables */
+.comp-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 13px;
+}
+
+.comp-table th {
+  background: var(--surface2);
+  padding: 12px 16px;
+  text-align: left;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--border);
+}
+
+.comp-table th:nth-child(2) { color: var(--accent2); }
+.comp-table th:nth-child(3) { color: var(--accent3); }
+.comp-table th:nth-child(4) { color: var(--accent4); }
+
+.comp-table td {
+  padding: 11px 16px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+  line-height: 1.6;
+}
+
+.comp-table tr:hover td {
+  background: var(--surface);
+}
+
+.comp-table td:first-child {
+  font-weight: 600;
+  color: var(--muted);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.key-fact {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  background: var(--surface);
+  border-radius: 6px;
+  padding: 14px 18px;
+  margin: 10px 0;
+}
+
+.key-fact-icon {
+  font-size: 16px;
+  margin-top: 1px;
+  flex-shrink: 0;
+}
+
+.key-fact-text {
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.key-fact-text strong {
+  color: var(--accent);
+}
+
+.mnemonic {
+  background: linear-gradient(135deg, rgba(74, 232, 176, 0.08), rgba(232, 200, 74, 0.05));
+  border: 1px solid rgba(74, 232, 176, 0.3);
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin: 20px 0;
+}
+
+.mnemonic-label {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  color: var(--accent2);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.mnemonic-text {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--white);
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.mnemonic-expand {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.rls-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(232, 200, 74, 0.15);
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  padding: 3px 10px;
+  border-radius: 3px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+/* Classic Viva section */
+.viva-section {
+  background: var(--surface);
+  border-radius: 8px;
+  padding: 28px;
+  margin: 30px 0;
+  border: 1px solid var(--border);
+}
+
+.viva-label {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.viva-label::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+div.viva-q {
+  margin-bottom: 18px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--border);
+}
+
+div.viva-q:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.viva-q-text {
+  font-weight: 600;
+  color: var(--accent);
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.viva-q-text span {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  background: rgba(232, 200, 74, 0.15);
+  padding: 2px 8px;
+  margin-right: 8px;
+  border-radius: 2px;
+}
+
+.viva-a-text {
+  font-size: 13px;
+  color: var(--text);
+  line-height: 1.7;
+  padding-left: 16px;
+  border-left: 2px solid var(--border);
+}
+
+.section-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 40px 0;
+}
+
+h2.topic-head {
+  font-family: "Playfair Display", serif;
+  font-size: 22px;
+  color: var(--white);
+  margin: 28px 0 14px;
+}
+
+h3.sub-head {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent2);
+  margin: 20px 0 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: "IBM Plex Mono", monospace;
+}
+
+.graph-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px;
+  margin: 16px 0;
+}
+
+.graph-label {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  color: var(--accent4);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
+svg text {
+  font-family: "IBM Plex Mono", monospace;
+}
+
+.examiner-fav {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(232, 74, 122, 0.15);
+  border: 1px solid var(--accent3);
+  color: var(--accent3);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  padding: 2px 9px;
+  border-radius: 3px;
+  letter-spacing: 1px;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+
+/* ==========================================
+   MODERN LAYOUT SELECTORS (Modules 4-10)
+   ========================================== */
+
+/* Modern Hero Block */
+.hero {
+  background: linear-gradient(135deg, #050e0c 0%, #0d1f1a 50%, var(--bg) 100%);
+  border-bottom: 1px solid var(--border2);
+  padding: 3rem 1.5rem 2.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-crimson .hero {
+  background: linear-gradient(135deg, #100609 0%, #200d12 50%, var(--bg) 100%);
+}
+.theme-indigo .hero {
+  background: linear-gradient(135deg, #060910 0%, #0d1222 50%, var(--bg) 100%);
+}
+.theme-amber .hero {
+  background: linear-gradient(135deg, #100a06 0%, #20140d 50%, var(--bg) 100%);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 360px;
+  height: 360px;
+  background: radial-gradient(circle, rgba(0, 200, 151, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.theme-crimson .hero::before { background: radial-gradient(circle, rgba(232, 51, 74, 0.12) 0%, transparent 70%); }
+.theme-indigo .hero::before { background: radial-gradient(circle, rgba(99, 102, 241, 0.12) 0%, transparent 70%); }
+.theme-amber .hero::before { background: radial-gradient(circle, rgba(245, 158, 11, 0.12) 0%, transparent 70%); }
+
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: -40px;
+  left: 15%;
+  width: 240px;
+  height: 240px;
+  background: radial-gradient(circle, rgba(244, 196, 100, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.module-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0, 200, 151, 0.12);
+  border: 1px solid rgba(0, 200, 151, 0.35);
+  color: var(--accent2);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  padding: 4px 12px;
+  border-radius: 3px;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+.theme-crimson .module-tag {
+  background: rgba(232, 51, 74, 0.12);
+  border-color: rgba(232, 51, 74, 0.35);
+}
+.theme-indigo .module-tag {
+  background: rgba(99, 102, 241, 0.12);
+  border-color: rgba(99, 102, 241, 0.35);
+}
+.theme-amber .module-tag {
+  background: rgba(245, 158, 11, 0.12);
+  border-color: rgba(245, 158, 11, 0.35);
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.7); }
+}
+
+.hero h1 {
+  font-family: "Crimson Pro", serif;
+  font-size: clamp(2rem, 6vw, 3.2rem);
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.15;
+  margin-bottom: 0.5rem;
+}
+
+.hero h1 span {
+  color: var(--accent);
+}
+
+.hero-sub {
+  color: var(--text2);
+  font-size: 13px;
+  font-family: "JetBrains Mono", monospace;
+  letter-spacing: 0.5px;
+  margin-bottom: 1.5rem;
+}
+
+.hero-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pill {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-family: "JetBrains Mono", monospace;
+}
+
+/* Table of Contents */
+.toc {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  margin: 1.5rem;
+  padding: 1.25rem;
+  border-radius: 6px;
+}
+
+.toc-title {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 6px;
+}
+
+.toc a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 13px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.toc a:hover {
+  color: var(--accent2);
+  background: rgba(0, 200, 151, 0.08);
+}
+.theme-crimson .toc a:hover { background: rgba(232, 51, 74, 0.08); }
+.theme-indigo .toc a:hover { background: rgba(99, 102, 241, 0.08); }
+.theme-amber .toc a:hover { background: rgba(245, 158, 11, 0.08); }
+
+.toc-num {
+  color: var(--accent);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+}
+
+.content {
+  padding: 0 1.5rem 3rem;
+}
+
+/* Modern Section Headers */
+.content .section-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 2.5rem 0 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.content .section-num {
+  background: var(--accent);
+  color: var(--bg);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  font-weight: 700;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.content .section-header h2 {
+  font-family: "Crimson Pro", serif;
+  font-size: clamp(1.3rem, 4vw, 1.8rem);
+  font-weight: 600;
+  color: var(--text);
+}
+
+.content .section-header h2 em {
+  color: var(--accent2);
+  font-style: normal;
+}
+
+/* Modern Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  font-family: "JetBrains Mono", monospace;
+  padding: 2px 7px;
+  border-radius: 3px;
+  vertical-align: middle;
+  margin-left: 4px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.badge-rls {
+  background: rgba(255, 107, 138, 0.18);
+  color: var(--rose);
+  border: 1px solid rgba(255, 107, 138, 0.35);
+}
+.badge-pyq {
+  background: rgba(96, 165, 250, 0.15);
+  color: var(--blue);
+  border: 1px solid rgba(96, 165, 250, 0.3);
+}
+.badge-fav {
+  background: rgba(244, 196, 100, 0.15);
+  color: var(--gold);
+  border: 1px solid rgba(244, 196, 100, 0.3);
+}
+.badge-new {
+  background: rgba(74, 222, 128, 0.15);
+  color: var(--green);
+  border: 1px solid rgba(74, 222, 128, 0.3);
+}
+
+/* Modern Cards */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.card-title {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card-title::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* Flowcharts - Merged and Dynamic */
+.flowchart {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin: 1rem 0;
+  overflow-x: auto;
+}
+
+.flow-title {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent2);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.flow-title::before {
+  content: "▶";
+  font-size: 8px;
+}
+
+.flow-h {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+}
+
+.flow-box {
+  flex: 1 1 auto;
+  background: var(--surface3);
+  border: 1.5px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 13px;
+  text-align: center;
+  min-width: 110px;
+  line-height: 1.4;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+}
+
+.flow-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border-color: var(--accent);
+}
+
+.flow-box.accent, .flow-box.yellow {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(0, 200, 151, 0.08);
+}
+.theme-crimson .flow-box.accent { background: rgba(232, 51, 74, 0.08); }
+.theme-indigo .flow-box.accent { background: rgba(99, 102, 241, 0.08); }
+.theme-amber .flow-box.accent { background: rgba(245, 158, 11, 0.08); }
+
+.flow-box.gold {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: rgba(244, 196, 100, 0.08);
+}
+.flow-box.rose, .flow-box.red {
+  border-color: var(--rose);
+  color: var(--rose);
+  background: rgba(255, 107, 138, 0.08);
+}
+.flow-box.purple {
+  border-color: var(--purple);
+  color: var(--purple);
+  background: rgba(192, 132, 252, 0.08);
+}
+.flow-box.blue {
+  border-color: var(--blue);
+  color: var(--blue);
+  background: rgba(96, 165, 250, 0.08);
+}
+.flow-box.green {
+  border-color: var(--green);
+  color: var(--green);
+  background: rgba(74, 222, 128, 0.08);
+}
+.flow-box.white {
+  border-color: var(--text);
+  color: var(--text);
+}
+
+.flow-box .box-label {
+  font-size: 10px;
+  color: var(--muted);
+  font-family: "JetBrains Mono", monospace;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.flow-box .box-sub {
+  font-size: 11px;
+  color: var(--muted);
+  display: block;
+  margin-top: 2px;
+}
+
+.arrow {
+  color: var(--accent);
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.arrow-down {
+  text-align: center;
+  color: var(--accent);
+  font-size: 18px;
+  margin: 4px 0;
+}
+
+.flow-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 12px 0;
+  width: 100%;
+}
+
+.flow-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  font-size: 20px;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.flow-arrow.down {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 8px auto;
+  color: var(--accent);
+  font-size: 20px;
+}
+
+.flow-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.flow-down {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 12px auto;
+  color: var(--accent);
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.flow-v {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.flow-v .flow-box {
+  width: 100%;
+  max-width: 500px;
+}
+
+.flow-v .arrow-down {
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+}
+
+/* Modern Tables (Scoped to .table-wrap) */
+.table-wrap {
+  overflow-x: auto;
+  margin: 1rem 0;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.table-wrap table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-wrap th {
+  background: var(--surface3);
+  color: var(--accent2);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 2px solid var(--accent);
+}
+
+.table-wrap td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+  vertical-align: top;
+}
+
+.table-wrap tr:hover td {
+  background: rgba(0, 200, 151, 0.04);
+}
+.theme-crimson .table-wrap tr:hover td { background: rgba(232, 51, 74, 0.04); }
+.theme-indigo .table-wrap tr:hover td { background: rgba(99, 102, 241, 0.04); }
+.theme-amber .table-wrap tr:hover td { background: rgba(245, 158, 11, 0.04); }
+
+.table-wrap td:first-child {
+  color: var(--accent2);
+  font-weight: 600;
+}
+
+/* Modern Clinical & Mnemonic boxes inside .content */
+.content .clinical-box {
+  background: linear-gradient(135deg, rgba(96, 165, 250, 0.05), rgba(96, 165, 250, 0.02));
+  border: 1px solid rgba(96, 165, 250, 0.25);
+  border-left: 4px solid var(--blue);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+}
+
+.content .clinical-box .cbox-title {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--blue);
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.content .clinical-box .cbox-title::before {
+  content: "🩺";
+}
+
+.mnemonic-box {
+  background: linear-gradient(135deg, rgba(244, 196, 100, 0.06), rgba(244, 196, 100, 0.02));
+  border: 1px solid rgba(244, 196, 100, 0.28);
+  border-left: 4px solid var(--gold);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+}
+
+.mnemonic-box .mbox-title {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.mnemonic-box .mbox-title::before {
+  content: "🧠";
+}
+
+.mnemonic-highlight {
+  background: rgba(244, 196, 100, 0.1);
+  border: 1px dashed rgba(244, 196, 100, 0.3);
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-family: "Crimson Pro", serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--gold);
+  margin: 6px 0;
+  letter-spacing: 1px;
+}
+
+.eq-box {
+  background: linear-gradient(135deg, rgba(192, 132, 252, 0.06), rgba(192, 132, 252, 0.02));
+  border: 1px solid rgba(192, 132, 252, 0.28);
+  border-left: 4px solid var(--purple);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+}
+
+.eq-box .eq-title {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--purple);
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.eq-box .eq-title::before {
+  content: "📝";
+}
+
+.eq-statement {
+  background: var(--surface3);
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-family: "Crimson Pro", serif;
+  font-size: 15px;
+  font-style: italic;
+  color: var(--text);
+  margin-bottom: 10px;
+  border-left: 3px solid var(--purple);
+}
+
+.eq-answer ol {
+  margin-left: 18px;
+}
+
+.eq-answer li {
+  margin-bottom: 6px;
+  font-size: 13px;
+}
+
+.eq-answer li span {
+  color: var(--purple);
+  font-weight: 600;
+}
+
+.keypoint {
+  background: rgba(0, 200, 151, 0.07);
+  border: 1px solid rgba(0, 200, 151, 0.22);
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin: 8px 0;
+  font-size: 13px;
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+.theme-crimson .keypoint { background: rgba(232, 51, 74, 0.07); border-color: rgba(232, 51, 74, 0.22); }
+.theme-indigo .keypoint { background: rgba(99, 102, 241, 0.07); border-color: rgba(99, 102, 241, 0.22); }
+.theme-amber .keypoint { background: rgba(245, 158, 11, 0.07); border-color: rgba(245, 158, 11, 0.22); }
+
+.keypoint::before {
+  content: "⚡";
+  flex-shrink: 0;
+}
+
+.warn-box {
+  background: rgba(251, 146, 60, 0.07);
+  border: 1px solid rgba(251, 146, 60, 0.28);
+  border-left: 4px solid var(--orange);
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin: 8px 0;
+  font-size: 13px;
+  display: flex;
+  gap: 8px;
+}
+
+.warn-box::before {
+  content: "⚠️";
+  flex-shrink: 0;
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 2rem 0;
+}
+
+ul.checklist {
+  list-style: none;
+  margin: 0.5rem 0;
+}
+
+ul.checklist li::before {
+  content: "✦ ";
+  color: var(--accent);
+}
+
+ul.checklist li {
+  margin-bottom: 4px;
+  font-size: 13px;
+}
+
+.hl { color: var(--accent2); font-weight: 600; }
+.hl-gold { color: var(--gold); font-weight: 600; }
+.hl-rose { color: var(--rose); font-weight: 600; }
+.hl-blue { color: var(--blue); font-weight: 600; }
+.hl-purple { color: var(--purple); font-weight: 600; }
+.hl-green { color: var(--green); font-weight: 600; }
+
+/* Modern Atom Cards */
+.atom-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+  margin: 1rem 0;
+}
+
+.atom-card {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem;
+  transition: border-color 0.2s;
+}
+
+.atom-card:hover {
+  border-color: var(--accent);
+}
+
+.atom-head {
+  font-family: "Crimson Pro", serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.atom-sub {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+/* Modern Viva Section details */
+.viva-title-bar {
+  background: rgba(0, 200, 151, 0.1);
+  border: 1px solid rgba(0, 200, 151, 0.28);
+  border-radius: 6px 6px 0 0;
+  padding: 10px 14px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--accent2);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.theme-crimson .viva-title-bar { background: rgba(232, 51, 74, 0.1); border-color: rgba(232, 51, 74, 0.28); }
+.theme-indigo .viva-title-bar { background: rgba(99, 102, 241, 0.1); border-color: rgba(99, 102, 241, 0.28); }
+.theme-amber .viva-title-bar { background: rgba(245, 158, 11, 0.1); border-color: rgba(245, 158, 11, 0.28); }
+
+.viva-title-bar::before {
+  content: "💬";
+  font-size: 14px;
+}
+
+.content details {
+  border: 1px solid var(--border);
+  border-top: none;
+  overflow: hidden;
+}
+
+.content details:last-child {
+  border-radius: 0 0 6px 6px;
+}
+
+.content summary {
+  padding: 10px 14px;
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--text);
+  background: var(--surface);
+  list-style: none;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  user-select: none;
+  transition: background 0.2s;
+}
+
+.content summary:hover {
+  background: var(--surface2);
+}
+
+.content summary::before {
+  content: "▶";
+  color: var(--accent);
+  font-size: 10px;
+  margin-top: 3px;
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+
+.content details[open] > summary::before {
+  transform: rotate(90deg);
+}
+
+.viva-q {
+  font-weight: 600;
+  flex: 1;
+}
+
+.viva-year {
+  color: var(--blue);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  flex-shrink: 0;
+}
+
+.viva-ans {
+  padding: 12px 16px 14px;
+  background: var(--surface2);
+  font-size: 13px;
+  line-height: 1.75;
+  border-top: 1px solid var(--border);
+}
+
+.viva-ans p {
+  margin-bottom: 6px;
+}
+
+.viva-ans ul {
+  margin: 6px 0 6px 16px;
+}
+
+.viva-ans li {
+  margin-bottom: 4px;
+}
+
+.viva-ans strong {
+  color: var(--accent2);
+}
+
+.viva-ans em {
+  color: var(--gold);
+  font-style: normal;
+  font-weight: 600;
+}
+
+.drug-tag {
+  display: inline-block;
+  background: rgba(255, 107, 138, 0.12);
+  border: 1px solid rgba(255, 107, 138, 0.3);
+  color: var(--rose);
+  font-size: 10px;
+  padding: 1px 6px;
+  border-radius: 3px;
+  font-family: "JetBrains Mono", monospace;
+  margin-left: 4px;
+}
+
+
+/* ==========================================
+   SHARED INTERACTIVE ELEMENTS & UTILS
+   ========================================== */
+
+.progress-bar {
+  height: 3px;
+  background: linear-gradient(to right, var(--accent), var(--accent2), var(--accent4));
+  border-radius: 2px;
+  margin-bottom: 2rem;
+  animation: load 1.5s ease forwards;
+}
+
+@keyframes load {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+.formula {
+  font-family: "JetBrains Mono", monospace;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 6px 12px;
+  margin: 6px 0;
+  color: var(--accent);
+  font-size: 13px;
+  display: block;
+}
+
+.top-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(232, 200, 74, 0.35);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  transition: all 0.2s ease-in-out;
+}
+
+.top-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(232, 200, 74, 0.5);
+}
+
+.theme-emerald .top-btn { box-shadow: 0 4px 15px rgba(0, 200, 151, 0.35); }
+.theme-emerald .top-btn:hover { box-shadow: 0 6px 20px rgba(0, 200, 151, 0.5); }
+
+/* Footer */
+.footer {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  text-align: center;
+  padding: 2rem 1.5rem;
+  color: var(--muted);
+  font-size: 12px;
+  font-family: "JetBrains Mono", monospace;
+  margin-top: 60px;
+}
+
+.footer p {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 1px;
+}
+
+.footer .kims-tag {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+
+/* ==========================================
+   📱 COMPREHENSIVE RESPONSIVE ENGINE
+   ========================================== */
+
+@media (max-width: 768px) {
+  /* Classic Cover page mobile enhancements */
+  .cover {
+    padding: 40px 20px 48px;
+    min-height: 100vh;
+    justify-content: flex-start;
+  }
+  
+  .cover-pyq-badge {
+    position: static !important;
+    display: inline-block !important;
+    align-self: flex-start !important;
+    margin-bottom: 24px !important;
+    padding: 6px 12px !important;
+    font-size: 10px !important;
+  }
+
+  .cover-tag {
+    margin-bottom: 24px !important;
+  }
+
+  .cover h1 {
+    font-size: clamp(32px, 7vw, 48px) !important;
+    margin-bottom: 12px !important;
+  }
+
+  .cover-sub {
+    font-size: 15px !important;
+    margin-bottom: 36px !important;
+    line-height: 1.5 !important;
+  }
+
+  .cover-divider {
+    margin: 20px 0 !important;
+  }
+
+  .cover-meta {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+    width: 100% !important;
+  }
+
+  .cover-meta-item {
+    gap: 2px !important;
+  }
+
+  /* Modern Hero mobile adjustments */
+  .hero {
+    padding: 2rem 1rem;
+  }
+
+  /* Page Wrapper and Main Content Spacing */
+  .page {
+    padding: 24px 16px !important;
+    max-width: 100% !important;
+  }
+
+  .content {
+    padding: 0 1rem 2rem;
+  }
+  
+  .flowchart-container,
+  .flowchart,
+  .clinical-box,
+  .mnemonic-box,
+  .eq-box,
+  .big-picture,
+  .viva-section,
+  .mnemonic,
+  .graph-box,
+  .warn-box {
+    padding: 20px 16px !important;
+    margin: 20px 0 !important;
+  }
+
+  /* Typography Adjustments */
+  h2.topic-head,
+  .content .section-header h2 {
+    font-size: 20px !important;
+    margin: 24px 0 12px !important;
+  }
+
+  h3.sub-head {
+    font-size: 12px !important;
+    margin: 16px 0 8px !important;
+  }
+
+  /* Table of Contents Mobile layout */
+  .toc {
+    margin: 1rem 0;
+    width: auto;
+    display: block;
+  }
+
+  /* Flowcharts mobile layout */
+  .flow-row, .flow-h {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    gap: 6px !important;
+  }
+
+  .flow-box {
+    width: 100% !important;
+    min-width: unset !important;
+    max-width: 100% !important;
+    padding: 12px 16px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    border-right: 1.5px solid var(--border) !important;
+    box-sizing: border-box !important;
+  }
+
+  .flow-arrow, .arrow {
+    display: inline-block !important;
+    transform: rotate(90deg) !important;
+    margin: 8px 0 !important;
+    text-align: center !important;
+  }
+
+  .flow-arrow.down, .arrow-down {
+    transform: none !important;
+    margin: 8px 0 !important;
+    max-width: 100% !important;
+  }
+
+  /* Classic Comparison Tables & Modern Tables responsive scroll */
+  .comp-table, .table-wrap {
+    display: block !important;
+    width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 6px !important;
+    margin: 16px 0 !important;
+  }
+
+  .comp-table th, 
+  .comp-table td,
+  .table-wrap th,
+  .table-wrap td {
+    padding: 10px 12px !important;
+    font-size: 12px !important;
+  }
+
+  .comp-table::-webkit-scrollbar,
+  .table-wrap::-webkit-scrollbar {
+    height: 4px !important;
+  }
+  .comp-table::-webkit-scrollbar-track,
+  .table-wrap::-webkit-scrollbar-track {
+    background: var(--bg) !important;
+  }
+  .comp-table::-webkit-scrollbar-thumb,
+  .table-wrap::-webkit-scrollbar-thumb {
+    background: var(--border) !important;
+    border-radius: 2px !important;
+  }
+
+  /* Layout helpers */
+  .two-col, .atom-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .clinical-box ul li {
+    display: block !important;
+    position: relative !important;
+    padding-left: 16px !important;
+    font-size: 12px !important;
+  }
+  
+  .clinical-box ul li::before {
+    position: absolute !important;
+    left: 0 !important;
+    top: 2px !important;
+  }
+
+  /* Accordions / Viva Spacing */
+  summary.viva-q-text,
+  .content summary {
+    padding: 12px 0 !important;
+    font-size: 13px !important;
+  }
+
+  .viva-a-text,
+  .viva-ans {
+    padding-left: 12px !important;
+    font-size: 12px !important;
+    margin-top: 6px !important;
+  }
+}
+
+
+/* ==========================================
+   ⚡ ULTRA-CRISP REVISION CARD ENGINE 
+   ========================================== */
+
+.revision-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  padding: 18px 22px;
+  margin: 16px 0;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.revision-card:hover {
+  border-color: var(--accent2);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
+}
+
+.revision-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 8px;
+}
+
+.revision-card-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.revision-card-title {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.revision-card-title span {
+  color: var(--accent);
+}
+
+.revision-card-body {
+  font-size: 13.5px;
+  line-height: 1.7;
+}
+
+.revision-card-body ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.revision-card-body ul li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+
+.revision-card-body ul li:last-child {
+  margin-bottom: 0;
+}
+
+.revision-card-body ul li::before {
+  content: "✦";
+  position: absolute;
+  left: 0;
+  color: var(--accent2);
+  font-weight: bold;
+}
+
+.revision-card-body ul li strong {
+  color: var(--white);
+}
+
+/* Print Budgeting Classes */
+.print-page-break {
+  display: block;
+}
+
+@media screen {
+  .print-page-break {
+    margin: 30px 0;
+  }
+}
+
+
+/* ==========================================
+   🖨️ PREMIUM PRINT-TO-PDF ENGINE (Ctrl+P)
+   ========================================== */
+
+@media print {
+  :root, body.theme-gold, body.theme-crimson, body.theme-emerald, body.theme-indigo, body.theme-amber {
+    --bg: #ffffff;
+    --surface: #f8f9fa;
+    --surface2: #e9ecef;
+    --surface3: #dee2e6;
+    --border: #dee2e6;
+    --border2: #ced4da;
+    --accent: #000000;
+    --accent2: #000000;
+    --accent3: #000000;
+    --accent4: #000000;
+    --text: #111111;
+    --text2: #222222;
+    --text3: #333333;
+    --muted: #495057;
+    --white: #000000;
+    --rls: #000000;
+    --gold: #000000;
+    --rose: #000000;
+    --purple: #000000;
+    --blue: #000000;
+    --green: #000000;
+    --orange: #000000;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+    color: #000000 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  @page {
+    size: A4 portrait;
+    margin: 20mm 15mm 20mm 15mm !important;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #111111 !important;
+    font-size: 11pt !important;
+    line-height: 1.4 !important;
+  }
+
+  p {
+    font-size: 11pt !important;
+    line-height: 1.4 !important;
+    margin-bottom: 8px !important;
+  }
+
+  /* Cover Page exact single A4 layout */
+  .cover {
+    min-height: unset !important;
+    height: 260mm !important;
+    max-height: 100vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    padding: 40px !important;
+    box-sizing: border-box !important;
+    border: 2px solid #000000 !important;
+    background: #ffffff !important;
+    page-break-after: always !important;
+    break-after: page !important;
+    position: relative !important;
+  }
+
+  .cover::before,
+  .cover::after {
+    display: none !important;
+  }
+
+  .cover-tag {
+    border-color: #000000 !important;
+    margin-bottom: 25px !important;
+    padding: 4px 10px !important;
+    font-size: 10px !important;
+  }
+
+  .cover h1 {
+    font-size: 44px !important;
+    line-height: 1.1 !important;
+    color: #000000 !important;
+    margin-bottom: 10px !important;
+  }
+
+  .cover h1 span {
+    color: #000000 !important;
+  }
+
+  .cover-sub {
+    font-size: 15px !important;
+    color: #495057 !important;
+    margin-bottom: 30px !important;
+  }
+
+  .cover-divider {
+    width: 60px !important;
+    height: 2px !important;
+    background: #000000 !important;
+    margin: 20px 0 !important;
+  }
+
+  .cover-meta {
+    gap: 30px !important;
+  }
+
+  .cover-meta-value {
+    font-size: 12px !important;
+  }
+
+  .cover-pyq-badge {
+    position: absolute !important;
+    top: 70px !important;
+    right: 40px !important;
+    border: 1px solid #000000 !important;
+    background: #ffffff !important;
+    padding: 6px 12px !important;
+    font-size: 10px !important;
+  }
+
+  /* Modern Hero formatting for print */
+  .hero {
+    background: none !important;
+    border-bottom: 2px solid #000000 !important;
+    padding: 1rem 0 !important;
+  }
+  
+  .hero::before, .hero::after {
+    display: none !important;
+  }
+
+  .module-tag {
+    background: #ffffff !important;
+    border: 1px solid #000000 !important;
+    color: #000000 !important;
+  }
+  .module-tag .dot {
+    display: none !important;
+  }
+
+  .pill {
+    background: #ffffff !important;
+    border: 1px solid #000000 !important;
+  }
+
+  /* Page Wrapper Spacing */
+  .page {
+    padding: 10px 0 !important;
+    max-width: 100% !important;
+  }
+
+  .content {
+    padding: 0 !important;
+  }
+
+  .section-divider {
+    margin: 20px 0 !important;
+    border-color: #dee2e6 !important;
+  }
+
+  /* Heading orphans preventions */
+  .section-header,
+  .content .section-header,
+  h2.topic-head,
+  h3.sub-head {
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+    margin-top: 15px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .section-header, .content .section-header {
+    padding-bottom: 8px !important;
+    margin-bottom: 15px !important;
+    border-bottom: 1.5px solid #000000 !important;
+  }
+
+  .section-title {
+    font-size: 20px !important;
+    color: #000000 !important;
+  }
+
+  .content .section-num {
+    background: none !important;
+    border: 2px solid #000000 !important;
+    color: #000000 !important;
+  }
+
+  h2.topic-head {
+    font-size: 16px !important;
+    border-bottom: 1px solid #dee2e6 !important;
+    padding-bottom: 4px !important;
+  }
+
+  h3.sub-head {
+    font-size: 11px !important;
+    margin-top: 12px !important;
+  }
+
+  /* Avoid cutting boxes across page breaks */
+  .pyq-box,
+  .big-picture,
+  .clinical-box,
+  .content .clinical-box,
+  .mnemonic-box,
+  .eq-box,
+  .flowchart-container,
+  .flowchart,
+  .comp-table,
+  .table-wrap,
+  .key-fact,
+  .mnemonic,
+  .viva-section,
+  .warn-box,
+  .atom-card,
+  details,
+  details.viva-q,
+  tr,
+  blockquote,
+  svg,
+  .revision-card-body ul li {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .pyq-box,
+  .big-picture,
+  .clinical-box,
+  .content .clinical-box,
+  .mnemonic-box,
+  .eq-box,
+  .flowchart-container,
+  .flowchart,
+  .viva-section,
+  .mnemonic,
+  .warn-box {
+    padding: 12px 16px !important;
+    margin: 10px 0 !important;
+    border-radius: 4px !important;
+    border: 1px solid #000000 !important;
+    background: #f8f9fa !important;
+  }
+
+  .revision-card {
+    background: #ffffff !important;
+    border: 1px solid #000000 !important;
+    border-left: 4px solid #000000 !important;
+    border-radius: 4px !important;
+    padding: 12px 16px !important;
+    margin: 10px 0 !important;
+    box-shadow: none !important;
+    page-break-inside: auto !important;
+    break-inside: auto !important;
+    -webkit-box-decoration-break: clone !important;
+    box-decoration-break: clone !important;
+  }
+
+  .revision-card-header {
+    border-bottom: 1px solid #000000 !important;
+    margin-bottom: 8px !important;
+    padding-bottom: 4px !important;
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+  }
+
+  .revision-card-title {
+    color: #000000 !important;
+    font-size: 11pt !important;
+  }
+
+  .revision-card-body ul li {
+    color: #111111 !important;
+    font-size: 10.5pt !important;
+    line-height: 1.4 !important;
+  }
+
+  .revision-card-body ul li::before {
+    color: #000000 !important;
+  }
+
+  .print-page-break {
+    page-break-before: always !important;
+    break-before: page !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+  }
+
+  .pyq-box { background: #fbf8eb !important; }
+  .clinical-box, .content .clinical-box { background: #fdf5f7 !important; }
+  .warn-box { background: #fff9f3 !important; }
+  .mnemonic, .mnemonic-box { background: #f4fbf7 !important; }
+  .eq-box { background: #fdfbff !important; }
+
+  .pyq-box ul li {
+    background: #e9ecef !important;
+    border: 1px solid #dee2e6 !important;
+    padding: 2px 6px !important;
+    font-size: 10px !important;
+  }
+
+  /* Flowcharts print layout */
+  .flow-box {
+    padding: 6px 12px !important;
+    font-size: 11px !important;
+    min-width: 110px !important;
+    border: 1px solid #000000 !important;
+    background: #ffffff !important;
+  }
+
+  .flow-arrow, .arrow {
+    font-size: 14px !important;
+  }
+  .flow-arrow.down, .arrow-down {
+    margin: 1px 0 !important;
+    font-size: 16px !important;
+  }
+
+  /* Comparison Tables print */
+  .comp-table th, .table-wrap th {
+    padding: 8px 10px !important;
+    font-size: 10px !important;
+    border-bottom: 2px solid #000000 !important;
+    background: #e9ecef !important;
+  }
+
+  .comp-table td, .table-wrap td {
+    padding: 7px 10px !important;
+    font-size: 11px !important;
+    line-height: 1.3 !important;
+    border-bottom: 1px solid #dee2e6 !important;
+    background: #ffffff !important;
+  }
+
+  /* Viva Sections print: details tags auto-expand */
+  details, details.viva-q {
+    display: block !important;
+    border: 1px solid #000000 !important;
+    margin-bottom: 12px !important;
+  }
+
+  summary, summary.viva-q-text {
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    margin-bottom: 6px !important;
+    display: block !important;
+  }
+
+  summary::before, summary.viva-q-text::after, details[open] summary::before {
+    display: none !important;
+  }
+
+  details:not([open]) > *:not(summary) {
+    display: block !important; /* Force print answer display */
+  }
+
+  .viva-a-text, .viva-ans {
+    display: block !important;
+    font-size: 11.5px !important;
+    line-height: 1.4 !important;
+    padding-left: 12px !important;
+    border-left: 2px solid #000000 !important;
+    color: #111111 !important;
+  }
+
+  /* Hide print-unfriendly components */
+  .top-btn,
+  .progress-bar,
+  .toc {
+    display: none !important;
+  }
+
+  /* Clean print footer */
+  .footer {
+    border-top: 1px solid #000000 !important;
+    margin-top: 30px !important;
+    padding: 20px !important;
+    background: #ffffff !important;
+  }
+}
+
+/* ─── Premium Brand Bar ─────────────────────────────── */
+.brand-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 18px 60px;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 10;
+}
+
+.brand-bar-logo {
+  height: 56px;
+  width: auto;
+  border-radius: 6px;
+  object-fit: contain;
+  flex-shrink: 0;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+}
+
+.brand-bar-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.brand-bar-name {
+  font-family: "IBM Plex Mono", "JetBrains Mono", monospace;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--accent, #e8c84a);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.brand-bar-series {
+  font-family: "IBM Plex Mono", "JetBrains Mono", monospace;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+@media print {
+  .brand-bar {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    background: #f8f9fa !important;
+    border-bottom: 1px solid #dee2e6 !important;
+    padding: 10px 40px !important;
+    backdrop-filter: none !important;
+  }
+  .brand-bar-logo {
+    height: 32px !important;
+    filter: grayscale(100%) !important;
+  }
+  .brand-bar-name {
+    color: #000000 !important;
+    font-size: 11px !important;
+    letter-spacing: 2px !important;
+  }
+  .brand-bar-series {
+    color: #495057 !important;
+    font-size: 9px !important;
+  }
+  .d-print-none {
+    display: none !important;
+  }
+}
+/* ──────────────────────────────────────────────────── */
+    </style>
+</head>
+<body class="theme-indigo">
+<!-- HERO -->
+<div class="hero"> 
+<!-- ═══ BRAND BAR ═══ -->
+<div class="brand-bar">
+<img alt="Caffeine &amp; Cadaver" class="brand-bar-logo" src="../../Caffeine &amp; Cadaver.jpg"/>
+<div class="brand-bar-text">
+<span class="brand-bar-name">Caffeine &amp; Cadaver</span>
+<span class="brand-bar-series">MBBS Biochemistry Notes Series</span>
+</div>
+</div>
+<div class="module-tag"><span class="dot"></span>MODULE 10</div>
+<h1>Immunochemistry <br/><span>&amp; Oncogenesis</span></h1>
+<p class="hero-sub">MBBS BIOCHEMISTRY · PAPER 1</p>
+<div class="hero-pills">
+<span class="pill">Immunoglobulins</span>
+<span class="pill">IgG Structure</span>
+<span class="pill">T &amp; B Cell Immunity</span>
+<span class="pill">Hypersensitivity</span>
+<span class="pill">Complement System</span>
+<span class="pill">Graft Rejection</span>
+<span class="pill">Monoclonal Antibodies</span>
+<span class="pill">Oncogenes</span>
+<span class="pill">Tumour Suppressor Genes</span>
+<span class="pill">p53 &amp; Cell Cycle</span>
+<span class="pill">Tumour Markers</span>
+<span class="pill">Carcinogens</span>
+<span class="pill">Apoptosis</span>
+<span class="pill">Signal Transduction</span>
+<span class="pill">Hormone Receptors</span>
+</div>
+</div>
+<!-- TOC -->
+<div class="toc">
+<div class="toc-title">▸ Quick Navigate</div>
+<div class="toc-grid">
+<a href="#s1"><span class="toc-num">01</span> Immunoglobulin Structure</a>
+<a href="#s2"><span class="toc-num">02</span> Ig Classes &amp; Functions</a>
+<a href="#s3"><span class="toc-num">03</span> T &amp; B Cell Immunity</a>
+<a href="#s4"><span class="toc-num">04</span> Hypersensitivity Reactions</a>
+<a href="#s5"><span class="toc-num">05</span> Complement System</a>
+<a href="#s6"><span class="toc-num">06</span> Monoclonal Antibodies</a>
+<a href="#s7"><span class="toc-num">07</span> Cell Cycle &amp; Regulators</a>
+<a href="#s8"><span class="toc-num">08</span> Oncogenes &amp; Proto-oncogenes</a>
+<a href="#s9"><span class="toc-num">09</span> Tumour Suppressor Genes</a>
+<a href="#s10"><span class="toc-num">10</span> Apoptosis</a>
+<a href="#s11"><span class="toc-num">11</span> Tumour Markers</a>
+<a href="#s12"><span class="toc-num">12</span> Carcinogens &amp; Cancer</a>
+<a href="#s13"><span class="toc-num">13</span> Signal Transduction</a>
+<a href="#s14"><span class="toc-num">14</span> Hormone Receptors</a>
+<a href="#s15"><span class="toc-num">15</span> Viva Q&amp;A</a>
+<a href="#s16"><span class="toc-num">16</span> EQ Templates</a>
+<a href="#s17"><span class="toc-num">17</span> Quickfire Table</a>
+</div>
+</div>
+<div class="content">
+<div class="progress-bar"></div><!-- MASTER PYQ INDEX BOX --><div class="pyq-box">
+<div class="pyq-box-label">Master PYQ Index (2011–2025)</div>
+<ul>
+<li>2011</li>
+<li>2013</li>
+<li>2015</li>
+<li>2016</li>
+<li>2017</li>
+<li>2018</li>
+<li>2019</li>
+<li>2021</li>
+<li>2023</li>
+<li>2025</li>
+</ul>
+</div><!-- EXAM PRIORITY MAP --><div class="big-picture" style="margin: 0 0 2rem 0;">
+<div class="big-picture-label">📊 EXAM PRIORITY MAP &amp; USAGE STRATEGY</div>
+<p>
+<strong style="color: var(--rose);">🔴 TIER 1 (High Yield — Must Master):</strong> Immunoglobulin Structure &amp; Classes (s1, s2), Hypersensitivity Reactions (s4), Cell Cycle &amp; Regulators (s7), Oncogenes &amp; Proto-oncogenes (s8), Tumour Suppressor Genes (s9), Tumour Markers (s11). Essential passing concepts.<br/>
+<strong style="color: var(--accent2);">🟡 TIER 2 (Medium Yield — Review):</strong> T &amp; B Cell Immunity (s3), Complement System (s5), Apoptosis (s10), Carcinogens &amp; Cancer Biology (s12), Signal Transduction (s13), Hormone Receptor Classification (s14). Secondary pathway mechanisms.<br/>
+<strong style="color: var(--green);">🟢 TIER 3 (Low Yield — Collapsed on Screen):</strong> Monoclonal Antibodies (s6), Essay Question Templates (s16). Fast read, high-level clinical methodologies.
+        </p>
+</div><!-- LAST DAY REVISION MODE --><div class="section-header">
+<div class="section-num" style="background: var(--rose); color: #fff;">00</div>
+<h2>🔥 Last Day Revision Mode</h2>
+</div><div class="clinical-box key-fact" style="border-left-color: var(--rose); background: rgba(248, 113, 113, 0.05); border-color: rgba(248, 113, 113, 0.2);">
+<div class="cbox-title" style="color: var(--rose);">ULTRA-CONCISE EXAM FACTS</div>
+<ul class="checklist">
+<li><strong>Immunoglobulins:</strong> IgG (most abundant, crosses placenta), IgA (secretory, dimers in tears/milk), IgM (pentamer, primary response), IgE (allergic reactions, Type I hypersensitivity), IgD (B-cell surface marker).</li>
+<li><strong>Hypersensitivity:</strong> Type I (Anaphylactic, IgE mediated), Type II (Cytotoxic, IgG/IgM + complement, e.g., Rh incompatibility), Type III (Immune-complex, e.g., SLE, glomerulonephritis), Type IV (Delayed-type, T-cell mediated, e.g., Mantoux test, contact dermatitis).</li>
+<li><strong>Cell Cycle Checkpoints:</strong> G1/S (regulated by Cyclin D-CDK4/6 and Rb), G2/M (regulated by Cyclin B-CDK1). p53 acts at G1/S to trigger repair or apoptosis via Bax/Bcl2.</li>
+<li><strong>Oncogenes vs TSGs:</strong> Proto-oncogenes need one mutation (gain of function, e.g., Ras, Myc, ErbB2) to promote cancer. Tumour Suppressors need two mutations (loss of function, 'Two-hit hypothesis', e.g., Rb, p53, BRCA1).</li>
+<li><strong>Tumour Markers:</strong> AFP (Hepatocellular carcinoma, Yolk sac tumor), CEA (Colorectal cancer), PSA (Prostate cancer), CA-125 (Ovarian cancer), CA-19-9 (Pancreatic cancer).</li>
+<li><strong>Signal Transduction:</strong> cAMP pathway (GPCR → Adenylyl Cyclase → cAMP → PKA), IP3/DAG pathway (GPCR → Phospholipase C → IP3/DAG → Ca²⁺ release &amp; PKC), RTK pathway (GF binding → dimerisation → autophosphorylation → Ras-Raf-MEK-ERK).</li>
+</ul>
+</div><div class="section-divider"></div>
+<!-- ════════════ S1: IMMUNOGLOBULIN STRUCTURE ════════════ -->
+<div id="s1">
+<div class="section-header">
+<div class="section-num">01</div>
+<h2>Immunoglobulin <em>Structure</em></h2>
+</div>
+<div class="keypoint">Immunoglobulins (Ig) = glycoproteins secreted by plasma cells (differentiated B lymphocytes). They are the humoral arm of adaptive immunity — specifically recognise and bind antigens.</div>
+<div class="card d-print-none">
+<div class="card-title">Basic Immunoglobulin Unit — IgG Prototype <span class="badge badge-fav">⭐ PYQ 2011-S, 2015-S, 2017-S, 2018, 2019, 2021, 2023</span></div>
+<!-- SVG diagram of IgG -->
+<div class="ig-diagram">
+<svg style="max-width:680px;width:100%;" viewbox="0 0 700 320" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="arr" markerheight="6" markerwidth="8" orient="auto" refx="4" refy="3">
+<polygon fill="#e879f9" opacity="0.8" points="0 0, 8 3, 0 6"></polygon>
+</marker>
+</defs>
+<!-- Background -->
+<rect fill="#1c1022" height="320" rx="6" width="700"></rect>
+<!-- Y-shape IgG structure -->
+<!-- Left Heavy chain -->
+<path d="M350,60 L220,160 L180,260" fill="none" stroke="#f0abfc" stroke-linecap="round" stroke-linejoin="round" stroke-width="14"></path>
+<!-- Right Heavy chain -->
+<path d="M350,60 L480,160 L520,260" fill="none" stroke="#f0abfc" stroke-linecap="round" stroke-linejoin="round" stroke-width="14"></path>
+<!-- Left Light chain -->
+<path d="M220,160 L190,80 L230,40" fill="none" stroke="#60a5fa" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"></path>
+<!-- Right Light chain -->
+<path d="M480,160 L510,80 L470,40" fill="none" stroke="#60a5fa" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"></path>
+<!-- S-S bonds — hinge region -->
+<line stroke="#fbbf24" stroke-dasharray="5,3" stroke-width="3" x1="300" x2="400" y1="165" y2="165"></line>
+<!-- S-S heavy-light -->
+<line stroke="#fbbf24" stroke-dasharray="4,2" stroke-width="2" x1="220" x2="205" y1="155" y2="130"></line>
+<line stroke="#fbbf24" stroke-dasharray="4,2" stroke-width="2" x1="480" x2="495" y1="155" y2="130"></line>
+<!-- Labels -->
+<!-- Fab arms -->
+<text fill="#f0abfc" font-family="JetBrains Mono" font-size="11" x="160" y="35">Fab</text>
+<text fill="#f0abfc" font-family="JetBrains Mono" font-size="11" x="490" y="35">Fab</text>
+<!-- Antigen binding sites -->
+<text fill="#34d399" font-family="Sora" font-size="10" x="100" y="60">Antigen</text>
+<text fill="#34d399" font-family="Sora" font-size="10" x="100" y="72">binding site</text>
+<line marker-end="url(#arr)" stroke="#34d399" stroke-width="1" x1="170" x2="218" y1="66" y2="60"></line>
+<text fill="#34d399" font-family="Sora" font-size="10" x="524" y="60">Antigen</text>
+<text fill="#34d399" font-family="Sora" font-size="10" x="524" y="72">binding site</text>
+<line marker-end="url(#arr)" stroke="#34d399" stroke-width="1" x1="523" x2="478" y1="66" y2="60"></line>
+<!-- VH / VL labels -->
+<text fill="#fbbf24" font-family="JetBrains Mono" font-size="10" x="205" y="100">VH</text>
+<text fill="#60a5fa" font-family="JetBrains Mono" font-size="10" x="180" y="115">VL</text>
+<text fill="#fbbf24" font-family="JetBrains Mono" font-size="10" x="465" y="100">VH</text>
+<text fill="#60a5fa" font-family="JetBrains Mono" font-size="10" x="492" y="115">VL</text>
+<!-- Heavy chain label -->
+<text fill="#f0abfc" font-family="Sora" font-size="10" x="100" y="175">Heavy chain (H)</text>
+<text fill="#f0abfc" font-family="Sora" font-size="10" x="100" y="187">~50 kDa · γ chain</text>
+<line marker-end="url(#arr)" stroke="#f0abfc" stroke-width="1" x1="178" x2="215" y1="180" y2="165"></line>
+<!-- Light chain label -->
+<text fill="#60a5fa" font-family="Sora" font-size="10" x="560" y="110">Light chain (L)</text>
+<text fill="#60a5fa" font-family="Sora" font-size="10" x="560" y="122">~25 kDa · κ or λ</text>
+<line marker-end="url(#arr)" stroke="#60a5fa" stroke-width="1" x1="558" x2="510" y1="116" y2="108"></line>
+<!-- Hinge label -->
+<text fill="#fbbf24" font-family="JetBrains Mono" font-size="10" x="305" y="195">HINGE</text>
+<text fill="#fbbf24" font-family="JetBrains Mono" font-size="9" x="290" y="207">S-S bonds</text>
+<!-- Fc label -->
+<text fill="#fb7185" font-family="JetBrains Mono" font-size="12" x="330" y="280">Fc region</text>
+<text fill="#9878b0" font-family="Sora" font-size="9" x="300" y="295">Complement activation · FcR binding</text>
+<!-- Papain / Pepsin cleavage -->
+<line stroke="#fb7185" stroke-dasharray="3,3" stroke-width="1" x1="270" x2="430" y1="162" y2="162"></line>
+<text fill="#fb7185" font-family="JetBrains Mono" font-size="9" x="105" y="160">Papain cuts</text>
+<text fill="#fb7185" font-family="JetBrains Mono" font-size="9" x="105" y="170">above hinge</text>
+<line stroke="none" x1="540" x2="600" y1="175" y2="175"></line>
+<text fill="#fb923c" font-family="JetBrains Mono" font-size="9" x="447" y="156">Pepsin cuts</text>
+<text fill="#fb923c" font-family="JetBrains Mono" font-size="9" x="447" y="166">below hinge</text>
+<!-- Title -->
+<text fill="#4a3060" font-family="JetBrains Mono" font-size="9" x="10" y="315">IgG structure · 4 chains · MW ~150 kDa · 2 Fab + 1 Fc · Vasudevan p.745</text>
+</svg>
+</div>
+<div class="table-wrap">
+<table>
+<tr><th>Region</th><th>Chains</th><th>Function</th><th>Key Detail</th></tr>
+<tr><td>Fab (Fragment antigen binding)</td><td>VH + VL + CH1 + CL</td><td>Antigen binding (2 per IgG molecule)</td><td>Variable regions (VH, VL) contain HVR (hypervariable regions / CDRs) — actual antigen contact sites</td></tr>
+<tr><td>Fc (Fragment crystallisable)</td><td>CH2 + CH3 (of both H chains)</td><td>Effector functions — complement, FcR binding, neonatal transport</td><td>Glycosylated at Asn-297 of CH2. Determines Ig class (IgG, IgA, IgM etc.)</td></tr>
+<tr><td>Hinge region</td><td>Between CH1 and CH2</td><td>Flexibility for both Fab arms to bind antigen simultaneously</td><td>Contains inter-heavy-chain disulphide bonds. Absent in IgM, IgE</td></tr>
+<tr><td>Variable region (V)</td><td>N-terminal of both H and L chains</td><td>Antigen specificity</td><td>3 CDRs (Complementarity Determining Regions) per V domain = paratope</td></tr>
+<tr><td>Constant region (C)</td><td>Rest of H and L chains</td><td>Determines Ig class + effector functions</td><td>C region of H chain = isotype (γ → IgG; μ → IgM; α → IgA; δ → IgD; ε → IgE)</td></tr>
+</table>
+</div>
+<div class="card d-print-none" style="margin-top:1rem;border-color:var(--rose);">
+<div class="card-title" style="color:var(--rose);">Papain vs Pepsin Cleavage <span class="badge badge-pyq">PYQ 2023</span></div>
+<div class="table-wrap">
+<table>
+<tr><th>Enzyme</th><th>Cleavage Site</th><th>Products</th><th>Significance</th></tr>
+<tr><td>Papain</td><td>Above hinge (N-terminal side)</td><td>2 × Fab (monovalent, cannot cross-link) + 1 × Fc</td><td>Used to study antigen binding separately from effector function</td></tr>
+<tr><td>Pepsin</td><td>Below hinge (C-terminal side)</td><td>1 × F(ab')₂ (bivalent, CAN cross-link antigen) + pFc' fragments (degraded)</td><td>F(ab')₂ used therapeutically — retains binding + cross-linking ability without Fc-mediated complement activation</td></tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="divider"></div>
+<!-- ════════════ S2: IMMUNOGLOBULIN CLASSES ════════════ -->
+<div id="s2">
+<div class="section-header">
+<div class="section-num">02</div>
+<h2>Ig Classes <em>&amp; Functions</em></h2>
+</div>
+<div class="card d-print-none">
+<div class="card-title">Five Ig Classes — Properties <span class="badge badge-fav">⭐ PYQ 2017-S, 2019, 2025</span></div>
+<div class="table-wrap">
+<table>
+<tr><th>Class</th><th>H chain</th><th>Structure</th><th>Serum %</th><th>Key Functions</th><th>Special Feature</th></tr>
+<tr><td>IgG <span class="badge badge-fav">⭐</span></td><td>γ (gamma)</td><td>Monomer</td><td>75–80%</td><td>Most abundant. Secondary response. Crosses placenta (only Ig to do so — neonatal immunity). Fixes complement. ADCC (NK cells). Opsonisation</td><td>4 subclasses (IgG1–4). IgG1 and IgG3 fix complement best</td></tr>
+<tr><td>IgM <span class="badge badge-fav">⭐</span></td><td>μ (mu)</td><td>Pentamer (J chain links 5 monomers)</td><td>5–10%</td><td>First Ig produced in primary response. Best complement activator (classical pathway). ABO blood group antibodies. Most efficient agglutinin (10 antigen binding sites)</td><td>Largest Ig (~900 kDa). Stays intravascular (large size). Raised in M-protein of Waldenström's macroglobulinaemia</td></tr>
+<tr><td>IgA</td><td>α (alpha)</td><td>Monomer (serum) or Dimer (secretory, with J chain + secretory component)</td><td>10–15%</td><td>Mucosal immunity — secretory IgA (sIgA) in saliva, tears, colostrum, GI secretions, respiratory tract. First line mucosal defence</td><td>Secretory component added by epithelial cells. Protects from proteases. Colostrum IgA provides neonatal gut immunity</td></tr>
+<tr><td>IgD</td><td>δ (delta)</td><td>Monomer</td><td>&lt;1%</td><td>B cell surface receptor (antigen recognition on naive B cells). Activates B cells</td><td>No known secreted effector function. Co-expressed with IgM on naive B cells</td></tr>
+<tr><td>IgE</td><td>ε (epsilon)</td><td>Monomer</td><td>Trace</td><td>Binds high-affinity FcεRI on mast cells and basophils → Type I hypersensitivity (allergy, anaphylaxis). Anti-parasitic (helminth) defence</td><td>Lowest serum concentration but highest affinity for FcR. Raised in atopy, parasitic infection. Target of omalizumab (anti-IgE therapy in asthma)</td></tr>
+</table>
+</div>
+</div>
+<div class="mnemonic-box">
+<div class="mbox-title">Ig Class Mnemonic</div>
+<div class="mnemonic-highlight">"GAMED" = IgG (most), IgA (mucosal), IgM (macro pentamer, 1st), IgE (eosinophil/allergy), IgD (differentiation)</div>
+<div class="mnemonic-highlight" style="margin-top:6px">"Only IgG crosses the placenta" — remember 'G' for 'Goes to baby'</div>
+</div>
+<div class="clinical-box">
+<div class="cbox-title">Multiple Myeloma — IgG/IgA Related Disorder <span class="badge badge-pyq">PYQ 2012-S</span></div>
+<p>Malignant proliferation of a single plasma cell clone → secretes one type of Ig (M-protein/paraprotein) → monoclonal band on serum electrophoresis (M-spike in γ region). IgG most common (~55%), IgA next. Features: bone pain (osteolysis), anaemia, hypercalcaemia, renal failure (Bence-Jones protein = free light chains in urine), susceptibility to infection. Bence-Jones protein = free κ or λ light chains that pass through glomerular filter (small size).</p>
+</div>
+</div>
+<div class="divider"></div>
+<!-- ════════════ S3: T & B CELL IMMUNITY ════════════ -->
+<div id="s3">
+<div class="section-header">
+<div class="section-num">03</div>
+<h2>T &amp; B Cell <em>Immunity</em></h2>
+</div>
+<div class="card d-print-none">
+<div class="card-title">Innate vs Adaptive Immunity <span class="badge badge-fav">⭐ PYQ 2024</span></div>
+<div class="table-wrap">
+<table>
+<tr><th>Feature</th><th>Innate Immunity</th><th>Adaptive (Acquired) Immunity</th></tr>
+<tr><td>Specificity</td><td>Non-specific — pattern recognition (PAMPs via TLRs)</td><td>Highly specific — antigen-specific receptors (BCR, TCR)</td></tr>
+<tr><td>Memory</td><td>No immunological memory</td><td>Memory cells formed → faster, stronger secondary response</td></tr>
+<tr><td>Response time</td><td>Immediate (minutes–hours)</td><td>Delayed (days–weeks for primary; faster secondary)</td></tr>
+<tr><td>Components</td><td>Physical barriers (skin), phagocytes (neutrophils, macrophages), NK cells, complement, acute phase proteins, interferons</td><td>B lymphocytes (humoral) → antibodies. T lymphocytes (cellular) → cytotoxic, helper, regulatory</td></tr>
+<tr><td>Diversity</td><td>Limited (~1000 PRR patterns)</td><td>Enormous (~10¹⁸ different antigen specificities)</td></tr>
+<tr><td>MHC</td><td>Not MHC-restricted</td><td>MHC-restricted — TCR recognises antigen only when presented by MHC</td></tr>
+</table>
+</div>
+</div>
+<div class="card d-print-none">
+<div class="card-title">B Cell vs T Cell Mediated Immunity <span class="badge badge-fav">⭐ PYQ 2021</span></div>
+<div class="two-col">
+<div>
+<p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:8px">B Cell (Humoral) Immunity:</p>
+<ul class="checklist">
+<li>B cells mature in <strong>Bone marrow</strong></li>
+<li>Activated by antigen (T cell help usually needed)</li>
+<li>Differentiate into <strong>Plasma cells</strong> (antibody-secreting) + Memory B cells</li>
+<li>Antibodies mediate: Neutralisation, Opsonisation, ADCC, Complement activation, Agglutination</li>
+<li>Surface marker: <strong>CD19, CD20, CD21, BCR (surface Ig)</strong></li>
+<li>Best against: Extracellular pathogens, bacteria, toxins, viruses (before cell entry)</li>
+</ul>
+</div>
+<div>
+<p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:8px">T Cell (Cellular) Immunity:</p>
+<ul class="checklist">
+<li>T cells mature in <strong>Thymus</strong></li>
+<li>Subtypes: <strong>CD4⁺ Helper T</strong> (Th1, Th2, Th17, Treg), <strong>CD8⁺ Cytotoxic T</strong></li>
+<li>CD4 recognises antigen on <strong>MHC II</strong> (APCs); CD8 on <strong>MHC I</strong> (any nucleated cell)</li>
+<li><strong>Th1:</strong> Activates macrophages, cytotoxic response, IFN-γ</li>
+<li><strong>Th2:</strong> B cell help, IgE, eosinophils, IL-4, IL-5, IL-13 (allergy/parasites)</li>
+<li>CTL (CD8⁺): Kills virus-infected cells via perforin/granzyme + Fas-FasL</li>
+<li>Best against: Intracellular pathogens, viruses, fungi, tumours</li>
+</ul>
+</div>
+</div>
+<div class="clinical-box" style="margin-top:1rem">
+<div class="cbox-title">Graft Rejection Types <span class="badge badge-pyq">PYQ 2023</span></div>
+<div class="table-wrap">
+<table>
+<tr><th>Type</th><th>Time</th><th>Mechanism</th><th>Pathology</th></tr>
+<tr><td>Hyperacute</td><td>Minutes to hours</td><td>Pre-existing antibodies (ABO incompatibility, anti-HLA)</td><td>Complement + coagulation → thrombosis → ischaemic necrosis</td></tr>
+<tr><td>Acute</td><td>Days to weeks</td><td>T cell mediated (cellular) + antibody-mediated (humoral)</td><td>CD8⁺ CTL kill graft cells; CD4⁺ activate macrophages. Lymphocytic infiltrate</td></tr>
+<tr><td>Chronic</td><td>Months to years</td><td>Both T cell and antibody; sustained immune response</td><td>Fibrosis, intimal thickening, narrowing of vessels → graft failure</td></tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="divider"></div>
+<!-- ════════════ S4: HYPERSENSITIVITY ════════════ -->
+<div id="s4">
+<div class="section-header">
+<div class="section-num">04</div>
+<h2>Hypersensitivity <em>Reactions</em></h2>
+</div>
+<div class="card d-print-none">
+<div class="card-title">Gell &amp; Coombs Classification <span class="badge badge-fav">⭐ PYQ 2022, 2025</span></div>
+<div class="table-wrap">
+<table>
+<tr><th>Type</th><th>Name</th><th>Mediator</th><th>Time</th><th>Mechanism</th><th>Example</th></tr>
+<tr><td>Type I <span class="badge badge-fav">⭐</span></td><td>Immediate / Anaphylactic</td><td>IgE → mast cells/basophils</td><td>Minutes</td><td>Allergen → cross-links IgE on mast cells → degranulation → histamine, leukotrienes, prostaglandins → vasodilation, bronchoconstriction, ↑ vascular permeability</td><td>Anaphylaxis, asthma, urticaria, food allergy, atopic dermatitis</td></tr>
+<tr><td>Type II</td><td>Cytotoxic / Antibody-mediated</td><td>IgG / IgM against cell surface</td><td>Hours</td><td>Antibody binds cell surface antigen → complement activation (MAC) + ADCC → cell lysis. Or blocking (myasthenia gravis)</td><td>Autoimmune haemolytic anaemia, Goodpasture's syndrome, Graves' disease, Myasthenia gravis, Haemolytic disease of newborn (Rh)</td></tr>
+<tr><td>Type III</td><td>Immune Complex / Serum sickness</td><td>IgG/IgM–antigen complexes</td><td>Hours to days</td><td>Antigen-antibody complexes deposit in vessel walls/tissues → complement activation → inflammation, PMN recruitment → tissue damage</td><td>SLE, rheumatoid arthritis, post-streptococcal glomerulonephritis, serum sickness, Farmer's lung (extrinsic allergic alveolitis)</td></tr>
+<tr><td>Type IV <span class="badge badge-fav">⭐</span></td><td>Delayed-type / Cell-mediated</td><td>T lymphocytes (CD4⁺ Th1)</td><td>48–72 hours (delayed!)</td><td>Sensitised T cells release cytokines → activate macrophages → granuloma formation. No antibodies involved</td><td>TB (PPD test), contact dermatitis (poison ivy, Ni allergy), graft rejection, Coeliac disease, Type 1 DM</td></tr>
+</table>
+</div>
+<div class="flowchart" style="margin-top:1rem">
+<div class="flow-title">Type I Hypersensitivity — Mechanism in Detail <span class="badge badge-pyq">PYQ 2022</span></div>
+<div class="flow-v">
+<div class="flow-box accent d-print-none">
+<span class="lbl">Sensitisation Phase (first exposure)</span>
+          Allergen → APCs → Th2 cells → IL-4, IL-13 → B cells class-switch to IgE production → IgE binds FcεRI on mast cells/basophils (sensitisation, no symptoms)
+        </div>
+<div class="flow-step-label">↓ Second (or subsequent) allergen exposure</div>
+<div class="flow-box rose d-print-none">
+<span class="lbl">Elicitation Phase (re-exposure)</span>
+          Allergen cross-links IgE on mast cells → FcεRI clustering → <strong>Degranulation</strong> (within seconds-minutes):<br/>
+          Preformed mediators: <strong>Histamine</strong> (vasodilation, pruritus, bronchoconstriction), <strong>Tryptase</strong> (mast cell marker)<br/>
+          Newly synthesised: <strong>Leukotrienes</strong> C4, D4, E4 (potent bronchoconstrictors — "slow-reacting substances"), <strong>PGD₂</strong>, <strong>PAF</strong><br/>
+          Cytokines (late phase): IL-4, IL-5, TNF-α → eosinophil recruitment (late-phase reaction, 6–12 hours)
+        </div>
+<div class="flow-step-label">↓ Clinical manifestations</div>
+<div class="flow-box teal d-print-none">
+<span class="lbl">Systemic anaphylaxis:</span>
+          ↓ BP (vasodilation + ↑ permeability → hypovolaemia) + Bronchospasm + Urticaria. Treatment: <strong>Epinephrine</strong> (adrenaline) 1:1000 IM — reverses all components
+        </div>
+</div>
+</div>
+</div>
+</div>
+<div class="divider"></div>
+<!-- ════════════ S5: COMPLEMENT ════════════ -->
+<div id="s5">
+<div class="section-header">
+<div class="section-num">05</div>
+<h2>Complement <em>System</em></h2>
+</div>
+<div class="card d-print-none">
+<div class="card-title">Complement Pathways — Overview</div>
+<div class="flowchart" style="margin:0">
+<div class="flow-title">Three Activation Pathways → Common Terminal Pathway</div>
+<div class="flow-h">
+<div class="flow-box accent d-print-none" style="text-align:center;">
+<span class="lbl">Classical Pathway</span>
+<strong>IgM or IgG</strong> + antigen → C1q binds Fc → C1r+C1s activated → C4 + C2 → <strong>C3 convertase (C4b2a)</strong>
+</div>
+<div class="h-arrow">+</div>
+<div class="flow-box gold d-print-none" style="text-align:center;">
+<span class="lbl">Lectin Pathway</span>
+          Mannose-Binding Lectin (MBL) binds mannose on pathogens → MASP → same C4/C2 route → <strong>C3 convertase</strong>
+</div>
+<div class="h-arrow">+</div>
+<div class="flow-box rose d-print-none" style="text-align:center;">
+<span class="lbl">Alternative Pathway</span>
+          Spontaneous C3 hydrolysis (tickover) + Factors B, D, Properdin → <strong>C3 convertase (C3bBb)</strong>
+</div>
+</div>
+<div class="flow-step-label">↓ All converge → C3 cleavage (pivotal step)</div>
+<div class="flow-box teal d-print-none">
+<span class="lbl">C3 Cleavage</span>
+        C3 convertase cleaves C3 → <strong>C3a</strong> (anaphylatoxin — vasodilation, mast cell degranulation) + <strong>C3b</strong> (opsonin — binds CR1 on phagocytes)<br/>
+        C3b joins convertase → C5 convertase → <strong>C5a</strong> (potent anaphylatoxin + chemotaxin) + <strong>C5b</strong>
+</div>
+<div class="flow-step-label">↓ C5b initiates</div>
+<div class="flow-box blue d-print-none">
+<span class="lbl">Membrane Attack Complex (MAC): C5b-6-7-8-9</span>
+        Polymerised C9 inserts into cell membrane → pore → osmotic lysis<br/>
+<span class="sub">Deficiency of C5–C9 → susceptibility to Neisseria (meningococcal disease)</span>
+</div>
+</div>
+<div class="mnemonic-box" style="margin-top:8px">
+<div class="mbox-title">Complement Functions Mnemonic</div>
+<div class="mnemonic-highlight">"CLAMO" = Chemotaxis (C5a), Lysis (MAC), Anaphylatoxin (C3a, C5a), Mast cell degranulation, Opsonisation (C3b)</div>
+</div>
+</div>
+</div>
+<div class="divider"></div>
+<!-- ════════════ S6: MONOCLONAL ANTIBODIES ════════════ -->
+<div id="s6">
+<div class="section-header">
+<div class="section-num">06</div>
+<h2>Monoclonal <em>Antibodies</em></h2>
+</div><details><summary class="viva-q-text">Expand 🟢 TIER 3: Monoclonal Antibodies Details</summary><div class="viva-a-text">
+<div class="card d-print-none">
+<div class="card-title">Hybridoma Technology — Köhler &amp; Milstein 1975 <span class="badge badge-fav">⭐ PYQ 2010-S, 2011, 2014</span></div>
+<div class="flowchart" style="margin:0">
+<div class="flow-title">Monoclonal Antibody Production</div>
+<div class="flow-v">
+<div class="flow-box accent d-print-none">
+<span class="lbl">Step 1 — Immunise mouse</span>
+          Inject mouse with antigen of interest → B cell response → spleen contains antigen-specific B cells
+        </div>
+<div class="flow-step-label">↓</div>
+<div class="flow-box gold d-print-none">
+<span class="lbl">Step 2 — Fusion (Cell fusion with PEG)</span>
+          Spleen B cells + Myeloma cells (HAT-sensitive, immortal) → <strong>Hybridoma cells</strong><br/>
+          Selection in HAT medium (hypoxanthine, aminopterin, thymidine) — only hybridomas survive (myeloma dies, B cells die)
+        </div>
+<div class="flow-step-label">↓ Screen hybridoma supernatants for desired antibody</div>
+<div class="flow-box teal d-print-none">
+<span class="lbl">Step 3 — Clone &amp; Expand</span>
+          Positive hybridoma cloned → each clone produces identical antibody → <strong>Monoclonal antibody</strong>
+</div>
+<div class="flow-step-label">↓ Characterise antibody</div>
+<div class="flow-box rose d-print-none">
+<span class="lbl">Step 4 — Humanise (for therapeutic use)</span>
+          Mouse mAbs → chimeric (mouse Fv + human Fc) → humanised (only CDRs murine) → fully human (phage display). Suffix: -omab (murine), -ximab (chimeric), -zumab (humanised), -umab (fully human)
+        </div>
+</div>
+</div>
+<div class="card d-print-none" style="margin-top:1rem;border-color:var(--blue);">
+<div class="card-title" style="color:var(--blue);">Therapeutic Monoclonal Antibodies — Key Examples</div>
+<div class="table-wrap">
+<table>
+<tr><th>Drug</th><th>Target</th><th>Use</th></tr>
+<tr><td>Trastuzumab (Herceptin)</td><td>HER2 (ErbB2) receptor</td><td>HER2+ breast cancer — blocks HER2 signalling → ↓ proliferation</td></tr>
+<tr><td>Rituximab</td><td>CD20 (B cells)</td><td>Non-Hodgkin lymphoma, rheumatoid arthritis — depletes B cells</td></tr>
+<tr><td>Cetuximab</td><td>EGFR</td><td>Colorectal cancer, head &amp; neck cancer</td></tr>
+<tr><td>Bevacizumab (Avastin)</td><td>VEGF</td><td>Anti-angiogenic — colorectal, lung, renal cell carcinoma</td></tr>
+<tr><td>Pembrolizumab</td><td>PD-1</td><td>Immune checkpoint inhibitor — melanoma, lung cancer</td></tr>
+<tr><td>Omalizumab</td><td>IgE</td><td>Severe allergic asthma — prevents IgE binding to mast cells</td></tr>
+<tr><td>Infliximab</td><td>TNF-α</td><td>Rheumatoid arthritis, Crohn's disease</td></tr>
+</table>
+</div>
+</div>
+</div>
+</div></details></div>
+<div class="divider"></div>
+<!-- ════════════ S7: CELL CYCLE ════════════ -->
+<div id="s7">
+<div class="section-header">
+<div class="section-num">07</div>
+<h2>Cell Cycle <em>&amp; Regulators</em></h2>
+</div>
+<div class="flowchart">
+<div class="flow-title">Cell Cycle Phases &amp; Checkpoints</div>
+<div class="flow-h">
+<div class="flow-box blue d-print-none" style="text-align:center;">
+<span class="lbl">G1 phase</span>
+        Growth prep.<br/>CDK4/6 + Cyclin D<br/>Rb phosphorylation
+      </div>
+<div class="h-arrow">→</div>
+<div class="flow-box rose d-print-none" style="text-align:center;">
+<span class="lbl">⚡ G1/S Checkpoint</span>
+<strong>p53 → p21</strong><br/>blocks CDK2-CyclinE<br/>DNA repair time
+      </div>
+<div class="h-arrow">→</div>
+<div class="flow-box accent d-print-none" style="text-align:center;">
+<span class="lbl">S phase</span>
+        DNA replication<br/>CDK2 + Cyclin E/A
+      </div>
+<div class="h-arrow">→</div>
+<div class="flow-box gold d-print-none" style="text-align:center;">
+<span class="lbl">G2 phase</span>
+        Growth + check<br/>CDK1 + Cyclin B
+      </div>
+<div class="h-arrow">→</div>
+<div class="flow-box rose d-print-none" style="text-align:center;">
+<span class="lbl">⚡ G2/M Checkpoint</span>
+        DNA damage check<br/>ATM/ATR → p53
+      </div>
+<div class="h-arrow">→</div>
+<div class="flow-box teal d-print-none" style="text-align:center;">
+<span class="lbl">M phase</span>
+        Mitosis<br/>Spindle assembly checkpoint
+      </div>
+</div>
+</div>
+<div class="card d-print-none">
+<div class="card-title">Cell Cycle Regulators <span class="badge badge-fav">⭐ PYQ 2010, 2021</span></div>
+<div class="table-wrap">
+<table>
+<tr><th>Regulator</th><th>Type</th><th>Function</th><th>Cancer relevance</th></tr>
+<tr><td>Cyclins (A, B, D, E)</td><td>Regulatory subunit — oscillate with cell cycle</td><td>Activate CDKs at specific cell cycle phases</td><td>Cyclin D overexpressed in many cancers (BCL1 gene amplification)</td></tr>
+<tr><td>CDKs (CDK1, 2, 4, 6)</td><td>Catalytic kinase subunit — constant level</td><td>Phosphorylate Rb when bound to cyclin → cell cycle progression</td><td>CDK4/6 inhibitors (palbociclib) — breast cancer treatment</td></tr>
+<tr><td>CKIs (CDK Inhibitors)</td><td>Inhibitory — p21(CIP1), p27(KIP1), p16(INK4a)</td><td>Block CDK activity → cell cycle arrest</td><td>p16 silenced by methylation in many cancers. p21 induced by p53</td></tr>
+<tr><td>Rb (Retinoblastoma protein)</td><td>Tumour suppressor — "master brake"</td><td>Hypophosphorylated Rb sequesters E2F (transcription factor) → no S phase genes. CDK phosphorylates Rb → E2F released → cell enters S phase</td><td>Both copies lost → Retinoblastoma. Knudson's "two-hit hypothesis"</td></tr>
+<tr><td>p53</td><td>Tumour suppressor — "guardian of genome"</td><td>DNA damage → p53 stabilised → p21 (arrest) or BAX/PUMA (apoptosis)</td><td>Mutated in ~50% of all human cancers</td></tr>
+</table>
+</div>
+</div>
+</div>
+<div class="divider"></div>
+<!-- ════════════ S8: ONCOGENES ════════════ -->
+<div id="s8">
+<div class="section-header">
+<div class="section-num">08</div>
+<h2>Oncogenes <em>&amp; Proto-oncogenes</em></h2>
+</div>
+<div class="keypoint">Proto-oncogene = normal gene that regulates cell growth, proliferation, differentiation. Oncogene = mutated/overexpressed proto-oncogene that drives uncontrolled proliferation. Proto-oncogenes are "accelerators" — in cancer, the accelerator is stuck down.</div>
+<div class="card d-print-none">
+<div class="card-title">Mechanisms of Proto-oncogene → Oncogene Conversion <span class="badge badge-fav">⭐ PYQ 2014-S, 2018, 2021, 2024</span></div>
+<div class="table-wrap">
+<table>
+<tr><th>Mechanism</th><th>How it works</th><th>Example</th></tr>
+<tr><td>Point mutation</td><td>Single base change in coding sequence → constitutively active protein</td><td>RAS gene point mutation (G12V, G12D) → Ras GTPase stuck in GTP-bound active state → continuous proliferation signals. Found in 30% of all human cancers</td></tr>
+<tr><td>Gene amplification</td><td>Multiple copies of proto-oncogene → overexpression of protein</td><td>N-MYC amplification → neuroblastoma. HER2/neu amplification → breast cancer. DHFR amplification → methotrexate resistance</td></tr>
+<tr><td>Chromosomal translocation</td><td>Gene moved next to strong promoter OR fusion gene created</td><td>t(9;22) = Philadelphia chromosome → BCR-ABL fusion → constitutive tyrosine kinase → CML [PYQ 2023]. t(8;14) = c-MYC next to IgH promoter → Burkitt's lymphoma. t(11;22) = EWS-FLI1 fusion → Ewing's sarcoma [PYQ 2024]</td></tr>
+<tr><td>Insertional mutagenesis</td><td>Retroviral LTR inserts near proto-oncogene → ↑ transcription</td><td>Mouse mammary tumour virus (MMTV) activates Wnt1</td></tr>
+<tr><td>Promoter rearrangement</td><td>Proto-oncogene brought under control of a strong promoter</td><td>Ig gene promoter fused to MYC (alternative to translocation)</td></tr>
+</table>
+</div>
+</div>
+<div class="card d-print-none">
+<div class="card-title">Categories of Proto-oncogene Products <span class="badge badge-pyq">PYQ 2016-S, 2022</span></div>
+<div class="table-wrap">
+<table>
+<tr><th>Category</th><th>Examples</th><th>Normal Function</th><th>Cancer</th></tr>
+<tr><td>Growth factors</td><td>c-SIS (PDGF-B chain)</td><td>Stimulate cell proliferation from outside</td><td>Autocrine loop — tumour makes its own growth factor</td></tr>
+<tr><td>Growth factor receptors (with RTK)</td><td>ERBB1 (EGFR), HER2 (ERBB2), RET, KIT, FLT3</td><td>Transduce growth signals → intracellular kinase cascade</td><td>Constitutively active → constant proliferation signal. HER2+ breast cancer → trastuzumab target</td></tr>
+<tr><td>Signal transducers (G-proteins)</td><td>RAS (HRAS, KRAS, NRAS)</td><td>GTPase — turns signal on (GTP) and off (GDP) by hydrolysing GTP</td><td>Point mutation → cannot hydrolyse GTP → stuck "ON" → KRAS mutated in 90% pancreatic, 50% colorectal cancers</td></tr>
+<tr><td>Non-receptor tyrosine kinases</td><td>ABL, SRC</td><td>Intracellular signalling</td><td>BCR-ABL (CML) → imatinib target. SRC → cancer cell invasion</td></tr>
+<tr><td>Nuclear transcription factors</td><td>MYC, FOS, JUN</td><td>Regulate gene expression → cell growth genes</td><td>MYC overexpression → drives S-phase genes. N-MYC in neuroblastoma. c-MYC in Burkitt's</td></tr>
+<tr><td>Cyclins / CDKs</td><td>Cyclin D1, CDK4</td><td>Cell cycle progression (as above)</td><td>Amplification → bypass G1/S checkpoint</td></tr>
+<tr><td>Apoptosis inhibitors</td><td>BCL2</td><td>Prevents apoptosis (anti-apoptotic)</td><td>t(14;18) → BCL2 fused to IgH promoter → BCL2 overexpressed → B cells resist apoptosis → follicular lymphoma</td></tr>
+</table>
+</div>
+<div class="mnemonic-box" style="margin-top:8px">
+<div class="mbox-title">Oncogene Mnemonic</div>
+<div class="mnemonic-highlight">"RANK-MYC" = Ras, ABL-BCR(t9;22), N-MYC(neuroblastoma), K-ras(pancreas), MYC(Burkitt), Cyclin D</div>
+</div>
+</div>
+</div>
+<div class="divider"></div>
+<!-- ════════════ S9: TUMOUR SUPPRESSOR GENES ════════════ -->
+<div id="s9">
+<div class="section-header">
+<div class="section-num">09</div>
+<h2>Tumour Suppressor <em>Genes</em></h2>
+</div>
+<div class="keypoint">TSGs = "brakes" of cell cycle. Both copies must be lost for tumour development (<strong>Knudson's Two-Hit Hypothesis</strong>). First hit = mutation; Second hit = LOH (loss of heterozygosity), deletion, methylation.</div>
+<div class="card d-print-none">
+<div class="card-title">Major Tumour Suppressor Genes <span class="badge badge-fav">⭐ PYQ 2019-S, 2023, 2024</span></div>
+<div class="table-wrap">
+<table>
+<tr><th>Gene</th><th>Chromosome</th><th>Normal Function</th><th>Cancer when lost</th></tr>
+<tr><td>p53 (TP53) <span class="badge badge-fav">⭐ MOST ASKED</span></td><td>17p13.1</td><td>Transcription factor activated by DNA damage → p21 (arrest) → BAX/PUMA (apoptosis) → GADD45 (DNA repair). Keeps normal p53 at low levels via MDM2-mediated ubiquitination</td><td>Mutated in ~50% ALL cancers. Li-Fraumeni syndrome (germline) → diverse early-onset cancers</td></tr>
+<tr><td>Rb (Retinoblastoma)</td><td>13q14</td><td>Sequesters E2F when hypophosphorylated → G1 arrest. "Master brake of cell cycle"</td><td>Both alleles lost → Retinoblastoma (hereditary bilateral vs sporadic unilateral). Also osteosarcoma, small cell lung cancer</td></tr>
+<tr><td>BRCA1 / BRCA2</td><td>17q21 / 13q12</td><td>DNA repair (homologous recombination of DSBs). Genome integrity</td><td>Hereditary breast and ovarian cancer. BRCA1 → breast + ovarian + cervical. BRCA2 → breast (M+F) + pancreatic + prostate</td></tr>
+<tr><td>APC</td><td>5q21</td><td>Regulates β-catenin (Wnt pathway). Promotes β-catenin degradation → prevents pro-proliferative gene expression</td><td>Both alleles lost → Familial Adenomatous Polyposis (FAP) → colorectal cancer. First hit in sporadic colorectal cancer too</td></tr>
+<tr><td>PTEN</td><td>10q23</td><td>Phosphatase — dephosphorylates PIP₃ → opposes PI3K → ↓ AKT → ↑ apoptosis</td><td>Cowden syndrome. Prostate, breast, endometrial cancers</td></tr>
+<tr><td>VHL</td><td>3p25</td><td>Targets HIF-1α for degradation. Controls angiogenesis via VEGF regulation</td><td>Von Hippel-Lindau syndrome → Renal cell carcinoma (clear cell), haemangioblastoma. Loss → HIF-1α accumulates → VEGF → tumour vasculature</td></tr>
+</table>
+</div>
+</div>
+<div class="flowchart">
+<div class="flow-title">p53 as Guardian of the Genome <span class="badge badge-fav">⭐ PYQ 2019-S, 2023, 2025</span></div>
+<div class="flow-v">
+<div class="flow-box blue d-print-none">
+<span class="lbl">Normal state</span>
+        p53 kept low by <strong>MDM2</strong> (E3 ubiquitin ligase) → ubiquitinates p53 → proteasomal degradation. MDM2 is itself induced by p53 (negative feedback)
+      </div>
+<div class="flow-step-label">↓ DNA damage, oncogenic stress, hypoxia, ribosomal stress</div>
+<div class="flow-box accent d-print-none">
+<span class="lbl">Activation</span>
+        ATM/ATR kinases phosphorylate p53 at Ser15, Ser20 → MDM2 cannot bind → p53 stabilised + acetylated + tetramerises → TRANSCRIPTION FACTOR active
+      </div>
+<div class="flow-step-label">↓ p53 transcribes target genes — decision based on damage severity</div>
+<div class="flow-h">
+<div class="flow-box teal d-print-none" style="text-align:center;">
+<span class="lbl">Reversible damage → ARREST</span>
+          p21 (CDKN1A) → inhibits CDK2 → Rb stays unphosphorylated → E2F sequestered → no S phase → G1/S arrest → time for DNA repair
+        </div>
+<div class="h-arrow">OR</div>
+<div class="flow-box rose d-print-none" style="text-align:center;">
+<span class="lbl">Irreparable damage → APOPTOSIS</span>
+          BAX, PUMA, NOXA → mitochondrial pathway → cytochrome c release → caspase 9 → effector caspases → cell death
+        </div>
+<div class="h-arrow">OR</div>
+<div class="flow-box gold d-print-none" style="text-align:center;">
+<span class="lbl">Chronic/replicative stress → SENESCENCE</span>
+          Permanent cell cycle arrest. Prevents tumourigenesis in pre-malignant lesions
+        </div>
+</div>
+</div>
+</div>
+</div>
+<div class="divider"></div>
+<!-- ════════════ S10: APOPTOSIS ════════════ -->
+<div id="s10">
+<div class="section-header">
+<div class="section-num">10</div>
+<h2><em>Apoptosis</em></h2>
+</div>
+<div class="keypoint">Apoptosis = programmed cell death. Characterised by: cell shrinkage, chromatin condensation, membrane blebbing, DNA laddering (180 bp fragments), apoptotic bodies (phagocytosed — NO inflammation). Distinct from necrosis (swelling, lysis, inflammation).</div>
+<div class="card d-print-none">
+<div class="card-title">Two Pathways of Apoptosis <span class="badge badge-fav">⭐ PYQ 2023, 2024</span></div>
+<div class="two-col">
+<div>
+<p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">Intrinsic (Mitochondrial) Pathway:</p>
+<div class="flowchart" style="margin:0">
+<div class="flow-v">
+<div class="flow-box accent d-print-none" style="font-size:12px;">DNA damage / Oxidative stress / p53 activation</div>
+<div class="flow-step-label">↓ BAX/BAK (pro-apoptotic Bcl-2 family) ↑; BCL2/BCL-XL ↓</div>
+<div class="flow-box rose d-print-none" style="font-size:12px;">Outer mitochondrial membrane permeabilisation → <strong>Cytochrome c</strong> release</div>
+<div class="flow-step-label">↓</div>
+<div class="flow-box gold d-print-none" style="font-size:12px;">Cytochrome c + Apaf-1 + dATP → <strong>Apoptosome</strong> → activates Procaspase-9</div>
+<div class="flow-step-label">↓ Caspase-9 (initiator)</div>
+<div class="flow-box teal d-print-none" style="font-size:12px;">Activates Caspase-3/6/7 (effectors) → cell demolition</div>
+</div>
+</div>
+</div>
+<div>
+<p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px">Extrinsic (Death Receptor) Pathway:</p>
+<div class="flowchart" style="margin:0">
+<div class="flow-v">
+<div class="flow-box gold d-print-none" style="font-size:12px;">FasL binds Fas (CD95) OR TNF binds TNFR1</div>
+<div class="flow-step-label">↓ Receptor trimerisation → DISC formation</div>
+<div class="flow-box rose d-print-none" style="font-size:12px;">DISC recruits FADD + Procaspase-8 → Caspase-8 (initiator)</div>
+<div class="flow-step-label">↓ Directly OR via BID → mitochondria (cross-talk)</div>
+<div class="flow-box teal d-print-none" style="font-size:12px;">Activates Caspase-3/6/7 (effectors) → cell death</div>
+</div>
+</div>
+</div>
+</div>
+<div class="clinical-box" style="margin-top:1rem">
+<div class="cbox-title">Apoptosis vs Cancer <span class="badge badge-pyq">PYQ 2023</span></div>
+<p><strong>BCL2 overexpression</strong> (t(14;18) in follicular lymphoma) → cells cannot undergo apoptosis → immortalised. <strong>Survivin</strong> (IAP family) overexpressed in many cancers → inhibits caspases. <strong>Loss of p53</strong> → cannot trigger apoptosis. <strong>Cytochrome c also participates in ETC</strong> — dual role (electron carrier + apoptosis trigger).</p>
+</div>
+</div>
+</div>
+<div class="divider"></div>
+<!-- ════════════ S11: TUMOUR MARKERS ════════════ -->
+<div id="s11">
+<div class="section-header">
+<div class="section-num">11</div>
+<h2>Tumour <em>Markers</em></h2>
+</div>
+<div class="card d-print-none">
+<div class="card-title">Clinically Important Tumour Markers <span class="badge badge-fav">⭐ PYQ 2012-S, 2014, 2016-S, 2021, 2025</span></div>
+<div class="table-wrap">
+<table>
+<tr><th>Marker</th><th>Type</th><th>Normal</th><th>Associated Cancer</th><th>Special Notes</th></tr>
+<tr><td>AFP (Alpha-fetoprotein)</td><td>Oncofetal (produced in fetal liver → re-expressed in tumour)</td><td>&lt;20 ng/mL</td><td>Hepatocellular carcinoma (HCC), Germ cell tumours (yolk sac)</td><td>Also ↑ in pregnancy (normal), neural tube defects (maternal serum). Best marker for HCC monitoring</td></tr>
+<tr><td>CEA (Carcinoembryonic antigen)</td><td>Oncofetal glycoprotein</td><td>&lt;5 ng/mL (&lt;2.5 in non-smokers)</td><td>Colorectal cancer (most useful), GI cancers, lung, breast</td><td>Not diagnostic (↑ in smokers, hepatitis). Used for monitoring recurrence after surgery. First oncofetal antigen described</td></tr>
+<tr><td>PSA (Prostate Specific Antigen)</td><td>Serine protease (kallikrein family)</td><td>&lt;4 ng/mL</td><td>Prostate cancer — most used marker</td><td>Produced only by prostate epithelium (organ-specific but NOT cancer-specific). ↑ in BPH, prostatitis too. Free PSA/total PSA ratio helps discriminate</td></tr>
+<tr><td>CA-125</td><td>Mucin (MUC16)</td><td>&lt;35 U/mL</td><td>Ovarian cancer (epithelial) — most useful</td><td>↑ in endometriosis, PID, peritonitis (non-specific). Used for monitoring response to chemotherapy</td></tr>
+<tr><td>CA 19-9</td><td>Sialylated Lewis antigen</td><td>&lt;37 U/mL</td><td>Pancreatic cancer (most sensitive), biliary tract cancer, gastric</td><td>Cannot produce it if Lewis antigen negative (5–10% of population) → false negative. Used for monitoring, not screening</td></tr>
+<tr><td>CA 15-3</td><td>Mucin (MUC1)</td><td>&lt;30 U/mL</td><td>Breast cancer (monitoring)</td><td>Not sensitive enough for early diagnosis. Used for monitoring metastatic breast cancer</td></tr>
+<tr><td>β-hCG</td><td>Glycoprotein hormone</td><td>&lt;5 mIU/mL (non-pregnant)</td><td>Choriocarcinoma, Gestational trophoblastic disease, Germ cell tumours (testicular)</td><td>Best marker for choriocarcinoma (one of most chemosensitive cancers). Also used for pregnancy testing</td></tr>
+<tr><td>LDH</td><td>Enzyme (isoenzyme 1 in RBC, heart; 5 in liver)</td><td>140–280 U/L</td><td>Non-specific — lymphoma, testicular cancer, melanoma</td><td>Poor specificity. Correlates with tumour burden. LDH-1 elevated in myocardial infarction (LDH flip)</td></tr>
+<tr><td>Calcitonin</td><td>Hormone (parafollicular C-cells)</td><td>&lt;10 pg/mL</td><td>Medullary thyroid carcinoma (MTC)</td><td>Excellent marker for MTC. Used for diagnosis + monitoring. Screening of family members in MEN2</td></tr>
+<tr><td>Thyroglobulin</td><td>Storage protein for thyroid hormones</td><td>&lt;55 ng/mL</td><td>Differentiated thyroid carcinoma (papillary, follicular) — post-thyroidectomy</td><td>Should be undetectable after total thyroidectomy. Rise = recurrence</td></tr>
+</table>
+</div>
+<div class="mnemonic-box" style="margin-top:8px">
+<div class="mbox-title">Tumour Markers Mnemonic</div>
+<div class="mnemonic-highlight">"AFP Goes, CEA Comes, PSA Prostate, CA-125 Ovary, CA 19-9 Pancreas"</div>
+<p style="font-size:12px;color:var(--text2);margin-top:4px">Oncofetal markers = AFP + CEA (both produced in fetal life, re-expressed in tumours)</p>
+</div>
+</div>
+</div>
+<div class="divider"></div>
+<!-- ════════════ S12: CARCINOGENS & CANCER ════════════ -->
+<div id="s12">
+<div class="section-header">
+<div class="section-num">12</div>
+<h2>Carcinogens <em>&amp; Cancer Biology</em></h2>
+</div>
+<div class="card d-print-none">
+<div class="card-title">Types of Carcinogens <span class="badge badge-fav">⭐ PYQ 2023, 2024</span></div>
+<div class="table-wrap">
+<table>
+<tr><th>Type</th><th>Examples</th><th>Mechanism</th><th>Cancer</th></tr>
+<tr><td>Chemical — Direct acting</td><td>Mustard gas, β-propiolactone, vinyl chloride</td><td>Directly alkylate DNA without metabolic activation</td><td>Bladder (vinyl chloride → angiosarcoma liver)</td></tr>
+<tr><td>Chemical — Indirect (Procarcinogen)</td><td>Benzo[a]pyrene (tobacco smoke), Aflatoxin B1 (Aspergillus, mouldy groundnuts), Dimethylnitrosamine, β-Naphthylamine</td><td>Require metabolic activation by CYP450 → ultimate carcinogen → DNA adducts → mutations</td><td>Benzo[a]pyrene → lung (squamous). Aflatoxin B1 → HCC (especially with HBV). β-Naphthylamine → bladder</td></tr>
+<tr><td>Physical — Radiation</td><td>UV-B (260–280 nm) → pyrimidine dimers; Ionising radiation (X-ray, γ-ray) → DSBs; α,β particles</td><td>DNA damage → mutations in TSGs and oncogenes</td><td>UV-B → skin cancer (XP patients). IR → leukaemia, thyroid cancer</td></tr>
+<tr><td>Biological — Viruses (Oncogenic)</td><td>HBV, HCV (via HBsAg, insertional mutagenesis) · HPV 16, 18 (E6 → p53 degradation; E7 → Rb inactivation) · EBV (MYC translocation, t(8;14)) · HTLV-1 · HIV (indirectly)</td><td>Viral proteins inhibit TSGs or activate oncogenes; insertional mutagenesis; immunosuppression</td><td>HBV/HCV → HCC; HPV → cervical cancer, head &amp; neck; EBV → Burkitt's lymphoma, NPC; HTLV-1 → ATL</td></tr>
+<tr><td>Biological — Bacteria</td><td>H. pylori (CagA protein)</td><td>Chronic inflammation → MALT lymphoma, gastric adenocarcinoma</td><td>Gastric cancer, MALT lymphoma</td></tr>
+<tr><td>Hormones</td><td>Oestrogen (prolonged excess), DES (diethylstilboestrol)</td><td>Mitogenic effect → ↑ cell proliferation → ↑ mutation acquisition chance</td><td>Endometrial cancer (oestrogen excess), clear cell carcinoma of vagina (DES exposure in utero)</td></tr>
+<tr><td>Genetic</td><td>Hereditary mutations: BRCA1/2, APC, MLH1/MSH2 (Lynch), RB1, TP53 (Li-Fraumeni)</td><td>Germline first hit → somatic second hit → cancer at earlier age</td><td>Multiple organ cancers depending on gene</td></tr>
+</table>
+</div>
+</div>
+<div class="clinical-box">
+<div class="cbox-title">Hallmarks of Cancer (Hanahan &amp; Weinberg)</div>
+<p>
+      1. Self-sufficiency in growth signals (oncogenes) ·
+      2. Insensitivity to anti-growth signals (TSG loss) ·
+      3. Evasion of apoptosis (BCL2↑, p53 lost) ·
+      4. Unlimited replicative potential (telomerase↑) ·
+      5. Sustained angiogenesis (VEGF↑, VHL loss) ·
+      6. Tissue invasion and metastasis (MMP↑, E-cadherin↓) ·
+      7. Reprogramming of energy metabolism (Warburg effect) ·
+      8. Evading immune destruction (PD-L1↑)
+    </p>
+<p style="margin-top:6px"><strong>Warburg effect:</strong> Cancer cells preferentially use aerobic glycolysis (glucose → lactate even in O₂) rather than OXPHOS → produces lactate + provides biosynthetic intermediates for rapid growth. Basis for FDG-PET scan (↑ glucose uptake in tumours).</p>
+</div>
+</div>
+<div class="divider"></div>
+<!-- ════════════ S13: SIGNAL TRANSDUCTION ════════════ -->
+<div id="s13">
+<div class="section-header">
+<div class="section-num">13</div>
+<h2>Signal <em>Transduction</em></h2>
+</div>
+<div class="card d-print-none">
+<div class="card-title">G-Protein Coupled Receptor (GPCR) Pathway <span class="badge badge-fav">⭐ PYQ 2010, 2013, 2022, 2024</span></div>
+<div class="flowchart" style="margin:0">
+<div class="flow-title">cAMP Second Messenger System — Glucagon/Adrenaline</div>
+<div class="flow-v">
+<div class="flow-box accent d-print-none">
+<span class="lbl">Step 1 — Ligand binding</span>
+          Hormone (glucagon/adrenaline) binds 7-TM GPCR → conformational change → GDP on Gα replaced by GTP → Gα-GTP dissociates from Gβγ
+        </div>
+<div class="flow-step-label">↓ Gα-GTP activates effector</div>
+<div class="flow-box gold d-print-none">
+<span class="lbl">Step 2 — Second messenger production</span>
+          Gαs + Adenylyl Cyclase → ATP → <strong>cAMP</strong> (second messenger) + PPi<br/>
+          Gαi inhibits adenylyl cyclase → ↓ cAMP (e.g., somatostatin, muscarinic M2)
+        </div>
+<div class="flow-step-label">↓ cAMP activates PKA</div>
+<div class="flow-box teal d-print-none">
+<span class="lbl">Step 3 — Protein Kinase A (PKA)</span>
+          cAMP binds regulatory subunits of PKA → releases catalytic subunits → active PKA phosphorylates target proteins (Ser/Thr):<br/>
+          Glycogen phosphorylase kinase (↑) → glycogenolysis ↑<br/>
+          Glycogen synthase (↓) → glycogenesis ↓<br/>
+          Lipase (HSL) (↑) → lipolysis ↑<br/>
+          CREB (nuclear) → gene transcription
+        </div>
+<div class="flow-step-label">↓ Signal terminated by</div>
+<div class="flow-box rose d-print-none">
+          Gα GTPase activity: GTP → GDP → Gα reassociates with Gβγ → GPCR inactive<br/>
+          Phosphodiesterase (PDE): cAMP → 5'-AMP (theophylline, caffeine = PDE inhibitors → ↑ cAMP)
+        </div>
+</div>
+</div>
+<div class="clinical-box" style="margin-top:1rem">
+<div class="cbox-title">Cholera Toxin — G-Protein Related Disease <span class="badge badge-pyq">PYQ 2024</span></div>
+<p>Cholera toxin (CT) ADP-ribosylates Gαs at Arg201 → prevents GTP hydrolysis → Gαs permanently active → adenylyl cyclase permanently on → cAMP ↑↑↑ → PKA → CFTR opens → Cl⁻, HCO₃⁻ secretion → massive water secretion → "rice water" diarrhoea. Pertussis toxin ADP-ribosylates Gαi → prevents Gi activation → no inhibition of cAMP → ↑ cAMP in airway → whooping cough.</p>
+</div>
+</div>
+<div class="card d-print-none">
+<div class="card-title">Phosphatidylinositol (PIP₂) — IP₃/DAG Pathway <span class="badge badge-pyq">PYQ 2013</span></div>
+<div class="flowchart" style="margin:0">
+<div class="flow-v">
+<div class="flow-box blue d-print-none">Gαq activates <strong>PLCβ</strong> (or RTK activates PLCγ)</div>
+<div class="flow-step-label">↓ PLCβ/γ cleaves PIP₂ (phosphatidylinositol-4,5-bisphosphate)</div>
+<div class="flow-h">
+<div class="flow-box rose d-print-none" style="text-align:center;">
+<span class="lbl">IP₃ (Inositol trisphosphate)</span>
+            Water-soluble → ER receptor → Ca²⁺ release from ER → ↑ cytosolic Ca²⁺<br/>
+            Ca²⁺ + Calmodulin → CaM-kinase → enzyme activation (myosin light chain kinase, phosphorylase kinase)
+          </div>
+<div class="h-arrow">+</div>
+<div class="flow-box teal d-print-none" style="text-align:center;">
+<span class="lbl">DAG (Diacylglycerol)</span>
+            Lipid-soluble → stays in membrane → activates <strong>Protein Kinase C (PKC)</strong> (also needs Ca²⁺)<br/>
+            PKC → Ser/Thr phosphorylation of target proteins
+          </div>
+</div>
+</div>
+</div>
+</div>
+<div class="card d-print-none">
+<div class="card-title">Receptor Tyrosine Kinase (RTK) Pathway — Insulin/Growth Factors <span class="badge badge-fav">⭐ PYQ 2010-S, 2015-S, 2019-S, 2022</span></div>
+<div class="flowchart" style="margin:0">
+<div class="flow-v">
+<div class="flow-box accent d-print-none">
+<span class="lbl">Step 1</span>
+          Insulin (or EGF, PDGF, IGF-1) binds extracellular domain of RTK → receptor dimerises → <strong>autophosphorylation</strong> of Tyr residues on cytoplasmic domain
+        </div>
+<div class="flow-step-label">↓ Phospho-Tyr = docking sites for SH2-domain proteins</div>
+<div class="flow-box gold d-print-none">
+<span class="lbl">Step 2 — IRS-1 / Grb2-SOS / PI3K</span>
+          Insulin receptor: IRS-1 docked → PI3K recruited → PIP₂ → <strong>PIP₃</strong> → PDK1 → <strong>AKT (PKB)</strong> → glucose uptake (GLUT4), glycogen synthesis, protein synthesis, anti-apoptosis<br/>
+          Grb2-SOS → <strong>RAS activated</strong> → RAF → MEK → ERK → cell proliferation
+        </div>
+<div class="flow-step-label">↓ Signal terminated by</div>
+<div class="flow-box teal d-print-none">
+          Protein tyrosine phosphatases (PTP1B) → remove Tyr phosphorylation. PTEN → removes PIP₃ → opposes PI3K
+        </div>
+</div>
+</div>
+<div class="keypoint"><strong>Insulin receptor = RTK (tyrosine kinase receptor)</strong> — dimer of 2α + 2β subunits linked by S-S bonds. Insulin binds α subunit → activates β-subunit Tyr kinase. This is distinct from steroid hormone receptors (nuclear) and GPCR (cAMP). <span class="badge badge-pyq">PYQ 2010-S</span></div>
+</div>
+</div>
+<div class="divider"></div>
+<!-- ════════════ S14: HORMONE RECEPTORS ════════════ -->
+<div id="s14">
+<div class="section-header">
+<div class="section-num">14</div>
+<h2>Hormone Receptor <em>Classification</em></h2>
+</div>
+<div class="card d-print-none">
+<div class="card-title">Hormone Classification by Mechanism <span class="badge badge-fav">⭐ PYQ 2017-S, 2024</span></div>
+<div class="table-wrap">
+<table>
+<tr><th>Type</th><th>Receptor Location</th><th>Second Messenger</th><th>Examples</th><th>Mechanism</th></tr>
+<tr><td>Group I — Lipid soluble (Steroid, thyroid)</td><td>Intracellular (nuclear or cytoplasmic)</td><td>None — direct gene regulation</td><td>Cortisol, aldosterone, oestrogen, testosterone, progesterone, T3/T4, calcitriol</td><td>Hormone enters cell → binds nuclear receptor → receptor-hormone complex binds HRE (hormone response element) on DNA → activates/represses gene transcription</td></tr>
+<tr><td>Group II — Peptide hormones / Catecholamines (GPCR)</td><td>Cell surface</td><td>cAMP, IP₃/DAG, Ca²⁺</td><td>Glucagon, Adrenaline (β), FSH, LH, TSH, ACTH, ADH (V2), PTH, Calcitonin</td><td>Ligand → GPCR → Gs/Gi/Gq → adenylyl cyclase (cAMP) or PLC (IP₃+DAG) → PKA or PKC → phosphorylation cascade</td></tr>
+<tr><td>Group IIb — RTK (Tyrosine kinase)</td><td>Cell surface (spans membrane)</td><td>PIP₃, RAS-ERK</td><td>Insulin, IGF-1, EGF, PDGF, FGF, NGF</td><td>Ligand → dimerisation → Tyr autophosphorylation → IRS-1/Grb2-SOS → PI3K-AKT and RAS-ERK cascades</td></tr>
+<tr><td>Group IIc — JAK-STAT</td><td>Cytokine receptors (no intrinsic kinase)</td><td>STAT proteins</td><td>Growth hormone, Prolactin, Cytokines (interferons, IL-6), Erythropoietin, TPO</td><td>Ligand → receptor dimerises → associated JAK kinases phosphorylate STAT → STAT dimerises → enters nucleus → transcription</td></tr>
+<tr><td>Group III — Guanylyl cyclase receptors</td><td>Cell surface (transmembrane guanylyl cyclase)</td><td>cGMP</td><td>ANP (atrial natriuretic peptide), BNP, NO (soluble GC)</td><td>ANP → membrane GC → GTP → cGMP → PKG → vasodilation, diuresis. NO → soluble GC → cGMP → smooth muscle relaxation (PDE5 inhibitors — sildenafil)</td></tr>
+</table>
+</div>
+<div class="mnemonic-box" style="margin-top:8px">
+<div class="mbox-title">Lipid-Soluble Hormone Mnemonic</div>
+<div class="mnemonic-highlight">"STAVE" = Steroid hormones, Thyroid hormone, Aldosterone (mineralocorticoid), Vitamin D (calcitriol), Eicosanoids (some)</div>
+<p style="font-size:12px;color:var(--text2);margin-top:4px">All lipid-soluble → cross membrane → nuclear receptor → direct gene transcription → effect in hours to days (vs peptide hormones: seconds to minutes)</p>
+</div>
+</div>
+</div>
+<div class="divider"></div>
+<!-- ════════════ S15: VIVA Q&A ════════════ -->
+<div id="s15">
+<div class="section-header">
+<div class="section-num">15</div>
+<h2>Viva <em>Q&amp;A</em></h2>
+</div>
+<div class="viva-section">
+<div class="viva-title-bar">Immunoglobulins &amp; Immunity</div>
+<details>
+<summary><span class="viva-q">Draw the structure of IgG and label all key regions. What is the difference between Fab and Fc?</span><span class="viva-year">PYQ 2017-S, 2019, 2023</span></summary>
+<div class="viva-ans">
+<p><strong>IgG structure:</strong> Y-shaped glycoprotein. MW ~150 kDa. 4 chains: 2 identical heavy (γ, ~50 kDa each) + 2 identical light (κ or λ, ~25 kDa each). Held together by disulphide bonds (inter-heavy in hinge region + heavy-light).</p>
+<p><strong>Fab (Fragment Antigen Binding):</strong></p>
+<ul>
+<li>Contains: VH + VL + CH1 + CL domains</li>
+<li>Function: Antigen binding (2 Fab arms per IgG = bivalent)</li>
+<li>Paratope = 3 CDRs (hypervariable loops) on each V domain</li>
+<li>Monovalent after papain cleavage → cannot agglutinate antigen</li>
+</ul>
+<p><strong>Fc (Fragment Crystallisable):</strong></p>
+<ul>
+<li>Contains: CH2 + CH3 domains of both heavy chains</li>
+<li>Function: Effector functions — classical complement activation (C1q binds CH2), FcγR binding (NK cells, macrophages for ADCC), FcRn binding (neonatal Fc receptor → transcytosis across placenta + prolonged half-life)</li>
+<li>Glycosylated at Asn-297</li>
+</ul>
+<p><em>Papain: cuts above hinge → 2 Fab + 1 Fc. Pepsin: cuts below hinge → 1 F(ab')₂ (still bivalent) + degraded pFc'</em></p>
+</div>
+</details>
+<details>
+<summary><span class="viva-q">Only IgG crosses the placenta — explain the mechanism.</span><span class="viva-year">PYQ implied in classification Qs</span></summary>
+<div class="viva-ans">
+<p>The neonatal Fc receptor (FcRn) on placental syncytiotrophoblasts mediates <strong>transcytosis</strong> of IgG across the placental barrier.</p>
+<ul>
+<li>FcRn binds IgG Fc region at acidic pH (in endosomes) after receptor-mediated endocytosis</li>
+<li>Transported across cell → released at neutral pH on fetal side → IgG enters fetal circulation</li>
+<li>This is the ONLY Ig small enough and with the right Fc for FcRn binding</li>
+<li>IgM, IgA, IgE, IgD cannot cross (IgM too large = pentamer; others lack affinity for FcRn)</li>
+<li>Clinical significance: Maternal IgG protects neonate for first 3–6 months (maternal IgG half-life ~23 days)</li>
+<li>Danger: Maternal anti-Rh IgG crosses → haemolytic disease of the newborn (HDN)</li>
+<li>Also: maternal thyroid-stimulating Ig (IgG) crosses → neonatal hyperthyroidism</li>
+</ul>
+<p><em>FcRn also responsible for the long half-life of IgG (~23 days) — rescues IgG from lysosomal degradation in endothelial cells (same mechanism)</em></p>
+</div>
+</details>
+</div>
+<div class="viva-section">
+<div class="viva-title-bar">Oncogenes &amp; Cancer</div>
+<details>
+<summary><span class="viva-q">What is p53? Why is it called the "Guardian of the Genome"?</span><span class="viva-year">PYQ 2019-S, 2023, 2025</span></summary>
+<div class="viva-ans">
+<p><strong>p53:</strong> Tumour suppressor protein (53 kDa) encoded by TP53 gene on chromosome 17p13. Normally kept at low levels by MDM2-mediated ubiquitination → proteasomal degradation.</p>
+<p><strong>Why "Guardian of the Genome":</strong></p>
+<ul>
+<li><strong>Sensor:</strong> Activated by DNA damage (ATM/ATR), oncogenic stress (ARF pathway), hypoxia, ribonucleotide depletion → phosphorylated → resistant to MDM2</li>
+<li><strong>G1/S checkpoint:</strong> p53 → p21 (CIP1) → inhibits CDK2-Cyclin E → Rb stays unphosphorylated → E2F sequestered → S-phase genes not expressed → arrest</li>
+<li><strong>Apoptosis:</strong> Irreparable damage → p53 → BAX, PUMA, NOXA (pro-apoptotic Bcl-2 family) → mitochondrial pathway → caspase activation → cell death</li>
+<li><strong>DNA repair:</strong> p53 → GADD45, p48 (XPC partner) → nucleotide excision repair</li>
+<li><strong>Senescence:</strong> Chronic activation → p21, p16 → permanent growth arrest</li>
+</ul>
+<p><strong>Cancer relevance:</strong> Mutated in ~50% all human cancers (most commonly mutated TSG). Germline p53 mutation → Li-Fraumeni syndrome (sarcomas, breast cancer, brain tumours at young age). Loss of p53 → cells cannot arrest or die → genomic instability → cancer progression.</p>
+<p><em>"Without p53, damaged cells survive and accumulate further mutations → cancer. p53 is the last line of defence — hence Guardian of the Genome."</em></p>
+</div>
+</details>
+<details>
+<summary><span class="viva-q">Explain Knudson's Two-Hit Hypothesis with retinoblastoma as an example.</span><span class="viva-year">PYQ implied in TSG questions</span></summary>
+<div class="viva-ans">
+<p><strong>Two-Hit Hypothesis (Alfred Knudson, 1971):</strong></p>
+<ul>
+<li>Tumour suppressor genes require BOTH alleles to be inactivated for tumour development (recessive at cellular level)</li>
+<li><strong>Hereditary retinoblastoma:</strong> First hit = germline mutation in one RB1 allele (inherited). Second hit = somatic mutation/deletion of remaining normal allele in retinal cell. Because first hit is in every cell → only needs one more somatic hit → bilateral, multiple tumours, early age</li>
+<li><strong>Sporadic retinoblastoma:</strong> Both hits must occur somatically in the SAME retinal cell → much less likely → unilateral, single tumour, later age of onset</li>
+<li><strong>Why "Two-Hit":</strong> Rb protein (pRb) is the cell cycle brake. One functional Rb is sufficient (haploinsufficiency not seen in most cases). Both copies must be lost to release the brake</li>
+</ul>
+<p><em>This model applies to: BRCA1/2 (one germline + one somatic → cancer); APC (FAP); VHL (renal cell carcinoma); p53 in Li-Fraumeni</em></p>
+</div>
+</details>
+<details>
+<summary><span class="viva-q">Cancer may be caused by excessive activity of protein tyrosine kinase — explain.</span><span class="viva-year">PYQ 2022</span></summary>
+<div class="viva-ans">
+<p><strong>Normal RTK signalling:</strong> Growth factor binds RTK → transient Tyr kinase activation → proliferation signal → Tyr phosphatase terminates signal.</p>
+<p><strong>Excessive Tyr kinase in cancer:</strong></p>
+<ul>
+<li><strong>Mutation → constitutive activation:</strong> RET point mutation (MEN2) → RET RTK always "on" → medullary thyroid carcinoma. KIT mutation → GIST (gastrointestinal stromal tumour) → imatinib target</li>
+<li><strong>Gene amplification:</strong> HER2/neu amplification → excessive ErbB2 RTK → sustained RAS-ERK + PI3K-AKT → breast cancer cell proliferation, survival, metastasis</li>
+<li><strong>Fusion gene:</strong> BCR-ABL (t(9;22)) → constitutively active non-receptor Tyr kinase → RAS-ERK + PI3K-AKT → CML. Imatinib (Gleevec) specifically inhibits BCR-ABL kinase → targeted therapy</li>
+<li><strong>Autocrine loop:</strong> Tumour makes its own growth factor (PDGF) → activates its own RTK → self-sustaining proliferation</li>
+</ul>
+<p><em>Key concept: Normal RTK = light switch (on/off). Cancer RTK = stuck "on" switch. Targeted therapies (imatinib, trastuzumab, gefitinib) are designed to flip it back off.</em></p>
+</div>
+</details>
+</div>
+<div class="viva-section">
+<div class="viva-title-bar">Signal Transduction</div>
+<details>
+<summary><span class="viva-q">Methotrexate is used in anti-cancer therapy — explain its mechanism.</span><span class="viva-year">PYQ 2011, 2012, 2016-S, 2019-S</span></summary>
+<div class="viva-ans">
+<p><strong>Target:</strong> Dihydrofolate Reductase (DHFR)</p>
+<p><strong>Mechanism:</strong></p>
+<ul>
+<li>Folic acid → DHF → THF (by DHFR, requires NADPH)</li>
+<li>THF → one-carbon donors → thymidylate synthesis (dTMP), purine ring synthesis</li>
+<li>MTX = structural analogue of folic acid → binds DHFR with ~1000× higher affinity than natural substrate → <strong>competitive inhibition</strong> (but effectively irreversible at therapeutic concentrations)</li>
+<li>DHF cannot be reduced → THF pool depleted → no thymidylate (TMP) → no DNA synthesis → S-phase arrest → apoptosis</li>
+</ul>
+<p><strong>Selectivity:</strong> Rapidly dividing cells (cancer, immune cells) rely more on new nucleotide synthesis → more sensitive.</p>
+<p><strong>Rescue:</strong> Leucovorin (folinic acid = 5-formyl-THF) given after high-dose MTX → bypasses DHFR → rescues normal cells (cancer cells cannot take up leucovorin as well)</p>
+<p><strong>Uses:</strong> Leukaemia (ALL, CML), rheumatoid arthritis, psoriasis, Crohn's disease, ectopic pregnancy</p>
+<p><em>Resistance mechanisms: ↑ DHFR expression (gene amplification), mutant DHFR with ↓ affinity, ↓ folate carrier, ↓ polyglutamation</em></p>
+</div>
+</details>
+<details>
+<summary><span class="viva-q">Telomerase is involved in ageing and cancer — explain.</span><span class="viva-year">PYQ 2016-S, 2025</span></summary>
+<div class="viva-ans">
+<p><strong>Telomeres:</strong> TTAGGG repeats (2–15 kb) at chromosome ends. Protect chromosomes from end-degradation, fusion, and genomic instability.</p>
+<p><strong>End-replication problem:</strong> Normal DNA polymerase cannot replicate the very 3' end of lagging strand → telomeres shorten with each cell division (~50–200 bp/division).</p>
+<p><strong>Telomerase:</strong> Ribonucleoprotein enzyme (TERT = catalytic subunit, TERC = RNA template with AAUCCC sequence). Extends telomeres using its own RNA as template (reverse transcriptase activity).</p>
+<p><strong>Ageing:</strong></p>
+<ul>
+<li>Somatic cells (no telomerase) → telomeres shorten → reach critical length → Hayflick limit → replicative senescence → contributes to ageing</li>
+<li>Stem cells + germ cells express low telomerase → partial protection</li>
+<li>Dyskeratosis congenita = telomerase mutations → premature ageing syndrome, aplastic anaemia</li>
+</ul>
+<p><strong>Cancer:</strong></p>
+<ul>
+<li>Cancer cells reactivate TERT → telomeres maintained → unlimited replication potential → immortalisation</li>
+<li>~85–90% of human cancers have telomerase activity</li>
+<li>Alternative Lengthening of Telomeres (ALT) = recombination-based → 10–15% of cancers</li>
+<li>TERT = potential anticancer drug target</li>
+</ul>
+<p><em>Summary: Telomere shortening → ageing/senescence. Telomerase reactivation → cancer immortality. Two sides of the same coin.</em></p>
+</div>
+</details>
+</div>
+</div>
+<div class="divider"></div>
+<!-- ════════════ S16: EQ TEMPLATES ════════════ -->
+<div id="s16">
+<div class="section-header">
+<div class="section-num">16</div>
+<h2>Essay Question <em>Templates</em></h2>
+</div><details><summary class="viva-q-text">Expand 🟢 TIER 3: Essay Question Templates Details</summary><div class="viva-a-text">
+<details><summary><span class="viva-q">Cancer is a gene-related disease.</span><span class="viva-year">PYQ 2011-S, 2024</span></summary><div class="viva-ans">
+</div></details>
+<details><summary><span class="viva-q">Proto-oncogenes are regulatory genes.</span><span class="viva-year">PYQ 2021</span></summary><div class="viva-ans">
+</div></details>
+<details><summary><span class="viva-q">Apoptosis is very important for preventing cancer.</span><span class="viva-year">PYQ 2023</span></summary><div class="viva-ans">
+</div></details>
+<details><summary><span class="viva-q">Insulin receptor has tyrosine kinase activity.</span><span class="viva-year">PYQ 2010-S</span></summary><div class="viva-ans">
+</div></details>
+</div></details></div>
+<div class="divider"></div>
+<!-- ════════════ S17: QUICKFIRE TABLE ════════════ -->
+<div id="s17">
+<div class="section-header">
+<div class="section-num">17</div>
+<h2>Quickfire <em>Revision Table</em></h2>
+</div>
+<div class="card d-print-none" style="border-color:var(--accent)">
+<div class="card-title">🔥 Exam Day High-Yield — Module 10</div>
+<div class="table-wrap">
+<table>
+<tr><th>Question</th><th>Answer</th></tr>
+<tr><td>Only Ig that crosses placenta</td><td>IgG — via FcRn (neonatal Fc receptor) on syncytiotrophoblasts</td></tr>
+<tr><td>First Ig in primary response</td><td>IgM — pentameric, best complement activator, best agglutinin</td></tr>
+<tr><td>Secretory Ig in colostrum/saliva/tears</td><td>IgA (sIgA) — dimer with J chain + secretory component</td></tr>
+<tr><td>Ig that triggers mast cell degranulation</td><td>IgE — binds FcεRI on mast cells. In allergy/anaphylaxis</td></tr>
+<tr><td>Papain vs Pepsin cleavage products</td><td>Papain: 2 Fab + Fc (above hinge). Pepsin: F(ab')₂ + pFc' (below hinge)</td></tr>
+<tr><td>Type I hypersensitivity Ig</td><td>IgE. Mediators: histamine, leukotrienes (LTC4/D4/E4), PGD₂. Treatment: epinephrine</td></tr>
+<tr><td>Type IV hypersensitivity — no Ig!</td><td>T cell mediated (CD4⁺ Th1 + macrophages). 48–72h delay. TB test, contact dermatitis</td></tr>
+<tr><td>Most important complement fragment for opsonisation</td><td>C3b (binds CR1 on phagocytes). C3a + C5a = anaphylatoxins. MAC = C5b-9</td></tr>
+<tr><td>BCR-ABL → drug target</td><td>Imatinib (Gleevec) — competitive inhibitor of BCR-ABL Tyr kinase. CML treatment</td></tr>
+<tr><td>Philadelphia chromosome</td><td>t(9;22) → BCR-ABL fusion. CML. Best confirmed by FISH or RT-PCR</td></tr>
+<tr><td>RAS mutation mechanism</td><td>Point mutation (G12V) → cannot hydrolyse GTP → RAS stuck "ON" → continuous proliferation. 30% of all cancers</td></tr>
+<tr><td>p53 downstream effectors</td><td>Arrest: p21 (inhibits CDK2). Apoptosis: BAX, PUMA, NOXA. Repair: GADD45</td></tr>
+<tr><td>Two-hit hypothesis — hereditary vs sporadic</td><td>Hereditary: 1st hit germline → bilateral, early. Sporadic: both hits somatic → unilateral, later. Classic example: Retinoblastoma (RB1)</td></tr>
+<tr><td>HER2 in breast cancer — treatment</td><td>Trastuzumab (Herceptin) — blocks HER2 RTK. HER2 amplified in ~25% breast cancers</td></tr>
+<tr><td>Aflatoxin B1 carcinogen → cancer</td><td>Hepatocellular carcinoma (HCC). From Aspergillus in mouldy peanuts. Activated by CYP1A2 → epoxide → DNA adducts → p53 codon 249 mutation</td></tr>
+<tr><td>AFP marker for</td><td>HCC and Yolk sac germ cell tumours. Oncofetal antigen</td></tr>
+<tr><td>CEA marker for</td><td>Colorectal cancer (monitoring recurrence). Also GI, lung, breast. Not specific enough for screening</td></tr>
+<tr><td>CA-125 for</td><td>Epithelial ovarian cancer (monitoring). Also ↑ in endometriosis, PID</td></tr>
+<tr><td>PSA organ-specific but not cancer-specific — why?</td><td>↑ in BPH, prostatitis too. Free/total PSA ratio helps discriminate prostate cancer</td></tr>
+<tr><td>Warburg effect</td><td>Cancer cells use aerobic glycolysis (glucose → lactate even with O₂). Basis of FDG-PET scan</td></tr>
+<tr><td>Methotrexate mechanism</td><td>DHFR inhibitor → ↓ THF → ↓ TMP → ↓ DNA synthesis → S-phase block</td></tr>
+<tr><td>Insulin receptor type</td><td>RTK (Receptor Tyrosine Kinase) — 2α + 2β subunits. β subunit has Tyr kinase domain</td></tr>
+<tr><td>Cholera toxin mechanism</td><td>ADP-ribosylates Gαs → permanently active → adenylyl cyclase always on → ↑↑↑ cAMP → CFTR → Cl⁻ secretion → diarrhoea</td></tr>
+<tr><td>cGMP second messenger — example</td><td>ANP/BNP → membrane guanylyl cyclase → cGMP → PKG → vasodilation. Also NO → soluble GC → cGMP</td></tr>
+</table>
+</div>
+</div>
+<!-- Master Mnemonics -->
+<div class="card d-print-none" style="margin-top:1rem">
+<div class="card-title">Module 10 Master Mnemonics</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:10px;margin-top:8px">
+<div class="mnemonic-box" style="margin:0">
+<div class="mbox-title">Ig Classes Order</div>
+<div class="mnemonic-highlight">"GAMED" = IgG (most), IgA (mucosal), IgM (macro), IgE (eosinophil/allergy), IgD (differentiation)</div>
+</div>
+<div class="mnemonic-box" style="margin:0">
+<div class="mbox-title">Hypersensitivity Types</div>
+<div class="mnemonic-highlight">"ACID" = Anaphylactic (I), Cytotoxic (II), Immune complex (III), Delayed (IV)</div>
+</div>
+<div class="mnemonic-box" style="margin:0">
+<div class="mbox-title">Tumour Markers</div>
+<div class="mnemonic-highlight">"AFP-HCC, CEA-Colon, PSA-Prostate, CA125-Ovary, CA19-9-Pancreas, hCG-Choriocarcinoma"</div>
+</div>
+<div class="mnemonic-box" style="margin:0">
+<div class="mbox-title">Complement Functions</div>
+<div class="mnemonic-highlight">"CLAMO" = Chemotaxis (C5a), Lysis (MAC), Anaphylatoxin, Mast cell, Opsonisation (C3b)</div>
+</div>
+</div>
+</div>
+<!-- Series Complete Notice -->
+<div class="clinical-box" style="margin-top:1.5rem;border-color:var(--teal);background:rgba(52,211,153,.05);">
+<div class="cbox-title" style="color:var(--teal)">🎓 Module Series Complete</div>
+<p>Modules 01–10 of the Caffeine &amp; Cadaver MBBS Biochemistry Note Series are now complete. This module (10) covers Immunochemistry, Oncogenesis, Signal Transduction, and Hormone Receptors — PYQ-referenced against MBBS 2010–2025 throughout.</p>
+<p style="margin-top:6px"><strong style="color:var(--teal)">Modules covered:</strong> 01 Enzyme Inhibition · 02 Carbohydrate Metabolism · 03 Lipid Metabolism · 04 Protein Chemistry &amp; Haemoglobin · 05 Nucleotide Chemistry · 06 Molecular Biology &amp; Genetics · 07 Biological Oxidation · 08 Nutrition, Vitamins &amp; Minerals · 09 Clinical Biochemistry · 10 Immunochemistry &amp; Oncogenesis</p>
+</div>
+</div><!-- /s17 -->
+</div><!-- /content -->
+<div class="footer">
+<p>MODULE 10 · IMMUNOCHEMISTRY &amp; ONCOGENESIS</p>
+<p style="margin-top:4px">Caffeine &amp; Cadaver · MBBS Biochemistry Notes · 2010–2025</p>
+<p style="margin-top:4px;color:var(--accent);font-size:11px">Compiled for personal academic use · PYQ-first construction · Mobile-optimised</p>
+</div>
+<button class="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script>
+document.querySelectorAll('details').forEach(d=>{
+  d.addEventListener('toggle',()=>{
+    if(d.open){const c=d.querySelector('.viva-ans');if(c)c.style.animation='fadeIn .2s ease';}
+  });
+});
+</script>
+</body>
+</html>

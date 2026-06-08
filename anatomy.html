@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anatomy — Caffeine & Cadaver</title>
+<meta name="description" content="Anatomy notes built from PYQs 2010–2025. Tier-based priority, hand-drawn diagrams, last-day recall mode. Caffeine & Cadaver.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0a0808;
+  --surface: #161010;
+  --surface2: #211717;
+  --border: #301f1f;
+  --border2: #452b2b;
+
+  /* Anatomy accent — coral/rust palette */
+  --accent: #d63c3c;
+  --accent2: #e85d5d;
+  --accent3: #a31d1d;
+  --accent-glow: rgba(214,60,60,0.15);
+
+  --text: #e8e3df;
+  --muted: #9e8e86;
+  --white: #ffffff;
+
+  /* Module colours */
+  --m01: #f87c5a;
+  --m02: #f59e0b;
+  --m03: #c2410c;
+  --m04: #dc2626;
+  --m05: #b45309;
+  --m06: #9f7aea;
+  --m07: #a16207;
+  --m08: #3b82f6;
+  --m09: #10b981;
+  --m10: #8b5cf6;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 14px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ── NOISE TEXTURE OVERLAY ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 clamp(16px, 5vw, 60px);
+  height: 56px;
+  background: rgba(10,8,8,0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.nav-logo-mark {
+  width: 28px; height: 28px;
+  background: var(--accent);
+  border-radius: 4px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--bg);
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
+}
+
+.nav-logo-text {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--white);
+  letter-spacing: 0.3px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 3vw, 32px);
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 13px;
+  color: var(--muted);
+  transition: color .2s;
+  font-weight: 400;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--accent);
+}
+
+.nav-links a.active {
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 2px;
+}
+
+/* ── HERO ── */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 100px clamp(16px, 8vw, 100px) 60px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* background glow blobs */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -100px; right: -100px;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(214,60,60,0.1) 0%, transparent 65%);
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 20%;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(245,158,107,0.06) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  border: 1px solid var(--accent);
+  padding: 5px 14px;
+  border-radius: 2px;
+  margin-bottom: 36px;
+  width: fit-content;
+  animation: fadeUp .6s ease both;
+}
+
+.hero-tag-dot {
+  width: 6px; height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: blink 1.6s infinite;
+}
+
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:.2} }
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(48px, 8vw, 88px);
+  font-weight: 900;
+  line-height: 1.0;
+  color: var(--white);
+  margin-bottom: 8px;
+  animation: fadeUp .7s .1s ease both;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.hero-sub {
+  font-size: clamp(14px, 2vw, 17px);
+  color: var(--muted);
+  font-weight: 300;
+  max-width: 520px;
+  margin-bottom: 48px;
+  letter-spacing: 0.3px;
+  animation: fadeUp .7s .2s ease both;
+}
+
+.hero-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 52px;
+  animation: fadeUp .7s .3s ease both;
+}
+
+.pill {
+  background: var(--surface2);
+  border: 1px solid var(--border2);
+  color: var(--muted);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  padding: 5px 12px;
+  border-radius: 2px;
+  letter-spacing: .5px;
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  animation: fadeUp .7s .4s ease both;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--bg);
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background .2s, transform .15s;
+  letter-spacing: .3px;
+}
+
+.btn-primary:hover {
+  background: var(--accent2);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text);
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 12px 28px;
+  border: 1px solid var(--border2);
+  border-radius: 3px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: border-color .2s, color .2s;
+}
+
+.btn-secondary:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* hero side stat bar */
+.hero-stats {
+  position: absolute;
+  right: clamp(16px, 6vw, 80px);
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  animation: fadeUp .7s .5s ease both;
+}
+
+.hero-stat {
+  text-align: right;
+}
+
+.hero-stat-val {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.hero-stat-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.hero-divider {
+  width: 1px;
+  height: 40px;
+  background: var(--border2);
+  margin-left: auto;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── SECTION ── */
+.section {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px clamp(16px, 6vw, 60px);
+}
+
+.section-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  color: var(--accent);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+  max-width: 80px;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+
+.section-title span { color: var(--accent); }
+
+.section-sub {
+  font-size: 14px;
+  color: var(--muted);
+  max-width: 540px;
+  line-height: 1.75;
+  margin-bottom: 48px;
+}
+
+/* ── MODULE GRID ── */
+.modules-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.module-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color .25s, transform .2s;
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+}
+
+.module-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--card-accent, var(--accent));
+}
+
+.module-card:hover {
+  border-color: var(--card-accent, var(--accent));
+  transform: translateY(-3px);
+}
+
+.module-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.module-num {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.module-status-badge {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  padding: 3px 9px;
+  border-radius: 2px;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+}
+
+.badge-soon {
+  background: rgba(214,60,60,0.1);
+  color: var(--accent);
+  border: 1px solid rgba(214,60,60,0.3);
+}
+
+.badge-building {
+  background: rgba(245,158,11,0.1);
+  color: #f59e0b;
+  border: 1px solid rgba(245,158,11,0.3);
+}
+
+.badge-live {
+  background: rgba(16,185,129,0.1);
+  color: #10b981;
+  border: 1px solid rgba(16,185,129,0.3);
+}
+
+.module-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 6px;
+  line-height: 1.25;
+}
+
+.module-topics {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.65;
+  margin-bottom: 18px;
+}
+
+.module-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.module-pyq {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: .5px;
+}
+
+.module-pyq strong {
+  color: var(--card-accent, var(--accent));
+}
+
+.module-arrow {
+  width: 28px; height: 28px;
+  border: 1px solid var(--border2);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--muted);
+  font-size: 13px;
+  transition: all .2s;
+  flex-shrink: 0;
+}
+
+.module-card:hover .module-arrow {
+  background: var(--card-accent, var(--accent));
+  border-color: var(--card-accent, var(--accent));
+  color: var(--bg);
+}
+
+/* ── WHAT TO EXPECT ── */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+  margin-top: 40px;
+}
+
+.feature-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 22px 20px;
+}
+
+.feature-icon {
+  font-size: 22px;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.feature-title {
+  font-weight: 600;
+  color: var(--white);
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.feature-desc {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* ── WORKFLOW ── */
+.workflow {
+  display: flex;
+  gap: 0;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.workflow-step {
+  flex: 1;
+  min-width: 160px;
+  padding: 24px 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-right: none;
+  position: relative;
+}
+
+.workflow-step:last-child {
+  border-right: 1px solid var(--border);
+  border-radius: 0 8px 8px 0;
+}
+
+.workflow-step:first-child {
+  border-radius: 8px 0 0 8px;
+}
+
+.workflow-step::after {
+  content: '→';
+  position: absolute;
+  right: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--accent);
+  font-size: 16px;
+  z-index: 2;
+  background: var(--bg);
+  padding: 2px;
+}
+
+.workflow-step:last-child::after { display: none; }
+
+.workflow-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--accent);
+  opacity: .4;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.workflow-title {
+  font-weight: 600;
+  color: var(--white);
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+
+.workflow-desc {
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* ── COMING SOON BANNER ── */
+.coming-banner {
+  background: linear-gradient(135deg, rgba(214,60,60,0.07), rgba(245,158,107,0.04));
+  border: 1px solid rgba(214,60,60,0.2);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 8px 8px 0;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.coming-text { flex: 1; }
+.coming-text strong { color: var(--accent); font-size: 14px; }
+.coming-text p { font-size: 12px; color: var(--muted); margin-top: 3px; }
+
+.coming-notify {
+  background: var(--accent);
+  color: var(--bg);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 8px 18px;
+  border-radius: 2px;
+  text-decoration: none;
+  letter-spacing: .5px;
+  white-space: nowrap;
+  transition: background .2s;
+}
+
+.coming-notify:hover { background: var(--accent2); }
+
+/* ── DIVIDER ── */
+.section-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ── FOOTER ── */
+footer {
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid var(--border);
+  padding: 40px clamp(16px, 6vw, 60px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-brand {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 1px;
+}
+
+.footer-brand strong { color: var(--accent); }
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.footer-links a {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: var(--muted);
+  text-decoration: none;
+  letter-spacing: .5px;
+  transition: color .2s;
+}
+
+.footer-links a:hover { color: var(--accent); }
+
+/* ── SCROLL TOP ── */
+.top-btn {
+  position: fixed;
+  bottom: 24px; right: 24px;
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  border-radius: 50%;
+  width: 40px; height: 40px;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 200;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700;
+  box-shadow: 0 4px 20px rgba(214,60,60,.35);
+  transition: transform .2s;
+}
+
+.top-btn:hover { transform: translateY(-2px); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .hero-stats { display: none; }
+  .hero { padding: 90px 16px 50px; }
+  .workflow { flex-direction: column; }
+  .workflow-step { border-right: 1px solid var(--border); border-bottom: none; border-radius: 0; }
+  .workflow-step:first-child { border-radius: 8px 8px 0 0; }
+  .workflow-step:last-child { border-radius: 0 0 8px 8px; border-bottom: 1px solid var(--border); }
+  .workflow-step::after { content: '↓'; right: auto; left: 50%; top: auto; bottom: -12px; transform: translateX(-50%); }
+}
+
+@media (max-width: 480px) {
+  .modules-grid { grid-template-columns: 1fr; }
+  .features-grid { grid-template-columns: 1fr 1fr; }
+  nav .nav-links { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">
+    <div class="nav-logo-mark">C&C</div>
+    <span class="nav-logo-text">Caffeine & Cadaver</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/biochemistry">Biochemistry</a></li>
+    <li><a href="/anatomy" class="active">Anatomy</a></li>
+    <li><a href="/sample">Sample</a></li>
+    <li><a href="/contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-tag">
+    <span class="hero-tag-dot"></span>
+    Caffeine & Cadaver · Anatomy Series
+  </div>
+  <h1>Anatomy<br><em>Ranker</em><br>Series</h1>
+  <p class="hero-sub">10 modules. Every bone, nerve, and vessel — mapped to major university PYQs 2010–2025. With hand-drawn diagrams and last-day recall mode.</p>
+  <div class="hero-pills">
+    <span class="pill">Upper Limb</span>
+    <span class="pill">Lower Limb</span>
+    <span class="pill">Thorax</span>
+    <span class="pill">Head & Neck</span>
+    <span class="pill">Neuroanatomy</span>
+    <span class="pill">Embryology</span>
+    <span class="pill">Histology</span>
+    <span class="pill">PYQ 2010–2025</span>
+  </div>
+  <div class="hero-ctas">
+    <a href="#modules" class="btn-primary">Browse Modules</a>
+    <a href="/biochemistry" class="btn-secondary">← Back to Biochem</a>
+  </div>
+
+  <!-- stat sidebar -->
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <div class="hero-stat-val">10</div>
+      <div class="hero-stat-label">Modules</div>
+    </div>
+    <div class="hero-divider"></div>
+    <div class="hero-stat">
+      <div class="hero-stat-val">15+</div>
+      <div class="hero-stat-label">PYQ Years</div>
+    </div>
+    <div class="hero-divider"></div>
+    <div class="hero-stat">
+      <div class="hero-stat-val">BD</div>
+      <div class="hero-stat-label">Referenced</div>
+    </div>
+  </div>
+</div>
+
+<!-- MODULES -->
+<div class="section" id="modules">
+  <div class="section-label">Modules</div>
+  <h2 class="section-title">The <span>Full Series</span></h2>
+  <p class="section-sub">Built module by module, PYQ first. Each section covers exam-relevant anatomy with hand-drawn sketches + Wikimedia diagrams.</p>
+
+  <!-- Coming soon banner -->
+  <div class="coming-banner">
+    <div class="coming-text">
+      <strong>🔨 Currently Building — Module 01: General Anatomy</strong>
+      <p>Launching soon. Join the Telegram channel to get notified first.</p>
+    </div>
+    <a href="https://t.me/caffeine_cadaver" class="coming-notify" target="_blank">JOIN TELEGRAM →</a>
+  </div>
+
+  <div class="modules-grid">
+
+    <!-- M01 -->
+    <a href="#" class="module-card" style="--card-accent: var(--m01);">
+      <div class="module-card-header">
+        <span class="module-num">Module 01</span>
+        <span class="module-status-badge badge-building">Building</span>
+      </div>
+      <div class="module-title">General Anatomy</div>
+      <div class="module-topics">Anatomical terms · Planes & axes · Types of joints · Cartilage · Bone classification · Muscle types · Nerve fibre types</div>
+      <div class="module-footer">
+        <span class="module-pyq">PYQ <strong>8+ papers</strong></span>
+        <span class="module-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- M02 -->
+    <a href="#" class="module-card" style="--card-accent: var(--m02);">
+      <div class="module-card-header">
+        <span class="module-num">Module 02</span>
+        <span class="module-status-badge badge-soon">Coming Soon</span>
+      </div>
+      <div class="module-title">Upper Limb</div>
+      <div class="module-topics">Brachial plexus · Rotator cuff · Cubital fossa · Carpal tunnel · Anatomical snuffbox · Nerve injuries</div>
+      <div class="module-footer">
+        <span class="module-pyq">PYQ <strong>12+ papers</strong></span>
+        <span class="module-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- M03 -->
+    <a href="#" class="module-card" style="--card-accent: var(--m03);">
+      <div class="module-card-header">
+        <span class="module-num">Module 03</span>
+        <span class="module-status-badge badge-soon">Coming Soon</span>
+      </div>
+      <div class="module-title">Lower Limb</div>
+      <div class="module-topics">Femoral triangle · Adductor canal · Popliteal fossa · Lumbosacral plexus · Foot arches · Nerve injuries</div>
+      <div class="module-footer">
+        <span class="module-pyq">PYQ <strong>10+ papers</strong></span>
+        <span class="module-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- M04 -->
+    <a href="#" class="module-card" style="--card-accent: var(--m04);">
+      <div class="module-card-header">
+        <span class="module-num">Module 04</span>
+        <span class="module-status-badge badge-soon">Coming Soon</span>
+      </div>
+      <div class="module-title">Thorax</div>
+      <div class="module-topics">Intercostal spaces · Lung root · Mediastinum · Heart borders · Coronary arteries · Diaphragm openings</div>
+      <div class="module-footer">
+        <span class="module-pyq">PYQ <strong>9+ papers</strong></span>
+        <span class="module-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- M05 -->
+    <a href="#" class="module-card" style="--card-accent: var(--m05);">
+      <div class="module-card-header">
+        <span class="module-num">Module 05</span>
+        <span class="module-status-badge badge-soon">Coming Soon</span>
+      </div>
+      <div class="module-title">Abdomen</div>
+      <div class="module-topics">Inguinal canal · Portal system · Liver segments · Kidney relations · Coeliac trunk · Peritoneum</div>
+      <div class="module-footer">
+        <span class="module-pyq">PYQ <strong>11+ papers</strong></span>
+        <span class="module-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- M06 -->
+    <a href="#" class="module-card" style="--card-accent: var(--m06);">
+      <div class="module-card-header">
+        <span class="module-num">Module 06</span>
+        <span class="module-status-badge badge-soon">Coming Soon</span>
+      </div>
+      <div class="module-title">Pelvis & Perineum</div>
+      <div class="module-topics">Pelvic floor · Pudendal nerve · Perineal body · Ischiorectal fossa · Pelvic viscera relations</div>
+      <div class="module-footer">
+        <span class="module-pyq">PYQ <strong>7+ papers</strong></span>
+        <span class="module-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- M07 -->
+    <a href="#" class="module-card" style="--card-accent: var(--m07);">
+      <div class="module-card-header">
+        <span class="module-num">Module 07</span>
+        <span class="module-status-badge badge-soon">Coming Soon</span>
+      </div>
+      <div class="module-title">Head & Neck</div>
+      <div class="module-topics">Cranial nerves · Parotid gland · Cavernous sinus · Thyroid · Pharynx · Cervical triangles</div>
+      <div class="module-footer">
+        <span class="module-pyq">PYQ <strong>13+ papers</strong></span>
+        <span class="module-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- M08 -->
+    <a href="#" class="module-card" style="--card-accent: var(--m08);">
+      <div class="module-card-header">
+        <span class="module-num">Module 08</span>
+        <span class="module-status-badge badge-soon">Coming Soon</span>
+      </div>
+      <div class="module-title">Neuroanatomy</div>
+      <div class="module-topics">Internal capsule · Basal ganglia · Cerebellum · Spinal tracts · CSF pathways · Blood-brain barrier</div>
+      <div class="module-footer">
+        <span class="module-pyq">PYQ <strong>10+ papers</strong></span>
+        <span class="module-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- M09 -->
+    <a href="#" class="module-card" style="--card-accent: var(--m09);">
+      <div class="module-card-header">
+        <span class="module-num">Module 09</span>
+        <span class="module-status-badge badge-soon">Coming Soon</span>
+      </div>
+      <div class="module-title">Embryology</div>
+      <div class="module-topics">Germ layers · Somites · Heart development · Gut rotation · Foetal circulation · Common congenital anomalies</div>
+      <div class="module-footer">
+        <span class="module-pyq">PYQ <strong>9+ papers</strong></span>
+        <span class="module-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- M10 -->
+    <a href="#" class="module-card" style="--card-accent: var(--m10);">
+      <div class="module-card-header">
+        <span class="module-num">Module 10</span>
+        <span class="module-status-badge badge-soon">Coming Soon</span>
+      </div>
+      <div class="module-title">Histology</div>
+      <div class="module-topics">Epithelium · Connective tissue · Muscle histology · Nervous tissue · Organ-specific histology · Staining methods</div>
+      <div class="module-footer">
+        <span class="module-pyq">PYQ <strong>8+ papers</strong></span>
+        <span class="module-arrow">→</span>
+      </div>
+    </a>
+
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- WHAT TO EXPECT -->
+<div class="section">
+  <div class="section-label">Features</div>
+  <h2 class="section-title">What's <span>Inside</span></h2>
+  <p class="section-sub">Every module is built the same way — PYQ first, diagrams second, mnemonics last.</p>
+
+  <div class="features-grid">
+    <div class="feature-card">
+      <span class="feature-icon">✏️</span>
+      <div class="feature-title">Hand-Drawn Diagrams</div>
+      <div class="feature-desc">Original tablet sketches for complex structures — brachial plexus, femoral triangle, cranial nerve exits. Not AI lines. Real drawings.</div>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">🔴</span>
+      <div class="feature-title">Tier-Based Priority</div>
+      <div class="feature-desc">Every topic rated Tier 1 / 2 / 3. Know exactly what to read the night before your exam and what to skip.</div>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">📄</span>
+      <div class="feature-title">PYQ 2010–2025</div>
+      <div class="feature-desc">Built exclusively from  past papers. Every section references which year(s) it appeared. No filler content.</div>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">🌙</span>
+      <div class="feature-title">Last Day Recall Mode</div>
+      <div class="feature-desc">Flash summary box at the top of every module. 7–10 points. Everything you need before walking into the exam hall.</div>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">📱</span>
+      <div class="feature-title">Mobile First</div>
+      <div class="feature-desc">Reads perfectly on your phone at 2am. No pinching, no horizontal scrolling, no broken diagrams.</div>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">💬</span>
+      <div class="feature-title">Viva Q&A Built In</div>
+      <div class="feature-desc">Collapsible viva questions at the end of every section. Tap to reveal. Exactly what your examiner will ask.</div>
+    </div>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- HOW IT'S BUILT -->
+<div class="section">
+  <div class="section-label">Workflow</div>
+  <h2 class="section-title">How Every Module <span>Gets Built</span></h2>
+  <p class="section-sub">Same pipeline. Every time. No shortcuts.</p>
+
+  <div class="workflow">
+    <div class="workflow-step">
+      <div class="workflow-num">01</div>
+      <div class="workflow-title">PYQ Analysis</div>
+      <div class="workflow-desc"> 2010–2025 papers opened first. Only exam-tested content makes it in.</div>
+    </div>
+    <div class="workflow-step">
+      <div class="workflow-num">02</div>
+      <div class="workflow-title">HTML Module</div>
+      <div class="workflow-desc">Full dark-theme module built with flowcharts, tables, and clinical correlations.</div>
+    </div>
+    <div class="workflow-step">
+      <div class="workflow-num">03</div>
+      <div class="workflow-title">Diagrams Added</div>
+      <div class="workflow-desc">Hand-drawn tablet sketches + Wikimedia reference images embedded at key points.</div>
+    </div>
+    <div class="workflow-step">
+      <div class="workflow-num">04</div>
+      <div class="workflow-title">Version X</div>
+      <div class="workflow-desc">Rapid revision format — Tier map, Last Day Mode, low-yield content collapsed.</div>
+    </div>
+    <div class="workflow-step">
+      <div class="workflow-num">05</div>
+      <div class="workflow-title">Deployed</div>
+      <div class="workflow-desc">Live on Caffeine & Cadaver. PDF export available separately on Instamojo.</div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">
+    <strong>Caffeine & Cadaver</strong> · Anatomy Series · · <br>
+    <span style="font-size:10px;">Built from  PYQs 2010–2025</span>
+  </div>
+  <ul class="footer-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/biochemistry">Biochemistry</a></li>
+    <li><a href="/contact">Contact</a></li>
+  </ul>
+</footer>
+
+<button class="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+</body>
+</html>

@@ -1,0 +1,4276 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>
+      Module 05 — Nucleotide Chemistry &amp; Metabolism | Last-Day Revision
+      System
+    </title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&amp;family=JetBrains+Mono:wght@400;600&amp;family=Crimson+Pro:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="MBBS PYQ_master_style.css" rel="stylesheet"/>
+<link href="mbbs_master_style.css" rel="stylesheet"/>
+<link href="wbuhs_master_style.css" rel="stylesheet"/>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300..900;1,300..900&family=IBM+Plex+Mono:ital,wght@0,100..700;1,100..700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Sora:wght@100..800&display=swap');
+
+/* ==========================================
+   DYNAMIC MULTI-THEME VARIABLE ENGINE
+   ========================================== */
+
+/* Theme 1: Premium Gold (Default / Classic Modules 1-3 & Module 5-X) */
+:root, body.theme-gold {
+  --bg: #0d0f14;
+  --surface: #13161e;
+  --surface2: #1a1e2a;
+  --surface3: #222736;
+  --border: #252a38;
+  --border2: #343b4f;
+  --accent: #e8c84a;
+  --accent2: #4ae8b0;
+  --accent3: #e84a7a;
+  --accent4: #4a9ee8;
+  --text: #e8eaf0;
+  --muted: #8a90a8;
+  --white: #ffffff;
+  --rls: #e84a7a;
+  --gold: #e8c84a;
+  --rose: #e84a7a;
+  --purple: #bf81ff;
+  --blue: #4a9ee8;
+  --green: #4ae8b0;
+  --orange: #ffa552;
+}
+
+/* Theme 2: Premium Crimson (Module 4 & 4-X) */
+body.theme-crimson {
+  --bg: #0a0a0f;
+  --surface: #111118;
+  --surface2: #18181f;
+  --surface3: #1e1e28;
+  --border: #252535;
+  --border2: #34344a;
+  --accent: #e8334a;
+  --accent2: #ff5268;
+  --accent3: #ff8595;
+  --accent4: #4a9ee8;
+  --text: #e8eaf0;
+  --muted: #8a90a8;
+  --white: #ffffff;
+  --rls: #ff8595;
+  --gold: #f4c464;
+  --rose: #e8334a;
+  --purple: #c084fc;
+  --blue: #60a5fa;
+  --green: #4ade80;
+  --orange: #fb923c;
+}
+
+/* Theme 3: Premium Emerald (Module 5 Modern) */
+body.theme-emerald {
+  --bg: #08100f;
+  --surface: #0f1a18;
+  --surface2: #152220;
+  --surface3: #1c2d2a;
+  --border: #1e3530;
+  --border2: #2a4540;
+  --accent: #00c897;
+  --accent2: #2ddcaa;
+  --accent3: #80ffe8;
+  --accent4: #60a5fa;
+  --text: #e2ede9;
+  --muted: #8aada6;
+  --white: #ffffff;
+  --rls: #ff6b8a;
+  --gold: #f4c464;
+  --rose: #ff6b8a;
+  --purple: #c084fc;
+  --blue: #60a5fa;
+  --green: #4ade80;
+  --orange: #fb923c;
+}
+
+/* Theme 4: Premium Indigo (Modules 6, 8, 9, 10) */
+body.theme-indigo {
+  --bg: #080c14;
+  --surface: #0d1220;
+  --surface2: #121828;
+  --surface3: #182030;
+  --border: #1e293b;
+  --border2: #334155;
+  --accent: #6366f1;
+  --accent2: #818cf8;
+  --accent3: #c084fc;
+  --accent4: #38bdf8;
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --white: #ffffff;
+  --rls: #f43f5e;
+  --gold: #fbbf24;
+  --rose: #f43f5e;
+  --purple: #c084fc;
+  --blue: #38bdf8;
+  --green: #34d399;
+  --orange: #fb923c;
+}
+
+/* Theme 5: Premium Amber (Modules 7 & 7-X) */
+body.theme-amber {
+  --bg: #080a0e;
+  --surface: #0e1118;
+  --surface2: #141820;
+  --surface3: #1a2030;
+  --border: #1e2530;
+  --border2: #2a3545;
+  --accent: #f59e0b;
+  --accent2: #fbbf24;
+  --accent3: #fb923c;
+  --accent4: #34d399;
+  --text: #f3f4f6;
+  --muted: #9ca3af;
+  --white: #ffffff;
+  --rls: #ef4444;
+  --gold: #fbbf24;
+  --rose: #ef4444;
+  --purple: #a855f7;
+  --blue: #3b82f6;
+  --green: #10b981;
+  --orange: #f97316;
+}
+
+/* ==========================================
+   GLOBAL STRUCTURE & FONTS
+   ========================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Typography Isolation */
+body {
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  overflow-x: hidden;
+  font-size: 14px;
+}
+
+body.theme-gold {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 14px;
+}
+
+body.theme-crimson,
+body.theme-emerald,
+body.theme-indigo,
+body.theme-amber {
+  font-family: "Sora", sans-serif;
+  font-size: 15px;
+}
+
+strong {
+  color: var(--white);
+}
+
+p {
+  margin-bottom: 12px;
+  color: var(--text);
+  line-height: 1.8;
+}
+
+/* Custom Webkit Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
+}
+
+
+/* ==========================================
+   CLASSIC LAYOUT SELECTORS (Modules 1-3)
+   ========================================== */
+
+/* Premium Brand Identity */
+.brand-container {
+  display: block;
+  margin-bottom: 28px;
+  animation: fadeIn 0.8s ease-out;
+}
+.brand-logo {
+  max-width: 200px;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.brand-logo:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(232, 200, 74, 0.15); /* Accent glow on hover */
+}
+
+.cover {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 60px;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg);
+  page-break-after: always;
+}
+
+.cover::before {
+  content: "";
+  position: absolute;
+  top: -200px;
+  right: -200px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(232, 200, 74, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cover::after {
+  content: "";
+  position: absolute;
+  bottom: -100px;
+  left: -100px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(74, 232, 176, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cover-tag {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  border: 1px solid var(--accent);
+  padding: 4px 12px;
+  margin-bottom: 40px;
+  display: inline-block;
+}
+
+.cover h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(42px, 8vw, 72px);
+  font-weight: 900;
+  line-height: 1.05;
+  color: var(--white);
+  margin-bottom: 10px;
+}
+
+.cover h1 span {
+  color: var(--accent);
+}
+
+.cover-sub {
+  font-size: 18px;
+  color: var(--muted);
+  margin-bottom: 50px;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.cover-meta {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.cover-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cover-meta-label {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.cover-meta-value {
+  font-size: 13px;
+  color: var(--accent2);
+  font-weight: 500;
+}
+
+.cover-divider {
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  margin: 30px 0;
+}
+
+.cover-pyq-badge {
+  position: absolute;
+  top: 120px;
+  right: 60px;
+  background: var(--accent);
+  color: var(--bg);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 8px 16px;
+  letter-spacing: 1px;
+}
+
+.page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 50px 60px;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 30px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.section-number {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 2px;
+}
+
+.section-title {
+  font-family: "Playfair Display", serif;
+  font-size: 28px;
+  color: var(--white);
+  font-weight: 700;
+}
+
+.section-title span {
+  color: var(--accent);
+}
+
+.pyq-box {
+  background: rgba(232, 200, 74, 0.08);
+  border-left: 3px solid var(--accent);
+  padding: 16px 20px;
+  margin-bottom: 30px;
+  border-radius: 0 6px 6px 0;
+}
+
+.pyq-box-label {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.pyq-box ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pyq-box ul li {
+  background: rgba(232, 200, 74, 0.15);
+  color: var(--accent);
+  font-size: 11px;
+  font-family: "IBM Plex Mono", monospace;
+  padding: 3px 10px;
+  border-radius: 2px;
+}
+
+.big-picture {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 28px;
+}
+
+.big-picture-label {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  color: var(--accent2);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.flowchart-container {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 30px;
+  margin: 24px 0;
+}
+
+.flowchart-title {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+/* Classic Comparison Tables */
+.comp-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 13px;
+}
+
+.comp-table th {
+  background: var(--surface2);
+  padding: 12px 16px;
+  text-align: left;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--border);
+}
+
+.comp-table th:nth-child(2) { color: var(--accent2); }
+.comp-table th:nth-child(3) { color: var(--accent3); }
+.comp-table th:nth-child(4) { color: var(--accent4); }
+
+.comp-table td {
+  padding: 11px 16px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+  line-height: 1.6;
+}
+
+.comp-table tr:hover td {
+  background: var(--surface);
+}
+
+.comp-table td:first-child {
+  font-weight: 600;
+  color: var(--muted);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.key-fact {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  background: var(--surface);
+  border-radius: 6px;
+  padding: 14px 18px;
+  margin: 10px 0;
+}
+
+.key-fact-icon {
+  font-size: 16px;
+  margin-top: 1px;
+  flex-shrink: 0;
+}
+
+.key-fact-text {
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.key-fact-text strong {
+  color: var(--accent);
+}
+
+.mnemonic {
+  background: linear-gradient(135deg, rgba(74, 232, 176, 0.08), rgba(232, 200, 74, 0.05));
+  border: 1px solid rgba(74, 232, 176, 0.3);
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin: 20px 0;
+}
+
+.mnemonic-label {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  color: var(--accent2);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.mnemonic-text {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--white);
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.mnemonic-expand {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.rls-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(232, 200, 74, 0.15);
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  padding: 3px 10px;
+  border-radius: 3px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+/* Classic Viva section */
+.viva-section {
+  background: var(--surface);
+  border-radius: 8px;
+  padding: 28px;
+  margin: 30px 0;
+  border: 1px solid var(--border);
+}
+
+.viva-label {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.viva-label::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+div.viva-q {
+  margin-bottom: 18px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--border);
+}
+
+div.viva-q:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.viva-q-text {
+  font-weight: 600;
+  color: var(--accent);
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.viva-q-text span {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  background: rgba(232, 200, 74, 0.15);
+  padding: 2px 8px;
+  margin-right: 8px;
+  border-radius: 2px;
+}
+
+.viva-a-text {
+  font-size: 13px;
+  color: var(--text);
+  line-height: 1.7;
+  padding-left: 16px;
+  border-left: 2px solid var(--border);
+}
+
+.section-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 40px 0;
+}
+
+h2.topic-head {
+  font-family: "Playfair Display", serif;
+  font-size: 22px;
+  color: var(--white);
+  margin: 28px 0 14px;
+}
+
+h3.sub-head {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent2);
+  margin: 20px 0 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: "IBM Plex Mono", monospace;
+}
+
+.graph-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px;
+  margin: 16px 0;
+}
+
+.graph-label {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  color: var(--accent4);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
+svg text {
+  font-family: "IBM Plex Mono", monospace;
+}
+
+.examiner-fav {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(232, 74, 122, 0.15);
+  border: 1px solid var(--accent3);
+  color: var(--accent3);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  padding: 2px 9px;
+  border-radius: 3px;
+  letter-spacing: 1px;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+
+/* ==========================================
+   MODERN LAYOUT SELECTORS (Modules 4-10)
+   ========================================== */
+
+/* Modern Hero Block */
+.hero {
+  background: linear-gradient(135deg, #050e0c 0%, #0d1f1a 50%, var(--bg) 100%);
+  border-bottom: 1px solid var(--border2);
+  padding: 3rem 1.5rem 2.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-crimson .hero {
+  background: linear-gradient(135deg, #100609 0%, #200d12 50%, var(--bg) 100%);
+}
+.theme-indigo .hero {
+  background: linear-gradient(135deg, #060910 0%, #0d1222 50%, var(--bg) 100%);
+}
+.theme-amber .hero {
+  background: linear-gradient(135deg, #100a06 0%, #20140d 50%, var(--bg) 100%);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 360px;
+  height: 360px;
+  background: radial-gradient(circle, rgba(0, 200, 151, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.theme-crimson .hero::before { background: radial-gradient(circle, rgba(232, 51, 74, 0.12) 0%, transparent 70%); }
+.theme-indigo .hero::before { background: radial-gradient(circle, rgba(99, 102, 241, 0.12) 0%, transparent 70%); }
+.theme-amber .hero::before { background: radial-gradient(circle, rgba(245, 158, 11, 0.12) 0%, transparent 70%); }
+
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: -40px;
+  left: 15%;
+  width: 240px;
+  height: 240px;
+  background: radial-gradient(circle, rgba(244, 196, 100, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.module-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0, 200, 151, 0.12);
+  border: 1px solid rgba(0, 200, 151, 0.35);
+  color: var(--accent2);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  padding: 4px 12px;
+  border-radius: 3px;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+.theme-crimson .module-tag {
+  background: rgba(232, 51, 74, 0.12);
+  border-color: rgba(232, 51, 74, 0.35);
+}
+.theme-indigo .module-tag {
+  background: rgba(99, 102, 241, 0.12);
+  border-color: rgba(99, 102, 241, 0.35);
+}
+.theme-amber .module-tag {
+  background: rgba(245, 158, 11, 0.12);
+  border-color: rgba(245, 158, 11, 0.35);
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.7); }
+}
+
+.hero h1 {
+  font-family: "Crimson Pro", serif;
+  font-size: clamp(2rem, 6vw, 3.2rem);
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.15;
+  margin-bottom: 0.5rem;
+}
+
+.hero h1 span {
+  color: var(--accent);
+}
+
+.hero-sub {
+  color: var(--text2);
+  font-size: 13px;
+  font-family: "JetBrains Mono", monospace;
+  letter-spacing: 0.5px;
+  margin-bottom: 1.5rem;
+}
+
+.hero-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pill {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-family: "JetBrains Mono", monospace;
+}
+
+/* Table of Contents */
+.toc {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  margin: 1.5rem;
+  padding: 1.25rem;
+  border-radius: 6px;
+}
+
+.toc-title {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 6px;
+}
+
+.toc a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 13px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.toc a:hover {
+  color: var(--accent2);
+  background: rgba(0, 200, 151, 0.08);
+}
+.theme-crimson .toc a:hover { background: rgba(232, 51, 74, 0.08); }
+.theme-indigo .toc a:hover { background: rgba(99, 102, 241, 0.08); }
+.theme-amber .toc a:hover { background: rgba(245, 158, 11, 0.08); }
+
+.toc-num {
+  color: var(--accent);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+}
+
+.content {
+  padding: 0 1.5rem 3rem;
+}
+
+/* Modern Section Headers */
+.content .section-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 2.5rem 0 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.content .section-num {
+  background: var(--accent);
+  color: var(--bg);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  font-weight: 700;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.content .section-header h2 {
+  font-family: "Crimson Pro", serif;
+  font-size: clamp(1.3rem, 4vw, 1.8rem);
+  font-weight: 600;
+  color: var(--text);
+}
+
+.content .section-header h2 em {
+  color: var(--accent2);
+  font-style: normal;
+}
+
+/* Modern Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  font-family: "JetBrains Mono", monospace;
+  padding: 2px 7px;
+  border-radius: 3px;
+  vertical-align: middle;
+  margin-left: 4px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.badge-rls {
+  background: rgba(255, 107, 138, 0.18);
+  color: var(--rose);
+  border: 1px solid rgba(255, 107, 138, 0.35);
+}
+.badge-pyq {
+  background: rgba(96, 165, 250, 0.15);
+  color: var(--blue);
+  border: 1px solid rgba(96, 165, 250, 0.3);
+}
+.badge-fav {
+  background: rgba(244, 196, 100, 0.15);
+  color: var(--gold);
+  border: 1px solid rgba(244, 196, 100, 0.3);
+}
+.badge-new {
+  background: rgba(74, 222, 128, 0.15);
+  color: var(--green);
+  border: 1px solid rgba(74, 222, 128, 0.3);
+}
+
+/* Modern Cards */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.card-title {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card-title::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* Flowcharts - Merged and Dynamic */
+.flowchart {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin: 1rem 0;
+  overflow-x: auto;
+}
+
+.flow-title {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent2);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.flow-title::before {
+  content: "▶";
+  font-size: 8px;
+}
+
+.flow-h {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+}
+
+.flow-box {
+  flex: 1 1 auto;
+  background: var(--surface3);
+  border: 1.5px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 13px;
+  text-align: center;
+  min-width: 110px;
+  line-height: 1.4;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+}
+
+.flow-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border-color: var(--accent);
+}
+
+.flow-box.accent, .flow-box.yellow {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(0, 200, 151, 0.08);
+}
+.theme-crimson .flow-box.accent { background: rgba(232, 51, 74, 0.08); }
+.theme-indigo .flow-box.accent { background: rgba(99, 102, 241, 0.08); }
+.theme-amber .flow-box.accent { background: rgba(245, 158, 11, 0.08); }
+
+.flow-box.gold {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: rgba(244, 196, 100, 0.08);
+}
+.flow-box.rose, .flow-box.red {
+  border-color: var(--rose);
+  color: var(--rose);
+  background: rgba(255, 107, 138, 0.08);
+}
+.flow-box.purple {
+  border-color: var(--purple);
+  color: var(--purple);
+  background: rgba(192, 132, 252, 0.08);
+}
+.flow-box.blue {
+  border-color: var(--blue);
+  color: var(--blue);
+  background: rgba(96, 165, 250, 0.08);
+}
+.flow-box.green {
+  border-color: var(--green);
+  color: var(--green);
+  background: rgba(74, 222, 128, 0.08);
+}
+.flow-box.white {
+  border-color: var(--text);
+  color: var(--text);
+}
+
+.flow-box .box-label {
+  font-size: 10px;
+  color: var(--muted);
+  font-family: "JetBrains Mono", monospace;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.flow-box .box-sub {
+  font-size: 11px;
+  color: var(--muted);
+  display: block;
+  margin-top: 2px;
+}
+
+.arrow {
+  color: var(--accent);
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.arrow-down {
+  text-align: center;
+  color: var(--accent);
+  font-size: 18px;
+  margin: 4px 0;
+}
+
+.flow-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 12px 0;
+  width: 100%;
+}
+
+.flow-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  font-size: 20px;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.flow-arrow.down {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 8px auto;
+  color: var(--accent);
+  font-size: 20px;
+}
+
+.flow-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.flow-down {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 12px auto;
+  color: var(--accent);
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.flow-v {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.flow-v .flow-box {
+  width: 100%;
+  max-width: 500px;
+}
+
+.flow-v .arrow-down {
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+}
+
+/* Modern Tables (Scoped to .table-wrap) */
+.table-wrap {
+  overflow-x: auto;
+  margin: 1rem 0;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.table-wrap table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-wrap th {
+  background: var(--surface3);
+  color: var(--accent2);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 2px solid var(--accent);
+}
+
+.table-wrap td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+  vertical-align: top;
+}
+
+.table-wrap tr:hover td {
+  background: rgba(0, 200, 151, 0.04);
+}
+.theme-crimson .table-wrap tr:hover td { background: rgba(232, 51, 74, 0.04); }
+.theme-indigo .table-wrap tr:hover td { background: rgba(99, 102, 241, 0.04); }
+.theme-amber .table-wrap tr:hover td { background: rgba(245, 158, 11, 0.04); }
+
+.table-wrap td:first-child {
+  color: var(--accent2);
+  font-weight: 600;
+}
+
+/* Modern Clinical & Mnemonic boxes inside .content */
+.content .clinical-box {
+  background: linear-gradient(135deg, rgba(96, 165, 250, 0.05), rgba(96, 165, 250, 0.02));
+  border: 1px solid rgba(96, 165, 250, 0.25);
+  border-left: 4px solid var(--blue);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+}
+
+.content .clinical-box .cbox-title {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--blue);
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.content .clinical-box .cbox-title::before {
+  content: "🩺";
+}
+
+.mnemonic-box {
+  background: linear-gradient(135deg, rgba(244, 196, 100, 0.06), rgba(244, 196, 100, 0.02));
+  border: 1px solid rgba(244, 196, 100, 0.28);
+  border-left: 4px solid var(--gold);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+}
+
+.mnemonic-box .mbox-title {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.mnemonic-box .mbox-title::before {
+  content: "🧠";
+}
+
+.mnemonic-highlight {
+  background: rgba(244, 196, 100, 0.1);
+  border: 1px dashed rgba(244, 196, 100, 0.3);
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-family: "Crimson Pro", serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--gold);
+  margin: 6px 0;
+  letter-spacing: 1px;
+}
+
+.eq-box {
+  background: linear-gradient(135deg, rgba(192, 132, 252, 0.06), rgba(192, 132, 252, 0.02));
+  border: 1px solid rgba(192, 132, 252, 0.28);
+  border-left: 4px solid var(--purple);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+}
+
+.eq-box .eq-title {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--purple);
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.eq-box .eq-title::before {
+  content: "📝";
+}
+
+.eq-statement {
+  background: var(--surface3);
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-family: "Crimson Pro", serif;
+  font-size: 15px;
+  font-style: italic;
+  color: var(--text);
+  margin-bottom: 10px;
+  border-left: 3px solid var(--purple);
+}
+
+.eq-answer ol {
+  margin-left: 18px;
+}
+
+.eq-answer li {
+  margin-bottom: 6px;
+  font-size: 13px;
+}
+
+.eq-answer li span {
+  color: var(--purple);
+  font-weight: 600;
+}
+
+.keypoint {
+  background: rgba(0, 200, 151, 0.07);
+  border: 1px solid rgba(0, 200, 151, 0.22);
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin: 8px 0;
+  font-size: 13px;
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+.theme-crimson .keypoint { background: rgba(232, 51, 74, 0.07); border-color: rgba(232, 51, 74, 0.22); }
+.theme-indigo .keypoint { background: rgba(99, 102, 241, 0.07); border-color: rgba(99, 102, 241, 0.22); }
+.theme-amber .keypoint { background: rgba(245, 158, 11, 0.07); border-color: rgba(245, 158, 11, 0.22); }
+
+.keypoint::before {
+  content: "⚡";
+  flex-shrink: 0;
+}
+
+.warn-box {
+  background: rgba(251, 146, 60, 0.07);
+  border: 1px solid rgba(251, 146, 60, 0.28);
+  border-left: 4px solid var(--orange);
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin: 8px 0;
+  font-size: 13px;
+  display: flex;
+  gap: 8px;
+}
+
+.warn-box::before {
+  content: "⚠️";
+  flex-shrink: 0;
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 2rem 0;
+}
+
+ul.checklist {
+  list-style: none;
+  margin: 0.5rem 0;
+}
+
+ul.checklist li::before {
+  content: "✦ ";
+  color: var(--accent);
+}
+
+ul.checklist li {
+  margin-bottom: 4px;
+  font-size: 13px;
+}
+
+.hl { color: var(--accent2); font-weight: 600; }
+.hl-gold { color: var(--gold); font-weight: 600; }
+.hl-rose { color: var(--rose); font-weight: 600; }
+.hl-blue { color: var(--blue); font-weight: 600; }
+.hl-purple { color: var(--purple); font-weight: 600; }
+.hl-green { color: var(--green); font-weight: 600; }
+
+/* Modern Atom Cards */
+.atom-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+  margin: 1rem 0;
+}
+
+.atom-card {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem;
+  transition: border-color 0.2s;
+}
+
+.atom-card:hover {
+  border-color: var(--accent);
+}
+
+.atom-head {
+  font-family: "Crimson Pro", serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.atom-sub {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+/* Modern Viva Section details */
+.viva-title-bar {
+  background: rgba(0, 200, 151, 0.1);
+  border: 1px solid rgba(0, 200, 151, 0.28);
+  border-radius: 6px 6px 0 0;
+  padding: 10px 14px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--accent2);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.theme-crimson .viva-title-bar { background: rgba(232, 51, 74, 0.1); border-color: rgba(232, 51, 74, 0.28); }
+.theme-indigo .viva-title-bar { background: rgba(99, 102, 241, 0.1); border-color: rgba(99, 102, 241, 0.28); }
+.theme-amber .viva-title-bar { background: rgba(245, 158, 11, 0.1); border-color: rgba(245, 158, 11, 0.28); }
+
+.viva-title-bar::before {
+  content: "💬";
+  font-size: 14px;
+}
+
+.content details {
+  border: 1px solid var(--border);
+  border-top: none;
+  overflow: hidden;
+}
+
+.content details:last-child {
+  border-radius: 0 0 6px 6px;
+}
+
+.content summary {
+  padding: 10px 14px;
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--text);
+  background: var(--surface);
+  list-style: none;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  user-select: none;
+  transition: background 0.2s;
+}
+
+.content summary:hover {
+  background: var(--surface2);
+}
+
+.content summary::before {
+  content: "▶";
+  color: var(--accent);
+  font-size: 10px;
+  margin-top: 3px;
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+
+.content details[open] > summary::before {
+  transform: rotate(90deg);
+}
+
+.viva-q {
+  font-weight: 600;
+  flex: 1;
+}
+
+.viva-year {
+  color: var(--blue);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  flex-shrink: 0;
+}
+
+.viva-ans {
+  padding: 12px 16px 14px;
+  background: var(--surface2);
+  font-size: 13px;
+  line-height: 1.75;
+  border-top: 1px solid var(--border);
+}
+
+.viva-ans p {
+  margin-bottom: 6px;
+}
+
+.viva-ans ul {
+  margin: 6px 0 6px 16px;
+}
+
+.viva-ans li {
+  margin-bottom: 4px;
+}
+
+.viva-ans strong {
+  color: var(--accent2);
+}
+
+.viva-ans em {
+  color: var(--gold);
+  font-style: normal;
+  font-weight: 600;
+}
+
+.drug-tag {
+  display: inline-block;
+  background: rgba(255, 107, 138, 0.12);
+  border: 1px solid rgba(255, 107, 138, 0.3);
+  color: var(--rose);
+  font-size: 10px;
+  padding: 1px 6px;
+  border-radius: 3px;
+  font-family: "JetBrains Mono", monospace;
+  margin-left: 4px;
+}
+
+
+/* ==========================================
+   SHARED INTERACTIVE ELEMENTS & UTILS
+   ========================================== */
+
+.progress-bar {
+  height: 3px;
+  background: linear-gradient(to right, var(--accent), var(--accent2), var(--accent4));
+  border-radius: 2px;
+  margin-bottom: 2rem;
+  animation: load 1.5s ease forwards;
+}
+
+@keyframes load {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+.formula {
+  font-family: "JetBrains Mono", monospace;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 6px 12px;
+  margin: 6px 0;
+  color: var(--accent);
+  font-size: 13px;
+  display: block;
+}
+
+.top-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(232, 200, 74, 0.35);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  transition: all 0.2s ease-in-out;
+}
+
+.top-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(232, 200, 74, 0.5);
+}
+
+.theme-emerald .top-btn { box-shadow: 0 4px 15px rgba(0, 200, 151, 0.35); }
+.theme-emerald .top-btn:hover { box-shadow: 0 6px 20px rgba(0, 200, 151, 0.5); }
+
+/* Footer */
+.footer {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  text-align: center;
+  padding: 2rem 1.5rem;
+  color: var(--muted);
+  font-size: 12px;
+  font-family: "JetBrains Mono", monospace;
+  margin-top: 60px;
+}
+
+.footer p {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 1px;
+}
+
+.footer .kims-tag {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+
+/* ==========================================
+   📱 COMPREHENSIVE RESPONSIVE ENGINE
+   ========================================== */
+
+@media (max-width: 768px) {
+  /* Classic Cover page mobile enhancements */
+  .cover {
+    padding: 40px 20px 48px;
+    min-height: 100vh;
+    justify-content: flex-start;
+  }
+  
+  .cover-pyq-badge {
+    position: static !important;
+    display: inline-block !important;
+    align-self: flex-start !important;
+    margin-bottom: 24px !important;
+    padding: 6px 12px !important;
+    font-size: 10px !important;
+  }
+
+  .cover-tag {
+    margin-bottom: 24px !important;
+  }
+
+  .cover h1 {
+    font-size: clamp(32px, 7vw, 48px) !important;
+    margin-bottom: 12px !important;
+  }
+
+  .cover-sub {
+    font-size: 15px !important;
+    margin-bottom: 36px !important;
+    line-height: 1.5 !important;
+  }
+
+  .cover-divider {
+    margin: 20px 0 !important;
+  }
+
+  .cover-meta {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+    width: 100% !important;
+  }
+
+  .cover-meta-item {
+    gap: 2px !important;
+  }
+
+  /* Modern Hero mobile adjustments */
+  .hero {
+    padding: 2rem 1rem;
+  }
+
+  /* Page Wrapper and Main Content Spacing */
+  .page {
+    padding: 24px 16px !important;
+    max-width: 100% !important;
+  }
+
+  .content {
+    padding: 0 1rem 2rem;
+  }
+  
+  .flowchart-container,
+  .flowchart,
+  .clinical-box,
+  .mnemonic-box,
+  .eq-box,
+  .big-picture,
+  .viva-section,
+  .mnemonic,
+  .graph-box,
+  .warn-box {
+    padding: 20px 16px !important;
+    margin: 20px 0 !important;
+  }
+
+  /* Typography Adjustments */
+  h2.topic-head,
+  .content .section-header h2 {
+    font-size: 20px !important;
+    margin: 24px 0 12px !important;
+  }
+
+  h3.sub-head {
+    font-size: 12px !important;
+    margin: 16px 0 8px !important;
+  }
+
+  /* Table of Contents Mobile layout */
+  .toc {
+    margin: 1rem 0;
+    width: auto;
+    display: block;
+  }
+
+  /* Flowcharts mobile layout */
+  .flow-row, .flow-h {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    gap: 6px !important;
+  }
+
+  .flow-box {
+    width: 100% !important;
+    min-width: unset !important;
+    max-width: 100% !important;
+    padding: 12px 16px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    border-right: 1.5px solid var(--border) !important;
+    box-sizing: border-box !important;
+  }
+
+  .flow-arrow, .arrow {
+    display: inline-block !important;
+    transform: rotate(90deg) !important;
+    margin: 8px 0 !important;
+    text-align: center !important;
+  }
+
+  .flow-arrow.down, .arrow-down {
+    transform: none !important;
+    margin: 8px 0 !important;
+    max-width: 100% !important;
+  }
+
+  /* Classic Comparison Tables & Modern Tables responsive scroll */
+  .comp-table, .table-wrap {
+    display: block !important;
+    width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 6px !important;
+    margin: 16px 0 !important;
+  }
+
+  .comp-table th, 
+  .comp-table td,
+  .table-wrap th,
+  .table-wrap td {
+    padding: 10px 12px !important;
+    font-size: 12px !important;
+  }
+
+  .comp-table::-webkit-scrollbar,
+  .table-wrap::-webkit-scrollbar {
+    height: 4px !important;
+  }
+  .comp-table::-webkit-scrollbar-track,
+  .table-wrap::-webkit-scrollbar-track {
+    background: var(--bg) !important;
+  }
+  .comp-table::-webkit-scrollbar-thumb,
+  .table-wrap::-webkit-scrollbar-thumb {
+    background: var(--border) !important;
+    border-radius: 2px !important;
+  }
+
+  /* Layout helpers */
+  .two-col, .atom-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .clinical-box ul li {
+    display: block !important;
+    position: relative !important;
+    padding-left: 16px !important;
+    font-size: 12px !important;
+  }
+  
+  .clinical-box ul li::before {
+    position: absolute !important;
+    left: 0 !important;
+    top: 2px !important;
+  }
+
+  /* Accordions / Viva Spacing */
+  summary.viva-q-text,
+  .content summary {
+    padding: 12px 0 !important;
+    font-size: 13px !important;
+  }
+
+  .viva-a-text,
+  .viva-ans {
+    padding-left: 12px !important;
+    font-size: 12px !important;
+    margin-top: 6px !important;
+  }
+}
+
+
+/* ==========================================
+   ⚡ ULTRA-CRISP REVISION CARD ENGINE 
+   ========================================== */
+
+.revision-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  padding: 18px 22px;
+  margin: 16px 0;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.revision-card:hover {
+  border-color: var(--accent2);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
+}
+
+.revision-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 8px;
+}
+
+.revision-card-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.revision-card-title {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.revision-card-title span {
+  color: var(--accent);
+}
+
+.revision-card-body {
+  font-size: 13.5px;
+  line-height: 1.7;
+}
+
+.revision-card-body ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.revision-card-body ul li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+
+.revision-card-body ul li:last-child {
+  margin-bottom: 0;
+}
+
+.revision-card-body ul li::before {
+  content: "✦";
+  position: absolute;
+  left: 0;
+  color: var(--accent2);
+  font-weight: bold;
+}
+
+.revision-card-body ul li strong {
+  color: var(--white);
+}
+
+/* Print Budgeting Classes */
+.print-page-break {
+  display: block;
+}
+
+@media screen {
+  .print-page-break {
+    margin: 30px 0;
+  }
+}
+
+
+/* ==========================================
+   🖨️ PREMIUM PRINT-TO-PDF ENGINE (Ctrl+P)
+   ========================================== */
+
+@media print {
+  :root, body.theme-gold, body.theme-crimson, body.theme-emerald, body.theme-indigo, body.theme-amber {
+    --bg: #ffffff;
+    --surface: #f8f9fa;
+    --surface2: #e9ecef;
+    --surface3: #dee2e6;
+    --border: #dee2e6;
+    --border2: #ced4da;
+    --accent: #000000;
+    --accent2: #000000;
+    --accent3: #000000;
+    --accent4: #000000;
+    --text: #111111;
+    --text2: #222222;
+    --text3: #333333;
+    --muted: #495057;
+    --white: #000000;
+    --rls: #000000;
+    --gold: #000000;
+    --rose: #000000;
+    --purple: #000000;
+    --blue: #000000;
+    --green: #000000;
+    --orange: #000000;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+    color: #000000 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  @page {
+    size: A4 portrait;
+    margin: 20mm 15mm 20mm 15mm !important;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #111111 !important;
+    font-size: 11pt !important;
+    line-height: 1.4 !important;
+  }
+
+  p {
+    font-size: 11pt !important;
+    line-height: 1.4 !important;
+    margin-bottom: 8px !important;
+  }
+
+  /* Cover Page exact single A4 layout */
+  .cover {
+    min-height: unset !important;
+    height: 260mm !important;
+    max-height: 100vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    padding: 40px !important;
+    box-sizing: border-box !important;
+    border: 2px solid #000000 !important;
+    background: #ffffff !important;
+    page-break-after: always !important;
+    break-after: page !important;
+    position: relative !important;
+  }
+
+  .cover::before,
+  .cover::after {
+    display: none !important;
+  }
+
+  .cover-tag {
+    border-color: #000000 !important;
+    margin-bottom: 25px !important;
+    padding: 4px 10px !important;
+    font-size: 10px !important;
+  }
+
+  .cover h1 {
+    font-size: 44px !important;
+    line-height: 1.1 !important;
+    color: #000000 !important;
+    margin-bottom: 10px !important;
+  }
+
+  .cover h1 span {
+    color: #000000 !important;
+  }
+
+  .cover-sub {
+    font-size: 15px !important;
+    color: #495057 !important;
+    margin-bottom: 30px !important;
+  }
+
+  .cover-divider {
+    width: 60px !important;
+    height: 2px !important;
+    background: #000000 !important;
+    margin: 20px 0 !important;
+  }
+
+  .cover-meta {
+    gap: 30px !important;
+  }
+
+  .cover-meta-value {
+    font-size: 12px !important;
+  }
+
+  .cover-pyq-badge {
+    position: absolute !important;
+    top: 70px !important;
+    right: 40px !important;
+    border: 1px solid #000000 !important;
+    background: #ffffff !important;
+    padding: 6px 12px !important;
+    font-size: 10px !important;
+  }
+
+  /* Modern Hero formatting for print */
+  .hero {
+    background: none !important;
+    border-bottom: 2px solid #000000 !important;
+    padding: 1rem 0 !important;
+  }
+  
+  .hero::before, .hero::after {
+    display: none !important;
+  }
+
+  .module-tag {
+    background: #ffffff !important;
+    border: 1px solid #000000 !important;
+    color: #000000 !important;
+  }
+  .module-tag .dot {
+    display: none !important;
+  }
+
+  .pill {
+    background: #ffffff !important;
+    border: 1px solid #000000 !important;
+  }
+
+  /* Page Wrapper Spacing */
+  .page {
+    padding: 10px 0 !important;
+    max-width: 100% !important;
+  }
+
+  .content {
+    padding: 0 !important;
+  }
+
+  .section-divider {
+    margin: 20px 0 !important;
+    border-color: #dee2e6 !important;
+  }
+
+  /* Heading orphans preventions */
+  .section-header,
+  .content .section-header,
+  h2.topic-head,
+  h3.sub-head {
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+    margin-top: 15px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .section-header, .content .section-header {
+    padding-bottom: 8px !important;
+    margin-bottom: 15px !important;
+    border-bottom: 1.5px solid #000000 !important;
+  }
+
+  .section-title {
+    font-size: 20px !important;
+    color: #000000 !important;
+  }
+
+  .content .section-num {
+    background: none !important;
+    border: 2px solid #000000 !important;
+    color: #000000 !important;
+  }
+
+  h2.topic-head {
+    font-size: 16px !important;
+    border-bottom: 1px solid #dee2e6 !important;
+    padding-bottom: 4px !important;
+  }
+
+  h3.sub-head {
+    font-size: 11px !important;
+    margin-top: 12px !important;
+  }
+
+  /* Avoid cutting boxes across page breaks */
+  .pyq-box,
+  .big-picture,
+  .clinical-box,
+  .content .clinical-box,
+  .mnemonic-box,
+  .eq-box,
+  .flowchart-container,
+  .flowchart,
+  .comp-table,
+  .table-wrap,
+  .key-fact,
+  .mnemonic,
+  .viva-section,
+  .warn-box,
+  .atom-card,
+  details,
+  details.viva-q,
+  tr,
+  blockquote,
+  svg,
+  .revision-card-body ul li {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .pyq-box,
+  .big-picture,
+  .clinical-box,
+  .content .clinical-box,
+  .mnemonic-box,
+  .eq-box,
+  .flowchart-container,
+  .flowchart,
+  .viva-section,
+  .mnemonic,
+  .warn-box {
+    padding: 12px 16px !important;
+    margin: 10px 0 !important;
+    border-radius: 4px !important;
+    border: 1px solid #000000 !important;
+    background: #f8f9fa !important;
+  }
+
+  .revision-card {
+    background: #ffffff !important;
+    border: 1px solid #000000 !important;
+    border-left: 4px solid #000000 !important;
+    border-radius: 4px !important;
+    padding: 12px 16px !important;
+    margin: 10px 0 !important;
+    box-shadow: none !important;
+    page-break-inside: auto !important;
+    break-inside: auto !important;
+    -webkit-box-decoration-break: clone !important;
+    box-decoration-break: clone !important;
+  }
+
+  .revision-card-header {
+    border-bottom: 1px solid #000000 !important;
+    margin-bottom: 8px !important;
+    padding-bottom: 4px !important;
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+  }
+
+  .revision-card-title {
+    color: #000000 !important;
+    font-size: 11pt !important;
+  }
+
+  .revision-card-body ul li {
+    color: #111111 !important;
+    font-size: 10.5pt !important;
+    line-height: 1.4 !important;
+  }
+
+  .revision-card-body ul li::before {
+    color: #000000 !important;
+  }
+
+  .print-page-break {
+    page-break-before: always !important;
+    break-before: page !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+  }
+
+  .pyq-box { background: #fbf8eb !important; }
+  .clinical-box, .content .clinical-box { background: #fdf5f7 !important; }
+  .warn-box { background: #fff9f3 !important; }
+  .mnemonic, .mnemonic-box { background: #f4fbf7 !important; }
+  .eq-box { background: #fdfbff !important; }
+
+  .pyq-box ul li {
+    background: #e9ecef !important;
+    border: 1px solid #dee2e6 !important;
+    padding: 2px 6px !important;
+    font-size: 10px !important;
+  }
+
+  /* Flowcharts print layout */
+  .flow-box {
+    padding: 6px 12px !important;
+    font-size: 11px !important;
+    min-width: 110px !important;
+    border: 1px solid #000000 !important;
+    background: #ffffff !important;
+  }
+
+  .flow-arrow, .arrow {
+    font-size: 14px !important;
+  }
+  .flow-arrow.down, .arrow-down {
+    margin: 1px 0 !important;
+    font-size: 16px !important;
+  }
+
+  /* Comparison Tables print */
+  .comp-table th, .table-wrap th {
+    padding: 8px 10px !important;
+    font-size: 10px !important;
+    border-bottom: 2px solid #000000 !important;
+    background: #e9ecef !important;
+  }
+
+  .comp-table td, .table-wrap td {
+    padding: 7px 10px !important;
+    font-size: 11px !important;
+    line-height: 1.3 !important;
+    border-bottom: 1px solid #dee2e6 !important;
+    background: #ffffff !important;
+  }
+
+  /* Viva Sections print: details tags auto-expand */
+  details, details.viva-q {
+    display: block !important;
+    border: 1px solid #000000 !important;
+    margin-bottom: 12px !important;
+  }
+
+  summary, summary.viva-q-text {
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    margin-bottom: 6px !important;
+    display: block !important;
+  }
+
+  summary::before, summary.viva-q-text::after, details[open] summary::before {
+    display: none !important;
+  }
+
+  details:not([open]) > *:not(summary) {
+    display: block !important; /* Force print answer display */
+  }
+
+  .viva-a-text, .viva-ans {
+    display: block !important;
+    font-size: 11.5px !important;
+    line-height: 1.4 !important;
+    padding-left: 12px !important;
+    border-left: 2px solid #000000 !important;
+    color: #111111 !important;
+  }
+
+  /* Hide print-unfriendly components */
+  .top-btn,
+  .progress-bar,
+  .toc {
+    display: none !important;
+  }
+
+  /* Clean print footer */
+  .footer {
+    border-top: 1px solid #000000 !important;
+    margin-top: 30px !important;
+    padding: 20px !important;
+    background: #ffffff !important;
+  }
+}
+
+/* ─── Premium Brand Bar ─────────────────────────────── */
+.brand-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 18px 60px;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 10;
+}
+
+.brand-bar-logo {
+  height: 56px;
+  width: auto;
+  border-radius: 6px;
+  object-fit: contain;
+  flex-shrink: 0;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+}
+
+.brand-bar-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.brand-bar-name {
+  font-family: "IBM Plex Mono", "JetBrains Mono", monospace;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--accent, #e8c84a);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.brand-bar-series {
+  font-family: "IBM Plex Mono", "JetBrains Mono", monospace;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+@media print {
+  .brand-bar {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    background: #f8f9fa !important;
+    border-bottom: 1px solid #dee2e6 !important;
+    padding: 10px 40px !important;
+    backdrop-filter: none !important;
+  }
+  .brand-bar-logo {
+    height: 32px !important;
+    filter: grayscale(100%) !important;
+  }
+  .brand-bar-name {
+    color: #000000 !important;
+    font-size: 11px !important;
+    letter-spacing: 2px !important;
+  }
+  .brand-bar-series {
+    color: #495057 !important;
+    font-size: 9px !important;
+  }
+  .d-print-none {
+    display: none !important;
+  }
+}
+/* ──────────────────────────────────────────────────── */
+    </style>
+</head>
+<body class="theme-emerald">
+<!-- HERO -->
+<div class="hero">
+<!-- ═══ BRAND BAR ═══ -->
+<div class="brand-bar">
+<img alt="Caffeine &amp; Cadaver" class="brand-bar-logo" src="../../Caffeine &amp; Cadaver.jpg"/>
+<div class="brand-bar-text">
+<span class="brand-bar-name">Caffeine &amp; Cadaver</span>
+<span class="brand-bar-series">MBBS Biochemistry Notes Series</span>
+</div>
+</div>
+<div class="module-tag"><span class="dot"></span>MODULE 05</div>
+<h1>Nucleotide Chemistry<br/><span>&amp;</span> Metabolism</h1>
+<p class="hero-sub">MBBS BIOCHEMISTRY · PAPER 1</p>
+<div class="hero-pills">
+<span class="pill">Purine &amp; Pyrimidine Structure</span>
+<span class="pill">De Novo Synthesis</span>
+<span class="pill">Salvage Pathway</span>
+<span class="pill">Uric Acid &amp; Gout</span>
+<span class="pill">Allopurinol</span>
+<span class="pill">Lesch-Nyhan Syndrome</span>
+<span class="pill">ADA Deficiency</span>
+<span class="pill">Nucleotide Drugs</span>
+<span class="pill">CPS I vs CPS II</span>
+<span class="pill">Orotic Aciduria</span>
+</div>
+</div>
+<!-- TOC -->
+<div class="toc">
+<div class="toc-title">▸ Quick Navigate</div>
+<div class="toc-grid">
+<a href="#s1"><span class="toc-num">01</span> Nucleotide Structure</a>
+<a href="#s2"><span class="toc-num">02</span> Purine De Novo Synthesis</a>
+<a href="#s3"><span class="toc-num">03</span> Pyrimidine De Novo Synthesis</a>
+<a href="#s4"><span class="toc-num">04</span> Salvage Pathways</a>
+<a href="#s5"><span class="toc-num">05</span> Purine Catabolism &amp; Uric Acid</a>
+<a href="#s6"><span class="toc-num">06</span> Gout &amp; Hyperuricaemia</a>
+<a href="#s7"><span class="toc-num">07</span> Lesch-Nyhan &amp; ADA Deficiency</a>
+<a href="#s8"><span class="toc-num">08</span> Nucleotide Analogs as Drugs</a>
+<a href="#s9"><span class="toc-num">09</span> CPS I vs CPS II / Orotic Aciduria</a>
+<a href="#s10"><span class="toc-num">10</span> Viva Q&amp;A</a>
+<a href="#s11"><span class="toc-num">11</span> EQ Templates</a>
+</div>
+</div>
+<div class="content">
+<div class="progress-bar"></div>
+<!-- ══════════════════════════════════════════════ -->
+<!-- S1: NUCLEOTIDE STRUCTURE -->
+<!-- ══════════════════════════════════════════════ -->
+<div id="s1">
+<div class="section-header">
+<div class="section-num">01</div>
+<h2>Nucleotide <em>Structure</em></h2>
+</div>
+<div class="keypoint">
+          A <strong>Nucleotide</strong> = Nitrogenous base + Pentose sugar +
+          Phosphate group. Remove phosphate → <strong>Nucleoside</strong>.
+          Remove sugar → just the base.
+        </div>
+<div class="atom-grid">
+<div class="atom-card">
+<div class="atom-head" style="color: var(--accent)">Purines</div>
+<div class="atom-sub">
+              Bicyclic: pyrimidine fused to imidazole ring
+            </div>
+<ul class="checklist">
+<li><strong>Adenine (A)</strong> — amino group at C6</li>
+<li>
+<strong>Guanine (G)</strong> — keto group at C6, amino at C2
+              </li>
+<li>Found in both DNA and RNA</li>
+<li>Larger molecules (2 rings)</li>
+</ul>
+</div>
+<div class="atom-card">
+<div class="atom-head" style="color: var(--gold)">Pyrimidines</div>
+<div class="atom-sub">Monocyclic: single 6-membered ring</div>
+<ul class="checklist">
+<li><strong>Cytosine (C)</strong> — both DNA &amp; RNA</li>
+<li>
+<strong>Thymine (T)</strong> — DNA only (methyl group at C5)
+              </li>
+<li><strong>Uracil (U)</strong> — RNA only (no methyl group)</li>
+<li>Smaller molecules (1 ring)</li>
+</ul>
+</div>
+<div class="atom-card">
+<div class="atom-head" style="color: var(--blue)">Sugars</div>
+<div class="atom-sub">
+              Pentose in N-glycosidic bond (β-configuration)
+            </div>
+<ul class="checklist">
+<li>
+<strong>Ribose</strong> — in RNA nucleotides (2'-OH present)
+              </li>
+<li><strong>Deoxyribose</strong> — in DNA (2'-H, no OH)</li>
+<li>Base attached to C1' (N-glycosidic bond)</li>
+<li>Phosphate on 5'-OH</li>
+</ul>
+</div>
+<div class="atom-card">
+<div class="atom-head" style="color: var(--purple)">Key Bonds</div>
+<div class="atom-sub">Connecting components</div>
+<ul class="checklist">
+<li><strong>N-glycosidic bond</strong>: base → sugar (C1')</li>
+<li><strong>Phosphoester bond</strong>: sugar C5' → phosphate</li>
+<li>
+<strong>3'–5' phosphodiester</strong>: links nucleotides in
+                chain
+              </li>
+<li>DNA more stable: 2'-H (not OH) → alkali resistant</li>
+</ul>
+</div>
+</div>
+<div class="table-wrap">
+<table>
+<tr>
+<th>Component</th>
+<th>Purine</th>
+<th>Pyrimidine</th>
+</tr>
+<tr>
+<td>Ring structure</td>
+<td>Bicyclic (double ring)</td>
+<td>Monocyclic (single ring)</td>
+</tr>
+<tr>
+<td>Members</td>
+<td>Adenine, Guanine</td>
+<td>Cytosine, Thymine (DNA), Uracil (RNA)</td>
+</tr>
+<tr>
+<td>Pairing (Watson-Crick)</td>
+<td>A pairs with T (2 H-bonds); G pairs with C (3 H-bonds)</td>
+<td>Paired with purines</td>
+</tr>
+<tr>
+<td>De novo synthesis</td>
+<td>On pre-formed ribose-5-P scaffold (IMP → AMP/GMP)</td>
+<td>Ring built first, then attached to ribose</td>
+</tr>
+<tr>
+<td>End product of catabolism</td>
+<td><strong>Uric acid</strong> (humans)</td>
+<td><strong>CO₂ + NH₃ + β-alanine/β-aminoisobutyrate</strong></td>
+</tr>
+<tr>
+<td>Salvage pathway enzyme</td>
+<td>HGPRT (HG), APRT (A)</td>
+<td>Not prominent (minor UPRTase)</td>
+</tr>
+</table>
+</div>
+<div class="mnemonic-box">
+<div class="mbox-title">Mnemonic — Which Bases in DNA vs RNA</div>
+<div class="mnemonic-highlight">
+            DNA: "A TiGht Cell" = A, T, G, C (Thymine only in DNA)
+          </div>
+<div class="mnemonic-highlight" style="margin-top: 6px">
+            RNA: "A UGly Cell" = A, U, G, C (Uracil replaces Thymine)
+          </div>
+<p style="font-size: 12px; color: var(--text2); margin-top: 6px">
+            Key EQ: "DNA is alkali resistant, RNA is alkali labile" — because
+            RNA has 2'-OH which forms cyclic phosphodiester intermediate under
+            alkaline hydrolysis; DNA lacks 2'-OH so cannot.
+          </p>
+</div>
+</div>
+<div class="divider"></div>
+<!-- ══════════════════════════════════════════════ -->
+<!-- S2: PURINE DE NOVO SYNTHESIS -->
+<!-- ══════════════════════════════════════════════ -->
+<div id="s2">
+<div class="section-header">
+<div class="section-num">02</div>
+<h2>Purine <em>De Novo</em> Synthesis</h2>
+</div>
+<!-- Sources of atoms -->
+<div class="card">
+<div class="card-title">
+            Sources of Atoms in the Purine Ring
+            <span class="badge badge-fav">⭐ PYQ 2013, 2015-S</span>
+</div>
+<div class="flowchart">
+<div class="flow-title">
+              Purine Ring Atom Origins (Must Memorise)
+            </div>
+<div class="flow-h" style="justify-content: center; gap: 8px; flex-wrap: wrap">
+<div class="flow-box accent">
+<span class="box-label">Nitrogen atoms (N1, N3, N9)</span>
+                N1 ← Aspartate<br/>
+                N3, N9 ← Glutamine<br/>
+                N7 ← Glycine
+              </div>
+<div class="flow-box gold">
+<span class="box-label">Carbon atoms</span>
+                C4, C5, N7 ← <strong>Glycine</strong> (entire unit)<br/>
+                C2, C8 ← N¹⁰-formyl-THF<br/>
+                C6 ← CO₂
+              </div>
+</div>
+</div>
+<div class="mnemonic-box" style="margin-top: 10px">
+<div class="mbox-title">Mnemonic — Purine Ring Sources</div>
+<div class="mnemonic-highlight">
+              "Glutamine Attacks Good Cells, Aspartate Fights CO₂"
+            </div>
+<p style="font-size: 12px; color: var(--text2); margin-top: 6px">
+<strong>G</strong>lycine (C4,C5,N7) · <strong>G</strong>lutamine
+              (N3,N9 + amide N of C2,C6) · N¹⁰-Formyl-THF (C2,C8) ·
+              <strong>A</strong>spartate (N1) · CO₂ (C6)
+            </p>
+</div>
+</div>
+<!-- De Novo Pathway Flowchart -->
+<div class="flowchart">
+<div class="flow-title">
+            Purine De Novo Synthesis — Key Steps to IMP
+          </div>
+<div class="flow-v">
+<div class="flow-box blue" style="max-width: 100%">
+<span class="box-label">Starting material (Step 1)</span>
+<strong>Ribose-5-phosphate</strong> (from PPP)<br/>
+<span class="box-sub">Activated by PRPP synthetase → PRPP
+                (5-phosphoribosyl-1-pyrophosphate)</span>
+</div>
+<div class="arrow-down">
+              ↓ Glutamine:PRPP amidotransferase
+              <strong class="hl">[RATE LIMITING STEP ⚡]</strong>
+</div>
+<div class="flow-box accent" style="max-width: 100%">
+<strong>5-phosphoribosylamine (PRA)</strong><br/>
+<span class="box-sub">First committed step · Inhibited by AMP, GMP, IMP (feedback
+                inhibition)</span>
+</div>
+<div class="arrow-down">
+              ↓ 9 more enzymatic steps (add Glycine, Formyl group, close ring,
+              etc.)
+            </div>
+<div class="flow-box gold" style="max-width: 100%">
+<span class="box-label">Intermediate product (10 steps total)</span>
+<strong>IMP (Inosine Monophosphate)</strong> — the common
+              intermediate<br/>
+<span class="box-sub">Hypoxanthine base + ribose-5-P · Bifurcation point</span>
+</div>
+<div class="arrow-down">↓ Branching</div>
+<div class="flow-h" style="max-width: 100%; justify-content: center; gap: 16px">
+<div class="flow-box accent" style="flex: 1">
+                IMP → Adenylosuccinate → <strong>AMP</strong><br/>
+<span class="box-sub">Requires GTP + Aspartate · Adenylosuccinate synthetase +
+                  lyase</span>
+</div>
+<div class="flow-box gold" style="flex: 1">
+                IMP → Xanthosine-5-P → <strong>GMP</strong><br/>
+<span class="box-sub">Requires ATP + Glutamine · IMP dehydrogenase + GMP
+                  synthetase</span>
+</div>
+</div>
+</div>
+</div>
+<div class="clinical-box">
+<div class="cbox-title">Regulation of Purine De Novo Synthesis</div>
+<ul class="checklist">
+<li>
+<strong>PRPP synthetase:</strong> inhibited by AMP, GMP, IMP
+              (end-product inhibition)
+            </li>
+<li>
+<strong>Glutamine:PRPP amidotransferase (RLS):</strong> inhibited
+              by AMP + GMP together (synergistic feedback)
+            </li>
+<li>
+<strong>Cross-regulation:</strong> AMP synthesis needs GTP; GMP
+              synthesis needs ATP → reciprocal balance
+            </li>
+<li>
+              In <strong>Gout</strong>: hyperactive PRPP synthetase or mutant
+              HGPRT → excess purine → excess uric acid
+            </li>
+</ul>
+</div>
+<div class="keypoint">
+          Site of de novo synthesis: <strong>Liver</strong> primarily (can
+          export nucleotides to other tissues). Brain and muscle have limited
+          capacity → depend on salvage.
+        </div>
+</div>
+<div class="divider"></div>
+<!-- ══════════════════════════════════════════════ -->
+<!-- S3: PYRIMIDINE DE NOVO SYNTHESIS -->
+<!-- ══════════════════════════════════════════════ -->
+<div id="s3">
+<div class="section-header">
+<div class="section-num">03</div>
+<h2>Pyrimidine <em>De Novo</em> Synthesis</h2>
+</div>
+<div class="keypoint">
+          Key difference from purine synthesis: In pyrimidine synthesis, the
+          <strong>ring is built FIRST</strong>, then attached to PRPP. In
+          purines, the ring is built ON the sugar.
+        </div>
+<!-- Pyrimidine Sources -->
+<div class="card">
+<div class="card-title">Atom Sources in Pyrimidine Ring</div>
+<div class="flow-h" style="gap: 10px; justify-content: center; flex-wrap: wrap">
+<div class="flow-box blue">
+<span class="box-label">N1</span>
+<strong>Aspartate</strong>
+</div>
+<div class="flow-box accent">
+<span class="box-label">C2</span>
+              CO₂ (from HCO₃⁻)
+            </div>
+<div class="flow-box gold">
+<span class="box-label">N3</span>
+<strong>Glutamine</strong>
+</div>
+<div class="flow-box purple">
+<span class="box-label">C4, C5, C6</span>
+<strong>Aspartate</strong>
+</div>
+</div>
+<div class="mnemonic-box" style="margin-top: 10px">
+<div class="mbox-title">Quick Recall</div>
+<div class="mnemonic-highlight">
+              Pyrimidine = "Aspartate + CO₂ + Glutamine" ("ACG does the ring")
+            </div>
+<p style="font-size: 12px; color: var(--text2); margin-top: 4px">
+              Compare purines (7 donors including glycine, THF). Pyrimidines
+              simpler — only 3 donors.
+            </p>
+</div>
+</div>
+<!-- Pyrimidine pathway -->
+<div class="flowchart">
+<div class="flow-title">Pyrimidine De Novo — Key Steps</div>
+<div class="flow-v">
+<div class="flow-box blue" style="max-width: 100%">
+<span class="box-label">Step 1 — CPS II
+                <strong class="hl">[RATE LIMITING ⚡]</strong></span>
+              Glutamine + CO₂ + 2ATP → <strong>Carbamoyl phosphate</strong><br/>
+<span class="box-sub">In cytosol · CPS II (not CPS I which is in mitochondria for
+                urea cycle)</span>
+</div>
+<div class="arrow-down">
+              ↓ + Aspartate (ATCase / Aspartate transcarbamoylase)
+            </div>
+<div class="flow-box accent" style="max-width: 100%">
+<strong>Carbamoyl aspartate</strong> → ring closure →
+              <strong>Dihydroorotate</strong><br/>
+<span class="box-sub">In cytosol (mammalian cells) — trifunctional CAD enzyme (CPS II
+                + ATCase + DHOase)</span>
+</div>
+<div class="arrow-down">
+              ↓ Dihydroorotate dehydrogenase (DHODH) — in inner mitochondrial
+              membrane
+            </div>
+<div class="flow-box gold" style="max-width: 100%">
+<strong>Orotate</strong><br/>
+<span class="box-sub">First pyrimidine with aromatic ring</span>
+</div>
+<div class="arrow-down">
+              ↓ + PRPP (UMP synthase = OPRT + ODCase — bifunctional)
+            </div>
+<div class="flow-box green" style="max-width: 100%">
+<strong>UMP (Uridine Monophosphate)</strong> — common
+              intermediate<br/>
+<span class="box-sub">UMP → UDP → UTP → CTP (by CTP synthetase)</span>
+</div>
+<div class="arrow-down">↓ Thymidylate synthase + DHFR pathway</div>
+<div class="flow-box rose" style="max-width: 100%">
+<strong>TMP (dTMP)</strong> → dTDP → dTTP<br/>
+<span class="box-sub">dUMP + N⁵,N¹⁰-methylene-THF → dTMP (requires folate as C
+                donor)</span>
+</div>
+</div>
+</div>
+<div class="clinical-box">
+<div class="cbox-title">Clinical Link — Orotic Aciduria</div>
+<p>
+<strong>Type I (classic):</strong> Deficiency of UMP synthase (OPRT
+            + ODCase). Orotate accumulates → excreted in urine. Megaloblastic
+            anaemia (pyrimidines needed for DNA). Treatment:
+            <strong>Uridine</strong> supplementation (bypasses block, also
+            provides feedback inhibition of CPS II).
+          </p>
+<p style="margin-top: 6px">
+<strong>Type II:</strong> Deficiency of ODCase only (less severe).
+          </p>
+<p style="margin-top: 6px">
+<strong>Distinguish from:</strong> Orotic aciduria in urea cycle
+            disorders (OTC deficiency) — excess carbamoyl phosphate overflows
+            into pyrimidine pathway → orotate ↑. But NO megaloblastic anaemia
+            (UMP synthase intact, can process the orotate).
+          </p>
+</div>
+<!-- CPS I vs CPS II -->
+<div class="card">
+<div class="card-title">
+            CPS I vs CPS II
+            <span class="badge badge-fav">⭐ ADVANCE TOPIC — Often asked</span>
+</div>
+<div class="table-wrap">
+<table>
+<tr>
+<th>Feature</th>
+<th>CPS I</th>
+<th>CPS II</th>
+</tr>
+<tr>
+<td>Location</td>
+<td><strong>Mitochondria</strong></td>
+<td><strong>Cytosol</strong></td>
+</tr>
+<tr>
+<td>Pathway</td>
+<td>Urea cycle</td>
+<td>Pyrimidine synthesis</td>
+</tr>
+<tr>
+<td>Nitrogen donor</td>
+<td><strong>NH₃</strong> (free ammonia)</td>
+<td><strong>Glutamine</strong> (amide N)</td>
+</tr>
+<tr>
+<td>Allosteric activator</td>
+<td><strong>N-acetylglutamate</strong> (essential)</td>
+<td>PRPP</td>
+</tr>
+<tr>
+<td>Inhibitor</td>
+<td>None major (NAG controls)</td>
+<td>UMP (end-product)</td>
+</tr>
+<tr>
+<td>ATP used</td>
+<td>2 ATP</td>
+<td>2 ATP</td>
+</tr>
+<tr>
+<td>Clinical deficiency</td>
+<td>CPS I deficiency → hyperammonaemia</td>
+<td>Part of CAD trifunctional enzyme</td>
+</tr>
+</table>
+</div>
+<div class="warn-box">
+<span><strong>Classic exam trap:</strong> OTC deficiency (urea cycle) →
+              excess carbamoyl phosphate leaks from mitochondria into cytosol →
+              CPS II pathway → orotic aciduria WITHOUT megaloblastic anaemia. In
+              orotic aciduria (Type I), you get anaemia.</span>
+</div>
+</div>
+</div>
+<div class="divider"></div>
+<!-- ══════════════════════════════════════════════ -->
+<!-- S4: SALVAGE PATHWAYS -->
+<!-- ══════════════════════════════════════════════ -->
+<div id="s4">
+<div class="section-header">
+<div class="section-num">04</div>
+<h2><em>Salvage</em> Pathways</h2>
+</div>
+<div class="keypoint">
+          Salvage = Recycle pre-formed bases or nucleosides back to nucleotides.
+          <strong>Energetically cheaper</strong> than de novo. Crucial in
+          tissues with <em>limited de novo capacity</em> (brain, RBCs).
+        </div>
+<!-- Purine Salvage -->
+<div class="card">
+<div class="card-title">
+            Purine Salvage — HGPRT &amp; APRT
+            <span class="badge badge-fav">⭐ PYQ 2018, 2025</span>
+</div>
+<div class="flowchart">
+<div class="flow-title">Purine Salvage Reactions</div>
+<div class="flow-v">
+<div class="flow-box blue" style="max-width: 100%">
+                Free bases (Hypoxanthine, Guanine, Adenine) from turnover or
+                diet
+              </div>
+<div class="arrow-down">↓</div>
+<div class="flow-h" style="max-width: 100%; gap: 12px">
+<div class="flow-box accent" style="flex: 1">
+<span class="box-label">Enzyme: HGPRT</span>
+<strong>Hypoxanthine-Guanine Phosphoribosyl Transferase</strong><br/>
+                  Hypoxanthine + PRPP → <strong>IMP</strong><br/>
+                  Guanine + PRPP → <strong>GMP</strong>
+</div>
+<div class="flow-box gold" style="flex: 1">
+<span class="box-label">Enzyme: APRT</span>
+<strong>Adenine Phosphoribosyl Transferase</strong><br/>
+                  Adenine + PRPP → <strong>AMP</strong>
+</div>
+</div>
+</div>
+</div>
+<div class="two-col" style="margin-top: 1rem">
+<div>
+<p style="
+                  font-size: 13px;
+                  font-weight: 600;
+                  color: var(--accent2);
+                  margin-bottom: 6px;
+                ">
+                Why Salvage Matters:
+              </p>
+<ul class="checklist">
+<li>
+                  Brain relies almost exclusively on salvage (low de novo)
+                </li>
+<li>Less ATP consumed than de novo synthesis</li>
+<li>Also recovers bases from nucleic acid degradation</li>
+<li>Maintains nucleotide pool balance</li>
+</ul>
+</div>
+<div>
+<p style="
+                  font-size: 13px;
+                  font-weight: 600;
+                  color: var(--rose);
+                  margin-bottom: 6px;
+                ">
+                When Salvage Fails:
+              </p>
+<ul class="checklist">
+<li>
+<strong>HGPRT deficiency</strong> → Lesch-Nyhan Syndrome
+                </li>
+<li>
+                  Hypoxanthine/Guanine cannot be recycled → converted to uric
+                  acid instead → hyperuricaemia
+                </li>
+<li>
+                  Also: PRPP accumulates → drives de novo synthesis faster →
+                  more purines → more uric acid
+                </li>
+<li>Brain cannot compensate → severe neurological features</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Adenosine deaminase note -->
+<div class="card">
+<div class="card-title">
+            Adenosine Deaminase (ADA) — Critical Enzyme
+          </div>
+<div class="flowchart" style="padding: 1.25rem 1rem">
+<div class="flow-v">
+<div class="flow-box blue">Adenosine</div>
+<div class="arrow-down">↓ <strong>ADA</strong> (Adenosine Deaminase)</div>
+<div class="flow-box accent">Inosine</div>
+<div class="arrow-down">↓ Purine Nucleoside Phosphorylase</div>
+<div class="flow-box gold">
+                Hypoxanthine → (salvage or → Xanthine → Uric Acid)
+              </div>
+</div>
+</div>
+<div class="clinical-box" style="margin-top: 8px">
+<div class="cbox-title">
+              ADA Deficiency → SCID (Severe Combined Immunodeficiency)
+            </div>
+<p>
+              ADA absent → dATP accumulates (deoxyadenosine → dAMP → dADP →
+              <strong>dATP</strong>).
+            </p>
+<p style="margin-top: 4px">
+              dATP: <strong>inhibits ribonucleotide reductase</strong> → blocks
+              ALL dNTP synthesis → DNA synthesis halts in
+              <em>rapidly dividing lymphocytes (T &amp; B cells)</em> →
+              lymphocyte death → profound immunodeficiency.
+            </p>
+<p style="margin-top: 4px">
+              Treatment: Enzyme replacement (PEG-ADA), gene therapy (first
+              successful gene therapy target).
+            </p>
+</div>
+</div>
+</div>
+<div class="divider"></div>
+<!-- ══════════════════════════════════════════════ -->
+<!-- S5: PURINE CATABOLISM & URIC ACID -->
+<!-- ══════════════════════════════════════════════ -->
+<div id="s5">
+<div class="section-header">
+<div class="section-num">05</div>
+<h2>Purine Catabolism <em>&amp; Uric Acid</em></h2>
+</div>
+<div class="flowchart">
+<div class="flow-title">
+            Purine Catabolism — AMP &amp; GMP → Uric Acid
+          </div>
+<div class="flow-v">
+<div class="flow-h" style="max-width: 100%; gap: 16px">
+<div class="flow-box blue" style="flex: 1">
+<strong>AMP</strong><br/>
+<span class="box-sub">↓ AMP deaminase<br/>or Adenosine → Inosine (ADA)</span>
+</div>
+<div class="flow-box gold" style="flex: 1">
+<strong>GMP</strong><br/>
+<span class="box-sub">↓ 5'-nucleotidase<br/>→ Guanosine → Guanine</span>
+</div>
+</div>
+<div class="arrow-down">
+              ↓ Both converge on Hypoxanthine/Xanthine pathway
+            </div>
+<div class="flow-box accent" style="max-width: 100%">
+<strong>IMP → Inosine → Hypoxanthine</strong><br/>
+<span class="box-sub">AMP → AMP deaminase → IMP (or via Adenosine → Inosine by
+                ADA)</span>
+</div>
+<div class="arrow-down">
+              ↓ <strong>Xanthine Oxidase</strong> (uses O₂, generates H₂O₂)
+              <span class="hl">[KEY ENZYME ⚡]</span>
+</div>
+<div class="flow-box gold" style="max-width: 100%">
+<strong>Xanthine</strong><br/>
+<span class="box-sub">Hypoxanthine → Xanthine (Xanthine oxidase)<br/>Guanine →
+                Xanthine (Guanase/deaminase)</span>
+</div>
+<div class="arrow-down">
+              ↓ <strong>Xanthine Oxidase</strong> (again)
+            </div>
+<div class="flow-box rose" style="max-width: 100%">
+<strong>URIC ACID</strong> (end product in humans)<br/>
+<span class="box-sub">Normal serum: Males &lt;7 mg/dL · Females &lt;6 mg/dL ·
+                Excreted by kidney (2/3) + gut (1/3)</span>
+</div>
+</div>
+</div>
+<div class="card">
+<div class="card-title">Why Uric Acid (Not Allantoin) in Humans?</div>
+<p style="font-size: 13px; color: var(--text2)">
+            Most mammals have <strong>uricase</strong> → converts uric acid →
+            allantoin (more soluble). Humans and great apes
+            <strong>lost uricase</strong> during evolution (gene silenced).
+            Result: uric acid is the final product and can crystallise in
+            tissues.
+          </p>
+<div class="table-wrap" style="margin-top: 10px">
+<table>
+<tr>
+<th>Organism</th>
+<th>Final Purine Catabolic Product</th>
+</tr>
+<tr>
+<td>Humans, apes, birds</td>
+<td><strong>Uric acid</strong> (no uricase)</td>
+</tr>
+<tr>
+<td>Most mammals</td>
+<td>Allantoin (uricase present)</td>
+</tr>
+<tr>
+<td>Marine invertebrates</td>
+<td>NH₃ (ammonotelic)</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="divider"></div>
+<!-- ══════════════════════════════════════════════ -->
+<!-- S6: GOUT & HYPERURICAEMIA -->
+<!-- ══════════════════════════════════════════════ -->
+<div id="s6">
+<div class="section-header">
+<div class="section-num">06</div>
+<h2>Gout &amp; <em>Hyperuricaemia</em></h2>
+</div>
+<div class="keypoint">
+          Gout = Deposition of
+          <strong>monosodium urate (MSU) crystals</strong> in joints (especially
+          1st metatarsophalangeal joint) + soft tissues (tophi) due to sustained
+          hyperuricaemia.
+        </div>
+<!-- Causes of hyperuricaemia -->
+<div class="card">
+<div class="card-title">
+            Causes of Hyperuricaemia
+            <span class="badge badge-fav">⭐ Core</span>
+</div>
+<div class="two-col">
+<div>
+<p style="
+                  font-size: 13px;
+                  font-weight: 600;
+                  color: var(--gold);
+                  margin-bottom: 6px;
+                ">
+                ↑ Uric Acid Production:
+              </p>
+<ul class="checklist">
+<li><strong>HGPRT deficiency</strong> (Lesch-Nyhan)</li>
+<li><strong>PRPP synthetase overactivity</strong></li>
+<li>
+                  Increased cell turnover (leukaemia, lymphoma, psoriasis)
+                </li>
+<li>Von Gierke's disease (G6P → PRPP overproduction)</li>
+<li>
+                  High purine diet (red meat, organ meats, shellfish, beer)
+                </li>
+<li>
+                  Alcohol (lactate competes with urate for renal excretion +
+                  increased purine catabolism)
+                </li>
+<li>Tumour lysis syndrome (chemo)</li>
+</ul>
+</div>
+<div>
+<p style="
+                  font-size: 13px;
+                  font-weight: 600;
+                  color: var(--rose);
+                  margin-bottom: 6px;
+                ">
+                ↓ Uric Acid Excretion:
+              </p>
+<ul class="checklist">
+<li><strong>Renal insufficiency</strong></li>
+<li>
+                  Low-dose aspirin (competes with urate at proximal tubule)
+                </li>
+<li>Thiazide diuretics</li>
+<li>Lactic acidosis (lactate competes at renal tubule)</li>
+<li>Cyclosporine</li>
+</ul>
+<div class="clinical-box" style="margin-top: 8px">
+<div class="cbox-title">Alcohol &amp; Gout</div>
+<p>
+                  Alcohol → lactate (NADH ↑ in liver → pyruvate→lactate) →
+                  lactate competes with urate for renal tubular secretion → ↓
+                  urate excretion → ↑ serum urate → precipitates gout attack.
+                </p>
+<p style="margin-top: 4px">
+                  Also: Beer has guanosine (purine precursor).
+                </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Allopurinol -->
+<div class="card">
+<div class="card-title">
+            Allopurinol — Mechanism
+            <span class="badge badge-fav">⭐ PYQ 2012, 2018, 2019, 2025</span>
+<span class="badge badge-rls">RLS</span>
+</div>
+<div class="flowchart">
+<div class="flow-title">
+              Allopurinol = Suicide Inhibitor of Xanthine Oxidase
+            </div>
+<div class="flow-v">
+<div class="flow-box blue" style="max-width: 100%">
+                Allopurinol (structural analogue of Hypoxanthine)<br/>
+<span class="box-sub">C7-N8 atoms transposed compared to hypoxanthine</span>
+</div>
+<div class="arrow-down">
+                ↓ Xanthine oxidase oxidises allopurinol
+              </div>
+<div class="flow-box accent" style="max-width: 100%">
+<strong>Oxipurinol (Alloxanthine)</strong> — tight-binding
+                product<br/>
+<span class="box-sub">Binds and IRREVERSIBLY inactivates xanthine oxidase → suicide
+                  inhibition</span>
+</div>
+<div class="arrow-down">↓ Result</div>
+<div class="flow-box green" style="max-width: 100%">
+                ↓ Xanthine oxidase activity → ↓ uric acid formation<br/>
+                Hypoxanthine &amp; xanthine accumulate (more soluble than uric
+                acid) → excreted safely<br/>
+<span class="box-sub">Also: ↓ PRPP (via feedback) → ↓ de novo purine
+                  synthesis</span>
+</div>
+</div>
+</div>
+<div class="warn-box" style="margin-top: 8px">
+<span><strong>Drug interaction alert:</strong> Allopurinol inhibits
+              xanthine oxidase → 6-Mercaptopurine (6-MP) and Azathioprine are
+              normally inactivated by XO. If allopurinol + 6-MP → 6-MP toxicity
+              → dose must be reduced to 25% of normal.</span>
+</div>
+<div class="table-wrap" style="margin-top: 8px">
+<table>
+<tr>
+<th>Drug</th>
+<th>Mechanism</th>
+<th>Use</th>
+</tr>
+<tr>
+<td>Allopurinol</td>
+<td>Suicide inhibitor of XO</td>
+<td>Gout (chronic), hyperuricaemia</td>
+</tr>
+<tr>
+<td>Febuxostat</td>
+<td>Non-purine, selective XO inhibitor</td>
+<td>Gout (alternative if allopurinol intolerance)</td>
+</tr>
+<tr>
+<td>Probenecid</td>
+<td>Blocks urate reabsorption at renal tubule (uricosuric)</td>
+<td>Gout (increases excretion)</td>
+</tr>
+<tr>
+<td>Colchicine</td>
+<td>
+                  Inhibits neutrophil tubulin polymerisation → ↓ crystal
+                  phagocytosis
+                </td>
+<td>Acute gout attack</td>
+</tr>
+<tr>
+<td>Rasburicase</td>
+<td>Recombinant uricase → allantoin</td>
+<td>Tumour lysis syndrome</td>
+</tr>
+</table>
+</div>
+</div>
+<!-- Von Gierke's hyperuricaemia -->
+<details>
+<summary>
+<span class="viva-q">Von Gierke's disease is associated with hyperuricaemia.</span><span class="viva-year">PYQ 2012, 2017</span>
+</summary>
+<div class="viva-ans">
+<strong>Standard Exam Answer Draft:</strong>
+<ol style="margin-left: 20px; margin-top: 6px">
+<li>
+<strong>Primary Defect:</strong> Von Gierke's disease (Type Ia
+                Glycogen Storage Disease) is caused by a deficiency of
+                <strong>Glucose-6-phosphatase</strong>, blocking the final step
+                of both glycogenolysis and gluconeogenesis.
+              </li>
+<li>
+<strong>G6P Accumulation:</strong> Glucose-6-phosphate (G6P)
+                accumulates and is shunted into the
+                <strong>Pentose Phosphate Pathway</strong>, generating excess
+                Ribose-5-phosphate → elevated
+                <strong>PRPP</strong> (phosphoribosyl pyrophosphate).
+              </li>
+<li>
+<strong>De Novo Purine Surge:</strong> PRPP is the committed
+                substrate for de novo purine synthesis. Its excess
+                <strong>drives accelerated purine production</strong>, greatly
+                increasing flux through the catabolic pathway.
+              </li>
+<li>
+<strong>Uric Acid Overproduction:</strong> The purine catabolism
+                pathway terminates in
+                <strong>uric acid</strong> (via xanthine oxidase), causing
+                hyperuricaemia.
+              </li>
+<li>
+<strong>Renal Competition:</strong> Lactic acidosis (from
+                blocked gluconeogenesis) causes lactate to compete with urate
+                for renal tubular secretion, further
+                <strong>reducing uric acid excretion</strong> and worsening
+                hyperuricaemia.
+              </li>
+<li>
+<strong>Clinical Result:</strong> Gout and/or uric acid
+                nephrolithiasis develop alongside the typical features of
+                hypoglycaemia and hepatomegaly.
+              </li>
+</ol>
+</div>
+</details>
+</div>
+<div class="divider"></div>
+<!-- ══════════════════════════════════════════════ -->
+<!-- S7: LESCH-NYHAN & ADA DEFICIENCY -->
+<!-- ══════════════════════════════════════════════ -->
+<div id="s7">
+<div class="section-header">
+<div class="section-num">07</div>
+<h2>Lesch-Nyhan <em>&amp; ADA Deficiency</em></h2>
+</div>
+<div class="two-col">
+<!-- Lesch-Nyhan -->
+<div class="card">
+<div class="card-title">
+              Lesch-Nyhan Syndrome
+              <span class="badge badge-fav">⭐ Advance Topic</span>
+</div>
+<ul class="checklist">
+<li><strong>Deficiency:</strong> HGPRT (complete absence)</li>
+<li>
+<strong>Inheritance:</strong> X-linked recessive (affects males)
+              </li>
+<li><strong>Gene:</strong> HPRT1 gene on X chromosome</li>
+</ul>
+<p style="
+                font-size: 13px;
+                font-weight: 600;
+                color: var(--gold);
+                margin: 8px 0 4px;
+              ">
+              Biochemical Consequences:
+            </p>
+<ul class="checklist">
+<li>Hypoxanthine &amp; Guanine cannot be salvaged</li>
+<li>
+                ↑↑ PRPP (no consumption by HGPRT) → drives de novo synthesis
+              </li>
+<li>↑↑ Purine catabolism → uric acid</li>
+</ul>
+<p style="
+                font-size: 13px;
+                font-weight: 600;
+                color: var(--rose);
+                margin: 8px 0 4px;
+              ">
+              Clinical Features (the triad):
+            </p>
+<ul class="checklist">
+<li>
+                Severe <strong>gout</strong> + hyperuricaemia (urate
+                nephropathy, tophi)
+              </li>
+<li>
+<strong>Neurological</strong>: intellectual disability,
+                choreoathetosis, spastic cerebral palsy
+              </li>
+<li>
+<strong>Compulsive self-mutilation</strong> (lip/finger biting —
+                pathognomonic!)
+              </li>
+</ul>
+<div class="clinical-box" style="margin-top: 8px">
+<div class="cbox-title">Why Neurological Features?</div>
+<p>
+                Brain depends almost entirely on
+                <strong>purine salvage</strong> (negligible de novo). HGPRT loss
+                → brain cannot maintain nucleotide pool → dopaminergic neuron
+                dysfunction → movement disorder + self-mutilation behaviour.
+              </p>
+</div>
+</div>
+<!-- ADA deficiency -->
+<div class="card">
+<div class="card-title">
+              ADA Deficiency → SCID
+              <span class="badge badge-pyq">PYQ 2011-S</span>
+</div>
+<ul class="checklist">
+<li><strong>Deficiency:</strong> Adenosine Deaminase (ADA)</li>
+<li><strong>Inheritance:</strong> Autosomal recessive</li>
+<li>~15% of all SCID cases</li>
+</ul>
+<p style="
+                font-size: 13px;
+                font-weight: 600;
+                color: var(--gold);
+                margin: 8px 0 4px;
+              ">
+              Biochemical Mechanism:
+            </p>
+<ul class="checklist">
+<li>
+                ADA absent → deoxyadenosine → phosphorylated to
+                <strong>dATP</strong> accumulates
+              </li>
+<li>
+                ↑↑ dATP → inhibits <strong>ribonucleotide reductase</strong>
+</li>
+<li>
+                Ribonucleotide reductase inhibited → all dNTPs ↓ → DNA synthesis
+                blocked
+              </li>
+<li>
+                Lymphocytes are most affected (highest ADA activity normally)
+              </li>
+</ul>
+<p style="
+                font-size: 13px;
+                font-weight: 600;
+                color: var(--rose);
+                margin: 8px 0 4px;
+              ">
+              Clinical Features:
+            </p>
+<ul class="checklist">
+<li>
+                ↓↓ T cells + B cells + NK cells =
+                <strong>"Bubble boy" disease</strong>
+</li>
+<li>Recurrent severe infections from birth</li>
+<li>Failure to thrive</li>
+</ul>
+<p style="
+                font-size: 13px;
+                font-weight: 600;
+                color: var(--blue);
+                margin: 8px 0 4px;
+              ">
+              Treatment:
+            </p>
+<ul class="checklist">
+<li>PEG-ADA (enzyme replacement)</li>
+<li>Bone marrow transplant</li>
+<li>
+<strong>Gene therapy</strong> — first disease treated by gene
+                therapy (1990, Ashanti DeSilva)
+              </li>
+</ul>
+</div>
+</div>
+<!-- Comparison table -->
+<div class="table-wrap">
+<table>
+<tr>
+<th>Feature</th>
+<th>Lesch-Nyhan</th>
+<th>ADA Deficiency</th>
+</tr>
+<tr>
+<td>Deficient enzyme</td>
+<td>HGPRT</td>
+<td>ADA (Adenosine Deaminase)</td>
+</tr>
+<tr>
+<td>Accumulated metabolite</td>
+<td>Uric acid + PRPP</td>
+<td>dATP (deoxyadenosine triphosphate)</td>
+</tr>
+<tr>
+<td>Primary affected cells</td>
+<td>Neurons (basal ganglia), kidney</td>
+<td>T and B lymphocytes</td>
+</tr>
+<tr>
+<td>Key clinical sign</td>
+<td>Self-mutilation + gout</td>
+<td>Severe combined immunodeficiency</td>
+</tr>
+<tr>
+<td>Inheritance</td>
+<td>X-linked recessive</td>
+<td>Autosomal recessive</td>
+</tr>
+<tr>
+<td>Treatment</td>
+<td>Allopurinol (for gout) — no neurological cure</td>
+<td>Gene therapy / PEG-ADA / BMT</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="divider"></div>
+<!-- ══════════════════════════════════════════════ -->
+<!-- S8: NUCLEOTIDE ANALOGS AS DRUGS -->
+<!-- ══════════════════════════════════════════════ -->
+<div id="s8">
+<div class="section-header">
+<div class="section-num">08</div>
+<h2>Nucleotide Analogs <em>as Drugs</em></h2>
+</div>
+<div class="keypoint">
+          Synthetic nucleotide analogs exploit the machinery of nucleotide
+          metabolism to
+          <strong>kill rapidly dividing cells</strong> (anticancer) or
+          <strong>inhibit viral replication</strong> (antiviral). Several are
+          suicide inhibitors.
+        </div>
+<div class="table-wrap">
+<table>
+<tr>
+<th>Drug</th>
+<th>Analog of</th>
+<th>Target Enzyme</th>
+<th>Mechanism</th>
+<th>Use</th>
+</tr>
+<tr>
+<td>
+                6-Mercaptopurine (6-MP) <span class="drug-tag">Anticancer</span>
+</td>
+<td>Hypoxanthine</td>
+<td>HGPRT (converts it), then inhibits de novo + salvage</td>
+<td>
+                Converted to 6-TIMP → inhibits PRPP amidotransferase → ↓ de novo
+                purine synthesis. Also incorporated into DNA/RNA
+              </td>
+<td>Leukaemia (ALL, AML)</td>
+</tr>
+<tr>
+<td>6-Thioguanine <span class="drug-tag">Anticancer</span></td>
+<td>Guanine</td>
+<td>HGPRT converts it; then multiple targets</td>
+<td>
+                Incorporated into DNA → strand breaks, mismatch repair
+                activation → apoptosis
+              </td>
+<td>Leukaemia</td>
+</tr>
+<tr>
+<td>
+                5-Fluorouracil (5-FU) <span class="drug-tag">Anticancer</span>
+</td>
+<td>Uracil</td>
+<td>
+                Thymidylate synthase (TS) — <strong>suicide inhibitor</strong>
+</td>
+<td>
+                5-FdUMP + methylene-THF forms covalent ternary complex with TS →
+                ↓ dTMP → ↓ DNA synthesis → "thymineless death"
+              </td>
+<td>Colon, breast, head-neck Ca</td>
+</tr>
+<tr>
+<td>
+                Methotrexate (MTX) <span class="drug-tag">Anticancer</span>
+</td>
+<td>Folate (not nucleotide)</td>
+<td>Dihydrofolate Reductase (DHFR)</td>
+<td>
+                Inhibits DHFR → ↓ THF → ↓ one-carbon transfer → ↓ dTMP + ↓
+                purine synthesis (both). "Indirect" nucleotide analog
+              </td>
+<td>
+                Leukaemia, lymphoma, autoimmune diseases, ectopic pregnancy
+              </td>
+</tr>
+<tr>
+<td>AZT (Zidovudine) <span class="drug-tag">Antiviral</span></td>
+<td>Thymidine</td>
+<td>HIV Reverse Transcriptase</td>
+<td>
+                Lacks 3'-OH → chain terminator (no next nucleotide can attach).
+                Must be phosphorylated by cellular kinases first
+              </td>
+<td>HIV/AIDS</td>
+</tr>
+<tr>
+<td>Acyclovir <span class="drug-tag">Antiviral</span></td>
+<td>Guanosine (acyclic)</td>
+<td>
+                Viral thymidine kinase (activates it) → viral DNA polymerase
+              </td>
+<td>
+                Selectively phosphorylated by viral TK (1000× better than
+                cellular TK) → acyclo-GTP → chain terminator of viral DNA pol
+              </td>
+<td>Herpes simplex, VZV</td>
+</tr>
+<tr>
+<td>
+                Cytarabine (Ara-C) <span class="drug-tag">Anticancer</span>
+</td>
+<td>Cytidine (arabinose sugar)</td>
+<td>DNA polymerase</td>
+<td>
+                Incorporated into DNA → blocks elongation. Also inhibits DNA
+                polymerase directly
+              </td>
+<td>AML, CLL</td>
+</tr>
+<tr>
+<td>Ciprofloxacin <span class="drug-tag">Antibiotic</span></td>
+<td>Not nucleotide per se</td>
+<td>
+                Bacterial DNA Gyrase (Topoisomerase II) and Topoisomerase IV
+              </td>
+<td>
+                Stabilises enzyme-DNA cleavage complex → double-strand breaks →
+                bacterial cell death. No direct structural analog of nucleotide
+              </td>
+<td>Broad-spectrum bacteria</td>
+</tr>
+<tr>
+<td>
+                Mycophenolate &amp; Ribavirin
+                <span class="drug-tag">Immunosuppressant</span>
+</td>
+<td>Purine precursors</td>
+<td>IMP Dehydrogenase</td>
+<td>
+                Inhibits conversion of IMP to Xanthosine-5-P → ↓ GMP synthesis
+                in rapidly dividing B/T cells
+              </td>
+<td>Organ transplant, Hepatitis C</td>
+</tr>
+<tr>
+<td>Hydroxyurea <span class="drug-tag">Anticancer</span></td>
+<td>-</td>
+<td>Ribonucleotide Reductase (RNR)</td>
+<td>
+                Inhibits conversion of ribonucleotides to deoxyribonucleotides →
+                ↓ DNA synthesis
+              </td>
+<td>Melanoma, Sickle Cell (↑ HbF)</td>
+</tr>
+</table>
+</div>
+<div class="clinical-box">
+<div class="cbox-title">Why 5-FU is a Suicide Inhibitor</div>
+<p>
+            5-FdUMP (active metabolite) forms a
+            <strong>covalent ternary complex</strong> with thymidylate synthase
+            AND N⁵,N¹⁰-methylene-THF. The enzyme is irreversibly inactivated.
+            Because it uses the enzyme's own mechanism to trap it, this is the
+            definition of <strong>mechanism-based (suicide) inhibition</strong>.
+            Folate co-factor is simultaneously depleted.
+          </p>
+</div>
+<div class="warn-box">
+<span><strong>EQ Classic:</strong> "Ciprofloxacin is an antibiotic but
+            6-MP is an anticancer drug [2023]" — They both affect DNA/nucleotide
+            metabolism but via completely different mechanisms and targets (CIP
+            → bacterial gyrase vs 6-MP → de novo purine synthesis + DNA
+            incorporation).</span>
+</div>
+</div>
+<div class="divider"></div>
+<!-- ══════════════════════════════════════════════ -->
+<!-- S9: OROTIC ACIDURIA & CPS I vs II REVISION -->
+<!-- ══════════════════════════════════════════════ -->
+<div id="s9">
+<div class="section-header">
+<div class="section-num">09</div>
+<h2>Orotic Aciduria &amp; <em>CPS I vs II</em></h2>
+</div>
+<!-- Full comparison flowchart -->
+<div class="flowchart">
+<div class="flow-title">
+            Two Pathways Using Carbamoyl Phosphate — The Key Distinction
+          </div>
+<div class="flow-h" style="align-items: flex-start; gap: 16px">
+<div style="flex: 1; min-width: 220px">
+<div class="flow-box blue" style="margin-bottom: 8px; text-align: left; padding: 12px">
+<strong>Mitochondria</strong><br/>
+                NH₃ + CO₂ + 2ATP<br/>
+                ↓ <strong>CPS I</strong> (activated by N-AcGlu)<br/>
+<span style="color: var(--accent2)">Carbamoyl-P</span>
+                (mitochondrial)<br/>
+                ↓ OTC + Aspartate<br/>
+                Citrulline → Urea Cycle<br/>
+<span style="color: var(--blue); font-size: 11px">Defect → Hyperammonaemia</span>
+</div>
+</div>
+<div style="
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+                padding-top: 40px;
+              ">
+<div style='
+                  color: var(--text3);
+                  font-family: "JetBrains Mono", monospace;
+                  font-size: 11px;
+                '>
+                SEPARATE<br/>COMPARTMENTS
+              </div>
+</div>
+<div style="flex: 1; min-width: 220px">
+<div class="flow-box gold" style="margin-bottom: 8px; text-align: left; padding: 12px">
+<strong>Cytosol</strong><br/>
+                Glutamine + CO₂ + 2ATP<br/>
+                ↓ <strong>CPS II</strong> (inhibited by UMP)<br/>
+<span style="color: var(--gold)">Carbamoyl-P</span>
+                (cytosolic)<br/>
+                ↓ + Aspartate (ATCase)<br/>
+                Carbamoyl Aspartate → Pyrimidine ring<br/>
+                → Orotate → UMP → CTP<br/>
+<span style="color: var(--rose); font-size: 11px">Defect → Orotic Aciduria</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Orotic Aciduria Table -->
+<div class="table-wrap">
+<table>
+<tr>
+<th>Feature</th>
+<th>Orotic Aciduria Type I (UMP Synthase deficiency)</th>
+<th>OTC Deficiency (Urea cycle)</th>
+</tr>
+<tr>
+<td>Block location</td>
+<td>OPRT + ODCase (UMP synthase — bi-functional)</td>
+<td>Ornithine transcarbamoylase (mitochondria)</td>
+</tr>
+<tr>
+<td>Orotic acid ↑</td>
+<td>Yes ↑↑</td>
+<td>Yes ↑</td>
+</tr>
+<tr>
+<td>Ammonia ↑</td>
+<td>No (urea cycle intact)</td>
+<td>Yes ↑↑ (main feature)</td>
+</tr>
+<tr>
+<td>Megaloblastic anaemia</td>
+<td><strong>Yes</strong> (cannot make pyrimidines)</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Treatment</td>
+<td>Uridine (bypasses block + inhibits CPS II)</td>
+<td>Protein restriction + sodium benzoate; liver transplant</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="divider"></div>
+<!-- ══════════════════════════════════════════════ -->
+<!-- S10: VIVA Q&A -->
+<!-- ══════════════════════════════════════════════ -->
+<div id="s10">
+<div class="section-header">
+<div class="section-num">10</div>
+<h2>Viva &amp; Exam <em>Q&amp;A</em></h2>
+</div>
+<div class="viva-section">
+<div class="viva-title-bar">Purine Metabolism Vivas</div>
+<details>
+<summary>
+<span class="viva-q">What are the sources of N and C atoms in the purine ring? Draw
+                and label.</span><span class="viva-year">PYQ 2013, 2015-S</span>
+</summary>
+<div class="viva-ans">
+<p>
+                The purine ring has 9 atoms: 4C + 5N (actually 5C + 4N in the
+                ring). The donors:
+              </p>
+<ul>
+<li>
+<strong>Glycine</strong>: contributes C4, C5, N7 (an entire
+                  glycine molecule is incorporated)
+                </li>
+<li>
+<strong>Glutamine</strong>: contributes N3, N9 (amide
+                  nitrogen); also N at C2 and C6
+                </li>
+<li>
+<strong>Aspartate</strong>: contributes N1 (via
+                  adenylosuccinate)
+                </li>
+<li>
+<strong>N¹⁰-Formyl-THF</strong>: contributes C2 and C8
+                  (one-carbon folate units)
+                </li>
+<li><strong>CO₂</strong>: contributes C6</li>
+</ul>
+<p>
+<em>Mnemonic: "GAGA + CO₂" → Glycine, Aspartate, Glutamine×2
+                  (different positions), formyl-THF (C2,C8), CO₂ (C6)</em>
+</p>
+<p>
+                The first committed step uses PRPP as the ribose scaffold. The
+                ring is assembled on the sugar — 10 enzymatic steps to form IMP.
+              </p>
+</div>
+</details>
+<details>
+<summary>
+<span class="viva-q">What is the salvage pathway? What is its clinical
+                significance?</span><span class="viva-year">PYQ 2018, 2025</span>
+</summary>
+<div class="viva-ans">
+<p>
+<strong>Salvage pathway</strong>: Recycles pre-formed purine
+                bases (from nucleic acid degradation or diet) back to
+                nucleotides, using PRPP as the phosphoribosyl donor.
+              </p>
+<ul>
+<li>HGPRT: Hypoxanthine + PRPP → IMP; Guanine + PRPP → GMP</li>
+<li>APRT: Adenine + PRPP → AMP</li>
+</ul>
+<p><strong>Clinical significance:</strong></p>
+<ul>
+<li>Energetically cheap (no de novo 10-step pathway needed)</li>
+<li>
+<strong>Brain survival</strong>: brain has minimal de novo
+                  capacity → depends entirely on salvage
+                </li>
+<li>
+<strong>HGPRT deficiency</strong> → Lesch-Nyhan syndrome (gout
+                  + neurological + self-mutilation)
+                </li>
+<li>
+                  Drug exploitation: 6-MP and 6-TG are converted by HGPRT to
+                  active forms (anti-leukemia drugs work THROUGH salvage)
+                </li>
+<li>
+                  Provides feedback regulation: salvage products (IMP, GMP, AMP)
+                  inhibit de novo synthesis
+                </li>
+</ul>
+</div>
+</details>
+<details>
+<summary>
+<span class="viva-q">How does allopurinol lower uric acid? Why is it called a
+                suicide inhibitor?</span><span class="viva-year">PYQ 2012, 2019</span>
+</summary>
+<div class="viva-ans">
+<p>
+<strong>Allopurinol</strong> (isomer of hypoxanthine with C7-N8
+                transposed) is acted upon by <strong>xanthine oxidase</strong>:
+              </p>
+<ol style="margin-left: 16px; margin-top: 6px">
+<li>
+                  XO oxidises allopurinol →
+                  <strong>Oxipurinol (alloxanthine)</strong>
+</li>
+<li>
+                  Oxipurinol binds tightly to the
+                  <strong>reduced (Mo4+) form</strong> of XO → forms long-lived
+                  inhibitory complex
+                </li>
+<li>
+                  The enzyme's own catalytic mechanism produces the inhibitor →
+                  <strong>mechanism-based / suicide inhibition</strong>
+</li>
+</ol>
+<p style="margin-top: 6px"><strong>Results:</strong></p>
+<ul>
+<li>↓ conversion of hypoxanthine and xanthine to uric acid</li>
+<li>
+                  Hypoxanthine + xanthine accumulate (10× more soluble than
+                  urate → safely excreted)
+                </li>
+<li>
+                  PRPP accumulates → but overall PRPP is consumed → de novo
+                  synthesis also decreases
+                </li>
+<li>Reduces serum and urinary uric acid by ~60–70%</li>
+</ul>
+</div>
+</details>
+</div>
+<div class="viva-section">
+<div class="viva-title-bar">
+            Drugs, Pyrimidines &amp; Clinical Vivas
+          </div>
+<details>
+<summary>
+<span class="viva-q">Differentiate between purine de novo synthesis and pyrimidine
+                de novo synthesis.</span><span class="viva-year">Core Comparison</span>
+</summary>
+<div class="viva-ans">
+<table style="font-size: 12px; width: 100%; margin-top: 4px">
+<tr>
+<th>Feature</th>
+<th>Purine</th>
+<th>Pyrimidine</th>
+</tr>
+<tr>
+<td>Ring built</td>
+<td>ON ribose-5-P (preformed sugar scaffold)</td>
+<td>FREE ring first, THEN attached to PRPP</td>
+</tr>
+<tr>
+<td>Rate-limiting step</td>
+<td>Glutamine:PRPP amidotransferase</td>
+<td>CPS II</td>
+</tr>
+<tr>
+<td>Common intermediate</td>
+<td>IMP → AMP or GMP</td>
+<td>UMP → UDP → UTP → CTP or dTMP</td>
+</tr>
+<tr>
+<td>Atom donors</td>
+<td>5 different donors (Gly, Gln, Asp, THF, CO₂)</td>
+<td>3 donors (Asp, CO₂, Gln)</td>
+</tr>
+<tr>
+<td>End product of catabolism</td>
+<td>Uric acid (humans)</td>
+<td>CO₂ + NH₃ + β-alanine/β-AIB</td>
+</tr>
+<tr>
+<td>Key drug target</td>
+<td>PRPP amidotransferase (6-MP), HGPRT, XO (allopurinol)</td>
+<td>Thymidylate synthase (5-FU), DHFR (MTX), CPS II</td>
+</tr>
+</table>
+</div>
+</details>
+<details>
+<summary>
+<span class="viva-q">Why does ADA deficiency cause immunodeficiency specifically
+                (not other systems)?</span><span class="viva-year">PYQ 2011-S</span>
+</summary>
+<div class="viva-ans">
+<p>
+                The selective lymphocyte toxicity of ADA deficiency is due to
+                <strong>unique characteristics of lymphocytes</strong>:
+              </p>
+<ul>
+<li>
+                  Lymphocytes have
+                  <strong>high levels of deoxynucleoside kinase</strong> (TdK)
+                  relative to 5'-nucleotidase → deoxyadenosine is preferentially
+                  phosphorylated to dAMP → dADP → <strong>dATP</strong>
+</li>
+<li>
+                  Other cell types have high 5'-nucleotidase activity →
+                  dephosphorylate dAMP back to adenosine (before toxic
+                  accumulation)
+                </li>
+<li>
+                  Lymphocytes also have
+                  <strong>high mitochondrial deoxyguanosine kinase</strong>
+                  sensitivity
+                </li>
+<li>
+                  dATP specifically inhibits ribonucleotide reductase → all
+                  dNTPs ↓ → S-phase DNA synthesis block → apoptosis
+                </li>
+<li>
+                  Additionally, dATP causes direct DNA strand breaks and
+                  activates apoptotic pathways
+                </li>
+</ul>
+<p>
+<em>Other tissues: High 5'-nucleotidase activity rapidly
+                  dephosphorylates dAMP → no toxic accumulation → spared.</em>
+</p>
+</div>
+</details>
+<details>
+<summary>
+<span class="viva-q">What is orotic aciduria? How do you distinguish it from OTC
+                deficiency?</span><span class="viva-year">Advance Topic</span>
+</summary>
+<div class="viva-ans">
+<p>
+                Both conditions → ↑ orotic acid in urine. Key differentiating
+                features:
+              </p>
+<ul>
+<li>
+<strong>OTC deficiency:</strong> Urea cycle block →
+                  carbamoyl-P accumulates in mitochondria → overflows into
+                  cytosol → pyrimidine synthesis goes into overdrive → orotate
+                  ↑. BUT: blood ammonia ↑↑↑ (main feature). No megaloblastic
+                  anaemia (UMP synthase intact can still process orotate).
+                </li>
+<li>
+<strong>Orotic Aciduria Type I:</strong> UMP synthase
+                  deficiency in cytosol → orotate cannot be converted to UMP →
+                  orotate ↑. Ammonia NORMAL (urea cycle intact).
+                  <strong>Megaloblastic anaemia</strong> present (cannot make
+                  pyrimidines → ↓ DNA synthesis in RBC precursors).
+                </li>
+</ul>
+<p>
+<strong>Treatment difference:</strong> Orotic aciduria → uridine
+                supplements. OTC deficiency → protein restriction + ammonia
+                scavengers + liver transplant.
+              </p>
+</div>
+</details>
+</div>
+</div>
+<div class="divider"></div>
+<!-- ══════════════════════════════════════════════ -->
+<!-- S11: EQ TEMPLATES -->
+<!-- ══════════════════════════════════════════════ -->
+<div id="s11">
+<div class="section-header">
+<div class="section-num">11</div>
+<h2>Essay Question <em>Templates</em></h2>
+</div>
+<details>
+<summary>
+<span class="viva-q">Allopurinol lowers the uric acid concentration of blood.</span><span class="viva-year">PYQ 2012-S, 2019</span>
+</summary>
+<div class="viva-ans">
+<strong>Standard Exam Answer Draft:</strong>
+<ol style="margin-left: 20px; margin-top: 6px">
+<li>
+<strong>Target:</strong> Chronic Gout is caused by
+                hyperuricaemia, resulting in Monosodium Urate crystal
+                precipitation in joints.
+              </li>
+<li>
+<strong>Therapeutic Goal:</strong> Lower serum uric acid below
+                6.0 mg/dL to dissolve existing crystals and prevent new
+                deposits.
+              </li>
+<li>
+<strong>Mechanism:</strong> Allopurinol is a structural isomer
+                of hypoxanthine. Xanthine Oxidase (XO) converts it to Oxipurinol
+                (Alloxanthine).
+              </li>
+<li>
+<strong>Inhibition Class:</strong> Oxipurinol binds tightly and
+                irreversibly to the Mo⁴⁺ active site of XO, acting as a
+                <strong>suicide inhibitor</strong>.
+              </li>
+<li>
+<strong>Metabolic Shift:</strong> Conversion of hypoxanthine and
+                xanthine to uric acid is blocked. Soluble hypoxanthine and
+                xanthine accumulate and are excreted, while serum uric acid
+                levels drop.
+              </li>
+<li>
+<strong>De Novo Downregulation:</strong> Clearance of PRPP by
+                salvage pathways reduces substrates for de novo purine
+                synthesis, further lowering urate levels.
+              </li>
+</ol>
+</div>
+</details>
+<details>
+<summary>
+<span class="viva-q">Gout is precipitated by alcohol intake.</span><span class="viva-year">PYQ 2012-S, 2016-S, 2018-S, 2021</span>
+</summary>
+<div class="viva-ans">
+<strong>Standard Exam Answer Draft:</strong>
+<ol style="margin-left: 20px; margin-top: 6px">
+<li>
+<strong>Metabolic Block:</strong> Oxidation of ethanol by
+                Alcohol Dehydrogenase generates NADH. High NADH/NAD⁺ ratio
+                favors the reduction of pyruvate to lactate.
+              </li>
+<li>
+<strong>Excretion Competition:</strong> Lactate accumulates and
+                competitively inhibits the organic anion transporter (URAT1) in
+                renal proximal tubule cells, preventing renal uric acid
+                secretion and elevating serum urate.
+              </li>
+<li>
+<strong>Purine Load:</strong> Yeast in fermented drinks (such as
+                beer) contains high levels of guanosine, which is catabolized
+                directly into uric acid.
+              </li>
+<li>
+<strong>ATP Turnover:</strong> High acetate production in liver
+                cells drives ATP conversion to AMP. Accumulation of AMP feeds
+                into the purine catabolic pathway, accelerating urate synthesis.
+              </li>
+</ol>
+</div>
+</details>
+<details>
+<summary>
+<span class="viva-q">Adenosine deaminase deficiency leads to immunodeficiency
+              state.</span><span class="viva-year">PYQ 2011-S</span>
+</summary>
+<div class="viva-ans">
+<strong>Standard Exam Answer Draft:</strong>
+<ol style="margin-left: 20px; margin-top: 6px">
+<li>
+<strong>Metabolic Defect:</strong> Absence of Adenosine
+                Deaminase prevents the conversion of adenosine to inosine, and
+                deoxyadenosine to deoxyinosine.
+              </li>
+<li>
+<strong>Metabolite Accumulation:</strong> Deoxyadenosine
+                accumulates and is phosphorylated by lymphoid deoxycytidine
+                kinase to form toxic <strong>dATP</strong>.
+              </li>
+<li>
+<strong>Enzyme Inhibition:</strong> High dATP binds to the
+                activity site of
+                <strong>Ribonucleotide Reductase (RNR)</strong>, shutting down
+                the conversion of all ribonucleotides to deoxyribonucleotides.
+              </li>
+<li>
+<strong>DNA Synthesis Arrest:</strong> DNA replication is
+                arrested in T, B, and NK cells, inducing apoptosis. This results
+                in the profound lymphopenia characteristic of Severe Combined
+                Immunodeficiency (SCID).
+              </li>
+</ol>
+</div>
+</details>
+<!-- HIGH YIELD QUICKFIRE -->
+<div class="viva-section" style="margin-top: 1.5rem">
+<div class="viva-title-bar">
+            🔥 Exam Day High-Yield Quickfire — Module 05
+          </div>
+<details>
+<summary>
+<span class="viva-q">Rate-limiting step of purine de novo</span>
+</summary>
+<div class="viva-ans">
+<p>Glutamine:PRPP amidotransferase (first committed step)</p>
+</div>
+</details>
+<details>
+<summary>
+<span class="viva-q">Rate-limiting step of pyrimidine de novo</span>
+</summary>
+<div class="viva-ans">
+<p>CPS II (cytosolic carbamoyl phosphate synthetase)</p>
+</div>
+</details>
+<details>
+<summary>
+<span class="viva-q">Common intermediate — purines</span>
+</summary>
+<div class="viva-ans"><p>IMP (Inosine Monophosphate)</p></div>
+</details>
+<details>
+<summary>
+<span class="viva-q">Common intermediate — pyrimidines</span>
+</summary>
+<div class="viva-ans"><p>UMP (Uridine Monophosphate)</p></div>
+</details>
+<details>
+<summary><span class="viva-q">HGPRT deficiency → ?</span></summary>
+<div class="viva-ans">
+<p>Lesch-Nyhan syndrome (X-linked, gout + self-mutilation)</p>
+</div>
+</details>
+<details>
+<summary><span class="viva-q">ADA deficiency → ?</span></summary>
+<div class="viva-ans">
+<p>SCID (dATP accumulates → RNR inhibition → lymphocyte death)</p>
+</div>
+</details>
+<details>
+<summary>
+<span class="viva-q">Allopurinol mechanism type</span>
+</summary>
+<div class="viva-ans">
+<p>Suicide/mechanism-based inhibitor (via oxipurinol)</p>
+</div>
+</details>
+<details>
+<summary><span class="viva-q">5-FU target enzyme</span></summary>
+<div class="viva-ans">
+<p>Thymidylate synthase (inhibits dTMP synthesis)</p>
+</div>
+</details>
+<details>
+<summary>
+<span class="viva-q">Methotrexate target enzyme</span>
+</summary>
+<div class="viva-ans"><p>DHFR (Dihydrofolate reductase)</p></div>
+</details>
+<details>
+<summary><span class="viva-q">AZT mechanism</span></summary>
+<div class="viva-ans">
+<p>Chain terminator of HIV reverse transcriptase (no 3'-OH)</p>
+</div>
+</details>
+<details>
+<summary>
+<span class="viva-q">End product of purine catabolism in humans</span>
+</summary>
+<div class="viva-ans"><p>Uric acid (uricase gene silenced)</p></div>
+</details>
+<details>
+<summary>
+<span class="viva-q">Orotic aciduria + anaemia → ?</span>
+</summary>
+<div class="viva-ans">
+<p>UMP synthase deficiency. Treat with Uridine.</p>
+</div>
+</details>
+<details>
+<summary>
+<span class="viva-q">Orotic aciduria + hyperammonaemia → ?</span>
+</summary>
+<div class="viva-ans">
+<p>OTC deficiency (urea cycle, NOT pyrimidine pathway)</p>
+</div>
+</details>
+<details>
+<summary>
+<span class="viva-q">Gout + alcohol biochemical link</span>
+</summary>
+<div class="viva-ans">
+<p>
+                Lactate competes with urate for renal secretion + ATP → AMP →
+                uric acid
+              </p>
+</div>
+</details>
+<details>
+<summary>
+<span class="viva-q">6-MP + allopurinol interaction</span>
+</summary>
+<div class="viva-ans">
+<p>
+                XO normally degrades 6-MP; allopurinol blocks XO → 6-MP toxic;
+                reduce dose to 25%
+              </p>
+</div>
+</details>
+</div>
+<!-- ALL-MODULE MNEMONICS -->
+<div class="card" style="margin-top: 1rem">
+<div class="card-title">Module 05 Master Mnemonics</div>
+<div style="
+              display: grid;
+              grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+              gap: 10px;
+              margin-top: 8px;
+            ">
+<div class="mnemonic-box" style="margin: 0">
+<div class="mbox-title">Purine Ring Donors</div>
+<div class="mnemonic-highlight">
+                "Gar, he makes funny coloured xylophones"<br/>G=Gly(C4,C5,N7),
+                He=Gln(N3,N9), Makes=Asp(N1), F=Formyl-THF(C2,C8), C=CO₂(C6)
+              </div>
+</div>
+<div class="mnemonic-box" style="margin: 0">
+<div class="mbox-title">Pyrimidine Donors — Simple</div>
+<div class="mnemonic-highlight">
+                "Aspartate + Glutamine + CO₂ = ACG builds pyrimidines"
+              </div>
+</div>
+<div class="mnemonic-box" style="margin: 0">
+<div class="mbox-title">Purines vs Pyrimidines in DNA/RNA</div>
+<div class="mnemonic-highlight">
+                PURe As Gold = Purines: A, G<br/>CUT the Py = Pyrimidines: C,
+                U(RNA), T(DNA)
+              </div>
+</div>
+<div class="mnemonic-box" style="margin: 0">
+<div class="mbox-title">Lesch-Nyhan Triad</div>
+<div class="mnemonic-highlight">
+                "GUN" = Gout, Uric acid↑, Neurological (self-mutilation)
+              </div>
+</div>
+</div>
+</div>
+</div>
+<!-- /s11 -->
+</div>
+<!-- /content -->
+<!-- RECONSTRUCTED FOOTER (MIRRORS USER IMAGE) -->
+<div class="footer">
+<p>
+<strong>MBBS Biochemistry - Module 05: Nucleotide Chemistry &amp;
+          Metabolism</strong>
+</p>
+<p style="margin-top: 4px">Compiled from PYQ 2010–2025</p>
+<p style="margin-top: 4px">
+<em>Crafted with precision to illuminate the pathways of biochemistry and
+          inspire your journey in medicine.</em>
+</p>
+<div class="flow-h" style="justify-content: center; margin-top: 8px">
+<div class="flow-box green" style="
+            flex: 0 1 auto;
+            
+            padding: 4px 12px;
+            font-size: 12px;
+          ">
+          Made with ❤️ for you
+        </div>
+</div>
+<p style="margin-top: 8px; font-size: 11px; opacity: 0.8">
+        Version 1.0 - Clean Print Edition available separately
+      </p>
+</div>
+<button class="top-btn" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
+      ↑
+    </button>
+<script>
+      document.querySelectorAll("details").forEach((d) => {
+        d.addEventListener("toggle", () => {
+          if (d.open) {
+            const c = d.querySelector(".viva-ans, .viva-a-text");
+            if (c) c.style.animation = "fadeIn .2s ease";
+          }
+        });
+      });
+
+      // Flawless Print Bridge: Automatically expand all collapsible details before printing
+      // and restore their exact pre-print user-toggle states immediately after printing ends.
+      window.addEventListener("beforeprint", () => {
+        document.querySelectorAll("details").forEach((details) => {
+          details.setAttribute("data-was-closed", !details.open);
+          details.open = true;
+        });
+      });
+
+      window.addEventListener("afterprint", () => {
+        document.querySelectorAll("details").forEach((details) => {
+          if (details.getAttribute("data-was-closed") === "true") {
+            details.open = false;
+          }
+          details.removeAttribute("data-was-closed");
+        });
+      });
+    </script>
+</body>
+</html>

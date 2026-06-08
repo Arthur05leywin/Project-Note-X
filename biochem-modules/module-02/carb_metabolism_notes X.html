@@ -1,0 +1,3368 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Carbohydrate Metabolism — MBBS Biochemistry Notes</title>
+<link href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E🔬%3C/text%3E%3C/svg%3E" rel="icon"/>
+<link href="MBBS PYQ_master_style.css" rel="stylesheet"/>
+<link href="mbbs_master_style.css" rel="stylesheet"/>
+<link href="wbuhs_master_style.css" rel="stylesheet"/>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300..900;1,300..900&family=IBM+Plex+Mono:ital,wght@0,100..700;1,100..700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Sora:wght@100..800&display=swap');
+
+/* ==========================================
+   DYNAMIC MULTI-THEME VARIABLE ENGINE
+   ========================================== */
+
+/* Theme 1: Premium Gold (Default / Classic Modules 1-3 & Module 5-X) */
+:root, body.theme-gold {
+  --bg: #0d0f14;
+  --surface: #13161e;
+  --surface2: #1a1e2a;
+  --surface3: #222736;
+  --border: #252a38;
+  --border2: #343b4f;
+  --accent: #e8c84a;
+  --accent2: #4ae8b0;
+  --accent3: #e84a7a;
+  --accent4: #4a9ee8;
+  --text: #e8eaf0;
+  --muted: #8a90a8;
+  --white: #ffffff;
+  --rls: #e84a7a;
+  --gold: #e8c84a;
+  --rose: #e84a7a;
+  --purple: #bf81ff;
+  --blue: #4a9ee8;
+  --green: #4ae8b0;
+  --orange: #ffa552;
+}
+
+/* Theme 2: Premium Crimson (Module 4 & 4-X) */
+body.theme-crimson {
+  --bg: #0a0a0f;
+  --surface: #111118;
+  --surface2: #18181f;
+  --surface3: #1e1e28;
+  --border: #252535;
+  --border2: #34344a;
+  --accent: #e8334a;
+  --accent2: #ff5268;
+  --accent3: #ff8595;
+  --accent4: #4a9ee8;
+  --text: #e8eaf0;
+  --muted: #8a90a8;
+  --white: #ffffff;
+  --rls: #ff8595;
+  --gold: #f4c464;
+  --rose: #e8334a;
+  --purple: #c084fc;
+  --blue: #60a5fa;
+  --green: #4ade80;
+  --orange: #fb923c;
+}
+
+/* Theme 3: Premium Emerald (Module 5 Modern) */
+body.theme-emerald {
+  --bg: #08100f;
+  --surface: #0f1a18;
+  --surface2: #152220;
+  --surface3: #1c2d2a;
+  --border: #1e3530;
+  --border2: #2a4540;
+  --accent: #00c897;
+  --accent2: #2ddcaa;
+  --accent3: #80ffe8;
+  --accent4: #60a5fa;
+  --text: #e2ede9;
+  --muted: #8aada6;
+  --white: #ffffff;
+  --rls: #ff6b8a;
+  --gold: #f4c464;
+  --rose: #ff6b8a;
+  --purple: #c084fc;
+  --blue: #60a5fa;
+  --green: #4ade80;
+  --orange: #fb923c;
+}
+
+/* Theme 4: Premium Indigo (Modules 6, 8, 9, 10) */
+body.theme-indigo {
+  --bg: #080c14;
+  --surface: #0d1220;
+  --surface2: #121828;
+  --surface3: #182030;
+  --border: #1e293b;
+  --border2: #334155;
+  --accent: #6366f1;
+  --accent2: #818cf8;
+  --accent3: #c084fc;
+  --accent4: #38bdf8;
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --white: #ffffff;
+  --rls: #f43f5e;
+  --gold: #fbbf24;
+  --rose: #f43f5e;
+  --purple: #c084fc;
+  --blue: #38bdf8;
+  --green: #34d399;
+  --orange: #fb923c;
+}
+
+/* Theme 5: Premium Amber (Modules 7 & 7-X) */
+body.theme-amber {
+  --bg: #080a0e;
+  --surface: #0e1118;
+  --surface2: #141820;
+  --surface3: #1a2030;
+  --border: #1e2530;
+  --border2: #2a3545;
+  --accent: #f59e0b;
+  --accent2: #fbbf24;
+  --accent3: #fb923c;
+  --accent4: #34d399;
+  --text: #f3f4f6;
+  --muted: #9ca3af;
+  --white: #ffffff;
+  --rls: #ef4444;
+  --gold: #fbbf24;
+  --rose: #ef4444;
+  --purple: #a855f7;
+  --blue: #3b82f6;
+  --green: #10b981;
+  --orange: #f97316;
+}
+
+/* ==========================================
+   GLOBAL STRUCTURE & FONTS
+   ========================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Typography Isolation */
+body {
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  overflow-x: hidden;
+  font-size: 14px;
+}
+
+body.theme-gold {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 14px;
+}
+
+body.theme-crimson,
+body.theme-emerald,
+body.theme-indigo,
+body.theme-amber {
+  font-family: "Sora", sans-serif;
+  font-size: 15px;
+}
+
+strong {
+  color: var(--white);
+}
+
+p {
+  margin-bottom: 12px;
+  color: var(--text);
+  line-height: 1.8;
+}
+
+/* Custom Webkit Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
+}
+
+
+/* ==========================================
+   CLASSIC LAYOUT SELECTORS (Modules 1-3)
+   ========================================== */
+
+/* Premium Brand Identity */
+.brand-container {
+  display: block;
+  margin-bottom: 28px;
+  animation: fadeIn 0.8s ease-out;
+}
+.brand-logo {
+  max-width: 200px;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.brand-logo:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(232, 200, 74, 0.15); /* Accent glow on hover */
+}
+
+.cover {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 60px;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg);
+  page-break-after: always;
+}
+
+.cover::before {
+  content: "";
+  position: absolute;
+  top: -200px;
+  right: -200px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(232, 200, 74, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cover::after {
+  content: "";
+  position: absolute;
+  bottom: -100px;
+  left: -100px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(74, 232, 176, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cover-tag {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  border: 1px solid var(--accent);
+  padding: 4px 12px;
+  margin-bottom: 40px;
+  display: inline-block;
+}
+
+.cover h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(42px, 8vw, 72px);
+  font-weight: 900;
+  line-height: 1.05;
+  color: var(--white);
+  margin-bottom: 10px;
+}
+
+.cover h1 span {
+  color: var(--accent);
+}
+
+.cover-sub {
+  font-size: 18px;
+  color: var(--muted);
+  margin-bottom: 50px;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.cover-meta {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.cover-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cover-meta-label {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.cover-meta-value {
+  font-size: 13px;
+  color: var(--accent2);
+  font-weight: 500;
+}
+
+.cover-divider {
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  margin: 30px 0;
+}
+
+.cover-pyq-badge {
+  position: absolute;
+  top: 120px;
+  right: 60px;
+  background: var(--accent);
+  color: var(--bg);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 8px 16px;
+  letter-spacing: 1px;
+}
+
+.page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 50px 60px;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 30px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.section-number {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 2px;
+}
+
+.section-title {
+  font-family: "Playfair Display", serif;
+  font-size: 28px;
+  color: var(--white);
+  font-weight: 700;
+}
+
+.section-title span {
+  color: var(--accent);
+}
+
+.pyq-box {
+  background: rgba(232, 200, 74, 0.08);
+  border-left: 3px solid var(--accent);
+  padding: 16px 20px;
+  margin-bottom: 30px;
+  border-radius: 0 6px 6px 0;
+}
+
+.pyq-box-label {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.pyq-box ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pyq-box ul li {
+  background: rgba(232, 200, 74, 0.15);
+  color: var(--accent);
+  font-size: 11px;
+  font-family: "IBM Plex Mono", monospace;
+  padding: 3px 10px;
+  border-radius: 2px;
+}
+
+.big-picture {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 28px;
+}
+
+.big-picture-label {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  color: var(--accent2);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.flowchart-container {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 30px;
+  margin: 24px 0;
+}
+
+.flowchart-title {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+/* Classic Comparison Tables */
+.comp-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 13px;
+}
+
+.comp-table th {
+  background: var(--surface2);
+  padding: 12px 16px;
+  text-align: left;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--border);
+}
+
+.comp-table th:nth-child(2) { color: var(--accent2); }
+.comp-table th:nth-child(3) { color: var(--accent3); }
+.comp-table th:nth-child(4) { color: var(--accent4); }
+
+.comp-table td {
+  padding: 11px 16px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+  line-height: 1.6;
+}
+
+.comp-table tr:hover td {
+  background: var(--surface);
+}
+
+.comp-table td:first-child {
+  font-weight: 600;
+  color: var(--muted);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.key-fact {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  background: var(--surface);
+  border-radius: 6px;
+  padding: 14px 18px;
+  margin: 10px 0;
+}
+
+.key-fact-icon {
+  font-size: 16px;
+  margin-top: 1px;
+  flex-shrink: 0;
+}
+
+.key-fact-text {
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.key-fact-text strong {
+  color: var(--accent);
+}
+
+.mnemonic {
+  background: linear-gradient(135deg, rgba(74, 232, 176, 0.08), rgba(232, 200, 74, 0.05));
+  border: 1px solid rgba(74, 232, 176, 0.3);
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin: 20px 0;
+}
+
+.mnemonic-label {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  color: var(--accent2);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.mnemonic-text {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--white);
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.mnemonic-expand {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.rls-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(232, 200, 74, 0.15);
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  padding: 3px 10px;
+  border-radius: 3px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+/* Classic Viva section */
+.viva-section {
+  background: var(--surface);
+  border-radius: 8px;
+  padding: 28px;
+  margin: 30px 0;
+  border: 1px solid var(--border);
+}
+
+.viva-label {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.viva-label::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+div.viva-q {
+  margin-bottom: 18px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--border);
+}
+
+div.viva-q:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.viva-q-text {
+  font-weight: 600;
+  color: var(--accent);
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.viva-q-text span {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  background: rgba(232, 200, 74, 0.15);
+  padding: 2px 8px;
+  margin-right: 8px;
+  border-radius: 2px;
+}
+
+.viva-a-text {
+  font-size: 13px;
+  color: var(--text);
+  line-height: 1.7;
+  padding-left: 16px;
+  border-left: 2px solid var(--border);
+}
+
+.section-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 40px 0;
+}
+
+h2.topic-head {
+  font-family: "Playfair Display", serif;
+  font-size: 22px;
+  color: var(--white);
+  margin: 28px 0 14px;
+}
+
+h3.sub-head {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent2);
+  margin: 20px 0 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: "IBM Plex Mono", monospace;
+}
+
+.graph-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px;
+  margin: 16px 0;
+}
+
+.graph-label {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  color: var(--accent4);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
+svg text {
+  font-family: "IBM Plex Mono", monospace;
+}
+
+.examiner-fav {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(232, 74, 122, 0.15);
+  border: 1px solid var(--accent3);
+  color: var(--accent3);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  padding: 2px 9px;
+  border-radius: 3px;
+  letter-spacing: 1px;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+
+/* ==========================================
+   MODERN LAYOUT SELECTORS (Modules 4-10)
+   ========================================== */
+
+/* Modern Hero Block */
+.hero {
+  background: linear-gradient(135deg, #050e0c 0%, #0d1f1a 50%, var(--bg) 100%);
+  border-bottom: 1px solid var(--border2);
+  padding: 3rem 1.5rem 2.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-crimson .hero {
+  background: linear-gradient(135deg, #100609 0%, #200d12 50%, var(--bg) 100%);
+}
+.theme-indigo .hero {
+  background: linear-gradient(135deg, #060910 0%, #0d1222 50%, var(--bg) 100%);
+}
+.theme-amber .hero {
+  background: linear-gradient(135deg, #100a06 0%, #20140d 50%, var(--bg) 100%);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 360px;
+  height: 360px;
+  background: radial-gradient(circle, rgba(0, 200, 151, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.theme-crimson .hero::before { background: radial-gradient(circle, rgba(232, 51, 74, 0.12) 0%, transparent 70%); }
+.theme-indigo .hero::before { background: radial-gradient(circle, rgba(99, 102, 241, 0.12) 0%, transparent 70%); }
+.theme-amber .hero::before { background: radial-gradient(circle, rgba(245, 158, 11, 0.12) 0%, transparent 70%); }
+
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: -40px;
+  left: 15%;
+  width: 240px;
+  height: 240px;
+  background: radial-gradient(circle, rgba(244, 196, 100, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.module-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0, 200, 151, 0.12);
+  border: 1px solid rgba(0, 200, 151, 0.35);
+  color: var(--accent2);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  padding: 4px 12px;
+  border-radius: 3px;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+.theme-crimson .module-tag {
+  background: rgba(232, 51, 74, 0.12);
+  border-color: rgba(232, 51, 74, 0.35);
+}
+.theme-indigo .module-tag {
+  background: rgba(99, 102, 241, 0.12);
+  border-color: rgba(99, 102, 241, 0.35);
+}
+.theme-amber .module-tag {
+  background: rgba(245, 158, 11, 0.12);
+  border-color: rgba(245, 158, 11, 0.35);
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.7); }
+}
+
+.hero h1 {
+  font-family: "Crimson Pro", serif;
+  font-size: clamp(2rem, 6vw, 3.2rem);
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.15;
+  margin-bottom: 0.5rem;
+}
+
+.hero h1 span {
+  color: var(--accent);
+}
+
+.hero-sub {
+  color: var(--text2);
+  font-size: 13px;
+  font-family: "JetBrains Mono", monospace;
+  letter-spacing: 0.5px;
+  margin-bottom: 1.5rem;
+}
+
+.hero-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pill {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-family: "JetBrains Mono", monospace;
+}
+
+/* Table of Contents */
+.toc {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  margin: 1.5rem;
+  padding: 1.25rem;
+  border-radius: 6px;
+}
+
+.toc-title {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.toc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 6px;
+}
+
+.toc a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 13px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.toc a:hover {
+  color: var(--accent2);
+  background: rgba(0, 200, 151, 0.08);
+}
+.theme-crimson .toc a:hover { background: rgba(232, 51, 74, 0.08); }
+.theme-indigo .toc a:hover { background: rgba(99, 102, 241, 0.08); }
+.theme-amber .toc a:hover { background: rgba(245, 158, 11, 0.08); }
+
+.toc-num {
+  color: var(--accent);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+}
+
+.content {
+  padding: 0 1.5rem 3rem;
+}
+
+/* Modern Section Headers */
+.content .section-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 2.5rem 0 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.content .section-num {
+  background: var(--accent);
+  color: var(--bg);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  font-weight: 700;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.content .section-header h2 {
+  font-family: "Crimson Pro", serif;
+  font-size: clamp(1.3rem, 4vw, 1.8rem);
+  font-weight: 600;
+  color: var(--text);
+}
+
+.content .section-header h2 em {
+  color: var(--accent2);
+  font-style: normal;
+}
+
+/* Modern Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  font-family: "JetBrains Mono", monospace;
+  padding: 2px 7px;
+  border-radius: 3px;
+  vertical-align: middle;
+  margin-left: 4px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.badge-rls {
+  background: rgba(255, 107, 138, 0.18);
+  color: var(--rose);
+  border: 1px solid rgba(255, 107, 138, 0.35);
+}
+.badge-pyq {
+  background: rgba(96, 165, 250, 0.15);
+  color: var(--blue);
+  border: 1px solid rgba(96, 165, 250, 0.3);
+}
+.badge-fav {
+  background: rgba(244, 196, 100, 0.15);
+  color: var(--gold);
+  border: 1px solid rgba(244, 196, 100, 0.3);
+}
+.badge-new {
+  background: rgba(74, 222, 128, 0.15);
+  color: var(--green);
+  border: 1px solid rgba(74, 222, 128, 0.3);
+}
+
+/* Modern Cards */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.card-title {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card-title::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* Flowcharts - Merged and Dynamic */
+.flowchart {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin: 1rem 0;
+  overflow-x: auto;
+}
+
+.flow-title {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent2);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.flow-title::before {
+  content: "▶";
+  font-size: 8px;
+}
+
+.flow-h {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+}
+
+.flow-box {
+  flex: 1 1 auto;
+  background: var(--surface3);
+  border: 1.5px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 13px;
+  text-align: center;
+  min-width: 110px;
+  line-height: 1.4;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+}
+
+.flow-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border-color: var(--accent);
+}
+
+.flow-box.accent, .flow-box.yellow {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(0, 200, 151, 0.08);
+}
+.theme-crimson .flow-box.accent { background: rgba(232, 51, 74, 0.08); }
+.theme-indigo .flow-box.accent { background: rgba(99, 102, 241, 0.08); }
+.theme-amber .flow-box.accent { background: rgba(245, 158, 11, 0.08); }
+
+.flow-box.gold {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: rgba(244, 196, 100, 0.08);
+}
+.flow-box.rose, .flow-box.red {
+  border-color: var(--rose);
+  color: var(--rose);
+  background: rgba(255, 107, 138, 0.08);
+}
+.flow-box.purple {
+  border-color: var(--purple);
+  color: var(--purple);
+  background: rgba(192, 132, 252, 0.08);
+}
+.flow-box.blue {
+  border-color: var(--blue);
+  color: var(--blue);
+  background: rgba(96, 165, 250, 0.08);
+}
+.flow-box.green {
+  border-color: var(--green);
+  color: var(--green);
+  background: rgba(74, 222, 128, 0.08);
+}
+.flow-box.white {
+  border-color: var(--text);
+  color: var(--text);
+}
+
+.flow-box .box-label {
+  font-size: 10px;
+  color: var(--muted);
+  font-family: "JetBrains Mono", monospace;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.flow-box .box-sub {
+  font-size: 11px;
+  color: var(--muted);
+  display: block;
+  margin-top: 2px;
+}
+
+.arrow {
+  color: var(--accent);
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.arrow-down {
+  text-align: center;
+  color: var(--accent);
+  font-size: 18px;
+  margin: 4px 0;
+}
+
+.flow-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 12px 0;
+  width: 100%;
+}
+
+.flow-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  font-size: 20px;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.flow-arrow.down {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 8px auto;
+  color: var(--accent);
+  font-size: 20px;
+}
+
+.flow-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.flow-down {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 12px auto;
+  color: var(--accent);
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.flow-v {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.flow-v .flow-box {
+  width: 100%;
+  max-width: 500px;
+}
+
+.flow-v .arrow-down {
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+}
+
+/* Modern Tables (Scoped to .table-wrap) */
+.table-wrap {
+  overflow-x: auto;
+  margin: 1rem 0;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.table-wrap table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-wrap th {
+  background: var(--surface3);
+  color: var(--accent2);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 2px solid var(--accent);
+}
+
+.table-wrap td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+  vertical-align: top;
+}
+
+.table-wrap tr:hover td {
+  background: rgba(0, 200, 151, 0.04);
+}
+.theme-crimson .table-wrap tr:hover td { background: rgba(232, 51, 74, 0.04); }
+.theme-indigo .table-wrap tr:hover td { background: rgba(99, 102, 241, 0.04); }
+.theme-amber .table-wrap tr:hover td { background: rgba(245, 158, 11, 0.04); }
+
+.table-wrap td:first-child {
+  color: var(--accent2);
+  font-weight: 600;
+}
+
+/* Modern Clinical & Mnemonic boxes inside .content */
+.content .clinical-box {
+  background: linear-gradient(135deg, rgba(96, 165, 250, 0.05), rgba(96, 165, 250, 0.02));
+  border: 1px solid rgba(96, 165, 250, 0.25);
+  border-left: 4px solid var(--blue);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+}
+
+.content .clinical-box .cbox-title {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--blue);
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.content .clinical-box .cbox-title::before {
+  content: "🩺";
+}
+
+.mnemonic-box {
+  background: linear-gradient(135deg, rgba(244, 196, 100, 0.06), rgba(244, 196, 100, 0.02));
+  border: 1px solid rgba(244, 196, 100, 0.28);
+  border-left: 4px solid var(--gold);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+}
+
+.mnemonic-box .mbox-title {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.mnemonic-box .mbox-title::before {
+  content: "🧠";
+}
+
+.mnemonic-highlight {
+  background: rgba(244, 196, 100, 0.1);
+  border: 1px dashed rgba(244, 196, 100, 0.3);
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-family: "Crimson Pro", serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--gold);
+  margin: 6px 0;
+  letter-spacing: 1px;
+}
+
+.eq-box {
+  background: linear-gradient(135deg, rgba(192, 132, 252, 0.06), rgba(192, 132, 252, 0.02));
+  border: 1px solid rgba(192, 132, 252, 0.28);
+  border-left: 4px solid var(--purple);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+}
+
+.eq-box .eq-title {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--purple);
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.eq-box .eq-title::before {
+  content: "📝";
+}
+
+.eq-statement {
+  background: var(--surface3);
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-family: "Crimson Pro", serif;
+  font-size: 15px;
+  font-style: italic;
+  color: var(--text);
+  margin-bottom: 10px;
+  border-left: 3px solid var(--purple);
+}
+
+.eq-answer ol {
+  margin-left: 18px;
+}
+
+.eq-answer li {
+  margin-bottom: 6px;
+  font-size: 13px;
+}
+
+.eq-answer li span {
+  color: var(--purple);
+  font-weight: 600;
+}
+
+.keypoint {
+  background: rgba(0, 200, 151, 0.07);
+  border: 1px solid rgba(0, 200, 151, 0.22);
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin: 8px 0;
+  font-size: 13px;
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+.theme-crimson .keypoint { background: rgba(232, 51, 74, 0.07); border-color: rgba(232, 51, 74, 0.22); }
+.theme-indigo .keypoint { background: rgba(99, 102, 241, 0.07); border-color: rgba(99, 102, 241, 0.22); }
+.theme-amber .keypoint { background: rgba(245, 158, 11, 0.07); border-color: rgba(245, 158, 11, 0.22); }
+
+.keypoint::before {
+  content: "⚡";
+  flex-shrink: 0;
+}
+
+.warn-box {
+  background: rgba(251, 146, 60, 0.07);
+  border: 1px solid rgba(251, 146, 60, 0.28);
+  border-left: 4px solid var(--orange);
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin: 8px 0;
+  font-size: 13px;
+  display: flex;
+  gap: 8px;
+}
+
+.warn-box::before {
+  content: "⚠️";
+  flex-shrink: 0;
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 2rem 0;
+}
+
+ul.checklist {
+  list-style: none;
+  margin: 0.5rem 0;
+}
+
+ul.checklist li::before {
+  content: "✦ ";
+  color: var(--accent);
+}
+
+ul.checklist li {
+  margin-bottom: 4px;
+  font-size: 13px;
+}
+
+.hl { color: var(--accent2); font-weight: 600; }
+.hl-gold { color: var(--gold); font-weight: 600; }
+.hl-rose { color: var(--rose); font-weight: 600; }
+.hl-blue { color: var(--blue); font-weight: 600; }
+.hl-purple { color: var(--purple); font-weight: 600; }
+.hl-green { color: var(--green); font-weight: 600; }
+
+/* Modern Atom Cards */
+.atom-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+  margin: 1rem 0;
+}
+
+.atom-card {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem;
+  transition: border-color 0.2s;
+}
+
+.atom-card:hover {
+  border-color: var(--accent);
+}
+
+.atom-head {
+  font-family: "Crimson Pro", serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.atom-sub {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+/* Modern Viva Section details */
+.viva-title-bar {
+  background: rgba(0, 200, 151, 0.1);
+  border: 1px solid rgba(0, 200, 151, 0.28);
+  border-radius: 6px 6px 0 0;
+  padding: 10px 14px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--accent2);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.theme-crimson .viva-title-bar { background: rgba(232, 51, 74, 0.1); border-color: rgba(232, 51, 74, 0.28); }
+.theme-indigo .viva-title-bar { background: rgba(99, 102, 241, 0.1); border-color: rgba(99, 102, 241, 0.28); }
+.theme-amber .viva-title-bar { background: rgba(245, 158, 11, 0.1); border-color: rgba(245, 158, 11, 0.28); }
+
+.viva-title-bar::before {
+  content: "💬";
+  font-size: 14px;
+}
+
+.content details {
+  border: 1px solid var(--border);
+  border-top: none;
+  overflow: hidden;
+}
+
+.content details:last-child {
+  border-radius: 0 0 6px 6px;
+}
+
+.content summary {
+  padding: 10px 14px;
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--text);
+  background: var(--surface);
+  list-style: none;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  user-select: none;
+  transition: background 0.2s;
+}
+
+.content summary:hover {
+  background: var(--surface2);
+}
+
+.content summary::before {
+  content: "▶";
+  color: var(--accent);
+  font-size: 10px;
+  margin-top: 3px;
+  flex-shrink: 0;
+  transition: transform 0.2s;
+}
+
+.content details[open] > summary::before {
+  transform: rotate(90deg);
+}
+
+.viva-q {
+  font-weight: 600;
+  flex: 1;
+}
+
+.viva-year {
+  color: var(--blue);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  flex-shrink: 0;
+}
+
+.viva-ans {
+  padding: 12px 16px 14px;
+  background: var(--surface2);
+  font-size: 13px;
+  line-height: 1.75;
+  border-top: 1px solid var(--border);
+}
+
+.viva-ans p {
+  margin-bottom: 6px;
+}
+
+.viva-ans ul {
+  margin: 6px 0 6px 16px;
+}
+
+.viva-ans li {
+  margin-bottom: 4px;
+}
+
+.viva-ans strong {
+  color: var(--accent2);
+}
+
+.viva-ans em {
+  color: var(--gold);
+  font-style: normal;
+  font-weight: 600;
+}
+
+.drug-tag {
+  display: inline-block;
+  background: rgba(255, 107, 138, 0.12);
+  border: 1px solid rgba(255, 107, 138, 0.3);
+  color: var(--rose);
+  font-size: 10px;
+  padding: 1px 6px;
+  border-radius: 3px;
+  font-family: "JetBrains Mono", monospace;
+  margin-left: 4px;
+}
+
+
+/* ==========================================
+   SHARED INTERACTIVE ELEMENTS & UTILS
+   ========================================== */
+
+.progress-bar {
+  height: 3px;
+  background: linear-gradient(to right, var(--accent), var(--accent2), var(--accent4));
+  border-radius: 2px;
+  margin-bottom: 2rem;
+  animation: load 1.5s ease forwards;
+}
+
+@keyframes load {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+.formula {
+  font-family: "JetBrains Mono", monospace;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 6px 12px;
+  margin: 6px 0;
+  color: var(--accent);
+  font-size: 13px;
+  display: block;
+}
+
+.top-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(232, 200, 74, 0.35);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  transition: all 0.2s ease-in-out;
+}
+
+.top-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(232, 200, 74, 0.5);
+}
+
+.theme-emerald .top-btn { box-shadow: 0 4px 15px rgba(0, 200, 151, 0.35); }
+.theme-emerald .top-btn:hover { box-shadow: 0 6px 20px rgba(0, 200, 151, 0.5); }
+
+/* Footer */
+.footer {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  text-align: center;
+  padding: 2rem 1.5rem;
+  color: var(--muted);
+  font-size: 12px;
+  font-family: "JetBrains Mono", monospace;
+  margin-top: 60px;
+}
+
+.footer p {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 1px;
+}
+
+.footer .kims-tag {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+
+/* ==========================================
+   📱 COMPREHENSIVE RESPONSIVE ENGINE
+   ========================================== */
+
+@media (max-width: 768px) {
+  /* Classic Cover page mobile enhancements */
+  .cover {
+    padding: 40px 20px 48px;
+    min-height: 100vh;
+    justify-content: flex-start;
+  }
+  
+  .cover-pyq-badge {
+    position: static !important;
+    display: inline-block !important;
+    align-self: flex-start !important;
+    margin-bottom: 24px !important;
+    padding: 6px 12px !important;
+    font-size: 10px !important;
+  }
+
+  .cover-tag {
+    margin-bottom: 24px !important;
+  }
+
+  .cover h1 {
+    font-size: clamp(32px, 7vw, 48px) !important;
+    margin-bottom: 12px !important;
+  }
+
+  .cover-sub {
+    font-size: 15px !important;
+    margin-bottom: 36px !important;
+    line-height: 1.5 !important;
+  }
+
+  .cover-divider {
+    margin: 20px 0 !important;
+  }
+
+  .cover-meta {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+    width: 100% !important;
+  }
+
+  .cover-meta-item {
+    gap: 2px !important;
+  }
+
+  /* Modern Hero mobile adjustments */
+  .hero {
+    padding: 2rem 1rem;
+  }
+
+  /* Page Wrapper and Main Content Spacing */
+  .page {
+    padding: 24px 16px !important;
+    max-width: 100% !important;
+  }
+
+  .content {
+    padding: 0 1rem 2rem;
+  }
+  
+  .flowchart-container,
+  .flowchart,
+  .clinical-box,
+  .mnemonic-box,
+  .eq-box,
+  .big-picture,
+  .viva-section,
+  .mnemonic,
+  .graph-box,
+  .warn-box {
+    padding: 20px 16px !important;
+    margin: 20px 0 !important;
+  }
+
+  /* Typography Adjustments */
+  h2.topic-head,
+  .content .section-header h2 {
+    font-size: 20px !important;
+    margin: 24px 0 12px !important;
+  }
+
+  h3.sub-head {
+    font-size: 12px !important;
+    margin: 16px 0 8px !important;
+  }
+
+  /* Table of Contents Mobile layout */
+  .toc {
+    margin: 1rem 0;
+    width: auto;
+    display: block;
+  }
+
+  /* Flowcharts mobile layout */
+  .flow-row, .flow-h {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    gap: 6px !important;
+  }
+
+  .flow-box {
+    width: 100% !important;
+    min-width: unset !important;
+    max-width: 100% !important;
+    padding: 12px 16px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    border-right: 1.5px solid var(--border) !important;
+    box-sizing: border-box !important;
+  }
+
+  .flow-arrow, .arrow {
+    display: inline-block !important;
+    transform: rotate(90deg) !important;
+    margin: 8px 0 !important;
+    text-align: center !important;
+  }
+
+  .flow-arrow.down, .arrow-down {
+    transform: none !important;
+    margin: 8px 0 !important;
+    max-width: 100% !important;
+  }
+
+  /* Classic Comparison Tables & Modern Tables responsive scroll */
+  .comp-table, .table-wrap {
+    display: block !important;
+    width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 6px !important;
+    margin: 16px 0 !important;
+  }
+
+  .comp-table th, 
+  .comp-table td,
+  .table-wrap th,
+  .table-wrap td {
+    padding: 10px 12px !important;
+    font-size: 12px !important;
+  }
+
+  .comp-table::-webkit-scrollbar,
+  .table-wrap::-webkit-scrollbar {
+    height: 4px !important;
+  }
+  .comp-table::-webkit-scrollbar-track,
+  .table-wrap::-webkit-scrollbar-track {
+    background: var(--bg) !important;
+  }
+  .comp-table::-webkit-scrollbar-thumb,
+  .table-wrap::-webkit-scrollbar-thumb {
+    background: var(--border) !important;
+    border-radius: 2px !important;
+  }
+
+  /* Layout helpers */
+  .two-col, .atom-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .clinical-box ul li {
+    display: block !important;
+    position: relative !important;
+    padding-left: 16px !important;
+    font-size: 12px !important;
+  }
+  
+  .clinical-box ul li::before {
+    position: absolute !important;
+    left: 0 !important;
+    top: 2px !important;
+  }
+
+  /* Accordions / Viva Spacing */
+  summary.viva-q-text,
+  .content summary {
+    padding: 12px 0 !important;
+    font-size: 13px !important;
+  }
+
+  .viva-a-text,
+  .viva-ans {
+    padding-left: 12px !important;
+    font-size: 12px !important;
+    margin-top: 6px !important;
+  }
+}
+
+
+/* ==========================================
+   ⚡ ULTRA-CRISP REVISION CARD ENGINE 
+   ========================================== */
+
+.revision-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  padding: 18px 22px;
+  margin: 16px 0;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.revision-card:hover {
+  border-color: var(--accent2);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
+}
+
+.revision-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 8px;
+}
+
+.revision-card-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.revision-card-title {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.revision-card-title span {
+  color: var(--accent);
+}
+
+.revision-card-body {
+  font-size: 13.5px;
+  line-height: 1.7;
+}
+
+.revision-card-body ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.revision-card-body ul li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+
+.revision-card-body ul li:last-child {
+  margin-bottom: 0;
+}
+
+.revision-card-body ul li::before {
+  content: "✦";
+  position: absolute;
+  left: 0;
+  color: var(--accent2);
+  font-weight: bold;
+}
+
+.revision-card-body ul li strong {
+  color: var(--white);
+}
+
+/* Print Budgeting Classes */
+.print-page-break {
+  display: block;
+}
+
+@media screen {
+  .print-page-break {
+    margin: 30px 0;
+  }
+}
+
+
+/* ==========================================
+   🖨️ PREMIUM PRINT-TO-PDF ENGINE (Ctrl+P)
+   ========================================== */
+
+@media print {
+  :root, body.theme-gold, body.theme-crimson, body.theme-emerald, body.theme-indigo, body.theme-amber {
+    --bg: #ffffff;
+    --surface: #f8f9fa;
+    --surface2: #e9ecef;
+    --surface3: #dee2e6;
+    --border: #dee2e6;
+    --border2: #ced4da;
+    --accent: #000000;
+    --accent2: #000000;
+    --accent3: #000000;
+    --accent4: #000000;
+    --text: #111111;
+    --text2: #222222;
+    --text3: #333333;
+    --muted: #495057;
+    --white: #000000;
+    --rls: #000000;
+    --gold: #000000;
+    --rose: #000000;
+    --purple: #000000;
+    --blue: #000000;
+    --green: #000000;
+    --orange: #000000;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+    color: #000000 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  @page {
+    size: A4 portrait;
+    margin: 20mm 15mm 20mm 15mm !important;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #111111 !important;
+    font-size: 11pt !important;
+    line-height: 1.4 !important;
+  }
+
+  p {
+    font-size: 11pt !important;
+    line-height: 1.4 !important;
+    margin-bottom: 8px !important;
+  }
+
+  /* Cover Page exact single A4 layout */
+  .cover {
+    min-height: unset !important;
+    height: 260mm !important;
+    max-height: 100vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    padding: 40px !important;
+    box-sizing: border-box !important;
+    border: 2px solid #000000 !important;
+    background: #ffffff !important;
+    page-break-after: always !important;
+    break-after: page !important;
+    position: relative !important;
+  }
+
+  .cover::before,
+  .cover::after {
+    display: none !important;
+  }
+
+  .cover-tag {
+    border-color: #000000 !important;
+    margin-bottom: 25px !important;
+    padding: 4px 10px !important;
+    font-size: 10px !important;
+  }
+
+  .cover h1 {
+    font-size: 44px !important;
+    line-height: 1.1 !important;
+    color: #000000 !important;
+    margin-bottom: 10px !important;
+  }
+
+  .cover h1 span {
+    color: #000000 !important;
+  }
+
+  .cover-sub {
+    font-size: 15px !important;
+    color: #495057 !important;
+    margin-bottom: 30px !important;
+  }
+
+  .cover-divider {
+    width: 60px !important;
+    height: 2px !important;
+    background: #000000 !important;
+    margin: 20px 0 !important;
+  }
+
+  .cover-meta {
+    gap: 30px !important;
+  }
+
+  .cover-meta-value {
+    font-size: 12px !important;
+  }
+
+  .cover-pyq-badge {
+    position: absolute !important;
+    top: 70px !important;
+    right: 40px !important;
+    border: 1px solid #000000 !important;
+    background: #ffffff !important;
+    padding: 6px 12px !important;
+    font-size: 10px !important;
+  }
+
+  /* Modern Hero formatting for print */
+  .hero {
+    background: none !important;
+    border-bottom: 2px solid #000000 !important;
+    padding: 1rem 0 !important;
+  }
+  
+  .hero::before, .hero::after {
+    display: none !important;
+  }
+
+  .module-tag {
+    background: #ffffff !important;
+    border: 1px solid #000000 !important;
+    color: #000000 !important;
+  }
+  .module-tag .dot {
+    display: none !important;
+  }
+
+  .pill {
+    background: #ffffff !important;
+    border: 1px solid #000000 !important;
+  }
+
+  /* Page Wrapper Spacing */
+  .page {
+    padding: 10px 0 !important;
+    max-width: 100% !important;
+  }
+
+  .content {
+    padding: 0 !important;
+  }
+
+  .section-divider {
+    margin: 20px 0 !important;
+    border-color: #dee2e6 !important;
+  }
+
+  /* Heading orphans preventions */
+  .section-header,
+  .content .section-header,
+  h2.topic-head,
+  h3.sub-head {
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+    margin-top: 15px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .section-header, .content .section-header {
+    padding-bottom: 8px !important;
+    margin-bottom: 15px !important;
+    border-bottom: 1.5px solid #000000 !important;
+  }
+
+  .section-title {
+    font-size: 20px !important;
+    color: #000000 !important;
+  }
+
+  .content .section-num {
+    background: none !important;
+    border: 2px solid #000000 !important;
+    color: #000000 !important;
+  }
+
+  h2.topic-head {
+    font-size: 16px !important;
+    border-bottom: 1px solid #dee2e6 !important;
+    padding-bottom: 4px !important;
+  }
+
+  h3.sub-head {
+    font-size: 11px !important;
+    margin-top: 12px !important;
+  }
+
+  /* Avoid cutting boxes across page breaks */
+  .pyq-box,
+  .big-picture,
+  .clinical-box,
+  .content .clinical-box,
+  .mnemonic-box,
+  .eq-box,
+  .flowchart-container,
+  .flowchart,
+  .comp-table,
+  .table-wrap,
+  .key-fact,
+  .mnemonic,
+  .viva-section,
+  .warn-box,
+  .atom-card,
+  details,
+  details.viva-q,
+  tr,
+  blockquote,
+  svg,
+  .revision-card-body ul li {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .pyq-box,
+  .big-picture,
+  .clinical-box,
+  .content .clinical-box,
+  .mnemonic-box,
+  .eq-box,
+  .flowchart-container,
+  .flowchart,
+  .viva-section,
+  .mnemonic,
+  .warn-box {
+    padding: 12px 16px !important;
+    margin: 10px 0 !important;
+    border-radius: 4px !important;
+    border: 1px solid #000000 !important;
+    background: #f8f9fa !important;
+  }
+
+  .revision-card {
+    background: #ffffff !important;
+    border: 1px solid #000000 !important;
+    border-left: 4px solid #000000 !important;
+    border-radius: 4px !important;
+    padding: 12px 16px !important;
+    margin: 10px 0 !important;
+    box-shadow: none !important;
+    page-break-inside: auto !important;
+    break-inside: auto !important;
+    -webkit-box-decoration-break: clone !important;
+    box-decoration-break: clone !important;
+  }
+
+  .revision-card-header {
+    border-bottom: 1px solid #000000 !important;
+    margin-bottom: 8px !important;
+    padding-bottom: 4px !important;
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+  }
+
+  .revision-card-title {
+    color: #000000 !important;
+    font-size: 11pt !important;
+  }
+
+  .revision-card-body ul li {
+    color: #111111 !important;
+    font-size: 10.5pt !important;
+    line-height: 1.4 !important;
+  }
+
+  .revision-card-body ul li::before {
+    color: #000000 !important;
+  }
+
+  .print-page-break {
+    page-break-before: always !important;
+    break-before: page !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+  }
+
+  .pyq-box { background: #fbf8eb !important; }
+  .clinical-box, .content .clinical-box { background: #fdf5f7 !important; }
+  .warn-box { background: #fff9f3 !important; }
+  .mnemonic, .mnemonic-box { background: #f4fbf7 !important; }
+  .eq-box { background: #fdfbff !important; }
+
+  .pyq-box ul li {
+    background: #e9ecef !important;
+    border: 1px solid #dee2e6 !important;
+    padding: 2px 6px !important;
+    font-size: 10px !important;
+  }
+
+  /* Flowcharts print layout */
+  .flow-box {
+    padding: 6px 12px !important;
+    font-size: 11px !important;
+    min-width: 110px !important;
+    border: 1px solid #000000 !important;
+    background: #ffffff !important;
+  }
+
+  .flow-arrow, .arrow {
+    font-size: 14px !important;
+  }
+  .flow-arrow.down, .arrow-down {
+    margin: 1px 0 !important;
+    font-size: 16px !important;
+  }
+
+  /* Comparison Tables print */
+  .comp-table th, .table-wrap th {
+    padding: 8px 10px !important;
+    font-size: 10px !important;
+    border-bottom: 2px solid #000000 !important;
+    background: #e9ecef !important;
+  }
+
+  .comp-table td, .table-wrap td {
+    padding: 7px 10px !important;
+    font-size: 11px !important;
+    line-height: 1.3 !important;
+    border-bottom: 1px solid #dee2e6 !important;
+    background: #ffffff !important;
+  }
+
+  /* Viva Sections print: details tags auto-expand */
+  details, details.viva-q {
+    display: block !important;
+    border: 1px solid #000000 !important;
+    margin-bottom: 12px !important;
+  }
+
+  summary, summary.viva-q-text {
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    margin-bottom: 6px !important;
+    display: block !important;
+  }
+
+  summary::before, summary.viva-q-text::after, details[open] summary::before {
+    display: none !important;
+  }
+
+  details:not([open]) > *:not(summary) {
+    display: block !important; /* Force print answer display */
+  }
+
+  .viva-a-text, .viva-ans {
+    display: block !important;
+    font-size: 11.5px !important;
+    line-height: 1.4 !important;
+    padding-left: 12px !important;
+    border-left: 2px solid #000000 !important;
+    color: #111111 !important;
+  }
+
+  /* Hide print-unfriendly components */
+  .top-btn,
+  .progress-bar,
+  .toc {
+    display: none !important;
+  }
+
+  /* Clean print footer */
+  .footer {
+    border-top: 1px solid #000000 !important;
+    margin-top: 30px !important;
+    padding: 20px !important;
+    background: #ffffff !important;
+  }
+}
+
+/* ─── Premium Brand Bar ─────────────────────────────── */
+.brand-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 18px 60px;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 10;
+}
+
+.brand-bar-logo {
+  height: 56px;
+  width: auto;
+  border-radius: 6px;
+  object-fit: contain;
+  flex-shrink: 0;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+}
+
+.brand-bar-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.brand-bar-name {
+  font-family: "IBM Plex Mono", "JetBrains Mono", monospace;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--accent, #e8c84a);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.brand-bar-series {
+  font-family: "IBM Plex Mono", "JetBrains Mono", monospace;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+@media print {
+  .brand-bar {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    background: #f8f9fa !important;
+    border-bottom: 1px solid #dee2e6 !important;
+    padding: 10px 40px !important;
+    backdrop-filter: none !important;
+  }
+  .brand-bar-logo {
+    height: 32px !important;
+    filter: grayscale(100%) !important;
+  }
+  .brand-bar-name {
+    color: #000000 !important;
+    font-size: 11px !important;
+    letter-spacing: 2px !important;
+  }
+  .brand-bar-series {
+    color: #495057 !important;
+    font-size: 9px !important;
+  }
+  .d-print-none {
+    display: none !important;
+  }
+}
+/* ──────────────────────────────────────────────────── */
+    </style>
+</head>
+<body class="theme-gold">
+<!-- ═══════════════ COVER ═══════════════ -->
+<div class="cover">
+<!-- ═══ BRAND BAR ═══ -->
+<div class="brand-bar">
+<img alt="Caffeine &amp; Cadaver" class="brand-bar-logo" src="../../Caffeine &amp; Cadaver.jpg"/>
+<div class="brand-bar-text">
+<span class="brand-bar-name">Caffeine &amp; Cadaver</span>
+<span class="brand-bar-series">MBBS Biochemistry Notes Series</span>
+</div>
+</div>
+<div class="cover-pyq-badge">PYQ 2010–2025</div>
+<div class="cover-tag">MBBS Biochemistry · Module 02</div>
+<h1>Carbohydrate<br/><span>Metabolism</span></h1>
+<div class="cover-sub">Glycolysis · TCA Cycle · HMP Shunt · Glycogen · Gluconeogenesis</div>
+<div class="cover-divider"></div>
+<div class="cover-meta">
+<div class="cover-meta-item">
+<span class="cover-meta-label">Subject</span>
+<span class="cover-meta-value">Biochemistry — Paper 1</span>
+</div>
+<div class="cover-meta-item">
+<span class="cover-meta-label">Exam Relevance</span>
+<span class="cover-meta-value">Group A · B · C · D</span>
+</div>
+<div class="cover-meta-item">
+<span class="cover-meta-label">PYQ Frequency</span>
+<span class="cover-meta-value">12+ times (2010–2025)</span>
+</div>
+<div class="cover-meta-item">
+<span class="cover-meta-label">Source</span>
+<span class="cover-meta-value">Caffeine &amp; Cadaver · MBBS PYQ</span>
+</div>
+</div>
+</div>
+<!-- ═══════════════ CONTENT ═══════════════ -->
+<div class="page">
+<!-- PYQ YEARS -->
+<div class="pyq-box">
+<div class="pyq-box-label">⭐ MBBS PYQ Appearances — Years</div>
+<ul>
+<li>2010</li><li>2010-S</li><li>2012-S</li><li>2013</li>
+<li>2014-S</li><li>2015-S</li><li>2016</li><li>2016-S</li>
+<li>2017</li><li>2017-S</li><li>2018-S</li><li>2019</li>
+<li>2019-S</li><li>2021</li><li>2022</li><li>2023</li><li>2025</li>
+</ul>
+</div>
+<!-- ══ 📊 EXAM PRIORITY MAP ══ -->
+<div class="big-picture">
+<div class="big-picture-label">📊 EXAM PRIORITY MAP — Carbohydrate Metabolism</div>
+<p>
+<strong>🔴 TIER 1 — Must-Know (Appear almost every year):</strong> Glycolysis (PFK-1, irreversible steps), TCA Cycle (amphibolic, inhibitors), Glycogen Metabolism (GSD types, hormonal regulation), Gluconeogenesis (bypass enzymes, Cori cycle).<br/><br/>
+<strong>🟡 TIER 2 — High-Yield (Appear frequently):</strong> PDH Complex (coenzymes, B1 deficiency), HMP Shunt (G6PD deficiency, NADPH functions), Blood Glucose Homeostasis (Fed vs Fasting), Fructose &amp; Galactose disorders.<br/><br/>
+<strong>🟢 TIER 3 — Low-Yield (Revise only if time permits):</strong> Mnemonics (useful but not directly asked), EQ Answer Template (technique-based).
+    </p>
+</div>
+<!-- ══ 00: 🔥 LAST DAY REVISION MODE ══ -->
+<div class="clinical-box">
+<div class="clinical-label">🔥 00 — LAST DAY REVISION MODE · Ultra-Compressed Protocol</div>
+<ul>
+<li><strong>Step 1 — Glycolysis:</strong> Net 2 ATP · 3 irreversible steps (HK → PFK-1 → PK) · PFK-1 is RLS · Anaerobic → Lactate (regenerates NAD⁺)</li>
+<li><strong>Step 2 — PDH:</strong> Pyruvate → Acetyl-CoA · 3 enzymes + 5 coenzymes (TPP/B1, Lipoic acid, CoA/B5, FAD/B2, NAD⁺/B3) · B1 deficiency → Lactic acidosis</li>
+<li><strong>Step 3 — TCA:</strong> Per turn: 3 NADH + 1 FADH₂ + 1 GTP + 2 CO₂ = 10 ATP · RLS = Citrate Synthase · Amphibolic</li>
+<li><strong>Step 4 — HMP Shunt:</strong> G6PD is RLS · Products: 2 NADPH + Ribose-5-P · G6PD deficiency → X-linked → Heinz bodies → Haemolysis</li>
+<li><strong>Step 5 — Glycogen:</strong> Synthase (synthesis) vs Phosphorylase (breakdown) · Glucagon/Epi → cAMP → PKA → breaks glycogen · Insulin = opposite · Von Gierke (Type I) = G6Pase deficiency</li>
+<li><strong>Step 6 — GNG:</strong> Liver (90%) + Kidney · Precursors = GALA-P · F-2,6-BP is the master switch (Insulin ↑ glycolysis; Glucagon ↑ GNG)</li>
+</ul>
+</div>
+<!-- ── SECTION 1: BIG PICTURE ── -->
+<div class="section-header">
+<span class="section-number">01</span>
+<h2 class="section-title">The <span>Big Picture</span> <span class="rls-badge">🟡 TIER 2</span></h2>
+</div>
+<div class="big-picture">
+<div class="big-picture-label">🩺 Why This Matters Clinically</div>
+<p>Carbohydrate metabolism is the <strong>central hub of energy production</strong> in the body. Every pathway here connects to a clinical disease — Diabetes (glycolysis regulation), G6PD deficiency (HMP shunt), Von Gierke's disease (glycogen storage), Lactic acidosis (pyruvate dehydrogenase deficiency). Your examiner will test this as Group A almost every year because it demands flowcharts, enzyme knowledge, and clinical correlation all in one answer.</p>
+</div>
+<!-- MASTER OVERVIEW FLOWCHART -->
+<div class="flowchart-container d-print-none">
+<div class="flowchart-title d-print-none">// Master Overview — Fate of Glucose</div>
+<div class="flow-row">
+<div class="flow-box yellow" style="min-width:160px;"><strong>GLUCOSE</strong><br/>(Blood)</div>
+</div>
+<div class="flow-arrow down">↓</div>
+<div class="flow-row" style="gap:12px;">
+<div class="flow-box green" style="min-width:130px; font-size:11px;">Glycolysis<br/>→ Pyruvate</div>
+<div class="flow-box blue" style="min-width:130px; font-size:11px;">HMP Shunt<br/>→ NADPH + Pentose</div>
+<div class="flow-box yellow" style="min-width:130px; font-size:11px;">Glycogenesis<br/>→ Glycogen</div>
+<div class="flow-box muted" style="min-width:130px; font-size:11px;">Uronic Acid<br/>Pathway</div>
+</div>
+<div class="flow-arrow down">↓</div>
+<div class="flow-row">
+<div class="flow-box green" style="min-width:130px; font-size:11px;">Aerobic:<br/>Acetyl-CoA → TCA</div>
+<div class="flow-arrow">←→</div>
+<div class="flow-box red" style="min-width:130px; font-size:11px;">Anaerobic:<br/>→ Lactate</div>
+</div>
+<div class="flow-arrow down">↓</div>
+<div class="flow-row">
+<div class="flow-box yellow" style="min-width:200px; font-size:11px;">TCA Cycle → CO₂ + H₂O<br/>+ 38 ATP (net)</div>
+</div>
+</div>
+<hr class="section-divider"/>
+<!-- ── SECTION 2: GLYCOLYSIS ── -->
+<div class="section-header">
+<span class="section-number">02</span>
+<h2 class="section-title"><span>Glycolysis</span> <span class="examiner-fav">★ EXAMINER FAV</span> <span class="rls-badge">🔴 TIER 1</span></h2>
+</div>
+<div class="big-picture">
+<div class="big-picture-label">📌 One-liner definition</div>
+<p>Glycolysis is the <strong>cytoplasmic, oxygen-independent</strong> breakdown of one molecule of glucose (6C) into <strong>two molecules of pyruvate (3C)</strong>, yielding a net gain of <strong>2 ATP + 2 NADH</strong>.</p>
+</div>
+<div class="flowchart-container d-print-none" style="display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 24px;">
+<div class="flowchart-title d-print-none">// Glycolysis — 10 Steps Flowchart (Exam-Ready)</div>
+<div class="flow-box yellow" style="min-width: 220px; font-weight: bold;">Glucose (C6)</div>
+<div class="flow-arrow down" style="flex-direction: column; font-size: 11px; margin: 4px 0;">↓ <span style="color:var(--accent); font-weight:600;">Hexokinase / Glucokinase</span> <span style="color:var(--accent3);">[-1 ATP]</span></div>
+<div class="flow-box yellow" style="min-width: 220px;">Glucose-6-Phosphate</div>
+<div class="flow-arrow down" style="flex-direction: column; font-size: 11px; margin: 4px 0;">↓ <span style="color:var(--muted);">Phosphoglucose isomerase</span></div>
+<div class="flow-box yellow" style="min-width: 220px;">Fructose-6-Phosphate</div>
+<div class="flow-arrow down" style="flex-direction: column; font-size: 11px; margin: 4px 0;">↓ <span style="color:var(--accent); font-weight:700;">★ PFK-1 (Rate-Limiting)</span> <span style="color:var(--accent3);">[-1 ATP]</span></div>
+<div class="flow-box yellow" style="min-width: 220px; font-weight: bold;">Fructose-1,6-Bisphosphate</div>
+<div class="flow-arrow down" style="flex-direction: column; font-size: 11px; margin: 4px 0;">↓ <span style="color:var(--muted);">Aldolase</span></div>
+<!-- Split step -->
+<div class="flow-row" style="gap: 16px; justify-content: center; width: 100%; max-width: 500px; margin: 6px 0;">
+<div class="flow-box green" style="width: 45%; font-size: 12px;">DHAP</div>
+<div class="flow-arrow" style="font-size: 12px;">⇌ <span style="font-size: 10px; color: var(--muted); margin: 0 4px;">Isomerase</span> ⇌</div>
+<div class="flow-box green" style="width: 45%; font-size: 12px;">Glyceraldehyde-3-P<br/><small>(×2 from here)</small></div>
+</div>
+<div class="flow-arrow down" style="flex-direction: column; font-size: 11px; margin: 4px 0;">↓ <span style="color:var(--accent2); font-weight:600;">G3P Dehydrogenase</span> <span style="color:var(--green); font-weight:600;">[+2 NADH]</span></div>
+<div class="flow-box green" style="min-width: 220px; font-weight: bold;">1,3-Bisphosphoglycerate (×2)</div>
+<div class="flow-arrow down" style="flex-direction: column; font-size: 11px; margin: 4px 0;">↓ <span style="color:var(--accent2); font-weight:600;">Phosphoglycerate kinase</span> <span style="color:var(--gold); font-weight:600;">[+2 ATP]</span></div>
+<div class="flow-box green" style="min-width: 220px;">3-Phosphoglycerate (×2)</div>
+<div class="flow-arrow down" style="flex-direction: column; font-size: 11px; margin: 4px 0;">↓ <span style="color:var(--muted);">Phosphoglyceromutase</span></div>
+<div class="flow-box green" style="min-width: 220px;">2-Phosphoglycerate (×2)</div>
+<div class="flow-arrow down" style="flex-direction: column; font-size: 11px; margin: 4px 0;">↓ <span style="color:var(--muted);">Enolase</span> <span style="color:var(--accent3); font-weight:600;">[Inhibited by Fluoride]</span></div>
+<div class="flow-box green" style="min-width: 220px;">Phosphoenolpyruvate (PEP) (×2)</div>
+<div class="flow-arrow down" style="flex-direction: column; font-size: 11px; margin: 4px 0;">↓ <span style="color:var(--accent); font-weight:700;">★ Pyruvate Kinase</span> <span style="color:var(--gold); font-weight:600;">[+2 ATP]</span></div>
+<div class="flow-box green" style="min-width: 220px; font-weight: bold;">Pyruvate (×2) ✓</div>
+<div style="margin-top: 16px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; width: 100%;">
+<div style="font-size:11px; color:var(--accent3); text-align:center; background:rgba(232,74,122,0.08); border:1px solid rgba(232,74,122,0.2); border-radius:5px; padding:6px 12px; flex: 1; min-width: 120px;">⚡ ATP invested: 2<br/>ATP gained: 4<br/><strong>Net: +2 ATP</strong></div>
+<div style="font-size:11px; color:var(--accent2); text-align:center; background:rgba(74,232,176,0.08); border:1px solid rgba(74,232,176,0.2); border-radius:5px; padding:6px 12px; flex: 1; min-width: 120px;">NADH produced: 2<br/>(→ 5 ATP in ETC)</div>
+<div style="font-size:11px; color:var(--accent); text-align:center; background:rgba(232,200,74,0.08); border:1px solid rgba(232,200,74,0.2); border-radius:5px; padding:6px 12px; flex: 1; min-width: 120px;">Location: Cytoplasm<br/>O₂ required: ✗</div>
+</div>
+</div>
+<div class="key-fact">
+<span class="key-fact-icon">⭐</span>
+<div class="key-fact-text">
+<strong>Rate-Limiting Step:</strong> <span class="rls-badge">Rate Limiting Step</span> Phosphofructokinase-1 (PFK-1) — catalyses fructose-6-P → fructose-1,6-bisphosphate. Called the <strong>"pacemaker of glycolysis."</strong> Activated by AMP, ADP, fructose-2,6-bisphosphate. Inhibited by ATP, citrate, low pH.
+    </div>
+</div>
+<div class="key-fact">
+<span class="key-fact-icon">🔁</span>
+<div class="key-fact-text">
+<strong>Anaerobic Glycolysis (in RBCs, muscle during sprint):</strong> Pyruvate → Lactate (by LDH). This regenerates NAD⁺ so glycolysis can continue without oxygen. <strong>RBCs have no mitochondria</strong> — 100% dependent on anaerobic glycolysis for ATP.
+    </div>
+</div>
+<div class="key-fact">
+<span class="key-fact-icon">🩸</span>
+<div class="key-fact-text">
+<strong>Rapoport-Luebering Shunt (RBC specific):</strong> 1,3-BPG → <strong>2,3-BPG</strong> (bypasses substrate-level phosphorylation → no ATP made here). 2,3-BPG stabilises T-form of Hb → ↓ O₂ affinity → promotes O₂ delivery to tissues.
+    </div>
+</div>
+<div class="clinical-box">
+<div class="clinical-label">🩺 Clinical Lab Correlation: Fluoride Vials</div>
+<ul>
+<li>Blood for glucose estimation is collected in fluoride vials because Fluoride irreversibly inhibits the enzyme Enolase, stopping RBC glycolysis during transport.</li>
+</ul>
+</div>
+<!-- IRREVERSIBLE STEPS -->
+<h3 class="sub-head">Irreversible Steps of Glycolysis (Bypass points for Gluconeogenesis)</h3>
+<ul class="step-list">
+<li class="danger"><span class="step-num">Step 1</span> Glucose → G6P — by <strong>Hexokinase/Glucokinase</strong> (bypassed in GNG by Glucose-6-phosphatase)</li>
+<li class="danger"><span class="step-num">Step 3</span> F6P → F-1,6-BP — by <strong>PFK-1</strong> (bypassed in GNG by Fructose-1,6-bisphosphatase)</li>
+<li class="danger"><span class="step-num">Step 10</span> PEP → Pyruvate — by <strong>Pyruvate Kinase</strong> (bypassed in GNG by Pyruvate carboxylase + PEPCK)</li>
+</ul>
+<div class="key-fact">
+<span class="key-fact-icon">⚠️</span>
+<div class="key-fact-text">
+<strong>⚠️ EXAM TRAP — Glycolysis:</strong> Students confuse "rate-limiting" with "first step." PFK-1 (Step 3) is the RLS — NOT Hexokinase (Step 1). Also: the net ATP yield is <strong>2 ATP</strong> (not 4) because 2 are invested first. Anaerobic glycolysis ends in <strong>Lactate</strong>, NOT Ethanol (that is yeast fermentation).
+    </div>
+</div>
+<div class="clinical-box" style="border-left: 3px solid var(--accent); margin-bottom: 28px;">
+<div class="clinical-label" style="color: var(--accent);">📝 MBBS Essay Blueprint: Glycolysis 10-Mark Answering Protocol</div>
+<p>If the examiner asks: <em>"Define glycolysis. Describe its pathway, energetics, and regulation. Add a note on its clinical importance/fluoride vial,"</em> use this bulletproof structure to secure a perfect 10/10:</p>
+<ul style="display:flex; flex-direction:column; gap:8px; list-style:none; padding-left:0; font-size:13px; line-height:1.6;">
+<li>
+<strong>1. Definition &amp; Location:</strong> Define as the cytoplasmic, oxygen-independent breakdown of glucose to pyruvate (aerobic) or lactate (anaerobic). State it occurs in all cells, localized in the cytosol.
+      </li>
+<li>
+<strong>2. The Pathway Flowchart:</strong> Draw the 10-step flowchart. Bold the <strong>3 irreversible steps</strong> (Step 1: Hexokinase, Step 3: PFK-1, Step 10: Pyruvate Kinase) using double-line arrows or red asterisks.
+      </li>
+<li>
+<strong>3. Energetics Accounting Table:</strong> Detail the ATP yield:
+        <table class="comp-table" style="margin: 8px 0; font-size: 11px;">
+<thead>
+<tr>
+<th>Pathway Stage / Step</th>
+<th>Aerobic Glycolysis</th>
+<th>Anaerobic Glycolysis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ATP Invested</strong></td>
+<td>-2 ATP (HK &amp; PFK-1 steps)</td>
+<td>-2 ATP (HK &amp; PFK-1 steps)</td>
+</tr>
+<tr>
+<td><strong>Substrate-Level Phosphorylation</strong></td>
+<td>+4 ATP (PGK &amp; PK steps ×2)</td>
+<td>+4 ATP (PGK &amp; PK steps ×2)</td>
+</tr>
+<tr>
+<td><strong>Oxidative Phosphorylation</strong></td>
+<td>+5 ATP (2 NADH × 2.5 via ETC)</td>
+<td>0 ATP (NADH consumed by LDH to make lactate)</td>
+</tr>
+<tr>
+<td><strong>Net ATP Yield</strong></td>
+<td><strong>+7 ATP</strong> (or +5 ATP depending on shuttle)</td>
+<td><strong>+2 ATP</strong></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<strong>4. Key Regulatory Steps:</strong> Focus on <strong>PFK-1 (Pacemaker)</strong>. Mention its allosteric activators (AMP, F-2,6-BP) and inhibitors (ATP, Citrate), and touch upon Hexokinase vs. Glucokinase.
+      </li>
+<li>
+<strong>5. Clinical Correlations:</strong> Briefly explain the mechanism of <strong>Fluoride vials</strong> (Enolase inhibition) and <strong>Rapoport-Luebering Shunt</strong> (RBC specific, 2,3-BPG oxygen delivery).
+      </li>
+</ul>
+</div>
+<hr class="section-divider"/>
+<!-- ── SECTION 3: PYRUVATE DEHYDROGENASE ── -->
+<div class="section-header">
+<span class="section-number">03</span>
+<h2 class="section-title">Pyruvate <span>Dehydrogenase Complex</span> <span class="rls-badge">🟡 TIER 2</span></h2>
+</div>
+<div class="flowchart-container d-print-none">
+<div class="flowchart-title d-print-none">// Pyruvate → Acetyl-CoA (Bridge Reaction)</div>
+<div class="flow-row">
+<div class="flow-box yellow"><strong>Pyruvate</strong> (3C)</div>
+<div class="flow-arrow">→ CO₂↑ + NAD⁺→NADH</div>
+<div class="flow-box green"><strong>Acetyl-CoA</strong> (2C)</div>
+</div>
+<div style="margin-top:16px; background:var(--surface2); border:1px solid var(--border); border-radius:6px; padding:14px 18px;">
+<div style="font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--muted); margin-bottom:10px; letter-spacing:1px;">PDH COMPLEX — 3 ENZYMES + 5 COENZYMES</div>
+<div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; font-size:12px;">
+<div style="color:var(--accent2);">E1 — Pyruvate decarboxylase</div><div style="color:var(--muted);">Coenzyme: <strong>TPP</strong> (Thiamine B1)</div>
+<div style="color:var(--accent2);">E2 — Dihydrolipoyl transacetylase</div><div style="color:var(--muted);">Coenzyme: <strong>Lipoic acid + CoA</strong></div>
+<div style="color:var(--accent2);">E3 — Dihydrolipoyl dehydrogenase</div><div style="color:var(--muted);">Coenzyme: <strong>FAD + NAD⁺</strong></div>
+</div>
+</div>
+</div>
+<div class="key-fact">
+<span class="key-fact-icon">⭐</span>
+<div class="key-fact-text">
+<strong>PDH regulation:</strong> Activated by: ADP, CoA, NAD⁺, Ca²⁺, pyruvate. Inhibited by: ATP, Acetyl-CoA, NADH (products inhibit). PDH kinase phosphorylates (inactivates) PDH; PDH phosphatase dephosphorylates (activates) it.
+    </div>
+</div>
+<div class="key-fact">
+<span class="key-fact-icon">🚨</span>
+<div class="key-fact-text">
+<strong>Clinical:</strong> Thiamine (B1) deficiency → PDH complex failure → pyruvate accumulates → converted to lactate → <strong>Lactic acidosis</strong>. Presents as Wernicke's encephalopathy in alcoholics. Transketolase (HMP shunt) also needs TPP — used as diagnostic marker.
+    </div>
+</div>
+<div class="key-fact">
+<span class="key-fact-icon">⚠️</span>
+<div class="key-fact-text">
+<strong>⚠️ EXAM TRAP — PDH Complex:</strong> PDH needs <strong>5 coenzymes</strong> — TPP (B1), Lipoic acid, CoA (B5), FAD (B2), NAD⁺ (B3). Students often miss Lipoic acid (not a named B-vitamin). Remember: <strong>Arsenite</strong> poisons PDH by inactivating lipoic acid. PDH deficiency causes <strong>Lactic acidosis + neurological symptoms</strong>, NOT ketoacidosis.
+    </div>
+</div>
+<hr class="section-divider"/>
+<!-- ── SECTION 4: TCA CYCLE ── -->
+<div class="section-header">
+<span class="section-number">04</span>
+<h2 class="section-title">TCA / Krebs <span>Cycle</span> <span class="examiner-fav">★ EXAMINER FAV</span> <span class="rls-badge">🔴 TIER 1</span></h2>
+</div>
+<div class="big-picture">
+<div class="big-picture-label">📌 One-liner definition</div>
+<p>The TCA cycle is an <strong>amphibolic</strong> (both anabolic + catabolic), <strong>mitochondrial</strong> cyclic pathway where 1 Acetyl-CoA (2C) condenses with Oxaloacetate (4C) to generate <strong>3 NADH + 1 FADH₂ + 1 GTP + 2 CO₂</strong> per turn.</p>
+</div>
+<div class="flowchart-container d-print-none">
+<div class="flowchart-title d-print-none">// TCA Cycle — Complete Flowchart</div>
+<div class="flow-row">
+<div class="flow-box yellow" style="min-width:170px;"><strong>Oxaloacetate</strong> (4C)<br/>+ Acetyl-CoA (2C)</div>
+</div>
+<div class="flow-arrow down">↓ Citrate Synthase <span class="rls-badge" style="font-size:9px;">RLS</span></div>
+<div class="flow-row">
+<div class="flow-box green" style="min-width:150px;"><strong>Citrate</strong> (6C)</div>
+</div>
+<div class="flow-arrow down">↓ Aconitase</div>
+<div class="flow-row">
+<div class="flow-box green" style="min-width:150px;"><strong>Isocitrate</strong> (6C)</div>
+</div>
+<div class="flow-arrow down">↓ Isocitrate Dehydrogenase → CO₂ + NADH</div>
+<div class="flow-row">
+<div class="flow-box green" style="min-width:150px;"><strong>α-Ketoglutarate</strong> (5C)</div>
+</div>
+<div class="flow-arrow down">↓ α-KG Dehydrogenase → CO₂ + NADH</div>
+<div class="flow-row">
+<div class="flow-box green" style="min-width:150px;"><strong>Succinyl-CoA</strong> (4C)</div>
+</div>
+<div class="flow-arrow down">↓ Succinyl-CoA Synthetase → GTP ⚡</div>
+<div class="flow-row">
+<div class="flow-box green" style="min-width:150px;"><strong>Succinate</strong> (4C)</div>
+</div>
+<div class="flow-arrow down">↓ Succinate Dehydrogenase → FADH₂</div>
+<div class="flow-row">
+<div class="flow-box green" style="min-width:150px;"><strong>Fumarate</strong> (4C)</div>
+</div>
+<div class="flow-arrow down">↓ Fumarase → H₂O added</div>
+<div class="flow-row">
+<div class="flow-box green" style="min-width:150px;"><strong>Malate</strong> (4C)</div>
+</div>
+<div class="flow-arrow down">↓ Malate Dehydrogenase → NADH</div>
+<div class="flow-row">
+<div class="flow-box yellow" style="min-width:170px;"><strong>Oxaloacetate</strong> (4C) 🔄 regenerated</div>
+</div>
+<div style="margin-top:18px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+<div style="font-size:11px; color:var(--accent); text-align:center; background:rgba(232,200,74,0.08); border:1px solid rgba(232,200,74,0.2); border-radius:5px; padding:8px 14px;"><strong>Per turn:</strong><br/>3 NADH · 1 FADH₂ · 1 GTP · 2 CO₂</div>
+<div style="font-size:11px; color:var(--accent2); text-align:center; background:rgba(74,232,176,0.08); border:1px solid rgba(74,232,176,0.2); border-radius:5px; padding:8px 14px;"><strong>ATP yield per turn:</strong><br/>NADH(×3)→7.5 + FADH₂→1.5 + GTP→1<br/>= <strong>10 ATP</strong></div>
+<div style="font-size:11px; color:var(--accent3); text-align:center; background:rgba(232,74,122,0.08); border:1px solid rgba(232,74,122,0.2); border-radius:5px; padding:8px 14px;"><strong>Location:</strong><br/>Mitochondrial matrix</div>
+</div>
+</div>
+<h3 class="sub-head">Irreversible (Regulated) Steps of TCA</h3>
+<ul class="step-list">
+<li class="highlight"><span class="step-num">1</span> <strong>Citrate Synthase</strong> — Oxaloacetate + Acetyl-CoA → Citrate <span class="rls-badge">RLS</span> — Inhibited by: ATP, NADH, Succinyl-CoA, Citrate</li>
+<li class="highlight"><span class="step-num">3</span> <strong>Isocitrate Dehydrogenase</strong> — Activated by: ADP, Ca²⁺. Inhibited by: ATP, NADH</li>
+<li class="highlight"><span class="step-num">4</span> <strong>α-Ketoglutarate Dehydrogenase</strong> — Similar regulation to PDH complex. Needs TPP, Lipoic acid, CoA, FAD, NAD⁺</li>
+</ul>
+<div class="key-fact">
+<span class="key-fact-icon">🔗</span>
+<div class="key-fact-text">
+<strong>TCA is AMPHIBOLIC — know why this is asked:</strong> Catabolic (breaks down Acetyl-CoA → CO₂ + energy). Anabolic (intermediates drawn off for biosynthesis): α-KG → glutamate → amino acids; Succinyl-CoA → porphyrins/haem; OAA → gluconeogenesis.
+    </div>
+</div>
+<div class="key-fact">
+<span class="key-fact-icon">☠️</span>
+<div class="key-fact-text">
+<strong>TCA Cycle Inhibitors (Frequent PYQ):</strong> Fluoroacetate (rat poison) inhibits Aconitase. Malonate is a classic competitive inhibitor of Succinate Dehydrogenase. Arsenite inhibits α-Ketoglutarate dehydrogenase.
+    </div>
+</div>
+<div class="key-fact">
+<span class="key-fact-icon">⚠️</span>
+<div class="key-fact-text">
+<strong>⚠️ EXAM TRAP — TCA Cycle:</strong> "Amphibolic" does NOT mean "ambiguous" — it means the cycle serves BOTH catabolic AND anabolic functions. Also: the yield per turn is <strong>10 ATP</strong> (P/O ratio 2.5 for NADH, 1.5 for FADH₂) NOT the old 12 ATP figure. Succinate Dehydrogenase is the ONLY TCA enzyme embedded in the <strong>inner mitochondrial membrane</strong> (all others are in the matrix).
+    </div>
+</div>
+<div class="clinical-box" style="border-left: 3px solid var(--accent); margin-bottom: 28px;">
+<div class="clinical-label" style="color: var(--accent);">📝 MBBS Essay Blueprint: Amphibolic TCA Cycle 10-Mark Answering Protocol</div>
+<p>If the examiner asks: <em>"TCA cycle is amphibolic in nature. Justify with suitable flowcharts/examples,"</em> use this high-scoring blueprint to secure 10/10 marks:</p>
+<ul style="display:flex; flex-direction:column; gap:8px; list-style:none; padding-left:0; font-size:13px; line-height:1.6;">
+<li>
+<strong>1. Definition:</strong> Define <em>amphibolic</em> as having dual functions—both catabolic (breakdown of Acetyl-CoA to release ATP energy) and anabolic (intermediates drawn off for biosynthetic pathways).
+      </li>
+<li>
+<strong>2. Pathway Flowchart:</strong> Draw the TCA cycle circle. Draw outward arrows from intermediates to their anabolic fates and inward arrows showing replenishing reactions.
+      </li>
+<li>
+<strong>3. The 4 Key Anabolic Draw-off Vectors:</strong> Provide this exact table to show your mastery:
+        <table class="comp-table" style="margin: 8px 0; font-size: 11px;">
+<thead>
+<tr>
+<th>Intermediate</th>
+<th>Anabolic Pathway / Fates</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Succinyl-CoA</strong></td>
+<td>Condenses with glycine to form δ-ALA → <strong>Heme synthesis</strong>.</td>
+</tr>
+<tr>
+<td><strong>Citrate</strong></td>
+<td>Exported to cytosol to supply Acetyl-CoA for <strong>Fatty Acid</strong> &amp; <strong>Cholesterol</strong> synthesis.</td>
+</tr>
+<tr>
+<td><strong>α-Ketoglutarate</strong></td>
+<td>Transaminated to <strong>Glutamate</strong> → yields amino acids &amp; <strong>GABA</strong> neurotransmitter.</td>
+</tr>
+<tr>
+<td><strong>Oxaloacetate</strong></td>
+<td>Transaminated to <strong>Aspartate</strong> → <strong>Purine / Pyrimidine</strong> synthesis, or enters <strong>Gluconeogenesis</strong>.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<strong>4. Justify Anaplerosis (Crucial to secure full marks):</strong> Explain that drawing off intermediates would drain the cycle and stop energy production. Explain how <strong>Pyruvate Carboxylase</strong> (biotin-dependent, activated by Acetyl-CoA) replenishes OAA to keep the cycle running.
+      </li>
+</ul>
+</div>
+<hr class="section-divider"/>
+<!-- ── SECTION 5: HMP SHUNT ── -->
+<div class="section-header">
+<span class="section-number">05</span>
+<h2 class="section-title">HMP <span>Shunt</span> (Pentose Phosphate Pathway) <span class="rls-badge">🟡 TIER 2</span></h2>
+</div>
+<div class="flowchart-container d-print-none">
+<div class="flowchart-title d-print-none">// HMP Shunt — Oxidative Phase (High Yield)</div>
+<div class="flow-row">
+<div class="flow-box yellow"><strong>Glucose-6-Phosphate</strong></div>
+</div>
+<div class="flow-arrow down">↓ G6PDH <span class="rls-badge" style="font-size:9px;">RLS</span> → NADPH + CO₂</div>
+<div class="flow-row">
+<div class="flow-box green"><strong>6-Phosphogluconolactone</strong></div>
+</div>
+<div class="flow-arrow down">↓ → NADPH</div>
+<div class="flow-row">
+<div class="flow-box green"><strong>Ribulose-5-Phosphate</strong> (5C)</div>
+</div>
+<div class="flow-arrow down">↓ Non-oxidative phase (Transketolase + Transaldolase)</div>
+<div class="flow-row" style="gap:12px;">
+<div class="flow-box blue" style="font-size:11px;">Ribose-5-P<br/>(nucleotides)</div>
+<div class="flow-box blue" style="font-size:11px;">F-6-P + G-3-P<br/>(re-enters glycolysis)</div>
+</div>
+<div style="margin-top:16px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+<div style="font-size:11px; color:var(--accent2); background:rgba(74,232,176,0.08); border:1px solid rgba(74,232,176,0.2); border-radius:5px; padding:8px 14px; text-align:center;"><strong>Products:</strong><br/>2 NADPH · Ribose-5-P · CO₂</div>
+<div style="font-size:11px; color:var(--accent); background:rgba(232,200,74,0.08); border:1px solid rgba(232,200,74,0.2); border-radius:5px; padding:8px 14px; text-align:center;"><strong>Location:</strong><br/>Cytoplasm<br/>Active in: Liver, RBCs,<br/>Adrenal cortex, Testis</div>
+</div>
+</div>
+<div class="key-fact">
+<span class="key-fact-icon">⭐</span>
+<div class="key-fact-text">
+<strong>Rate-Limiting Step:</strong> <span class="rls-badge">Rate Limiting Step</span> <strong>G6PD (Glucose-6-Phosphate Dehydrogenase)</strong> — generates NADPH. Activated by NADP⁺. Inhibited by NADPH.
+    </div>
+</div>
+<div class="key-fact">
+<span class="key-fact-icon">🧬</span>
+<div class="key-fact-text">
+<strong>Functions of NADPH from HMP shunt:</strong> (1) Reduces glutathione (GSH) — protects RBCs from oxidative damage. (2) Required for fatty acid synthesis. (3) Required for cholesterol synthesis. (4) Cytochrome P450 hydroxylation. (5) Phagocyte respiratory burst.
+    </div>
+</div>
+<div class="clinical-box" style="border-left: 3px solid var(--accent3); margin-bottom: 28px;">
+<div class="clinical-label" style="color: var(--accent3);">🩺 Clinical Vignette Case Study: G6PD Deficiency Hemolytic Crisis</div>
+<div style="background: rgba(232, 74, 122, 0.03); padding: 12px 16px; border-radius: 6px; border: 1px dashed rgba(232, 74, 122, 0.2); font-size: 13px; line-height: 1.6; color: var(--text); margin-bottom: 12px;">
+<strong>Case Scenario:</strong> A 19-year-old male MBBS student presents to the medicine OPD with complains of dark, tea-colored urine, generalized weakness, and mild jaundice. He was recently diagnosed with <em>Plasmodium vivax</em> malaria and started on a course of <strong>Primaquine</strong> 48 hours ago.
+      <br/><strong>Lab Findings:</strong> Hb: 8.2 g/dL (reduced), Reticulocyte count: 6% (elevated), Peripheral smear shows <strong>Heinz bodies</strong> (aggregated methemoglobin) and <strong>"bite cells"</strong>. Indirect bilirubin is elevated.
+    </div>
+<div style="margin-top: 14px; font-size: 13px; line-height: 1.6;">
+<strong style="color: var(--accent);">How to Answer in the Exam:</strong>
+<ul style="list-style:disc; padding-left:20px; display:flex; flex-direction:column; gap:6px; margin-top:6px; padding-bottom: 0;">
+<li><strong>Diagnosis:</strong> G6PD deficiency presenting with acute hemolytic anemia triggered by oxidant drug (Primaquine). (Inheritance: <strong>X-linked recessive</strong>).</li>
+<li><strong>Why mature RBCs are vulnerable:</strong> RBCs have no mitochondria or ribosomes. They cannot synthesize new proteins. Once G6PD degrades over their lifespan, it cannot be replaced. G6PD is their <em>only</em> source of NADPH.</li>
+<li><strong>Pathophysiology cascade:</strong> Primaquine exposure → generation of reactive oxygen species (ROS) → reduced glutathione (GSH) cannot be regenerated due to lack of NADPH → Methemoglobin precipitates as <strong>Heinz bodies</strong> → splenic macrophages bite out these precipitates, creating <strong>bite cells</strong> and hemolyzing the RBCs.</li>
+<li><strong>Lab diagnostic caution:</strong> Do <em>not</em> measure G6PD activity during the acute hemolytic phase. Active hemolysis clears the most enzyme-deficient (older) RBCs first, leading to a false-normal result. Test G6PD levels 6-8 weeks after the crisis resolves.</li>
+</ul>
+</div>
+</div>
+<hr class="section-divider"/>
+<!-- ── SECTION 6: GLYCOGEN METABOLISM ── -->
+<div class="section-header">
+<span class="section-number">06</span>
+<h2 class="section-title">Glycogen <span>Metabolism</span> <span class="examiner-fav">★ EXAMINER FAV</span> <span class="rls-badge">🔴 TIER 1</span></h2>
+</div>
+<div class="flowchart-container d-print-none">
+<div class="flowchart-title d-print-none">// Glycogenesis — Synthesis Flowchart</div>
+<div class="flow-row">
+<div class="flow-box muted" style="font-size:11.5px; max-width: 500px; line-height: 1.5; margin: 0 auto;">
+<strong>Glycogenin:</strong> Core protein primer that auto-catalyzes attachment of the first 8 glucose molecules.
+      </div>
+</div>
+<div class="flow-arrow down" style="margin: 6px 0;">↓</div>
+<div class="flow-row">
+<div class="flow-box yellow">Glucose → G6P → G1P</div>
+<div class="flow-arrow" style="flex-direction: column; gap: 2px;">
+<span style="color: var(--accent); font-size: 20px; font-weight: bold;">→</span>
+<span style="font-size: 10px; color: var(--muted); font-family: 'JetBrains Mono', monospace;">+ UTP</span>
+</div>
+<div class="flow-box green">UDP-Glucose<br/><small style="color:var(--text-3);">(Activated Form)</small></div>
+</div>
+<div class="flow-arrow down" style="flex-direction: column; gap: 2px; margin: 8px 0;">
+<span style="color: var(--accent); font-size: 20px; font-weight: bold;">↓</span>
+<span style="font-size: 11px; font-family: 'JetBrains Mono', monospace; font-weight: 500; color: var(--white);">Glycogen Synthase <span class="rls-badge" style="font-size:8px; padding: 1px 3px;">RLS</span></span>
+<span style="font-size: 10px; color: var(--muted);">(adds α-1,4 linkages)</span>
+</div>
+<div class="flow-row">
+<div class="flow-box green">Linear Glycogen Chain</div>
+<div class="flow-arrow" style="flex-direction: column; gap: 2px;">
+<span style="color: var(--accent); font-size: 20px; font-weight: bold;">→</span>
+<span style="font-size: 10px; color: var(--white); font-family: 'JetBrains Mono', monospace;">Branching Enzyme</span>
+<span style="font-size: 9px; color: var(--muted);">(α-1,4 → α-1,6)</span>
+</div>
+<div class="flow-box blue">Branched Glycogen<br/><small style="color:var(--text-3);">(α-1,6 branch points)</small></div>
+</div>
+</div>
+<div class="flowchart-container d-print-none">
+<div class="flowchart-title d-print-none">// Glycogenolysis — Breakdown Flowchart</div>
+<div class="flow-row">
+<div class="flow-box blue">Glycogen</div>
+<div class="flow-arrow" style="flex-direction: column; gap: 2px;">
+<span style="color: var(--accent); font-size: 20px; font-weight: bold;">→</span>
+<span style="font-size: 11px; font-family: 'JetBrains Mono', monospace; font-weight: 500; color: var(--white);">Glycogen Phosphorylase <span class="rls-badge" style="font-size:8px; padding: 1px 3px;">RLS</span></span>
+<span style="font-size: 10px; color: var(--muted);">(cleaves α-1,4 links using P<sub>i</sub>)</span>
+</div>
+<div class="flow-box green">G1P → G6P</div>
+</div>
+<div class="flow-arrow down" style="flex-direction: column; gap: 2px; margin: 8px 0;">
+<span style="color: var(--accent); font-size: 20px; font-weight: bold;">↓</span>
+<span style="font-size: 10.5px; color: var(--accent2); font-weight: 500; font-family: 'JetBrains Mono', monospace;">Debranching Enzyme <small style="color: var(--muted);">(at branch points)</small></span>
+</div>
+<div class="flow-row">
+<div class="flow-box yellow" style="font-size:11.5px;">Debranching enzyme<br/><span style="font-size:9.5px; color:var(--text-3);">(α-1,6 glucosidase domain)</span></div>
+<div class="flow-arrow" style="flex-direction: column; gap: 2px;">
+<span style="color: var(--accent); font-size: 20px; font-weight: bold;">→</span>
+<span style="font-size: 11px; font-weight: 500; color: var(--white);">Free Glucose Released</span>
+</div>
+</div>
+<div style="margin-top:16px; display:flex; gap:16px; flex-wrap:wrap; justify-content:center; width: 100%;">
+<div style="font-size:12px; color:var(--accent2); background:rgba(74,232,176,0.05); border:1px solid rgba(74,232,176,0.15); border-radius:6px; padding:12px 16px; min-width: 220px; flex: 1; max-width: 280px; text-align: left;">
+<strong style="color: var(--accent2); font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase;">In LIVER:</strong>
+<p style="margin: 6px 0 0 0; color: var(--text); font-size: 12px; line-height: 1.5;">G6P → Glucose <small style="color:var(--text-3);">(by G6Pase)</small><br/>→ Released into blood<br/><strong>(maintains blood glucose)</strong></p>
+</div>
+<div style="font-size:12px; color:var(--accent); background:rgba(232,200,74,0.05); border:1px solid rgba(232,200,74,0.15); border-radius:6px; padding:12px 16px; min-width: 220px; flex: 1; max-width: 280px; text-align: left;">
+<strong style="color: var(--accent); font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase;">In MUSCLE:</strong>
+<p style="margin: 6px 0 0 0; color: var(--text); font-size: 12px; line-height: 1.5;">G6P → Glycolysis directly<br/><strong>(lacks G6Pase)</strong><br/>→ Cannot release free glucose</p>
+</div>
+</div>
+</div>
+<div class="flowchart-container d-print-none">
+<div class="flowchart-title d-print-none">// Hormonal Regulation via cAMP (Glucagon/Epinephrine)</div>
+<div class="flow-row">
+<div class="flow-box red">Glucagon / Epinephrine</div>
+<div class="flow-arrow" style="flex-direction: column; gap: 2px;">
+<span style="color: var(--accent); font-size: 20px; font-weight: bold;">→</span>
+<span style="font-size: 10px; color: var(--muted); font-family: 'JetBrains Mono', monospace;">GPCR Activation</span>
+</div>
+<div class="flow-box yellow" style="font-size: 11.5px;">Adenylyl Cyclase</div>
+</div>
+<div class="flow-arrow down" style="margin: 6px 0;">↓</div>
+<div class="flow-row">
+<div class="flow-box yellow">ATP → cAMP <span class="rls-badge" style="font-size:8px; padding: 1px 3px;">2nd Messenger</span></div>
+<div class="flow-arrow" style="flex-direction: column; gap: 2px;">
+<span style="color: var(--accent); font-size: 20px; font-weight: bold;">→</span>
+<span style="font-size: 10px; color: var(--muted); font-family: 'JetBrains Mono', monospace;">Activates</span>
+</div>
+<div class="flow-box red">Protein Kinase A (PKA)</div>
+</div>
+<div class="flow-arrow down" style="flex-direction: column; gap: 2px; margin: 8px 0;">
+<span style="color: var(--accent); font-size: 20px; font-weight: bold;">↓</span>
+<span style="font-size: 10.5px; color: var(--accent3); font-weight: 500;">PKA Phosphorylation Cascade</span>
+</div>
+<div class="flow-row" style="gap:24px; justify-content: center; width: 100%;">
+<div style="text-align:center; flex: 1; max-width: 180px;">
+<div class="flow-box red" style="font-size:11px; min-width:130px; margin: 0 auto;">Glycogen Synthase<br/><strong style="color: var(--accent3);">INACTIVE ✗</strong></div>
+<div style="font-size:11px; color:var(--muted); margin-top:6px; font-weight: 500;">↓ Glycogenesis Arrested</div>
+</div>
+<div style="text-align:center; flex: 1; max-width: 180px;">
+<div class="flow-box green" style="font-size:11px; min-width:130px; margin: 0 auto;">Phosphorylase Kinase<br/><strong style="color: var(--accent2);">ACTIVE ✓</strong></div>
+<div style="font-size:11px; color:var(--muted); margin-top:6px; font-weight: 500;">↑ Glycogenolysis Active</div>
+</div>
+</div>
+<div class="flow-arrow down" style="margin: 8px 0;">↓</div>
+<div class="flow-row">
+<div class="flow-box yellow" style="font-size: 12.5px; border-color: var(--accent);">
+<strong>Net Clinical Result: Glucose Released → Blood Glucose ↑</strong>
+</div>
+</div>
+<div style="margin-top:16px; font-size:12px; color:var(--accent2); text-align:center; background:rgba(74,232,176,0.05); border:1px solid rgba(74,232,176,0.15); border-radius:6px; padding:12px; line-height: 1.5;">
+<strong style="color: var(--accent2);">The Insulin Reversal:</strong> Activates Protein Phosphatase 1 (PP1) → dephosphorylates both enzymes → activates Glycogen Synthase and inactivates Phosphorylase → promotes Glycogenesis.
+    </div>
+</div>
+<div class="big-picture" style="margin-bottom: 28px;">
+<div class="big-picture-label">🩺 High-Yield Glycogen Storage Disease (GSD) Revision Grid</div>
+<table class="comp-table">
+<thead>
+<tr>
+<th>GSD Type &amp; Name</th>
+<th>Defective Enzyme</th>
+<th>Key Symptoms &amp; Clinical Sign</th>
+<th>Examiner Trap / High-Yield Fact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Type I: Von Gierke's</strong></td>
+<td>Glucose-6-phosphatase (G6Pase)</td>
+<td>Severe fasting hypoglycemia, hepatomegaly, lactic acidosis.</td>
+<td><strong>Hyperuricaemia (Gout)</strong> due to shunting of accumulated G6P into the HMP pathway.</td>
+</tr>
+<tr>
+<td><strong>Type II: Pompe's</strong></td>
+<td>Lysosomal α-1,4-glucosidase (Acid Maltase)</td>
+<td>Massive <strong>cardiomegaly</strong>, generalized hypotonia.</td>
+<td><strong>Lysosomal storage disease</strong> (glycogen builds in vacuoles). Blood glucose is normal.</td>
+</tr>
+<tr>
+<td><strong>Type III: Cori's</strong></td>
+<td>Debranching enzyme (α-1,6-glucosidase)</td>
+<td>Milder fasting hypoglycemia, hepatomegaly.</td>
+<td>Accumulation of <strong>limit dextrins</strong> (abnormally short outer branches).</td>
+</tr>
+<tr>
+<td><strong>Type V: McArdle's</strong></td>
+<td>Muscle Glycogen Phosphorylase</td>
+<td>Exercise-induced cramps, myoglobinuria (red urine).</td>
+<td><strong>No rise in blood lactate after exercise</strong> (ischemic exercise test is diagnostic).</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="section-divider"/>
+<!-- ── SECTION 7: GLUCONEOGENESIS ── -->
+<div class="section-header">
+<span class="section-number">07</span>
+<h2 class="section-title"><span>Gluconeogenesis</span> <span class="rls-badge">🔴 TIER 1</span></h2>
+</div>
+<div class="big-picture">
+<div class="big-picture-label">📌 Definition</div>
+<p>Synthesis of <strong>new glucose from non-carbohydrate precursors</strong>. Occurs mainly in <strong>liver (90%)</strong> and kidney cortex (10%) during fasting/starvation. Not simply the reverse of glycolysis — three irreversible steps of glycolysis are bypassed by unique enzymes.</p>
+</div>
+<div class="key-fact">
+<span class="key-fact-icon">🧱</span>
+<div class="key-fact-text">
+<strong>Precursors (GALA-P mnemonic):</strong> <strong>G</strong>lycerol (from TAG breakdown) · <strong>A</strong>lanine + other amino acids (glucogenic AAs) · <strong>L</strong>actate (Cori cycle) · <strong>A</strong>cetyl-CoA (indirectly, via OAA) · <strong>P</strong>ropionate (odd-chain FA → Succinyl-CoA)
+    </div>
+</div>
+<div class="flowchart-container d-print-none">
+<div class="flowchart-title d-print-none">// 3 Bypass Steps of Gluconeogenesis</div>
+<div style="display:flex; flex-direction:column; gap:14px;">
+<div style="display:flex; gap:14px; align-items:center; flex-wrap:wrap;">
+<div class="flow-box red" style="font-size:11px; min-width:160px;">Glycolysis:<br/>Pyruvate → PEP<br/>(Pyruvate Kinase)</div>
+<div class="flow-arrow">→ Bypassed by →</div>
+<div class="flow-box green" style="font-size:11px; min-width:200px;">Pyruvate → OAA<br/>(Pyruvate Carboxylase, mito) <span class="rls-badge" style="font-size:8px;">B7 Biotin</span><br/>OAA → PEP<br/>(PEPCK, cytoplasm)</div>
+</div>
+<div style="display:flex; gap:14px; align-items:center; flex-wrap:wrap;">
+<div class="flow-box red" style="font-size:11px; min-width:160px;">Glycolysis:<br/>F6P → F-1,6-BP<br/>(PFK-1)</div>
+<div class="flow-arrow">→ Bypassed by →</div>
+<div class="flow-box green" style="font-size:11px; min-width:200px;">F-1,6-BP → F6P<br/>(Fructose-1,6-Bisphosphatase)</div>
+</div>
+<div style="display:flex; gap:14px; align-items:center; flex-wrap:wrap;">
+<div class="flow-box red" style="font-size:11px; min-width:160px;">Glycolysis:<br/>G6P → Glucose<br/>(Hexokinase)</div>
+<div class="flow-arrow">→ Bypassed by →</div>
+<div class="flow-box green" style="font-size:11px; min-width:200px;">G6P → Glucose<br/>(Glucose-6-Phosphatase)<br/>— only in LIVER/KIDNEY</div>
+</div>
+</div>
+</div>
+<div class="key-fact">
+<span class="key-fact-icon">🔄</span>
+<div class="key-fact-text">
+<strong>Cori Cycle (Lactic acid cycle):</strong> Muscle lactate → blood → liver → gluconeogenesis → glucose → blood → back to muscle. Net: transfers metabolic burden from muscle to liver. Energy-expensive: It costs exactly 6 ATP equivalents (4 ATP + 2 GTP) in the liver to synthesize 1 molecule of glucose from 2 pyruvates, compared to the 2 ATP gained in muscle glycolysis.
+    </div>
+</div>
+<div class="key-fact">
+<span class="key-fact-icon">⚡</span>
+<div class="key-fact-text">
+<strong>Regulation by Fructose-2,6-Bisphosphate (F-2,6-BP):</strong> <span class="rls-badge">Classic PYQ 2017</span> F-2,6-BP activates PFK-1 (glycolysis) and inhibits F-1,6-BPase (GNG) — a single molecule that switches between the two pathways. Insulin ↑ F-2,6-BP → glycolysis. Glucagon ↓ F-2,6-BP → GNG.
+    </div>
+</div>
+<div class="key-fact" style="border-left: 3px solid var(--accent3); margin-top: 14px; margin-bottom: 14px;">
+<span class="key-fact-icon">⚠️</span>
+<div class="key-fact-text">
+<strong>⚠️ EXAM TRAP — Gluconeogenesis:</strong> Students often write that Gluconeogenesis occurs in the muscle. This is a fatal mistake! <strong>Muscle cannot perform gluconeogenesis</strong> because it lacks the key enzyme <strong>Glucose-6-Phosphatase</strong>. Also, fatty acids (even-chain) <strong>cannot</strong> serve as a precursor for glucose in humans because the Pyruvate Dehydrogenase reaction is irreversible (Acetyl-CoA cannot be converted back to pyruvate).
+    </div>
+</div>
+<div class="clinical-box" style="border-left: 3px solid var(--accent); margin-top: 20px; margin-bottom: 28px;">
+<div class="clinical-label" style="color: var(--accent);">📝 MBBS Essay Blueprint: Gluconeogenesis &amp; F-2,6-BP Switch Answering Protocol</div>
+<p>If the examiner asks: <em>"Define Gluconeogenesis. State its substrates, describe the bypass reactions, energy costs, and the reciprocal regulation by F-2,6-BP switch,"</em> organize your answer using this textbook structure to score maximum marks:</p>
+<ul style="display:flex; flex-direction:column; gap:8px; list-style:none; padding-left:0; font-size:13px; line-height:1.6;">
+<li>
+<strong>1. Definition &amp; Tissue Location:</strong> Synthesis of glucose from non-carbohydrate precursors. Location: primarily <strong>Liver (90%)</strong> and <strong>Kidney cortex (10%)</strong> (NOT muscle!). Subcellular site: compartmentalized between <strong>Mitochondria, Cytosol, and Endoplasmic Reticulum</strong>.
+      </li>
+<li>
+<strong>2. Precursors List (GALA-P):</strong> Glycerol (from lipid lipolysis), Amino acids (primarily Alanine/Glucogenic AAs), Lactate (from Cori cycle), Propionate (from odd-chain fatty acids).
+      </li>
+<li>
+<strong>3. The 3 Compartmentalized Bypass Reactions:</strong>
+<table class="comp-table" style="margin: 8px 0; font-size: 11px;">
+<thead>
+<tr>
+<th>Bypass Step</th>
+<th>Glycolytic Enzyme (Irreversible)</th>
+<th>Gluconeogenic Bypass Enzymes &amp; Compartment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Bypass 1</strong></td>
+<td>Pyruvate Kinase</td>
+<td>
+                1. <strong>Pyruvate Carboxylase</strong> (Mitochondria; requires Biotin, ATP, CO₂; activated by Acetyl-CoA)<br/>
+                2. <strong>PEPCK</strong> (Cytosol; converts OAA to PEP; requires GTP)
+              </td>
+</tr>
+<tr>
+<td><strong>Bypass 2</strong></td>
+<td>Phosphofructokinase-1 (PFK-1)</td>
+<td><strong>Fructose-1,6-Bisphosphatase</strong> (Cytosol; allosterically inhibited by F-2,6-BP &amp; AMP)</td>
+</tr>
+<tr>
+<td><strong>Bypass 3</strong></td>
+<td>Hexokinase / Glucokinase</td>
+<td><strong>Glucose-6-Phosphatase</strong> (Endoplasmic Reticulum membrane; absent in skeletal muscle)</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<strong>4. Energetic Cost Accounting:</strong> To synthesize <strong>1 mole of glucose from 2 moles of Pyruvate</strong>, it costs exactly <strong>6 high-energy phosphate bonds</strong>:
+        <ul style="margin: 4px 0 0 18px; padding-left: 0; list-style: circle;">
+<li>2 ATP invested at the <em>Pyruvate Carboxylase</em> reaction (1 per Pyruvate)</li>
+<li>2 GTP invested at the <em>PEPCK</em> reaction (1 per OAA)</li>
+<li>2 ATP invested at the <em>1,3-BPG kinase</em> step (reversed)</li>
+<li><em>Total cost = 4 ATP + 2 GTP = 6 High-Energy Bonds</em> (compared to only 2 ATP produced in glycolysis).</li>
+</ul>
+</li>
+<li>
+<strong>5. The Reciprocal F-2,6-BP Master Switch:</strong> Describe how the bifunctional enzyme <strong>PFK-2 / FBPase-2</strong> governs the switch:
+        <ul style="margin: 4px 0 0 18px; padding-left: 0; list-style: circle;">
+<li><strong>Fed State / High Insulin:</strong> Dephosphorylation activates the PFK-2 domain → ↑ F-2,6-BP levels → powerfully activates PFK-1 (stimulates Glycolysis) &amp; inhibits F-1,6-BPase (shuts down GNG).</li>
+<li><strong>Fasting State / High Glucagon:</strong> GPCR-cAMP-PKA pathway phosphorylates the bifunctional enzyme, activating the FBPase-2 domain → ↓ F-2,6-BP levels → relieves inhibition on F-1,6-BPase (stimulates GNG) &amp; shuts off Glycolysis.</li>
+</ul>
+</li>
+</ul>
+</div>
+<hr class="section-divider"/>
+<!-- ── SECTION 8: BLOOD GLUCOSE REGULATION ── -->
+<div class="section-header">
+<span class="section-number">08</span>
+<h2 class="section-title">Blood Glucose <span>Homeostasis</span> <span class="rls-badge">🟡 TIER 2</span></h2>
+</div>
+<div class="flowchart-container d-print-none">
+<div class="flowchart-title d-print-none">// Fed vs Fasting State</div>
+<div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+<div style="background:rgba(74,232,176,0.07); border:1px solid rgba(74,232,176,0.2); border-radius:6px; padding:14px;">
+<div style="font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--accent2); letter-spacing:1px; margin-bottom:10px;">FED STATE (↑ Insulin)</div>
+<ul style="list-style:none; font-size:12px; display:flex; flex-direction:column; gap:5px;">
+<li style="color:var(--text);">→ Glucose uptake ↑ (GLUT4 in muscle/fat)</li>
+<li style="color:var(--text);">→ Glycolysis ↑</li>
+<li style="color:var(--text);">→ Glycogenesis ↑</li>
+<li style="color:var(--text);">→ Lipogenesis ↑</li>
+<li style="color:var(--text);">→ Gluconeogenesis ↓</li>
+<li style="color:var(--text);">→ Protein synthesis ↑</li>
+</ul>
+</div>
+<div style="background:rgba(232,74,122,0.06); border:1px solid rgba(232,74,122,0.2); border-radius:6px; padding:14px;">
+<div style="font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--accent3); letter-spacing:1px; margin-bottom:10px;">FASTING STATE (↑ Glucagon)</div>
+<ul style="list-style:none; font-size:12px; display:flex; flex-direction:column; gap:5px;">
+<li style="color:var(--text);">→ Glycogenolysis ↑ (liver first)</li>
+<li style="color:var(--text);">→ Gluconeogenesis ↑ (after 4–6h)</li>
+<li style="color:var(--text);">→ Lipolysis ↑ → FFA + Ketones</li>
+<li style="color:var(--text);">→ Protein catabolism ↑ (AA for GNG)</li>
+<li style="color:var(--text);">→ Glycolysis ↓</li>
+<li style="color:var(--text);">→ Glycogenesis ↓</li>
+</ul>
+</div>
+</div>
+</div>
+<hr class="section-divider"/>
+<!-- ── SECTION 9: FRUCTOSE & GALACTOSE ── -->
+<div class="section-header">
+<span class="section-number">09</span>
+<h2 class="section-title">Fructose &amp; Galactose <span>Metabolism</span> <span class="rls-badge">🟡 TIER 2</span></h2>
+</div>
+<div class="flowchart-container d-print-none" style="margin-bottom: 24px;">
+<div class="flowchart-title d-print-none">⚖️ Fructose Disorders: Essential Fructosuria vs. Hereditary Fructose Intolerance (HFI)</div>
+<table class="comp-table" style="font-size: 12px; margin-top: 8px;">
+<thead>
+<tr>
+<th style="width: 20%;">Feature</th>
+<th style="width: 40%;">Essential Fructosuria</th>
+<th style="width: 40%;">Hereditary Fructose Intolerance (HFI) <span class="rls-badge" style="background:#e84a7a; color:#fff;">CRITICAL</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Deficient Enzyme</strong></td>
+<td><strong>Fructokinase</strong> (first step of fructose metabolism)</td>
+<td><strong>Aldolase B</strong> (cleaves Fructose-1-Phosphate)</td>
+</tr>
+<tr>
+<td><strong>Accumulation</strong></td>
+<td>Fructose (excreted in urine; not toxic inside cells)</td>
+<td><strong>Fructose-1-Phosphate (F-1-P)</strong> (trapped inside hepatocytes)</td>
+</tr>
+<tr>
+<td><strong>Pathophysiology</strong></td>
+<td>Fructose is not phosphorylated; benignly filtered by kidneys or bypassed via Hexokinase. No ATP depletion.</td>
+<td><strong>Phosphate Trapping:</strong> Buildup of F-1-P sequester-depletes intracellular <strong>inorganic phosphate (P<sub>i</sub>)</strong> and <strong>ATP</strong>. Lack of ATP/P<sub>i</sub> halts Glycogenolysis &amp; Gluconeogenesis!</td>
+</tr>
+<tr>
+<td><strong>Clinical Signs</strong></td>
+<td><strong>Asymptomatic</strong> (incidentally detected as a reducing sugar in urine; Clinitest positive, glucose stick negative).</td>
+<td>Severe hypoglycemia, vomiting, jaundice, hepatomegaly, lactic acidosis, proximal renal tubule dysfunction (Fanconi syndrome) upon fructose/sucrose ingestion.</td>
+</tr>
+<tr>
+<td><strong>Dietary Therapy</strong></td>
+<td>No restriction required. Benign condition.</td>
+<td>Strict elimination of <strong>Fructose, Sucrose, and Sorbitol</strong> from diet.</td>
+</tr>
+<tr>
+<td><strong>Examiner Trap</strong></td>
+<td>Fructose gives a positive reducing sugar test (Clinitest). Do not confuse with Diabetes Mellitus (glucose dipstick is negative!).</td>
+<td>Symptoms appear only after weaning (introduction of fruit juices, honey, or formula milk containing sucrose).</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="flowchart-container d-print-none" style="margin-bottom: 24px;">
+<div class="flowchart-title d-print-none">⚖️ Galactose Disorders: GALK Deficiency vs. Classical Galactosemia (GALT Deficiency)</div>
+<table class="comp-table" style="font-size: 12px; margin-top: 8px;">
+<thead>
+<tr>
+<th style="width: 20%;">Feature</th>
+<th style="width: 40%;">Galactokinase (GALK) Deficiency</th>
+<th style="width: 40%;">Classical Galactosemia (GALT Deficiency) <span class="rls-badge" style="background:#e84a7a; color:#fff;">CRITICAL</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Deficient Enzyme</strong></td>
+<td><strong>Galactokinase (GALK)</strong> (phosphorylates galactose)</td>
+<td><strong>Galactose-1-Phosphate Uridyltransferase (GALT)</strong></td>
+</tr>
+<tr>
+<td><strong>Accumulation</strong></td>
+<td>Galactose (excreted in urine) &amp; <strong>Galactitol</strong> (reduced by Aldose Reductase)</td>
+<td><strong>Galactose-1-Phosphate</strong> &amp; <strong>Galactitol</strong> (highly toxic)</td>
+</tr>
+<tr>
+<td><strong>Pathophysiology</strong></td>
+<td>Galactose accumulates and is shunted to Galactitol. Galactitol accumulates in the lens, causing osmotic damage.</td>
+<td>Galactose-1-P accumulation traps inorganic phosphate and acts as a direct tissue toxin to liver, brain, kidneys, and lens.</td>
+</tr>
+<tr>
+<td><strong>Clinical Signs</strong></td>
+<td><strong>Mild presentation:</strong> Infantile cataracts, galactosemia, galactosuria. No renal/liver failure or developmental delay.</td>
+<td><strong>Severe presentation:</strong> Failure to thrive, jaundice, hepatomegaly, infantile cataracts, intellectual disability, and life-threatening <strong>E. coli neonatal sepsis</strong>.</td>
+</tr>
+<tr>
+<td><strong>Dietary Therapy</strong></td>
+<td>Eliminate galactose and lactose (milk/dairy products) from diet.</td>
+<td>Strict elimination of <strong>Galactose and Lactose</strong> (human and bovine milk) immediately from birth.</td>
+</tr>
+<tr>
+<td><strong>Examiner Trap</strong></td>
+<td>Only cataracts are present. No liver damage or developmental delay. Contrast this with classical galactosemia.</td>
+<td>Symptoms start within the first few days of life, as soon as breastfeeding/milk feeding begins (unlike HFI, which starts later with weaning!).</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="section-divider"/>
+<!-- ── SECTION 10: MNEMONICS ── -->
+<div class="section-header">
+<span class="section-number">10</span>
+<h2 class="section-title">Memory <span>Mnemonics</span> <span class="rls-badge">🟢 TIER 3</span></h2>
+</div>
+<details>
+<summary style="cursor:pointer; padding:10px 14px; background:rgba(74,232,176,0.07); border:1px solid rgba(74,232,176,0.2); border-radius:6px; font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--accent2); letter-spacing:1px; list-style:none; margin-bottom:10px;">🟢 TIER 3 — Low-Yield. Click to expand Mnemonics →</summary>
+<div class="mnemonic">
+<div class="mnemonic-label">🧠 Mnemonic 1 — TCA intermediates in order</div>
+<div class="mnemonic-text">"Citrate Is Krebs' Starting Substrate For Making Oxaloacetate"</div>
+<div class="mnemonic-expand">
+      Citrate → Isocitrate → α-Ketoglutarate → Succinyl-CoA → Succinate → Fumarate → Malate → Oxaloacetate
+    </div>
+</div>
+<div class="mnemonic">
+<div class="mnemonic-label">🧠 Mnemonic 2 — Irreversible glycolysis steps</div>
+<div class="mnemonic-text">"Hungry People Feel Pale" → HK, PFK-1, PK</div>
+<div class="mnemonic-expand">
+      Hexokinase (step 1) · Phosphofructokinase-1 (step 3) · Pyruvate Kinase (step 10) — these 3 are irreversible and are bypassed in gluconeogenesis.
+    </div>
+</div>
+<div class="mnemonic">
+<div class="mnemonic-label">🧠 Mnemonic 3 — PDH complex coenzymes</div>
+<div class="mnemonic-text">"The Lovely Cat Finds Nice Accommodation"</div>
+<div class="mnemonic-expand">
+<strong>T</strong>PP (B1) · <strong>L</strong>ipoic acid · <strong>C</strong>oA (B5 pantothenic acid) · <strong>F</strong>AD (B2) · <strong>N</strong>AD⁺ (B3) · Note: All B-vitamins!
+    </div>
+</div>
+<div class="mnemonic">
+<div class="mnemonic-label">🧠 Mnemonic 4 — Glycogen Storage Diseases</div>
+<div class="mnemonic-text">"Very Poor Carbohydrate Metabolism" → Types I, II, III, V</div>
+<div class="mnemonic-expand">
+      Type I = <strong>V</strong>on Gierke (G6Pase) · Type II = <strong>P</strong>ompe (Acid maltase) · Type III = <strong>C</strong>ori (Debranching) · Type V = <strong>M</strong>cArdle (Muscle phosphorylase)
+    </div>
+</div>
+<div class="mnemonic">
+<div class="mnemonic-label">🧠 Mnemonic 5 — GNG precursors</div>
+<div class="mnemonic-text">"GALA Party" → Glycerol, Amino acids, Lactate, Alanine / Propionate</div>
+<div class="mnemonic-expand">
+      All glucogenic amino acids → glucose. Fatty acids (even-chain) CANNOT → glucose (no net conversion from Acetyl-CoA). Odd-chain FA → Propionyl-CoA → Succinyl-CoA → CAN enter GNG.
+    </div>
+</div>
+</details>
+<hr class="section-divider"/>
+<!-- ── SECTION 11: CLINICAL CORRELATIONS ── -->
+<div class="section-header">
+<span class="section-number">11</span>
+<h2 class="section-title">Clinical <span>Correlations</span> <span class="rls-badge">🟡 TIER 2</span></h2>
+</div>
+<div class="clinical-box">
+<div class="clinical-label">🩺 High-Yield Clinical Links</div>
+<ul>
+<li><strong>Diabetes Mellitus:</strong> Insulin deficiency → ↓ GLUT4 → ↓ glucose uptake → Hyperglycaemia. ↑ Glycogenolysis, ↑ GNG, ↑ Lipolysis, ↑ Ketogenesis → Diabetic Ketoacidosis (DKA). HbA1c reflects average glucose over 3 months (glycated Hb).</li>
+<li><strong>Lactic Acidosis:</strong> Anaerobic glycolysis excess (shock, sepsis) or PDH deficiency → Lactate accumulates → ↓ pH. High Anion Gap Metabolic Acidosis.</li>
+<li><strong>Von Gierke's + Hyperuricaemia:</strong> ↑ G6P → ↑ HMP shunt → ↑ Ribose-5-P → ↑ Purine synthesis → ↑ Uric acid. Classic PYQ trap — explain the link!</li>
+<li><strong>Galactosaemia → Cataract:</strong> Galactose → Galactitol (by aldose reductase) → Accumulates in lens (avascular) → Osmotic damage → Cataract. Treat: eliminate galactose/lactose from diet.</li>
+<li><strong>Uncontrolled DM → Cataract:</strong> Glucose → Sorbitol (aldose reductase) → Accumulates in lens → Same mechanism as galactosaemia.</li>
+<li><strong>Primaquine + G6PD deficiency:</strong> Oxidative drug → ↑ ROS → ↓ NADPH (G6PD absent) → ↓ GSH → Heinz bodies → Haemolysis. Tested in clinical MCQs.</li>
+</ul>
+</div>
+<hr class="section-divider"/>
+<!-- ── SECTION 12: VIVA Q&A ── -->
+<div class="viva-section">
+<div class="viva-label">🔥 Viva Rapid Fire — Carbohydrate Metabolism</div>
+<details class="viva-q">
+<summary class="viva-q-text"><span>Q1</span> Why can't RBCs use the TCA cycle?</summary>
+<div class="viva-a-text">RBCs have no mitochondria — TCA cycle and oxidative phosphorylation are mitochondria-dependent. RBCs rely entirely on anaerobic glycolysis for ATP. They also use HMP shunt to generate NADPH for maintaining reduced glutathione (protection against oxidative damage).</div>
+</details>
+<details class="viva-q">
+<summary class="viva-q-text"><span>Q2</span> Why does Von Gierke's disease cause hyperuricaemia?</summary>
+<div class="viva-a-text">G6Pase deficiency → G6P accumulates → excess G6P shunted into HMP pathway → excess Ribose-5-phosphate → increased de novo purine synthesis → excess purines → increased uric acid production → hyperuricaemia and gout.</div>
+</details>
+<details class="viva-q">
+<summary class="viva-q-text"><span>Q3</span> Why is gluconeogenesis NOT the simple reverse of glycolysis?</summary>
+<div class="viva-a-text">Three irreversible steps of glycolysis cannot be reversed. These are catalysed by Hexokinase, PFK-1, and Pyruvate Kinase. GNG uses unique bypass enzymes: Glucose-6-phosphatase, Fructose-1,6-bisphosphatase, and the Pyruvate Carboxylase + PEPCK system respectively.</div>
+</details>
+<details class="viva-q">
+<summary class="viva-q-text"><span>Q4</span> What is the role of 2,3-BPG? Why is it important in stored blood?</summary>
+<div class="viva-a-text">2,3-BPG binds to the β-chains of deoxy-Hb, stabilising the T (tense/deoxy) form, reducing O₂ affinity → promotes O₂ delivery to tissues. In stored blood (bank blood), 2,3-BPG levels fall → Hb has increased O₂ affinity → poor O₂ delivery to recipient's tissues (stored blood paradox).</div>
+</details>
+<details class="viva-q">
+<summary class="viva-q-text"><span>Q5</span> Why is TCA called amphibolic?</summary>
+<div class="viva-a-text">Amphibolic = both anabolic and catabolic. Catabolic: oxidises Acetyl-CoA → CO₂ + energy. Anabolic: intermediates are precursors for biosynthesis — α-KG → glutamate → amino acids; Succinyl-CoA → haem synthesis; OAA → gluconeogenesis; Citrate → fatty acid synthesis.</div>
+</details>
+<details class="viva-q">
+<summary class="viva-q-text"><span>Q6</span> Why does muscle lack glucose-6-phosphatase but liver has it?</summary>
+<div class="viva-a-text">Liver's role is to maintain blood glucose homeostasis — it must release free glucose into circulation during fasting. G6Pase allows dephosphorylation of G6P → free glucose → export. Muscle is a glucose consumer — it needs G6P to stay within the cell for glycolysis. If muscle had G6Pase, glucose would leak out rather than be used for energy.</div>
+</details>
+<details class="viva-q">
+<summary class="viva-q-text"><span>Q7</span> Fat can be synthesised from glucose but glucose cannot be synthesised from fat — justify.</summary>
+<div class="viva-a-text">Glucose → Acetyl-CoA (irreversible via PDH). Fatty acids → β-oxidation → Acetyl-CoA. Acetyl-CoA cannot be converted back to pyruvate/OAA in net amounts in mammals — the PDH reaction is irreversible. Acetyl-CoA can only enter TCA (catabolic) or be used for lipid synthesis, not for GNG. Exception: glycerol backbone of TAG can yield glucose (via DHAP).</div>
+</details>
+<details class="viva-q">
+<summary class="viva-q-text"><span>Q8</span> What is the significance of oral glucose in ORS (Oral Rehydration Solution)?</summary>
+<div class="viva-a-text">Glucose in ORS co-transports sodium via SGLT1 (Na⁺-glucose co-transporter) in the intestinal mucosa — a secondary active transport system. This Na⁺ uptake drags water with it by osmosis, rehydrating the patient. Glucose doesn't just provide energy — its primary role in ORS is to drive Na⁺ absorption even in secretory diarrhoea where other Na⁺ transporters are inhibited.</div>
+</details>
+</div>
+<!-- ── SECTION 13: EQ TEMPLATE ── -->
+<div class="section-header">
+<span class="section-number">13</span>
+<h2 class="section-title">Group-D <span>EQ Template</span> <span class="rls-badge">🟢 TIER 3</span></h2>
+</div>
+<details>
+<summary style="cursor:pointer; padding:10px 14px; background:rgba(74,232,176,0.07); border:1px solid rgba(74,232,176,0.2); border-radius:6px; font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--accent2); letter-spacing:1px; list-style:none; margin-bottom:10px;">🟢 TIER 3 — Low-Yield. Click to expand EQ Template →</summary>
+<div class="big-picture">
+<div class="big-picture-label">📝 How to answer: "Phosphofructokinase-I is the pacemaker of glycolysis"</div>
+<p>Use your teacher's flowchart formula — Define → Mechanism Flowchart → Kinetics/Regulation → Clinical consequence.</p>
+</div>
+<div class="flowchart-container d-print-none">
+<div class="flowchart-title d-print-none">// EQ Answer Flowchart</div>
+<div class="flow-row">
+<div class="flow-box yellow" style="min-width:200px; font-size:12px;"><strong>Define "Pacemaker"</strong><br/>Rate-limiting, essentially irreversible, most regulated step</div>
+</div>
+<div class="flow-arrow down">↓</div>
+<div class="flow-row">
+<div class="flow-box blue" style="min-width:200px; font-size:12px;"><strong>Reaction</strong><br/>F6P + ATP → F-1,6-BP + ADP<br/>(catalysed by PFK-1)</div>
+</div>
+<div class="flow-arrow down">↓</div>
+<div class="flow-row">
+<div class="flow-box green" style="min-width:200px; font-size:12px;"><strong>Activators</strong><br/>AMP, ADP, F-2,6-BP, Pi<br/>(signals: low energy)</div>
+<div class="flow-arrow">←→</div>
+<div class="flow-box red" style="min-width:200px; font-size:12px;"><strong>Inhibitors</strong><br/>ATP, Citrate, low pH<br/>(signals: high energy)</div>
+</div>
+<div class="flow-arrow down">↓</div>
+<div class="flow-row">
+<div class="flow-box yellow" style="min-width:200px; font-size:12px;"><strong>Clinical relevance</strong><br/>F-2,6-BP (insulin ↑, glucagon ↓)<br/>coordinates glycolysis vs GNG</div>
+</div>
+</div>
+</details>
+</div>
+<!-- FOOTER -->
+<div class="footer">
+<p style="font-size:14px; font-weight:600; color:var(--white); margin-bottom:8px;">MBBS Biochemistry — Module 02: Carbohydrate Metabolism</p>
+<p>Compiled from PYQ 2010–2025 · Caffeine &amp; Cadaver · MBBS</p>
+<p style="margin-top:12px; color:var(--accent2); font-style:italic;">Crafted with precision to illuminate the pathways of biochemistry and inspire your journey in medicine.</p>
+<p style="margin-top:16px; display:inline-flex; align-items:center; justify-content:center; gap:6px; background:rgba(74,232,176,0.08); padding:8px 18px; border-radius:20px; border:1px solid var(--accent2); color:var(--accent2);">
+    Made with <span style="color:#e84a7a; font-size:14px;">❤️</span> for you
+  </p>
+<p style="margin-top:14px; font-size:10px; color:var(--border);">Version 1.0 · Clean Print Edition available separately</p>
+</div>
+</body>
+</html>
