@@ -1,0 +1,1647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 01 — General Anatomy | Caffeine & Cadaver</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:       #080b0f;
+  --surface:  #0e1118;
+  --surface2: #141820;
+  --surface3: #1a2028;
+  --accent:   #e8714a;
+  --accent2:  #f0956e;
+  --accent3:  #fbbf8a;
+  --teal:     #38d9a9;
+  --blue:     #60a5fa;
+  --rose:     #fb7185;
+  --gold:     #fbbf24;
+  --purple:   #c084fc;
+  --green:    #4ade80;
+  --text:     #eaeef5;
+  --text2:    #8896b0;
+  --text3:    #3d4d60;
+  --border:   #1c2535;
+  --border2:  #263040;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  line-height: 1.75;
+  overflow-x: hidden;
+}
+
+/* ─── HERO ─── */
+.hero {
+  position: relative;
+  padding: 4rem 1.5rem 3rem;
+  overflow: hidden;
+  background: linear-gradient(160deg, #0a0e15 0%, #0d1420 60%, #080b0f 100%);
+  border-bottom: 1px solid var(--border2);
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -120px; right: -100px;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(232,113,74,.12) 0%, transparent 65%);
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -60px; left: 5%;
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(56,217,169,.06) 0%, transparent 65%);
+  pointer-events: none;
+}
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--accent2);
+  background: rgba(232,113,74,.1);
+  border: 1px solid rgba(232,113,74,.3);
+  padding: 5px 14px;
+  border-radius: 3px;
+  margin-bottom: 1.25rem;
+}
+.hero-dot {
+  width: 6px; height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1);} 50%{opacity:.35;transform:scale(.6);} }
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.2rem, 7vw, 3.6rem);
+  font-weight: 900;
+  line-height: 1.1;
+  color: var(--text);
+  margin-bottom: .4rem;
+}
+.hero h1 em {
+  font-style: italic;
+  color: var(--accent2);
+}
+.hero-tagline {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--text2);
+  letter-spacing: .5px;
+  margin-bottom: 1.75rem;
+}
+.hero-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.pill {
+  background: var(--surface2);
+  border: 1px solid var(--border2);
+  color: var(--text2);
+  font-size: 12px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* ─── PROGRESS BAR ─── */
+.progress-bar {
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2), var(--teal));
+  animation: grow 1.2s ease forwards;
+  border-radius: 2px;
+  margin-bottom: 2.5rem;
+}
+@keyframes grow { from{width:0} to{width:100%} }
+
+/* ─── TOC ─── */
+.toc {
+  margin: 0 1.5rem 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 6px;
+  padding: 1.25rem;
+}
+.toc-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+.toc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 6px;
+}
+.toc a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text2);
+  text-decoration: none;
+  font-size: 13px;
+  padding: 5px 8px;
+  border-radius: 4px;
+  transition: background .15s, color .15s;
+}
+.toc a:hover { background: rgba(232,113,74,.08); color: var(--accent2); }
+.toc-n {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+/* ─── LAYOUT ─── */
+.content { padding: 0 1.5rem 4rem; }
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 3rem 0 1.5rem;
+  padding-bottom: .75rem;
+  border-bottom: 1px solid var(--border);
+}
+.section-num {
+  width: 34px; height: 34px;
+  background: var(--accent);
+  color: #fff;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+.section-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.3rem, 4vw, 1.9rem);
+  font-weight: 700;
+  color: var(--text);
+}
+.section-header h2 em { color: var(--accent2); font-style: italic; }
+
+.divider { height: 1px; background: var(--border); margin: 2.5rem 0; }
+
+/* ─── BADGES ─── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .5px;
+  padding: 2px 8px;
+  border-radius: 3px;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+.badge-pyq  { background: rgba(56,217,169,.12); color: var(--teal);   border: 1px solid rgba(56,217,169,.28); }
+.badge-fav  { background: rgba(251,191,36,.12);  color: var(--gold);   border: 1px solid rgba(251,191,36,.28); }
+.badge-rls  { background: rgba(251,113,133,.14); color: var(--rose);   border: 1px solid rgba(251,113,133,.3); }
+.badge-imp  { background: rgba(232,113,74,.12);  color: var(--accent2);border: 1px solid rgba(232,113,74,.3); }
+
+/* ─── CARDS ─── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+}
+.card-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: .75rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.card-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+/* ─── TWO COL ─── */
+.two-col {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+/* ─── TABLES ─── */
+.table-wrap { overflow-x: auto; margin: 1rem 0; border-radius: 8px; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th {
+  background: var(--surface3);
+  color: var(--accent2);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 10px 14px;
+  text-align: left;
+  border-bottom: 2px solid var(--accent);
+}
+td { padding: 9px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
+tr:hover td { background: rgba(232,113,74,.03); }
+td:first-child { color: var(--accent2); font-weight: 600; }
+
+/* ─── SPECIAL BOXES ─── */
+.keypoint {
+  background: rgba(232,113,74,.06);
+  border: 1px solid rgba(232,113,74,.2);
+  border-left: 4px solid var(--accent);
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin: 10px 0;
+  font-size: 13px;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+.keypoint::before { content: '⚡'; flex-shrink: 0; }
+
+.clinical-box {
+  background: rgba(56,217,169,.04);
+  border: 1px solid rgba(56,217,169,.2);
+  border-left: 4px solid var(--teal);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+}
+.cbox-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--teal);
+  text-transform: uppercase;
+  margin-bottom: .6rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.cbox-title::before { content: '🩺'; }
+
+.mnemonic-box {
+  background: rgba(251,191,36,.05);
+  border: 1px solid rgba(251,191,36,.22);
+  border-left: 4px solid var(--gold);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+}
+.mbox-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: .6rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.mbox-title::before { content: '🧠'; }
+.mnemonic-hl {
+  background: rgba(251,191,36,.08);
+  border: 1px dashed rgba(251,191,36,.3);
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gold);
+  margin: 6px 0;
+}
+
+.warn-box {
+  background: rgba(251,113,133,.05);
+  border: 1px solid rgba(251,113,133,.22);
+  border-left: 4px solid var(--rose);
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin: 10px 0;
+  font-size: 13px;
+  display: flex;
+  gap: 10px;
+}
+.warn-box::before { content: '⚠️'; flex-shrink: 0; }
+
+.eq-box {
+  background: rgba(192,132,252,.05);
+  border: 1px solid rgba(192,132,252,.22);
+  border-left: 4px solid var(--purple);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  margin: 1.25rem 0;
+}
+.eq-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--purple);
+  text-transform: uppercase;
+  margin-bottom: .75rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.eq-title::before { content: '📝'; }
+.eq-q {
+  background: var(--surface3);
+  border-radius: 4px;
+  padding: 8px 14px;
+  font-family: 'Playfair Display', serif;
+  font-size: 14px;
+  font-style: italic;
+  color: var(--text);
+  border-left: 3px solid var(--purple);
+  margin-bottom: 10px;
+}
+.eq-answer ol { margin-left: 18px; }
+.eq-answer li { margin-bottom: 6px; font-size: 13px; }
+.eq-answer li span { color: var(--purple); font-weight: 600; }
+
+ul.check {
+  list-style: none;
+  margin: .5rem 0;
+}
+ul.check li {
+  font-size: 13px;
+  margin-bottom: 5px;
+  padding-left: 4px;
+}
+ul.check li::before { content: '▸ '; color: var(--accent2); }
+
+.hl  { color: var(--accent2); font-weight: 600; }
+.htl { color: var(--teal); font-weight: 600; }
+.hg  { color: var(--gold); font-weight: 600; }
+.hr  { color: var(--rose); font-weight: 600; }
+.hp  { color: var(--purple); font-weight: 600; }
+
+/* ─── DRAWING PLACEHOLDER ─── */
+.drawing-slot {
+  border: 2px dashed rgba(232,113,74,.35);
+  border-radius: 10px;
+  background: rgba(232,113,74,.03);
+  padding: 2rem 1.5rem;
+  margin: 1.25rem 0;
+  text-align: center;
+  position: relative;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.drawing-slot-icon { font-size: 36px; opacity: .5; }
+.drawing-slot-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  opacity: .7;
+}
+.drawing-slot-desc {
+  font-size: 12px;
+  color: var(--text3);
+  max-width: 340px;
+}
+.drawing-slot-num {
+  position: absolute;
+  top: 12px; left: 14px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--accent);
+  background: rgba(232,113,74,.1);
+  padding: 2px 8px;
+  border-radius: 3px;
+  border: 1px solid rgba(232,113,74,.25);
+}
+
+/* ─── WIKIMEDIA IMAGE ─── */
+.wiki-figure {
+  margin: 1.25rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border2);
+  background: var(--surface);
+}
+.wiki-figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: brightness(.9) contrast(1.05);
+}
+.wiki-caption {
+  padding: 8px 14px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--text2);
+  background: var(--surface2);
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+.wiki-source {
+  font-size: 10px;
+  color: var(--text3);
+  text-decoration: none;
+}
+.wiki-source:hover { color: var(--accent2); }
+
+/* ─── FLOWCHART ─── */
+.flowchart {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+}
+.flow-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent2);
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.flow-title::before { content: '▶'; font-size: 8px; }
+.flow-v { display: flex; flex-direction: column; align-items: stretch; gap: 0; }
+.flow-box {
+  background: var(--surface3);
+  border: 1px solid var(--border2);
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-size: 13px;
+}
+.flow-box .lbl {
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--text3);
+  margin-bottom: 2px;
+}
+.flow-box .sub {
+  display: block;
+  font-size: 11px;
+  color: var(--text2);
+  margin-top: 4px;
+}
+.flow-box.coral   { border-color: var(--accent);  background: rgba(232,113,74,.08);  color: var(--accent2); }
+.flow-box.teal    { border-color: var(--teal);    background: rgba(56,217,169,.08);  color: var(--teal); }
+.flow-box.gold    { border-color: var(--gold);    background: rgba(251,191,36,.06);  color: var(--gold); }
+.flow-box.blue    { border-color: var(--blue);    background: rgba(96,165,250,.06);  color: var(--blue); }
+.flow-box.rose    { border-color: var(--rose);    background: rgba(251,113,133,.06); color: var(--rose); }
+.flow-box.purple  { border-color: var(--purple);  background: rgba(192,132,252,.06); color: var(--purple); }
+.flow-box.green   { border-color: var(--green);   background: rgba(74,222,128,.06);  color: var(--green); }
+
+.flow-step {
+  font-size: 12px;
+  color: var(--text2);
+  text-align: center;
+  padding: 4px 8px;
+  font-family: 'JetBrains Mono', monospace;
+}
+.flow-arrow { text-align: center; color: var(--accent); font-size: 18px; margin: 2px 0; }
+
+.flow-h {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.flow-h .flow-box { flex: 1 1 auto; min-width: 120px; text-align: center; }
+.flow-h .h-arr { color: var(--accent); font-size: 18px; flex-shrink: 0; }
+
+/* ─── JOINT COMPARISON STRIP ─── */
+.joint-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+  margin: 1rem 0;
+}
+.joint-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px;
+  border-top: 3px solid transparent;
+}
+.joint-card.fibrous  { border-top-color: var(--rose); }
+.joint-card.cartil   { border-top-color: var(--blue); }
+.joint-card.synovial { border-top-color: var(--teal); }
+.joint-card-type {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.joint-card.fibrous  .joint-card-type { color: var(--rose); }
+.joint-card.cartil   .joint-card-type { color: var(--blue); }
+.joint-card.synovial .joint-card-type { color: var(--teal); }
+.joint-card-name { font-weight: 600; font-size: 14px; color: var(--text); margin-bottom: 6px; }
+.joint-card p { font-size: 12px; color: var(--text2); line-height: 1.6; }
+
+/* ─── VIVA ─── */
+.viva-bar {
+  background: rgba(232,113,74,.08);
+  border: 1px solid rgba(232,113,74,.25);
+  border-radius: 6px 6px 0 0;
+  padding: 10px 14px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--accent2);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.viva-bar::before { content: '💬'; font-size: 14px; }
+details {
+  border: 1px solid var(--border);
+  border-top: none;
+  overflow: hidden;
+}
+details:last-child { border-radius: 0 0 6px 6px; }
+summary {
+  padding: 11px 14px;
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--text);
+  background: var(--surface);
+  list-style: none;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  user-select: none;
+  transition: background .15s;
+}
+summary:hover { background: var(--surface2); }
+summary::before {
+  content: '▶';
+  color: var(--accent);
+  font-size: 9px;
+  margin-top: 4px;
+  flex-shrink: 0;
+  transition: transform .2s;
+}
+details[open] > summary::before { transform: rotate(90deg); }
+.viva-q { font-weight: 600; flex: 1; }
+.viva-yr {
+  color: var(--teal);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  flex-shrink: 0;
+}
+.viva-ans {
+  padding: 12px 16px 14px;
+  background: var(--surface2);
+  font-size: 13px;
+  line-height: 1.8;
+  border-top: 1px solid var(--border);
+}
+.viva-ans p { margin-bottom: 6px; }
+.viva-ans ul { margin: 6px 0 6px 16px; }
+.viva-ans li { margin-bottom: 4px; }
+.viva-ans strong { color: var(--accent2); }
+.viva-ans em { color: var(--gold); font-style: normal; font-weight: 600; }
+.viva-section { margin: 1.5rem 0; }
+
+/* ─── MUSCLE TYPE GRID ─── */
+.muscle-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 10px;
+  margin: 1rem 0;
+}
+.muscle-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 12px;
+  text-align: center;
+}
+.muscle-card-icon { font-size: 24px; margin-bottom: 8px; }
+.muscle-card-name {
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+.muscle-card-detail { font-size: 11px; color: var(--text2); line-height: 1.55; }
+
+/* ─── FOOTER + SCROLL ─── */
+.footer {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--text3);
+}
+.footer span { color: var(--accent); }
+.top-btn {
+  position: fixed;
+  bottom: 20px; right: 20px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 42px; height: 42px;
+  font-size: 17px;
+  cursor: pointer;
+  z-index: 100;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700;
+  box-shadow: 0 4px 18px rgba(232,113,74,.4);
+  transition: transform .2s;
+}
+.top-btn:hover { transform: translateY(-3px); }
+
+@media(max-width:600px) {
+  .hero { padding: 2.5rem 1rem 2rem; }
+  .content { padding: 0 1rem 2.5rem; }
+  .toc { margin: 0 1rem; }
+  .flow-h { flex-direction: column; }
+  .flow-h .h-arr { transform: rotate(90deg); }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════ HERO ═══════════ -->
+<div class="hero">
+  <div class="hero-eyebrow"><span class="hero-dot"></span>MODULE 01 · ANATOMY</div>
+  <h1>General<br><em>Anatomy</em></h1>
+  <p class="hero-tagline">ANATOMY · PAPER 1 · CAFFEINE & CADAVER</p>
+  <div class="hero-pills">
+    <span class="pill">Anatomical Terms</span>
+    <span class="pill">Planes & Axes</span>
+    <span class="pill">Bone Classification</span>
+    <span class="pill">Ossification</span>
+    <span class="pill">Cartilage Types</span>
+    <span class="pill">Joints</span>
+    <span class="pill">Muscle Types</span>
+    <span class="pill">Sliding Filament</span>
+    <span class="pill">Fascia & Bursae</span>
+    <span class="pill">Nerve Basics</span>
+  </div>
+</div>
+
+<!-- ═══════════ TOC ═══════════ -->
+<div class="toc">
+  <div class="toc-label">▸ Quick Navigate</div>
+  <div class="toc-grid">
+    <a href="#s1"><span class="toc-n">01</span> Anatomical Terms & Planes</a>
+    <a href="#s2"><span class="toc-n">02</span> Bones</a>
+    <a href="#s3"><span class="toc-n">03</span> Ossification</a>
+    <a href="#s4"><span class="toc-n">04</span> Cartilage</a>
+    <a href="#s5"><span class="toc-n">05</span> Joints</a>
+    <a href="#s6"><span class="toc-n">06</span> Muscles</a>
+    <a href="#s7"><span class="toc-n">07</span> Fascia & Bursae</a>
+    <a href="#s8"><span class="toc-n">08</span> Nerve Basics</a>
+    <a href="#s9"><span class="toc-n">09</span> Viva Q&A</a>
+    <a href="#s10"><span class="toc-n">10</span> EQ Templates</a>
+    <a href="#s11"><span class="toc-n">11</span> Quickfire Table</a>
+  </div>
+</div>
+
+<div class="content">
+<div class="progress-bar"></div>
+
+<!-- ═══════════ S1: ANATOMICAL TERMS ═══════════ -->
+<div id="s1">
+  <div class="section-header">
+    <div class="section-num">01</div>
+    <h2>Anatomical Terms <em>& Planes</em></h2>
+  </div>
+
+  <div class="keypoint">Anatomy has its own language. Get these terms wrong in a viva and you'll lose marks fast — not because you don't know the anatomy, but because you said "up" instead of "superior." Learn these once, use them forever.</div>
+
+  <!-- DRAWING SLOT 1 -->
+  <div class="wiki-figure">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Human_anatomy_planes%2C_labeled.svg/960px-Human_anatomy_planes%2C_labeled.svg.png"
+         alt="Anatomical Position + 3 Planes"
+         loading="lazy"
+         onerror="this.style.display='none'">
+    <div class="wiki-caption">
+      <span>Anatomical Position + 3 Planes</span>
+      <a class="wiki-source" href="https://commons.wikimedia.org/wiki/File:Human_anatomy_planes,_labeled.svg" target="_blank" rel="noopener">Wikimedia Commons (CC BY-SA)</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-label">Anatomical Position — The Baseline</div>
+    <p style="font-size:13px;margin-bottom:10px">Everything in anatomy is described relative to the <span class="hl">standard anatomical position</span>: body erect, face forward, feet together, arms by the sides, <strong>palms facing forward</strong> (supinated). Every directional term assumes this position — even if the body is lying down or upside down when you examine it.</p>
+    <div class="warn-box">The palms-forward rule catches everyone. In anatomical position, the radius is <strong>lateral</strong> and the ulna is <strong>medial</strong>. The moment someone crosses their arms or pronates, the bones cross — but anatomical descriptions stay the same regardless.</div>
+  </div>
+
+  <div class="card">
+    <div class="card-label">The 3 Cardinal Planes</div>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Plane</th><th>Also Called</th><th>Divides Body Into</th><th>Axis of Rotation</th></tr>
+        <tr><td>Sagittal</td><td>Median (if exactly midline) / Parasagittal</td><td>Left & Right halves</td><td>Transverse axis (flexion/extension)</td></tr>
+        <tr><td>Coronal</td><td>Frontal plane</td><td>Anterior & Posterior</td><td>Sagittal axis (abduction/adduction)</td></tr>
+        <tr><td>Transverse</td><td>Horizontal / Axial</td><td>Superior & Inferior</td><td>Vertical axis (rotation)</td></tr>
+      </table>
+    </div>
+    <div class="mnemonic-box" style="margin-top:10px">
+      <div class="mbox-title">Mnemonic — Planes</div>
+      <div class="mnemonic-hl">"Sagittal Splits, Coronal Cuts Chest, Transverse Tops off"</div>
+      <p style="font-size:12px;color:var(--text2);margin-top:4px">Sagittal = left/right · Coronal = front/back · Transverse = top/bottom</p>
+    </div>
+  </div>
+
+  <!-- DRAWING SLOT 2 -->
+  <div class="wiki-figure">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Blausen_0019_AnatomicalDirectionalReferences.png"
+         alt="Directional Terms on a Limb"
+         loading="lazy"
+         onerror="this.style.display='none'">
+    <div class="wiki-caption">
+      <span>Directional Terms</span>
+      <a class="wiki-source" href="https://commons.wikimedia.org/wiki/File:Blausen_0019_AnatomicalDirectionalReferences.png" target="_blank" rel="noopener">Blausen Medical (CC BY 3.0)</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-label">Directional Terms <span class="badge badge-fav">⭐ Viva Favourite</span></div>
+    <div class="two-col">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:8px">Body Pairs</p>
+        <ul class="check">
+          <li><span class="hl">Superior / Inferior</span> — toward head / toward feet</li>
+          <li><span class="hl">Anterior / Posterior</span> — front / back (= ventral/dorsal)</li>
+          <li><span class="hl">Medial / Lateral</span> — toward midline / away from midline</li>
+          <li><span class="hl">Superficial / Deep</span> — toward surface / toward core</li>
+          <li><span class="hl">Ipsilateral / Contralateral</span> — same side / opposite side</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:8px">Limb-Specific Pairs</p>
+        <ul class="check">
+          <li><span class="hg">Proximal / Distal</span> — nearer to / farther from the limb's root</li>
+          <li><span class="hg">Flexion / Extension</span> — decreasing / increasing joint angle</li>
+          <li><span class="hg">Abduction / Adduction</span> — away from / toward midline</li>
+          <li><span class="hg">Pronation / Supination</span> — forearm rotation (palm down / up)</li>
+          <li><span class="hg">Inversion / Eversion</span> — sole faces medially / laterally (foot)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="clinical-box">
+    <div class="cbox-title">Why Terms Matter Clinically</div>
+    <p>A fracture of the <em>distal radius</em> (Colles') vs <em>proximal radius</em> — entirely different mechanism, treatment, and nerve injury risk. Miscommunication between clinicians using "upper" vs "superior" wastes time. Surgeons are precise because anatomy demands precision.</p>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══════════ S2: BONES ═══════════ -->
+<div id="s2">
+  <div class="section-header">
+    <div class="section-num">02</div>
+    <h2><em>Bones</em> — Structure & Classification</h2>
+  </div>
+
+  <div class="keypoint">Bone is not dead calcium. It's the most dynamic connective tissue you'll study — constantly remodelling, housing marrow, conducting electricity in a sense. Know its structure cold before you attempt any fracture or metabolic bone disease question.</div>
+
+  <!-- DRAWING SLOT 3 -->
+  <div class="wiki-figure">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/23/603_Anatomy_of_Long_Bone.jpg"
+         alt="Long Bone Cross-Section"
+         loading="lazy"
+         onerror="this.style.display='none'">
+    <div class="wiki-caption">
+      <span>Long Bone Anatomy</span>
+      <a class="wiki-source" href="https://commons.wikimedia.org/wiki/File:603_Anatomy_of_Long_Bone.jpg" target="_blank" rel="noopener">OpenStax College (CC BY 3.0)</a>
+    </div>
+  </div>
+
+  <!-- Wikimedia X-ray -->
+  <div class="wiki-figure">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Knee_X-ray_lateral_view_Dr_Jan_Glaser.jpg/640px-Knee_X-ray_lateral_view_Dr_Jan_Glaser.jpg"
+         alt="Lateral knee X-ray showing bone structure"
+         loading="lazy"
+         onerror="this.style.display='none'">
+    <div class="wiki-caption">
+      <span>Lateral knee X-ray — note the cortical shell, medullary cavity, and epiphyseal architecture</span>
+      <a class="wiki-source" href="https://commons.wikimedia.org/wiki/File:Knee_X-ray_lateral_view_Dr_Jan_Glaser.jpg" target="_blank" rel="noopener">Wikimedia Commons (CC BY-SA)</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-label">Parts of a Long Bone — Function Matters More Than Names</div>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Part</th><th>What It Is</th><th>Clinical Significance</th></tr>
+        <tr><td>Epiphysis</td><td>Expanded ends; articular cartilage-covered</td><td>Site of secondary ossification; fractures here = Salter-Harris injury in kids</td></tr>
+        <tr><td>Diaphysis</td><td>Shaft; cortical bone dominant</td><td>Stress fractures here (runners, military recruits)</td></tr>
+        <tr><td>Metaphysis</td><td>Flared region between diaphysis and growth plate</td><td>Most common site of <strong>osteosarcoma</strong> and haematogenous osteomyelitis — rich blood supply + sluggish flow</td></tr>
+        <tr><td>Epiphyseal plate</td><td>Hyaline cartilage disc — the growth plate</td><td>Injury before fusion → growth arrest. Fuses: females ~16–18 yrs, males ~18–21 yrs</td></tr>
+        <tr><td>Periosteum</td><td>Outer fibrous + inner osteogenic layer</td><td>Rich nerve supply → periosteal pain intense. Inner layer regenerates bone after fracture</td></tr>
+        <tr><td>Endosteum</td><td>Inner lining of medullary cavity</td><td>Houses osteoprogenitor cells</td></tr>
+        <tr><td>Medullary cavity</td><td>Central canal; red/yellow marrow</td><td>Red marrow = haematopoiesis (axial + proximal limbs in adults). Yellow = fat</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- DRAWING SLOT 4 -->
+  <div class="wiki-figure">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/Illu_bone_types.jpg"
+         alt="Bone Classification"
+         loading="lazy"
+         onerror="this.style.display='none'">
+    <div class="wiki-caption">
+      <span>Bone Classification</span>
+      <a class="wiki-source" href="https://commons.wikimedia.org/wiki/File:Illu_bone_types.jpg" target="_blank" rel="noopener">Wikimedia Commons (Public Domain)</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-label">Bone Classification <span class="badge badge-pyq">PYQ Multiple Years</span></div>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Type</th><th>Shape</th><th>Examples</th><th>Special Feature</th></tr>
+        <tr><td>Long bone</td><td>Length > width</td><td>Femur, humerus, tibia, fibula, radius, ulna, metacarpals, phalanges</td><td>Ossify by endochondral ossification; marrow cavity present</td></tr>
+        <tr><td>Short bone</td><td>Roughly cuboidal</td><td>Carpal bones (8), tarsal bones (7)</td><td>Mostly cancellous inside; only thin cortex</td></tr>
+        <tr><td>Flat bone</td><td>Thin, curved plates</td><td>Skull vault bones, scapula, sternum, ribs, ilium</td><td>Inner + outer tables of compact bone with diploe (cancellous) between</td></tr>
+        <tr><td>Irregular bone</td><td>Doesn't fit other categories</td><td>Vertebrae, hip bones, many skull base bones, calcaneus</td><td>Mix of cortical and cancellous; complex shapes for attachment</td></tr>
+        <tr><td>Sesamoid bone</td><td>Small, embedded in tendon</td><td>Patella (largest), 2 sesamoids under 1st metatarsal head</td><td>Reduces friction + changes tendon angle; develop in tendons under pressure</td></tr>
+        <tr><td>Pneumatic bone</td><td>Contains air sinuses</td><td>Frontal, maxilla, sphenoid, ethmoid</td><td>Reduce skull weight; resonate voice; drain into nasal cavity</td></tr>
+        <tr><td>Sutural / Wormian</td><td>Small bones in skull sutures</td><td>Lambdoid suture most common site</td><td>Increased number in osteogenesis imperfecta, hypothyroidism</td></tr>
+      </table>
+    </div>
+    <div class="mnemonic-box" style="margin-top:10px">
+      <div class="mbox-title">Bone Types Mnemonic</div>
+      <div class="mnemonic-hl">"Long Short Flat Irregular Sesamoid Pneumatic" → "Lazy Students Fail In Second Paper"</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-label">Bone Tissue Types</div>
+    <div class="two-col">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:8px">Compact (Cortical) Bone</p>
+        <ul class="check">
+          <li>Organised into <span class="hl">Haversian systems (osteons)</span></li>
+          <li>Central Haversian canal (vessels + nerves) surrounded by concentric lamellae</li>
+          <li>Canaliculi connect osteocytes to each other and to canal</li>
+          <li>Forms the outer shell of all bones; dominant in diaphysis</li>
+          <li>Volkmann's canals run perpendicularly, connect Haversian canals</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--teal);margin-bottom:8px">Cancellous (Trabecular / Spongy) Bone</p>
+        <ul class="check">
+          <li>Lattice of bony trabeculae aligned along stress lines</li>
+          <li>No Haversian systems — no true osteons</li>
+          <li>Spaces filled with red/yellow marrow</li>
+          <li>Dominant in epiphyses, flat bones, vertebral bodies</li>
+          <li>First to be lost in osteoporosis</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══════════ S3: OSSIFICATION ═══════════ -->
+<div id="s3">
+  <div class="section-header">
+    <div class="section-num">03</div>
+    <h2><em>Ossification</em> — How Bone Forms</h2>
+  </div>
+
+  <div class="keypoint">Two ways to build a bone — either directly from mesenchyme (fast, for flat bones that need to protect brain quickly) or via a cartilage scaffold first (endochondral, for long bones that need to grow in length). The difference matters for how fractures heal and why growth plate injuries are serious.</div>
+
+  <!-- DRAWING SLOT 5 -->
+  <div class="wiki-figure">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/608_Endochondral_Ossification.jpg"
+         alt="Endochondral Ossification"
+         loading="lazy"
+         onerror="this.style.display='none'">
+    <div class="wiki-caption">
+      <span>Endochondral Ossification</span>
+      <a class="wiki-source" href="https://commons.wikimedia.org/wiki/File:608_Endochondral_Ossification.jpg" target="_blank" rel="noopener">OpenStax College (CC BY 3.0)</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-label">Intramembranous vs Endochondral Ossification <span class="badge badge-pyq">PYQ 2014, 2018, 2022</span></div>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Feature</th><th>Intramembranous</th><th>Endochondral</th></tr>
+        <tr><td>Template</td><td>Fibrous membrane (mesenchyme directly)</td><td>Hyaline cartilage model first, then replaced</td></tr>
+        <tr><td>Bones formed</td><td>Flat skull bones (frontal, parietal, occipital squama), mandible, clavicle (partly)</td><td>All long bones, short bones, vertebrae, ribs, sternum, base of skull</td></tr>
+        <tr><td>Process</td><td>Mesenchyme → osteoblasts → osteoid → woven bone → lamellar bone</td><td>Cartilage model → vascular invasion → primary ossification centre → secondary centres (epiphyses)</td></tr>
+        <tr><td>Primary centre timing</td><td>8th week of fetal life (skull sutures visible by birth)</td><td>6th–8th week intrauterine (diaphysis). Secondary centres — mostly postnatal</td></tr>
+        <tr><td>Fontanelles</td><td>Gaps between intramembranous bones at birth — allow moulding during delivery, brain growth postnatally</td><td>N/A</td></tr>
+        <tr><td>Fracture healing</td><td>Similar process repeats — periosteum → callus</td><td>Callus forms via both processes</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="clinical-box">
+    <div class="cbox-title">Fontanelles — A Common Viva Trap</div>
+    <p>Anterior fontanelle (bregma): largest, diamond-shaped, closes by <strong>18 months</strong>. Posterior fontanelle (lambda): small, triangular, closes by <strong>6–8 weeks</strong> after birth. Bulging fontanelle = raised ICP (meningitis, hydrocephalus). Sunken = dehydration. Delayed closure = hypothyroidism, rickets, Down syndrome, osteogenesis imperfecta.</p>
+  </div>
+
+  <div class="clinical-box">
+    <div class="cbox-title">Clavicle — The Exception</div>
+    <p>The clavicle is the <strong>first bone to ossify</strong> (5th–6th week intrauterine) and the <strong>last to fuse</strong> its epiphysis (~25 years — medial end). It ossifies partly by intramembranous (shaft) and partly endochondral (ends). Also the most commonly fractured bone overall.</p>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══════════ S4: CARTILAGE ═══════════ -->
+<div id="s4">
+  <div class="section-header">
+    <div class="section-num">04</div>
+    <h2><em>Cartilage</em> — Three Types, One Key Rule</h2>
+  </div>
+
+  <div class="keypoint">The key rule for cartilage: <span class="hl">avascular, aneural, alymphatic</span>. This is why cartilage heals so poorly — no blood supply means no inflammatory response, no clot formation, no organised repair. It also means cartilage pain is referred pain, not local pain.</div>
+
+  <!-- Wikimedia histology -->
+  <div class="wiki-figure">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Hyaline_cartilage_-_very_high_mag.jpg/640px-Hyaline_cartilage_-_very_high_mag.jpg"
+         alt="Hyaline cartilage histology"
+         loading="lazy"
+         onerror="this.style.display='none'">
+    <div class="wiki-caption">
+      <span>Hyaline cartilage histology — chondrocytes in lacunae, homogenous matrix, no visible fibres</span>
+      <a class="wiki-source" href="https://commons.wikimedia.org/wiki/File:Hyaline_cartilage_-_very_high_mag.jpg" target="_blank" rel="noopener">Wikimedia Commons (CC BY-SA)</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-label">Three Types of Cartilage <span class="badge badge-fav">⭐ Viva Favourite</span></div>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Type</th><th>Matrix</th><th>Perichondrium</th><th>Sites</th><th>Properties</th></tr>
+        <tr><td>Hyaline</td><td>Type II collagen (fibres invisible — masked by ground substance), proteoglycans, chondronectin</td><td>Present (except articular cartilage)</td><td>Articular surfaces, costal cartilages, nose, larynx (most cartilages), trachea, bronchi, epiphyseal plates</td><td>Smooth, glassy, pearly blue-white. Most abundant. Weakest of three. Tends to calcify with age</td></tr>
+        <tr><td>Elastic</td><td>Type II collagen + abundant elastic fibres (visible on H&E as yellow-brown)</td><td>Present</td><td>Auricle of ear (pinna), epiglottis, cuneiform/corniculate cartilages of larynx, external auditory meatus, Eustachian tube</td><td>Flexible, returns to shape. Does NOT calcify with age (unlike hyaline)</td></tr>
+        <tr><td>Fibrocartilage</td><td>Type I collagen (thick, visible bundles), less ground substance</td><td>Absent</td><td>Intervertebral discs (annulus fibrosus), pubic symphysis, menisci of knee, articular discs (TMJ, sternoclavicular, acromioclavicular), attachment of some tendons</td><td>Strongest. Resists compression and tension. Transitional zone between hyaline and dense fibrous tissue</td></tr>
+      </table>
+    </div>
+
+    <div class="mnemonic-box" style="margin-top:10px">
+      <div class="mbox-title">Elastic Cartilage Locations</div>
+      <div class="mnemonic-hl">"Ear, Epiglottis, Eustachian" — all begin with E</div>
+      <p style="font-size:12px;color:var(--text2);margin-top:4px">Plus the minor laryngeal cartilages (cuneiform, corniculate). The major laryngeal cartilages — thyroid, cricoid, most arytenoid — are <em>hyaline</em>.</p>
+    </div>
+
+    <div class="warn-box" style="margin-top:8px">Articular cartilage is hyaline but has <strong>NO perichondrium</strong> — it gets nutrients by diffusion from synovial fluid. This is why articular cartilage damage (osteoarthritis) is irreversible — no perichondrial repair mechanism.</div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══════════ S5: JOINTS ═══════════ -->
+<div id="s5">
+  <div class="section-header">
+    <div class="section-num">05</div>
+    <h2><em>Joints</em> — Classification & Structure</h2>
+  </div>
+
+  <div class="keypoint">Every joint question in anatomy comes down to: what type is it, what movements does it permit, which ligaments stabilise it, and what can go wrong. Build that framework here — apply it to every regional module later.</div>
+
+  <div class="joint-strip">
+    <div class="joint-card fibrous">
+      <div class="joint-card-type">Fibrous</div>
+      <div class="joint-card-name">Held by dense fibrous tissue</div>
+      <p>No joint cavity. Movement minimal/absent. Subtypes: <strong>Suture</strong> (skull), <strong>Syndesmosis</strong> (inferior tibiofibular), <strong>Gomphosis</strong> (tooth in socket)</p>
+    </div>
+    <div class="joint-card cartil">
+      <div class="joint-card-type">Cartilaginous</div>
+      <div class="joint-card-name">United by cartilage</div>
+      <p>No joint cavity. Primary (synchondrosis, hyaline) or Secondary (symphysis, fibrocartilage). Some movement possible in symphyses.</p>
+    </div>
+    <div class="joint-card synovial">
+      <div class="joint-card-type">Synovial</div>
+      <div class="joint-card-name">Free-moving; has a joint cavity</div>
+      <p>Articular cartilage, joint cavity with synovial fluid, synovial membrane, fibrous capsule, ligaments. 6 subtypes by shape.</p>
+    </div>
+  </div>
+
+  <!-- DRAWING SLOT 6 -->
+  <div class="wiki-figure">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/904_Fibrous_Joints.jpg/960px-904_Fibrous_Joints.jpg"
+         alt="Fibrous Joint Types"
+         loading="lazy"
+         onerror="this.style.display='none'">
+    <div class="wiki-caption">
+      <span>Fibrous Joints</span>
+      <a class="wiki-source" href="https://commons.wikimedia.org/wiki/File:904_Fibrous_Joints.jpg" target="_blank" rel="noopener">OpenStax College (CC BY 3.0)</a>
+    </div>
+  </div>
+
+  <!-- DRAWING SLOT 7 -->
+  <div class="wiki-figure">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/907_Synovial_Joints.jpg/960px-907_Synovial_Joints.jpg"
+         alt="Synovial Joint"
+         loading="lazy"
+         onerror="this.style.display='none'">
+    <div class="wiki-caption">
+      <span>Synovial Joint Structure</span>
+      <a class="wiki-source" href="https://commons.wikimedia.org/wiki/File:907_Synovial_Joints.jpg" target="_blank" rel="noopener">OpenStax College (CC BY 3.0)</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-label">Synovial Joint — What Each Part Does</div>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Component</th><th>Structure</th><th>Function</th></tr>
+        <tr><td>Articular cartilage</td><td>Hyaline, 2–4mm thick, no perichondrium</td><td>Absorbs shock; provides smooth surface for gliding; reduces friction to near zero</td></tr>
+        <tr><td>Joint (articular) cavity</td><td>Potential space; real only when fluid present</td><td>Contains synovial fluid; allows free movement</td></tr>
+        <tr><td>Synovial membrane</td><td>Inner layer of capsule; highly vascular synoviocytes</td><td>Produces synovial fluid (ultrafiltrate of plasma + hyaluronate). Lines entire joint EXCEPT articular cartilage and articular discs</td></tr>
+        <tr><td>Synovial fluid</td><td>Viscous, straw-coloured; hyaluronic acid gives viscosity</td><td>Lubrication, nutrition of articular cartilage, phagocytosis of debris</td></tr>
+        <tr><td>Fibrous capsule</td><td>Dense irregular fibrous tissue; pierced by vessels/nerves</td><td>Holds joint together; local thickenings form intrinsic ligaments (e.g., iliofemoral)</td></tr>
+        <tr><td>Ligaments</td><td>Intrinsic (capsular) or extrinsic (outside capsule)</td><td>Passive restraints; guide and limit movement; proprioception via embedded mechanoreceptors</td></tr>
+        <tr><td>Articular discs/menisci</td><td>Fibrocartilage; attached at periphery to capsule</td><td>Improve congruence (fit) between surfaces; absorb shock; distribute load; allow complex movements</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- DRAWING SLOT 8 -->
+  <div class="wiki-figure">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/906_Cartiliginous_Joints.jpg/960px-906_Cartiliginous_Joints.jpg"
+         alt="Cartilaginous Joints"
+         loading="lazy"
+         onerror="this.style.display='none'">
+    <div class="wiki-caption">
+      <span>Cartilaginous Joints</span>
+      <a class="wiki-source" href="https://commons.wikimedia.org/wiki/File:906_Cartiliginous_Joints.jpg" target="_blank" rel="noopener">OpenStax College (CC BY 3.0)</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-label">Synovial Joint Subtypes — The 6 Types <span class="badge badge-pyq">PYQ 2016, 2019, 2023</span></div>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Type</th><th>Shape</th><th>Movements</th><th>Example</th></tr>
+        <tr><td>Plane (gliding)</td><td>Flat surfaces</td><td>Gliding only</td><td>Intercarpal, intertarsal, acromioclavicular, facet joints of vertebrae</td></tr>
+        <tr><td>Hinge (ginglymus)</td><td>Cylindrical convex into concave</td><td>Flexion & extension only (1 axis)</td><td>Elbow (humeroulnar), knee (functionally), ankle, IP joints of fingers</td></tr>
+        <tr><td>Pivot (trochoid)</td><td>Cylinder rotating in ring</td><td>Rotation only (1 axis)</td><td>Atlantoaxial (C1–C2), superior radioulnar, inferior radioulnar</td></tr>
+        <tr><td>Condyloid (ellipsoid)</td><td>Oval convex into elliptical concave</td><td>Flexion/extension + abduction/adduction (2 axes, no rotation)</td><td>Radiocarpal (wrist), MCP joints, 2nd–5th CMC joints</td></tr>
+        <tr><td>Saddle (sellar)</td><td>Each surface concave in one direction, convex in other</td><td>All movements except axial rotation (2+ axes)</td><td>1st carpometacarpal (thumb CMC), sternoclavicular</td></tr>
+        <tr><td>Ball & Socket (spheroidal)</td><td>Ball into cup</td><td>All movements including rotation (multiaxial)</td><td>Shoulder (glenohumeral), hip (coxal)</td></tr>
+      </table>
+    </div>
+    <div class="mnemonic-box" style="margin-top:10px">
+      <div class="mbox-title">Synovial Joint Subtypes</div>
+      <div class="mnemonic-hl">"Please Help Prehistoric Creatures Survive Brutally" → Plane, Hinge, Pivot, Condyloid, Saddle, Ball-&-Socket</div>
+    </div>
+  </div>
+
+  <div class="clinical-box">
+    <div class="cbox-title">Joint Fluid Analysis — The Examiner's Favourite Viva</div>
+    <p>Normal synovial fluid: viscous, straw-coloured, WBC &lt;200/mm³, glucose ≈ blood glucose. <strong>Septic arthritis:</strong> turbid, WBC &gt;50,000 (neutrophil dominant), low glucose — surgical emergency (destroys cartilage within hours). <strong>Gout:</strong> monosodium urate crystals (needle-shaped, negatively birefringent). <strong>Pseudogout:</strong> calcium pyrophosphate crystals (rhomboid, positively birefringent).</p>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══════════ S6: MUSCLES ═══════════ -->
+<div id="s6">
+  <div class="section-header">
+    <div class="section-num">06</div>
+    <h2><em>Muscles</em> — Types, Architecture & Contraction</h2>
+  </div>
+
+  <div class="keypoint">Three muscle types exist in your body. You control one voluntarily (skeletal), one runs automatically (cardiac), and one does both depending on the situation (smooth). For anatomy exams, skeletal muscle architecture — particularly fibre arrangement and the sarcomere — is the bread and butter.</div>
+
+  <div class="muscle-grid">
+    <div class="muscle-card">
+      <div class="muscle-card-icon">💪</div>
+      <div class="muscle-card-name">Skeletal</div>
+      <div class="muscle-card-detail">Striated · Multinucleated · Voluntary · Somatic nerve supply · Fast/slow fibre types</div>
+    </div>
+    <div class="muscle-card">
+      <div class="muscle-card-icon">❤️</div>
+      <div class="muscle-card-name">Cardiac</div>
+      <div class="muscle-card-detail">Striated · Uninucleate · Involuntary · Intercalated discs · Intrinsic rhythmicity · Branched fibres</div>
+    </div>
+    <div class="muscle-card">
+      <div class="muscle-card-icon">〰️</div>
+      <div class="muscle-card-name">Smooth</div>
+      <div class="muscle-card-detail">Non-striated · Uninucleate · Involuntary · ANS + hormones + local factors · Walls of hollow organs</div>
+    </div>
+  </div>
+
+  <!-- DRAWING SLOT 9 -->
+  <div class="wiki-figure">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Skeletal_muscle.jpg/800px-Skeletal_muscle.jpg"
+         alt="Muscle Fibre Arrangements"
+         loading="lazy"
+         onerror="this.style.display='none'">
+    <div class="wiki-caption">
+      <span>Skeletal Muscle Architecture</span>
+      <a class="wiki-source" href="https://commons.wikimedia.org/wiki/File:Skeletal_muscle.jpg" target="_blank" rel="noopener">Wikimedia Commons (Public Domain)</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-label">Muscle Architecture — Why It Matters</div>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Arrangement</th><th>Fibre Direction</th><th>Advantage</th><th>Example</th></tr>
+        <tr><td>Parallel / Strap</td><td>Parallel to line of pull</td><td>Greatest range of movement</td><td>Sartorius, rectus abdominis, sternohyoid</td></tr>
+        <tr><td>Fusiform</td><td>Parallel, tapered at ends</td><td>Speed and range</td><td>Biceps brachii, brachioradialis</td></tr>
+        <tr><td>Unipennate</td><td>Oblique to one side of tendon</td><td>More fibres per cm² → more force</td><td>Flexor pollicis longus, extensor digitorum longus</td></tr>
+        <tr><td>Bipennate</td><td>Oblique to both sides of central tendon</td><td>Even more force than unipennate</td><td>Rectus femoris, dorsal interossei</td></tr>
+        <tr><td>Multipennate</td><td>Multiple angles, multiple tendons</td><td>Maximum force, multiple pull directions</td><td>Deltoid, subscapularis</td></tr>
+        <tr><td>Circular / Sphincter</td><td>Concentric rings</td><td>Closes an orifice</td><td>Orbicularis oculi, orbicularis oris, external sphincter</td></tr>
+      </table>
+    </div>
+    <div class="keypoint" style="margin-top:10px">Pennate muscles sacrifice range of movement for force. Parallel muscles sacrifice force for range. The deltoid (multipennate) is both powerful AND versatile because it has fibres running in many directions — anterior, middle, and posterior fibres act almost independently.</div>
+  </div>
+
+  <!-- DRAWING SLOT 10 -->
+  <div class="wiki-figure">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Sarcomere.gif"
+         alt="Sarcomere Contraction"
+         loading="lazy"
+         onerror="this.style.display='none'">
+    <div class="wiki-caption">
+      <span>Sarcomere: Rest vs Contracted</span>
+      <a class="wiki-source" href="https://commons.wikimedia.org/wiki/File:Sarcomere.gif" target="_blank" rel="noopener">Wikimedia Commons (CC BY-SA 3.0)</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-label">Sliding Filament Theory <span class="badge badge-pyq">PYQ 2013, 2018, 2021</span></div>
+    <div class="flowchart">
+      <div class="flow-title">Muscle Contraction — Step by Step</div>
+      <div class="flow-v">
+        <div class="flow-box coral">
+          <span class="lbl">Step 1 — Action Potential</span>
+          Motor neuron AP → reaches neuromuscular junction → ACh released → binds nAChR → muscle AP generated → spreads along sarcolemma → travels down T-tubules
+        </div>
+        <div class="flow-step">↓</div>
+        <div class="flow-box gold">
+          <span class="lbl">Step 2 — Ca²⁺ Release</span>
+          T-tubule AP → triggers ryanodine receptor (RyR1) in SR terminal cisternae → Ca²⁺ floods into cytoplasm from SR
+          <span class="sub">Resting Ca²⁺ ≈ 0.1 µM → rises to ~10 µM during contraction</span>
+        </div>
+        <div class="flow-step">↓</div>
+        <div class="flow-box teal">
+          <span class="lbl">Step 3 — Troponin Activation</span>
+          Ca²⁺ binds troponin C (TnC) → conformational change in troponin complex → tropomyosin shifts off actin's myosin-binding site → active sites on actin exposed
+        </div>
+        <div class="flow-step">↓</div>
+        <div class="flow-box blue">
+          <span class="lbl">Step 4 — Cross-Bridge Cycling</span>
+          Myosin head (already has ADP + Pi) binds actin → power stroke (Pi released → ADP released → myosin pulls actin toward M line) → ATP binds myosin → detaches from actin → ATP hydrolysed → myosin re-cocks (returns to high-energy position)
+        </div>
+        <div class="flow-step">↓</div>
+        <div class="flow-box coral">
+          <span class="lbl">Step 5 — Relaxation</span>
+          Motor neuron stops firing → ACh degraded by AChE → AP stops → Ca²⁺ pumped back into SR (SERCA pump, ATP-dependent) → troponin-tropomyosin blocks actin → cross-bridges detach → muscle lengthens
+        </div>
+      </div>
+    </div>
+
+    <div class="warn-box">The A band does <strong>NOT change length</strong> during contraction — this is the most common exam mistake. The A band = myosin filament length = constant. What changes: I bands (narrow), H zone (narrows/disappears), sarcomere length (shortens). Bands A stays the <strong>A</strong>lpha (first, unchanged).</div>
+
+    <div class="mnemonic-box" style="margin-top:10px">
+      <div class="mbox-title">What Changes in Contraction</div>
+      <div class="mnemonic-hl">"I Have Shortened" → I band (narrows) · H zone (narrows) · Sarcomere (shortens)</div>
+      <p style="font-size:12px;color:var(--text2);margin-top:4px">A band stays constant. Always. No exceptions. If an MCQ says "A band shortens" — it's <strong>wrong</strong>.</p>
+    </div>
+  </div>
+
+  <!-- Wikimedia muscle histology -->
+  <div class="wiki-figure">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Skeletal_muscle_-_cross_section%2C_intermed_mag.jpg/640px-Skeletal_muscle_-_cross_section%2C_intermed_mag.jpg"
+         alt="Skeletal muscle cross-section histology"
+         loading="lazy"
+         onerror="this.style.display='none'">
+    <div class="wiki-caption">
+      <span>Skeletal muscle cross-section — individual muscle fibres (myocytes) packed in fascicles, surrounded by perimysium</span>
+      <a class="wiki-source" href="https://commons.wikimedia.org/wiki/File:Skeletal_muscle_-_cross_section%2C_intermed_mag.jpg" target="_blank" rel="noopener">Wikimedia Commons (CC BY-SA)</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-label">Connective Tissue Wrappings of Muscle</div>
+    <div class="two-col">
+      <div>
+        <ul class="check">
+          <li><span class="hl">Endomysium</span> — surrounds each individual muscle fibre (myocyte)</li>
+          <li><span class="hl">Perimysium</span> — surrounds a fascicle (bundle of fibres). Where blood vessels and nerves travel</li>
+          <li><span class="hl">Epimysium</span> — surrounds the entire muscle belly. Continuous with deep fascia and merges with tendon</li>
+        </ul>
+      </div>
+      <div>
+        <div class="mnemonic-box" style="margin:0">
+          <div class="mbox-title">Muscle Wrappings</div>
+          <div class="mnemonic-hl">"Every Penguin Eats" → Endo → Peri → Epi (inside out)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══════════ S7: FASCIA & BURSAE ═══════════ -->
+<div id="s7">
+  <div class="section-header">
+    <div class="section-num">07</div>
+    <h2><em>Fascia</em> & Bursae</h2>
+  </div>
+
+  <div class="keypoint">Fascia is one of those topics that gets a paragraph in most notes and an entire question in the exam. The deep fascia is a surgical landmark — it separates compartments, carries nerves and vessels, and determines how infections spread. Bursae are pockets of synovial fluid that reduce friction — they inflame, they fill with blood, and they communicate with joints in ways that can mislead you clinically.</div>
+
+  <div class="card">
+    <div class="card-label">Types of Fascia</div>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Type</th><th>Structure</th><th>Function</th><th>Clinical Note</th></tr>
+        <tr><td>Superficial fascia (hypodermis)</td><td>Loose areolar connective tissue + fat (Camper's layer superficial, Scarpa's/Colles' deep membranous layer in abdomen/perineum)</td><td>Fat storage, insulation, passage for cutaneous nerves and vessels, lymphatics</td><td>Oedema collects here first. Infections spread easily — loose tissue offers no resistance</td></tr>
+        <tr><td>Deep fascia</td><td>Dense irregular fibrous tissue; inextensible sheets and tubular sheaths</td><td>Invests muscles; forms compartments (fascial compartments); retinacula; intermuscular septa</td><td>Compartment syndrome — swelling within closed fascial compartment raises pressure → ischaemia. Tx: fasciotomy</td></tr>
+        <tr><td>Subserous fascia</td><td>Loose connective tissue between body wall and serous membrane</td><td>Allows movement of serous membranes (pleura, peritoneum, pericardium)</td><td>Extraperitoneal spread of infections/tumours here</td></tr>
+        <tr><td>Visceral fascia</td><td>Dense fibrous coverings of organs; continuous with organ capsules</td><td>Support and suspend organs; carry neurovascular bundles to organs</td><td>Renal fascia (Gerota's) limits perinephric collections. Prostate has fascial sheath relevant in surgery</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-label">Bursae <span class="badge badge-pyq">PYQ 2017, 2022</span></div>
+    <p style="font-size:13px;margin-bottom:10px">A <span class="hl">bursa</span> is a closed sac of synovial membrane containing a thin film of synovial fluid. It exists wherever a structure (tendon, ligament, skin, muscle) would otherwise rub against bone or another structure during movement.</p>
+    <div class="two-col">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:8px">Types of Bursae</p>
+        <ul class="check">
+          <li><span class="hl">True bursae:</span> Present from birth, constant, always synovial-lined</li>
+          <li><span class="hl">Adventitious bursae:</span> Form in response to abnormal friction/pressure (e.g., bunion over 1st MTP, olecranon bursa in miners)</li>
+          <li><span class="hl">Bursae communicating with joints:</span> Suprapatellar bursa ↔ knee joint; subscapular bursa ↔ shoulder</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--rose);margin-bottom:8px">Clinical — Bursitis</p>
+        <ul class="check">
+          <li><span class="hr">Prepatellar bursitis</span> (housemaid's knee) — repeated kneeling. Bursa between skin and patella</li>
+          <li><span class="hr">Infrapatellar bursitis</span> (clergyman's knee) — more distal, between patellar ligament and tibia</li>
+          <li><span class="hr">Subacromial bursitis</span> — painful arc syndrome; shoulder abduction 60–120° painful</li>
+          <li><span class="hr">Olecranon bursitis</span> — student's elbow (leaning on desk); gout common here</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══════════ S8: NERVE BASICS ═══════════ -->
+<div id="s8">
+  <div class="section-header">
+    <div class="section-num">08</div>
+    <h2>Nerve <em>Basics</em></h2>
+  </div>
+
+  <div class="keypoint">You'll spend the rest of anatomy memorising nerve distributions. This section gives you the framework so every nerve injury, every motor deficit, every sensory loss pattern makes mechanical sense rather than being a list to memorise.</div>
+
+  <div class="card">
+    <div class="card-label">Nerve Fibre Classification <span class="badge badge-fav">⭐ Viva Favourite</span></div>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Fibre Type</th><th>Diameter</th><th>Myelination</th><th>Conduction Speed</th><th>Function</th></tr>
+        <tr><td>Aα (Type Ia/Ib)</td><td>12–20 µm</td><td>Heavily myelinated</td><td>70–120 m/s (fastest)</td><td>Motor to extrafusal muscle; proprioception from muscle spindles (Ia) and GTOs (Ib)</td></tr>
+        <tr><td>Aβ (Type II)</td><td>5–12 µm</td><td>Myelinated</td><td>30–70 m/s</td><td>Touch, pressure, vibration, 2-point discrimination</td></tr>
+        <tr><td>Aγ</td><td>3–6 µm</td><td>Myelinated</td><td>15–30 m/s</td><td>Motor to intrafusal muscle fibres (muscle spindle regulation)</td></tr>
+        <tr><td>Aδ (Type III)</td><td>1–5 µm</td><td>Lightly myelinated</td><td>5–30 m/s</td><td>Fast/sharp pain, cold temperature, crude touch</td></tr>
+        <tr><td>B fibres</td><td>&lt;3 µm</td><td>Lightly myelinated</td><td>3–15 m/s</td><td>Preganglionic autonomic</td></tr>
+        <tr><td>C fibres (Type IV)</td><td>0.2–1.5 µm</td><td>Unmyelinated (slowest)</td><td>0.5–2 m/s</td><td>Slow/burning/aching pain, warmth, postganglionic sympathetic, itch</td></tr>
+      </table>
+    </div>
+    <div class="warn-box">Local anaesthetics block <strong>C fibres first</strong> (small, unmyelinated, most sensitive) → pain and temperature lost before touch. Motor fibres (Aα — large, well-myelinated) are last to be blocked. This is why you can sometimes feel pressure/touch during dental anaesthesia but not sharp pain.</div>
+  </div>
+
+  <div class="card">
+    <div class="card-label">Connective Tissue Wrappings of a Peripheral Nerve</div>
+    <div class="flowchart">
+      <div class="flow-title">Nerve Organisation — Outermost to Innermost</div>
+      <div class="flow-h">
+        <div class="flow-box coral" style="text-align:center;">
+          <span class="lbl">Epineurium</span>
+          Outermost sheath<br>Surrounds entire nerve trunk<br>Dense collagen
+        </div>
+        <div class="h-arr">→</div>
+        <div class="flow-box gold" style="text-align:center;">
+          <span class="lbl">Perineurium</span>
+          Surrounds each fascicle<br>Blood-nerve barrier<br>Tight junctions
+        </div>
+        <div class="h-arr">→</div>
+        <div class="flow-box teal" style="text-align:center;">
+          <span class="lbl">Endoneurium</span>
+          Surrounds each axon<br>Loose collagen<br>Innermost
+        </div>
+      </div>
+    </div>
+    <div class="mnemonic-box" style="margin-top:10px">
+      <div class="mbox-title">Nerve Wrappings (same logic as muscle)</div>
+      <div class="mnemonic-hl">"Every Peripheral Nerve" → Endo (axon) · Peri (fascicle) · Epi (whole nerve)</div>
+    </div>
+    <div class="clinical-box" style="margin-top:8px">
+      <div class="cbox-title">Nerve Injury Classification — Seddon's & Sunderland's</div>
+      <p><strong>Neuropraxia (Sunderland 1):</strong> Myelin damaged, axon intact. Conduction block only. Full recovery. Example: "Saturday night palsy" (radial nerve compressed against humerus).</p>
+      <p style="margin-top:6px"><strong>Axonotmesis (Sunderland 2–4):</strong> Axon disrupted but connective tissue sheaths intact. Wallerian degeneration distal to injury. Regeneration possible (1mm/day). Example: fracture-related nerve injury.</p>
+      <p style="margin-top:6px"><strong>Neurotmesis (Sunderland 5):</strong> Complete nerve division. No spontaneous recovery. Surgical repair needed. Example: knife laceration.</p>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══════════ S9: VIVA Q&A ═══════════ -->
+<div id="s9">
+  <div class="section-header">
+    <div class="section-num">09</div>
+    <h2>Viva <em>Q&A</em></h2>
+  </div>
+
+  <div class="viva-section">
+    <div class="viva-bar">Planes, Bones & Ossification</div>
+
+    <details>
+      <summary><span class="viva-q">What is the difference between the median plane and a sagittal plane?</span><span class="viva-yr">Viva Classic</span></summary>
+      <div class="viva-ans">
+        <p>The <strong>median plane</strong> is a single specific sagittal plane that passes exactly through the midline of the body, dividing it into equal left and right halves. A <strong>sagittal plane</strong> is any vertical plane parallel to the median plane — there are infinite sagittal planes, but only one median plane. In clinical practice, "midsagittal" = median. Any parasagittal plane runs parallel to the median but does not bisect the body symmetrically.</p>
+        <p><em>Examiner follow-up: "What movement occurs in the sagittal plane?" → Flexion and extension (about a transverse axis).</em></p>
+      </div>
+    </details>
+
+    <details>
+      <summary><span class="viva-q">Why is the metaphysis the most common site for osteosarcoma and osteomyelitis?</span><span class="viva-yr">PYQ 2019, 2023</span></summary>
+      <div class="viva-ans">
+        <p>The metaphysis has a <strong>rich capillary sinusoidal blood supply</strong> with sluggish flow — blood velocity is low because capillaries are wide and tortuous near the growth plate. This creates two conditions:</p>
+        <ul>
+          <li><strong>Osteomyelitis:</strong> Sluggish blood → bacteria settle and multiply easily. Phagocytes are less effective here. Most common in the distal femur and proximal tibia metaphyses in children.</li>
+          <li><strong>Osteosarcoma:</strong> The rapidly dividing osteoblasts near the growth plate are genetically vulnerable. Tumours arising here are the aggressive high-grade type that affects adolescents during their growth spurt. Distal femur metaphysis is the single most common site.</li>
+        </ul>
+        <p><em>Memory hook: Metaphysis = "Metaphor for trouble" — rich supply + slow flow = ideal breeding ground.</em></p>
+      </div>
+    </details>
+
+    <details>
+      <summary><span class="viva-q">What bones ossify by intramembranous ossification and why does it matter?</span><span class="viva-yr">PYQ 2014, 2022</span></summary>
+      <div class="viva-ans">
+        <p>Bones forming by <strong>intramembranous ossification</strong>: flat bones of the skull vault (frontal, parietal, squamous occipital, squamous temporal), mandible, and the shaft of the clavicle. These have no cartilage template — mesenchymal cells directly differentiate into osteoblasts.</p>
+        <p><strong>Why it matters clinically:</strong></p>
+        <ul>
+          <li>Fontanelles exist because these bones start as islands and haven't yet fused — allows brain growth and birth canal moulding</li>
+          <li>Skull fractures heal differently — periosteum regenerates without cartilage intermediate</li>
+          <li>Fibrous dysplasia and Paget's disease preferentially affect these bones</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+
+  <div class="viva-section">
+    <div class="viva-bar">Cartilage, Joints & Muscles</div>
+
+    <details>
+      <summary><span class="viva-q">Why does articular cartilage not heal well after injury?</span><span class="viva-yr">Viva Favourite</span></summary>
+      <div class="viva-ans">
+        <p>Three reasons work together:</p>
+        <ul>
+          <li><strong>Avascular:</strong> No blood vessels → no inflammatory response → no clot formation → no organised repair cascade. Nutrients come only from synovial fluid.</li>
+          <li><strong>No perichondrium:</strong> Articular cartilage has no perichondrium (unlike costal or nasal cartilage) → no reservoir of chondroprogenitor cells to mount a repair</li>
+          <li><strong>Low cell turnover:</strong> Chondrocytes are post-mitotic (divide very slowly) → minimal capacity for cell replacement</li>
+        </ul>
+        <p>Superficial lacerations that don't penetrate subchondral bone <strong>never heal</strong>. Full-thickness defects that bleed from bone may fill with fibrocartilage (inferior to hyaline) via the inflammatory response from bone marrow cells — this is the basis of microfracture surgery.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary><span class="viva-q">What is the difference between a ligament and a tendon?</span><span class="viva-yr">1st Year Viva</span></summary>
+      <div class="viva-ans">
+        <p>Both are dense regular fibrous connective tissue made of type I collagen with fibroblasts between fibres.</p>
+        <ul>
+          <li><strong>Tendon:</strong> Connects <em>muscle to bone</em>. Transmits the force of muscle contraction to produce movement. Fibres run strictly parallel (maximises tensile strength in one direction). Has a paratenon or synovial sheath where it bends around pulleys.</li>
+          <li><strong>Ligament:</strong> Connects <em>bone to bone</em>. Stabilises joints. Fibres run in multiple directions (joints are loaded in multiple planes). Contains more elastin than tendons (some stretch needed).</li>
+        </ul>
+        <p><em>Key difference examiners test: Tendons are more metabolically active, heal better (have some vascularity). Ligaments have poorer blood supply → slower healing → why ACL reconstruction often uses tendon grafts rather than waiting for ligament to heal.</em></p>
+      </div>
+    </details>
+
+    <details>
+      <summary><span class="viva-q">What is rigor mortis and what is its biochemical basis?</span><span class="viva-yr">PYQ 2015, 2020</span></summary>
+      <div class="viva-ans">
+        <p><strong>Rigor mortis</strong> is post-mortem stiffening of muscles due to sustained cross-bridge formation without relaxation.</p>
+        <p><strong>Mechanism:</strong></p>
+        <ul>
+          <li>After death, ATP production ceases (no mitochondrial activity)</li>
+          <li>Without ATP, myosin cannot detach from actin (ATP is required for cross-bridge detachment, not formation)</li>
+          <li>Simultaneously, Ca²⁺ leaks from SR → troponin activated → cross-bridges form</li>
+          <li>Result: Muscles locked in semi-contracted, rigid state</li>
+        </ul>
+        <p><strong>Timeline:</strong> Onset 2–6 hours post-mortem (as ATP depletes). Full rigor 12 hours. Resolves 24–48 hours (as muscle proteins begin to decompose).</p>
+        <p><em>Used in forensic medicine: Time since death estimation. Warm body + no rigor = &lt;2h. Full rigor = ~12h. Rigor resolved = &gt;48h.</em></p>
+      </div>
+    </details>
+
+    <details>
+      <summary><span class="viva-q">Classify bursae and give two examples of clinically important bursae around the knee.</span><span class="viva-yr">PYQ 2017, 2022</span></summary>
+      <div class="viva-ans">
+        <p><strong>Classification:</strong></p>
+        <ul>
+          <li><strong>True (constant) bursae:</strong> Present from development, always synovially lined, in predictable locations</li>
+          <li><strong>Adventitious bursae:</strong> Form in response to abnormal pressure/friction over bony prominences</li>
+          <li><strong>Subcutaneous:</strong> Between skin and underlying structure (prepatellar)</li>
+          <li><strong>Submuscular/subfascial/subtendinous:</strong> Deeper layers</li>
+        </ul>
+        <p><strong>Important knee bursae:</strong></p>
+        <ul>
+          <li><strong>Suprapatellar bursa:</strong> Between femur and quadriceps tendon, above patella. <em>Communicates with the knee joint cavity</em> — so joint effusions fill it first and it can be aspirated here. Palpable above patella when distended.</li>
+          <li><strong>Prepatellar bursa:</strong> Between anterior surface of patella and overlying skin. Does NOT communicate with joint. Inflamed by kneeling → prepatellar bursitis (housemaid's knee).</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══════════ S10: EQ TEMPLATES ═══════════ -->
+<div id="s10">
+  <div class="section-header">
+    <div class="section-num">10</div>
+    <h2>Essay Question <em>Templates</em></h2>
+  </div>
+
+  <div class="eq-box">
+    <div class="eq-title">EQ — Classify Joints. Describe the Structure of a Synovial Joint with Examples <span class="badge badge-pyq">PYQ 2016, 2019, 2023</span></div>
+    <div class="eq-q">"Classify joints. Describe the general structure of a synovial joint and give the classification of synovial joints with examples."</div>
+    <div class="eq-answer">
+      <ol>
+        <li><span>Classification of joints:</span> Three structural classes — Fibrous (suture, syndesmosis, gomphosis), Cartilaginous (primary synchondrosis, secondary symphysis), Synovial (6 subtypes). Functionally classified as synarthrosis (immovable), amphiarthrosis (slightly movable), diarthrosis (freely movable).</li>
+        <li><span>General structure of a synovial joint:</span> Joint cavity present (distinguishing feature). Articular surfaces covered by hyaline cartilage (no perichondrium). Fibrous capsule encloses joint; inner layer = synovial membrane. Synovial fluid produced by synoviocytes — lubricates and nourishes. Ligaments (intrinsic or extrinsic) stabilise. Some joints have articular discs (fibrocartilage — knee menisci, TMJ disc, sternoclavicular disc).</li>
+        <li><span>Synovial fluid composition:</span> Ultrafiltrate of plasma + hyaluronic acid (gives viscosity). Normal: straw-coloured, viscous, WBC &lt;200/mm³. Changed in infection, gout, pseudogout (crystal analysis key).</li>
+        <li><span>Classification of synovial joints:</span> Plane (intercarpal), Hinge (elbow), Pivot (atlantoaxial), Condyloid (wrist), Saddle (1st CMC), Ball-and-socket (hip, shoulder). Mnemonic: "Please Help Prehistoric Creatures Survive Brutally."</li>
+        <li><span>Clinical significance:</span> Synovial joints are susceptible to arthritis (osteo and rheumatoid), septic arthritis, haemarthrosis (knee in haemophilia), crystal deposition (gout, pseudogout). Joint aspiration is diagnostic and therapeutic.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="eq-box">
+    <div class="eq-title">EQ — Sliding Filament Theory of Muscle Contraction <span class="badge badge-pyq">PYQ 2013, 2018, 2021</span></div>
+    <div class="eq-q">"Describe the sliding filament theory of muscle contraction. What changes occur in the sarcomere bands during contraction?"</div>
+    <div class="eq-answer">
+      <ol>
+        <li><span>Structural basis — Sarcomere:</span> Functional unit of striated muscle. From Z line to Z line. Contains thick filaments (myosin, in A band), thin filaments (actin + troponin + tropomyosin, spanning I band into A band). I band = only thin filaments. H zone = only thick filaments. M line = mid-sarcomere, anchors myosin.</li>
+        <li><span>Molecular players:</span> Myosin head has ATPase activity + actin-binding site. Actin has exposed binding sites masked by tropomyosin at rest. Troponin complex (TnC binds Ca²⁺, TnI inhibitory, TnT tropomyosin-binding).</li>
+        <li><span>Contraction sequence:</span> AP → T-tubule → Ca²⁺ release from SR → Ca²⁺ binds TnC → tropomyosin shifts → actin binding sites exposed → myosin cross-bridge attaches → power stroke → ATP binds → detachment → ATP hydrolysis → re-cocking → cycle repeats.</li>
+        <li><span>Band changes during contraction:</span> A band — NO CHANGE (myosin filament length constant). I bands — narrow (actin slides into A band). H zone — narrows then disappears (thin filaments reach M line). Sarcomere shortens. Z lines move closer together.</li>
+        <li><span>Energy source:</span> ATP required at two steps — (1) cross-bridge detachment (myosin-ADP-Pi → binds actin → releases Pi then ADP during power stroke → then ATP binds to detach), (2) Ca²⁺ re-uptake into SR by SERCA pump for relaxation. Sustained contraction without ATP = rigor.</li>
+        <li><span>Clinical application:</span> Rigor mortis (ATP depletion post-mortem). Malignant hyperthermia (uncontrolled Ca²⁺ release from SR due to RyR1 mutation → uncontrolled contraction → hyperthermia). Myasthenia gravis (AChR antibodies → impaired AP initiation → weakness despite intact sarcomere machinery).</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="eq-box">
+    <div class="eq-title">EQ — Classify Cartilage with Examples and Clinical Applications <span class="badge badge-pyq">PYQ 2015, 2020</span></div>
+    <div class="eq-q">"Classify cartilage. Give the differences between hyaline, elastic, and fibrocartilage. Add a note on the poor healing of articular cartilage."</div>
+    <div class="eq-answer">
+      <ol>
+        <li><span>General properties:</span> Avascular, aneural, alymphatic. Chondrocytes in lacunae. Matrix: chondroitin sulfate proteoglycans + water (70–80%) + collagen. Perichondrium present in most types (not articular cartilage). Growth: appositional (from perichondrium) + interstitial (chondrocyte division within matrix).</li>
+        <li><span>Hyaline cartilage:</span> Type II collagen (fibres invisible). Glassy, pearly blue-white. Sites: articular surfaces, growth plates, costal cartilages, respiratory tract (trachea, bronchi), nose, larynx (most). Tends to calcify with age. Weakest of three types.</li>
+        <li><span>Elastic cartilage:</span> Type II collagen + abundant elastic fibres (visible in H&E). Flexible, returns to shape. Does NOT calcify. Sites: pinna, epiglottis, cuneiform/corniculate laryngeal cartilages, Eustachian tube. Mnemonic: All begin with "E".</li>
+        <li><span>Fibrocartilage:</span> Type I collagen (thick, visible bundles). No perichondrium. Strongest, resists compression and tension. Sites: intervertebral discs, pubic symphysis, menisci of knee, articular discs of TMJ and sternoclavicular joints, labra of hip and shoulder.</li>
+        <li><span>Poor healing of articular cartilage:</span> Three reasons — (1) Avascular: no inflammatory response, no clot, no vascular ingrowth. (2) No perichondrium: no chondroprogenitor cell source. (3) Chondrocytes are post-mitotic: minimal regenerative capacity. Superficial injuries never heal. Full-thickness defects may fill with inferior fibrocartilage via subchondral bone bleeding (basis of microfracture surgery and marrow stimulation techniques).</li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══════════ S11: QUICKFIRE TABLE ═══════════ -->
+<div id="s11">
+  <div class="section-header">
+    <div class="section-num">11</div>
+    <h2>High-Yield <em>Quickfire</em></h2>
+  </div>
+
+  <div class="card" style="border-color:var(--accent)">
+    <div class="card-label">🔥 Exam Day Rapid Revision — General Anatomy</div>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Question</th><th>Answer</th></tr>
+        <tr><td>Anatomical position — key feature of upper limb</td><td>Palms facing forward (supinated) — radius lateral, ulna medial</td></tr>
+        <tr><td>Plane that divides body into equal left and right</td><td>Median plane (a specific sagittal plane)</td></tr>
+        <tr><td>First bone to ossify in the body</td><td>Clavicle (5th–6th week IU) — also last to fuse medial epiphysis (~25 years)</td></tr>
+        <tr><td>Most common site of osteosarcoma</td><td>Distal femur metaphysis (then proximal tibia, then proximal humerus)</td></tr>
+        <tr><td>Sesamoid bone — largest example</td><td>Patella (in quadriceps tendon)</td></tr>
+        <tr><td>Cartilage with NO perichondrium</td><td>Articular (hyaline) cartilage and fibrocartilage both lack perichondrium</td></tr>
+        <tr><td>Cartilage type that does NOT calcify with age</td><td>Elastic cartilage</td></tr>
+        <tr><td>Fibrocartilage — 3 key sites</td><td>Intervertebral disc, pubic symphysis, knee menisci</td></tr>
+        <tr><td>Joint with articular disc — examples</td><td>Temporomandibular, sternoclavicular, acromioclavicular (incomplete disc = meniscus)</td></tr>
+        <tr><td>Multiaxial synovial joint examples</td><td>Shoulder (glenohumeral) and hip (coxal) — ball and socket</td></tr>
+        <tr><td>Pivot joint examples</td><td>Atlantoaxial (C1–C2 — rotation of head), superior and inferior radioulnar (pronation/supination)</td></tr>
+        <tr><td>A band during contraction — does it change?</td><td>NO. A band stays constant (myosin filament length unchanged). Only I band and H zone shorten</td></tr>
+        <tr><td>Fastest nerve fibre type</td><td>Aα (proprioception, motor to extrafusal) — 70–120 m/s</td></tr>
+        <tr><td>Slowest nerve fibre type</td><td>C fibres (pain, temperature, postganglionic sympathetic) — 0.5–2 m/s</td></tr>
+        <tr><td>Local anaesthetic blocks which fibre type first?</td><td>C fibres (smallest, unmyelinated) — pain and temp lost first, motor last</td></tr>
+        <tr><td>Biochemical basis of rigor mortis</td><td>ATP depletion → myosin cannot detach from actin → sustained cross-bridge formation → rigidity</td></tr>
+        <tr><td>Suprapatellar bursa — communicates with knee joint?</td><td>YES — communicates with joint cavity. Clinically important for joint aspiration and effusion</td></tr>
+        <tr><td>Fontanelle that closes latest</td><td>Anterior fontanelle (bregma) — closes by 18 months postnatally</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- Master mnemonics grid -->
+  <div class="card" style="margin-top:1rem">
+    <div class="card-label">Module 01 Master Mnemonics</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px;margin-top:8px">
+      <div class="mnemonic-box" style="margin:0">
+        <div class="mbox-title">Planes</div>
+        <div class="mnemonic-hl">"Sagittal Splits, Coronal Cuts Chest, Transverse Tops off"</div>
+      </div>
+      <div class="mnemonic-box" style="margin:0">
+        <div class="mbox-title">Bone Types</div>
+        <div class="mnemonic-hl">"Lazy Students Fail In Second Paper" → Long Short Flat Irregular Sesamoid Pneumatic</div>
+      </div>
+      <div class="mnemonic-box" style="margin:0">
+        <div class="mbox-title">Elastic Cartilage Sites</div>
+        <div class="mnemonic-hl">"Three E's" → Ear, Epiglottis, Eustachian (tube)</div>
+      </div>
+      <div class="mnemonic-box" style="margin:0">
+        <div class="mbox-title">Synovial Joint Subtypes</div>
+        <div class="mnemonic-hl">"Please Help Prehistoric Creatures Survive Brutally" → Plane Hinge Pivot Condyloid Saddle Ball</div>
+      </div>
+      <div class="mnemonic-box" style="margin:0">
+        <div class="mbox-title">Muscle/Nerve Wrappings</div>
+        <div class="mnemonic-hl">"Every Penguin Eats" → Endo (fibre/axon) → Peri (fascicle) → Epi (whole structure)</div>
+      </div>
+      <div class="mnemonic-box" style="margin:0">
+        <div class="mbox-title">What Shortens in Contraction</div>
+        <div class="mnemonic-hl">"I Have Shortened" → I band, H zone, Sarcomere. A band stays the same.</div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /s11 -->
+</div><!-- /content -->
+
+<div class="footer">
+  <p>MODULE 01 · GENERAL ANATOMY</p>
+  <p style="margin-top:4px"><span>Caffeine & Cadaver</span> · Anatomy Notes · PYQs Covered Throughout</p>
+  <p style="margin-top:4px;color:var(--text3);font-size:10px">Drawing slots 01–10 await your tablet illustrations · Replace placeholder divs with your &lt;img&gt; tags when ready</p>
+</div>
+
+<button class="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+document.querySelectorAll('details').forEach(d => {
+  d.addEventListener('toggle', () => {
+    if (d.open) {
+      const ans = d.querySelector('.viva-ans');
+      if (ans) { ans.style.animation = 'none'; ans.offsetHeight; ans.style.animation = 'fadeIn .2s ease'; }
+    }
+  });
+});
+</script>
+</body>
+</html>

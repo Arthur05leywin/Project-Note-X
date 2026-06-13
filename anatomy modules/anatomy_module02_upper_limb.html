@@ -1,0 +1,1456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anatomy Module 02 — Upper Limb | Caffeine & Cadaver</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=JetBrains+Mono:wght@400;600&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#080c0e;--surface:#0d1418;--surface2:#121c20;--surface3:#182428;
+  --accent:#d4924a;--accent2:#e8ad6b;--accent3:#f2c98a;
+  --gold:#fbbf24;--teal:#34d399;--rose:#f87171;--purple:#c084fc;--sky:#60b8e8;
+  --text:#e8e4dc;--text2:#9a8f80;--text3:#4a4038;
+  --border:#1e2c30;--border2:#28383c;
+  --green:#4ade80;--orange:#fb923c;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Sora',sans-serif;font-size:15px;line-height:1.7;overflow-x:hidden;}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#050809 0%,#0c1820 55%,#080c0e 100%);border-bottom:1px solid var(--border2);padding:3rem 1.5rem 2.5rem;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;top:-80px;right:-80px;width:380px;height:380px;background:radial-gradient(circle,rgba(212,146,74,.13) 0%,transparent 70%);pointer-events:none;}
+.hero::after{content:'';position:absolute;bottom:-40px;left:10%;width:280px;height:280px;background:radial-gradient(circle,rgba(52,211,153,.05) 0%,transparent 70%);pointer-events:none;}
+.module-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(212,146,74,.14);border:1px solid rgba(212,146,74,.38);color:var(--accent2);font-family:'JetBrains Mono',monospace;font-size:11px;padding:4px 12px;border-radius:3px;letter-spacing:2px;margin-bottom:1rem;}
+.dot{width:6px;height:6px;background:var(--accent);border-radius:50%;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.4;transform:scale(.7);}}
+.hero h1{font-family:'Crimson Pro',serif;font-size:clamp(2rem,6vw,3.2rem);font-weight:600;color:var(--text);line-height:1.15;margin-bottom:.5rem;}
+.hero h1 span{color:var(--accent2);}
+.hero-sub{color:var(--text2);font-size:13px;font-family:'JetBrains Mono',monospace;letter-spacing:.5px;margin-bottom:1.5rem;}
+.hero-pills{display:flex;flex-wrap:wrap;gap:8px;}
+.pill{background:var(--surface2);border:1px solid var(--border);color:var(--text2);font-size:11px;padding:4px 10px;border-radius:20px;font-family:'JetBrains Mono',monospace;}
+
+/* TOC */
+.toc{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent);margin:1.5rem;padding:1.25rem;border-radius:6px;}
+.toc-title{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--accent);text-transform:uppercase;margin-bottom:1rem;}
+.toc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:6px;}
+.toc a{color:var(--text2);text-decoration:none;font-size:13px;padding:4px 8px;border-radius:4px;transition:all .2s;display:flex;align-items:center;gap:6px;}
+.toc a:hover{color:var(--accent2);background:rgba(212,146,74,.08);}
+.toc-num{color:var(--accent);font-family:'JetBrains Mono',monospace;font-size:11px;}
+
+/* LAYOUT */
+.content{padding:0 1.5rem 3rem;}
+.progress-bar{height:3px;background:linear-gradient(to right,var(--accent),var(--accent2),var(--teal));border-radius:2px;margin-bottom:2rem;animation:load 1.5s ease forwards;}
+@keyframes load{from{width:0;}to{width:100%;}}
+.section-header{display:flex;align-items:center;gap:12px;margin:2.5rem 0 1.5rem;padding-bottom:.75rem;border-bottom:1px solid var(--border);}
+.section-num{background:var(--accent);color:#fff;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:6px;flex-shrink:0;}
+.section-header h2{font-family:'Crimson Pro',serif;font-size:clamp(1.3rem,4vw,1.8rem);font-weight:600;color:var(--text);}
+.section-header h2 em{color:var(--accent2);font-style:normal;}
+.divider{height:1px;background:var(--border);margin:2rem 0;}
+.two-col{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem;margin:1rem 0;}
+
+/* BADGES */
+.badge{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-family:'JetBrains Mono',monospace;padding:2px 7px;border-radius:3px;vertical-align:middle;margin-left:4px;font-weight:600;letter-spacing:.5px;}
+.badge-rls{background:rgba(248,113,113,.18);color:var(--rose);border:1px solid rgba(248,113,113,.35);}
+.badge-pyq{background:rgba(52,211,153,.14);color:var(--teal);border:1px solid rgba(52,211,153,.3);}
+.badge-fav{background:rgba(251,191,36,.14);color:var(--gold);border:1px solid rgba(251,191,36,.3);}
+.badge-new{background:rgba(74,222,128,.14);color:var(--green);border:1px solid rgba(74,222,128,.3);}
+
+/* CARD */
+.card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:1.25rem;margin-bottom:1rem;}
+.card-title{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:.75rem;display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.card-title::after{content:'';flex:1;height:1px;background:var(--border);min-width:20px;}
+
+/* FLOWCHART */
+.flowchart{background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:1.25rem;margin:1rem 0;}
+.flow-title{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--accent2);margin-bottom:1rem;display:flex;align-items:center;gap:8px;}
+.flow-title::before{content:'▶';font-size:8px;}
+.flow-v{display:flex;flex-direction:column;align-items:stretch;gap:0;}
+.flow-step-label{font-size:12px;color:var(--text2);text-align:center;padding:4px 8px;font-family:'JetBrains Mono',monospace;}
+.flow-step-label strong{color:var(--accent2);}
+.flow-arrow{text-align:center;color:var(--accent);font-size:20px;line-height:1;margin:2px 0;}
+.flow-box{background:var(--surface3);border:1px solid var(--border2);border-radius:6px;padding:10px 14px;font-size:13px;width:100%;}
+.flow-box.accent{border-color:var(--accent);background:rgba(212,146,74,.1);color:var(--accent2);}
+.flow-box.gold{border-color:var(--gold);background:rgba(251,191,36,.08);color:var(--gold);}
+.flow-box.teal{border-color:var(--teal);background:rgba(52,211,153,.08);color:var(--teal);}
+.flow-box.rose{border-color:var(--rose);background:rgba(248,113,113,.08);color:var(--rose);}
+.flow-box.purple{border-color:var(--purple);background:rgba(192,132,252,.08);color:var(--purple);}
+.flow-box.sky{border-color:var(--sky);background:rgba(96,184,232,.08);color:var(--sky);}
+.flow-box.green{border-color:var(--green);background:rgba(74,222,128,.08);color:var(--green);}
+.flow-box .lbl{font-size:10px;color:var(--text3);font-family:'JetBrains Mono',monospace;display:block;margin-bottom:2px;}
+.flow-box .sub{font-size:11px;color:var(--text2);display:block;margin-top:3px;}
+.flow-h{display:flex;flex-wrap:wrap;align-items:flex-start;gap:6px;}
+.flow-h .flow-box{flex:1 1 auto;min-width:100px;}
+.h-arrow{color:var(--accent);font-size:18px;flex-shrink:0;padding-top:10px;}
+
+/* TABLES */
+.table-wrap{overflow-x:auto;margin:1rem 0;border-radius:8px;}
+table{width:100%;border-collapse:collapse;}
+th{background:var(--surface3);color:var(--accent2);font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:10px 12px;text-align:left;border-bottom:2px solid var(--accent);}
+td{padding:9px 12px;border-bottom:1px solid var(--border);font-size:13px;vertical-align:top;}
+tr:hover td{background:rgba(212,146,74,.04);}
+td:first-child{color:var(--accent2);font-weight:600;}
+
+/* SPECIAL BOXES */
+.clinical-box{background:rgba(52,211,153,.04);border:1px solid rgba(52,211,153,.22);border-left:4px solid var(--teal);border-radius:6px;padding:1rem 1.25rem;margin:1rem 0;}
+.cbox-title{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--teal);text-transform:uppercase;margin-bottom:.6rem;display:flex;align-items:center;gap:6px;}
+.cbox-title::before{content:'🩺';}
+.mnemonic-box{background:rgba(251,191,36,.05);border:1px solid rgba(251,191,36,.25);border-left:4px solid var(--gold);border-radius:6px;padding:1rem 1.25rem;margin:1rem 0;}
+.mbox-title{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:.6rem;display:flex;align-items:center;gap:6px;}
+.mbox-title::before{content:'🧠';}
+.mnemonic-highlight{background:rgba(251,191,36,.1);border:1px dashed rgba(251,191,36,.3);border-radius:4px;padding:8px 12px;font-family:'Crimson Pro',serif;font-size:15px;font-weight:600;color:var(--gold);margin:6px 0;}
+.eq-box{background:rgba(192,132,252,.05);border:1px solid rgba(192,132,252,.25);border-left:4px solid var(--purple);border-radius:6px;padding:1rem 1.25rem;margin:1rem 0;}
+.eq-title{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--purple);text-transform:uppercase;margin-bottom:.75rem;display:flex;align-items:center;gap:6px;}
+.eq-title::before{content:'📝';}
+.eq-statement{background:var(--surface3);border-radius:4px;padding:8px 12px;font-family:'Crimson Pro',serif;font-size:15px;font-style:italic;color:var(--text);margin-bottom:10px;border-left:3px solid var(--purple);}
+.eq-answer ol{margin-left:18px;}
+.eq-answer li{margin-bottom:6px;font-size:13px;}
+.eq-answer li span{color:var(--purple);font-weight:600;}
+.keypoint{background:rgba(212,146,74,.07);border:1px solid rgba(212,146,74,.22);border-radius:6px;padding:10px 14px;margin:8px 0;font-size:13px;display:flex;gap:8px;align-items:flex-start;}
+.keypoint::before{content:'⚡';flex-shrink:0;}
+.warn-box{background:rgba(251,146,60,.07);border:1px solid rgba(251,146,60,.25);border-left:4px solid var(--orange);border-radius:6px;padding:10px 14px;margin:8px 0;font-size:13px;display:flex;gap:8px;}
+.warn-box::before{content:'⚠️';flex-shrink:0;}
+ul.checklist{list-style:none;margin:.5rem 0;}
+ul.checklist li::before{content:'✦ ';color:var(--accent2);}
+ul.checklist li{margin-bottom:4px;font-size:13px;}
+.hl{color:var(--accent2);font-weight:600;}
+.hl-gold{color:var(--gold);font-weight:600;}
+.hl-teal{color:var(--teal);font-weight:600;}
+.hl-rose{color:var(--rose);font-weight:600;}
+.hl-purple{color:var(--purple);font-weight:600;}
+.hl-sky{color:var(--sky);font-weight:600;}
+
+/* NERVE TAG */
+.nerve-tag{display:inline-block;background:rgba(96,184,232,.12);border:1px solid rgba(96,184,232,.3);color:var(--sky);font-size:10px;padding:1px 6px;border-radius:3px;font-family:'JetBrains Mono',monospace;margin-left:4px;}
+
+/* DIAGRAM PLACEHOLDER */
+.diagram-placeholder{background:rgba(212,146,74,.04);border:2px dashed rgba(212,146,74,.35);border-radius:8px;padding:1.5rem;margin:1rem 0;text-align:center;}
+.diagram-num{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);letter-spacing:2px;margin-bottom:.5rem;}
+.diagram-instruction{font-size:12px;color:var(--text2);line-height:1.6;}
+.diagram-size{font-size:10px;color:var(--text3);font-family:'JetBrains Mono',monospace;margin-top:.4rem;}
+
+/* WIKIMEDIA IMAGE */
+.wiki-img{border-radius:8px;overflow:hidden;margin:1rem 0;background:var(--surface2);border:1px solid var(--border);}
+.wiki-img img{width:100%;height:auto;display:block;}
+.wiki-caption{font-size:11px;color:var(--text3);font-family:'JetBrains Mono',monospace;padding:6px 12px;border-top:1px solid var(--border);}
+
+/* NERVE INJURY BADGE */
+.injury-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:1.25rem;margin-bottom:.75rem;border-left:4px solid var(--rose);}
+.injury-card.median{border-left-color:var(--sky);}
+.injury-card.ulnar{border-left-color:var(--purple);}
+.injury-card.radial{border-left-color:var(--gold);}
+.injury-card.axillary{border-left-color:var(--teal);}
+.injury-card.msk{border-left-color:var(--green);}
+.injury-name{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-bottom:.5rem;}
+.injury-card.radial .injury-name{color:var(--gold);}
+.injury-card.median .injury-name{color:var(--sky);}
+.injury-card.ulnar .injury-name{color:var(--purple);}
+.injury-card.axillary .injury-name{color:var(--teal);}
+.injury-card.msk .injury-name{color:var(--green);}
+
+/* VIVA */
+.viva-section{margin:1.5rem 0;}
+.viva-title-bar{background:rgba(212,146,74,.1);border:1px solid rgba(212,146,74,.28);border-radius:6px 6px 0 0;padding:10px 14px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--accent2);text-transform:uppercase;display:flex;align-items:center;gap:8px;}
+.viva-title-bar::before{content:'💬';font-size:14px;}
+details{border:1px solid var(--border);border-top:none;overflow:hidden;}
+details:last-child{border-radius:0 0 6px 6px;}
+summary{padding:10px 14px;cursor:pointer;font-size:13px;color:var(--text);background:var(--surface);list-style:none;display:flex;align-items:flex-start;gap:8px;user-select:none;transition:background .2s;}
+summary:hover{background:var(--surface2);}
+summary::before{content:'▶';color:var(--accent);font-size:10px;margin-top:3px;flex-shrink:0;transition:transform .2s;}
+details[open]>summary::before{transform:rotate(90deg);}
+.viva-q{font-weight:600;flex:1;}
+.viva-year{color:var(--teal);font-family:'JetBrains Mono',monospace;font-size:11px;flex-shrink:0;}
+.viva-ans{padding:12px 16px 14px;background:var(--surface2);font-size:13px;line-height:1.75;border-top:1px solid var(--border);}
+.viva-ans p{margin-bottom:6px;}
+.viva-ans ul{margin:6px 0 6px 16px;}
+.viva-ans li{margin-bottom:4px;}
+.viva-ans strong{color:var(--accent2);}
+.viva-ans em{color:var(--gold);font-style:normal;font-weight:600;}
+
+/* FOOTER */
+.footer{background:var(--surface);border-top:1px solid var(--border);text-align:center;padding:2rem 1.5rem;color:var(--text3);font-size:12px;font-family:'JetBrains Mono',monospace;}
+.top-btn{position:fixed;bottom:20px;right:20px;background:var(--accent);color:#fff;border:none;border-radius:50%;width:40px;height:40px;font-size:16px;cursor:pointer;box-shadow:0 4px 15px rgba(212,146,74,.4);z-index:100;display:flex;align-items:center;justify-content:center;font-weight:700;}
+.top-btn:hover{transform:translateY(-2px);}
+
+/* BRACHIAL PLEXUS GRID */
+.plexus-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px;margin:1rem 0;}
+.plexus-card{background:var(--surface3);border:1px solid var(--border2);border-radius:6px;padding:12px;}
+.plexus-level{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px;}
+.plexus-card.roots .plexus-level{color:var(--accent);}
+.plexus-card.trunks .plexus-level{color:var(--gold);}
+.plexus-card.divisions .plexus-level{color:var(--teal);}
+.plexus-card.cords .plexus-level{color:var(--sky);}
+.plexus-card.branches .plexus-level{color:var(--purple);}
+.plexus-name{font-weight:600;color:var(--text);font-size:13px;margin-bottom:4px;}
+.plexus-detail{font-size:12px;color:var(--text2);}
+
+/* OSSIFICATION TABLE HIGHLIGHT */
+.ossify-note{background:rgba(212,146,74,.07);border:1px solid rgba(212,146,74,.2);border-radius:4px;padding:6px 10px;font-size:12px;color:var(--text2);margin-top:6px;}
+
+@media(max-width:600px){
+  .hero{padding:2rem 1rem;}
+  .content{padding:0 1rem 2rem;}
+  .toc{margin:1rem;}
+  .flow-h{flex-direction:column;}
+  .h-arrow{display:none;}
+  .plexus-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="module-tag"><span class="dot"></span>ANATOMY · MODULE 02</div>
+  <h1>Upper<br><span>Limb</span></h1>
+  <p class="hero-sub">ANATOMY SERIES · CAFFEINE & CADAVER</p>
+  <div class="hero-pills">
+    <span class="pill">Bones & Joints</span>
+    <span class="pill">Brachial Plexus</span>
+    <span class="pill">Nerve Injuries</span>
+    <span class="pill">Rotator Cuff</span>
+    <span class="pill">Axilla</span>
+    <span class="pill">Cubital Fossa</span>
+    <span class="pill">Carpal Tunnel</span>
+    <span class="pill">Arteries</span>
+    <span class="pill">Dermatomes</span>
+    <span class="pill">Ossification</span>
+    <span class="pill">Venous Drainage</span>
+  </div>
+</div>
+
+<!-- TOC -->
+<div class="toc">
+  <div class="toc-title">▸ Quick Navigate</div>
+  <div class="toc-grid">
+    <a href="#s1"><span class="toc-num">01</span> Bones of Upper Limb</a>
+    <a href="#s2"><span class="toc-num">02</span> Joints</a>
+    <a href="#s3"><span class="toc-num">03</span> Brachial Plexus</a>
+    <a href="#s4"><span class="toc-num">04</span> Nerve Injuries</a>
+    <a href="#s5"><span class="toc-num">05</span> Muscles — Compartments</a>
+    <a href="#s6"><span class="toc-num">06</span> Axilla</a>
+    <a href="#s7"><span class="toc-num">07</span> Cubital Fossa</a>
+    <a href="#s8"><span class="toc-num">08</span> Arteries & Veins</a>
+    <a href="#s9"><span class="toc-num">09</span> Dermatomes</a>
+    <a href="#s10"><span class="toc-num">10</span> Ossification</a>
+    <a href="#s11"><span class="toc-num">11</span> Viva Q&A</a>
+    <a href="#s12"><span class="toc-num">12</span> EQ Templates</a>
+  </div>
+</div>
+
+<div class="content">
+<div class="progress-bar"></div>
+
+<!-- ════════════════════════════════ S1: BONES ════════════════════════════════ -->
+<div id="s1">
+  <div class="section-header">
+    <div class="section-num">01</div>
+    <h2>Bones of the <em>Upper Limb</em></h2>
+  </div>
+
+  <div class="keypoint">Upper limb has <strong>32 bones</strong> per side: clavicle (1) + scapula (1) + humerus (1) + radius + ulna (2) + carpals (8) + metacarpals (5) + phalanges (14).</div>
+
+  <!-- Clavicle -->
+  <div class="card">
+    <div class="card-title">Clavicle <span class="badge badge-fav">⭐ PYQ</span></div>
+    <div class="two-col">
+      <div>
+        <ul class="checklist">
+          <li>Only long bone that <strong>lies horizontally</strong></li>
+          <li>Only bone in upper limb that <strong>ossifies by intramembranous ossification</strong> (exception: medial end ossifies by endochondral)</li>
+          <li><strong>Medial 2/3:</strong> convex forward; <strong>Lateral 1/3:</strong> concave forward</li>
+          <li>No medullary canal (peculiarity)</li>
+          <li>First bone to ossify in utero (5th–6th week)</li>
+          <li>Last bone to complete ossification (medial end, 22–25 years)</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">Important Attachments:</p>
+        <ul class="checklist">
+          <li><strong>Superior surface:</strong> Sternocleidomastoid (medial), Trapezius (lateral)</li>
+          <li><strong>Inferior surface:</strong> Subclavius (groove) — protects subclavian vessels in fracture</li>
+          <li><strong>Posterior border (lateral):</strong> Deltoid (anterior), Trapezius (posterior)</li>
+          <li>Coracoclavicular ligament attaches at conoid tubercle + trapezoid line</li>
+        </ul>
+        <div class="ossify-note">⚡ Fracture site: Junction of medial 2/3 and lateral 1/3 — narrowest point, weakest area. Medial fragment pulled up by SCM, lateral pulled down by weight of limb.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scapula -->
+  <div class="card">
+    <div class="card-title">Scapula — Notable Features</div>
+    <div class="two-col">
+      <div>
+        <ul class="checklist">
+          <li><strong>Suprascapular notch:</strong> Suprascapular nerve passes through; artery passes above ligament (<em>"Generals go through the gate; Generals' Lady goes over"</em>)</li>
+          <li><strong>Spine of scapula:</strong> continuous with acromion; divides posterior surface into supra- and infraspinous fossae</li>
+          <li><strong>Coracoid process:</strong> "Crow's beak" — attachment for Coracobrachialis, Short head of Biceps, Pectoralis minor</li>
+          <li><strong>Glenoid cavity:</strong> faces anterolaterally; deepened by glenoid labrum</li>
+          <li>Lies between ribs 2–7 posteriorly</li>
+        </ul>
+      </div>
+      <div>
+        <div class="diagram-placeholder">
+          <div class="diagram-num">DIAGRAM 01</div>
+          <div class="diagram-instruction">Draw the posterior surface of the scapula showing: spine, acromion, supraspinous fossa, infraspinous fossa, medial border, lateral border, inferior angle, suprascapular notch, coracoid process, glenoid cavity. Label key attachments.</div>
+          <div class="diagram-size">Suggested size: full card width, portrait orientation</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Humerus -->
+  <div class="card">
+    <div class="card-title">Humerus — Key Features <span class="badge badge-pyq">PYQ Multiple</span></div>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Feature</th><th>Location</th><th>Clinical / Attachment Significance</th></tr>
+        <tr><td>Head</td><td>Proximal, faces medially + upward</td><td>Articulates with glenoid (glenohumeral joint)</td></tr>
+        <tr><td>Anatomical neck</td><td>Between head and greater/lesser tubercles</td><td>Intracapsular; avascular necrosis in fracture</td></tr>
+        <tr><td>Surgical neck</td><td>Below tubercles</td><td>Axillary nerve + posterior circumflex humeral artery cross here — injured in fractures</td></tr>
+        <tr><td>Greater tubercle</td><td>Lateral side</td><td>SITS: Supraspinatus (superior facet), Infraspinatus (middle), Teres minor (inferior)</td></tr>
+        <tr><td>Lesser tubercle</td><td>Anterior</td><td>Subscapularis attachment</td></tr>
+        <tr><td>Bicipital groove (intertubercular sulcus)</td><td>Between tubercles</td><td>Long head of biceps tendon; pectoralis major (lateral lip), teres major (medial lip), latissimus dorsi (floor)</td></tr>
+        <tr><td>Deltoid tuberosity</td><td>Lateral shaft</td><td>Deltoid insertion. Radial nerve (spiral groove) winds posterior to this</td></tr>
+        <tr><td>Spiral groove (radial groove)</td><td>Posterior shaft</td><td>Radial nerve + profunda brachii artery — <strong>mid-shaft fracture → wrist drop</strong></td></tr>
+        <tr><td>Medial epicondyle</td><td>Distal medial</td><td>Common flexor origin; ulnar nerve behind it — "funny bone"</td></tr>
+        <tr><td>Lateral epicondyle</td><td>Distal lateral</td><td>Common extensor origin — Tennis elbow (lateral epicondylitis)</td></tr>
+        <tr><td>Capitulum</td><td>Distal lateral</td><td>Articulates with radial head</td></tr>
+        <tr><td>Trochlea</td><td>Distal medial</td><td>Articulates with trochlear notch of ulna (spool-shaped)</td></tr>
+        <tr><td>Supracondylar ridge</td><td>Above epicondyles</td><td>Medial: occasionally carries aberrant brachial artery / median nerve (supracondylar spur)</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- Radius & Ulna -->
+  <div class="card">
+    <div class="card-title">Radius & Ulna — Side Determination & Key Points</div>
+    <div class="two-col">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">Radius:</p>
+        <ul class="checklist">
+          <li>Head at <strong>proximal</strong> end — small (for radius), disc-shaped</li>
+          <li>Radial tuberosity: biceps brachii insertion</li>
+          <li>Styloid process is <strong>1 cm lower</strong> than ulnar styloid — reversed in Colles' fracture</li>
+          <li>Anterior surface: Pronator quadratus (distal quarter)</li>
+          <li>Interosseous membrane connects radius to ulna — fibres run obliquely downward medially (forces transmitted from hand to elbow via radius → ulna → humerus)</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px">Ulna:</p>
+        <ul class="checklist">
+          <li>Head at <strong>distal</strong> end (remember: opposite to radius)</li>
+          <li>Olecranon: triceps insertion; forms point of elbow</li>
+          <li>Trochlear notch + coronoid process: articulates with humerus</li>
+          <li>Radial notch: proximal radioulnar joint</li>
+          <li>Ulnar styloid: less prominent, higher than radial styloid</li>
+        </ul>
+        <div class="ossify-note">Side determination trick: Hold bone vertically, articular head (disc) at top = radius; hold ulna — coronoid process + olecranon at top, concavity faces laterally.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Carpals -->
+  <div class="card">
+    <div class="card-title">Carpal Bones <span class="badge badge-fav">⭐ PYQ</span></div>
+    <div class="mnemonic-box">
+      <div class="mbox-title">Mnemonic — 8 Carpals (Proximal then Distal row, lateral to medial)</div>
+      <div class="mnemonic-highlight">"Some Lovers Try Positions That They Can't Handle"</div>
+      <p style="font-size:12px;color:var(--text2);margin-top:4px">Proximal row: <strong>S</strong>caphoid · <strong>L</strong>unate · <strong>T</strong>riquetrum · <strong>P</strong>isiform<br>
+      Distal row: <strong>T</strong>rapezium · <strong>T</strong>rapezoid · <strong>C</strong>apitate · <strong>H</strong>amate</p>
+    </div>
+    <div class="two-col" style="margin-top:.5rem">
+      <div>
+        <ul class="checklist">
+          <li><strong>Scaphoid:</strong> Most commonly fractured carpal; waist fracture → avascular necrosis (proximal part has no direct blood supply). Tenderness in anatomical snuffbox.</li>
+          <li><strong>Lunate:</strong> Most commonly dislocated carpal — dislocates anteriorly → median nerve compression</li>
+          <li><strong>Pisiform:</strong> Sesamoid bone (within flexor carpi ulnaris tendon); only carpal that articulates with one bone only</li>
+          <li><strong>Hamate:</strong> Hook of hamate in palm — Guyon's canal (ulnar nerve/artery)</li>
+        </ul>
+      </div>
+      <div>
+        <ul class="checklist">
+          <li><strong>Trapezium:</strong> Articulates with 1st metacarpal (saddle joint — only one in wrist area, allows thumb opposition)</li>
+          <li><strong>Capitate:</strong> Largest carpal</li>
+          <li>Floor of anatomical snuffbox: scaphoid + trapezium (radial artery crosses)</li>
+          <li>Carpal tunnel: bounded by flexor retinaculum — contains 4 FDS, 4 FDP, 1 FPL tendons + median nerve (10 structures total)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ════════════════════════════════ S2: JOINTS ════════════════════════════════ -->
+<div id="s2">
+  <div class="section-header">
+    <div class="section-num">02</div>
+    <h2><em>Joints</em> of the Upper Limb</h2>
+  </div>
+
+  <div style="text-align:center; margin: 24px 0;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Gray326.png" alt="Shoulder Joint Anatomy" style="max-width: 100%; border-radius: 8px;">
+  </div>
+
+  <!-- Shoulder / Glenohumeral -->
+  <div class="card">
+    <div class="card-title">Glenohumeral (Shoulder) Joint <span class="badge badge-fav">⭐ PYQ</span></div>
+    <div class="two-col">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">Type & Stability:</p>
+        <ul class="checklist">
+          <li>Ball-and-socket synovial joint; most mobile joint in body</li>
+          <li>Glenoid cavity = 1/3 head of humerus → inherently unstable</li>
+          <li>Stability maintained by: rotator cuff muscles (dynamic), glenohumeral ligaments + labrum (static), long head of biceps (dynamic)</li>
+          <li>Capsule: lax inferiorly → common dislocation direction = <strong>inferior/anterior</strong></li>
+          <li>Subscapularis bursa communicates with joint → acts as weak spot anteriorly</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px">Rotator Cuff — SITS:</p>
+        <div class="table-wrap" style="margin:0">
+          <table>
+            <tr><th>Muscle</th><th>Origin</th><th>Insertion</th><th>Action</th></tr>
+            <tr><td>Supraspinatus</td><td>Supraspinous fossa</td><td>Greater tubercle (superior)</td><td>Initiates abduction (0–15°) <span class="badge badge-rls">KEY</span></td></tr>
+            <tr><td>Infraspinatus</td><td>Infraspinous fossa</td><td>Greater tubercle (middle)</td><td>Lateral rotation</td></tr>
+            <tr><td>Teres minor</td><td>Lateral border scapula</td><td>Greater tubercle (inferior)</td><td>Lateral rotation</td></tr>
+            <tr><td>Subscapularis</td><td>Subscapular fossa</td><td>Lesser tubercle</td><td>Medial rotation (most powerful)</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="clinical-box" style="margin-top:.75rem">
+      <div class="cbox-title">Rotator Cuff Tears</div>
+      <p><strong>Supraspinatus</strong> most commonly torn (impingement against coracoacromial arch). Painful arc sign: pain 60–120° abduction (arc of impingement). MRI gold standard. <strong>Empty can test</strong> for supraspinatus. <strong>Lift-off test</strong> for subscapularis.</p>
+    </div>
+    <div class="clinical-box" style="margin-top:.75rem">
+      <div class="cbox-title">Shoulder Dislocation</div>
+      <p>Anterior dislocation (95%) — arm in abduction + external rotation. Axillary nerve commonly injured → loss of sensation over "regimental badge" area (lateral arm) + deltoid weakness. Confirm with AP + axillary X-ray.</p>
+    </div>
+  </div>
+
+  <!-- Elbow -->
+  <div class="card">
+    <div class="card-title">Elbow Joint <span class="badge badge-pyq">PYQ</span></div>
+    <div class="two-col">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">Structure:</p>
+        <ul class="checklist">
+          <li>Compound joint with one synovial cavity containing three articulations:
+            <br>1. <strong>Humero-ulnar</strong> (hinge — flexion/extension)
+            <br>2. <strong>Humero-radial</strong> (capitulo-radial — flexion/extension + rotation)
+            <br>3. <strong>Proximal radio-ulnar</strong> (pivot — supination/pronation)</li>
+          <li>Carrying angle: <strong>~170°</strong> (valgus) in males, greater in females → needed to clear hips during arm swing</li>
+          <li>Cubitus valgus → tardy ulnar nerve palsy</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px">Ligaments:</p>
+        <ul class="checklist">
+          <li><strong>Medial (ulnar) collateral ligament:</strong> 3 bands (anterior strongest) — resists valgus stress. Attached to medial epicondyle → coronoid process + olecranon. Tested in throwing athletes.</li>
+          <li><strong>Lateral (radial) collateral ligament:</strong> medial epicondyle → annular ligament</li>
+          <li><strong>Annular ligament:</strong> holds radial head; Pulled elbow (nursemaid's elbow) in children — radial head subluxes through annular ligament when arm pulled</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Wrist -->
+  <div class="card">
+    <div class="card-title">Wrist (Radiocarpal) Joint</div>
+    <ul class="checklist">
+      <li>Ellipsoid (condyloid) synovial joint</li>
+      <li>Between: distal radius + articular disc below ulna (proximal side) and scaphoid + lunate + triquetrum (distal side)</li>
+      <li>Ulna does NOT directly articulate with carpals — articular disc separates them</li>
+      <li>Movements: flexion, extension, abduction (radial deviation), adduction (ulnar deviation), circumduction</li>
+      <li>Colles' fracture: distal radius fracture — "dinner fork" deformity, radial styloid displaced proximally</li>
+    </ul>
+  </div>
+
+  <!-- Thumb CMC -->
+  <div class="card">
+    <div class="card-title">1st Carpometacarpal Joint (Thumb)</div>
+    <ul class="checklist">
+      <li>Saddle (sellar) joint — only true saddle joint in upper limb</li>
+      <li>Between trapezium and base of 1st metacarpal</li>
+      <li>Allows: flexion, extension, abduction, adduction, and <strong>opposition</strong> (unique to humans/primates)</li>
+      <li>Bennett's fracture: intra-articular fracture-dislocation of 1st metacarpal base</li>
+    </ul>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ════════════════════════════════ S3: BRACHIAL PLEXUS ════════════════════════════════ -->
+<div id="s3">
+  <div class="section-header">
+    <div class="section-num">03</div>
+    <h2>Brachial <em>Plexus</em></h2>
+  </div>
+
+  <div class="keypoint">Brachial plexus = C5, C6, C7, C8, T1 ventral rami. Mnemonic for levels: <strong>RTTCB = "Randy Travis Drinks Cold Beer"</strong> (Roots → Trunks → Divisions → Cords → Branches).</div>
+
+  <div class="wiki-img">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Brachial_plexus_color.svg/600px-Brachial_plexus_color.svg.png" alt="Brachial Plexus Diagram — Wikimedia Commons" loading="lazy">
+    <div class="wiki-caption">Brachial Plexus — Wikimedia Commons (CC BY-SA)</div>
+  </div>
+
+  <!-- RTTDB Flowchart -->
+  <div class="flowchart">
+    <div class="flow-title">Brachial Plexus — Formation (C5–T1)</div>
+    <div class="flow-v">
+      <div class="flow-box accent">
+        <span class="lbl">ROOTS (ventral rami) — in posterior triangle of neck, between scalenus anterior & medius</span>
+        C5, C6, C7, C8, T1
+        <span class="sub">Dorsal scapular nerve (C5), Long thoracic nerve (C5,6,7) arise here</span>
+      </div>
+      <div class="flow-step-label">↓ Roots unite to form 3 Trunks (at outer border of 1st rib)</div>
+      <div class="flow-box gold">
+        <span class="lbl">TRUNKS — at posterior triangle / scalene gap</span>
+        <strong>Superior (Upper)</strong>: C5 + C6 — gives suprascapular nerve + nerve to subclavius<br>
+        <strong>Middle</strong>: C7 alone<br>
+        <strong>Inferior (Lower)</strong>: C8 + T1
+      </div>
+      <div class="flow-step-label">↓ Each trunk divides into anterior and posterior divisions (behind clavicle)</div>
+      <div class="flow-box teal">
+        <span class="lbl">DIVISIONS (6 total) — posterior to clavicle</span>
+        No named branches arise here
+        <span class="sub">Anterior divisions → flexor compartments; Posterior → extensor compartments</span>
+      </div>
+      <div class="flow-step-label">↓ Divisions unite to form 3 Cords (in axilla, named relative to axillary artery)</div>
+      <div class="flow-box sky">
+        <span class="lbl">CORDS — in axilla, around 2nd part of axillary artery</span>
+        <strong>Lateral cord</strong>: anterior div of Upper + Middle trunk (C5,6,7)<br>
+        <strong>Medial cord</strong>: anterior div of Lower trunk (C8, T1)<br>
+        <strong>Posterior cord</strong>: all 3 posterior divisions (C5–T1)
+      </div>
+      <div class="flow-step-label">↓ Cords give terminal and collateral branches</div>
+      <div class="flow-box purple">
+        <span class="lbl">BRANCHES — major terminal branches (5)</span>
+        Musculocutaneous (C5,6,7) · Median (C5–T1) · Ulnar (C7,8,T1) · Radial (C5–T1) · Axillary (C5,6)
+      </div>
+    </div>
+  </div>
+
+  <!-- Cords and branches -->
+  <div class="plexus-grid">
+    <div class="plexus-card cords">
+      <div class="plexus-level">Lateral Cord (C5,6,7)</div>
+      <div class="plexus-name">Branches:</div>
+      <div class="plexus-detail">• Lateral pectoral nerve (C5,6,7)<br>• Musculocutaneous nerve (C5,6,7)<br>• Lateral root of median nerve</div>
+    </div>
+    <div class="plexus-card" style="border-left:3px solid var(--purple)">
+      <div class="plexus-level" style="color:var(--purple)">Medial Cord (C8, T1)</div>
+      <div class="plexus-name">Branches:</div>
+      <div class="plexus-detail">• Medial pectoral nerve<br>• Medial cutaneous nerve of arm (T1)<br>• Medial cutaneous nerve of forearm (C8,T1)<br>• Ulnar nerve (C7,8,T1)<br>• Medial root of median nerve</div>
+    </div>
+    <div class="plexus-card" style="border-left:3px solid var(--teal)">
+      <div class="plexus-level" style="color:var(--teal)">Posterior Cord (C5–T1)</div>
+      <div class="plexus-name">Branches (ULTRA mnemonic):</div>
+      <div class="plexus-detail">• Upper subscapular (C5,6)<br>• Thoracodorsal = middle subscapular (C6,7,8)<br>• Lower subscapular (C5,6)<br>• Axillary (C5,6)<br>• Radial (C5–T1)</div>
+    </div>
+  </div>
+
+  <!-- Injuries -->
+  <div class="card">
+    <div class="card-title">Brachial Plexus Injuries — Erb's vs Klumpke's <span class="badge badge-fav">⭐ PYQ Multiple</span></div>
+    <div class="two-col">
+      <div class="injury-card" style="border-left-color:var(--accent)">
+        <div class="injury-name" style="color:var(--accent)">Erb's Palsy — Upper Trunk (C5, C6)</div>
+        <ul class="checklist" style="margin-top:4px">
+          <li><strong>Cause:</strong> Excessive widening of angle between neck and shoulder — difficult delivery, fall on shoulder</li>
+          <li><strong>Deformity:</strong> "Waiter's tip" — arm adducted, medially rotated, elbow extended, forearm pronated, wrist flexed</li>
+          <li><strong>Muscles paralysed:</strong> Deltoid, Biceps, Brachialis, Brachioradialis, Supraspinatus, Infraspinatus</li>
+          <li><strong>Loss:</strong> Abduction + lateral rotation of shoulder, flexion of elbow, supination</li>
+          <li><strong>Sensation lost:</strong> C5/C6 dermatome (lateral arm, lateral forearm, thumb/index)</li>
+        </ul>
+      </div>
+      <div class="injury-card" style="border-left-color:var(--sky)">
+        <div class="injury-name" style="color:var(--sky)">Klumpke's Palsy — Lower Trunk (C8, T1)</div>
+        <ul class="checklist" style="margin-top:4px">
+          <li><strong>Cause:</strong> Excessive abduction — grabbing overhead to break a fall, birth (arm over head position)</li>
+          <li><strong>Deformity:</strong> "Claw hand" — intrinsic hand muscles paralysed, hyperextension at MCPJs, flexion at IPJs</li>
+          <li><strong>Muscles paralysed:</strong> All intrinsic hand muscles (interossei, lumbricals, thenar, hypothenar), finger flexors</li>
+          <li><strong>Sensation lost:</strong> Medial forearm + hand (C8, T1)</li>
+          <li><strong>Horner's syndrome</strong> if T1 ramus involved (ptosis, miosis, anhidrosis) — sympathetic fibres at T1</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ════════════════════════════════ S4: NERVE INJURIES ════════════════════════════════ -->
+<div id="s4">
+  <div class="section-header">
+    <div class="section-num">04</div>
+    <h2>Nerve <em>Injuries</em> — Clinical Correlations</h2>
+  </div>
+
+  <div class="keypoint">Nerve injuries are <strong>guaranteed PYQ territory</strong>. Know each nerve: level of injury → muscles paralysed → deformity → sensory loss → clinical tests.</div>
+
+  <!-- Radial -->
+  <div class="injury-card radial">
+    <div class="injury-name">Radial Nerve (C5–C8, T1) — Posterior Cord</div>
+    <div class="two-col" style="margin-top:.5rem">
+      <div>
+        <p style="font-size:12px;font-weight:600;color:var(--gold);margin-bottom:4px">High injury — in axilla (Saturday night palsy, crutch palsy):</p>
+        <ul class="checklist">
+          <li>All radial nerve muscles paralysed including <strong>Triceps</strong></li>
+          <li>Wrist drop + finger drop + elbow extension weakness</li>
+          <li>Sensory: loss over posterior arm, forearm, hand (dorsum lateral 3½ fingers)</li>
+        </ul>
+        <p style="font-size:12px;font-weight:600;color:var(--gold);margin-bottom:4px;margin-top:8px">Mid-shaft humerus fracture (spiral groove):</p>
+        <ul class="checklist">
+          <li>Triceps <strong>spared</strong> (branch given above groove)</li>
+          <li>Wrist drop + finger drop</li>
+          <li>Sensory loss: dorsal lateral hand + thumb web space</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:12px;font-weight:600;color:var(--gold);margin-bottom:4px">Posterior interosseous nerve (PIN) at elbow:</p>
+        <ul class="checklist">
+          <li>Motor branch only (deep branch of radial) — no sensory loss</li>
+          <li>Finger + thumb drop; <strong>wrist extension partially preserved</strong> (ECRL still works — it's off before PIN)</li>
+        </ul>
+        <p style="font-size:12px;font-weight:600;color:var(--gold);margin-bottom:4px;margin-top:8px">Superficial radial nerve at wrist:</p>
+        <ul class="checklist">
+          <li>Sensory loss only (Wartenberg syndrome)</li>
+          <li>No motor deficit</li>
+        </ul>
+      </div>
+    </div>
+    <div class="mnemonic-box" style="margin-top:.75rem">
+      <div class="mbox-title">Radial Nerve Mnemonic — "I Must Get Drunk By Friday Evening"</div>
+      <div class="mnemonic-highlight">I=brachIalis(partial), M=Medial head triceps(1st branch), G=heads(Gravity), D=Deltoid(none), B=Brachioradialis, F=ECRL, E=ECRB — proximal to distal branches</div>
+      <p style="font-size:12px;color:var(--text2);margin-top:4px">Simpler: <strong>Triceps → Brachioradialis → Extensors carpi → Extensors digitorum/pollicis → Intrinsics (none)</strong></p>
+    </div>
+  </div>
+
+  <!-- Median -->
+  <div class="injury-card median">
+    <div class="injury-name">Median Nerve (C5–C8, T1) — Lateral + Medial Cord</div>
+    <div class="two-col" style="margin-top:.5rem">
+      <div>
+        <p style="font-size:12px;font-weight:600;color:var(--sky);margin-bottom:4px">High injury — at elbow (supracondylar fracture, children):</p>
+        <ul class="checklist">
+          <li>Pronation weak (pronators both lost), wrist flexion weak (FCR lost)</li>
+          <li>FDS all lost, FDP (index + middle) lost, FPL lost</li>
+          <li>"Papal blessing" hand on attempted grip (index + middle can't flex)</li>
+          <li>Thenar wasting (LOAF — Lateral 2 Lumbricals, Opponens pollicis, Abductor pollicis brevis, Flexor pollicis brevis)</li>
+          <li>Sensory: lateral 3½ fingers (palmar surface) + terminal dorsum</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:12px;font-weight:600;color:var(--sky);margin-bottom:4px">Low injury — at wrist (Carpal Tunnel Syndrome):</p>
+        <ul class="checklist">
+          <li>LOAF muscles affected → <strong>Ape hand deformity</strong> (thumb in plane of palm — opposition lost)</li>
+          <li>Sensory: lateral 3½ fingers + palm (but thenar eminence sensation SPARED — palmar cutaneous branch exits before carpal tunnel)</li>
+          <li><strong>Tinel's sign:</strong> tingling on percussion over carpal tunnel</li>
+          <li><strong>Phalen's test:</strong> wrist flexion 60 sec → tingling</li>
+          <li>Common causes: pregnancy, hypothyroidism, RA, acromegaly, occupation</li>
+        </ul>
+      </div>
+    </div>
+    <div class="clinical-box" style="margin-top:.75rem">
+      <div class="cbox-title">Anterior Interosseous Nerve (AIN) Syndrome</div>
+      <p>Branch of median at elbow (motor only). Paralyses FPL + FDP (index, middle) + Pronator quadratus. Patient cannot make "OK sign" — instead makes "pinch sign" with straight thumb and index finger joints. No sensory loss.</p>
+    </div>
+  </div>
+
+  <!-- Ulnar -->
+  <div class="injury-card ulnar">
+    <div class="injury-name">Ulnar Nerve (C7, C8, T1) — Medial Cord</div>
+    <div class="two-col" style="margin-top:.5rem">
+      <div>
+        <p style="font-size:12px;font-weight:600;color:var(--purple);margin-bottom:4px">High injury — at elbow (medial epicondyle / cubital tunnel):</p>
+        <ul class="checklist">
+          <li>FCU paralysed (wrist deviates radially on flexion)</li>
+          <li>FDP (ring + little) lost</li>
+          <li><strong>Claw hand (ring + little) — less pronounced</strong> than low injury</li>
+          <li>All interossei, medial 2 lumbricals, hypothenar muscles lost</li>
+          <li>Sensory: medial 1½ fingers + medial palm</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:12px;font-weight:600;color:var(--purple);margin-bottom:4px">Low injury — at wrist (Guyon's canal / hook of hamate):</p>
+        <ul class="checklist">
+          <li>FCU and FDP spared (they receive branches above wrist)</li>
+          <li><strong>More pronounced claw hand</strong> (ring + little) — "ulnar paradox": low lesion = worse deformity</li>
+          <li><strong>Froment's sign:</strong> compensatory thumb IP flexion (FPL/median) during paper grip — adductor pollicis lost</li>
+          <li><strong>Card test:</strong> cannot abduct little finger</li>
+          <li><strong>Egawa test:</strong> can't spread/close fingers (interossei lost)</li>
+          <li>Guttering between metacarpals (interosseous wasting)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="warn-box" style="margin-top:.75rem">
+      <div><strong>Ulnar Paradox:</strong> A low ulnar nerve lesion produces MORE claw deformity than a high lesion because in a high lesion, FDP (ring + little) is also paralysed — so the fingers cannot flex into the clawed position. Low lesion = FDP intact = more flexion = more claw.</div>
+    </div>
+  </div>
+
+  <!-- Axillary -->
+  <div class="injury-card axillary">
+    <div class="injury-name">Axillary Nerve (C5, C6) — Posterior Cord</div>
+    <ul class="checklist" style="margin-top:.5rem">
+      <li><strong>Injury:</strong> Surgical neck of humerus fracture, anterior shoulder dislocation</li>
+      <li><strong>Muscles:</strong> Deltoid (abduction lost) + Teres minor (lateral rotation)</li>
+      <li><strong>Deformity:</strong> Loss of shoulder contour (deltoid wasted), flat shoulder</li>
+      <li><strong>Sensory:</strong> "Regimental badge" area — lateral arm (superior cutaneous nerve of arm)</li>
+      <li>Test: Ask patient to abduct arm against resistance. If weak with deltoid wasting + loss of "badge" sensation = axillary nerve palsy</li>
+    </ul>
+  </div>
+
+  <!-- Musculocutaneous -->
+  <div class="injury-card msk">
+    <div class="injury-name">Musculocutaneous Nerve (C5, C6, C7) — Lateral Cord</div>
+    <ul class="checklist" style="margin-top:.5rem">
+      <li><strong>Injury:</strong> Rare — penetrating wounds, shoulder dislocations</li>
+      <li><strong>Muscles:</strong> Coracobrachialis, Biceps brachii, Brachialis</li>
+      <li><strong>Loss:</strong> Flexion of elbow (weakened — not completely lost; brachioradialis via radial still works), supination (weakened)</li>
+      <li><strong>Sensory:</strong> Lateral cutaneous nerve of forearm (lateral forearm)</li>
+    </ul>
+  </div>
+
+  <!-- Summary comparison table -->
+  <div class="card" style="margin-top:1.5rem">
+    <div class="card-title">Nerve Injury Quickfire Comparison <span class="badge badge-fav">⭐ Exam Ready</span></div>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Nerve</th><th>Injury Site</th><th>Deformity</th><th>Key Test</th><th>Sensory Loss</th></tr>
+        <tr><td>Axillary</td><td>Surgical neck / dislocation</td><td>Flat shoulder, abduction loss</td><td>Abduct against resistance</td><td>Regimental badge (lat. arm)</td></tr>
+        <tr><td>Radial (high)</td><td>Axilla / crutch</td><td>Wrist + finger drop + elbow ext. weak</td><td>Triceps test</td><td>Post. arm, forearm, dorsum hand</td></tr>
+        <tr><td>Radial (mid)</td><td>Spiral groove (mid-shaft)</td><td>Wrist drop + finger drop (triceps spared)</td><td>Wrist extension</td><td>Dorsum lateral hand</td></tr>
+        <tr><td>Median (high)</td><td>Elbow / supracondylar</td><td>Papal blessing hand</td><td>OK sign / AIN</td><td>Lateral 3½ fingers (palmar)</td></tr>
+        <tr><td>Median (low)</td><td>Carpal tunnel</td><td>Ape hand (thumb opposition lost)</td><td>Tinel, Phalen</td><td>Lat 3½ fingers (thenar spared)</td></tr>
+        <tr><td>Ulnar (high)</td><td>Medial epicondyle</td><td>Mild claw (ring + little)</td><td>Card test, Egawa</td><td>Medial 1½ fingers</td></tr>
+        <tr><td>Ulnar (low)</td><td>Guyon's canal / hook hamate</td><td>Pronounced claw (paradox)</td><td>Froment's sign</td><td>Medial 1½ fingers</td></tr>
+        <tr><td>Musculocutaneous</td><td>Rare penetrating</td><td>Weak elbow flex/supination</td><td>Biceps jerk reduced</td><td>Lateral forearm</td></tr>
+        <tr><td>Long thoracic (C5,6,7)</td><td>Mastectomy, neck dissection</td><td>Winged scapula (serratus anterior)</td><td>Push against wall</td><td>None</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ════════════════════════════════ S5: MUSCLES ════════════════════════════════ -->
+<div id="s5">
+  <div class="section-header">
+    <div class="section-num">05</div>
+    <h2>Muscles — <em>Compartments</em></h2>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Arm Compartments</div>
+    <div class="two-col">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">Anterior (Flexor) Compartment — Musculocutaneous nerve:</p>
+        <div class="table-wrap" style="margin:0">
+          <table>
+            <tr><th>Muscle</th><th>Key Action</th></tr>
+            <tr><td>Biceps brachii</td><td>Supination + Flexion elbow; Long head abducts slightly</td></tr>
+            <tr><td>Brachialis</td><td>Pure flexor of elbow (workhorse); cannot supinate</td></tr>
+            <tr><td>Coracobrachialis</td><td>Flexion + adduction of shoulder</td></tr>
+          </table>
+        </div>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px">Posterior (Extensor) Compartment — Radial nerve:</p>
+        <div class="table-wrap" style="margin:0">
+          <table>
+            <tr><th>Muscle</th><th>Key Action</th></tr>
+            <tr><td>Triceps brachii</td><td>Elbow extension (only extensor); Long head extends + adducts shoulder</td></tr>
+            <tr><td>Anconeus</td><td>Assists elbow extension</td></tr>
+          </table>
+        </div>
+        <div class="ossify-note" style="margin-top:6px">Biceps: <em>supination</em> is more powerful than pronation — why screws have right-hand thread (most people right-handed, supination tightens)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Forearm Compartments <span class="badge badge-pyq">PYQ</span></div>
+    <div class="two-col">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">Anterior (Flexor) — Median nerve (mostly):</p>
+        <p style="font-size:12px;color:var(--text2);margin-bottom:6px">Superficial layer (from lateral to medial):</p>
+        <ul class="checklist">
+          <li>Pronator teres — Median</li>
+          <li>Flexor carpi radialis (FCR) — Median</li>
+          <li>Palmaris longus — Median (absent in ~14%)</li>
+          <li>Flexor carpi ulnaris (FCU) — <strong>Ulnar nerve</strong></li>
+          <li>Flexor digitorum superficialis (FDS) — Median</li>
+        </ul>
+        <p style="font-size:12px;color:var(--text2);margin-top:6px;margin-bottom:4px">Deep layer:</p>
+        <ul class="checklist">
+          <li>Flexor digitorum profundus (FDP): Lateral half (index + middle) = Median (AIN); Medial half (ring + little) = <strong>Ulnar nerve</strong></li>
+          <li>Flexor pollicis longus — Median (AIN)</li>
+          <li>Pronator quadratus — Median (AIN)</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px">Posterior (Extensor) — Radial nerve:</p>
+        <p style="font-size:12px;color:var(--text2);margin-bottom:4px">Superficial layer:</p>
+        <ul class="checklist">
+          <li>Brachioradialis, ECRL, ECRB — Radial</li>
+          <li>Extensor digitorum communis — PIN</li>
+          <li>Extensor digiti minimi — PIN</li>
+          <li>Extensor carpi ulnaris — PIN</li>
+        </ul>
+        <p style="font-size:12px;color:var(--text2);margin-top:6px;margin-bottom:4px">Deep layer (all PIN):</p>
+        <ul class="checklist">
+          <li>Abductor pollicis longus, Extensor pollicis brevis, Extensor pollicis longus, Extensor indicis</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hand intrinsics -->
+  <div class="card">
+    <div class="card-title">Intrinsic Hand Muscles <span class="badge badge-fav">⭐ Viva Essential</span></div>
+    <div class="two-col">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">Thenar Eminence (Median nerve — LOAF):</p>
+        <ul class="checklist">
+          <li><strong>A</strong>bductor pollicis brevis (most superficial)</li>
+          <li><strong>O</strong>pponens pollicis (deep to APB)</li>
+          <li><strong>F</strong>lexor pollicis brevis — <em>dual supply</em>: Superficial head = Median, Deep head = Ulnar</li>
+          <li><strong>L</strong>umbricals 1 & 2 (lateral): Median nerve</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px">Hypothenar + Rest (Ulnar nerve):</p>
+        <ul class="checklist">
+          <li>Abductor digiti minimi, Flexor digiti minimi, Opponens digiti minimi — Ulnar</li>
+          <li>Lumbricals 3 & 4 (medial) — Ulnar</li>
+          <li>All interossei (4 dorsal, 3 palmar) — Ulnar</li>
+          <li>Adductor pollicis — Ulnar</li>
+        </ul>
+        <div class="mnemonic-box" style="margin:6px 0">
+          <div class="mbox-title">Interossei Actions</div>
+          <div class="mnemonic-highlight">DAB = Dorsal Abduct; PAD = Palmar ADduct</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ════════════════════════════════ S6: AXILLA ════════════════════════════════ -->
+<div id="s6">
+  <div class="section-header">
+    <div class="section-num">06</div>
+    <h2><em>Axilla</em></h2>
+  </div>
+
+  <div class="keypoint">Axilla = pyramidal space between arm and chest wall. Apex (narrow) = between clavicle, 1st rib, scapula. Base = skin + fascia of armpit.</div>
+
+  <div style="text-align:center; margin: 24px 0;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Gray523.png" alt="Axillary Artery and Space" style="max-width: 100%; border-radius: 8px;">
+  </div>
+
+  <div class="card">
+    <div class="card-title">Axilla Walls — "3 Medial, 2 Lateral, 1 Posterior" <span class="badge badge-pyq">PYQ</span></div>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Wall</th><th>Structure</th><th>Note</th></tr>
+        <tr><td>Anterior</td><td>Pectoralis major + minor + clavipectoral fascia</td><td>Cephalic vein pierces clavipectoral fascia</td></tr>
+        <tr><td>Posterior</td><td>Subscapularis, Teres major, Latissimus dorsi</td><td>Quadrilateral + triangular spaces here</td></tr>
+        <tr><td>Medial</td><td>Serratus anterior + ribs 1–4</td><td>Long thoracic nerve on serratus</td></tr>
+        <tr><td>Lateral</td><td>Intertubercular groove of humerus</td><td>Narrowest wall</td></tr>
+        <tr><td>Apex</td><td>Clavicle + 1st rib + superior scapula</td><td>Axillary vessels + brachial plexus enter here</td></tr>
+        <tr><td>Base</td><td>Skin + axillary fascia</td><td>Hair follicles — site of hidradenitis suppurativa</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Axilla Contents</div>
+    <div class="two-col">
+      <div>
+        <ul class="checklist">
+          <li>Axillary artery (3 parts — relative to pectoralis minor)</li>
+          <li>Axillary vein (medial to artery)</li>
+          <li>Brachial plexus cords + branches</li>
+          <li>Axillary lymph nodes (5 groups)</li>
+          <li>Intercostobrachial nerve (T2) — sensory arm medial surface</li>
+          <li>Long thoracic nerve (medial wall)</li>
+          <li>Fat</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">Axillary Lymph Nodes — 5 Groups (APICS):</p>
+        <ul class="checklist">
+          <li><strong>Anterior (pectoral)</strong>: drain breast</li>
+          <li><strong>Posterior (subscapular)</strong>: back, posterior shoulder</li>
+          <li><strong>Lateral</strong>: upper limb</li>
+          <li><strong>Central</strong>: receives from all other groups</li>
+          <li><strong>Apical</strong>: drains all → subclavian lymph trunk</li>
+        </ul>
+        <div class="clinical-box" style="margin-top:6px">
+          <div class="cbox-title">Sentinel Node Biopsy</div>
+          <p>First node draining breast cancer — typically pectoral group. Identifies if axillary dissection needed. Reduces lymphoedema risk compared to full clearance.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quadrilateral and triangular spaces -->
+  <div class="card">
+    <div class="card-title">Quadrilateral & Triangular Spaces — Posterior Wall</div>
+    <div class="two-col">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">Quadrilateral (Quadrangular) Space:</p>
+        <ul class="checklist">
+          <li><strong>Boundaries:</strong> Teres minor (above), Teres major (below), Long head triceps (medial), Surgical neck humerus (lateral)</li>
+          <li><strong>Contents:</strong> Axillary nerve + Posterior circumflex humeral artery</li>
+          <li><strong>Clinical:</strong> Quadrilateral space syndrome — axillary nerve compression → shoulder pain + deltoid weakness</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px">Upper + Lower Triangular Spaces:</p>
+        <ul class="checklist">
+          <li><strong>Upper triangular space:</strong> Teres minor (above), Teres major (below), Long head triceps (lateral) → <strong>Circumflex scapular artery</strong></li>
+          <li><strong>Lower triangular space (of Calot / Triangle of Intervention):</strong> Teres major (above), Long head triceps (medial), Shaft of humerus (lateral) → <strong>Radial nerve + Profunda brachii artery</strong></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ════════════════════════════════ S7: CUBITAL FOSSA ════════════════════════════════ -->
+<div id="s7">
+  <div class="section-header">
+    <div class="section-num">07</div>
+    <h2>Cubital <em>Fossa</em></h2>
+  </div>
+
+  <div class="keypoint">Cubital fossa = triangular hollow in front of elbow. Contents (medial to lateral): <strong>T-BAN</strong> — Tendon of biceps, Brachial Artery, Median nerve, Anterior interosseous nerve (then radial nerve outside fossa).</div>
+
+  <div style="text-align:center; margin: 24px 0;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Gray574.png" alt="Cubital Fossa Diagram" style="max-width: 100%; border-radius: 8px;">
+  </div>
+
+  <div class="card">
+    <div class="card-title">Cubital Fossa <span class="badge badge-fav">⭐ PYQ</span></div>
+    <div class="two-col">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">Boundaries:</p>
+        <ul class="checklist">
+          <li><strong>Apex:</strong> Meeting of the two muscles below</li>
+          <li><strong>Medial:</strong> Pronator teres</li>
+          <li><strong>Lateral:</strong> Brachioradialis</li>
+          <li><strong>Floor:</strong> Brachialis + Supinator</li>
+          <li><strong>Roof:</strong> Skin, fascia, bicipital aponeurosis (lacertus fibrosus), median cubital vein on top</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px">Contents (medial → lateral):</p>
+        <ul class="checklist">
+          <li><strong>Median nerve</strong> — most medial</li>
+          <li><strong>Brachial artery</strong> (bifurcates into radial + ulnar at cubital fossa apex)</li>
+          <li><strong>Biceps tendon</strong></li>
+          <li><strong>Radial nerve</strong> — most lateral (divides into superficial + deep/PIN here)</li>
+        </ul>
+        <div class="clinical-box" style="margin-top:6px">
+          <div class="cbox-title">Blood Pressure & Venepuncture</div>
+          <p>Brachial artery auscultated here for BP. Median cubital vein (in roof) = safest venepuncture site — bicipital aponeurosis protects brachial artery below it.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ════════════════════════════════ S8: ARTERIES & VEINS ════════════════════════════════ -->
+<div id="s8">
+  <div class="section-header">
+    <div class="section-num">08</div>
+    <h2>Arteries <em>& Veins</em></h2>
+  </div>
+
+  <!-- Arterial flowchart -->
+  <div class="flowchart">
+    <div class="flow-title">Arterial Supply of Upper Limb — Axial Artery</div>
+    <div class="flow-v">
+      <div class="flow-box accent">
+        <span class="lbl">Subclavian Artery</span>
+        Right: from brachiocephalic trunk. Left: directly from aortic arch<br>
+        <span class="sub">Becomes axillary artery at lateral border of 1st rib</span>
+      </div>
+      <div class="flow-step-label">↓ Becomes Axillary Artery (3 parts, relative to pectoralis minor)</div>
+      <div class="flow-box gold">
+        <span class="lbl">Axillary Artery — 3 Parts</span>
+        <strong>1st part</strong> (medial to pec minor): Superior thoracic artery (1 branch)<br>
+        <strong>2nd part</strong> (behind pec minor): Thoracoacromial + Lateral thoracic (2 branches)<br>
+        <strong>3rd part</strong> (lateral to pec minor): Subscapular + Ant. + Post. circumflex humeral (3 branches)<br>
+        <span class="sub">Mnemonic for 1-2-3: "Send The Lord – 2 Angels, 3 Names" = 1, 2, 3 branches</span>
+      </div>
+      <div class="flow-step-label">↓ Becomes Brachial Artery at lower border of teres major</div>
+      <div class="flow-box teal">
+        <span class="lbl">Brachial Artery — in anterior arm</span>
+        Gives off Profunda brachii (enters spiral groove with radial nerve)<br>
+        Bifurcates at <strong>neck of radius</strong> → Radial + Ulnar arteries
+        <span class="sub">BP measured here. Can be compressed against humerus in emergencies.</span>
+      </div>
+      <div class="flow-step-label">↓ Radial artery: lateral forearm → anatomical snuffbox → deep palm → deep palmar arch</div>
+      <div class="flow-step-label">↓ Ulnar artery: medial forearm → Guyon's canal → superficial palmar arch</div>
+      <div class="flow-box sky">
+        <span class="lbl">Palmar Arches</span>
+        <strong>Superficial palmar arch</strong>: Ulnar artery + superficial branch radial (superficial to long flexor tendons)<br>
+        <strong>Deep palmar arch</strong>: Radial artery + deep branch ulnar (deep to long flexor tendons)<br>
+        <span class="sub">Allen's test checks patency of both arches before radial artery cannulation</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Veins -->
+  <div class="card">
+    <div class="card-title">Venous Drainage — Superficial Veins <span class="badge badge-pyq">PYQ</span></div>
+    <div class="two-col">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">Cephalic Vein:</p>
+        <ul class="checklist">
+          <li>Begins radial side of dorsal venous arch</li>
+          <li>Travels up lateral side of forearm → antecubital fossa (lateral)</li>
+          <li>Ascends in lateral bicipital groove</li>
+          <li>Enters deltopectoral groove → pierces clavipectoral fascia → ends in axillary vein</li>
+          <li>"Orphan vein" — empties into axillary vein at awkward angle, no venous valve; pacemaker leads placed here</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px">Basilic Vein:</p>
+        <ul class="checklist">
+          <li>Begins ulnar side of dorsal venous arch</li>
+          <li>Travels up medial side → pierces deep fascia in mid-arm</li>
+          <li>Joins brachial vein(s) to form axillary vein</li>
+          <li>Medial cubital vein connects cephalic to basilic across cubital fossa</li>
+          <li><strong>Median cubital vein</strong> = commonest IV access site (protected by bicipital aponeurosis)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="diagram-placeholder">
+      <div class="diagram-num">DIAGRAM 02</div>
+      <div class="diagram-instruction">Draw the superficial veins of the upper limb (anterior view): dorsal venous arch → cephalic vein (lateral) + basilic vein (medial), median cubital vein at antecubital fossa connecting them, cephalic entering deltopectoral groove, basilic piercing deep fascia in mid-arm. Label each vein clearly.</div>
+      <div class="diagram-size">Full width, landscape preferred for arm anatomy</div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ════════════════════════════════ S9: DERMATOMES ════════════════════════════════ -->
+<div id="s9">
+  <div class="section-header">
+    <div class="section-num">09</div>
+    <h2><em>Dermatomes</em> of Upper Limb</h2>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Upper Limb Dermatomes <span class="badge badge-pyq">PYQ</span></div>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Level</th><th>Area Supplied</th><th>Clinical Test</th></tr>
+        <tr><td>C4</td><td>Cape area — shoulders and upper deltoid region</td><td>Shoulder sensation</td></tr>
+        <tr><td>C5</td><td>Lateral arm (regimental badge area) — upper part</td><td>Axillary nerve territory</td></tr>
+        <tr><td>C6</td><td>Lateral forearm + thumb + index finger + lateral half of middle finger</td><td>Thumb sensation</td></tr>
+        <tr><td>C7</td><td>Middle finger (centred) + dorsum of hand</td><td>Middle finger sensation</td></tr>
+        <tr><td>C8</td><td>Ring + little finger + medial forearm</td><td>Little finger sensation</td></tr>
+        <tr><td>T1</td><td>Medial forearm (upper part) — does NOT extend to fingers</td><td>Medial forearm</td></tr>
+        <tr><td>T2</td><td>Medial arm + axilla floor</td><td>Intercostobrachial nerve territory</td></tr>
+      </table>
+    </div>
+    <div class="diagram-placeholder">
+      <div class="diagram-num">DIAGRAM 03</div>
+      <div class="diagram-instruction">Draw the dermatome map of the upper limb (anterior and posterior views). Colour-code each dermatomal level C4–T2. Show the distinct strip pattern: C6 on thumb/lateral, C7 on middle, C8 on ring/little, T1 medial forearm, T2 medial arm. Include the "axial line" gaps.</div>
+      <div class="diagram-size">Two-panel diagram (anterior + posterior), full width</div>
+    </div>
+    <div class="mnemonic-box" style="margin-top:.5rem">
+      <div class="mbox-title">Dermatome Mnemonic — Fingers</div>
+      <div class="mnemonic-highlight">"C6 = Thumbs Up (hitchhiker C6), C7 = Middle finger up (rude gesture), C8 = Pinky ring"</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Myotomes of Upper Limb</div>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Root</th><th>Movement Tested</th><th>Muscle</th><th>Reflex</th></tr>
+        <tr><td>C5</td><td>Shoulder abduction, elbow flexion</td><td>Deltoid, Biceps</td><td>Biceps jerk (C5,6)</td></tr>
+        <tr><td>C6</td><td>Elbow flexion, wrist extension</td><td>Biceps, ECRL</td><td>Brachioradialis jerk (C6)</td></tr>
+        <tr><td>C7</td><td>Elbow extension, wrist flexion, finger extension</td><td>Triceps, FCR, EDC</td><td>Triceps jerk (C7)</td></tr>
+        <tr><td>C8</td><td>Finger flexion (grip)</td><td>FDS, FDP, intrinsics</td><td>—</td></tr>
+        <tr><td>T1</td><td>Finger abduction/adduction (intrinsics)</td><td>Interossei</td><td>—</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ════════════════════════════════ S10: OSSIFICATION ════════════════════════════════ -->
+<div id="s10">
+  <div class="section-header">
+    <div class="section-num">10</div>
+    <h2><em>Ossification</em> of Upper Limb Bones</h2>
+  </div>
+
+  <div class="keypoint">Ossification is high-yield for osteology practicals and MCQs. Know: <strong>number of centres</strong>, <strong>appearance time</strong>, <strong>fusion time</strong>, and which end fuses first.</div>
+
+  <div class="card">
+    <div class="card-title">Humerus Ossification <span class="badge badge-fav">⭐ PYQ</span></div>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Centre</th><th>Appears</th><th>Fuses With Shaft</th></tr>
+        <tr><td>Shaft (primary)</td><td>8th week fetal</td><td>—</td></tr>
+        <tr><td>Head</td><td>1st year</td><td>Forms "ball" with greater + lesser tubercle → fuse with shaft at 20 yrs</td></tr>
+        <tr><td>Greater tubercle</td><td>3rd year</td><td>Fuses with head at 6 yrs</td></tr>
+        <tr><td>Lesser tubercle</td><td>5th year</td><td>Fuses with head at 6 yrs</td></tr>
+        <tr><td>Capitulum + lateral epicondyle</td><td>1st year</td><td rowspan="4">All distal centres fuse together → then to shaft at 14–16 yrs (lateral before medial)</td></tr>
+        <tr><td>Medial epicondyle</td><td>5th year</td></tr>
+        <tr><td>Trochlea</td><td>10th year</td></tr>
+        <tr><td>Olecranon fossa</td><td>12th year</td></tr>
+      </table>
+    </div>
+    <div class="mnemonic-box">
+      <div class="mbox-title">Distal Humerus Centres (Lateral → Medial order of appearance)</div>
+      <div class="mnemonic-highlight">"Come Rub My Tree Briskly — Clean Off"</div>
+      <p style="font-size:12px;color:var(--text2);margin-top:4px"><strong>C</strong>apitulum (1) · <strong>R</strong>adial head (3) · <strong>M</strong>edial epicondyle (5) · <strong>T</strong>rochlea (10) · <strong>O</strong>lecranon (12) · <strong>L</strong>ateral epicondyle (13) — ages in years</p>
+    </div>
+    <div class="warn-box">
+      <div><strong>Medial epicondyle is the last to fuse with the shaft</strong> (can remain separate until 18–20 yrs). It is the only epiphysis that is extra-articular. In X-ray of distal humerus, its absence on one side when present on other = avulsion fracture.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Radius, Ulna & Clavicle Ossification</div>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Bone</th><th>Primary Centre</th><th>Upper Epiphysis</th><th>Lower Epiphysis</th><th>Key Rule</th></tr>
+        <tr><td>Radius</td><td>8th fetal week</td><td>Radial head: 5 yrs → fuses 16 yrs</td><td>Distal end: 1 yr → fuses 20 yrs</td><td>Upper end — grows less (fuses earlier); Lower end — grows more (fuses later)</td></tr>
+        <tr><td>Ulna</td><td>8th fetal week</td><td>Olecranon: 10 yrs → fuses 16 yrs</td><td>Ulnar head: 5 yrs → fuses 20 yrs</td><td>Opposite rule to radius: upper (olecranon) fuses later than lower (head) in terms of proportion</td></tr>
+        <tr><td>Clavicle</td><td>5th–6th fetal week (intramembranous)</td><td>Sternal end: 18–20 yrs</td><td>—</td><td>First bone to ossify; last epiphysis to fuse (sternal, 22–25 yrs) — used in age estimation</td></tr>
+      </table>
+    </div>
+    <div class="ossify-note">Radius lower end grows more → contributes more to forearm length → fuses later (20 yrs). This is the "law of the elbow" reverse: at the elbow, the growing end (distal humerus, proximal radius/ulna) develops last.</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Carpal Ossification</div>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Carpal Bone</th><th>Ossification Centre Appears (years)</th><th>Note</th></tr>
+        <tr><td>Capitate</td><td>1st (first carpal to ossify)</td><td>Largest carpal — ossifies first</td></tr>
+        <tr><td>Hamate</td><td>2nd year</td><td>—</td></tr>
+        <tr><td>Triquetrum</td><td>3rd year</td><td>—</td></tr>
+        <tr><td>Lunate</td><td>4th year</td><td>Most commonly dislocated</td></tr>
+        <tr><td>Scaphoid / Trapezium / Trapezoid</td><td>5th–6th year</td><td>Scaphoid: avascular necrosis risk</td></tr>
+        <tr><td>Pisiform</td><td>8th–10th year (latest)</td><td>Sesamoid — ossifies last</td></tr>
+      </table>
+    </div>
+    <div class="mnemonic-box">
+      <div class="mbox-title">Carpal Ossification Order — "Come To The Lunatic's School Twice, Please"</div>
+      <div class="mnemonic-highlight">Capitate (1) · Triquetrum (3) · Trapezium (5) · Lunate (4) · Scaphoid (5) · Trapezoid (6) · Pisiform (8–10)</div>
+      <p style="font-size:12px;color:var(--text2);margin-top:4px">Simpler: Capitate 1st → Hamate 2nd → then roughly alphabetical order → Pisiform last</p>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ════════════════════════════════ S11: VIVA Q&A ════════════════════════════════ -->
+<div id="s11">
+  <div class="section-header">
+    <div class="section-num">11</div>
+    <h2>Viva & Exam <em>Q&A</em></h2>
+  </div>
+
+  <div class="viva-section">
+    <div class="viva-title-bar">Bones & Joints</div>
+
+    <details>
+      <summary><span class="viva-q">What are the peculiarities of the clavicle?</span><span class="viva-year">PYQ Perennial</span></summary>
+      <div class="viva-ans">
+        <ul>
+          <li><strong>Only long bone that lies horizontally</strong></li>
+          <li>Ossifies by <strong>intramembranous ossification</strong> (first bone to ossify, 5th–6th week in utero)</li>
+          <li><strong>No medullary cavity</strong></li>
+          <li><strong>No nutrient foramen</strong> (or rudimentary)</li>
+          <li>First bone to ossify but <strong>last epiphysis to fuse</strong> (medial end, 22–25 years) → used in forensic age estimation</li>
+          <li>Transmits forces from upper limb to axial skeleton</li>
+          <li>Subclavius attachment on inferior surface protects subclavian vessels in fracture</li>
+        </ul>
+        <p><em>Examiner tip: If they say "no medullary canal" OR "first bone to ossify" + "last epiphysis to fuse" → definitely clavicle.</em></p>
+      </div>
+    </details>
+
+    <details>
+      <summary><span class="viva-q">Describe the scaphoid bone and its clinical importance.</span><span class="viva-year">PYQ</span></summary>
+      <div class="viva-ans">
+        <p><strong>Position:</strong> Proximal row of carpals, most lateral (radial side). Bridge between proximal and distal carpal rows — articulates with radius, lunate, capitate, trapezium, trapezoid.</p>
+        <p><strong>Blood supply:</strong> Enters distally via dorsal and superficial palmar branches of radial artery. Proximal pole has poor/retrograde blood supply. Waist fracture disrupts blood supply to proximal fragment → <strong>avascular necrosis</strong> of proximal pole.</p>
+        <p><strong>Clinical features of scaphoid fracture:</strong></p>
+        <ul>
+          <li>Tender in <strong>anatomical snuffbox</strong> (floor = scaphoid + trapezium, roof = APL + EPB laterally, EPL medially)</li>
+          <li>Tender at <strong>scaphoid tubercle</strong> on palmar aspect</li>
+          <li>Often missed on initial X-ray — treat as fracture if snuffbox tenderness present</li>
+          <li>MRI or bone scan for definitive diagnosis</li>
+          <li>Complications: non-union, avascular necrosis, secondary osteoarthritis</li>
+        </ul>
+        <p><em>Anatomical snuffbox also contains: Radial artery, cephalic vein origin, superficial branch of radial nerve.</em></p>
+      </div>
+    </details>
+  </div>
+
+  <div class="viva-section">
+    <div class="viva-title-bar">Brachial Plexus & Nerves</div>
+
+    <details>
+      <summary><span class="viva-q">Describe the formation and branches of the brachial plexus.</span><span class="viva-year">PYQ Guaranteed</span></summary>
+      <div class="viva-ans">
+        <p><strong>Formation:</strong> Ventral rami of C5, C6, C7, C8, T1. Lies in posterior triangle of neck between scalenus anterior and scalenus medius.</p>
+        <p><strong>Five levels — RTTCB:</strong></p>
+        <ul>
+          <li><strong>Roots</strong> (C5–T1): Long thoracic (C5,6,7) + Dorsal scapular (C5) + Nerve to subclavius (C5,6)</li>
+          <li><strong>Trunks</strong>: Superior (C5+C6) + Middle (C7) + Inferior (C8+T1). Superior gives suprascapular nerve</li>
+          <li><strong>Divisions</strong> (6): No branches</li>
+          <li><strong>Cords</strong> (named for relation to axillary artery 2nd part): Lateral, Medial, Posterior</li>
+          <li><strong>Branches</strong>: 5 terminal (musculocutaneous, median, ulnar, radial, axillary) + collateral branches</li>
+        </ul>
+        <p><em>Posterior cord is largest — supplies entire posterior compartment of arm + forearm + deltoid + teres minor. All posterior cord branches = C5–T1.</em></p>
+      </div>
+    </details>
+
+    <details>
+      <summary><span class="viva-q">A patient presents with wrist drop after using crutches. Which nerve is injured and at what level?</span><span class="viva-year">PYQ Clinical</span></summary>
+      <div class="viva-ans">
+        <p><strong>Nerve:</strong> Radial nerve, <strong>high injury in axilla</strong> (crutch palsy from pressure on axillary pad).</p>
+        <p><strong>Clinical features:</strong></p>
+        <ul>
+          <li><strong>Wrist drop</strong> (extensor carpi radialis lost) + <strong>finger drop</strong></li>
+          <li><strong>Elbow extension weakness</strong> (triceps branch given in axilla — also involved in crutch palsy)</li>
+          <li><strong>Sensory loss</strong>: posterior arm, posterior forearm, dorsal lateral hand (first web space most reliable)</li>
+        </ul>
+        <p><strong>Differentiation:</strong></p>
+        <ul>
+          <li>Axilla (crutch): triceps also involved (elbow ext. weak)</li>
+          <li>Spiral groove (mid-shaft fracture): triceps <em>spared</em>, wrist + finger drop only</li>
+          <li>PIN at elbow: finger drop only, wrist partially extended (ECRL spared), <em>no sensory loss</em></li>
+        </ul>
+        <p><em>Saturday night palsy = same mechanism, falls asleep with arm over chair; spiral groove level → triceps spared.</em></p>
+      </div>
+    </details>
+
+    <details>
+      <summary><span class="viva-q">Explain the "ulnar paradox" with reference to nerve injury levels.</span><span class="viva-year">PYQ Favourite</span></summary>
+      <div class="viva-ans">
+        <p><strong>Ulnar paradox:</strong> A <strong>lower (distal) ulnar nerve lesion</strong> at the wrist produces <strong>more prominent claw hand deformity</strong> than a high lesion at the elbow.</p>
+        <p><strong>Mechanism:</strong></p>
+        <ul>
+          <li><strong>Low lesion (at wrist):</strong> FCU and FDP (ring + little) are spared (they receive branches above the wrist). Interossei + medial 2 lumbricals are paralysed. MCPJs hyperextend (no lumbrical/interosseous to flex them), IPJs stay flexed (FDP is intact). <strong>Result: pronounced claw of ring + little.</strong></li>
+          <li><strong>High lesion (at elbow):</strong> FCU + FDP (ring + little) are also paralysed. Since FDP cannot flex the IPJs, the claw deformity is less pronounced — fingers cannot complete the claw. <strong>Result: milder claw despite more extensive injury.</strong></li>
+        </ul>
+        <p><em>Paradox: worse injury → less deformity. This is because deformity requires intact antagonist muscles.</em></p>
+      </div>
+    </details>
+
+    <details>
+      <summary><span class="viva-q">What is carpal tunnel syndrome? Give its anatomy, causes, and clinical features.</span><span class="viva-year">PYQ Multiple</span></summary>
+      <div class="viva-ans">
+        <p><strong>Carpal tunnel:</strong> Rigid osseofibrous canal. Roof = flexor retinaculum (transverse carpal ligament). Floor + walls = carpal bones.</p>
+        <p><strong>Contents (10 structures):</strong> FPL tendon (1) + FDS × 4 + FDP × 4 = 9 tendons + Median nerve = 10 total.</p>
+        <p><em>Note: FCR is in a separate septum of the flexor retinaculum. FCU + ulnar vessels pass through Guyon's canal (superficial to retinaculum).</em></p>
+        <p><strong>Causes of increased pressure:</strong> Pregnancy (fluid retention), hypothyroidism (myxoedema), RA (synovial hypertrophy), acromegaly, obesity, diabetes, repetitive wrist use, Colles' fracture malunion.</p>
+        <p><strong>Clinical features (median nerve compression):</strong></p>
+        <ul>
+          <li>Paraesthesia + pain in lateral 3½ fingers (thumb, index, middle, lateral ring)</li>
+          <li>Night-time pain, worse with wrist flexion activities</li>
+          <li>Thenar wasting (LOAF muscles) — late sign</li>
+          <li>Ape hand (thumb flattened in plane of palm)</li>
+          <li>Tinel's sign (percussion at wrist) + Phalen's test (wrist flexion 60 sec)</li>
+          <li>Thenar eminence <em>sensation preserved</em> — palmar cutaneous branch exits median nerve 5 cm proximal to flexor retinaculum</li>
+        </ul>
+        <p><strong>Management:</strong> Splinting, steroid injection, surgical decompression (carpal tunnel release).</p>
+      </div>
+    </details>
+  </div>
+
+  <div class="viva-section">
+    <div class="viva-title-bar">Axilla, Rotator Cuff & Applied</div>
+
+    <details>
+      <summary><span class="viva-q">Name the contents of the axilla.</span><span class="viva-year">PYQ</span></summary>
+      <div class="viva-ans">
+        <p><strong>Six contents of axilla (VABLAN + Fat):</strong></p>
+        <ul>
+          <li><strong>V</strong>essels: Axillary artery (and branches) + Axillary vein</li>
+          <li><strong>A</strong>xillary lymph nodes (5 groups: anterior/pectoral, posterior/subscapular, lateral, central, apical)</li>
+          <li><strong>B</strong>rachial plexus: cords and their branches</li>
+          <li><strong>L</strong>ong thoracic nerve (on medial wall, on serratus anterior)</li>
+          <li><strong>A</strong>dipose tissue (fat — fills the space)</li>
+          <li><strong>N</strong>erve: Intercostobrachial nerve (T2 — sensory to medial arm)</li>
+        </ul>
+        <p><em>Lymph nodes are surgically important: cancer of the breast drains to axillary nodes (primarily pectoral group). Apical nodes are the gateway to the thoracic duct/subclavian lymph trunk.</em></p>
+      </div>
+    </details>
+
+    <details>
+      <summary><span class="viva-q">Enumerate the muscles of the rotator cuff and their actions.</span><span class="viva-year">PYQ Every Year</span></summary>
+      <div class="viva-ans">
+        <p><strong>SITS — 4 muscles:</strong></p>
+        <ul>
+          <li><strong>S</strong>upraspinatus (C5,6 — suprascapular nerve): Initiates abduction 0–15°; most commonly torn. Superior facet of greater tubercle.</li>
+          <li><strong>I</strong>nfraspinatus (C5,6 — suprascapular nerve): Lateral rotation. Middle facet of greater tubercle.</li>
+          <li><strong>T</strong>eres minor (C5,6 — axillary nerve): Lateral rotation + weak abduction. Inferior facet of greater tubercle.</li>
+          <li><strong>S</strong>ubscapularis (C5–7 — upper + lower subscapular nerves): Medial rotation (most powerful rotator cuff). Lesser tubercle.</li>
+        </ul>
+        <p><strong>Function as a unit:</strong> Stabilise glenohumeral joint by compressing humeral head into glenoid (like a concave socket tightener). The supraspinatus prevents downward subluxation when arm at side; deltoid handles active abduction above 15°.</p>
+        <p><em>Painful arc test: pain 60–120° of abduction = supraspinatus impingement under coracoacromial arch. Empty can test specifically tests supraspinatus integrity.</em></p>
+      </div>
+    </details>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ════════════════════════════════ S12: EQ TEMPLATES ════════════════════════════════ -->
+<div id="s12">
+  <div class="section-header">
+    <div class="section-num">12</div>
+    <h2>Essay Question <em>Templates</em></h2>
+  </div>
+
+  <div class="eq-box">
+    <div class="eq-title">EQ — Brachial Plexus: Formation, Branches & Injuries</div>
+    <div class="eq-statement">"Describe the formation, branches and applied anatomy of the brachial plexus."</div>
+    <div class="eq-answer">
+      <ol>
+        <li><span>Formation:</span> Ventral rami of C5–T1. Located in posterior triangle between scalenus anterior and medius. Passes through the cervicoaxillary canal to reach axilla. Five levels: Roots → Trunks → Divisions → Cords → Branches (RTTDB / "Randy Travis…").</li>
+        <li><span>Trunks:</span> Superior (C5+C6), Middle (C7), Inferior (C8+T1). Located at outer border of first rib / posterior triangle. Superior trunk gives: suprascapular nerve + nerve to subclavius.</li>
+        <li><span>Cords:</span> Named for relation to 2nd part of axillary artery. Lateral (anterior divisions upper + middle), Medial (anterior division inferior), Posterior (all three posterior divisions). Posterior cord is the largest.</li>
+        <li><span>Terminal Branches (5 — from cords):</span> Musculocutaneous (lateral cord), Median (both lateral + medial cords — two roots), Ulnar (medial cord), Radial + Axillary (posterior cord). Collateral branches: long thoracic (roots), suprascapular, subscapular, thoracodorsal, intercostobrachial.</li>
+        <li><span>Erb's Palsy (C5,C6 — upper trunk):</span> Excessive neck-shoulder angle separation. "Waiter's tip" — adducted, medially rotated arm, elbow extended, forearm pronated. Deltoid + biceps + brachialis + supraspinatus + infraspinatus paralysed. Treated: physiotherapy, surgical repair in persistent cases.</li>
+        <li><span>Klumpke's Palsy (C8,T1 — lower trunk):</span> Excessive abduction. Claw hand — intrinsic muscles paralysed. Horner's syndrome if T1 preganglionic sympathetics involved. Sensory: medial forearm + hand.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="eq-box">
+    <div class="eq-title">EQ — Carpal Tunnel Syndrome: Anatomy, Causes, Features, Management</div>
+    <div class="eq-statement">"Write a short note on carpal tunnel syndrome."</div>
+    <div class="eq-answer">
+      <ol>
+        <li><span>Definition & Anatomy:</span> Compression of median nerve within the carpal tunnel — rigid osseofibrous canal at wrist. Roof = flexor retinaculum (transverse carpal ligament). Contains 9 flexor tendons (FPL, 4×FDS, 4×FDP) + median nerve.</li>
+        <li><span>Nerve affected:</span> Median nerve. Important: its palmar cutaneous branch leaves proximal to the tunnel → thenar eminence sensation SPARED. Recurrent motor branch exits at distal edge → supplies LOAF muscles (thenar).</li>
+        <li><span>Causes:</span> Anything increasing tunnel pressure — pregnancy (oedema), hypothyroidism, rheumatoid arthritis (synovial proliferation), acromegaly, diabetes, Colles' fracture malunion, obesity, repetitive flexion-extension.</li>
+        <li><span>Clinical Features:</span> Nocturnal paraesthesia + pain (lateral 3½ fingers), worsened by wrist flexion/typing. Later: thenar wasting, ape hand (opposition lost). Signs: Tinel's (percussion → tingling), Phalen's (forced wrist flexion 60 sec → symptoms).</li>
+        <li><span>Diagnosis:</span> Clinical + NCS/EMG (nerve conduction studies — gold standard; shows slowed conduction across wrist). Ultrasound shows median nerve enlargement proximal to tunnel.</li>
+        <li><span>Management:</span> Conservative: splinting at night (neutral position), corticosteroid injection. Surgical: carpal tunnel release (division of flexor retinaculum) — definitive for severe/refractory cases.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="eq-box">
+    <div class="eq-title">EQ — Nerve Injuries of Upper Limb: Radial, Median, Ulnar Comparison</div>
+    <div class="eq-statement">"Compare the injuries of radial, median and ulnar nerves in the upper limb."</div>
+    <div class="eq-answer">
+      <ol>
+        <li><span>Radial Nerve (C5–T1, posterior cord):</span> High (axilla) = wrist drop + finger drop + elbow extension weakness + sensory loss posterior arm/forearm/hand. Mid-shaft humerus (spiral groove) = wrist drop + finger drop, triceps SPARED. PIN at elbow = finger drop only, no sensory loss. Treatment: splinting, nerve exploration if no recovery at 3 months.</li>
+        <li><span>Median Nerve (C5–T1, lateral + medial cord):</span> High (elbow) = papal blessing on grip, pronation weak, thenar wasting. Low (carpal tunnel) = ape hand (opposition lost), thenar wasting, sensory lateral 3½ fingers (thenar sensation spared). Froment's sign not applicable (this is ulnar). Key test: Tinel, Phalen, OK sign.</li>
+        <li><span>Ulnar Nerve (C7–T1, medial cord):</span> High (medial epicondyle) = mild claw hand ring+little, FCU + FDP medial lost. Low (wrist/Guyon's) = paradoxically more pronounced claw (FCU + FDP spared). Tests: Froment's (adductor pollicis lost), Card test, Egawa test. Guttering between metacarpals.</li>
+        <li><span>Comparison Summary:</span> Radial = extensor loss; Median = thenar/flexor loss; Ulnar = intrinsic hand muscle loss. Mixed hand functions require all three nerves working together. The "intrinsic plus" position (MCPJs flexed, IPJs extended) requires interossei (ulnar) + lumbricals (median + ulnar).</li>
+        <li><span>Nerve Injury Classification (Seddon):</span> Neurapraxia (demyelination, complete recovery) → Axonotmesis (axon disruption, guided recovery by Schwann tubes) → Neurotmesis (complete division, needs surgical repair).</li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- HIGH YIELD QUICKFIRE -->
+  <div class="card" style="margin-top:1.5rem;border-color:var(--accent)">
+    <div class="card-title">🔥 Exam Day Quickfire — Anatomy Module 02</div>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Question</th><th>Answer</th></tr>
+        <tr><td>Only horizontal long bone</td><td>Clavicle</td></tr>
+        <tr><td>Most commonly fractured carpal</td><td>Scaphoid (waist) — avascular necrosis risk</td></tr>
+        <tr><td>Most commonly dislocated carpal</td><td>Lunate (anterior dislocation)</td></tr>
+        <tr><td>Nerve in anatomical snuffbox</td><td>Superficial branch of radial nerve</td></tr>
+        <tr><td>Artery in anatomical snuffbox</td><td>Radial artery (dorsal carpal branch)</td></tr>
+        <tr><td>"Waiter's tip" posture</td><td>Erb's palsy (C5, C6) — upper trunk brachial plexus</td></tr>
+        <tr><td>"Claw hand" whole hand + Horner's</td><td>Klumpke's palsy (C8, T1) — lower trunk</td></tr>
+        <tr><td>Wrist drop — injury level</td><td>Mid-shaft humerus → radial nerve at spiral groove</td></tr>
+        <tr><td>Ape hand deformity</td><td>Median nerve injury at wrist (carpal tunnel) — opposition lost</td></tr>
+        <tr><td>Ulnar paradox</td><td>Low ulnar lesion → more claw than high lesion (FDP intact → more flexion)</td></tr>
+        <tr><td>Froment's sign</td><td>Ulnar nerve — adductor pollicis lost → FPL (median) compensates during paper pinch</td></tr>
+        <tr><td>Winged scapula</td><td>Long thoracic nerve injury → serratus anterior palsy</td></tr>
+        <tr><td>Nerve behind medial epicondyle</td><td>Ulnar nerve — "funny bone"</td></tr>
+        <tr><td>Structures in carpal tunnel</td><td>FPL + 4 FDS + 4 FDP + Median nerve (10 total); FCR not inside</td></tr>
+        <tr><td>Rotator cuff initiates abduction</td><td>Supraspinatus (0–15°); deltoid takes over 15–90°</td></tr>
+        <tr><td>Contents of cubital fossa (M→L)</td><td>Median nerve · Brachial artery · Biceps tendon · Radial nerve</td></tr>
+        <tr><td>First carpal to ossify</td><td>Capitate (1st year)</td></tr>
+        <tr><td>Last epiphysis to fuse in body</td><td>Medial end of clavicle (22–25 years)</td></tr>
+        <tr><td>Saddle joint of upper limb</td><td>1st carpometacarpal joint (thumb–trapezium) — allows opposition</td></tr>
+        <tr><td>Common nerve compressed in "nursemaid's elbow"</td><td>Radial nerve not compressed; radial head subluxes through annular ligament — reduce by supination + extension</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- Mnemonics grid -->
+  <div class="card" style="margin-top:1rem">
+    <div class="card-title">Module 02 Master Mnemonics</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:10px;margin-top:8px">
+      <div class="mnemonic-box" style="margin:0">
+        <div class="mbox-title">8 Carpals</div>
+        <div class="mnemonic-highlight">"Some Lovers Try Positions That They Can't Handle"</div>
+      </div>
+      <div class="mnemonic-box" style="margin:0">
+        <div class="mbox-title">Rotator Cuff</div>
+        <div class="mnemonic-highlight">"SITS" — Supraspinatus · Infraspinatus · Teres minor · Subscapularis</div>
+      </div>
+      <div class="mnemonic-box" style="margin:0">
+        <div class="mbox-title">Brachial Plexus Levels</div>
+        <div class="mnemonic-highlight">"Randy Travis Drinks Cold Beer" — Roots, Trunks, Divisions, Cords, Branches</div>
+      </div>
+      <div class="mnemonic-box" style="margin:0">
+        <div class="mbox-title">Median Nerve Intrinsics (LOAF)</div>
+        <div class="mnemonic-highlight">"LOAF" — Lateral 2 Lumbricals, Opponens pollicis, Abductor pollicis brevis, Flexor pollicis brevis (superficial head)</div>
+      </div>
+      <div class="mnemonic-box" style="margin:0">
+        <div class="mbox-title">Interossei Actions</div>
+        <div class="mnemonic-highlight">"DAB = Dorsal ABduct; PAD = Palmar ADduct"</div>
+      </div>
+      <div class="mnemonic-box" style="margin:0">
+        <div class="mbox-title">Distal Humerus Ossification</div>
+        <div class="mnemonic-highlight">"Come Rub My Tree Often, Later" — Capitulum(1), Radial head(3), Medial epicondyle(5), Trochlea(10), Olecranon(12), Lateral epicondyle(13)</div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /s12 -->
+</div><!-- /content -->
+
+<div class="footer">
+  <p>ANATOMY MODULE 02 · UPPER LIMB</p>
+  <p style="margin-top:4px">Caffeine & Cadaver · Anatomy Series</p>
+  <p style="margin-top:4px;color:var(--accent);font-size:11px">Mobile-optimised · Diagram placeholders: 03 (hand-drawn) · No rotated text</p>
+</div>
+
+<button class="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+document.querySelectorAll('details').forEach(d=>{
+  d.addEventListener('toggle',()=>{
+    if(d.open){const c=d.querySelector('.viva-ans');if(c){c.style.animation='none';void c.offsetWidth;c.style.animation='fadeIn .2s ease';}}
+  });
+});
+</script>
+</body>
+</html>

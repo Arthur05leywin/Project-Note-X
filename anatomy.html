@@ -126,6 +126,42 @@ nav {
   padding-bottom: 2px;
 }
 
+/* ── NAV TOGGLE ── */
+.nav-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  flex-direction: column;
+  gap: 4px;
+}
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+@media (max-width: 768px) {
+  .nav-toggle { display: flex; }
+  .nav-links {
+    position: absolute;
+    top: 56px;
+    left: 0;
+    right: 0;
+    background: rgba(10,8,8,0.95);
+    backdrop-filter: blur(12px);
+    flex-direction: column;
+    padding: 20px;
+    border-bottom: 1px solid var(--border);
+    display: none;
+  }
+  .nav-links.open { display: flex; }
+}
+
 /* ── HERO ── */
 .hero {
   position: relative;
@@ -709,7 +745,6 @@ footer {
 @media (max-width: 480px) {
   .modules-grid { grid-template-columns: 1fr; }
   .features-grid { grid-template-columns: 1fr 1fr; }
-  nav .nav-links { display: none; }
 }
 </style>
 </head>
@@ -721,7 +756,10 @@ footer {
     <div class="nav-logo-mark">C&C</div>
     <span class="nav-logo-text">Caffeine & Cadaver</span>
   </a>
-  <ul class="nav-links">
+  <button class="nav-toggle" type="button" aria-label="Toggle navigation">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links site-nav">
     <li><a href="/">Home</a></li>
     <li><a href="/biochemistry">Biochemistry</a></li>
     <li><a href="/anatomy" class="active">Anatomy</a></li>
@@ -1024,6 +1062,6 @@ footer {
 </footer>
 
 <button class="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
-
+<script src="script.js"></script>
 </body>
 </html>
