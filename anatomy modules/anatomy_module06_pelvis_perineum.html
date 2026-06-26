@@ -1,0 +1,1413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anatomy Module 06 — Pelvis & Perineum | Caffeine & Cadaver</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=JetBrains+Mono:wght@400;600&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#080c14;--surface:#0d1220;--surface2:#121828;--surface3:#182030;
+  --accent:#a855b5;--accent2:#c084cc;--accent3:#d8aee0;
+  --gold:#fbbf24;--teal:#34d399;--rose:#f87171;--blue:#60a5fa;
+  --text:#e2e8f8;--text2:#8892b0;--text3:#445060;
+  --border:#1e2a40;--border2:#28384a;
+  --green:#4ade80;--orange:#fb923c;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Sora',sans-serif;font-size:15px;line-height:1.7;overflow-x:hidden;}
+
+.hero{background:linear-gradient(135deg,#060810 0%,#0e0a14 55%,#080c14 100%);border-bottom:1px solid var(--border2);padding:3rem 1.5rem 2.5rem;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;top:-80px;right:-80px;width:360px;height:360px;background:radial-gradient(circle,rgba(168,85,181,.14) 0%,transparent 70%);pointer-events:none;}
+.hero::after{content:'';position:absolute;bottom:-40px;left:10%;width:260px;height:260px;background:radial-gradient(circle,rgba(251,191,36,.06) 0%,transparent 70%);pointer-events:none;}
+.module-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(168,85,181,.14);border:1px solid rgba(168,85,181,.38);color:var(--accent2);font-family:'JetBrains Mono',monospace;font-size:11px;padding:4px 12px;border-radius:3px;letter-spacing:2px;margin-bottom:1rem;}
+.dot{width:6px;height:6px;background:var(--accent);border-radius:50%;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.4;transform:scale(.7);}}
+.hero h1{font-family:'Crimson Pro',serif;font-size:clamp(2rem,6vw,3.2rem);font-weight:600;color:var(--text);line-height:1.15;margin-bottom:.5rem;}
+.hero h1 span{color:var(--accent2);}
+.hero-sub{color:var(--text2);font-size:13px;font-family:'JetBrains Mono',monospace;letter-spacing:.5px;margin-bottom:1.5rem;}
+.hero-pills{display:flex;flex-wrap:wrap;gap:8px;}
+.pill{background:var(--surface2);border:1px solid var(--border);color:var(--text2);font-size:11px;padding:4px 10px;border-radius:20px;font-family:'JetBrains Mono',monospace;}
+
+.toc{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent);margin:1.5rem;padding:1.25rem;border-radius:6px;}
+.toc-title{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--accent);text-transform:uppercase;margin-bottom:1rem;}
+.toc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;}
+.toc a{color:var(--text2);text-decoration:none;font-size:13px;padding:4px 8px;border-radius:4px;transition:all .2s;display:flex;align-items:center;gap:6px;}
+.toc a:hover{color:var(--accent2);background:rgba(168,85,181,.08);}
+.toc-num{color:var(--accent);font-family:'JetBrains Mono',monospace;font-size:11px;}
+
+.content{padding:0 1.5rem 3rem;}
+.progress-bar{height:3px;background:linear-gradient(to right,var(--accent),var(--accent2),var(--teal));border-radius:2px;margin-bottom:2rem;animation:load 1.5s ease forwards;}
+@keyframes load{from{width:0;}to{width:100%;}}
+.section-header{display:flex;align-items:center;gap:12px;margin:2.5rem 0 1.5rem;padding-bottom:.75rem;border-bottom:1px solid var(--border);}
+.section-num{background:var(--accent);color:#fff;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:6px;flex-shrink:0;}
+.section-header h2{font-family:'Crimson Pro',serif;font-size:clamp(1.3rem,4vw,1.8rem);font-weight:600;color:var(--text);}
+.section-header h2 em{color:var(--accent2);font-style:normal;}
+.divider{height:1px;background:var(--border);margin:2rem 0;}
+.two-col{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(280px, 100%),1fr));gap:1rem;margin:1rem 0;}
+
+.badge{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-family:'JetBrains Mono',monospace;padding:2px 7px;border-radius:3px;vertical-align:middle;margin-left:4px;font-weight:600;letter-spacing:.5px;}
+.badge-rls{background:rgba(248,113,113,.18);color:var(--rose);border:1px solid rgba(248,113,113,.35);}
+.badge-pyq{background:rgba(52,211,153,.14);color:var(--teal);border:1px solid rgba(52,211,153,.3);}
+.badge-fav{background:rgba(251,191,36,.14);color:var(--gold);border:1px solid rgba(251,191,36,.3);}
+.badge-new{background:rgba(74,222,128,.14);color:var(--green);border:1px solid rgba(74,222,128,.3);}
+
+.card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:1.25rem;margin-bottom:1rem;}
+.card-title{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:.75rem;display:flex;align-items:center;gap:8px;}
+.card-title::after{content:'';flex:1;height:1px;background:var(--border);}
+
+.flowchart{background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:1.25rem;margin:1rem 0;}
+.flow-title{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--accent2);margin-bottom:1rem;display:flex;align-items:center;gap:8px;}
+.flow-title::before{content:'▶';font-size:8px;}
+.flow-v{display:flex;flex-direction:column;align-items:stretch;gap:0;}
+.flow-step-label{font-size:12px;color:var(--text2);text-align:center;padding:4px 8px;font-family:'JetBrains Mono',monospace;}
+.flow-step-label strong{color:var(--accent2);}
+.flow-arrow{text-align:center;color:var(--accent);font-size:20px;line-height:1;margin:2px 0;}
+.flow-box{background:var(--surface3);border:1px solid var(--border2);border-radius:6px;padding:10px 14px;font-size:13px;width:100%;}
+.flow-box.accent{border-color:var(--accent);background:rgba(168,85,181,.1);color:var(--accent2);}
+.flow-box.gold{border-color:var(--gold);background:rgba(251,191,36,.08);color:var(--gold);}
+.flow-box.teal{border-color:var(--teal);background:rgba(52,211,153,.08);color:var(--teal);}
+.flow-box.rose{border-color:var(--rose);background:rgba(248,113,113,.08);color:var(--rose);}
+.flow-box.purple{border-color:var(--accent);background:rgba(168,85,181,.08);color:var(--accent2);}
+.flow-box.green{border-color:var(--green);background:rgba(74,222,128,.08);color:var(--green);}
+.flow-box.blue{border-color:var(--blue);background:rgba(96,165,250,.08);color:var(--blue);}
+.flow-box .lbl{font-size:10px;color:var(--text3);font-family:'JetBrains Mono',monospace;display:block;margin-bottom:2px;}
+.flow-box .sub{font-size:11px;color:var(--text2);display:block;margin-top:3px;}
+.flow-h{display:flex;flex-wrap:wrap;align-items:center;gap:6px;}
+.flow-h .flow-box{flex:1 1 auto;min-width:100px;text-align:center;}
+.h-arrow{color:var(--accent);font-size:18px;flex-shrink:0;}
+
+.table-wrap{overflow-x:auto;margin:1rem 0;border-radius:8px;}
+table{width:100%;border-collapse:collapse;}
+th{background:var(--surface3);color:var(--accent2);font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:10px 12px;text-align:left;border-bottom:2px solid var(--accent);}
+td{padding:9px 12px;border-bottom:1px solid var(--border);font-size:13px;vertical-align:top;}
+tr:hover td{background:rgba(168,85,181,.04);}
+td:first-child{color:var(--accent2);font-weight:600;}
+
+.clinical-box{background:rgba(52,211,153,.04);border:1px solid rgba(52,211,153,.22);border-left:4px solid var(--teal);border-radius:6px;padding:1rem 1.25rem;margin:1rem 0;}
+.cbox-title{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--teal);text-transform:uppercase;margin-bottom:.6rem;display:flex;align-items:center;gap:6px;}
+.cbox-title::before{content:'🩺';}
+.mnemonic-box{background:rgba(251,191,36,.05);border:1px solid rgba(251,191,36,.25);border-left:4px solid var(--gold);border-radius:6px;padding:1rem 1.25rem;margin:1rem 0;}
+.mbox-title{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:.6rem;display:flex;align-items:center;gap:6px;}
+.mbox-title::before{content:'🧠';}
+.mnemonic-highlight{background:rgba(251,191,36,.1);border:1px dashed rgba(251,191,36,.3);border-radius:4px;padding:8px 12px;font-family:'Crimson Pro',serif;font-size:15px;font-weight:600;color:var(--gold);margin:6px 0;}
+.eq-box{background:rgba(168,85,181,.05);border:1px solid rgba(168,85,181,.25);border-left:4px solid var(--accent);border-radius:6px;padding:1rem 1.25rem;margin:1rem 0;}
+.eq-title{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--accent2);text-transform:uppercase;margin-bottom:.75rem;display:flex;align-items:center;gap:6px;}
+.eq-title::before{content:'📝';}
+.eq-statement{background:var(--surface3);border-radius:4px;padding:8px 12px;font-family:'Crimson Pro',serif;font-size:15px;font-style:italic;color:var(--text);margin-bottom:10px;border-left:3px solid var(--accent);}
+.eq-answer ol{margin-left:18px;}
+.eq-answer li{margin-bottom:6px;font-size:13px;}
+.eq-answer li span{color:var(--accent2);font-weight:600;}
+.keypoint{word-break: break-word; overflow-wrap: break-word; background:rgba(168,85,181,.07);border:1px solid rgba(168,85,181,.22);border-radius:6px;padding:10px 14px 10px 34px;margin:8px 0;font-size:13px;display:block;position:relative;}
+.keypoint::before{content:'⚡';position:absolute;left:12px;top:10px;}
+.warn-box{word-break: break-word; overflow-wrap: break-word; background:rgba(251,146,60,.07);border:1px solid rgba(251,146,60,.25);border-left:4px solid var(--orange);border-radius:6px;padding:10px 14px 10px 34px;margin:8px 0;font-size:13px;display:block;position:relative;}
+.warn-box::before{content:'⚠️';position:absolute;left:10px;top:10px;}
+ul.checklist{list-style:none;margin:.5rem 0;}
+ul.checklist li::before{content:'✦ ';color:var(--accent2);}
+ul.checklist li{margin-bottom:4px;font-size:13px;}
+.hl{color:var(--accent2);font-weight:600;}
+.hl-gold{color:var(--gold);font-weight:600;}
+.hl-teal{color:var(--teal);font-weight:600;}
+.hl-rose{color:var(--rose);font-weight:600;}
+
+.diagram-placeholder{border:2px dashed var(--border2);border-radius:8px;padding:2rem 1rem;margin:1rem 0;text-align:center;background:var(--surface2);}
+.diagram-placeholder .dp-num{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--accent);letter-spacing:2px;text-transform:uppercase;margin-bottom:.5rem;}
+.diagram-placeholder .dp-desc{font-size:12px;color:var(--text2);line-height:1.6;}
+
+.viva-section{margin:1.5rem 0;}
+.viva-title-bar{background:rgba(168,85,181,.1);border:1px solid rgba(168,85,181,.28);border-radius:6px 6px 0 0;padding:10px 14px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--accent2);text-transform:uppercase;display:flex;align-items:center;gap:8px;}
+.viva-title-bar::before{content:'💬';font-size:14px;}
+details{border:1px solid var(--border);border-top:none;overflow:hidden;}
+details:last-child{border-radius:0 0 6px 6px;}
+summary{padding:10px 14px;cursor:pointer;font-size:13px;color:var(--text);background:var(--surface);list-style:none;display:flex;align-items:flex-start;gap:8px;user-select:none;transition:background .2s;}
+summary:hover{background:var(--surface2);}
+summary::before{content:'▶';color:var(--accent);font-size:10px;margin-top:3px;flex-shrink:0;transition:transform .2s;}
+details[open]>summary::before{transform:rotate(90deg);}
+.viva-q{font-weight:600;flex:1;}
+.viva-year{color:var(--teal);font-family:'JetBrains Mono',monospace;font-size:11px;flex-shrink:0;}
+.viva-ans{padding:12px 16px 14px;background:var(--surface2);font-size:13px;line-height:1.75;border-top:1px solid var(--border);}
+.viva-ans p{margin-bottom:6px;}
+.viva-ans ul{margin:6px 0 6px 16px;}
+.viva-ans li{margin-bottom:4px;}
+.viva-ans strong{color:var(--accent2);}
+.viva-ans em{color:var(--gold);font-style:normal;font-weight:600;}
+
+.footer{background:var(--surface);border-top:1px solid var(--border);text-align:center;padding:2rem 1.5rem;color:var(--text3);font-size:12px;font-family:'JetBrains Mono',monospace;}
+.top-btn{position:fixed;bottom:20px;right:20px;background:var(--accent);color:#fff;border:none;border-radius:50%;width:40px;height:40px;font-size:16px;cursor:pointer;box-shadow:0 4px 15px rgba(168,85,181,.4);z-index:100;display:flex;align-items:center;justify-content:center;font-weight:700;}
+.top-btn:hover{transform:translateY(-2px);}
+
+@media(max-width:600px){
+  .hero{padding:2rem 1rem;}
+  .content{padding:0 1rem 2rem;}
+  .toc{margin:1rem;}
+  .flow-h{flex-direction:column;}
+  .h-arrow{display:none;}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="module-tag"><span class="dot"></span>ANATOMY · MODULE 06</div>
+  <h1>Pelvis &amp;<br><span>Perineum</span></h1>
+  <p class="hero-sub">ANATOMY · FIRST MBBS · PYQ MAPPED 2010–2025</p>
+  <div class="hero-pills">
+    <span class="pill">Bony Pelvis</span>
+    <span class="pill">Pelvic Diaphragm</span>
+    <span class="pill">Levator Ani</span>
+    <span class="pill">Anal Canal</span>
+    <span class="pill">Perineal Body</span>
+    <span class="pill">Uterus & Supports</span>
+    <span class="pill">Broad Ligament</span>
+    <span class="pill">Ovary & Tubes</span>
+    <span class="pill">Prostate</span>
+    <span class="pill">Ureter in Pelvis</span>
+    <span class="pill">Internal Iliac Artery</span>
+    <span class="pill">Pudendal Nerve</span>
+  </div>
+</div>
+
+<!-- TOC -->
+<div class="toc">
+  <div class="toc-title">▸ Quick Navigate</div>
+  <div class="toc-grid">
+    <a href="#s1"><span class="toc-num">01</span> Bony Pelvis</a>
+    <a href="#s2"><span class="toc-num">02</span> Pelvic Floor & Diaphragm</a>
+    <a href="#s3"><span class="toc-num">03</span> Perineum</a>
+    <a href="#s4"><span class="toc-num">04</span> Anal Canal</a>
+    <a href="#s5"><span class="toc-num">05</span> Male Pelvic Organs</a>
+    <a href="#s6"><span class="toc-num">06</span> Female Pelvic Organs</a>
+    <a href="#s7"><span class="toc-num">07</span> Uterus & Supports</a>
+    <a href="#s8"><span class="toc-num">08</span> Ureter in Pelvis</a>
+    <a href="#s9"><span class="toc-num">09</span> Internal Iliac Artery</a>
+    <a href="#s10"><span class="toc-num">10</span> Pudendal Nerve</a>
+    <a href="#s11"><span class="toc-num">11</span> Viva Q&A</a>
+    <a href="#s12"><span class="toc-num">12</span> EQ Templates</a>
+  </div>
+</div>
+
+<div class="content">
+<div class="progress-bar"></div>
+
+<!-- ══════════════ S1: BONY PELVIS ══════════════ -->
+<div id="s1">
+  <div class="section-header">
+    <div class="section-num">01</div>
+    <h2>Bony <em>Pelvis</em></h2>
+  </div>
+
+  <div class="keypoint">The pelvis is formed by <strong>2 hip bones + sacrum + coccyx</strong>. The <strong>pelvic brim</strong> (linea terminalis) divides the false pelvis (above, part of abdomen) from the true pelvis (below). Obstetric measurements of the true pelvis determine the possibility of normal vaginal delivery.</div>
+
+  <div class="card">
+    <div class="card-title">True vs False Pelvis <span class="badge badge-pyq">PYQ 2012, 2017, 2021</span></div>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Feature</th><th>False (Greater) Pelvis</th><th>True (Lesser) Pelvis</th></tr>
+        <tr><td>Boundary</td><td>Above pelvic brim (linea terminalis)</td><td>Below pelvic brim</td></tr>
+        <tr><td>Part of</td><td>Abdominal cavity</td><td>Pelvic cavity proper</td></tr>
+        <tr><td>Contents</td><td>Lower abdominal viscera (sigmoid, ileum)</td><td>Bladder, rectum, reproductive organs</td></tr>
+        <tr><td>Walls</td><td>Iliac fossae laterally, L5/S1 posteriorly</td><td>Sacrum/coccyx posterior, obturator fascia lateral, pelvic floor inferior</td></tr>
+        <tr><td>Clinical</td><td>Palpation of pelvic masses (ovarian, uterine)</td><td>Obstetric measurements, pelvic outlet</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="card" style="border-color:var(--gold)">
+    <div class="card-title" style="color:var(--gold)">Pelvic Inlet, Cavity & Outlet — Obstetric Diameters <span class="badge badge-fav">⭐ PYQ Every Year</span></div>
+
+    <div class="two-col">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">Pelvic Inlet (Brim) — Bounded by:</p>
+        <ul class="checklist">
+          <li>Posteriorly: Sacral promontory (S1)</li>
+          <li>Laterally: Arcuate line of ilium + pectineal line of pubis</li>
+          <li>Anteriorly: Pubic crest + pubic symphysis upper border</li>
+        </ul>
+        <p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px;margin-top:.75rem">Inlet Diameters:</p>
+        <ul class="checklist">
+          <li><strong>Anteroposterior (True conjugate):</strong> Sacral promontory → upper border of pubic symphysis = <strong>11 cm</strong></li>
+          <li><strong>Obstetric conjugate:</strong> Sacral promontory → posterior surface of pubic symphysis = <strong>10.5 cm</strong> (smallest AP diameter — head must pass this)</li>
+          <li><strong>Diagonal conjugate:</strong> Sacral promontory → lower border of pubic symphysis = <strong>12 cm</strong> (only one measurable clinically by internal examination)</li>
+          <li><strong>Transverse diameter:</strong> Widest transverse distance = <strong>13 cm</strong> (widest at inlet)</li>
+          <li><strong>Oblique diameter:</strong> SI joint → iliopubic eminence opposite = <strong>12 cm</strong></li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--teal);margin-bottom:6px">Pelvic Outlet — Bounded by:</p>
+        <ul class="checklist">
+          <li>Anteriorly: Pubic arch (subpubic angle)</li>
+          <li>Laterally: Ischial tuberosities + sacrotuberous ligaments</li>
+          <li>Posteriorly: Coccyx (tip)</li>
+        </ul>
+        <p style="font-size:13px;font-weight:600;color:var(--teal);margin-bottom:6px;margin-top:.75rem">Outlet Diameters:</p>
+        <ul class="checklist">
+          <li><strong>AP diameter (outlet):</strong> Lower border of pubic symphysis → tip of coccyx = <strong>13 cm</strong> (increases during delivery as coccyx moves back)</li>
+          <li><strong>Transverse diameter:</strong> Between inner surfaces of ischial tuberosities = <strong>11 cm</strong></li>
+        </ul>
+        <p style="font-size:13px;font-weight:600;color:var(--rose);margin-bottom:6px;margin-top:.75rem">Subpubic Angle:</p>
+        <ul class="checklist">
+          <li><strong>Female:</strong> 80–85° (wide — accommodates fetal head)</li>
+          <li><strong>Male:</strong> 50–60° (narrow)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mnemonic-box">
+      <div class="mbox-title">Obstetric Conjugate — Most Important</div>
+      <div class="mnemonic-highlight">"10.5 = the gate the baby must pass" — Obstetric conjugate is the shortest AP diameter of pelvic inlet = critical for engagement of fetal head</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Male vs Female Pelvis <span class="badge badge-pyq">PYQ 2013, 2018, 2022</span></div>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Feature</th><th>Female</th><th>Male</th></tr>
+        <tr><td>Shape of inlet</td><td>Oval/round (gynaecoid)</td><td>Heart-shaped (sacral promontory more prominent)</td></tr>
+        <tr><td>Subpubic angle</td><td>80–85° (wide)</td><td>50–60° (narrow)</td></tr>
+        <tr><td>Greater sciatic notch</td><td>Wide (>90°)</td><td>Narrow (<90°)</td></tr>
+        <tr><td>Sacrum</td><td>Wide, short, less curved</td><td>Narrow, long, more curved</td></tr>
+        <tr><td>Ischial spines</td><td>Less prominent, further apart</td><td>Prominent, closer together</td></tr>
+        <tr><td>Ischial tuberosities</td><td>Everted, wider apart</td><td>Inverted, closer</td></tr>
+        <tr><td>Acetabulum</td><td>Faces more anterolaterally</td><td>Faces more laterally</td></tr>
+        <tr><td>Overall structure</td><td>Lighter, wider, shallower</td><td>Heavier, narrower, deeper</td></tr>
+      </table>
+    </div>
+
+    <div class="mnemonic-box">
+      <div class="mbox-title">Female Pelvis Features</div>
+      <div class="mnemonic-highlight">"WOWS" = Wide subpubic angle · Oval inlet · Wide sciatic notch · Short wide sacrum</div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════ S2: PELVIC FLOOR ══════════════ -->
+<div id="s2">
+  <div class="section-header">
+    <div class="section-num">02</div>
+    <h2>Pelvic Floor <em>& Diaphragm</em></h2>
+  </div>
+
+  <div class="keypoint">The pelvic floor (pelvic diaphragm) is a <strong>musculofascial hammock</strong> that closes the pelvic outlet, supports pelvic viscera, and maintains continence. It is formed by <strong>levator ani + coccygeus</strong> muscles and their fascial coverings.</div>
+
+  <div class="card" style="border-color:var(--gold)">
+    <div class="card-title" style="color:var(--gold)">Levator Ani — The Pelvic Diaphragm <span class="badge badge-fav">⭐ PYQ 2011, 2014, 2017, 2020, 2024</span></div>
+
+    <div class="keypoint">Levator ani is the most important muscle of the pelvic floor. It has <strong>3 parts</strong> named by their origin and insertion.</div>
+
+    <div class="table-wrap">
+      <table>
+        <tr><th>Part</th><th>Origin</th><th>Insertion</th><th>Key Function</th></tr>
+        <tr><td>Pubococcygeus<br><span style="font-size:11px;color:var(--text2)">(largest part)</span></td><td>Body of pubis (behind pubic symphysis)</td><td>Anococcygeal raphe + coccyx</td><td>Supports pelvic viscera; contracts during coughing/straining; contains pubovaginalis (female) and puboprostaticus (male) fibres</td></tr>
+        <tr><td>Puborectalis<br><span style="font-size:11px;color:var(--text2)">(U-sling)</span></td><td>Body of pubis</td><td>Loops BEHIND anorectal junction — forms <strong>puborectal sling</strong></td><td>Maintains anorectal angle (~90°) → crucial for faecal continence. Relaxes during defaecation. <strong>Most important part functionally</strong></td></tr>
+        <tr><td>Iliococcygeus</td><td>Tendinous arch of levator ani (ATLA) on obturator fascia</td><td>Anococcygeal raphe + coccyx</td><td>Support; less functionally critical than puborectalis</td></tr>
+      </table>
+    </div>
+
+        <div class="diagram-placeholder" style="border:none; padding:0; background:transparent;">
+      <div class="dp-num">DIAGRAM 01 — Levator Ani from Below</div>
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Levator_ani.png" alt="Levator Ani from Below" class="wiki-img" style="max-width:100%;height:auto;border-radius:8px;margin-top:10px;">
+      <div class="wiki-caption" style="font-size:11px;color:var(--text2);text-align:center;margin-top:6px;">Levator Ani from below (Gray's Anatomy)</div>
+    </div>
+
+    <div class="two-col" style="margin-top:.75rem">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">Nerve Supply:</p>
+        <ul class="checklist">
+          <li>Perineal branch of <strong>S4</strong> (on pelvic surface)</li>
+          <li>Branch of <strong>pudendal nerve</strong> (on perineal surface)</li>
+          <li>Inferior rectal nerve</li>
+        </ul>
+        <p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px;margin-top:.75rem">Levator Hiatus:</p>
+        <ul class="checklist">
+          <li>U-shaped gap in levator ani</li>
+          <li>Transmits: Urethra + Vagina (in female) / Prostate (male) + Anal canal</li>
+          <li>Weak point → site of prolapse</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--teal);margin-bottom:6px">Coccygeus (Ischiococcygeus):</p>
+        <ul class="checklist">
+          <li>Origin: Ischial spine</li>
+          <li>Insertion: Lateral border of sacrum + coccyx</li>
+          <li>Posterior part of pelvic diaphragm</li>
+          <li>Nerve: S4, S5</li>
+          <li>Overlies sacrospinous ligament</li>
+        </ul>
+        <div class="clinical-box" style="margin-top:.5rem">
+          <div class="cbox-title">Pelvic Floor Dysfunction</div>
+          <p>Levator ani injury during childbirth → weakened puborectal sling → increased anorectal angle → <strong>stress urinary incontinence + faecal incontinence</strong>. Also causes <strong>uterine/vaginal prolapse</strong> (levator plate descends). Pelvic floor exercises (Kegel) strengthen levator ani.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="mnemonic-box">
+      <div class="mbox-title">Levator Ani Parts</div>
+      <div class="mnemonic-highlight">"PPI" = Pubococcygeus · Puborectalis · Iliococcygeus</div>
+      <p style="font-size:12px;color:var(--text2);margin-top:4px">Puborectalis = most important for continence (puborectal sling maintains anorectal angle)</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Pelvic Fascia & Spaces <span class="badge badge-pyq">PYQ 2016, 2021</span></div>
+    <div class="two-col">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">Parietal Pelvic Fascia:</p>
+        <ul class="checklist">
+          <li>Lines walls of true pelvis</li>
+          <li><strong>Obturator fascia</strong> covers obturator internus; gives origin to levator ani (ATLA)</li>
+          <li><strong>Piriformis fascia</strong> covers piriformis</li>
+          <li>Thickened to form <strong>puboprostatic ligament</strong> (male) / <strong>pubovesical ligament</strong> (female) — anchor bladder neck</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px">Visceral Pelvic Fascia:</p>
+        <ul class="checklist">
+          <li>Covers pelvic organs as condensations</li>
+          <li><strong>Presacral space (Waldeyer's fascia):</strong> Between rectum and sacrum — contains presacral vessels (middle sacral artery) — dangerous in rectal surgery</li>
+          <li><strong>Rectovesical septum (Denonvilliers' fascia):</strong> Between rectum and bladder/prostate/vagina — important in prostatectomy</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════ S3: PERINEUM ══════════════ -->
+<div id="s3">
+  <div class="section-header">
+    <div class="section-num">03</div>
+    <h2><em>Perineum</em></h2>
+  </div>
+
+  <div class="keypoint">The perineum is the region <strong>below the pelvic floor</strong> (pelvic diaphragm), between the thighs. It is diamond-shaped — divided by a transverse line through the <strong>ischial tuberosities</strong> into two triangles: <strong>urogenital triangle (anterior)</strong> and <strong>anal triangle (posterior)</strong>.</div>
+
+  <div class="card">
+    <div class="card-title">Boundaries & Triangles <span class="badge badge-pyq">PYQ 2012, 2016, 2019</span></div>
+    <div class="two-col">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">Perineal Diamond — Boundaries:</p>
+        <ul class="checklist">
+          <li><strong>Anterior:</strong> Pubic symphysis lower border</li>
+          <li><strong>Anterolateral:</strong> Ischiopubic rami</li>
+          <li><strong>Posterolateral:</strong> Sacrotuberous ligaments</li>
+          <li><strong>Posterior:</strong> Tip of coccyx</li>
+          <li><strong>Lateral corners:</strong> Ischial tuberosities</li>
+        </ul>
+        <p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px;margin-top:.75rem">Anal Triangle:</p>
+        <ul class="checklist">
+          <li>Posterior; contains anal canal + external anal sphincter</li>
+          <li><strong>Ischioanal (ischiorectal) fossa</strong> on each side of anal canal — fat-filled, wedge-shaped space. Site of perianal abscess</li>
+          <li>Boundaries of ischioanal fossa: lateral = ischium + obturator internus; medial = levator ani + external sphincter; roof = pelvic diaphragm; base = skin</li>
+          <li>Contents: Ischioanal fat + inferior rectal nerve/vessels + pudendal canal (Alcock's canal) on lateral wall</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--teal);margin-bottom:6px">Urogenital Triangle:</p>
+        <ul class="checklist">
+          <li>Anterior; closed by <strong>urogenital diaphragm (perineal membrane)</strong></li>
+          <li>Contains external urethral sphincter, external genitalia roots</li>
+        </ul>
+        <p style="font-size:13px;font-weight:600;color:var(--rose);margin-bottom:6px;margin-top:.5rem">Perineal Body (Central Tendon of Perineum):</p>
+        <ul class="checklist">
+          <li>Fibromuscular node at <strong>centre of perineum</strong>, between anal canal and vagina/bulb of penis</li>
+          <li><strong>9 muscles meet here:</strong> External anal sphincter, Bulbospongiosus (×2), Superficial transverse perineal (×2), Deep transverse perineal (×2), Puborectalis (from levator ani), Pubococcygeus fibres</li>
+          <li>Critical support structure for pelvic viscera</li>
+          <li><strong>Torn in childbirth</strong> → perineal tear / episiotomy repair must reconstruct perineal body</li>
+        </ul>
+      </div>
+    </div>
+
+        <div class="diagram-placeholder" style="border:none; padding:0; background:transparent;">
+      <div class="dp-num">DIAGRAM 02 — Perineum Diamond Shape</div>
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Gray406.png" alt="Perineum Diamond Shape" class="wiki-img" style="max-width:100%;height:auto;border-radius:8px;margin-top:10px;">
+      <div class="wiki-caption" style="font-size:11px;color:var(--text2);text-align:center;margin-top:6px;">Perineum Diamond Shape (Gray's Anatomy)</div>
+    </div>
+
+    <div class="card" style="border:1px solid var(--accent);margin-top:1rem">
+      <div class="card-title">Layers of Urogenital Triangle — Pouches <span class="badge badge-pyq">PYQ 2013, 2018, 2022</span></div>
+      <div class="flowchart" style="margin:0">
+        <div class="flow-title">UG Triangle — Layers (superficial to deep)</div>
+        <div class="flow-v">
+          <div class="flow-box"><span class="lbl">Skin + Superficial fascia</span></div>
+          <div class="flow-step-label">↓</div>
+          <div class="flow-box gold">
+            <span class="lbl">SUPERFICIAL PERINEAL POUCH</span>
+            Between Colles' fascia (superficial perineal fascia) and perineal membrane<br>
+            <span class="sub">Contents: Crura of penis/clitoris (ischiocavernosus), Bulb of penis/vestibular bulbs (bulbospongiosus), Superficial transverse perineal muscles, Bartholin's glands (female), Perineal branches of pudendal nerve and internal pudendal vessels</span>
+          </div>
+          <div class="flow-step-label">↓ Perineal membrane (inferior fascia of UG diaphragm)</div>
+          <div class="flow-box accent">
+            <span class="lbl">DEEP PERINEAL POUCH</span>
+            Between perineal membrane (inferior) and superior fascia of UG diaphragm<br>
+            <span class="sub">Contents: External urethral sphincter, Deep transverse perineal muscles, Bulbourethral glands (Cowper's glands — male), Dorsal nerve of penis/clitoris, Internal pudendal vessels (terminal)</span>
+          </div>
+          <div class="flow-step-label">↓ Superior fascia of UG diaphragm</div>
+          <div class="flow-box"><span class="lbl">Pelvic cavity above</span></div>
+        </div>
+      </div>
+      <div class="clinical-box" style="margin-top:.75rem">
+        <div class="cbox-title">Extravasation of Urine — Colles' Fascia Rule</div>
+        <p>Rupture of spongy urethra (bulbar) → urine enters superficial perineal pouch and spreads under <strong>Colles' fascia</strong>. Colles' fascia is attached: laterally to ischiopubic rami (stops lateral spread), posteriorly at posterior border of UG triangle (stops posterior spread into anal triangle). Urine spreads: anteriorly into scrotum → under Dartos fascia → into penis → up anterior abdominal wall under Scarpa's fascia. Does NOT enter thigh (fascia lata attachment). <strong>"Butterfly bruise/swelling" pattern.</strong></p>
+      </div>
+    </div>
+
+    <div class="card" style="border-color:var(--purple);margin-top:1rem">
+      <div class="card-title" style="color:var(--purple)">Ischiorectal (Ischioanal) Fossa & Painful Abscess <span class="badge badge-fav">⭐ PYQ 2012, 2015</span></div>
+      <div class="keypoint">The ischiorectal fossa is a bilateral, fat-filled, wedge-shaped space located on either side of the anal canal below the pelvic diaphragm. It allows expansion of the anal canal during defecation.</div>
+      <div class="two-col">
+        <div>
+          <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">Anatomical Boundaries:</p>
+          <ul class="checklist">
+            <li><strong>Base (Inferior):</strong> Perineal skin of the anal region.</li>
+            <li><strong>Apex (Superior):</strong> Meeting point of the obturator fascia and the inferior fascia of the pelvic diaphragm.</li>
+            <li><strong>Lateral Wall:</strong> Ischial tuberosity and obturator internus muscle covered by obturator fascia.</li>
+            <li><strong>Medial Wall:</strong> Levator ani muscle and external anal sphincter.</li>
+            <li><strong>Anterior:</strong> Posterior border of the urogenital diaphragm (and its anterior recesses).</li>
+            <li><strong>Posterior:</strong> Sacrotuberous ligament and gluteus maximus muscle.</li>
+          </ul>
+        </div>
+        <div>
+          <p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px">Contents:</p>
+          <ul class="checklist">
+            <li><strong>Ischiorectal Fat Pad:</strong> Large mass of lobulated fat tissue that acts as a flexible support. It has poor blood supply, making it highly susceptible to infection.</li>
+            <li><strong>Pudendal (Alcock's) Canal:</strong> A fascial tunnel on the lateral wall (within the obturator internus fascia) containing the <strong>pudendal nerve</strong> and <strong>internal pudendal vessels</strong>.</li>
+            <li><strong>Inferior Rectal Vessels & Nerve:</strong> Arise from the pudendal nerve/vessels within the canal, crossing the fossa medially to supply the sphincter ani externus and lower anal canal.</li>
+            <li><strong>Perineal branch of S4 nerve:</strong> Enters the posterior part of the fossa.</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="wiki-img" style="margin: 1.5rem 0; text-align: center; background: var(--surface2); padding: 1rem; border-radius: 8px; border: 1px solid var(--border);">
+        <div style="color:var(--accent);font-family:'JetBrains Mono',monospace;font-size:11px;margin-bottom:8px;text-align:left;">DIAGRAM 02B — Ischiorectal Fossa Coronal Section</div>
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Gray409.png" alt="Ischiorectal Fossa Coronal Section" loading="lazy" style="max-width: 100%; height: auto; border-radius: 8px;">
+        <div class="wiki-caption" style="font-size:11px;color:var(--text2);text-align:center;margin-top:8px;">Coronal section of pelvis showing ischiorectal fossa — Gray's Anatomy</div>
+      </div>
+
+      <div class="clinical-box">
+        <div class="cbox-title">Ischiorectal Abscess & Severe Pain Clinical Basis</div>
+        <p><strong>Pathogenesis:</strong> Infections usually originate from blocked and inflamed <strong>anal glands</strong> at the pectinate line (cryptitis), which track laterally through the external anal sphincter into the loose fat of the ischiorectal fossa, forming an abscess.</p>
+        <p><strong>Clinical Features & Basis of Pain:</strong></p>
+        <ul class="checklist">
+          <li><strong>Severe, Throbbing Pain:</strong> The ischiorectal fossa and the perineal skin are supplied by the <strong>inferior rectal nerve (S2–S4)</strong>, which carries <strong>somatic sensory fibers</strong>. Unlike the visceral sensation of the upper rectum, somatic nerves have a high density of pain receptors. The pressure of expanding pus against the rigid bony lateral walls and the pelvic floor causes excruciating pain, worsened by sitting or defecating.</li>
+          <li><strong>Surgical Treatment (Incision & Drainage):</strong> The abscess must be drained surgically. A cruciate incision is made close to the anal margin. 
+            <br><em>Surgical Warnings:</em> 
+            <ul>
+              <li><strong>Lateral Wall:</strong> Do not go too deep laterally to avoid injuring the <strong>pudendal nerve</strong> and <strong>internal pudendal vessels</strong> in Alcock's canal.</li>
+              <li><strong>Medial Wall:</strong> Avoid injuring the <strong>inferior rectal nerve</strong> or the <strong>external anal sphincter</strong>, which would result in permanent fecal incontinence.</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════ S4: ANAL CANAL ══════════════ -->
+<div id="s4">
+  <div class="section-header">
+    <div class="section-num">04</div>
+    <h2>Anal <em>Canal</em></h2>
+  </div>
+
+  <div class="keypoint">The anal canal is <strong>4 cm long</strong>, from the anorectal junction (puborectal sling level) to the anus. The <strong>pectinate (dentate) line</strong> at its middle is the single most important anatomical landmark — it is the embryological junction between hindgut endoderm and proctodeum ectoderm.</div>
+
+  <div class="card" style="border-color:var(--gold)">
+    <div class="card-title" style="color:var(--gold)">Pectinate (Dentate) Line — The Great Divide <span class="badge badge-fav">⭐ PYQ Every Year</span></div>
+
+    <div class="table-wrap">
+      <table>
+        <tr><th>Feature</th><th>Above Pectinate Line (Upper 2 cm)</th><th>Below Pectinate Line (Lower 2 cm)</th></tr>
+        <tr><td>Embryology</td><td>Hindgut (endoderm)</td><td>Proctodeum (ectoderm)</td></tr>
+        <tr><td>Epithelium</td><td>Columnar epithelium</td><td>Squamous epithelium (non-keratinised → keratinised at anus)</td></tr>
+        <tr><td>Arterial supply</td><td>Superior rectal artery (IMA = portal territory)</td><td>Inferior rectal artery (pudendal = systemic territory)</td></tr>
+        <tr><td>Venous drainage</td><td>Superior rectal vein → IMV → <strong>Portal system</strong></td><td>Inferior rectal vein → pudendal → internal iliac → <strong>IVC (systemic)</strong></td></tr>
+        <tr><td>Lymphatic drainage</td><td>Internal iliac nodes</td><td>Superficial inguinal nodes</td></tr>
+        <tr><td>Nerve supply</td><td>Autonomic (sympathetic + parasympathetic) — <strong>insensitive to pain</strong></td><td>Somatic (inferior rectal branch of pudendal nerve) — <strong>sensitive to pain, touch, temp</strong></td></tr>
+        <tr><td>Internal haemorrhoids</td><td>Form above pectinate line — painless (no somatic innervation)</td><td>External haemorrhoids form below — painful</td></tr>
+        <tr><td>Carcinoma</td><td>Adenocarcinoma (glandular)</td><td>Squamous cell carcinoma</td></tr>
+      </table>
+    </div>
+
+    <div class="mnemonic-box">
+      <div class="mbox-title">Above vs Below Pectinate Line</div>
+      <div class="mnemonic-highlight">"Above: Columnar, Portal, Internal iliac nodes, Painless (autonomic). Below: Squamous, Systemic, Inguinal nodes, Painful (somatic)"</div>
+      <p style="font-size:12px;color:var(--text2);margin-top:4px">Why internal haemorrhoids are painless: above pectinate line → autonomic nerve supply → no pain sensation. Why they bleed bright red: rich arterial supply from superior rectal artery.</p>
+    </div>
+
+    <div class="clinical-box" style="margin-top:1rem">
+      <div class="cbox-title">Hilton's White Line & Hemorrhoid Sites <span class="badge badge-pyq">PYQ 2017, 2012-S</span></div>
+      <p><strong>Hilton's White Line (Inter-sphincteric Groove):</strong> A landmark located at the lower third of the anal canal. It represents the junction between the involuntary <strong>internal anal sphincter</strong> and the voluntary <strong>subcutaneous external anal sphincter</strong>. 
+      <br><em>Significance:</em> It represents a watershed line where the lining changes from non-keratinized stratified squamous (ectodermal) to true skin (keratinized). Visually, it is bluish-white due to the underlying venous plexus, and it is easily palpable during rectal examination.</p>
+      <p><strong>Primary Sites of Internal Hemorrhoids (3, 7, 11 o'clock):</strong> Internal hemorrhoids (piles) are dilatations of the tributaries of the superior rectal vein. When viewed in the <strong>lithotomy position</strong>, they occur in three main positions:</p>
+      <ul class="checklist">
+        <li><strong>3 o'clock:</strong> Left lateral position.</li>
+        <li><strong>7 o'clock:</strong> Right posterolateral position.</li>
+        <li><strong>11 o'clock:</strong> Right anterolateral position.</li>
+      </ul>
+      <p><em>Anatomical Explanation:</em> The superior rectal artery divides into a <strong>left branch</strong> (runs on the left lateral wall → 3 o'clock) and a <strong>right branch</strong> (which bifurcates into right anterior → 11 o'clock, and right posterior → 7 o'clock branches). The venous radicles correspond directly to these branches. Secondary hemorrhoids can occur in between, but primary piles are always at 3, 7, and 11 o'clock.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Anal Sphincters <span class="badge badge-pyq">PYQ 2014, 2019, 2023</span></div>
+    <div class="two-col">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">Internal Anal Sphincter (IAS):</p>
+        <ul class="checklist">
+          <li>Thickening of circular smooth muscle of rectum</li>
+          <li>Involuntary — <strong>autonomic control</strong></li>
+          <li>Normally <strong>tonically contracted</strong> (at rest = closed)</li>
+          <li>Sympathetic: contracts (maintains closure)</li>
+          <li>Parasympathetic (S2,3,4): relaxes IAS → defaecation</li>
+          <li>Contributes ~85% of resting anal tone</li>
+          <li>Extends from anorectal junction → just above pectinate line</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px">External Anal Sphincter (EAS):</p>
+        <ul class="checklist">
+          <li>Skeletal (striated) muscle — <strong>voluntary control</strong></li>
+          <li>3 parts: Subcutaneous, Superficial, Deep</li>
+          <li>Nerve: <strong>Inferior rectal nerve</strong> (branch of pudendal — S2,3,4)</li>
+          <li>Deep part = continuous with puborectalis of levator ani</li>
+          <li>Surrounds IAS externally</li>
+        </ul>
+        <div class="clinical-box" style="margin-top:.5rem">
+          <div class="cbox-title">Continence Mechanism</div>
+          <p>Anorectal angle (~90°) maintained by puborectal sling is the PRIMARY mechanism of faecal continence. IAS maintains resting tone. EAS provides voluntary squeeze. Distension of rectum → recto-anal inhibitory reflex (RAIR) → IAS relaxes → EAS voluntarily contracts → sampling of rectal contents without full defaecation.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="keypoint"><strong>Columns of Morgagni:</strong> 6–10 vertical folds of mucosa in upper half of anal canal. At their lower ends, adjacent columns are connected by <strong>anal valves</strong> — the small crescentic folds forming the pectinate line. Between valves = <strong>anal sinuses/crypts</strong> — infected crypts → perianal abscess → fistula-in-ano.</div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════ S5: MALE PELVIC ORGANS ══════════════ -->
+<div id="s5">
+  <div class="section-header">
+    <div class="section-num">05</div>
+    <h2>Male <em>Pelvic Organs</em></h2>
+  </div>
+
+  <div class="card" style="border-color:var(--blue)">
+    <div class="card-title" style="color:var(--blue)">Prostate Gland <span class="badge badge-fav">⭐ PYQ 2011, 2014, 2017, 2019, 2022</span></div>
+
+    <div class="keypoint">The prostate is a <strong>fibromuscular glandular organ</strong> surrounding the proximal urethra in the male. Size of a chestnut, weighs ~20 g. Located in the true pelvis, between bladder neck (above) and urogenital diaphragm (below). Entirely inferior to the peritoneum — extraperitoneal.</div>
+
+    <div class="two-col">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">Anatomy:</p>
+        <ul class="checklist">
+          <li><strong>Base:</strong> Superior — applied to bladder neck</li>
+          <li><strong>Apex:</strong> Inferior — rests on UG diaphragm</li>
+          <li><strong>Posterior surface:</strong> Related to rectum (anterior rectal wall) — <strong>palpable on PR examination</strong>; median sulcus palpable between lateral lobes</li>
+          <li><strong>Anterior surface:</strong> Related to pubic symphysis (separated by retropubic space of Retzius)</li>
+          <li><strong>Urethra</strong> passes vertically through the gland (prostatic urethra)</li>
+          <li><strong>Ejaculatory ducts</strong> enter posterosuperiorly, open on verumontanum</li>
+        </ul>
+        <p style="font-size:13px;font-weight:600;color:var(--blue);margin-bottom:6px;margin-top:.75rem">McNeal's Zones:</p>
+        <ul class="checklist">
+          <li><strong>Peripheral zone</strong> (70%): Most of posterior + lateral — site of <strong>carcinoma prostate</strong> → palpable on PR</li>
+          <li><strong>Central zone</strong> (25%): Around ejaculatory ducts — less affected</li>
+          <li><strong>Transitional zone</strong> (5%): Around proximal urethra — site of <strong>BPH</strong> → urethral obstruction</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px">Relations of Prostatic Urethra:</p>
+        <ul class="checklist">
+          <li>Verumontanum (colliculus seminalis) on posterior wall — ejaculatory ducts open here</li>
+          <li><strong>Utricle prostataticus:</strong> Small blind pouch on verumontanum — Müllerian remnant</li>
+          <li>Prostatic sinuses on each side of verumontanum — openings of prostatic glands</li>
+        </ul>
+        <div class="clinical-box" style="margin-top:.5rem">
+          <div class="cbox-title">BPH vs Carcinoma Prostate</div>
+          <p><strong>BPH:</strong> Transitional zone hyperplasia → compresses urethra → hesitancy, poor stream, post-void dribble, nocturia. Treated with alpha-blockers (relax smooth muscle) or 5-alpha reductase inhibitors (shrink gland). <strong>Ca Prostate:</strong> Peripheral zone → not felt as urethral obstruction early; palpable hard nodule on PR; spreads to pelvic lymph nodes + bones (osteosclerotic mets). PSA elevated.</p>
+        </div>
+        <p style="font-size:13px;font-weight:600;color:var(--teal);margin-bottom:6px;margin-top:.75rem">Capsule & Nerve Supply:</p>
+        <ul class="checklist">
+          <li>True capsule (fibromuscular) + false capsule (pelvic fascia)</li>
+          <li>Neurovascular bundle of Walsh runs posterolaterally — must be preserved in nerve-sparing prostatectomy to preserve erectile function</li>
+          <li>Sympathetic: contracts smooth muscle (ejaculation)</li>
+          <li>Parasympathetic: secretomotor (S2,3,4)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="two-col" style="margin-top:1.5rem">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent);margin-bottom:6px">Prostate Microanatomy (Histology) <span class="badge badge-pyq">PYQ 2024</span></p>
+        <ul class="checklist">
+          <li><strong>Glandular Component (2/3):</strong> Consists of 30–50 branched <strong>tubuloalveolar glands</strong> arranged in mucosal, submucosal, and main layers. Secretions drain via 15–30 ducts into prostatic sinuses.</li>
+          <li><strong>Epithelial Lining:</strong> Pseudostratified columnar or simple columnar epithelium, with basal cells. Secretory cells produce prostatic fluid (citric acid, acid phosphatase, zinc, and PSA).</li>
+          <li><strong>Fibromuscular Stroma (1/3):</strong> Dense connective tissue rich in collagen and smooth muscle fibers surrounding the glands. Smooth muscle contracts under sympathetic control to empty secretions during ejaculation.</li>
+          <li><strong>Corpora Amylacea (Amyloid Bodies):</strong> Characteristic concentric lamellated proteinaceous concretions (calcified amyloid-like bodies) in the glandular lumina. They increase progressively with age.</li>
+        </ul>
+      </div>
+      <div>
+        <div class="clinical-box" style="margin:0">
+          <div class="cbox-title">Prostatic Venous Plexus & Vertebral Metastasis (Batson's Plexus) <span class="badge badge-pyq">PYQ 2010, 2024</span></div>
+          <p><strong>Venous Drainage Pathway:</strong> The prostate is surrounded by a rich <strong>prostatic venous plexus</strong> (located between the true and false capsules). This plexus drains into the internal iliac veins.</p>
+          <p><strong>Batson's Plexus Connection:</strong> The prostatic venous plexus communicates directly with the valveless <strong>internal vertebral venous plexus (Batson's plexus)</strong> via the pelvic veins (lateral sacral veins).</p>
+          <p><strong>Pathological Basis of Bone Metastasis:</strong> Because these venous channels are <strong>valveless</strong>, any increase in intra-abdominal pressure (e.g., during defecation, coughing, or straining) causes retrograde blood flow from the pelvis to the spinal columns. Cancer cells from prostatic carcinoma can embolize via this pathway directly to the vertebral bodies (lumbar vertebrae, sacrum, and thoracic spine) and the skull, bypassing the systemic capillary beds (heart/lungs). This leads to characteristic <strong>osteoblastic (osteosclerotic) metastases</strong> in the vertebrae.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="border-color:var(--teal)">
+    <div class="card-title" style="color:var(--teal)">Vas Deferens — Anatomy, Histology & Development <span class="badge badge-pyq">PYQ 2013-S</span></div>
+    <div class="keypoint">The vas (ductus) deferens is a thick-walled, cord-like muscular tube (45 cm long) that transports mature spermatozoa from the epididymis to the ejaculatory duct.</div>
+    <div class="two-col">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">Anatomical Course:</p>
+        <ul class="checklist">
+          <li><strong>Origin:</strong> Begins at the tail of the epididymis at the lower pole of the testis.</li>
+          <li><strong>Spermatic Cord & Inguinal Canal:</strong> Ascends vertically in the posterior part of the spermatic cord, traverses the inguinal canal (external ring to internal ring).</li>
+          <li><strong>Pelvic Course:</strong> Enters the pelvis by crossing over the external iliac vessels. Runs downwards and backwards on the lateral pelvic wall, crossing superior to the ureter (<em>"water under the bridge"</em>, where the ureter is the water and vas is the bridge).</li>
+          <li><strong>Termination:</strong> Expands to form the <strong>ampulla</strong> on the posterior bladder wall. It then narrows and joins the duct of the seminal vesicle to form the <strong>ejaculatory duct</strong>, which penetrates the prostate to open into the prostatic urethra.</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px">Microanatomy (Histology):</p>
+        <ul class="checklist">
+          <li><strong>Mucosa:</strong> Lined by <strong>pseudostratified columnar epithelium with stereocilia</strong> (non-motile microvilli that absorb residual fluids). The lumen has a star-shaped appearance due to longitudinal mucosal folds.</li>
+          <li><strong>Muscularis (Three Layers):</strong> Extremely thick, making the duct feel cord-like on palpation. It consists of:
+            <ol>
+              <li><strong>Inner longitudinal layer</strong></li>
+              <li><strong>Middle circular layer</strong></li>
+              <li><strong>Outer longitudinal layer</strong></li>
+            </ol>
+          </li>
+          <li><strong>Adventitia:</strong> Fibrous connective tissue enclosing the vessels and nerves.</li>
+        </ul>
+        <p style="font-size:13px;font-weight:600;color:var(--teal);margin-bottom:6px;margin-top:.75rem">Embryological Development:</p>
+        <ul class="checklist">
+          <li>Develops from the <strong>mesonephric (Wolffian) duct</strong> under the influence of testosterone.</li>
+          <li>Other mesonephric duct derivatives: epididymis, seminal vesicles, and ejaculatory duct.</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="wiki-img" style="margin: 1.5rem 0; text-align: center; background: var(--surface2); padding: 1rem; border-radius: 8px; border: 1px solid var(--border);">
+      <div style="color:var(--accent);font-family:'JetBrains Mono',monospace;font-size:11px;margin-bottom:8px;text-align:left;">DIAGRAM 05B — Male Genital Organs and Vas Deferens Course</div>
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Gray1160.png" alt="Male Genital Organs" loading="lazy" style="max-width: 100%; height: auto; border-radius: 8px;">
+      <div class="wiki-caption" style="font-size:11px;color:var(--text2);text-align:center;margin-top:8px;">Sagittal view of male pelvis showing the course of the vas deferens — Gray's Anatomy</div>
+    </div>
+
+    <div class="clinical-box">
+      <div class="cbox-title">Vasectomy</div>
+      <p>A surgical method of permanent male sterilization. The vas deferens is isolated within the scrotum by palpating its firm, cord-like structure. A small incision is made, and the vas is exposed, cut, and the ends are ligated. Sperm continue to be produced by the testes but are blocked from reaching the urethra and are safely resorbed. There is no change in semen volume (as 95% of semen is produced by the seminal vesicles and prostate).</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Urinary Bladder <span class="badge badge-pyq">PYQ 2013, 2018</span></div>
+    <div class="two-col">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">Anatomy:</p>
+        <ul class="checklist">
+          <li>Muscular hollow organ — stores urine; capacity ~500 mL (desire at 150 mL)</li>
+          <li><strong>Parts:</strong> Apex (superior, connected to median umbilical ligament = obliterated urachus), Body, Base/Fundus (posterior), Neck (inferoposterior → continues as urethra)</li>
+          <li><strong>Trigone:</strong> Triangular smooth area at base — between ureteral orifices + internal urethral orifice. No rugae. Always smooth (even when empty)</li>
+          <li>Detrusor muscle (smooth muscle) — contracts during micturition (parasympathetic S2,3,4)</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px">Relations — Male:</p>
+        <ul class="checklist">
+          <li>Superior: Peritoneum (covers top of bladder) → loops of sigmoid + ileum in rectovesical pouch</li>
+          <li>Posterior: Rectovesical pouch + seminal vesicles + vas deferens + rectum</li>
+          <li>Inferior/posterior: Prostate (bladder neck → prostate)</li>
+        </ul>
+        <div class="clinical-box" style="margin-top:.5rem">
+          <div class="cbox-title">Urachal Anomalies</div>
+          <p>Urachus = remnant of allantois connecting bladder apex to umbilicus → normally obliterates to form <strong>median umbilical ligament</strong>. Patent urachus → urine discharge at umbilicus. Urachal cyst → midline swelling. Urachal sinus → discharges at umbilicus. Urachal carcinoma (adenocarcinoma at dome of bladder).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="border-color:var(--accent)">
+    <div class="card-title" style="color:var(--accent)">Male Urethra & Hypospadias <span class="badge badge-pyq">PYQ 2018</span></div>
+    <div class="keypoint">The male urethra (18–20 cm) is a shared passage for urine and semen. It is divided into four main parts: preprostatic, prostatic, membranous, and spongy (penile).</div>
+    <div class="two-col">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">Four Parts of Male Urethra:</p>
+        <ul class="checklist">
+          <li><strong>Preprostatic (Intramural) (1–1.5 cm):</strong> Lies within the bladder neck, surrounded by the internal urethral sphincter.</li>
+          <li><strong>Prostatic part (3 cm):</strong> Passes through the prostate gland. Widest and most dilatable part. Opens to the ejaculatory ducts, prostatic utricle, and prostatic sinuses on the verumontanum.</li>
+          <li><strong>Membranous part (1.5 cm):</strong> Passes through the deep perineal pouch, surrounded by the voluntary external urethral sphincter. Narrowest and least dilatable part (at risk of rupture in pelvic fractures).</li>
+          <li><strong>Spongy (Penile) part (15 cm):</strong> Longest part, runs through the corpus spongiosum of the penis. Dilates distally in the glans penis as the <em>navicular fossa</em>. Opens at the external urethral orifice.</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px">Development & Congenital Hypospadias:</p>
+        <ul class="checklist">
+          <li><strong>Embryological Origin:</strong> The prostatic (except upper part), membranous, and proximal spongy urethra develop from the endodermal <strong>urogenital sinus</strong>. The distal-most glandular urethra (in glans) develops from the ectodermal <strong>glandular plate</strong>.</li>
+          <li><strong>Hypospadias:</strong> A congenital condition where the external urethral orifice opens on the <strong>ventral (inferior) aspect</strong> of the penis or scrotum/perineum.
+            <br><em>Embryological Basis:</em> Failure of the bilateral <strong>urethral (cloacal) folds</strong> to fuse completely along the ventral aspect of the phallus.
+            <br><em>Surgical Note:</em> Circumcision is strictly contraindicated in these infants, as the prepuce (foreskin) is required for reconstructive urethroplasty.
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="clinical-box" style="margin-top:1rem">
+      <div class="cbox-title">Urethral Rupture: Membranous vs Spongy (Bulbar)</div>
+      <p><strong>Membranous Urethra Rupture:</strong> Usually caused by pelvic fractures (shear force at the urogenital diaphragm). Urine extravasates into the deep perineal pouch and pelvic cavity (extraperitoneal space of Retzius).</p>
+      <p><strong>Spongy Urethra Rupture:</strong> Usually caused by a "straddle injury" (falling astride a beam, crushing the bulbous urethra). Urine leaks into the superficial perineal pouch and tracks under <strong>Colles' fascia</strong> into the scrotum and up the anterior abdominal wall. It does not enter the thigh due to fascia lata attachments.</p>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════ S6: FEMALE PELVIC ORGANS ══════════════ -->
+<div id="s6">
+  <div class="section-header">
+    <div class="section-num">06</div>
+    <h2>Female <em>Pelvic Organs</em></h2>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Ovary <span class="badge badge-pyq">PYQ 2012, 2016, 2020</span></div>
+    <div class="two-col">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">Anatomy:</p>
+        <ul class="checklist">
+          <li>Almond-shaped, ~4 × 2 × 1 cm, lies in <strong>ovarian fossa</strong> on lateral pelvic wall</li>
+          <li><strong>Ovarian fossa boundaries:</strong> Anterior = obliterated umbilical artery; Posterior = ureter + internal iliac vessels; Superior = external iliac vein</li>
+          <li><strong>Not covered by peritoneum</strong> (unlike all other pelvic organs) — covered by germinal epithelium (cuboidal)</li>
+          <li>Attached to posterior layer of broad ligament by <strong>mesovarium</strong></li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px">Supports / Ligaments:</p>
+        <ul class="checklist">
+          <li><strong>Mesovarium:</strong> Attaches ovary to broad ligament</li>
+          <li><strong>Ovarian ligament (ligament of ovary):</strong> Connects medial pole of ovary to uterus (below uterine tube) — remnant of gubernaculum</li>
+          <li><strong>Suspensory ligament of ovary (infundibulopelvic ligament):</strong> Connects lateral pole of ovary to pelvic wall — contains ovarian vessels + lymphatics + nerves</li>
+        </ul>
+        <p style="font-size:13px;font-weight:600;color:var(--teal);margin-bottom:6px;margin-top:.75rem">Blood Supply & Lymphatics:</p>
+        <ul class="checklist">
+          <li><strong>Ovarian artery</strong> from abdominal aorta at L2 (like testicular)</li>
+          <li>Lymphatics drain to <strong>para-aortic lymph nodes at L2</strong> (same as testis — embryological)</li>
+          <li>NOT to inguinal nodes</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="two-col" style="margin-top:1.5rem">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--teal);margin-bottom:6px">Development & Incomplete Descent <span class="badge badge-pyq">PYQ 2019-S, 2024</span></p>
+        <ul class="checklist">
+          <li><strong>Embryonic Origin:</strong> Develops from the <strong>gonadal (genital) ridge</strong> on the posterior abdominal wall (T10 level).</li>
+          <li><strong>Descent:</strong> Descends into the pelvis guided by the <strong>gubernaculum</strong> (a fibromuscular band connecting the gonad to the labium majus).</li>
+          <li><strong>Incomplete Descent:</strong> The gubernaculum attaches to the junction of the uterine tube and uterus. The portion of the gubernaculum between the ovary and uterus becomes the <strong>ovarian ligament</strong>, and the portion between the uterus and labium majus becomes the <strong>round ligament of the uterus</strong>. This attachment halts the descent, anchoring the ovary in the ovarian fossa of the pelvis.</li>
+          <li><strong>Ectopic Ovary:</strong> Failure of descent can leave the ovary in the abdomen, or it may follow the gubernaculum too far into the inguinal canal or labium majus.</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px">Graafian Follicle Histology <span class="badge badge-pyq">PYQ 2019-S</span></p>
+        <ul class="checklist">
+          <li><strong>Primary Oocyte:</strong> Located centrally or eccentrically, surrounded by the <strong>zona pellucida</strong> (glycoprotein layer) and the <strong>corona radiata</strong> (radial granulosa cells).</li>
+          <li><strong>Antrum:</strong> A large central cavity filled with <strong>liquor folliculi</strong> (rich in hormones, proteoglycans).</li>
+          <li><strong>Cumulus Oophorus:</strong> A mound of granulosa cells anchoring the oocyte to the wall. <strong>Stratum granulosum</strong> lines the follicle.</li>
+          <li><strong>Theca Interna:</strong> Inner cellular, highly vascular layer. Converts cholesterol to androgens (under LH control).</li>
+          <li><strong>Theca Externa:</strong> Outer fibrous layer, blending with the ovarian stroma.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="clinical-box" style="margin-top:1rem">
+      <div class="cbox-title">Ovarian Referred Pain <span class="badge badge-pyq">PYQ 2018-S, 2019-S</span></div>
+      <p><strong>Afferent Pain Pathway:</strong> Pain fibers from the ovary travel via the ovarian plexus (sympathetic nerves) to enter the spinal cord at the <strong>T10 and T11</strong> segments.</p>
+      <p><strong>Clinical Presentation:</strong> Pathologies such as ovarian torsion, cyst rupture, or Mittelschmerz (ovulatory pain) cause referred pain to the dermatomal areas corresponding to T10–T11. This manifests as pain referred to the <strong>umbilical region</strong>, lower abdomen, and lower back.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Uterine (Fallopian) Tubes <span class="badge badge-pyq">PYQ 2013, 2018</span></div>
+    <div class="keypoint">The uterine tube is ~10 cm long, transmits ovum from ovary to uterus. Site of fertilisation is the <strong>ampulla</strong>. Site of <strong>ectopic pregnancy</strong> is usually the ampulla (55%) or isthmus.</div>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Part</th><th>Length</th><th>Features</th></tr>
+        <tr><td>Intramural (interstitial)</td><td>1 cm</td><td>Within uterine wall; narrowest lumen (1 mm)</td></tr>
+        <tr><td>Isthmus</td><td>3 cm</td><td>Narrow, thick-walled; site of ectopic (25%); used for tubal ligation</td></tr>
+        <tr><td>Ampulla</td><td>5 cm</td><td>Widest, thin-walled, tortuous; <strong>site of fertilisation</strong>; most common ectopic (55%)</td></tr>
+        <tr><td>Infundibulum</td><td>1 cm</td><td>Funnel-shaped, opens into peritoneum; fimbriated end. One fimbria = ovarian fimbria — attached to ovary</td></tr>
+      </table>
+    </div>
+    <div class="clinical-box">
+      <div class="cbox-title">Ectopic Pregnancy</div>
+      <p>Fertilised ovum implants outside uterine cavity — 95% in uterine tube (ampulla most common). Risk: PID scarring, previous ectopic, IUD. Presents ~6–8 weeks with unilateral pelvic pain + missed period. Rupture → haemoperitoneum → collapse. Blood in Pouch of Douglas → culdocentesis positive. β-hCG positive; USS shows empty uterus + adnexal mass.</p>
+    </div>
+  </div>
+
+  <div class="card" style="border-color:var(--gold)">
+    <div class="card-title" style="color:var(--gold)">Rectouterine Pouch (Pouch of Douglas) <span class="badge badge-fav">⭐ PYQ 2010, 2025</span></div>
+    <div class="keypoint">The Pouch of Douglas (rectouterine pouch) is the lowest (most dependent) subdivision of the female peritoneal cavity in both the erect and supine positions. It lies between the uterus and rectum.</div>
+    <div class="two-col">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">Anatomical Boundaries:</p>
+        <ul class="checklist">
+          <li><strong>Anterior:</strong> Posterior surface of the uterus (cervix and body) and the posterior fornix of the vagina.</li>
+          <li><strong>Posterior:</strong> Anterior surface of the middle third of the rectum.</li>
+          <li><strong>Lateral Walls:</strong> Rectouterine folds of peritoneum (which contain the uterosacral ligaments).</li>
+          <li><strong>Floor (Inferior):</strong> Rectouterine peritoneal reflection.</li>
+          <li><strong>Contents:</strong> Coils of ileum and sigmoid colon, plus a small amount of physiological peritoneal fluid.</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px">Applied Clinical Importance:</p>
+        <ul class="checklist">
+          <li><strong>Fluid Accumulation:</strong> In cases of internal bleeding (e.g., ruptured ectopic pregnancy, splenic rupture) or pelvic infections (PID), blood, pus, or ascites pools preferentially in the Pouch of Douglas due to gravity.</li>
+          <li><strong>Culdocentesis:</strong> A diagnostic procedure where a needle is passed through the <strong>posterior fornix of the vagina</strong> into the pouch of Douglas to aspirate fluid. Non-clotting blood indicates active hemoperitoneum.</li>
+          <li><strong>Pelvic Abscess:</strong> Purulent fluid collecting here can lead to a localized abscess. It can be drained surgically by making an incision through the posterior vaginal wall (posterior colpotomy).</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════ S7: UTERUS & SUPPORTS ══════════════ -->
+<div id="s7">
+  <div class="section-header">
+    <div class="section-num">07</div>
+    <h2>Uterus <em>& Its Supports</em></h2>
+  </div>
+
+  <div class="card" style="border-color:var(--gold)">
+    <div class="card-title" style="color:var(--gold)">Uterus — Anatomy <span class="badge badge-fav">⭐ PYQ 2011, 2013, 2016, 2019, 2022</span></div>
+
+    <div class="two-col">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">Parts:</p>
+        <ul class="checklist">
+          <li><strong>Fundus:</strong> Domed upper part above uterine tube origins</li>
+          <li><strong>Body (corpus):</strong> Main part; <strong>anteflexed on cervix</strong> in normal position</li>
+          <li><strong>Isthmus:</strong> Constriction between body and cervix (~1 cm); becomes lower uterine segment in pregnancy — site of lower segment caesarean section (LSCS)</li>
+          <li><strong>Cervix:</strong> 2.5 cm; projects into vagina; external os (parous = transverse slit, nulliparous = circular)</li>
+        </ul>
+        <p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px;margin-top:.75rem">Normal Position:</p>
+        <ul class="checklist">
+          <li><strong>Anteverted</strong> (long axis of uterus angled forward relative to vaginal axis — at cervicovaginal junction)</li>
+          <li><strong>Anteflexed</strong> (body of uterus bent forward on cervix — at isthmus)</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--teal);margin-bottom:6px">Relations:</p>
+        <ul class="checklist">
+          <li><strong>Anterior:</strong> Vesicouterine pouch + bladder (body covered by peritoneum anterosuperiorly)</li>
+          <li><strong>Posterior:</strong> Rectouterine pouch (Pouch of Douglas) + rectum. Entire posterior uterine wall covered by peritoneum</li>
+          <li><strong>Lateral:</strong> Broad ligament, uterine artery (at level of isthmus), ureter (2 cm lateral to cervix — "water under the bridge")</li>
+        </ul>
+        <p style="font-size:13px;font-weight:600;color:var(--rose);margin-bottom:6px;margin-top:.75rem">Blood Supply:</p>
+        <ul class="checklist">
+          <li><strong>Uterine artery</strong> (from internal iliac) = main supply</li>
+          <li>Ovarian artery (anastomoses with uterine at cornu)</li>
+          <li>Uterine artery crosses ABOVE ureter at isthmus — surgical danger</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="warn-box">
+      <strong>"Water under the bridge":</strong> In hysterectomy — the uterine artery crosses ABOVE the ureter at the level of the isthmus (2 cm lateral to cervix). Ligation of uterine artery risks ureteric injury. Mnemonic: "Artery is water, ureter is bridge — water flows over the bridge."
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Supports of the Uterus <span class="badge badge-fav">⭐ PYQ Every Year — Never Skip</span></div>
+    <div class="keypoint">Uterine supports are classified as <strong>primary (ligamentous/fascial)</strong> and <strong>secondary (muscular = pelvic floor/levator ani)</strong>. Failure of supports → uterine prolapse.</div>
+
+    <div class="flowchart" style="margin:0">
+      <div class="flow-title">Supports — Classified</div>
+      <div class="flow-v">
+        <div class="flow-box gold">
+          <span class="lbl">PRIMARY SUPPORTS — Condensations of Pelvic Fascia</span>
+          <strong>Transverse cervical (cardinal / Mackenrodt's) ligament:</strong> Most important. Runs from cervix + upper vagina → lateral pelvic wall. Prevents lateral displacement + descent. Contains uterine artery. The main support against prolapse.
+        </div>
+        <div class="flow-step-label">↓</div>
+        <div class="flow-box accent">
+          <span class="lbl">UTEROSACRAL LIGAMENTS</span>
+          Cervix → sacrum. Hold cervix backward, maintain anteversion. Pass on each side of rectum. Feel them on PR exam in advanced cervical cancer.
+        </div>
+        <div class="flow-step-label">↓</div>
+        <div class="flow-box">
+          <span class="lbl">PUBOCERVICAL LIGAMENTS</span>
+          Cervix → pubis. Anterior support.
+        </div>
+        <div class="flow-step-label">↓</div>
+        <div class="flow-box teal">
+          <span class="lbl">SECONDARY SUPPORT — Levator Ani (Pelvic Floor)</span>
+          Puborectal sling + levator plate provides the hammock supporting all pelvic viscera. Damaged in childbirth → prolapse.
+        </div>
+        <div class="flow-step-label">↓</div>
+        <div class="flow-box rose">
+          <span class="lbl">PERITONEAL FOLDS (Weakest — DO NOT prevent prolapse)</span>
+          Broad ligament, round ligament, ovarian ligament — maintain position but cannot prevent descent.
+        </div>
+      </div>
+    </div>
+
+    <div class="mnemonic-box">
+      <div class="mbox-title">Uterine Supports Priority</div>
+      <div class="mnemonic-highlight">"Cardinal is King" — Transverse cervical (cardinal/Mackenrodt's) ligament is the PRIMARY support against uterine prolapse</div>
+      <p style="font-size:12px;color:var(--text2);margin-top:4px">Order of importance: Cardinal > Uterosacral > Pubocervical > Levator ani (muscular floor) > Peritoneal folds (least important)</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Broad Ligament — Contents <span class="badge badge-pyq">PYQ 2012, 2017, 2021</span></div>
+    <div class="keypoint">The broad ligament is a <strong>double layer of peritoneum</strong> draping over the uterus and uterine tubes, stretching laterally to the pelvic walls. It is NOT a true ligament and provides no structural support.</div>
+    <div class="two-col">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">Parts of Broad Ligament:</p>
+        <ul class="checklist">
+          <li><strong>Mesosalpinx:</strong> Upper free part enclosing uterine tube</li>
+          <li><strong>Mesovarium:</strong> Posterior layer fold attaching ovary</li>
+          <li><strong>Mesometrium:</strong> Largest part, below uterine vessels, attaches to uterine body</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px">Contents of Broad Ligament:</p>
+        <ul class="checklist">
+          <li>Uterine tube (in mesosalpinx)</li>
+          <li>Round ligament of uterus (anterior layer)</li>
+          <li>Ovarian ligament (posterior layer)</li>
+          <li>Uterine artery + veins</li>
+          <li>Ovarian artery (in suspensory ligament at lateral end)</li>
+          <li>Lymphatics, nerves</li>
+          <li>Epoophoron + paroophoron (remnants of mesonephric/Wolffian duct)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="mnemonic-box">
+      <div class="mbox-title">Broad Ligament Contents</div>
+      <div class="mnemonic-highlight">"ROULOV" = Round lig · Ovarian lig · Uterine tube · Lymphatics · Ovarian artery · Vessels (uterine)</div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════ S8: URETER IN PELVIS ══════════════ -->
+<div id="s8">
+  <div class="section-header">
+    <div class="section-num">08</div>
+    <h2>Ureter <em>in the Pelvis</em></h2>
+  </div>
+
+  <div class="keypoint">The pelvic ureter is one of the most surgically important structures — it can be injured in pelvic surgery. <strong>Three sites of narrowing</strong> where stones commonly impact and where surgical injury occurs.</div>
+
+  <div class="card" style="border-color:var(--rose)">
+    <div class="card-title" style="color:var(--rose)">Pelvic Course of Ureter <span class="badge badge-fav">⭐ PYQ 2011, 2015, 2018, 2022</span></div>
+
+    <div class="flowchart" style="margin:0 0 1rem 0">
+      <div class="flow-title">Ureter — Pelvic Course</div>
+      <div class="flow-v">
+        <div class="flow-box">
+          <span class="lbl">Enters pelvis</span>Crosses anterior to common iliac bifurcation (or external iliac artery) at <strong>pelvic brim</strong> — at sacroiliac joint level
+        </div>
+        <div class="flow-step-label">↓ runs on medial surface of internal iliac artery</div>
+        <div class="flow-box gold">
+          <span class="lbl">FEMALE — Critical Relations</span>
+          Passes through base of broad ligament. At isthmus of uterus, uterine artery <strong>CROSSES ABOVE</strong> the ureter (~2 cm lateral to cervix) — "water under the bridge." Then passes close to lateral vaginal fornix before entering bladder.
+        </div>
+        <div class="flow-step-label">↓</div>
+        <div class="flow-box accent">
+          <span class="lbl">MALE — Critical Relations</span>
+          Passes under vas deferens (crossed superiorly by vas — "water under the bridge" equivalent). Runs medial to seminal vesicle.
+        </div>
+        <div class="flow-step-label">↓ enters posterolateral angle of bladder (vesicoureteric junction)</div>
+        <div class="flow-box teal">
+          <span class="lbl">Vesicoureteric Junction (VUJ)</span>
+          Ureter passes obliquely through bladder wall for 2 cm → intramural segment acts as flap valve — prevents vesicoureteric reflux. VUJ = narrowest part → stone most commonly impacted here.
+        </div>
+      </div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <tr><th>Site</th><th>Location</th><th>Clinical Significance</th></tr>
+        <tr><td>Site 1</td><td>Pelviureteric junction (PUJ) — ureter leaves renal pelvis</td><td>Most common site of obstruction, hydronephrosis</td></tr>
+        <tr><td>Site 2</td><td>Pelvic brim — ureter crosses iliac vessels</td><td>Stone impaction; injury in aortoiliac surgery</td></tr>
+        <tr><td>Site 3</td><td>VUJ — oblique entry into bladder</td><td>Most common site of ureteric stone impaction; injury in pelvic surgery</td></tr>
+      </table>
+    </div>
+
+    <div class="warn-box">
+      <strong>3 sites of surgical injury to ureter in females:</strong> (1) At pelvic brim during ligation of infundibulopelvic ligament in oophorectomy. (2) At isthmus when ligating uterine artery in hysterectomy. (3) Near lateral vaginal fornix when clamping cardinal ligament.
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════ S9: INTERNAL ILIAC ARTERY ══════════════ -->
+<div id="s9">
+  <div class="section-header">
+    <div class="section-num">09</div>
+    <h2>Internal Iliac <em>Artery</em></h2>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Internal Iliac — Branches <span class="badge badge-pyq">PYQ 2013, 2017, 2021</span></div>
+    <div class="keypoint">The internal iliac artery (hypogastric artery) is the artery of the pelvis. It divides into <strong>anterior</strong> and <strong>posterior</strong> divisions ~4 cm after origin at the bifurcation of common iliac at L5/S1.</div>
+
+    <div class="two-col">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">Anterior Division — "Visceral" branches:</p>
+        <ul class="checklist">
+          <li><strong>Umbilical artery</strong> (obliterates distally → medial umbilical ligament; patency → superior vesical artery)</li>
+          <li><strong>Superior vesical artery</strong> (from proximal umbilical → upper bladder + artery to vas deferens)</li>
+          <li><strong>Uterine artery</strong> (female → main supply of uterus; crosses above ureter at isthmus)</li>
+          <li><strong>Vaginal artery</strong> (female)</li>
+          <li><strong>Inferior vesical artery</strong> (male → lower bladder + prostate + seminal vesicles)</li>
+          <li><strong>Middle rectal artery</strong> (middle rectum)</li>
+          <li><strong>Internal pudendal artery</strong> (perineum + external genitalia; exits via greater sciatic foramen → loops around ischial spine → enters Alcock's canal)</li>
+          <li><strong>Obturator artery</strong> (obturator foramen → medial thigh muscles)</li>
+          <li><strong>Inferior gluteal artery</strong> (exits greater sciatic foramen below piriformis)</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px">Posterior Division — "Parietal" branches:</p>
+        <ul class="checklist">
+          <li><strong>Iliolumbar artery</strong> (to iliacus + psoas)</li>
+          <li><strong>Lateral sacral artery (×2)</strong> (enters sacral foramina)</li>
+          <li><strong>Superior gluteal artery</strong> (largest branch — exits above piriformis through greater sciatic foramen → gluteal muscles)</li>
+        </ul>
+        <div class="mnemonic-box" style="margin-top:.5rem">
+          <div class="mbox-title">Anterior Division Branches</div>
+          <div class="mnemonic-highlight">"U-SUV-MOPI-G" = Umbilical · Superior vesical · Uterine · Vaginal (female) · Middle rectal · Obturator · Pudendal (internal) · Inferior vesical · Inferior Gluteal</div>
+        </div>
+        <div class="clinical-box" style="margin-top:.5rem">
+          <div class="cbox-title">Internal Iliac Ligation</div>
+          <p>Bilateral internal iliac artery ligation is performed to control PPH (postpartum haemorrhage) during obstetric emergencies. By converting pulsatile flow to non-pulsatile venous-type flow, it allows clot formation without completely devascularising the uterus (collateral supply from ovarian arteries is preserved).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════ S10: PUDENDAL NERVE ══════════════ -->
+<div id="s10">
+  <div class="section-header">
+    <div class="section-num">10</div>
+    <h2>Pudendal <em>Nerve</em></h2>
+  </div>
+
+  <div class="card" style="border-color:var(--teal)">
+    <div class="card-title" style="color:var(--teal)">Pudendal Nerve — Complete <span class="badge badge-fav">⭐ PYQ 2012, 2016, 2019, 2023</span></div>
+
+    <div class="keypoint">The pudendal nerve is the <strong>principal nerve of the perineum</strong>. It is the somatic nerve supply of the entire perineum. Root value: <strong>S2, S3, S4</strong> — "S2, 3, 4 keep you off the floor."</div>
+
+    <div class="flowchart" style="margin:0 0 1rem 0">
+      <div class="flow-title">Pudendal Nerve Course</div>
+      <div class="flow-v">
+        <div class="flow-box accent">
+          <span class="lbl">Origin</span>
+          Sacral plexus: <strong>S2, S3, S4</strong> anterior rami
+        </div>
+        <div class="flow-step-label">↓ exits pelvis through</div>
+        <div class="flow-box gold">
+          <span class="lbl">Greater Sciatic Foramen (below piriformis)</span>
+          Between piriformis + coccygeus
+        </div>
+        <div class="flow-step-label">↓ winds around ischial spine (medial to internal pudendal vessels)</div>
+        <div class="flow-box">
+          <span class="lbl">Re-enters pelvis through</span>
+          <strong>Lesser Sciatic Foramen</strong> → enters <strong>pudendal canal (Alcock's canal)</strong> in lateral wall of ischioanal fossa
+        </div>
+        <div class="flow-step-label">↓ runs forward in Alcock's canal on medial surface of obturator internus</div>
+        <div class="flow-box teal">
+          <span class="lbl">Terminal Branches (3)</span>
+          1. <strong>Inferior rectal nerve:</strong> Crosses ischioanal fossa → external anal sphincter + anal canal below pectinate line + perianal skin<br>
+          2. <strong>Perineal nerve:</strong> Superficial = scrotal/labial nerves; Deep = muscles of UG triangle + bulbospongiosus + ischiocavernosus<br>
+          3. <strong>Dorsal nerve of penis/clitoris:</strong> Sensory to dorsum of penis/clitoris
+        </div>
+      </div>
+    </div>
+
+    <div class="clinical-box">
+      <div class="cbox-title">Pudendal Nerve Block</div>
+      <p>Used in obstetrics (2nd stage of labour) and perineal surgeries. Approached transvaginally or via perineum. Needle directed toward <strong>ischial spine</strong> (where pudendal nerve winds). Block provides anaesthesia to labia, perineal body, distal vagina, and perineum. Does NOT cover upper vagina or uterus (those require paracervical block or epidural). Also used to diagnose pudendal neuralgia (Alcock's canal syndrome) in chronic pelvic pain.</p>
+    </div>
+
+    <div class="mnemonic-box">
+      <div class="mbox-title">Pudendal Nerve</div>
+      <div class="mnemonic-highlight">"S2,3,4 keep the poo off the floor" — pudendal nerve (S2,3,4) supplies EAS (continence) + external urethral sphincter</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Sacral Plexus Summary <span class="badge badge-pyq">PYQ 2014, 2020</span></div>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Nerve</th><th>Roots</th><th>Exit</th><th>Supply</th></tr>
+        <tr><td>Superior gluteal</td><td>L4,L5,S1</td><td>Greater sciatic foramen ABOVE piriformis</td><td>Gluteus medius, minimus, tensor fascia lata</td></tr>
+        <tr><td>Inferior gluteal</td><td>L5,S1,S2</td><td>Greater sciatic foramen BELOW piriformis</td><td>Gluteus maximus</td></tr>
+        <tr><td>Sciatic nerve</td><td>L4,L5,S1,S2,S3</td><td>Below piriformis (usually)</td><td>Hamstrings + all below knee</td></tr>
+        <tr><td>Posterior cutaneous nerve of thigh</td><td>S1,S2,S3</td><td>Below piriformis</td><td>Posterior thigh skin</td></tr>
+        <tr><td>Pudendal</td><td>S2,S3,S4</td><td>Below piriformis → around ischial spine → lesser sciatic foramen</td><td>Perineum (entire)</td></tr>
+        <tr><td>Nerve to obturator internus</td><td>L5,S1</td><td>Below piriformis</td><td>Obturator internus + superior gemellus</td></tr>
+        <tr><td>Nerve to quadratus femoris</td><td>L4,L5,S1</td><td>Below piriformis</td><td>Quadratus femoris + inferior gemellus</td></tr>
+        <tr><td>Pelvic splanchnic nerves</td><td>S2,S3,S4</td><td>Stay in pelvis</td><td>Parasympathetic to pelvic viscera (nervi erigentes — erection)</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════ S11: VIVA Q&A ══════════════ -->
+<div id="s11">
+  <div class="section-header">
+    <div class="section-num">11</div>
+    <h2>Viva <em>Q&A</em></h2>
+  </div>
+
+  <div class="viva-section">
+    <div class="viva-title-bar">Pelvic Floor & Perineum</div>
+
+    <details>
+      <summary><span class="viva-q">Describe levator ani — its parts, attachments, and function.</span><span class="viva-year">PYQ 2014, 2020, 2024</span></summary>
+      <div class="viva-ans">
+        <p><strong>Levator ani</strong> is a broad muscular sheet forming the pelvic diaphragm. It has <strong>3 parts:</strong></p>
+        <ul>
+          <li><strong>Pubococcygeus:</strong> Pubic body → anococcygeal raphe/coccyx. Contains pubovaginalis/puboprostaticus fibres</li>
+          <li><strong>Puborectalis:</strong> Pubic body → loops behind anorectal junction forming a U-shaped sling. <em>Most functionally important</em> — maintains anorectal angle (~90°) for faecal continence</li>
+          <li><strong>Iliococcygeus:</strong> ATLA on obturator fascia → anococcygeal raphe + coccyx</li>
+        </ul>
+        <p><strong>Nerve supply:</strong> Perineal branch of S4 (pelvic surface) + pudendal nerve branches (perineal surface)</p>
+        <p><strong>Functions:</strong> Supports pelvic viscera; maintains urinary/faecal continence; assists in parturition; maintains intra-abdominal pressure</p>
+        <p><em>The levator hiatus (U-shaped gap) transmits urethra, vagina/prostate, and anal canal — the weakest point where prolapse occurs.</em></p>
+      </div>
+    </details>
+
+    <details>
+      <summary><span class="viva-q">What is the significance of the pectinate (dentate) line?</span><span class="viva-year">PYQ Every Year</span></summary>
+      <div class="viva-ans">
+        <p>The <strong>pectinate (dentate) line</strong> is the most important landmark of the anal canal — located at its midpoint, formed by the free edges of anal valves connecting the lower ends of columns of Morgagni.</p>
+        <p><strong>Embryological significance:</strong> Junction between hindgut endoderm (above) and proctodeum ectoderm (below).</p>
+        <p><strong>Above pectinate line:</strong> Columnar epithelium, portal venous drainage (superior rectal → portal), internal iliac lymphatics, autonomic innervation (painless). → Internal haemorrhoids (painless, bleed bright red), adenocarcinoma</p>
+        <p><strong>Below pectinate line:</strong> Squamous epithelium, systemic venous drainage (inferior rectal → IVC), inguinal lymph node drainage, somatic innervation (pudendal — painful). → External haemorrhoids (painful), SCC anal canal</p>
+        <p><em>The anorectal junction (above anal canal, where puborectal sling compresses) is separate from pectinate line — located ~2 cm above it at the top of the anal canal.</em></p>
+      </div>
+    </details>
+
+    <details>
+      <summary><span class="viva-q">What are the supports of the uterus? Which is most important?</span><span class="viva-year">PYQ Every Year</span></summary>
+      <div class="viva-ans">
+        <p><strong>Uterine supports (most to least important):</strong></p>
+        <ul>
+          <li><strong>1. Transverse cervical (cardinal / Mackenrodt's) ligament:</strong> Most important primary support. Condensation of pelvic fascia from cervix + upper vagina → lateral pelvic wall. Runs horizontally at base of broad ligament. Contains uterine artery. Prevents lateral displacement and uterine descent.</li>
+          <li><strong>2. Uterosacral ligaments:</strong> Cervix → sacrum posteriorly. Maintain anteversion. Bilateral.</li>
+          <li><strong>3. Pubocervical ligament:</strong> Cervix → pubis anteriorly.</li>
+          <li><strong>4. Levator ani (pelvic floor):</strong> Secondary muscular support; acts as shelf. Damaged in multiparity → prolapse.</li>
+          <li><strong>5. Peritoneal folds:</strong> Broad ligament, round ligament, ovarian ligament — maintain position but NOT true supports. Cannot prevent prolapse.</li>
+        </ul>
+        <p><em>Round ligament maintains anteversion but is NOT a structural support — the most common surgical misconception.</em></p>
+      </div>
+    </details>
+  </div>
+
+  <div class="viva-section">
+    <div class="viva-title-bar">Pelvis & Ureter</div>
+
+    <details>
+      <summary><span class="viva-q">Where is the ureter at risk in pelvic surgery?</span><span class="viva-year">PYQ 2015, 2018, 2022</span></summary>
+      <div class="viva-ans">
+        <p>The ureter is the most commonly injured structure in pelvic surgery. <strong>Three danger zones in female pelvic surgery:</strong></p>
+        <ul>
+          <li><strong>1. Pelvic brim:</strong> During ligation of infundibulopelvic (suspensory) ligament in oophorectomy — ureter runs beneath this ligament on medial surface of internal iliac artery</li>
+          <li><strong>2. Lateral to cervix (isthmus level):</strong> During ligation of uterine artery in hysterectomy. Uterine artery crosses ABOVE the ureter at ~2 cm lateral to cervix — <em>"Water (artery) runs over the bridge (ureter)"</em></li>
+          <li><strong>3. Near vaginal fornix:</strong> During clamping of cardinal ligament — ureter runs close to lateral vaginal fornix</li>
+        </ul>
+        <p><em>Prevention: Always identify ureter before clipping any major pelvic vessel. Intraoperative ureteric catheters/stents (ureteric stenting) help identification. If injured: uretero-ureterostomy, ureteroneocystostomy, or Boari flap repair depending on site.</em></p>
+      </div>
+    </details>
+
+    <details>
+      <summary><span class="viva-q">Describe the pudendal nerve — its course and distribution.</span><span class="viva-year">PYQ 2016, 2019, 2023</span></summary>
+      <div class="viva-ans">
+        <p><strong>Pudendal nerve</strong> — root value: <strong>S2, S3, S4</strong> (anterior rami of sacral plexus).</p>
+        <p><strong>Course:</strong></p>
+        <ul>
+          <li>Exits pelvis through <strong>greater sciatic foramen below piriformis</strong></li>
+          <li>Winds around the <strong>ischial spine</strong> (medial to internal pudendal vessels)</li>
+          <li>Re-enters perineum through <strong>lesser sciatic foramen</strong></li>
+          <li>Runs forward in <strong>Alcock's canal (pudendal canal)</strong> in lateral wall of ischioanal fossa on medial surface of obturator internus</li>
+        </ul>
+        <p><strong>3 Terminal branches:</strong></p>
+        <ul>
+          <li><strong>Inferior rectal nerve:</strong> EAS + anal canal below pectinate line + perianal skin</li>
+          <li><strong>Perineal nerve:</strong> Muscles of UG triangle; scrotal/labial skin</li>
+          <li><strong>Dorsal nerve of penis/clitoris:</strong> Sensory</li>
+        </ul>
+        <p><em>Pudendal nerve block: at ischial spine (transvaginally or transpubically). Provides anaesthesia for perineum, labia, and anal canal for forceps delivery or perineal repair.</em></p>
+      </div>
+    </details>
+
+    <details>
+      <summary><span class="viva-q">Compare male and female pelvis — how do differences aid obstetrics?</span><span class="viva-year">PYQ 2013, 2018, 2022</span></summary>
+      <div class="viva-ans">
+        <p><strong>Female pelvis adaptations for parturition:</strong></p>
+        <ul>
+          <li><strong>Wider subpubic angle (80–85°):</strong> Allows fetal head to pass under pubic arch</li>
+          <li><strong>Oval/round pelvic inlet:</strong> Larger transverse diameter (13 cm) vs AP (11 cm) → fetal head enters in transverse position</li>
+          <li><strong>Shorter, wider sacrum with less curvature:</strong> More posterior pelvic space</li>
+          <li><strong>Everted, wider ischial tuberosities:</strong> Wider transverse outlet diameter (11 cm)</li>
+          <li><strong>Less prominent ischial spines:</strong> Wider mid-cavity diameter</li>
+          <li><strong>Larger greater sciatic notch (>90°)</strong></li>
+        </ul>
+        <p><em>Obstetric conjugate (10.5 cm) is the critical diameter — the shortest AP at inlet. Diagonal conjugate (12 cm) is measured clinically by internal examination. Cardinal movements of labour (engagement, descent, flexion, internal rotation, extension, external rotation) are designed around these pelvic dimensions.</em></p>
+      </div>
+    </details>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════ S12: EQ TEMPLATES ══════════════ -->
+<div id="s12">
+  <div class="section-header">
+    <div class="section-num">12</div>
+    <h2>Essay Question <em>Templates</em></h2>
+  </div>
+
+  <div class="eq-box">
+    <div class="eq-title">EQ — Pectinate Line [PYQ Every Year]</div>
+    <div class="eq-statement">"Describe the pectinate line of the anal canal and its clinical significance."</div>
+    <div class="eq-answer">
+      <ol>
+        <li><span>Definition & Location:</span> The pectinate (dentate) line is a serrated line running circumferentially at the midpoint of the anal canal (2 cm from anus). Formed by the free crescentic edges of anal valves connecting the lower ends of the columns of Morgagni. Represents the embryological junction between hindgut and proctodeum.</li>
+        <li><span>Above the Pectinate Line:</span> Columnar epithelium (hindgut origin), venous drainage via superior rectal vein to IMV → portal system, lymphatic drainage to internal iliac nodes, autonomic nerve supply (insensitive to pain, temperature, and touch — only sensitive to stretch/distension).</li>
+        <li><span>Below the Pectinate Line:</span> Squamous epithelium (proctodeum origin), venous drainage via inferior rectal vein to internal pudendal → internal iliac → IVC (systemic), lymphatic drainage to superficial inguinal nodes, somatic nerve supply via inferior rectal nerve (pudendal) — sensitive to all sensations including pain.</li>
+        <li><span>Clinical Significance — Haemorrhoids:</span> Internal haemorrhoids arise above pectinate line from superior rectal venous plexus → painless (autonomic), bleed bright red (arterial supply from superior rectal artery). External haemorrhoids form below pectinate line → intensely painful (somatic innervation). Thrombosed external haemorrhoid = acute blue-black swelling.</li>
+        <li><span>Clinical Significance — Carcinoma:</span> Above pectinate line → adenocarcinoma (columnar epithelium), spreads to internal iliac and perirectal nodes. Below pectinate line → squamous cell carcinoma, spreads to superficial inguinal nodes. This dictates different surgical and radiotherapy field planning.</li>
+        <li><span>Clinical Significance — Abscess/Fistula:</span> Anal crypts (between anal valves) can become infected → perianal abscess. Parks' classification of fistula-in-ano depends on relationship of fistula tract to external sphincter — the pectinate line serves as a reference landmark for planning surgery.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="eq-box">
+    <div class="eq-title">EQ — Supports of Uterus [PYQ Every Year]</div>
+    <div class="eq-statement">"Describe the supports of the uterus. How does failure of these supports lead to uterine prolapse?"</div>
+    <div class="eq-answer">
+      <ol>
+        <li><span>Introduction:</span> The uterus is maintained in its anteflexed anteverted position by a combination of ligamentous, fascial, and muscular supports. These are classified as primary (fascial condensations) and secondary (muscular).</li>
+        <li><span>Primary Support — Cardinal (Mackenrodt's) Ligament:</span> Most important. Condensation of pelvic fascia running from the cervix and upper vagina to the lateral pelvic wall. Runs horizontally at the base of the broad ligament. Contains the uterine artery. Prevents lateral displacement and downward descent.</li>
+        <li><span>Primary Support — Uterosacral Ligaments:</span> Cervix to sacrum, passing on either side of the rectum. Maintain the cervix posteriorly, contributing to anteversion. Palpable on PR examination when infiltrated by cervical carcinoma.</li>
+        <li><span>Primary Support — Pubocervical Ligament:</span> Cervix to pubis anteriorly. Less important than cardinal and uterosacral.</li>
+        <li><span>Secondary Support — Pelvic Floor (Levator Ani):</span> The puborectal sling and levator plate act as a muscular hammock. Damage during childbirth (prolonged labour, large baby, forceps) weakens this support, allowing the pelvic floor to descend.</li>
+        <li><span>Prolapse Mechanism & Degrees:</span> Weakening of cardinal ligaments (primary) + pelvic floor damage (secondary) → uterine descent. 1st degree: cervix descends into vagina; 2nd degree: cervix at introitus; 3rd degree (procidentia): entire uterus outside vagina. Treated with pelvic floor exercises (mild), pessaries, or surgical repair (Manchester repair, vaginal hysterectomy + pelvic floor repair).</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="eq-box">
+    <div class="eq-title">EQ — Prostate Gland [PYQ 2014, 2019, 2022]</div>
+    <div class="eq-statement">"Describe the anatomy of the prostate gland. What are its surgical relations?"</div>
+    <div class="eq-answer">
+      <ol>
+        <li><span>Position & Size:</span> The prostate gland is a fibromuscular glandular organ, size of a chestnut (~4 × 3 × 2 cm), weight ~20 g. Located in true pelvis between bladder neck (superior) and urogenital diaphragm (inferior). Entirely extraperitoneal (below peritoneum).</li>
+        <li><span>Relations:</span> Anterior: Pubic symphysis (separated by retropubic space/cave of Retzius — used in retropubic prostatectomy). Posterior: Rectum — separated by Denonvilliers' fascia (rectovesical septum — surgical plane in prostatectomy). Superior: Bladder neck. Inferior: Urogenital diaphragm (external urethral sphincter). Lateral: Levator ani + pelvic fascia containing neurovascular bundles of Walsh (posterolateral — preserve in nerve-sparing prostatectomy).</li>
+        <li><span>Zones (McNeal):</span> Peripheral zone (70%) = site of carcinoma prostate, palpable as hard nodule on PR. Central zone (25%) = around ejaculatory ducts. Transitional zone (5%) = around proximal urethra = site of BPH → compresses urethra → lower urinary tract symptoms.</li>
+        <li><span>Surgical Importance — PR Examination:</span> Normal prostate: smooth, firm, rubbery, median sulcus palpable. BPH: enlarged, smooth, rubbery. Carcinoma: hard nodule, irregular, loss of median sulcus, fixation to surrounding structures.</li>
+        <li><span>PSA:</span> Prostate-specific antigen — a serine protease produced by prostatic epithelium. Normal < 4 ng/mL. Used for screening, staging, monitoring treatment response. Not organ-specific — elevated in BPH, prostatitis, also carcinoma. PSA density, PSA velocity, and free/total PSA ratio improve specificity.</li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- QUICKFIRE TABLE -->
+  <div class="card" style="margin-top:1.5rem;border-color:var(--accent)">
+    <div class="card-title">🔥 High-Yield Quickfire Table — Module 06 Pelvis & Perineum</div>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Question</th><th>Answer</th></tr>
+        <tr><td>Obstetric conjugate (most critical pelvic diameter)</td><td>10.5 cm — sacral promontory to posterior surface of pubic symphysis</td></tr>
+        <tr><td>Most important support of uterus</td><td>Transverse cervical (cardinal / Mackenrodt's) ligament</td></tr>
+        <tr><td>Least important uterine supports</td><td>Peritoneal folds (broad ligament, round ligament — maintain position, not true supports)</td></tr>
+        <tr><td>Muscle forming puborectal sling</td><td>Puborectalis part of levator ani — maintains anorectal angle for continence</td></tr>
+        <tr><td>Nerve supply of levator ani</td><td>Perineal branch of S4 (pelvic surface) + pudendal nerve branches (perineal surface)</td></tr>
+        <tr><td>Epithelium above pectinate line</td><td>Columnar (portal drainage, autonomic innervation, internal iliac lymphatics)</td></tr>
+        <tr><td>Epithelium below pectinate line</td><td>Squamous (systemic drainage, somatic pudendal innervation, inguinal lymph nodes)</td></tr>
+        <tr><td>Internal haemorrhoids — why painless?</td><td>Above pectinate line → autonomic innervation only (no somatic pain fibres)</td></tr>
+        <tr><td>Uterine artery relation to ureter</td><td>"Water (artery) runs over the bridge (ureter)" — uterine artery crosses ABOVE ureter 2 cm lateral to cervix</td></tr>
+        <tr><td>Site of fertilisation in uterine tube</td><td>Ampulla (most common — 55%)</td></tr>
+        <tr><td>Ovarian lymphatics drain to</td><td>Para-aortic lymph nodes at L2 (same as testis — embryological)</td></tr>
+        <tr><td>Zone of prostate affected in BPH</td><td>Transitional zone (5% — surrounds proximal urethra)</td></tr>
+        <tr><td>Zone of prostate affected in carcinoma</td><td>Peripheral zone (70% — posterior → palpable on PR)</td></tr>
+        <tr><td>Root value of pudendal nerve</td><td>S2, S3, S4</td></tr>
+        <tr><td>Pudendal nerve exits/re-enters pelvis via</td><td>Exits via greater sciatic foramen (below piriformis) → winds around ischial spine → re-enters via lesser sciatic foramen → Alcock's canal</td></tr>
+        <tr><td>Central tendon of perineum (perineal body)</td><td>Junction of 9 muscles; between anal canal and vagina/penis bulb; torn in childbirth</td></tr>
+        <tr><td>Colles' fascia urine extravasation limits</td><td>Posterior border of UG triangle (stops posterior spread), ischiopubic rami laterally. Spreads to scrotum, penis, anterior abdominal wall under Scarpa's fascia. NOT into thigh</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- MNEMONICS GRID -->
+  <div class="card" style="margin-top:1rem">
+    <div class="card-title">Module 06 — Master Mnemonics</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(270px, 100%),1fr));gap:10px;margin-top:8px">
+      <div class="mnemonic-box" style="margin:0">
+        <div class="mbox-title">Levator Ani Parts</div>
+        <div class="mnemonic-highlight">"PPI" = Pubococcygeus · Puborectalis · Iliococcygeus</div>
+      </div>
+      <div class="mnemonic-box" style="margin:0">
+        <div class="mbox-title">Female Pelvis Features</div>
+        <div class="mnemonic-highlight">"WOWS" = Wide angle · Oval inlet · Wide sciatic notch · Short sacrum</div>
+      </div>
+      <div class="mnemonic-box" style="margin:0">
+        <div class="mbox-title">Pudendal Nerve</div>
+        <div class="mnemonic-highlight">"S2,3,4 keep the poo off the floor" — continence via EAS + EUS</div>
+      </div>
+      <div class="mnemonic-box" style="margin:0">
+        <div class="mbox-title">Pectinate Line</div>
+        <div class="mnemonic-highlight">"Above = Autonomous, Below = Bothers you (painful)" — autonomic above, somatic below</div>
+      </div>
+      <div class="mnemonic-box" style="margin:0">
+        <div class="mbox-title">Uterine Artery vs Ureter</div>
+        <div class="mnemonic-highlight">"Water over the bridge" = Artery (water) crosses OVER ureter (bridge)</div>
+      </div>
+      <div class="mnemonic-box" style="margin:0">
+        <div class="mbox-title">Broad Ligament Contents</div>
+        <div class="mnemonic-highlight">"ROULOV" = Round lig · Ovarian lig · Uterine tube · Lymphatics · Ovarian a. · Vessels</div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /s12 -->
+</div><!-- /content -->
+
+<div class="footer">
+  <p>MODULE 06 · ANATOMY — PELVIS & PERINEUM</p>
+  <p style="margin-top:4px">Caffeine & Cadaver · First MBBS Anatomy · PYQ Mapped 2010–2025</p>
+  <p style="margin-top:4px;color:var(--accent2);font-size:11px">Mobile-optimised · Includes Gray's Anatomy diagrams · No rotated text</p>
+</div>
+
+<button class="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script>
+document.querySelectorAll('details').forEach(d=>{
+  d.addEventListener('toggle',()=>{
+    if(d.open){const c=d.querySelector('.viva-ans');if(c)c.style.animation='fadeIn .2s ease';}
+  });
+});
+</script>
+</body>
+</html>

@@ -16,7 +16,7 @@
 }
 *{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
-body{background:var(--bg);color:var(--text);font-family:'Sora',sans-serif;font-size:15px;line-height:1.7;overflow-x:hidden;}
+body{ overflow-wrap: break-word; word-break: break-word; background:var(--bg);color:var(--text);font-family:'Sora',sans-serif;font-size:15px;line-height:1.7;overflow-x:hidden;}
 
 /* HERO */
 .hero{background:linear-gradient(135deg,#050809 0%,#0c1820 55%,#080c0e 100%);border-bottom:1px solid var(--border2);padding:3rem 1.5rem 2.5rem;position:relative;overflow:hidden;}
@@ -28,14 +28,14 @@ body{background:var(--bg);color:var(--text);font-family:'Sora',sans-serif;font-s
 .hero h1{font-family:'Crimson Pro',serif;font-size:clamp(2rem,6vw,3.2rem);font-weight:600;color:var(--text);line-height:1.15;margin-bottom:.5rem;}
 .hero h1 span{color:var(--accent2);}
 .hero-sub{color:var(--text2);font-size:13px;font-family:'JetBrains Mono',monospace;letter-spacing:.5px;margin-bottom:1.5rem;}
-.hero-pills{display:flex;flex-wrap:wrap;gap:8px;}
+.hero-pills{display: block; position: relative;flex-wrap:wrap;gap:8px;}
 .pill{background:var(--surface2);border:1px solid var(--border);color:var(--text2);font-size:11px;padding:4px 10px;border-radius:20px;font-family:'JetBrains Mono',monospace;}
 
 /* TOC */
 .toc{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent);margin:1.5rem;padding:1.25rem;border-radius:6px;}
 .toc-title{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--accent);text-transform:uppercase;margin-bottom:1rem;}
 .toc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:6px;}
-.toc a{color:var(--text2);text-decoration:none;font-size:13px;padding:4px 8px;border-radius:4px;transition:all .2s;display:flex;align-items:center;gap:6px;}
+.toc a{color:var(--text2);text-decoration:none;font-size:13px;padding:4px 8px;border-radius:4px;transition:all .2s;display: block; position: relative;align-items:center;gap:6px;}
 .toc a:hover{color:var(--accent2);background:rgba(212,146,74,.08);}
 .toc-num{color:var(--accent);font-family:'JetBrains Mono',monospace;font-size:11px;}
 
@@ -43,12 +43,12 @@ body{background:var(--bg);color:var(--text);font-family:'Sora',sans-serif;font-s
 .content{padding:0 1.5rem 3rem;}
 .progress-bar{height:3px;background:linear-gradient(to right,var(--accent),var(--accent2),var(--teal));border-radius:2px;margin-bottom:2rem;animation:load 1.5s ease forwards;}
 @keyframes load{from{width:0;}to{width:100%;}}
-.section-header{display:flex;align-items:center;gap:12px;margin:2.5rem 0 1.5rem;padding-bottom:.75rem;border-bottom:1px solid var(--border);}
-.section-num{background:var(--accent);color:#fff;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:6px;flex-shrink:0;}
+.section-header{display: block; position: relative;align-items:center;gap:12px;margin:2.5rem 0 1.5rem;padding-bottom:.75rem;border-bottom:1px solid var(--border);}
+.section-num{background:var(--accent);color:#fff;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;width:32px;height:32px;display: block; position: relative;align-items:center;justify-content:center;border-radius:6px;flex-shrink:0;}
 .section-header h2{font-family:'Crimson Pro',serif;font-size:clamp(1.3rem,4vw,1.8rem);font-weight:600;color:var(--text);}
 .section-header h2 em{color:var(--accent2);font-style:normal;}
 .divider{height:1px;background:var(--border);margin:2rem 0;}
-.two-col{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem;margin:1rem 0;}
+.two-col{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(280px, 100%),1fr));gap:1rem;margin:1rem 0;}
 
 /* BADGES */
 .badge{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-family:'JetBrains Mono',monospace;padding:2px 7px;border-radius:3px;vertical-align:middle;margin-left:4px;font-weight:600;letter-spacing:.5px;}
@@ -59,18 +59,18 @@ body{background:var(--bg);color:var(--text);font-family:'Sora',sans-serif;font-s
 
 /* CARD */
 .card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:1.25rem;margin-bottom:1rem;}
-.card-title{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:.75rem;display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.card-title{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:.75rem;display: block; position: relative;align-items:center;gap:8px;flex-wrap:wrap;}
 .card-title::after{content:'';flex:1;height:1px;background:var(--border);min-width:20px;}
 
 /* FLOWCHART */
 .flowchart{background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:1.25rem;margin:1rem 0;}
-.flow-title{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--accent2);margin-bottom:1rem;display:flex;align-items:center;gap:8px;}
+.flow-title{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--accent2);margin-bottom:1rem;display: block; position: relative;align-items:center;gap:8px;}
 .flow-title::before{content:'▶';font-size:8px;}
-.flow-v{display:flex;flex-direction:column;align-items:stretch;gap:0;}
+.flow-v{display: block; position: relative;flex-direction:column;align-items:stretch;gap:0;}
 .flow-step-label{font-size:12px;color:var(--text2);text-align:center;padding:4px 8px;font-family:'JetBrains Mono',monospace;}
 .flow-step-label strong{color:var(--accent2);}
 .flow-arrow{text-align:center;color:var(--accent);font-size:20px;line-height:1;margin:2px 0;}
-.flow-box{background:var(--surface3);border:1px solid var(--border2);border-radius:6px;padding:10px 14px;font-size:13px;width:100%;}
+.flow-box{ word-break: break-word; overflow-wrap: break-word; background:var(--surface3);border:1px solid var(--border2);border-radius:6px;padding:10px 14px;font-size:13px;width:100%;}
 .flow-box.accent{border-color:var(--accent);background:rgba(212,146,74,.1);color:var(--accent2);}
 .flow-box.gold{border-color:var(--gold);background:rgba(251,191,36,.08);color:var(--gold);}
 .flow-box.teal{border-color:var(--teal);background:rgba(52,211,153,.08);color:var(--teal);}
@@ -80,8 +80,8 @@ body{background:var(--bg);color:var(--text);font-family:'Sora',sans-serif;font-s
 .flow-box.green{border-color:var(--green);background:rgba(74,222,128,.08);color:var(--green);}
 .flow-box .lbl{font-size:10px;color:var(--text3);font-family:'JetBrains Mono',monospace;display:block;margin-bottom:2px;}
 .flow-box .sub{font-size:11px;color:var(--text2);display:block;margin-top:3px;}
-.flow-h{display:flex;flex-wrap:wrap;align-items:flex-start;gap:6px;}
-.flow-h .flow-box{flex:1 1 auto;min-width:100px;}
+.flow-h{display: block; position: relative;flex-wrap:wrap;align-items:flex-start;gap:6px;}
+.flow-h .flow-box{ word-break: break-word; overflow-wrap: break-word; flex:1 1 auto;min-width:100px;}
 .h-arrow{color:var(--accent);font-size:18px;flex-shrink:0;padding-top:10px;}
 
 /* TABLES */
@@ -93,27 +93,27 @@ tr:hover td{background:rgba(212,146,74,.04);}
 td:first-child{color:var(--accent2);font-weight:600;}
 
 /* SPECIAL BOXES */
-.clinical-box{background:rgba(52,211,153,.04);border:1px solid rgba(52,211,153,.22);border-left:4px solid var(--teal);border-radius:6px;padding:1rem 1.25rem;margin:1rem 0;}
-.cbox-title{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--teal);text-transform:uppercase;margin-bottom:.6rem;display:flex;align-items:center;gap:6px;}
+.clinical-box{ word-break: break-word; overflow-wrap: break-word; background:rgba(52,211,153,.04);border:1px solid rgba(52,211,153,.22);border-left:4px solid var(--teal);border-radius:6px;padding:1rem 1.25rem;margin:1rem 0;}
+.cbox-title{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--teal);text-transform:uppercase;margin-bottom:.6rem;display: block; position: relative;align-items:center;gap:6px;}
 .cbox-title::before{content:'🩺';}
 .mnemonic-box{background:rgba(251,191,36,.05);border:1px solid rgba(251,191,36,.25);border-left:4px solid var(--gold);border-radius:6px;padding:1rem 1.25rem;margin:1rem 0;}
-.mbox-title{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:.6rem;display:flex;align-items:center;gap:6px;}
+.mbox-title{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:.6rem;display: block; position: relative;align-items:center;gap:6px;}
 .mbox-title::before{content:'🧠';}
-.mnemonic-highlight{background:rgba(251,191,36,.1);border:1px dashed rgba(251,191,36,.3);border-radius:4px;padding:8px 12px;font-family:'Crimson Pro',serif;font-size:15px;font-weight:600;color:var(--gold);margin:6px 0;}
+.mnemonic-highlight{ word-break: break-word; overflow-wrap: break-word; background:rgba(251,191,36,.1);border:1px dashed rgba(251,191,36,.3);border-radius:4px;padding:8px 12px;font-family:'Crimson Pro',serif;font-size:15px;font-weight:600;color:var(--gold);margin:6px 0;}
 .eq-box{background:rgba(192,132,252,.05);border:1px solid rgba(192,132,252,.25);border-left:4px solid var(--purple);border-radius:6px;padding:1rem 1.25rem;margin:1rem 0;}
-.eq-title{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--purple);text-transform:uppercase;margin-bottom:.75rem;display:flex;align-items:center;gap:6px;}
+.eq-title{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--purple);text-transform:uppercase;margin-bottom:.75rem;display: block; position: relative;align-items:center;gap:6px;}
 .eq-title::before{content:'📝';}
 .eq-statement{background:var(--surface3);border-radius:4px;padding:8px 12px;font-family:'Crimson Pro',serif;font-size:15px;font-style:italic;color:var(--text);margin-bottom:10px;border-left:3px solid var(--purple);}
 .eq-answer ol{margin-left:18px;}
 .eq-answer li{margin-bottom:6px;font-size:13px;}
 .eq-answer li span{color:var(--purple);font-weight:600;}
-.keypoint{background:rgba(212,146,74,.07);border:1px solid rgba(212,146,74,.22);border-radius:6px;padding:10px 14px;margin:8px 0;font-size:13px;display:flex;gap:8px;align-items:flex-start;}
-.keypoint::before{content:'⚡';flex-shrink:0;}
-.warn-box{background:rgba(251,146,60,.07);border:1px solid rgba(251,146,60,.25);border-left:4px solid var(--orange);border-radius:6px;padding:10px 14px;margin:8px 0;font-size:13px;display:flex;gap:8px;}
-.warn-box::before{content:'⚠️';flex-shrink:0;}
+.keypoint { word-break: break-word; overflow-wrap: break-word; background:rgba(212,146,74,.07);border:1px solid rgba(212,146,74,.22);border-radius:6px;padding:10px 14px;margin:8px 0;font-size:13px;display: block; position: relative; padding-left: 34px;}
+.keypoint::before {content:'⚡';flex-shrink:0; position: absolute; left: 12px; top: 10px;}
+.warn-box { word-break: break-word; overflow-wrap: break-word; background:rgba(251,146,60,.07);border:1px solid rgba(251,146,60,.25);border-left:4px solid var(--orange);border-radius:6px;padding:10px 14px;margin:8px 0;font-size:13px;display: block; position: relative; padding-left: 34px;}
+.warn-box::before {content:'⚠️';flex-shrink:0; position: absolute; left: 10px; top: 10px;}
 ul.checklist{list-style:none;margin:.5rem 0;}
 ul.checklist li::before{content:'✦ ';color:var(--accent2);}
-ul.checklist li{margin-bottom:4px;font-size:13px;}
+ul.checklist li { margin-bottom: 14px; line-height: 1.6;font-size:13px;}
 .hl{color:var(--accent2);font-weight:600;}
 .hl-gold{color:var(--gold);font-weight:600;}
 .hl-teal{color:var(--teal);font-weight:600;}
@@ -151,17 +151,17 @@ ul.checklist li{margin-bottom:4px;font-size:13px;}
 
 /* VIVA */
 .viva-section{margin:1.5rem 0;}
-.viva-title-bar{background:rgba(212,146,74,.1);border:1px solid rgba(212,146,74,.28);border-radius:6px 6px 0 0;padding:10px 14px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--accent2);text-transform:uppercase;display:flex;align-items:center;gap:8px;}
+.viva-title-bar{background:rgba(212,146,74,.1);border:1px solid rgba(212,146,74,.28);border-radius:6px 6px 0 0;padding:10px 14px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--accent2);text-transform:uppercase;display: block; position: relative;align-items:center;gap:8px;}
 .viva-title-bar::before{content:'💬';font-size:14px;}
 details{border:1px solid var(--border);border-top:none;overflow:hidden;}
 details:last-child{border-radius:0 0 6px 6px;}
-summary{padding:10px 14px;cursor:pointer;font-size:13px;color:var(--text);background:var(--surface);list-style:none;display:flex;align-items:flex-start;gap:8px;user-select:none;transition:background .2s;}
+summary{padding:10px 14px;cursor:pointer;font-size:13px;color:var(--text);background:var(--surface);list-style:none;display: block; position: relative;align-items:flex-start;gap:8px;user-select:none;transition:background .2s;}
 summary:hover{background:var(--surface2);}
 summary::before{content:'▶';color:var(--accent);font-size:10px;margin-top:3px;flex-shrink:0;transition:transform .2s;}
 details[open]>summary::before{transform:rotate(90deg);}
 .viva-q{font-weight:600;flex:1;}
 .viva-year{color:var(--teal);font-family:'JetBrains Mono',monospace;font-size:11px;flex-shrink:0;}
-.viva-ans{padding:12px 16px 14px;background:var(--surface2);font-size:13px;line-height:1.75;border-top:1px solid var(--border);}
+.viva-ans{ word-break: break-word; overflow-wrap: break-word; padding:12px 16px 14px;background:var(--surface2);font-size:13px;line-height:1.75;border-top:1px solid var(--border);}
 .viva-ans p{margin-bottom:6px;}
 .viva-ans ul{margin:6px 0 6px 16px;}
 .viva-ans li{margin-bottom:4px;}
@@ -170,7 +170,7 @@ details[open]>summary::before{transform:rotate(90deg);}
 
 /* FOOTER */
 .footer{background:var(--surface);border-top:1px solid var(--border);text-align:center;padding:2rem 1.5rem;color:var(--text3);font-size:12px;font-family:'JetBrains Mono',monospace;}
-.top-btn{position:fixed;bottom:20px;right:20px;background:var(--accent);color:#fff;border:none;border-radius:50%;width:40px;height:40px;font-size:16px;cursor:pointer;box-shadow:0 4px 15px rgba(212,146,74,.4);z-index:100;display:flex;align-items:center;justify-content:center;font-weight:700;}
+.top-btn{position:fixed;bottom:20px;right:20px;background:var(--accent);color:#fff;border:none;border-radius:50%;width:40px;height:40px;font-size:16px;cursor:pointer;box-shadow:0 4px 15px rgba(212,146,74,.4);z-index:100;display: block; position: relative;align-items:center;justify-content:center;font-weight:700;}
 .top-btn:hover{transform:translateY(-2px);}
 
 /* BRACHIAL PLEXUS GRID */
@@ -292,10 +292,10 @@ details[open]>summary::before{transform:rotate(90deg);}
         </ul>
       </div>
       <div>
-        <div class="diagram-placeholder">
-          <div class="diagram-num">DIAGRAM 01</div>
-          <div class="diagram-instruction">Draw the posterior surface of the scapula showing: spine, acromion, supraspinous fossa, infraspinous fossa, medial border, lateral border, inferior angle, suprascapular notch, coracoid process, glenoid cavity. Label key attachments.</div>
-          <div class="diagram-size">Suggested size: full card width, portrait orientation</div>
+        <div class="wiki-img">
+          <div style="color:var(--accent);font-family:'JetBrains Mono',monospace;font-size:11px;margin-bottom:8px;">DIAGRAM 01 — Scapula Posterior Surface</div>
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Gray203.png" alt="Scapula Posterior Surface" loading="lazy" style="border-radius: 8px;">
+          <div class="wiki-caption" style="font-size:11px;color:var(--text2);text-align:center;margin-top:8px;">Posterior surface of the scapula — Gray's Anatomy</div>
         </div>
       </div>
     </div>
@@ -380,6 +380,40 @@ details[open]>summary::before{transform:rotate(90deg);}
       </div>
     </div>
   </div>
+
+  <!-- Anatomical Snuff Box Card -->
+  <div class="card" style="margin-top:1rem">
+    <div class="card-title">Anatomical Snuff Box <span class="badge badge-pyq">PYQ 2014, 2017 supple</span></div>
+    <p>A triangular depression on the posterolateral aspect of the wrist and metacarpal I, visible during extension of the thumb.</p>
+    <div class="two-col" style="margin-top:.5rem">
+      <div>
+        <h4 style="color:var(--accent2); margin-bottom:5px;">Boundaries & Floor</h4>
+        <ul class="checklist">
+          <li><strong>Lateral (Anterior) Boundary:</strong> Tendons of <strong>Abductor Pollicis Longus (APL)</strong> and <strong>Extensor Pollicis Brevis (EPB)</strong>.</li>
+          <li><strong>Medial (Posterior) Boundary:</strong> Tendon of <strong>Extensor Pollicis Longus (EPL)</strong>.</li>
+          <li><strong>Floor:</strong> Formed by the <strong>scaphoid</strong> and <strong>trapezium</strong> bones.</li>
+          <li><strong>Roof:</strong> Skin, superficial fascia containing the cephalic vein and superficial branch of the radial nerve.</li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="color:var(--accent2); margin-bottom:5px;">Contents & Clinical Significance</h4>
+        <ul class="checklist">
+          <li><strong>Radial Artery:</strong> Runs along the floor of the snuff box, passing deep to the tendons. Radial pulse can be felt here.</li>
+          <li><strong>Cephalic Vein:</strong> Originates in the roof, crossing the roof from medial to lateral.</li>
+          <li><strong>Superficial Radial Nerve:</strong> Crosses the roof to supply sensory innervation to the lateral 3½ digits on the dorsum of the hand.</li>
+          <li><strong>Scaphoid Fracture:</strong> Tenderness elicited by deep pressure in the snuff box is a key diagnostic indicator of a scaphoid fracture.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="mnemonic-box" style="margin-top:10px">
+      <div class="mbox-title">Snuff Box Boundaries Mnemonic</div>
+      <div class="mnemonic-highlight">"A Paul McCartney (APL) playing EPB (EPB) on the lateral side, and EPL (EPL) on the medial side" — lateral is APL+EPB (sandwich), medial is EPL.</div>
+    </div>
+    <div class="diagram-placeholder" style="border:none; padding:0; background:transparent; text-align:center; margin-top:10px;">
+      <img class="wiki-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/Gray1233.png" alt="Anatomical Snuff Box Anatomy" style="max-width:320px; border-radius:8px; display:block; margin:0 auto;">
+      <div class="wiki-caption" style="font-size:11px;color:var(--text2);text-align:center;margin-top:4px;">Radial artery crossing the anatomical snuffbox — Gray's Anatomy</div>
+    </div>
+  </div>
 </div>
 
 <div class="divider"></div>
@@ -392,7 +426,7 @@ details[open]>summary::before{transform:rotate(90deg);}
   </div>
 
   <div style="text-align:center; margin: 24px 0;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Gray326.png" alt="Shoulder Joint Anatomy" style="max-width: 100%; border-radius: 8px;">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Gray326.png" alt="Shoulder Joint Anatomy" style="max-width: 100%; border-radius: 8px;">
   </div>
 
   <!-- Shoulder / Glenohumeral -->
@@ -429,6 +463,23 @@ details[open]>summary::before{transform:rotate(90deg);}
     <div class="clinical-box" style="margin-top:.75rem">
       <div class="cbox-title">Shoulder Dislocation</div>
       <p>Anterior dislocation (95%) — arm in abduction + external rotation. Axillary nerve commonly injured → loss of sensation over "regimental badge" area (lateral arm) + deltoid weakness. Confirm with AP + axillary X-ray.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Elevation of the Arm & Scapulohumeral Rhythm <span class="badge badge-fav">⭐ PYQ 2016, 2022, 2023</span></div>
+    <p>Active abduction and elevation of the arm from 0° to 180° is a coordinated process involving multiple muscle groups and joints, structured in three distinct phases:</p>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Phase</th><th>Range of Motion</th><th>Prime Movers (Muscles)</th><th>Mechanism & Nerve Supply</th></tr>
+        <tr><td>Phase 1</td><td>0° to 15°</td><td><strong>Supraspinatus</strong></td><td>Initiates abduction. Suprascapular nerve (C5, C6). Deltoid cannot initiate because its line of pull is parallel to the humerus.</td></tr>
+        <tr><td>Phase 2</td><td>15° to 90°</td><td><strong>Deltoid</strong> (aided by Supraspinatus)</td><td>Abduction up to horizontal. Axillary nerve (C5, C6). Requires stabilization of the humeral head by rotator cuff.</td></tr>
+        <tr><td>Phase 3</td><td>90° to 180°</td><td><strong>Serratus Anterior</strong> & <strong>Trapezius</strong></td><td>Scapular rotation. The scapula is rotated so that the glenoid cavity faces upwards. Serratus anterior (Long thoracic nerve, C5-C7) and Trapezius (Spinal accessory nerve, CN XI) act as a force couple.</td></tr>
+      </table>
+    </div>
+    <div class="clinical-box">
+      <div class="cbox-title">Scapulohumeral Rhythm (2:1 Ratio)</div>
+      <p>During the full range of arm elevation, movement occurs at both the glenohumeral (shoulder) joint and the scapulothoracic joint in a <strong>2:1 ratio</strong>. For every 3° of total arm elevation, <strong>2° occurs at the glenohumeral joint</strong> and <strong>1° occurs via scapular rotation</strong> (e.g., out of 180° total, 120° is glenohumeral and 60° is scapular rotation).</p>
     </div>
   </div>
 
@@ -476,9 +527,33 @@ details[open]>summary::before{transform:rotate(90deg);}
     <ul class="checklist">
       <li>Saddle (sellar) joint — only true saddle joint in upper limb</li>
       <li>Between trapezium and base of 1st metacarpal</li>
-      <li>Allows: flexion, extension, abduction, adduction, and <strong>opposition</strong> (unique to humans/primates)</li>
       <li>Bennett's fracture: intra-articular fracture-dislocation of 1st metacarpal base</li>
     </ul>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Pronation & Supination Mechanism <span class="badge badge-pyq">PYQ 2018</span></div>
+    <p>Pronation and supination are rotatory movements of the forearm where the radius rotates around the relatively fixed ulna.</p>
+    <div class="two-col">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">Joints & Axis of Movement:</p>
+        <ul class="checklist">
+          <li><strong>Joints involved:</strong> Superior (proximal) and inferior (distal) radioulnar joints (pivot joints), along with middle radioulnar joint (interosseous membrane).</li>
+          <li><strong>Axis of rotation:</strong> An oblique axis passing from the center of the head of the radius proximally to the center of the head of the ulna distally.</li>
+          <li><strong>Movement:</strong> The head of the radius rotates within the osseofibrous ring formed by the radial notch of the ulna and the annular ligament. Distally, the radius swings around the ulnar head, crossing it anteriorly in pronation.</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px">Muscles Involved:</p>
+        <div class="table-wrap" style="margin:0">
+          <table>
+            <tr><th>Movement</th><th>Prime Movers</th><th>Nerve Supply</th><th>Key Detail</th></tr>
+            <tr><td><strong>Supination</strong></td><td>1. Biceps Brachii<br>2. Supinator</td><td>1. Musculocutaneous<br>2. Radial (PIN)</td><td>Biceps is the most powerful supinator, especially when elbow is flexed at 90°. Supinator works in slow, unresisted movements.</td></tr>
+            <tr><td><strong>Pronation</strong></td><td>1. Pronator Quadratus<br>2. Pronator Teres</td><td>1. Median (AIN)<br>2. Median</td><td>Pronator quadratus is the prime mover (initiator, deep). Pronator teres aids in rapid or resisted pronation.</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -494,7 +569,7 @@ details[open]>summary::before{transform:rotate(90deg);}
   <div class="keypoint">Brachial plexus = C5, C6, C7, C8, T1 ventral rami. Mnemonic for levels: <strong>RTTCB = "Randy Travis Drinks Cold Beer"</strong> (Roots → Trunks → Divisions → Cords → Branches).</div>
 
   <div class="wiki-img">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Brachial_plexus_color.svg/600px-Brachial_plexus_color.svg.png" alt="Brachial Plexus Diagram — Wikimedia Commons" loading="lazy">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Brachial_plexus_color.svg" style="max-width: 100%; border-radius: 8px;" alt="Brachial Plexus Diagram — Wikimedia Commons" loading="lazy">
     <div class="wiki-caption">Brachial Plexus — Wikimedia Commons (CC BY-SA)</div>
   </div>
 
@@ -664,7 +739,15 @@ details[open]>summary::before{transform:rotate(90deg);}
 
   <!-- Ulnar -->
   <div class="injury-card ulnar">
-    <div class="injury-name">Ulnar Nerve (C7, C8, T1) — Medial Cord</div>
+    <div class="injury-name">Ulnar Nerve (C7, C8, T1) — Medial Cord <span class="badge badge-pyq">PYQ 2013</span></div>
+    <div class="clinical-box" style="background:rgba(192,132,252,.04); border-color:var(--purple); margin:8px 0; padding:8px 12px;">
+      <div class="cbox-title" style="color:var(--purple); font-size:9px;">Anatomical Course & Relations</div>
+      <p style="font-size:11.5px; line-height:1.5;"><strong>Origin:</strong> Continuation of the medial cord (C7, C8, T1).<br>
+      <strong>Axilla & Arm:</strong> Descends medial to the axillary and brachial arteries. At mid-arm, it pierces the medial intermuscular septum to enter the posterior compartment.<br>
+      <strong>Elbow:</strong> Passes behind the <strong>medial epicondyle</strong> (resting in the cubital tunnel) — this is the most common site of injury/entrapment.<br>
+      <strong>Forearm:</strong> Enters the anterior compartment by passing between the two heads of Flexor Carpi Ulnaris (FCU). Descends deep to FCU, running medial to the ulnar artery.<br>
+      <strong>Wrist & Hand:</strong> Enters the hand superficial to the flexor retinaculum by passing through <strong>Guyon's canal</strong> (between pisiform and hook of hamate). Terminates by dividing into superficial (sensory) and deep (motor) branches.</p>
+    </div>
     <div class="two-col" style="margin-top:.5rem">
       <div>
         <p style="font-size:12px;font-weight:600;color:var(--purple);margin-bottom:4px">High injury — at elbow (medial epicondyle / cubital tunnel):</p>
@@ -695,7 +778,15 @@ details[open]>summary::before{transform:rotate(90deg);}
 
   <!-- Axillary -->
   <div class="injury-card axillary">
-    <div class="injury-name">Axillary Nerve (C5, C6) — Posterior Cord</div>
+    <div class="injury-name">Axillary Nerve (C5, C6) — Posterior Cord <span class="badge badge-pyq">PYQ 2012 supple</span></div>
+    <div class="clinical-box" style="background:rgba(192,132,252,.04); border-color:var(--purple); margin:8px 0; padding:8px 12px;">
+      <div class="cbox-title" style="color:var(--purple); font-size:9px;">Anatomical Course & Relations</div>
+      <p style="font-size:11.5px; line-height:1.5;"><strong>Origin:</strong> Branch of the posterior cord (C5, C6).<br>
+      <strong>Axilla:</strong> Lies posterior to the axillary artery and anterior to the subscapularis muscle.<br>
+      <strong>Quadrangular Space:</strong> Passes backwards through the <strong>quadrangular space</strong> along with the posterior circumflex humeral artery.<br>
+      <strong>Surgical Neck:</strong> Winds around the <strong>surgical neck of the humerus</strong>, lying deep to the deltoid muscle.<br>
+      <strong>Termination:</strong> Divides into an anterior branch (supplies deltoid) and a posterior branch (supplies teres minor and becomes the superior lateral cutaneous nerve of arm supplying the "regimental badge" area).</p>
+    </div>
     <ul class="checklist" style="margin-top:.5rem">
       <li><strong>Injury:</strong> Surgical neck of humerus fracture, anterior shoulder dislocation</li>
       <li><strong>Muscles:</strong> Deltoid (abduction lost) + Teres minor (lateral rotation)</li>
@@ -838,6 +929,32 @@ details[open]>summary::before{transform:rotate(90deg);}
       </div>
     </div>
   </div>
+
+  <div class="card">
+    <div class="card-title">Lumbrical Muscles of the Hand <span class="badge badge-pyq">PYQ 2024</span></div>
+    <p>The lumbricals are four small, worm-like (intrinsic) muscles of the hand that play a critical role in finger coordination.</p>
+    <div class="two-col">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">Type & Attachments:</p>
+        <ul class="checklist">
+          <li><strong>Type:</strong> 1st and 2nd are unipennate (lateral two); 3rd and 4th are bipennate (medial two).</li>
+          <li><strong>Origin:</strong> Tendons of the <strong>Flexor Digitorum Profundus (FDP)</strong>.</li>
+          <li><strong>Insertion:</strong> Extensor expansions of digits 2 to 5 (on the radial/lateral side of each digit).</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px">Nerve Supply & Action:</p>
+        <ul class="checklist">
+          <li><strong>Dual Nerve Supply:</strong>
+            <br>- Lumbricals 1 & 2: **Median nerve** (C8, T1).
+            <br>- Lumbricals 3 & 4: Deep branch of **Ulnar nerve** (C8, T1).
+          </li>
+          <li><strong>Actions:</strong> **Flexion at the metacarpophalangeal (MCP) joints** and **extension at the interphalangeal (IP) joints** of the fingers. This is the **"writing position"** or "intrinsic plus" position.</li>
+          <li><strong>Clinical:</strong> Paralysis of these muscles leads to "claw hand" (unopposed long extensors hyperextend MCPJ, unopposed long flexors flex IPJ).</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="divider"></div>
@@ -846,13 +963,69 @@ details[open]>summary::before{transform:rotate(90deg);}
 <div id="s6">
   <div class="section-header">
     <div class="section-num">06</div>
-    <h2><em>Axilla</em></h2>
+    <h2>Pectoral Region & <em>Axilla</em></h2>
+  </div>
+
+  <!-- Mammary Gland -->
+  <div class="card">
+    <div class="card-title">Mammary Gland (Breast) <span class="badge badge-pyq">PYQ Frequent</span></div>
+    <div class="two-col">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">Anatomy & Blood Supply:</p>
+        <ul class="checklist">
+          <li><strong>Situation:</strong> Superficial fascia of pectoral region. Base extends from 2nd to 6th rib.</li>
+          <li><strong>Structure:</strong> 15-20 lactiferous lobes drained by lactiferous ducts, suspended by <strong>Suspensory ligaments of Cooper</strong>.</li>
+          <li><strong>Arterial Supply:</strong> Internal thoracic (mammary) artery (perforating branches), Lateral thoracic artery, and Thoracoacromial artery.</li>
+          <li><strong>Venous Drainage:</strong> Axillary vein and internal thoracic vein. Internal thoracic veins communicate with vertebral venous plexus (route for bony metastases).</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px">Lymphatic Drainage & Clinical:</p>
+        <ul class="checklist">
+          <li><strong>Lymphatics (Crucial):</strong> 75% drains laterally into <strong>Axillary nodes</strong> (mostly pectoral group). 20% drains medially into parasternal (internal mammary) nodes.</li>
+          <li><strong>Peau d'orange:</strong> Blockage of superficial lymphatics by cancer cells causes edema, while tethering by hair follicles creates an orange-peel dimpled appearance.</li>
+          <li><strong>Retraction of nipple:</strong> Infiltration and fibrosis of the lactiferous ducts.</li>
+          <li><strong>Malignancy:</strong> Upper outer quadrant (including axillary tail of Spence) is the most common and dangerous site for breast cancer.</li>
+        </ul>
+      </div>
+    </div>
   </div>
 
   <div class="keypoint">Axilla = pyramidal space between arm and chest wall. Apex (narrow) = between clavicle, 1st rib, scapula. Base = skin + fascia of armpit.</div>
 
   <div style="text-align:center; margin: 24px 0;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Gray523.png" alt="Axillary Artery and Space" style="max-width: 100%; border-radius: 8px;">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Gray523.png" alt="Axillary Artery and Space" style="max-width: 100%; border-radius: 8px;">
+  </div>
+
+  <div class="card">
+    <div class="card-title">Clavipectoral Fascia <span class="badge badge-pyq">PYQ 2010, 2013 supple</span></div>
+    <p>A strong fascial sheet in the pectoral region, situated deep to the clavicular head of the pectoralis major, filling the gap between the clavicle and the pectoralis minor.</p>
+    <div class="two-col">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">Attachments:</p>
+        <ul class="checklist">
+          <li><strong>Superiorly:</strong> Splits to enclose the Subclavius muscle; attached to the clavicle.</li>
+          <li><strong>Inferiorly:</strong> Splits to enclose the Pectoralis Minor muscle; continues downwards as the suspensory ligament of the axilla (fuses with the axillary fascia to keep the armpit dome concave).</li>
+          <li><strong>Medially:</strong> Attached to the first rib and external intercostal membrane.</li>
+          <li><strong>Laterally:</strong> Attached to the coracoid process.</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px">Structures Piercing the Fascia:</p>
+        <p>Four structures pierce this fascia to enter or leave the axilla:</p>
+        <ul class="checklist">
+          <li><strong>Cephalic Vein:</strong> Passes inwards to drain into the axillary vein.</li>
+          <li><strong>Thoracoacromial Artery:</strong> A branch of the axillary artery (passing outwards).</li>
+          <li><strong>Lateral Pectoral Nerve:</strong> Passing outwards to supply the pectoralis major.</li>
+          <li><strong>Lymphatic vessels:</strong> Connecting the infraclavicular lymph nodes with apical axillary lymph nodes.</li>
+        </ul>
+        <div class="mnemonic-box" style="margin:6px 0">
+          <div class="mbox-title">Mnemonic</div>
+          <div class="mnemonic-highlight">"Call Life Saving Technicians"</div>
+          <p style="font-size:11px;color:var(--text2);margin-top:2px"><strong>C</strong>ephalic vein · <strong>L</strong>ateral pectoral nerve · <strong>S</strong>uspensory lymphatics · <strong>T</strong>horacoacromial artery</p>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="card">
@@ -936,7 +1109,7 @@ details[open]>summary::before{transform:rotate(90deg);}
   <div class="keypoint">Cubital fossa = triangular hollow in front of elbow. Contents (medial to lateral): <strong>T-BAN</strong> — Tendon of biceps, Brachial Artery, Median nerve, Anterior interosseous nerve (then radial nerve outside fossa).</div>
 
   <div style="text-align:center; margin: 24px 0;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Gray574.png" alt="Cubital Fossa Diagram" style="max-width: 100%; border-radius: 8px;">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Gray574.png" alt="Cubital Fossa Diagram" style="max-width: 100%; border-radius: 8px;">
   </div>
 
   <div class="card">
@@ -1038,15 +1211,43 @@ details[open]>summary::before{transform:rotate(90deg);}
         </ul>
       </div>
     </div>
-    <div class="diagram-placeholder">
-      <div class="diagram-num">DIAGRAM 02</div>
-      <div class="diagram-instruction">Draw the superficial veins of the upper limb (anterior view): dorsal venous arch → cephalic vein (lateral) + basilic vein (medial), median cubital vein at antecubital fossa connecting them, cephalic entering deltopectoral groove, basilic piercing deep fascia in mid-arm. Label each vein clearly.</div>
-      <div class="diagram-size">Full width, landscape preferred for arm anatomy</div>
+    <div class="wiki-img">
+      <div style="color:var(--accent);font-family:'JetBrains Mono',monospace;font-size:11px;margin-bottom:8px;">DIAGRAM 02 — Superficial Veins</div>
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Gray573.png" alt="Superficial Veins of Upper Limb" loading="lazy" style="border-radius: 8px;">
+      <div class="wiki-caption" style="font-size:11px;color:var(--text2);text-align:center;margin-top:8px;">Superficial veins of the upper limb — Gray's Anatomy</div>
     </div>
+      <div class="diagram-size">Full width, landscape preferred for arm anatomy</div>
   </div>
 </div>
 
 <div class="divider"></div>
+
+<div class="divider"></div>
+
+<!-- ════════════════════════════════ S9: THE HAND & PALMAR SPACES ════════════════════════════════ -->
+<div id="s9-hand">
+  <div class="section-header">
+    <div class="section-num">08B</div>
+    <h2>The Hand & <em>Palmar Spaces</em></h2>
+  </div>
+
+  <div class="keypoint">Fascial spaces of the hand are clinically vital because they determine the spread of deep infections. A "whitlow" or pulp space infection is a surgical emergency.</div>
+
+  <div class="card">
+    <div class="card-title">Palmar Spaces & Infections <span class="badge badge-pyq">PYQ</span></div>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Space</th><th>Location & Boundaries</th><th>Clinical Significance</th></tr>
+        <tr><td><strong>Midpalmar Space</strong></td><td>Deep to central palmar aponeurosis. Medial to intermediate palmar septum. Contains flexor tendons of 3rd, 4th, 5th fingers.</td><td>Infections present as loss of palmar concavity and swelling of the dorsum of the hand (due to dorsal lymphatic drainage).</td></tr>
+        <tr><td><strong>Thenar Space</strong></td><td>Deep to radial side of palm. Lateral to intermediate palmar septum. Contains 1st lumbrical and tendon of flexor pollicis longus.</td><td>Infection causes massive swelling of the web space between the thumb and index finger. Thumb is held abducted.</td></tr>
+        <tr><td><strong>Pulp Space</strong></td><td>Closed fascial compartments at the tips of the fingers, filled with fat and intersected by fibrous septa.</td><td><strong>Whitlow (Felon):</strong> Infection here builds immense pressure rapidly, compressing blood vessels. Can cause avascular necrosis of the distal phalanx if not drained surgically (lateral incision).</td></tr>
+      </table>
+    </div>
+    <div class="clinical-box" style="margin-top:10px">
+      <div class="cbox-title">Kanavel's Signs (Tenosynovitis)</div>
+      <p>Infection of the flexor tendon sheaths (suppurative tenosynovitis) presents with 4 cardinal signs: 1) Flexed resting posture, 2) Fusiform swelling of the digit, 3) Tenderness over the flexor sheath, 4) Severe pain on passive extension.</p>
+    </div>
+  </div>
 
 <!-- ════════════════════════════════ S9: DERMATOMES ════════════════════════════════ -->
 <div id="s9">
@@ -1069,9 +1270,11 @@ details[open]>summary::before{transform:rotate(90deg);}
         <tr><td>T2</td><td>Medial arm + axilla floor</td><td>Intercostobrachial nerve territory</td></tr>
       </table>
     </div>
-    <div class="diagram-placeholder">
-      <div class="diagram-num">DIAGRAM 03</div>
-      <div class="diagram-instruction">Draw the dermatome map of the upper limb (anterior and posterior views). Colour-code each dermatomal level C4–T2. Show the distinct strip pattern: C6 on thumb/lateral, C7 on middle, C8 on ring/little, T1 medial forearm, T2 medial arm. Include the "axial line" gaps.</div>
+    <div class="wiki-img">
+      <div style="color:var(--accent);font-family:'JetBrains Mono',monospace;font-size:11px;margin-bottom:8px;">DIAGRAM 03 — Dermatomes</div>
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Gray812and814.svg" alt="Dermatomes of Upper Limb" loading="lazy" style="border-radius: 8px;">
+      <div class="wiki-caption" style="font-size:11px;color:var(--text2);text-align:center;margin-top:8px;">Dermatome map of the upper limb — Gray's Anatomy</div>
+    </div>
       <div class="diagram-size">Two-panel diagram (anterior + posterior), full width</div>
     </div>
     <div class="mnemonic-box" style="margin-top:.5rem">
@@ -1315,6 +1518,61 @@ details[open]>summary::before{transform:rotate(90deg);}
         </ul>
         <p><strong>Function as a unit:</strong> Stabilise glenohumeral joint by compressing humeral head into glenoid (like a concave socket tightener). The supraspinatus prevents downward subluxation when arm at side; deltoid handles active abduction above 15°.</p>
         <p><em>Painful arc test: pain 60–120° of abduction = supraspinatus impingement under coracoacromial arch. Empty can test specifically tests supraspinatus integrity.</em></p>
+      </div>
+    </details>
+
+    <div class="viva-title-bar" style="margin-top:1.5rem;">Clinical "Explain Why" Questions</div>
+    
+    <details>
+      <summary><span class="viva-q">Explain why infection of the pulp space of the little finger spreads to the palm, whereas that of the index finger remains localized.</span><span class="viva-year">PYQ 2011 supple</span></summary>
+      <div class="viva-ans">
+        <p>This depends on the anatomy of the synovial sheaths of the flexor digitorum tendons:</p>
+        <ul>
+          <li><strong>Little finger:</strong> The digital synovial sheath surrounding the flexor tendons of the little finger is **continuous with the ulnar bursa** (the common synovial sheath in the palm). Therefore, infection of the little finger pulp space tracks proximally into the palm, threatening the ulnar bursa.</li>
+          <li><strong>Index finger (and middle/ring fingers):</strong> The digital synovial sheaths of these fingers are closed, isolated sacs terminating at the level of the metacarpal heads. Hence, infection remains localized in the finger and does not spread directly into the palmar spaces.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary><span class="viva-q">Explain why the basilic vein is preferred over the cephalic vein in cardiac catheterization and PICC lines.</span><span class="viva-year">PYQ 2018, 2020</span></summary>
+      <div class="viva-ans">
+        <p>The **basilic vein** is anatomically superior for cardiac catheterization for two main reasons:</p>
+        <ul>
+          <li><strong>Straight Course:</strong> The basilic vein ascends medially and runs in a direct, straight line to continue as the axillary vein. In contrast, the cephalic vein ascends laterally and makes a sharp, nearly right-angled bend in the deltopectoral groove to pierce the clavipectoral fascia and enter the axillary vein, making catheter advancement difficult.</li>
+          <li><strong>Caliber & Wasting:</strong> The basilic vein is larger, thicker-walled, and less prone to spasm than the cephalic vein.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary><span class="viva-q">Explain why enlargement of the central group of axillary lymph nodes causes pain on the medial side of the upper arm.</span><span class="viva-year">PYQ 2023</span></summary>
+      <div class="viva-ans">
+        <p>The **intercostobrachial nerve** (lateral cutaneous branch of T2) traverses the axillary cavity, passing directly through the **central group of axillary lymph nodes**. Enlargement of these nodes (due to breast cancer metastasis or infection) compresses the nerve, causing referred pain and paresthesia along its cutaneous territory — the medial aspect of the upper arm and axilla floor.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary><span class="viva-q">Explain why the first metacarpal is regarded as a modified phalanx.</span><span class="viva-year">PYQ 2011 supple</span></summary>
+      <div class="viva-ans">
+        <p>The first metacarpal behaves like a phalanx in its **ossification pattern**:</p>
+        <ul>
+          <li>Typical metacarpals (2nd to 5th) have their primary center in the shaft and their secondary center at their **distal end (head)**.</li>
+          <li>The first metacarpal (and all phalanges) has its primary center in the shaft and its secondary center at its **proximal end (base)**.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary><span class="viva-q">Explain why the upper end of the humerus is considered a compound epiphysis.</span><span class="viva-year">PYQ 2010</span></summary>
+      <div class="viva-ans">
+        <p>The upper end of the humerus is a **compound epiphysis** because it is formed by the fusion of three separate secondary centers before uniting with the shaft:</p>
+        <ul>
+          <li>Center for the **head of humerus** (appears at 1 year).</li>
+          <li>Center for the **greater tubercle** (appears at 3 years).</li>
+          <li>Center for the **lesser tubercle** (appears at 5 years).</li>
+        </ul>
+        <p>These three centers fuse together at 6 years to form a single, composite bony cap (compound epiphysis), which eventually fuses with the humerus shaft at 20 years.</p>
       </div>
     </details>
   </div>

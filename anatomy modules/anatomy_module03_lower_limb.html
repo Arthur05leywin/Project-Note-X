@@ -16,7 +16,7 @@
 }
 *{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
-body{background:var(--bg);color:var(--text);font-family:'Sora',sans-serif;font-size:15px;line-height:1.7;overflow-x:hidden;}
+body{ overflow-wrap: break-word; word-break: break-word; background:var(--bg);color:var(--text);font-family:'Sora',sans-serif;font-size:15px;line-height:1.7;overflow-x:hidden;}
 
 /* HERO */
 .hero{background:linear-gradient(135deg,#060810 0%,#0e1118 55%,#080c14 100%);border-bottom:1px solid var(--border2);padding:3rem 1.5rem 2.5rem;position:relative;overflow:hidden;}
@@ -28,14 +28,14 @@ body{background:var(--bg);color:var(--text);font-family:'Sora',sans-serif;font-s
 .hero h1{font-family:'Crimson Pro',serif;font-size:clamp(2rem,6vw,3.2rem);font-weight:600;color:var(--text);line-height:1.15;margin-bottom:.5rem;}
 .hero h1 span{color:var(--accent2);}
 .hero-sub{color:var(--text2);font-size:13px;font-family:'JetBrains Mono',monospace;letter-spacing:.5px;margin-bottom:1.5rem;}
-.hero-pills{display:flex;flex-wrap:wrap;gap:8px;}
+.hero-pills{display: block; position: relative;flex-wrap:wrap;gap:8px;}
 .pill{background:var(--surface2);border:1px solid var(--border);color:var(--text2);font-size:11px;padding:4px 10px;border-radius:20px;font-family:'JetBrains Mono',monospace;}
 
 /* TOC */
 .toc{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent);margin:1.5rem;padding:1.25rem;border-radius:6px;}
 .toc-title{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--accent);text-transform:uppercase;margin-bottom:1rem;}
 .toc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;}
-.toc a{color:var(--text2);text-decoration:none;font-size:13px;padding:4px 8px;border-radius:4px;transition:all .2s;display:flex;align-items:center;gap:6px;}
+.toc a{color:var(--text2);text-decoration:none;font-size:13px;padding:4px 8px;border-radius:4px;transition:all .2s;display: block; position: relative;align-items:center;gap:6px;}
 .toc a:hover{color:var(--accent2);background:rgba(212,120,74,.08);}
 .toc-num{color:var(--accent);font-family:'JetBrains Mono',monospace;font-size:11px;}
 
@@ -43,12 +43,12 @@ body{background:var(--bg);color:var(--text);font-family:'Sora',sans-serif;font-s
 .content{padding:0 1.5rem 3rem;}
 .progress-bar{height:3px;background:linear-gradient(to right,var(--accent),var(--accent2),var(--gold));border-radius:2px;margin-bottom:2rem;animation:load 1.5s ease forwards;}
 @keyframes load{from{width:0;}to{width:100%;}}
-.section-header{display:flex;align-items:center;gap:12px;margin:2.5rem 0 1.5rem;padding-bottom:.75rem;border-bottom:1px solid var(--border);}
-.section-num{background:var(--accent);color:#fff;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:6px;flex-shrink:0;}
+.section-header{display: block; position: relative;align-items:center;gap:12px;margin:2.5rem 0 1.5rem;padding-bottom:.75rem;border-bottom:1px solid var(--border);}
+.section-num{background:var(--accent);color:#fff;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;width:32px;height:32px;display: block; position: relative;align-items:center;justify-content:center;border-radius:6px;flex-shrink:0;}
 .section-header h2{font-family:'Crimson Pro',serif;font-size:clamp(1.3rem,4vw,1.8rem);font-weight:600;color:var(--text);}
 .section-header h2 em{color:var(--accent2);font-style:normal;}
 .divider{height:1px;background:var(--border);margin:2rem 0;}
-.two-col{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem;margin:1rem 0;}
+.two-col{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(280px, 100%),1fr));gap:1rem;margin:1rem 0;}
 
 /* BADGES */
 .badge{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-family:'JetBrains Mono',monospace;padding:2px 7px;border-radius:3px;vertical-align:middle;margin-left:4px;font-weight:600;letter-spacing:.5px;}
@@ -59,18 +59,18 @@ body{background:var(--bg);color:var(--text);font-family:'Sora',sans-serif;font-s
 
 /* CARD */
 .card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:1.25rem;margin-bottom:1rem;}
-.card-title{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:.75rem;display:flex;align-items:center;gap:8px;}
+.card-title{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:.75rem;display: block; position: relative;align-items:center;gap:8px;}
 .card-title::after{content:'';flex:1;height:1px;background:var(--border);}
 
 /* FLOWCHART */
 .flowchart{background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:1.25rem;margin:1rem 0;}
-.flow-title{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--accent2);margin-bottom:1rem;display:flex;align-items:center;gap:8px;}
+.flow-title{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--accent2);margin-bottom:1rem;display: block; position: relative;align-items:center;gap:8px;}
 .flow-title::before{content:'▶';font-size:8px;}
-.flow-v{display:flex;flex-direction:column;align-items:stretch;gap:0;}
+.flow-v{display: block; position: relative;flex-direction:column;align-items:stretch;gap:0;}
 .flow-step-label{font-size:12px;color:var(--text2);text-align:center;padding:4px 8px;font-family:'JetBrains Mono',monospace;}
 .flow-step-label strong{color:var(--accent2);}
 .flow-arrow{text-align:center;color:var(--accent);font-size:20px;line-height:1;margin:2px 0;}
-.flow-box{background:var(--surface3);border:1px solid var(--border2);border-radius:6px;padding:10px 14px;font-size:13px;width:100%;}
+.flow-box{ word-break: break-word; overflow-wrap: break-word; background:var(--surface3);border:1px solid var(--border2);border-radius:6px;padding:10px 14px;font-size:13px;width:100%;}
 .flow-box.accent{border-color:var(--accent);background:rgba(212,120,74,.1);color:var(--accent2);}
 .flow-box.gold{border-color:var(--gold);background:rgba(251,191,36,.08);color:var(--gold);}
 .flow-box.teal{border-color:var(--teal);background:rgba(52,211,153,.08);color:var(--teal);}
@@ -79,8 +79,8 @@ body{background:var(--bg);color:var(--text);font-family:'Sora',sans-serif;font-s
 .flow-box.green{border-color:var(--green);background:rgba(74,222,128,.08);color:var(--green);}
 .flow-box .lbl{font-size:10px;color:var(--text3);font-family:'JetBrains Mono',monospace;display:block;margin-bottom:2px;}
 .flow-box .sub{font-size:11px;color:var(--text2);display:block;margin-top:3px;}
-.flow-h{display:flex;flex-wrap:wrap;align-items:center;gap:6px;}
-.flow-h .flow-box{flex:1 1 auto;min-width:100px;text-align:center;}
+.flow-h{display: block; position: relative;flex-wrap:wrap;align-items:center;gap:6px;}
+.flow-h .flow-box{ word-break: break-word; overflow-wrap: break-word; flex:1 1 auto;min-width:100px;text-align:center;}
 .h-arrow{color:var(--accent);font-size:18px;flex-shrink:0;}
 
 /* TABLES */
@@ -92,27 +92,27 @@ tr:hover td{background:rgba(212,120,74,.04);}
 td:first-child{color:var(--accent2);font-weight:600;}
 
 /* SPECIAL BOXES */
-.clinical-box{background:rgba(52,211,153,.04);border:1px solid rgba(52,211,153,.22);border-left:4px solid var(--teal);border-radius:6px;padding:1rem 1.25rem;margin:1rem 0;}
-.cbox-title{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--teal);text-transform:uppercase;margin-bottom:.6rem;display:flex;align-items:center;gap:6px;}
+.clinical-box{ word-break: break-word; overflow-wrap: break-word; background:rgba(52,211,153,.04);border:1px solid rgba(52,211,153,.22);border-left:4px solid var(--teal);border-radius:6px;padding:1rem 1.25rem;margin:1rem 0;}
+.cbox-title{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--teal);text-transform:uppercase;margin-bottom:.6rem;display: block; position: relative;align-items:center;gap:6px;}
 .cbox-title::before{content:'🩺';}
 .mnemonic-box{background:rgba(251,191,36,.05);border:1px solid rgba(251,191,36,.25);border-left:4px solid var(--gold);border-radius:6px;padding:1rem 1.25rem;margin:1rem 0;}
-.mbox-title{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:.6rem;display:flex;align-items:center;gap:6px;}
+.mbox-title{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:.6rem;display: block; position: relative;align-items:center;gap:6px;}
 .mbox-title::before{content:'🧠';}
-.mnemonic-highlight{background:rgba(251,191,36,.1);border:1px dashed rgba(251,191,36,.3);border-radius:4px;padding:8px 12px;font-family:'Crimson Pro',serif;font-size:15px;font-weight:600;color:var(--gold);margin:6px 0;}
+.mnemonic-highlight{ word-break: break-word; overflow-wrap: break-word; background:rgba(251,191,36,.1);border:1px dashed rgba(251,191,36,.3);border-radius:4px;padding:8px 12px;font-family:'Crimson Pro',serif;font-size:15px;font-weight:600;color:var(--gold);margin:6px 0;}
 .eq-box{background:rgba(192,132,252,.05);border:1px solid rgba(192,132,252,.25);border-left:4px solid var(--purple);border-radius:6px;padding:1rem 1.25rem;margin:1rem 0;}
-.eq-title{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--purple);text-transform:uppercase;margin-bottom:.75rem;display:flex;align-items:center;gap:6px;}
+.eq-title{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--purple);text-transform:uppercase;margin-bottom:.75rem;display: block; position: relative;align-items:center;gap:6px;}
 .eq-title::before{content:'📝';}
 .eq-statement{background:var(--surface3);border-radius:4px;padding:8px 12px;font-family:'Crimson Pro',serif;font-size:15px;font-style:italic;color:var(--text);margin-bottom:10px;border-left:3px solid var(--purple);}
 .eq-answer ol{margin-left:18px;}
 .eq-answer li{margin-bottom:6px;font-size:13px;}
 .eq-answer li span{color:var(--purple);font-weight:600;}
-.keypoint{background:rgba(212,120,74,.07);border:1px solid rgba(212,120,74,.22);border-radius:6px;padding:10px 14px;margin:8px 0;font-size:13px;display:flex;gap:8px;align-items:flex-start;}
-.keypoint::before{content:'⚡';flex-shrink:0;}
-.warn-box{background:rgba(251,146,60,.07);border:1px solid rgba(251,146,60,.25);border-left:4px solid var(--orange);border-radius:6px;padding:10px 14px;margin:8px 0;font-size:13px;display:flex;gap:8px;}
-.warn-box::before{content:'⚠️';flex-shrink:0;}
+.keypoint { word-break: break-word; overflow-wrap: break-word; background:rgba(212,120,74,.07);border:1px solid rgba(212,120,74,.22);border-radius:6px;padding:10px 14px;margin:8px 0;font-size:13px;display: block; position: relative; padding-left: 34px;}
+.keypoint::before {content:'⚡';flex-shrink:0; position: absolute; left: 12px; top: 10px;}
+.warn-box { word-break: break-word; overflow-wrap: break-word; background:rgba(251,146,60,.07);border:1px solid rgba(251,146,60,.25);border-left:4px solid var(--orange);border-radius:6px;padding:10px 14px;margin:8px 0;font-size:13px;display: block; position: relative; padding-left: 34px;}
+.warn-box::before {content:'⚠️';flex-shrink:0; position: absolute; left: 10px; top: 10px;}
 ul.checklist{list-style:none;margin:.5rem 0;}
 ul.checklist li::before{content:'✦ ';color:var(--accent2);}
-ul.checklist li{margin-bottom:4px;font-size:13px;}
+ul.checklist li { margin-bottom: 14px; line-height: 1.6;font-size:13px;}
 .hl{color:var(--accent2);font-weight:600;}
 .hl-gold{color:var(--gold);font-weight:600;}
 .hl-teal{color:var(--teal);font-weight:600;}
@@ -130,17 +130,17 @@ ul.checklist li{margin-bottom:4px;font-size:13px;}
 
 /* VIVA */
 .viva-section{margin:1.5rem 0;}
-.viva-title-bar{background:rgba(212,120,74,.1);border:1px solid rgba(212,120,74,.28);border-radius:6px 6px 0 0;padding:10px 14px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--accent2);text-transform:uppercase;display:flex;align-items:center;gap:8px;}
+.viva-title-bar{background:rgba(212,120,74,.1);border:1px solid rgba(212,120,74,.28);border-radius:6px 6px 0 0;padding:10px 14px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--accent2);text-transform:uppercase;display: block; position: relative;align-items:center;gap:8px;}
 .viva-title-bar::before{content:'💬';font-size:14px;}
 details{border:1px solid var(--border);border-top:none;overflow:hidden;}
 details:last-child{border-radius:0 0 6px 6px;}
-summary{padding:10px 14px;cursor:pointer;font-size:13px;color:var(--text);background:var(--surface);list-style:none;display:flex;align-items:flex-start;gap:8px;user-select:none;transition:background .2s;}
+summary{padding:10px 14px;cursor:pointer;font-size:13px;color:var(--text);background:var(--surface);list-style:none;display: block; position: relative;align-items:flex-start;gap:8px;user-select:none;transition:background .2s;}
 summary:hover{background:var(--surface2);}
 summary::before{content:'▶';color:var(--accent);font-size:10px;margin-top:3px;flex-shrink:0;transition:transform .2s;}
 details[open]>summary::before{transform:rotate(90deg);}
 .viva-q{font-weight:600;flex:1;}
 .viva-year{color:var(--teal);font-family:'JetBrains Mono',monospace;font-size:11px;flex-shrink:0;}
-.viva-ans{padding:12px 16px 14px;background:var(--surface2);font-size:13px;line-height:1.75;border-top:1px solid var(--border);}
+.viva-ans{ word-break: break-word; overflow-wrap: break-word; padding:12px 16px 14px;background:var(--surface2);font-size:13px;line-height:1.75;border-top:1px solid var(--border);}
 .viva-ans p{margin-bottom:6px;}
 .viva-ans ul{margin:6px 0 6px 16px;}
 .viva-ans li{margin-bottom:4px;}
@@ -149,7 +149,7 @@ details[open]>summary::before{transform:rotate(90deg);}
 
 /* FOOTER + SCROLL */
 .footer{background:var(--surface);border-top:1px solid var(--border);text-align:center;padding:2rem 1.5rem;color:var(--text3);font-size:12px;font-family:'JetBrains Mono',monospace;}
-.top-btn{position:fixed;bottom:20px;right:20px;background:var(--accent);color:#fff;border:none;border-radius:50%;width:40px;height:40px;font-size:16px;cursor:pointer;box-shadow:0 4px 15px rgba(212,120,74,.4);z-index:100;display:flex;align-items:center;justify-content:center;font-weight:700;}
+.top-btn{position:fixed;bottom:20px;right:20px;background:var(--accent);color:#fff;border:none;border-radius:50%;width:40px;height:40px;font-size:16px;cursor:pointer;box-shadow:0 4px 15px rgba(212,120,74,.4);z-index:100;display: block; position: relative;align-items:center;justify-content:center;font-weight:700;}
 .top-btn:hover{transform:translateY(-2px);}
 @keyframes fadeIn{from{opacity:0;transform:translateY(-4px);}to{opacity:1;transform:translateY(0);}}
 
@@ -194,6 +194,7 @@ details[open]>summary::before{transform:rotate(90deg);}
     <a href="#s3"><span class="toc-num">03</span> Knee Joint</a>
     <a href="#s4"><span class="toc-num">04</span> Muscles — Thigh</a>
     <a href="#s5"><span class="toc-num">05</span> Muscles — Leg & Gluteal</a>
+    <a href="#s5b"><span class="toc-num">5B</span> Arches & Foot Movements</a>
     <a href="#s6"><span class="toc-num">06</span> Femoral Triangle</a>
     <a href="#s7"><span class="toc-num">07</span> Adductor Canal & Popliteal Fossa</a>
     <a href="#s8"><span class="toc-num">08</span> Nerves of Lower Limb</a>
@@ -244,7 +245,7 @@ details[open]>summary::before{transform:rotate(90deg);}
   <!-- Femur diagram -->
   <div style="text-align: center; margin: 1rem 0;">
     <div class="diagram-num">Diagram 01 — Femur (Anterior View)</div>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Femur_-_anterior_view.png/300px-Femur_-_anterior_view.png" alt="Femur Anterior View" style="max-width:100%; border-radius:8px;">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Femur_-_anterior_view.png" alt="Femur Anterior View" style="max-width:100%; border-radius:8px;">
   </div>
 </div>
 
@@ -311,7 +312,7 @@ details[open]>summary::before{transform:rotate(90deg);}
   <!-- Hip joint diagram -->
   <div style="text-align: center; margin: 1rem 0;">
     <div class="diagram-num">Diagram 02 — Hip Joint (Coronal Section)</div>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Hip_joint_anatomy.png/300px-Hip_joint_anatomy.png" alt="Hip Joint Anatomy" style="max-width:100%; border-radius:8px;">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Gray343.png" alt="Hip Joint Anatomy" style="max-width:100%; border-radius:8px;">
   </div>
 </div>
 
@@ -382,7 +383,30 @@ details[open]>summary::before{transform:rotate(90deg);}
   <!-- Knee diagram -->
   <div style="text-align: center; margin: 1rem 0;">
     <div class="diagram-num">Diagram 03 — Knee Joint (Anterior View, Flexed)</div>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Knee_diagram.svg/300px-Knee_diagram.svg.png" alt="Knee Joint Diagram" style="max-width:100%; border-radius:8px;">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Gray348.png" alt="Knee Joint Diagram" style="max-width:100%; border-radius:8px;">
+  </div>
+
+  <div class="card">
+    <div class="card-title">Ankle Joint & Supporting Ligaments <span class="badge badge-pyq">PYQ 2011, 2012 supple, 2013 supple, 2018</span></div>
+    <p>The ankle joint (talocrural joint) is a hinge-type synovial joint that allows dorsiflexion and plantarflexion of the foot. It is stabilized by medial and lateral ligaments.</p>
+    <div class="two-col">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">Deltoid (Medial) Ligament:</p>
+        <ul class="checklist">
+          <li>Extremely strong, triangular-shaped ligament on the medial side of the ankle joint.</li>
+          <li><strong>Attachments:</strong> Apex attaches to the medial malleolus of the tibia. Base attaches to the navicular bone anteriorly, the talus (neck and body), and the sustentaculum tali of the calcaneus inferiorly.</li>
+          <li><strong>Function:</strong> Prevents over-eversion of the foot and stabilizes the medial side of the joint against displacement. Almost never tears; instead, strong eversion force causes avulsion of the medial malleolus (Pott's fracture).</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px">Spring (Plantar Calcaneonavicular) Ligament:</p>
+        <ul class="checklist">
+          <li>A thick, fibroelastic band that connects the sustentaculum tali of the calcaneus to the plantar surface of the navicular bone.</li>
+          <li><strong>Function:</strong> Supports the head of the talus, forming the articular socket for the talocalcaneonavicular joint. It is the key passive supporter of the <strong>medial longitudinal arch</strong> of the foot.</li>
+          <li><strong>Clinical:</strong> Laxity or rupture of this ligament causes the head of the talus to drop downward and medially, resulting in flat foot deformity (<strong>pes planus</strong>).</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -473,6 +497,32 @@ details[open]>summary::before{transform:rotate(90deg);}
   </div>
 
   <div class="card">
+    <div class="card-title">Popliteus Muscle Details <span class="badge badge-pyq">PYQ 2010, 2011 supple</span></div>
+    <p>A thin, flat, triangular muscle located deep in the popliteal fossa, forming the lower part of its floor.</p>
+    <div class="two-col">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">Attachments:</p>
+        <ul class="checklist">
+          <li><strong>Origin:</strong> A strong tendon from the **lateral condyle of the femur** (intracapsular but extra-synovial) and the posterior horn of the lateral meniscus.</li>
+          <li><strong>Insertion:</strong> Triangular area on the posterior surface of the tibia, above the soleal line.</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px">Actions & Nerve Supply:</p>
+        <ul class="checklist">
+          <li><strong>Nerve Supply:</strong> Tibial nerve (L4, L5, S1).</li>
+          <li><strong>Unlocking of the Knee (Prime Mover):</strong>
+            <br>- In weight-bearing (closed-chain, foot on ground): rotates the femur laterally on the fixed tibia.
+            <br>- In non-weight-bearing (open-chain, foot free): rotates the tibia medially on the femur.
+            <br>- Releasing the locked "screw-home" mechanism allows the knee to flex.
+          </li>
+          <li><strong>Secondary Actions:</strong> Weak flexion of the knee; pulls the lateral meniscus posteriorward during flexion to prevent entrapment.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
     <div class="card-title">Gluteal Region Muscles <span class="badge badge-fav">⭐ PYQ 2014, 2022</span></div>
     <div class="table-wrap">
       <table>
@@ -493,11 +543,111 @@ details[open]>summary::before{transform:rotate(90deg);}
   </div>
 
   <div class="card">
+    <div class="card-title">Structures Deep to Gluteus Maximus <span class="badge badge-fav">⭐ PYQ 2012, 2023</span></div>
+    <p>Reflection of the gluteus maximus exposes a multitude of anatomically vital structures in the gluteal region:</p>
+    <div class="two-col">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">Muscles & Bones:</p>
+        <ul class="checklist">
+          <li><strong>Gluteal Muscles:</strong> Gluteus medius and gluteus minimus.</li>
+          <li><strong>Short Lateral Rotators:</strong> Piriformis, Gemellus superior, Obturator internus, Gemellus inferior, Quadratus femoris, Obturator externus.</li>
+          <li><strong>Hamstring Origins:</strong> Long head of biceps femoris, semitendinosus, and semimembranosus (all from ischial tuberosity).</li>
+          <li><strong>Adductor:</strong> Ischiocondylar portion of adductor magnus.</li>
+          <li><strong>Bony Landmarks:</strong> Ilium, greater trochanter, and ischial tuberosity.</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px">Nerves, Vessels & Ligaments:</p>
+        <ul class="checklist">
+          <li><strong>Nerves:</strong> Sciatic nerve (prime clinical structure), Superior gluteal nerve, Inferior gluteal nerve, Pudendal nerve, Posterior cutaneous nerve of thigh, Nerve to obturator internus, Nerve to quadratus femoris.</li>
+          <li><strong>Vessels:</strong> Superior gluteal vessels, Inferior gluteal vessels, and Internal pudendal vessels.</li>
+          <li><strong>Ligaments:</strong> Sacrotuberous and Sacrospinous ligaments.</li>
+          <li><strong>Bursae:</strong> Trochanteric, Ischial, and Gluteofemoral bursae.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
     <div class="card-title">Six Short External Rotators of Hip</div>
     <div class="mnemonic-box" style="margin:0">
       <div class="mbox-title">Short External Rotators Mnemonic</div>
       <div class="mnemonic-highlight">"<strong>P-GO-GO-Q</strong>" → <strong>P</strong>iriformis, <strong>G</strong>emellus superior, <strong>O</strong>bturator internus, <strong>G</strong>emellus inferior, <strong>O</strong>bturator externus, <strong>Q</strong>uadratus femoris</div>
       <p style="font-size:12px;color:var(--text2);margin-top:6px">This mnemonic lists them in true superior-to-inferior anatomical order. All insert on greater trochanter or nearby. All are lateral rotators of hip. <strong>Sciatic nerve</strong> exits greater sciatic foramen and lies on their posterior surface (deep to gluteus maximus).</p>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══════════ S5B: ARCHES & FOOT MOVEMENTS ═══════════ -->
+<div id="s5b">
+  <div class="section-header">
+    <div class="section-num">5B</div>
+    <h2>Arches of the Foot & <em>Foot Movements</em></h2>
+  </div>
+
+  <div class="keypoint">The foot is not a flat block; it is a flexible arch structure designed to support body weight, act as a shock absorber, and act as a lever for propulsion during walking. The maintenance of these arches is a perennial exam favourite.</div>
+
+  <div class="wiki-figure">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Gray352.png"
+         alt="Skeleton of the foot"
+         loading="lazy"
+         style="background: white;"
+         onerror="this.style.display='none'">
+    <div class="wiki-caption">
+      <span>Skeleton of the foot — Medial aspect (medial longitudinal arch)</span>
+      <a class="wiki-source" href="https://commons.wikimedia.org/wiki/File:Gray352.png" target="_blank" rel="noopener">Gray's Anatomy Plate 352 (Public Domain)</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Arches of the Foot <span class="badge badge-fav">⭐ PYQ 2013, 2017 supple, 2019 supple, 2022, 2024</span></div>
+    <p>The foot has three arches: two longitudinal (medial and lateral) and one transverse. They are maintained by three types of factors: bony factors (shapes of bones), passive factors (ligaments and aponeuroses), and dynamic factors (tendons and muscles).</p>
+    
+    <div class="table-wrap">
+      <table>
+        <tr><th>Arch</th><th>Bones Formed By</th><th>Keystone Bone</th><th>Key Supporters & Maintainers</th></tr>
+        <tr><td><strong>Medial Longitudinal Arch</strong> (Higher, more mobile/elastic)</td><td>Calcaneus, Talus, Navicular, 3 Cuneiforms, Medial 3 Metatarsals.</td><td><strong>Talus</strong> (head of talus fits in spring ligament)</td><td>1. <strong>Plantar aponeurosis</strong> (tie-beam)<br>2. <strong>Spring ligament</strong> (plantar calcaneonavicular)<br>3. <strong>Tibialis posterior</strong> tendon (chief dynamic supporter)<br>4. Flexor hallucis longus & FDL (slings)</td></tr>
+        <tr><td><strong>Lateral Longitudinal Arch</strong> (Lower, flatter, more rigid/stable)</td><td>Calcaneus, Cuboid, Lateral 2 Metatarsals.</td><td><strong>Cuboid</strong></td><td>1. <strong>Long and short plantar ligaments</strong> (passive)<br>2. Plantar aponeurosis<br>3. <strong>Peroneus longus</strong> & Peroneus brevis (dynamic)</td></tr>
+        <tr><td><strong>Transverse Arch</strong> (Coronal dome shape)</td><td>Bases of metatarsals, cuboid, and 3 cuneiform bones.</td><td>Intermediate cuneiform</td><td>1. <strong>Peroneus longus tendon</strong> (pulls from lateral to medial, forming a transverse sling)<br>2. Tibialis posterior (slings medially)<br>3. Deep transverse metatarsal ligaments</td></tr>
+      </table>
+    </div>
+
+    <div class="clinical-box">
+      <div class="cbox-title">Deformities — Flat Foot (Pes Planus) vs. Claw Foot (Pes Cavus)</div>
+      <ul class="check">
+        <li><strong>Pes Planus (Flat Foot):</strong> Loss of the medial longitudinal arch, typically caused by stretching/rupture of the <strong>spring ligament</strong> or tibialis posterior tendon dysfunction. The talar head slips medially and downwards, placing the medial border of the foot flat on the ground.</li>
+        <li><strong>Pes Cavus (Claw Foot):</strong> Exaggerated height of the medial longitudinal arch, often associated with neuromuscular conditions (e.g., Charcot-Marie-Tooth disease) or tight plantar fascia.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Inversion & Eversion of the Foot <span class="badge badge-pyq">PYQ 2011 supple</span></div>
+    <p>These movements allow the foot to adapt to uneven terrain during walking.</p>
+    <div class="two-col">
+      <div>
+        <h4 style="color:var(--accent2); margin-bottom:5px;">Joints & Axis</h4>
+        <ul class="checklist">
+          <li><strong>Joints involved:</strong> Primarily the <strong>subtalar joint</strong> (between talus and calcaneus) and the <strong>talocalcaneonavicular joint</strong> (transverse tarsal joint).</li>
+          <li><strong>Axis of movement:</strong> Runs obliquely forwards, upwards, and medially, passing from the lateral tubercle of the calcaneus to the neck of the talus.</li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="color:var(--accent2); margin-bottom:5px;">Muscles & Nerve Supply</h4>
+        <div class="table-wrap" style="margin:0">
+          <table>
+            <tr><th>Movement</th><th>Definition</th><th>Prime Movers (Muscles)</th><th>Nerve Supply</th></tr>
+            <tr><td><strong>Inversion</strong></td><td>Sole faces medially</td><td>1. <strong>Tibialis Anterior</strong><br>2. <strong>Tibialis Posterior</strong></td><td>1. Deep Peroneal nerve<br>2. Tibial nerve</td></tr>
+            <tr><td><strong>Eversion</strong></td><td>Sole faces laterally</td><td>1. <strong>Peroneus Longus</strong><br>2. <strong>Peroneus Brevis</strong><br>3. Peroneus Tertius</td><td>1. Superficial Peroneal<br>2. Superficial Peroneal<br>3. Deep Peroneal nerve</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="clinical-box" style="margin-top:10px">
+      <div class="cbox-title">Clubfoot (Talipes Equinovarus)</div>
+      <p>A congenital deformity where the foot is twisted downwards and inwards (plantarflexed, inverted, and adducted). It is managed using the Ponseti method (serial casting) to gradually stretch the tight soft tissues, especially the Achilles tendon and tibialis posterior tendon.</p>
     </div>
   </div>
 </div>
@@ -522,12 +672,12 @@ details[open]>summary::before{transform:rotate(90deg);}
           <span class="lbl">Superiorly (BASE)</span>
           Inguinal ligament<br>(ASIS to pubic tubercle)
         </div>
-        <div class="h-arrow">→</div>
+        <div class="h-arrow"><span class="dir-arrow">→</span></div>
         <div class="flow-box accent" style="text-align:center">
           <span class="lbl">Laterally</span>
           Medial border of<br>Sartorius
         </div>
-        <div class="h-arrow">→</div>
+        <div class="h-arrow"><span class="dir-arrow">→</span></div>
         <div class="flow-box teal" style="text-align:center">
           <span class="lbl">Medially</span>
           Medial border of<br>Adductor Longus
@@ -582,7 +732,7 @@ details[open]>summary::before{transform:rotate(90deg);}
   <!-- Femoral triangle diagram -->
   <div style="text-align: center; margin: 1rem 0;">
     <div class="diagram-num">Diagram 04 — Femoral Triangle</div>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Gray544.png/300px-Gray544.png" alt="Femoral Triangle Diagram" style="max-width:100%; border-radius:8px;">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Gray544.png" alt="Femoral Triangle Diagram" style="max-width:100%; border-radius:8px;">
   </div>
 </div>
 
@@ -672,7 +822,7 @@ details[open]>summary::before{transform:rotate(90deg);}
   <!-- Popliteal diagram -->
   <div style="text-align: center; margin: 1rem 0;">
     <div class="diagram-num">Diagram 05 — Popliteal Fossa (Posterior View)</div>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Gray433.png/300px-Gray433.png" alt="Popliteal Fossa Diagram" style="max-width:100%; border-radius:8px;">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Gray433.png" alt="Popliteal Fossa Diagram" style="max-width:100%; border-radius:8px;">
   </div>
 </div>
 
@@ -685,8 +835,42 @@ details[open]>summary::before{transform:rotate(90deg);}
     <h2>Nerves of the <em>Lower Limb</em></h2>
   </div>
 
+  <!-- Lumbar Plexus Card -->
+  <div class="card" style="margin-top:1rem">
+    <div class="card-title">Lumbar Plexus <span class="badge badge-pyq">PYQ 2018</span></div>
+    <p>The lumbar plexus is a nervous network formed by the ventral rami of the first four lumbar spinal nerves (L1-L4) with a contribution from T12.</p>
+    <div class="two-col" style="margin-top:.5rem">
+      <div>
+        <h4 style="color:var(--accent2); margin-bottom:5px;">Formation & Location</h4>
+        <ul class="checklist">
+          <li><strong>Location:</strong> Formed within the substance of the <strong>psoas major</strong> muscle, anterior to the transverse processes of the lumbar vertebrae.</li>
+          <li><strong>Roots:</strong> Ventral rami of L1, L2, L3, and L4, plus T12 (subcostal nerve) contribution.</li>
+          <li><strong>Division of Rami:</strong> The rami of L2, L3, and L4 split into anterior and posterior divisions, which then unite to form the two main terminal nerves of the plexus.</li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="color:var(--accent2); margin-bottom:5px;">Key Branches & Roots</h4>
+        <div class="table-wrap">
+          <table>
+            <tr><th>Nerve</th><th>Root Value</th><th>Primary Distribution / Function</th></tr>
+            <tr><td><strong>Iliohypogastric</strong></td><td>L1 (T12)</td><td>Sensory to suprapubic skin; motor to internal oblique/transversus abdominis.</td></tr>
+            <tr><td><strong>Ilioinguinal</strong></td><td>L1</td><td>Sensory to upper medial thigh and anterior scrotum/labium majus; motor to abdominal wall.</td></tr>
+            <tr><td><strong>Genitofemoral</strong></td><td>L1, L2</td><td>Genital branch (cremasteric reflex); Femoral branch (sensory to upper anterior thigh).</td></tr>
+            <tr><td><strong>Lateral Femoral Cutaneous</strong></td><td>L2, L3 (post)</td><td>Sensory to lateral thigh. Compressed in <em>Meralgia paresthetica</em>.</td></tr>
+            <tr><td><strong>Femoral Nerve</strong></td><td>L2-L4 (post)</td><td>Motor to anterior compartment of thigh; sensory to anterior thigh and medial leg (saphenous).</td></tr>
+            <tr><td><strong>Obturator Nerve</strong></td><td>L2-L4 (ant)</td><td>Motor to medial (adductor) compartment of thigh; sensory to medial thigh.</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="clinical-box" style="margin-top:10px">
+      <div class="cbox-title">Clinical Correlate: Psoas Abscess & Plexus Compression</div>
+      <p>Since the lumbar plexus is embedded inside the <strong>psoas major</strong> muscle, a psoas abscess (frequently due to tuberculosis of the spine / Pott's disease) can compress or irritate these nerves. This presents as radiating pain to the anterior/medial thigh and hip, with the patient holding the hip in flexion to relax the psoas muscle.</p>
+    </div>
+  </div>
+
   <div class="card">
-    <div class="card-title">Femoral Nerve (L2, L3, L4) <span class="badge badge-fav">⭐ PYQ 2013, 2020</span></div>
+    <div class="card-title">Femoral Nerve (L2, L3, L4) <span class="badge badge-fav">⭐</span></div>
     <div class="flowchart" style="margin:0 0 10px 0">
       <div class="flow-title">Femoral Nerve — Course</div>
       <div class="flow-v">
@@ -821,7 +1005,7 @@ details[open]>summary::before{transform:rotate(90deg);}
 <div id="s9">
   <div class="section-header">
     <div class="section-num">09</div>
-    <h2>Blood Supply of the <em>Lower Limb</em></h2>
+    <h2>Blood Supply & <em>Lymphatics</em></h2>
   </div>
 
   <div class="flowchart">
@@ -857,6 +1041,28 @@ details[open]>summary::before{transform:rotate(90deg);}
   </div>
 
   <div class="card">
+    <div class="card-title">Dorsalis Pedis Artery <span class="badge badge-pyq">PYQ 2019 supple</span></div>
+    <p>The chief artery of the dorsum of the foot, which is the direct continuation of the anterior tibial artery.</p>
+    <div class="two-col">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">Course & Termination:</p>
+        <ul class="checklist">
+          <li><strong>Origin:</strong> Begins in front of the ankle joint, midway between the two malleoli.</li>
+          <li><strong>Course:</strong> Passes forward along the medial side of the dorsum of the foot, running lateral to the tendon of Extensor Hallucis Longus (EHL).</li>
+          <li><strong>Termination:</strong> Ends at the proximal part of the first intermetatarsal space by dipping downwards (plantarward) between the two heads of the first dorsal interosseous muscle to complete the plantar arterial arch.</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px">Dorsalis Pedis Pulse & Clinical:</p>
+        <ul class="checklist">
+          <li><strong>Palpation:</strong> Easily palpated on the dorsum of the foot just lateral to the EHL tendon, over the tarsal bones (navicular/cuneiforms). The foot should be slightly dorsiflexed to relax the extensor tendons.</li>
+          <li><strong>Clinical Significance:</strong> A weak or absent pulse indicates <strong>peripheral arterial disease (PAD)</strong> or acute arterial occlusion (embolism). Crucial clinical sign in diabetic patients (diabetic angiopathy).</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
     <div class="card-title">Venous Drainage <span class="badge badge-pyq">PYQ 2013, 2020</span></div>
     <div class="two-col">
       <div>
@@ -872,6 +1078,29 @@ details[open]>summary::before{transform:rotate(90deg);}
           <li>Deep veins accompany arteries (venae comitantes)</li>
           <li><strong>DVT:</strong> Posterior tibial and peroneal veins, soleal sinuses most commonly thrombosed. Risk: Virchow's triad (stasis, hypercoagulability, endothelial damage). Homan's sign (calf pain on dorsiflexion) — not reliable</li>
           <li><strong>Varicose veins:</strong> Dilated tortuous superficial veins due to incompetent valves in perforating veins (or sapheno-femoral junction). Great saphenous territory most common</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top: 24px;">
+    <div class="card-title">Inguinal Lymph Nodes</div>
+    <div class="two-col">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">Superficial Inguinal Nodes:</p>
+        <ul class="checklist">
+          <li>Arranged in a T-shape below inguinal ligament.</li>
+          <li><strong>Horizontal group:</strong> Drains lower anterior abdominal wall, perineum, external genitalia (except testes/ovary), lower anal canal.</li>
+          <li><strong>Vertical group:</strong> Along terminal great saphenous vein. Drains the majority of the superficial lower limb.</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px">Deep Inguinal Nodes:</p>
+        <ul class="checklist">
+          <li>Located medial to femoral vein (1-3 nodes).</li>
+          <li><strong>Node of Cloquet:</strong> Highest node in the femoral canal.</li>
+          <li>Receive drainage from deep structures of leg, glans penis/clitoris, and efferents from superficial nodes.</li>
+          <li>Drain directly into External Iliac Nodes.</li>
         </ul>
       </div>
     </div>
@@ -942,7 +1171,7 @@ details[open]>summary::before{transform:rotate(90deg);}
   <!-- Dermatome diagram -->
   <div style="text-align: center; margin: 1rem 0;">
     <div class="diagram-num">Diagram 06 — Dermatomes of Lower Limb</div>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Dermatoms.svg/300px-Dermatoms.svg.png" alt="Dermatomes of Lower Limb Diagram" style="max-width:100%; border-radius:8px;">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Dermatoms.svg" alt="Dermatomes of Lower Limb Diagram" style="max-width:100%; border-radius:8px;">
   </div>
 </div>
 
@@ -1075,6 +1304,72 @@ details[open]>summary::before{transform:rotate(90deg);}
         </ul>
       </div>
     </details>
+
+    <div class="viva-section" style="margin-top:1rem;">
+      <div class="viva-title-bar">Clinical "Explain Why" Questions</div>
+      
+      <details>
+        <summary><span class="viva-q">Explain why all muscles of the hamstring compartment are not "true" hamstrings.</span><span class="viva-year">PYQ 2011 supple</span></summary>
+        <div class="viva-ans">
+          <p>A true hamstring muscle must satisfy four criteria: (1) originate from the ischial tuberosity, (2) insert into one of the bones of the leg (tibia or fibula), (3) cross both the hip and knee joints (biarticular), and (4) be supplied by the tibial component of the sciatic nerve.</p>
+          <p>The <strong>short head of the biceps femoris</strong> fails three of these criteria: it originates from the lateral lip of the linea aspera of the femur (not ischial tuberosity), crosses only the knee joint (uniarticular), and is supplied by the <strong>common peroneal component</strong> of the sciatic nerve. Thus, it is not a true hamstring.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary><span class="viva-q">Explain why the soleus muscle is referred to as the "peripheral heart."</span><span class="viva-year">PYQ 2019 supple, 2020</span></summary>
+        <div class="viva-ans">
+          <p>The soleus muscle contains large, thin-walled venous sinuses (soleal sinuses) that hold a significant volume of blood. During walking, the contraction of the soleus compresses these sinuses, actively pumping venous blood upwards against gravity into the deep veins of the leg. The valves in the deep veins prevent retrograde flow. This muscle-pump action is crucial for venous return, acting as a "peripheral heart." Prolonged immobility inactivates this pump, leading to venous stasis and <strong>Deep Vein Thrombosis (DVT)</strong>.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary><span class="viva-q">Explain why ankle sprains occur more commonly during plantarflexion than dorsiflexion.</span><span class="viva-year">PYQ 2023</span></summary>
+        <div class="viva-ans">
+          <p>This is due to the shape of the trochlea of the talus, which is wider anteriorly than posteriorly:</p>
+          <ul>
+            <li><strong>Dorsiflexion:</strong> The wider anterior part of the talus fits tightly into the tibiofibular mortise, making the joint highly stable.</li>
+            <li><strong>Plantarflexion:</strong> The narrower posterior part of the talus lies loosely within the mortise, allowing side-to-side (wobbling) movements. In this unstable position, inversion forces easily exceed the strength of the lateral ligaments, leading to the common **inversion ankle sprain** (anterior talofibular ligament tear).</li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary><span class="viva-q">Explain why the great saphenous vein is preferred for Coronary Artery Bypass Grafting (CABG).</span><span class="viva-year">PYQ 2024</span></summary>
+        <div class="viva-ans">
+          <p>The great saphenous vein is highly preferred for CABG for several reasons:</p>
+          <ul>
+            <li><strong>Accessibility & Length:</strong> It is easily accessible subcutaneously, and its long, continuous length allows multiple graft segments to be harvested.</li>
+            <li><strong>Wall Structure:</strong> It has a thick wall with plenty of elastic and muscular fibers, allowing it to adapt to high arterial pressures (arterialization) when grafted.</li>
+            <li><strong>Low Morbidity:</strong> Harvesting it from the leg causes minimal long-term circulatory disturbance because deep veins handle the bulk of venous return.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary><span class="viva-q">Explain the medicolegal importance of the secondary ossification centers around the knee.</span><span class="viva-year">PYQ 2013 supple</span></summary>
+        <div class="viva-ans">
+          <p>The secondary ossification centers at the <strong>distal end of the femur</strong> and <strong>proximal end of the tibia</strong> appear at specific developmental milestones:</p>
+          <ul>
+            <li>Distal femoral center appears at **9 months of intrauterine life** (just before birth).</li>
+            <li>Proximal tibial center appears at **birth/full term**.</li>
+          </ul>
+          <p>In forensic autopsies of newborn infants, radiological or histological demonstration of these centers is key medicolegal evidence to prove that the infant was **full-term** and viable at birth, helping rule out criminal abortion or prematurity as a cause of death.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary><span class="viva-q">Explain why the patella has a natural tendency to dislocate laterally, and how this is prevented.</span><span class="viva-year">PYQ 2025</span></summary>
+        <div class="viva-ans">
+          <p>The lateral dislocation tendency is due to the **Q-angle** (quadriceps angle) — the line of pull of the quadriceps muscle is oblique, whereas the ligamentum patellae is vertical. When the quadriceps contracts, it pulls the patella laterally (valgus vector).</p>
+          <p><strong>Prevention mechanisms:</strong></p>
+          <ul>
+            <li><strong>Bony:</strong> The lateral condyle of the femur has a higher, more prominent anterior projection (lateral patellar lip) that acts as a physical barrier.</li>
+            <li><strong>Muscular:</strong> The lowermost fibers of the <strong>Vastus Medialis Obliquus (VMO)</strong> insert directly into the medial border of the patella, actively pulling it medially during extension to counteract the lateral pull.</li>
+          </ul>
+        </div>
+      </details>
+    </div>
   </div>
 </div>
 
@@ -1112,7 +1407,7 @@ details[open]>summary::before{transform:rotate(90deg);}
         <li><span>Course in Posterior Thigh:</span> Descends vertically in posterior thigh under gluteus maximus, medial to biceps femoris. Gives branches to all hamstrings (tibial component: long head BF, semimembranosus, semitendinosus; common peroneal component: short head BF) and adductor magnus (posterior part). Reaches upper angle of popliteal fossa.</li>
         <li><span>Termination:</span> Divides (at popliteal fossa, or higher as variant) into: (a) Tibial nerve (medial popliteal nerve) — L4–S3 — descends vertically, supplies posterior compartment of leg, enters sole → medial + lateral plantar nerves. (b) Common peroneal nerve (lateral popliteal nerve) — L4–S2 — winds around neck of fibula → deep peroneal (anterior compartment + dorsum of foot) + superficial peroneal (lateral compartment).</li>
         <li><span>Effects of High Injury (gluteal region, e.g., misplaced injection):</span> (a) Motor: loss of all knee flexion (hamstrings), all movements below knee (foot drop, loss of plantarflexion, toe movements). (b) Sensory: loss from below knee except medial leg and foot (saphenous nerve — from femoral n.). (c) Hip extension partially lost if proximal enough. (d) Total disability below the knee with wasted hamstrings.</li>
-        <li><span>Safe Zone for Gluteal Injection:</span> Upper outer quadrant of buttock. Alternative: ventrogluteal region (Hochstetter's technique). NEVER inject in lower medial quadrant — sciatic nerve at highest risk there.</span></li>
+        <li><span>Safe Zone for Gluteal Injection:</span> Upper outer quadrant of buttock. Alternative: ventrogluteal region (Hochstetter's technique). NEVER inject in lower medial quadrant — sciatic nerve at highest risk there.</li>
       </ol>
     </div>
   </div>

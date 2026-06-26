@@ -1,0 +1,1514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anatomy Module 04 — Thorax | Caffeine & Cadaver</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=JetBrains+Mono:wght@400;600&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#080c14;--surface:#0d1220;--surface2:#121828;--surface3:#182030;
+  --accent:#4a9ee8;--accent2:#7ab8f0;--accent3:#a5cef7;
+  --gold:#fbbf24;--teal:#34d399;--rose:#f87171;--purple:#c084fc;
+  --text:#e2e8f8;--text2:#8892b0;--text3:#445060;
+  --border:#1e2a40;--border2:#28384a;
+  --green:#4ade80;--orange:#fb923c;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{ overflow-wrap: break-word; word-break: break-word; background:var(--bg);color:var(--text);font-family:'Sora',sans-serif;font-size:15px;line-height:1.7;overflow-x:hidden;}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#060810 0%,#0a1222 55%,#080c14 100%);border-bottom:1px solid var(--border2);padding:3rem 1.5rem 2.5rem;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;top:-80px;right:-80px;width:360px;height:360px;background:radial-gradient(circle,rgba(74,158,232,.14) 0%,transparent 70%);pointer-events:none;}
+.hero::after{content:'';position:absolute;bottom:-40px;left:10%;width:260px;height:260px;background:radial-gradient(circle,rgba(251,191,36,.06) 0%,transparent 70%);pointer-events:none;}
+.module-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(74,158,232,.14);border:1px solid rgba(74,158,232,.38);color:var(--accent2);font-family:'JetBrains Mono',monospace;font-size:11px;padding:4px 12px;border-radius:3px;letter-spacing:2px;margin-bottom:1rem;}
+.dot{width:6px;height:6px;background:var(--accent);border-radius:50%;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.4;transform:scale(.7);}}
+.hero h1{font-family:'Crimson Pro',serif;font-size:clamp(2rem,6vw,3.2rem);font-weight:600;color:var(--text);line-height:1.15;margin-bottom:.5rem;}
+.hero h1 span{color:var(--accent2);}
+.hero-sub{color:var(--text2);font-size:13px;font-family:'JetBrains Mono',monospace;letter-spacing:.5px;margin-bottom:1.5rem;}
+.hero-pills{display: block; position: relative;flex-wrap:wrap;gap:8px;}
+.pill{background:var(--surface2);border:1px solid var(--border);color:var(--text2);font-size:11px;padding:4px 10px;border-radius:20px;font-family:'JetBrains Mono',monospace;}
+
+/* TOC */
+.toc{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent);margin:1.5rem;padding:1.25rem;border-radius:6px;}
+.toc-title{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--accent);text-transform:uppercase;margin-bottom:1rem;}
+.toc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;}
+.toc a{color:var(--text2);text-decoration:none;font-size:13px;padding:4px 8px;border-radius:4px;transition:all .2s;display: block; position: relative;align-items:center;gap:6px;}
+.toc a:hover{color:var(--accent2);background:rgba(74,158,232,.08);}
+.toc-num{color:var(--accent);font-family:'JetBrains Mono',monospace;font-size:11px;}
+
+/* LAYOUT */
+.content{padding:0 1.5rem 3rem;}
+.progress-bar{height:3px;background:linear-gradient(to right,var(--accent),var(--accent2),var(--teal));border-radius:2px;margin-bottom:2rem;animation:load 1.5s ease forwards;}
+@keyframes load{from{width:0;}to{width:100%;}}
+.section-header{display: block; position: relative;align-items:center;gap:12px;margin:2.5rem 0 1.5rem;padding-bottom:.75rem;border-bottom:1px solid var(--border);}
+.section-num{background:var(--accent);color:#fff;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;width:32px;height:32px;display: block; position: relative;align-items:center;justify-content:center;border-radius:6px;flex-shrink:0;}
+.section-header h2{font-family:'Crimson Pro',serif;font-size:clamp(1.3rem,4vw,1.8rem);font-weight:600;color:var(--text);}
+.section-header h2 em{color:var(--accent2);font-style:normal;}
+.divider{height:1px;background:var(--border);margin:2rem 0;}
+.two-col{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(280px, 100%),1fr));gap:1rem;margin:1rem 0;}
+
+/* BADGES */
+.badge{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-family:'JetBrains Mono',monospace;padding:2px 7px;border-radius:3px;vertical-align:middle;margin-left:4px;font-weight:600;letter-spacing:.5px;}
+.badge-rls{background:rgba(248,113,113,.18);color:var(--rose);border:1px solid rgba(248,113,113,.35);}
+.badge-pyq{background:rgba(52,211,153,.14);color:var(--teal);border:1px solid rgba(52,211,153,.3);}
+.badge-fav{background:rgba(251,191,36,.14);color:var(--gold);border:1px solid rgba(251,191,36,.3);}
+.badge-new{background:rgba(74,222,128,.14);color:var(--green);border:1px solid rgba(74,222,128,.3);}
+
+/* CARD */
+.card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:1.25rem;margin-bottom:1rem;}
+.card-title{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:.75rem;display: block; position: relative;align-items:center;gap:8px;}
+.card-title::after{content:'';flex:1;height:1px;background:var(--border);}
+
+/* FLOWCHART */
+.flowchart{background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:1.25rem;margin:1rem 0;}
+.flow-title{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--accent2);margin-bottom:1rem;display: block; position: relative;align-items:center;gap:8px;}
+.flow-title::before{content:'▶';font-size:8px;}
+.flow-v{display: block; position: relative;flex-direction:column;align-items:stretch;gap:0;}
+.flow-step-label{font-size:12px;color:var(--text2);text-align:center;padding:4px 8px;font-family:'JetBrains Mono',monospace;}
+.flow-step-label strong{color:var(--accent2);}
+.flow-arrow{text-align:center;color:var(--accent);font-size:20px;line-height:1;margin:2px 0;}
+.flow-box{ word-break: break-word; overflow-wrap: break-word; background:var(--surface3);border:1px solid var(--border2);border-radius:6px;padding:10px 14px;font-size:13px;width:100%;}
+.flow-box.accent{border-color:var(--accent);background:rgba(74,158,232,.1);color:var(--accent2);}
+.flow-box.gold{border-color:var(--gold);background:rgba(251,191,36,.08);color:var(--gold);}
+.flow-box.teal{border-color:var(--teal);background:rgba(52,211,153,.08);color:var(--teal);}
+.flow-box.rose{border-color:var(--rose);background:rgba(248,113,113,.08);color:var(--rose);}
+.flow-box.purple{border-color:var(--purple);background:rgba(192,132,252,.08);color:var(--purple);}
+.flow-box.green{border-color:var(--green);background:rgba(74,222,128,.08);color:var(--green);}
+.flow-box .lbl{font-size:10px;color:var(--text3);font-family:'JetBrains Mono',monospace;display:block;margin-bottom:2px;}
+.flow-box .sub{font-size:11px;color:var(--text2);display:block;margin-top:3px;}
+.flow-h{display: block; position: relative;flex-wrap:wrap;align-items:center;gap:6px;}
+.flow-h .flow-box{ word-break: break-word; overflow-wrap: break-word; flex:1 1 auto;min-width:100px;text-align:center;}
+.h-arrow{color:var(--accent);font-size:18px;flex-shrink:0;}
+
+/* TABLES */
+.table-wrap{overflow-x:auto;margin:1rem 0;border-radius:8px;}
+table{width:100%;border-collapse:collapse;}
+th{background:var(--surface3);color:var(--accent2);font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:10px 12px;text-align:left;border-bottom:2px solid var(--accent);}
+td{padding:9px 12px;border-bottom:1px solid var(--border);font-size:13px;vertical-align:top;}
+tr:hover td{background:rgba(74,158,232,.04);}
+td:first-child{color:var(--accent2);font-weight:600;}
+
+/* SPECIAL BOXES */
+.clinical-box{ word-break: break-word; overflow-wrap: break-word; background:rgba(52,211,153,.04);border:1px solid rgba(52,211,153,.22);border-left:4px solid var(--teal);border-radius:6px;padding:1rem 1.25rem;margin:1rem 0;}
+.cbox-title{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--teal);text-transform:uppercase;margin-bottom:.6rem;display: block; position: relative;align-items:center;gap:6px;}
+.cbox-title::before{content:'🩺';}
+.mnemonic-box{background:rgba(251,191,36,.05);border:1px solid rgba(251,191,36,.25);border-left:4px solid var(--gold);border-radius:6px;padding:1rem 1.25rem;margin:1rem 0;}
+.mbox-title{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:.6rem;display: block; position: relative;align-items:center;gap:6px;}
+.mbox-title::before{content:'🧠';}
+.mnemonic-highlight{ word-break: break-word; overflow-wrap: break-word; background:rgba(251,191,36,.1);border:1px dashed rgba(251,191,36,.3);border-radius:4px;padding:8px 12px;font-family:'Crimson Pro',serif;font-size:15px;font-weight:600;color:var(--gold);margin:6px 0;}
+.eq-box{background:rgba(192,132,252,.05);border:1px solid rgba(192,132,252,.25);border-left:4px solid var(--purple);border-radius:6px;padding:1rem 1.25rem;margin:1rem 0;}
+.eq-title{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--purple);text-transform:uppercase;margin-bottom:.75rem;display: block; position: relative;align-items:center;gap:6px;}
+.eq-title::before{content:'📝';}
+.eq-statement{background:var(--surface3);border-radius:4px;padding:8px 12px;font-family:'Crimson Pro',serif;font-size:15px;font-style:italic;color:var(--text);margin-bottom:10px;border-left:3px solid var(--purple);}
+.eq-answer ol{margin-left:18px;}
+.eq-answer li{margin-bottom:6px;font-size:13px;}
+.eq-answer li span{color:var(--purple);font-weight:600;}
+.keypoint { word-break: break-word; overflow-wrap: break-word; background:rgba(74,158,232,.07);border:1px solid rgba(74,158,232,.22);border-radius:6px;padding:10px 14px;margin:8px 0;font-size:13px;display: block; position: relative; padding-left: 34px;}
+.keypoint::before {content:'⚡';flex-shrink:0; position: absolute; left: 12px; top: 10px;}
+.warn-box { word-break: break-word; overflow-wrap: break-word; background:rgba(251,146,60,.07);border:1px solid rgba(251,146,60,.25);border-left:4px solid var(--orange);border-radius:6px;padding:10px 14px;margin:8px 0;font-size:13px;display: block; position: relative; padding-left: 34px;}
+.warn-box::before {content:'⚠️';flex-shrink:0; position: absolute; left: 10px; top: 10px;}
+ul.checklist{list-style:none;margin:.5rem 0;}
+ul.checklist li::before{content:'✦ ';color:var(--accent2);}
+ul.checklist li { margin-bottom: 14px; line-height: 1.6;font-size:13px;}
+.hl{color:var(--accent2);font-weight:600;}
+.hl-gold{color:var(--gold);font-weight:600;}
+.hl-teal{color:var(--teal);font-weight:600;}
+.hl-rose{color:var(--rose);font-weight:600;}
+.hl-purple{color:var(--purple);font-weight:600;}
+
+
+
+/* VIVA */
+.viva-section{margin:1.5rem 0;}
+.viva-title-bar{background:rgba(74,158,232,.1);border:1px solid rgba(74,158,232,.28);border-radius:6px 6px 0 0;padding:10px 14px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--accent2);text-transform:uppercase;display: block; position: relative;align-items:center;gap:8px;}
+.viva-title-bar::before{content:'💬';font-size:14px;}
+details{border:1px solid var(--border);border-top:none;overflow:hidden;}
+details:last-child{border-radius:0 0 6px 6px;}
+summary{padding:10px 14px;cursor:pointer;font-size:13px;color:var(--text);background:var(--surface);list-style:none;display: block; position: relative;align-items:flex-start;gap:8px;user-select:none;transition:background .2s;}
+summary:hover{background:var(--surface2);}
+summary::before{content:'▶';color:var(--accent);font-size:10px;margin-top:3px;flex-shrink:0;transition:transform .2s;}
+details[open]>summary::before{transform:rotate(90deg);}
+.viva-q{font-weight:600;flex:1;}
+.viva-year{color:var(--teal);font-family:'JetBrains Mono',monospace;font-size:11px;flex-shrink:0;}
+.viva-ans{ word-break: break-word; overflow-wrap: break-word; padding:12px 16px 14px;background:var(--surface2);font-size:13px;line-height:1.75;border-top:1px solid var(--border);}
+.viva-ans p{margin-bottom:6px;}
+.viva-ans ul{margin:6px 0 6px 16px;}
+.viva-ans li{margin-bottom:4px;}
+.viva-ans strong{color:var(--accent2);}
+.viva-ans em{color:var(--gold);font-style:normal;font-weight:600;}
+
+/* SEGMENT GRID */
+.seg-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1rem 0;}
+.seg-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:1rem;}
+.seg-card-title{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-bottom:.75rem;padding-bottom:.5rem;border-bottom:1px solid var(--border);}
+.seg-card.right .seg-card-title{color:var(--accent2);}
+.seg-card.left .seg-card-title{color:var(--rose);}
+.seg-lobe{font-size:11px;font-weight:700;color:var(--text2);text-transform:uppercase;letter-spacing:1px;font-family:'JetBrains Mono',monospace;margin:.6rem 0 .3rem;}
+.seg-item{display: block; position: relative;align-items:flex-start;gap:6px;font-size:12px;margin-bottom:3px;padding:3px 8px;border-radius:4px;}
+.seg-item:hover{background:rgba(74,158,232,.05);}
+.seg-num{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--accent);width:18px;flex-shrink:0;font-weight:700;}
+
+/* LANDMARK TABLE */
+.landmark-row{display: block; position: relative;align-items:center;gap:12px;padding:8px 12px;border-bottom:1px solid var(--border);font-size:13px;}
+.landmark-row:last-child{border-bottom:none;}
+.lm-level{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);font-weight:700;min-width:40px;flex-shrink:0;}
+.lm-content{flex:1;}
+
+/* FOOTER */
+.footer{background:var(--surface);border-top:1px solid var(--border);text-align:center;padding:2rem 1.5rem;color:var(--text3);font-size:12px;font-family:'JetBrains Mono',monospace;}
+.top-btn{position:fixed;bottom:20px;right:20px;background:var(--accent);color:#fff;border:none;border-radius:50%;width:40px;height:40px;font-size:16px;cursor:pointer;box-shadow:0 4px 15px rgba(74,158,232,.4);z-index:100;display: block; position: relative;align-items:center;justify-content:center;font-weight:700;}
+.top-btn:hover{transform:translateY(-2px);}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-4px);}to{opacity:1;transform:translateY(0);}}
+
+@media(max-width:600px){
+  .hero{padding:2rem 1rem;}
+  .content{padding:0 1rem 2rem;}
+  .toc{margin:1rem;}
+  .flow-h{flex-direction:column;}
+  .h-arrow{display:none;}
+  .seg-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="module-tag"><span class="dot"></span>ANATOMY · MODULE 04</div>
+  <h1>Thorax<br><span>Complete</span></h1>
+  <p class="hero-sub">ANATOMY · FIRST MBBS · PYQ MAPPED 2010–2025</p>
+  <div class="hero-pills">
+    <span class="pill">Thoracic Wall</span>
+    <span class="pill">Intercostal Space</span>
+    <span class="pill">Pleura</span>
+    <span class="pill">Lungs & Fissures</span>
+    <span class="pill">Bronchopulmonary Segments</span>
+    <span class="pill">Trachea & Bronchi</span>
+    <span class="pill">Heart Chambers</span>
+    <span class="pill">Coronary Arteries</span>
+    <span class="pill">Conducting System</span>
+    <span class="pill">Cardiac Valves</span>
+    <span class="pill">Pericardium</span>
+    <span class="pill">Mediastinum</span>
+    <span class="pill">Diaphragm</span>
+  </div>
+</div>
+
+<!-- TOC -->
+<div class="toc">
+  <div class="toc-title">▸ Quick Navigate</div>
+  <div class="toc-grid">
+    <a href="#s1"><span class="toc-num">01</span> Thoracic Wall</a>
+    <a href="#s2"><span class="toc-num">02</span> Pleura</a>
+    <a href="#s3"><span class="toc-num">03</span> Lungs & Lobes</a>
+    <a href="#s4"><span class="toc-num">04</span> Bronchopulmonary Segments</a>
+    <a href="#s5"><span class="toc-num">05</span> Trachea & Bronchi</a>
+    <a href="#s6"><span class="toc-num">06</span> Heart — External & Chambers</a>
+    <a href="#s6b"><span class="toc-num">6B</span> Cardiac Septa Development</a>
+    <a href="#s7"><span class="toc-num">07</span> Conducting System</a>
+    <a href="#s8"><span class="toc-num">08</span> Coronary Arteries</a>
+    <a href="#s9"><span class="toc-num">09</span> Cardiac Valves</a>
+    <a href="#s10"><span class="toc-num">10</span> Pericardium & Mediastinum</a>
+    <a href="#s11"><span class="toc-num">11</span> Diaphragm</a>
+    <a href="#s13"><span class="toc-num">13</span> Viva Q&A</a>
+    <a href="#s14"><span class="toc-num">14</span> EQ Templates</a>
+  </div>
+</div>
+
+<div class="content">
+<div class="progress-bar"></div>
+
+<!-- ══════════════════════ S1: THORACIC WALL ══════════════════════ -->
+<div id="s1">
+  <div class="section-header">
+    <div class="section-num">01</div>
+    <h2>Thoracic <em>Wall</em></h2>
+  </div>
+  <div class="wiki-img" style="text-align: center; margin: 24px 0;">
+    <div style="color:var(--accent);font-family:'JetBrains Mono',monospace;font-size:11px;margin-bottom:8px;">DIAGRAM 01 — Typical Rib</div>
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Gray122.png" alt="Typical Rib" loading="lazy" style="max-width: 100%; border-radius: 8px;">
+    <div class="wiki-caption" style="font-size:11px;color:var(--text2);text-align:center;margin-top:8px;">A central rib of the left side (inferior aspect) — Gray's Anatomy</div>
+  </div>
+
+
+  <div class="card">
+    <div class="card-title">Rib Classification <span class="badge badge-pyq">PYQ 2013, 2017, 2022</span></div>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Type</th><th>Ribs</th><th>Attachment</th><th>Key Facts</th></tr>
+        <tr><td>True (Vertebrosternal)</td><td>1–7</td><td>Directly to sternum via own costal cartilage</td><td>1st rib is atypical — flat, no angle, 2 grooves for subclavian vessels, Lisfranc's scalene tubercle</td></tr>
+        <tr><td>False (Vertebrochondral)</td><td>8–10</td><td>Via costal cartilage of rib above</td><td>Form costal margin; 8th most commonly fractured false rib</td></tr>
+        <tr><td>Floating (Vertebral)</td><td>11–12</td><td>No anterior attachment — tip is free</td><td>Short, no neck, no tubercle, no costal groove</td></tr>
+      </table>
+    </div>
+    <div class="two-col" style="margin-top:1rem">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">Typical Rib Features (3rd–9th):</p>
+        <ul class="checklist">
+          <li><strong>Head:</strong> Two articular facets (superior and inferior) for vertebral bodies + intervertebral disc</li>
+          <li><strong>Neck:</strong> Between head and tubercle</li>
+          <li><strong>Tubercle:</strong> Articular part (for transverse process) + non-articular (ligament attachment)</li>
+          <li><strong>Angle:</strong> Bend in shaft, medial to which external intercostal originates</li>
+          <li><strong>Shaft:</strong> Inner surface has costal groove housing VAN bundle</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px">Sternum Parts:</p>
+        <ul class="checklist">
+          <li><strong>Manubrium:</strong> Clavicular notches (SC joint), 1st CC, upper half of 2nd CC</li>
+          <li><strong>Body:</strong> 2nd (lower half) to 7th costal cartilages; 4 sternebrae fused</li>
+          <li><strong>Xiphoid process:</strong> Cartilaginous until ~40 yrs; ossifies later; tip at T10; NOT attached to any rib</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sternal Angle — HIGH YIELD -->
+  <div class="card" style="border-color:var(--gold)">
+    <div class="card-title" style="color:var(--gold)">Sternal Angle (Angle of Louis) — All Landmarks at T4/T5 <span class="badge badge-fav">⭐ PYQ EVERY YEAR</span></div>
+    <div class="keypoint">Junction of <strong>manubrium + body of sternum</strong>. Palpable ridge. Level: <strong>T4/T5 intervertebral disc</strong>. The most clinically important thoracic landmark.</div>
+    <div class="two-col" style="margin-top:.75rem">
+      <div>
+        <p style="font-size:12px;font-weight:700;color:var(--accent2);margin-bottom:6px;font-family:'JetBrains Mono',monospace;letter-spacing:1px;">WHAT LIES AT T4/T5 LEVEL:</p>
+        <ul class="checklist">
+          <li>2nd costal cartilage articulates here → count ribs from sternal angle</li>
+          <li><strong>Trachea bifurcates</strong> → carina → left & right main bronchi</li>
+          <li><strong>Arch of aorta</strong> begins (ascending → arch) and ends (arch → descending)</li>
+          <li><strong>Thoracic duct</strong> crosses midline (right to left)</li>
+          <li><strong>Azygos vein</strong> arches over right lung root → joins SVC</li>
+          <li>Upper border of <strong>SVC</strong></li>
+          <li>Ligamentum arteriosum (remnant of ductus arteriosus)</li>
+          <li>Left recurrent laryngeal nerve hooks under aortic arch</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:12px;font-weight:700;color:var(--gold);margin-bottom:6px;font-family:'JetBrains Mono',monospace;letter-spacing:1px;">CLINICAL USES:</p>
+        <ul class="checklist">
+          <li>Reference to count intercostal spaces (2nd ICS found lateral to sternal angle)</li>
+          <li>Landmark for auscultation areas</li>
+          <li>In CT reporting: "at the level of the carina" = T4/T5</li>
+          <li>Central venous catheter tip should be ABOVE this level (to avoid entering right atrium)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Intercostal Space -->
+  <div class="card">
+    <div class="card-title">Intercostal Space — Contents & Needle Insertion <span class="badge badge-pyq">PYQ 2014-S, 2019, 2023</span></div>
+    <div class="flowchart" style="margin:0 0 1rem 0">
+      <div class="flow-title">Cross-section of Intercostal Space — from top rib to bottom rib</div>
+      <div class="flow-v">
+        <div class="flow-box" style="background:rgba(74,158,232,.08);border-color:var(--accent);text-align:center;">
+          <span class="lbl">SUPERIOR RIB (Costal Groove on inner surface)</span>
+          <strong style="color:var(--accent2)">V</strong> — Vein (uppermost, IN the costal groove)<br>
+          <strong style="color:var(--accent2)">A</strong> — Artery (middle)<br>
+          <strong style="color:var(--accent2)">N</strong> — Nerve (lowest, below costal groove)
+        </div>
+        <div class="flow-step-label">↓ Posterior: main intercostal bundle in costal groove | Anterior: bundle is NOT protected</div>
+        <div class="flow-box teal" style="text-align:center;">
+          <span class="lbl">SAFE NEEDLE INSERTION SITE</span>
+          Always go over the <strong>UPPER BORDER of the lower rib</strong><br>
+          <span class="sub">(avoids VAN bundle sitting below the rib above)</span>
+        </div>
+      </div>
+    </div>
+    <div class="two-col">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">Intercostal Muscles (3 layers):</p>
+        <ul class="checklist">
+          <li><strong>External intercostal:</strong> Fibres run downward + forward ("hands in jacket pockets"). Active in <strong>inspiration</strong>. Most lateral; ends at costochondral junction → replaced by anterior intercostal membrane</li>
+          <li><strong>Internal intercostal:</strong> Fibres run downward + backward (opposite to external). Active in <strong>forced expiration</strong></li>
+          <li><strong>Innermost intercostal:</strong> Incomplete, parallel to internal; VAN bundle runs between internal and innermost</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px">Intercostal Nerves:</p>
+        <ul class="checklist">
+          <li>Anterior rami of T1–T11 thoracic spinal nerves (T12 = subcostal nerve).</li>
+          <li><strong>Typical Nerves (3rd-6th):</strong> Confined to their own intercostal spaces.</li>
+          <li><strong>Atypical Nerves:</strong>
+            <br>• <strong>1st:</strong> Joins brachial plexus; small branch to 1st space.
+            <br>• <strong>2nd:</strong> Gives off <em>intercostobrachial nerve</em> (sensation to medial arm/axilla), responsible for cardiac referred pain.
+            <br>• <strong>7th-11th (Thoracoabdominal):</strong> Supply both thoracic and abdominal walls.
+          </li>
+          <li><strong>Intercostal nerve block:</strong> Inject local anaesthetic posterior to angle of rib, above UPPER border of lower rib to avoid VAN.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="clinical-box" style="margin-top:.75rem">
+      <div class="cbox-title">Thoracocentesis (Pleural Tap)</div>
+      <p>Needle inserted in posterior axillary line, upper border of lower rib (usually 7th ICS), to access costodiaphragmatic recess. Mid-axillary line used to avoid serratus anterior (medially) and latissimus dorsi (posteriorly). Always over UPPER BORDER to avoid VAN.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Azygos Vein System & SVC Collaterals <span class="badge badge-pyq">PYQ 2011 supple, 2018 supple, 2019</span></div>
+    <p>The azygos venous system drains the back and thoracic/abdominal walls, serving as an important collateral pathway between the SVC and IVC.</p>
+    <div class="two-col">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">The Azygos Vein:</p>
+        <ul class="checklist">
+          <li><strong>Origin:</strong> Formed at the level of the L1/L2 vertebrae by the union of the <strong>right ascending lumbar vein</strong> and <strong>right subcostal vein</strong>.</li>
+          <li><strong>Course:</strong> Enters the thorax through the aortic opening of the diaphragm (or pierces the right crus) and ascends in the posterior mediastinum to the right of the thoracic duct and aorta.</li>
+          <li><strong>Termination:</strong> At the level of the T4 vertebrae (sternal angle), it arches forward over the root of the right lung to empty into the **Superior Vena Cava (SVC)**.</li>
+          <li><strong>Tributaries:</strong> Hemiazygos vein (at T9), Accessory hemiazygos vein (at T8), right 5th–11th posterior intercostal veins, right superior intercostal vein, and bronchial/esophageal veins.</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px">Left-sided Counterparts & SVC Obstruction:</p>
+        <ul class="checklist">
+          <li><strong>Hemiazygos Vein (Inferior):</strong> Formed on the left side (ascending lumbar + subcostal); ascends to T9 level and crosses the vertebral column behind the aorta and thoracic duct to drain into the azygos vein.</li>
+          <li><strong>Accessory Hemiazygos Vein (Superior):</strong> Descends on the left side of the spine from T4 to T8; crosses the spinal column at T8 to drain into the azygos vein.</li>
+          <li><strong>SVC Obstruction Collateral Pathways:</strong>
+            <br>- **Above Azygos Opening:** Blood from the upper body bypasses the obstruction via collateral routes (e.g., internal thoracic, posterior intercostal) into the azygos vein, which still drains into the SVC.
+            <br>- **Below Azygos Opening:** Azygos flow is reversed; blood travels down the azygos vein into the ascending lumbar and iliac veins to enter the **Inferior Vena Cava (IVC)** (cavocaval shunt). Dilated superficial abdominal veins (thoracoepigastric veins) appear on the skin.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════ S2: PLEURA ══════════════════════ -->
+<div id="s2">
+  <div class="section-header">
+    <div class="section-num">02</div>
+    <h2><em>Pleura</em></h2>
+  </div>
+  <div class="wiki-img" style="text-align: center; margin: 24px 0;">
+    <div style="color:var(--accent);font-family:'JetBrains Mono',monospace;font-size:11px;margin-bottom:8px;">Pleural Cavities</div>
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Gray974.png" alt="Pleural Cavities" loading="lazy" style="max-width: 100%; border-radius: 8px;">
+    <div class="wiki-caption" style="font-size:11px;color:var(--text2);text-align:center;margin-top:8px;">Pleural reflection and recesses — Gray's Anatomy</div>
+  </div>
+
+
+  <div class="card">
+    <div class="card-title">Pleural Layers & Recesses <span class="badge badge-pyq">PYQ 2012, 2016-S, 2021</span></div>
+    <div class="two-col">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">Parietal Pleura — 4 Parts:</p>
+        <ul class="checklist">
+          <li><strong>Costal:</strong> Lines inner surface of ribs + intercostal spaces. Supplied by intercostal nerves (somatic → sharp, well-localised pain)</li>
+          <li><strong>Mediastinal:</strong> Lines lateral surface of mediastinum. Supplied by phrenic nerve</li>
+          <li><strong>Diaphragmatic:</strong> Lines upper surface of diaphragm. Central part → phrenic; peripheral → intercostal</li>
+          <li><strong>Cervical (Cupola):</strong> Projects 2.5 cm above medial 1/3 of clavicle into root of neck. At risk during subclavian line insertion → pneumothorax</li>
+        </ul>
+        <div class="warn-box" style="margin-top:.5rem">Visceral pleura has NO pain fibres — only stretch receptors. Pain in pleurisy = parietal pleura involved.</div>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px">Pleural Recesses:</p>
+        <ul class="checklist">
+          <li><strong>Costodiaphragmatic recess:</strong> Between costal + diaphragmatic parietal pleura. Most dependent part → fluid collects here first. Depth: 5–7 cm (right), 5 cm (left). Dull to percussion when >200–300 mL</li>
+          <li><strong>Costomediastinal recess:</strong> Between costal + mediastinal pleura, anterior. Small; obliterated on deep inspiration by lingula (left) or middle lobe (right)</li>
+        </ul>
+        <p style="font-size:13px;font-weight:600;color:var(--teal);margin-bottom:6px;margin-top:.75rem">Surface Markings of Pleura:</p>
+        <ul class="checklist">
+          <li>Both pleura meet midline at 4th rib → cardiac notch causes left to deviate laterally</li>
+          <li>Reflect down: 6th CC (midclavicular) → 8th rib (midaxillary) → 10th/12th rib (paravertebral)</li>
+          <li>Lung surface marking: 2 rib spaces ABOVE pleura at each line (i.e., lung doesn't fill entire pleural cavity)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="clinical-box">
+      <div class="cbox-title">Pleural Effusion vs Pneumothorax</div>
+      <p><strong>Pleural effusion:</strong> Fluid in pleural cavity → dull percussion, decreased breath sounds, trachea deviation AWAY (large effusion). Aspirate from costodiaphragmatic recess.</p>
+      <p style="margin-top:6px"><strong>Pneumothorax:</strong> Air in pleural cavity → hyper-resonance, decreased breath sounds, trachea deviation TOWARD (tension = away). Tension pneumothorax → needle decompression → 2nd ICS, midclavicular line → insert over upper border of 3rd rib.</p>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════ S3: LUNGS ══════════════════════ -->
+<div id="s3">
+  <div class="section-header">
+    <div class="section-num">03</div>
+    <h2>Lungs <em>& Lobes</em></h2>
+  </div>
+  <div class="wiki-img" style="text-align: center; margin: 24px 0;">
+    <div style="color:var(--accent);font-family:'JetBrains Mono',monospace;font-size:11px;margin-bottom:8px;">DIAGRAM 03 — Right Lung Medial Surface</div>
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Gray972.png" alt="Right Lung Medial Surface" loading="lazy" style="max-width: 100%; border-radius: 8px;">
+    <div class="wiki-caption" style="font-size:11px;color:var(--text2);text-align:center;margin-top:8px;">Mediastinal surface of right lung — Gray's Anatomy</div>
+  </div>
+
+  <div class="wiki-img" style="text-align: center; margin: 24px 0;">
+    <div style="color:var(--accent);font-family:'JetBrains Mono',monospace;font-size:11px;margin-bottom:8px;">Left Lung Medial Surface</div>
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Gray973.png" alt="Left Lung Medial Surface" loading="lazy" style="max-width: 100%; border-radius: 8px;">
+    <div class="wiki-caption" style="font-size:11px;color:var(--text2);text-align:center;margin-top:8px;">Mediastinal surface of left lung — Gray's Anatomy</div>
+  </div>
+
+
+  <div class="card">
+    <div class="card-title">Lobes, Fissures & Surfaces <span class="badge badge-pyq">PYQ 2011, 2018, 2022</span></div>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Feature</th><th>Right Lung</th><th>Left Lung</th></tr>
+        <tr><td>Lobes</td><td>3: Upper, Middle, Lower</td><td>2: Upper (+ lingula), Lower</td></tr>
+        <tr><td>Fissures</td><td>2: Oblique + Horizontal</td><td>1: Oblique only</td></tr>
+        <tr><td>Oblique fissure</td><td>From T4 (posterior) → 6th rib (anterior)</td><td>Same course</td></tr>
+        <tr><td>Horizontal fissure</td><td>From 4th rib → meets oblique fissure at 5th rib in midaxillary line</td><td>Absent</td></tr>
+        <tr><td>Weight</td><td>~620 g (heavier — 3 lobes)</td><td>~560 g</td></tr>
+        <tr><td>Segments</td><td>10</td><td>8–10 (classically 8)</td></tr>
+        <tr><td>Special features</td><td>Eparterial bronchus (to upper lobe, above pulmonary artery — UNIQUE to right)</td><td>Cardiac notch + lingula (tongue-like process of upper lobe)</td></tr>
+        <tr><td>Groove</td><td>Azygos vein groove (near hilum)</td><td>Aortic arch groove, descending aorta groove</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Root of Lung vs Hilum — Arrangement of Structures <span class="badge badge-fav">⭐ PYQ 2015-S, 2019, 2024</span></div>
+    <div class="two-col">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">Right Hilum — from top to bottom:</p>
+        <ul class="checklist">
+          <li><span class="hl">Eparterial bronchus</span> (upper lobe bronchus — most superior)</li>
+          <li><span class="hl">Right pulmonary artery</span></li>
+          <li>Remaining bronchi (middle + lower lobe)</li>
+          <li><span class="hl">Superior pulmonary vein</span></li>
+          <li><span class="hl">Inferior pulmonary vein</span> (most inferior)</li>
+        </ul>
+        <div class="mnemonic-box" style="margin-top:.75rem">
+          <div class="mbox-title">Right Hilum Mnemonic</div>
+          <div class="mnemonic-highlight">"BrAVe" — Bronchus (eparterial), Artery, Veins (2)</div>
+        </div>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--rose);margin-bottom:6px">Left Hilum — from top to bottom:</p>
+        <ul class="checklist">
+          <li><span class="hl-rose">Left pulmonary artery</span> (arches OVER left main bronchus — most superior)</li>
+          <li><span class="hl-rose">Left main bronchus</span></li>
+          <li><span class="hl-rose">Superior pulmonary vein</span></li>
+          <li><span class="hl-rose">Inferior pulmonary vein</span></li>
+        </ul>
+        <div class="mnemonic-box" style="margin-top:.75rem">
+          <div class="mbox-title">Left Hilum Mnemonic</div>
+          <div class="mnemonic-highlight">"ABVe" — Artery (superior), Bronchus, Veins</div>
+        </div>
+        <div class="warn-box" style="margin-top:.5rem">Key difference: <strong>Right = Bronchus highest; Left = Artery highest.</strong></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════ S4: BRONCHOPULMONARY SEGMENTS ══════════════════════ -->
+<div id="s4">
+  <div class="section-header">
+    <div class="section-num">04</div>
+    <h2>Bronchopulmonary <em>Segments</em></h2>
+  </div>
+  <div class="wiki-img" style="text-align: center; margin: 24px 0;">
+    <div style="color:var(--accent);font-family:'JetBrains Mono',monospace;font-size:11px;margin-bottom:8px;">DIAGRAM 04 & 05 — Bronchopulmonary Segments</div>
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bronchopulmonary_segments.svg" alt="Bronchopulmonary Segments" loading="lazy" style="max-width: 100%; border-radius: 8px;">
+    <div class="wiki-caption" style="font-size:11px;color:var(--text2);text-align:center;margin-top:8px;">Bronchopulmonary segments of the right and left lungs</div>
+  </div>
+
+
+  <div class="keypoint"><strong>Definition:</strong> The smallest functionally + surgically independent unit of the lung. Each segment has its own: <strong>segmental bronchus, segmental artery, lymphatics, autonomic nerves</strong>. Veins are INTERSEGMENTAL (run in planes between segments — used as surgical planes for segmentectomy).</div>
+
+  <div class="clinical-box">
+    <div class="cbox-title">Clinical Importance of Bronchopulmonary Segments</div>
+    <p><strong>Segmentectomy:</strong> Surgical resection of one segment while preserving rest of lobe. Possible because segments are independent units with intersegmental veins as planes.</p>
+    <p style="margin-top:4px"><strong>Postural drainage:</strong> Position patient to gravity-drain specific segment (e.g., posterior segments drain with patient prone tilted).</p>
+    <p style="margin-top:4px"><strong>Inhaled foreign body:</strong> Right > left; goes to posterior basal segment (lower lobe) in erect, or posterior segment (upper lobe) in supine patient.</p>
+  </div>
+
+  <!-- Segment Tables -->
+  <div class="seg-grid">
+    <div class="seg-card right">
+      <div class="seg-card-title">RIGHT LUNG — 10 Segments</div>
+      <div class="seg-lobe">Upper Lobe (3 segments)</div>
+      <div class="seg-item"><span class="seg-num">1</span>Apical (S1)</div>
+      <div class="seg-item"><span class="seg-num">2</span>Posterior (S2)</div>
+      <div class="seg-item"><span class="seg-num">3</span>Anterior (S3)</div>
+      <div class="seg-lobe">Middle Lobe (2 segments)</div>
+      <div class="seg-item"><span class="seg-num">4</span>Lateral (S4)</div>
+      <div class="seg-item"><span class="seg-num">5</span>Medial (S5)</div>
+      <div class="seg-lobe">Lower Lobe (5 segments)</div>
+      <div class="seg-item"><span class="seg-num">6</span>Superior (S6) — apex of lower lobe</div>
+      <div class="seg-item"><span class="seg-num">7</span>Medial Basal (S7) — cardiac</div>
+      <div class="seg-item"><span class="seg-num">8</span>Anterior Basal (S8)</div>
+      <div class="seg-item"><span class="seg-num">9</span>Lateral Basal (S9)</div>
+      <div class="seg-item"><span class="seg-num">10</span>Posterior Basal (S10)</div>
+    </div>
+    <div class="seg-card left">
+      <div class="seg-card-title">LEFT LUNG — 8 Segments (classical)</div>
+      <div class="seg-lobe">Upper Lobe (4 segments + 2 lingular)</div>
+      <div class="seg-item"><span class="seg-num">1+2</span>Apicoposterior (S1+2 fused)</div>
+      <div class="seg-item"><span class="seg-num">3</span>Anterior (S3)</div>
+      <div class="seg-item"><span class="seg-num" style="color:var(--rose);">4</span>Superior Lingular (S4)</div>
+      <div class="seg-item"><span class="seg-num" style="color:var(--rose);">5</span>Inferior Lingular (S5)</div>
+      <div class="seg-lobe">Lower Lobe (4 segments)</div>
+      <div class="seg-item"><span class="seg-num">6</span>Superior (S6)</div>
+      <div class="seg-item"><span class="seg-num">7+8</span>Anteromedial Basal (S7+8 fused)</div>
+      <div class="seg-item"><span class="seg-num">9</span>Lateral Basal (S9)</div>
+      <div class="seg-item"><span class="seg-num">10</span>Posterior Basal (S10)</div>
+      <div style="margin-top:.75rem;font-size:11px;color:var(--text2);font-family:'JetBrains Mono',monospace;">No S7 alone + No middle lobe (lingula ≠ middle lobe anatomically, but is functional equivalent)</div>
+    </div>
+  </div>
+
+  <div class="mnemonic-box">
+    <div class="mbox-title">Segment Mnemonic — Right Lower Lobe (5 segments)</div>
+    <div class="mnemonic-highlight">"Sam Makes Apple Lemon Pie" → Superior, Medial basal, Anterior basal, Lateral basal, Posterior basal</div>
+  </div>
+
+  <div class="mnemonic-box">
+    <div class="mbox-title">Segment Mnemonic — Right Upper Lobe (3 segments)</div>
+    <div class="mnemonic-highlight">"APA" → Apical, Posterior, Anterior</div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════ S5: TRACHEA & BRONCHI ══════════════════════ -->
+<div id="s5">
+  <div class="section-header">
+    <div class="section-num">05</div>
+    <h2>Trachea <em>& Bronchi</em></h2>
+  </div>
+  <div class="wiki-img" style="text-align: center; margin: 24px 0;">
+    <div style="color:var(--accent);font-family:'JetBrains Mono',monospace;font-size:11px;margin-bottom:8px;">Trachea and Bronchi</div>
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Gray961.png" alt="Trachea and Bronchi" loading="lazy" style="max-width: 100%; border-radius: 8px;">
+    <div class="wiki-caption" style="font-size:11px;color:var(--text2);text-align:center;margin-top:8px;">The trachea and its primary bronchi — Gray's Anatomy</div>
+  </div>
+
+
+  <div class="card">
+    <div class="card-title">Trachea — Key Facts <span class="badge badge-pyq">PYQ 2016, 2020</span></div>
+    <div class="two-col">
+      <div>
+        <ul class="checklist">
+          <li><strong>Length:</strong> 10–11 cm (males), 9–10 cm (females)</li>
+          <li><strong>Extends:</strong> C6 vertebra (cricoid cartilage) → T4/T5 (carina = bifurcation)</li>
+          <li><strong>Diameter:</strong> 1.5–2.0 cm</li>
+          <li><strong>C-shaped cartilage rings:</strong> 16–20; posterior wall = membranous (no cartilage) = trachealis muscle</li>
+          <li><strong>Carina:</strong> Internal ridge at bifurcation, sensitive mucosa → cough reflex; widened in lymphadenopathy</li>
+        </ul>
+      </div>
+      <div>
+        <ul class="checklist">
+          <li><strong>Anterior relations:</strong> Isthmus of thyroid (covers 2nd–4th ring), brachiocephalic artery, left brachiocephalic vein</li>
+          <li><strong>Posterior:</strong> Oesophagus (indents trachea)</li>
+          <li><strong>Left:</strong> Aortic arch, left common carotid, left subclavian artery</li>
+          <li><strong>Right:</strong> Azygos vein, right vagus nerve, right pleura</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Right vs Left Main Bronchus <span class="badge badge-fav">⭐ PYQ EVERY YEAR</span></div>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Feature</th><th>Right Main Bronchus</th><th>Left Main Bronchus</th></tr>
+        <tr><td>Length</td><td>2.5 cm (short)</td><td>5 cm (long)</td></tr>
+        <tr><td>Width/Calibre</td><td>Wider</td><td>Narrower</td></tr>
+        <tr><td>Angle to trachea</td><td>25° (more vertical)</td><td>45° (more horizontal)</td></tr>
+        <tr><td>Eparterial bronchus</td><td>Present (to right upper lobe, above pulmonary artery)</td><td>Absent — all bronchi are hyparterial</td></tr>
+        <tr><td>Foreign body</td><td>More common — shorter, wider, more vertical</td><td>Less common</td></tr>
+        <tr><td>Relations</td><td>Azygos vein arches over it</td><td>Aortic arch + left pulmonary artery arch over it</td></tr>
+        <tr><td>Intubation error</td><td>Right-sided intubation collapses LEFT lung</td><td>—</td></tr>
+      </table>
+    </div>
+    <div class="clinical-box" style="margin-top:.75rem">
+      <div class="cbox-title">Foreign Body Aspiration — Which Segment?</div>
+      <p><strong>Erect patient:</strong> Right > lower lobe > posterior basal segment (S10) — gravity pulls fluid/object downward + backward.</p>
+      <p style="margin-top:4px"><strong>Supine patient:</strong> Right > lower lobe > superior segment (S6) — most dependent posterior segment in supine position.</p>
+      <p style="margin-top:4px"><strong>Right-sided preference:</strong> Short, wide, vertical right main bronchus is almost direct continuation of trachea.</p>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════ S6: HEART ══════════════════════ -->
+<div id="s6">
+  <div class="section-header">
+    <div class="section-num">06</div>
+    <h2>Heart — External <em>& Chambers</em></h2>
+  </div>
+  <div class="wiki-img" style="text-align: center; margin: 24px 0;">
+    <div style="color:var(--accent);font-family:'JetBrains Mono',monospace;font-size:11px;margin-bottom:8px;">DIAGRAM 06 — External Features of Heart</div>
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Gray492.png" alt="External Features of Heart" loading="lazy" style="max-width: 100%; border-radius: 8px;">
+    <div class="wiki-caption" style="font-size:11px;color:var(--text2);text-align:center;margin-top:8px;">Anterior (sternocostal) surface of the heart — Gray's Anatomy</div>
+  </div>
+
+
+  <div class="card">
+    <div class="card-title">Surfaces, Borders & Apex <span class="badge badge-pyq">PYQ 2013, 2016, 2021</span></div>
+    <div class="two-col">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">4 Surfaces:</p>
+        <ul class="checklist">
+          <li><strong>Sternocostal (anterior):</strong> Mainly RV. "Right ventricle is the most anterior chamber"</li>
+          <li><strong>Diaphragmatic (inferior):</strong> Mainly LV, small RV. Sits on central tendon of diaphragm</li>
+          <li><strong>Left pulmonary (left):</strong> LA + LV — forms cardiac impression on left lung</li>
+          <li><strong>Right pulmonary (right):</strong> RA forms right cardiac impression on right lung</li>
+        </ul>
+        <p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px;margin-top:.75rem">Base of Heart:</p>
+        <ul class="checklist">
+          <li><strong>Base = posterior surface</strong> (not inferior!)</li>
+          <li>Formed by <strong>left atrium (LA)</strong> mainly, small right atrium</li>
+          <li>Receives: 4 pulmonary veins (2 on each side)</li>
+          <li>Lies opposite to apex</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--teal);margin-bottom:6px">4 Borders:</p>
+        <ul class="checklist">
+          <li><strong>Right border:</strong> Right atrium (RA) only — from 3rd to 6th costal cartilage, just right of sternum</li>
+          <li><strong>Left border:</strong> Mainly LV, small RA appendage superiorly</li>
+          <li><strong>Superior border:</strong> Formed by right and left atria + great vessels emerging</li>
+          <li><strong>Inferior border:</strong> Mainly RV, small LV at apex</li>
+        </ul>
+        <p style="font-size:13px;font-weight:600;color:var(--rose);margin-bottom:6px;margin-top:.75rem">Apex:</p>
+        <ul class="checklist">
+          <li>Position: <strong>Left 5th ICS, midclavicular line</strong> (9 cm from midline)</li>
+          <li>Formed by: <strong>Left Ventricle (LV)</strong></li>
+          <li>Apex beat (apical impulse / PMI): palpable here in normal adults</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Chambers — Internal Features <span class="badge badge-pyq">PYQ 2014-S, 2018, 2024</span></div>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Chamber</th><th>Inflow</th><th>Outflow</th><th>Special Internal Features</th></tr>
+        <tr><td>Right Atrium (RA)</td><td>SVC (superiorly), IVC (inferiorly), Coronary sinus (posteriorly)</td><td>Tricuspid valve → RV</td><td>Crista terminalis (ridge), Pectinate muscles (rough anterior wall), Fossa ovalis (remnant of foramen ovale — septum primum), Eustachian valve (IVC valve), Thebesian valve (coronary sinus)</td></tr>
+        <tr><td>Right Ventricle (RV)</td><td>Tricuspid valve</td><td>Conus arteriosus → Pulmonary valve → Pulmonary trunk</td><td>Trabeculae carneae (ridges), Papillary muscles (anterior largest, posterior, septal), Moderator band / septomarginal trabecula (carries RBB!), normal pressure 25/5 mmHg</td></tr>
+        <tr><td>Left Atrium (LA)</td><td>4 Pulmonary veins</td><td>Mitral valve → LV</td><td>Thickest walled atrium, Smooth posterior wall, Pectinate muscles only in LA appendage (site of thrombus in AF)</td></tr>
+        <tr><td>Left Ventricle (LV)</td><td>Mitral valve</td><td>Aortic vestibule → Aortic valve → Ascending aorta</td><td>Thickest wall (3× RV), Papillary muscles (anterior + posterior), No moderator band, Normal pressure 120/10 mmHg</td></tr>
+      </table>
+    </div>
+    <div class="warn-box">
+      <strong>Key exam trap — Moderator band:</strong> Found in RV only, NOT LV. Carries the <strong>right bundle branch</strong> of conducting system. Clinical: in dilated cardiomyopathy, elongated moderator band seen on echo.
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════ S6B: CARDIAC SEPTA DEVELOPMENT ══════════════════════ -->
+<div id="s6b">
+  <div class="section-header">
+    <div class="section-num">6B</div>
+    <h2>Cardiac Septa <em>Development</em></h2>
+  </div>
+
+  <div class="keypoint">Development of the cardiac septa is a complex embryological process involving partition of both atria and ventricles. Failures in this process lead to common congenital cardiac anomalies like ASD, VSD, and TOF.</div>
+
+  <div class="card">
+    <div class="card-title">Interatrial Septum Development <span class="badge badge-fav">⭐ PYQ 2018, 2023, 2024</span></div>
+    <p>The partitioning of the primitive atrium is accomplished by the growth of two overlapping septa:</p>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Septum / Component</th><th>Anatomical Description & Growth Direction</th><th>Openings & Shunts</th><th>Fate / Adult Remnant</th></tr>
+        <tr><td><strong>Septum Primum</strong></td><td>A thin, sickle-shaped membrane that grows downwards from the roof of the atrium toward the endocardial cushions.</td><td>1. <strong>Ostium (Foramen) Primum:</strong> Gap at the lower border before it fuses with cushions.<br>2. <strong>Ostium (Foramen) Secundum:</strong> Formed by apoptosis in its upper part before the ostium primum closes.</td><td>Fuses with the endocardial cushions. Forms the floor of the **fossa ovalis** (valve of the foramen ovale).</td></tr>
+        <tr><td><strong>Septum Secundum</strong></td><td>A thick, muscular crescentic fold that grows from the roof of the right atrium, immediately to the right of the septum primum.</td><td><strong>Foramen Ovale:</strong> An oblique opening between its lower edge and the septum primum, allowing right-to-left blood shunt in the fetus (bypassing lungs).</td><td>Its free margin forms the **limbus fossae ovalis** (anulus ovalis).</td></tr>
+      </table>
+    </div>
+    <div class="clinical-box">
+      <div class="cbox-title">Physiological Closure at Birth</div>
+      <p>At birth, the expansion of the lungs increases left atrial blood pressure, and cessation of umbilical flow decreases right atrial pressure. This pressure difference pushes the flexible septum primum against the rigid septum secundum, functionally closing the foramen ovale. Structural fusion occurs in the first year of life.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Interventricular Septum Development <span class="badge badge-fav">⭐ PYQ 2018, 2023, 2024</span></div>
+    <p>The interventricular septum (IVS) partitions the primitive ventricle into right and left ventricles, and is formed by the fusion of three distinct embryological components:</p>
+    <ul class="check">
+      <li><strong>Muscular Part:</strong> Grows upwards from the apex of the primitive ventricle toward the endocardial cushions. It forms the thick, muscular lower 5/6 of the adult IVS.</li>
+      <li><strong>Membranous Part:</strong> Closes the remaining interventricular foramen. It is formed by the downward growth and fusion of the <strong>right and left bulbar (conotruncal) ridges</strong> with the posterior edge of the <strong>endocardial cushions</strong>. It forms the thin, fibrous upper 1/6 of the adult IVS.</li>
+      <li><strong>Bulbar (Spiral) Septum:</strong> Derived from neural crest cells, partitions the bulbus cordis and truncus arteriosus into the ascending aorta and pulmonary trunk.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Congenital Septal & Valvular Anomalies <span class="badge badge-pyq">PYQ 2018, 2023, 2024</span></div>
+    <div class="two-col">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">Atrial Septal Defects (ASD):</p>
+        <ul class="checklist">
+          <li><strong>Ostium Secundum Defect:</strong> Most common type. Caused by excessive resorption of the septum primum or inadequate growth of the septum secundum, leaving a large open hole in the center of the septum.</li>
+          <li><strong>Ostium Primum Defect:</strong> Caused by failure of the septum primum to fuse with the endocardial cushions. Often associated with mitral valve clefts.</li>
+          <li><strong>Patent Foramen Ovale (PFO):</strong> Failure of the septum primum and secundum to fuse after birth (probe-patent PFO exists in ~25% of normal population, usually asymptomatic but can cause paradoxical emboli).</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px">Ventricular & Aorticopulmonary Defects:</p>
+        <ul class="checklist">
+          <li><strong>Ventricular Septal Defect (VSD):</strong> The most common congenital cardiac malformation. Most commonly occurs in the **membranous part** of the IVS, due to failure of the bulbar ridges and endocardial cushions to fuse. Causes a left-to-right shunt (pansystolic murmur).</li>
+          <li><strong>Tetralogy of Fallot (TOF):</strong> Caused by the **anterosuperior displacement of the aorticopulmonary septum** (conotruncal division defect). Consists of: (1) VSD, (2) Pulmonary stenosis, (3) Overriding aorta, (4) Right ventricular hypertrophy.</li>
+          <li><strong>Patent Ductus Arteriosus (PDA):</strong> Ductus arteriosus fails to close. Leads to a continuous "machinery" murmur.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════ S7: CONDUCTING SYSTEM ══════════════════════ -->
+<div id="s7">
+  <div class="section-header">
+    <div class="section-num">07</div>
+    <h2>Conducting <em>System</em></h2>
+  </div>
+  <div class="wiki-img" style="text-align: center; margin: 24px 0;">
+    <div style="color:var(--accent);font-family:'JetBrains Mono',monospace;font-size:11px;margin-bottom:8px;">DIAGRAM 07 — Conducting System</div>
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Conductionsystemoftheheart.png" alt="Conducting System" loading="lazy" style="max-width: 100%; border-radius: 8px; background: white;">
+    <div class="wiki-caption" style="font-size:11px;color:var(--text2);text-align:center;margin-top:8px;">Schematic of the heart conduction system</div>
+  </div>
+
+
+  <div class="flowchart">
+    <div class="flow-title">Conducting System of the Heart — Complete Pathway</div>
+    <div class="flow-v">
+      <div class="flow-box accent">
+        <span class="lbl">SA NODE — Pacemaker</span>
+        Location: <strong>Upper right RA, at junction of SVC and RA</strong> (crista terminalis, near orifice of SVC)<br>
+        Rate: 60–100 bpm | Blood supply: <strong>SA nodal artery from RCA (55–65%) or LCx (35–45%)</strong>
+      </div>
+      <div class="flow-step-label">↓ Impulse travels through 3 internodal tracts: Anterior (Bachmann's — to LA), Middle (Wenckebach's), Posterior (Thorel's)</div>
+      <div class="flow-box gold">
+        <span class="lbl">AV NODE — Gatekeeper (delays impulse 0.1 sec)</span>
+        Location: <strong>Floor of RA in Triangle of Koch</strong> (bounded by: Eustachian valve + tendon of Todaro → coronary sinus os → tricuspid valve ring)<br>
+        Rate (if SA fails): 40–60 bpm | Blood supply: <strong>AV nodal artery from RCA (90%) — right dominant</strong>
+      </div>
+      <div class="flow-step-label">↓ Bundle of His — pierces central fibrous body (membranous septum) → reaches muscular septum</div>
+      <div class="flow-box teal">
+        <span class="lbl">BUNDLE OF HIS — Only pathway across fibrous ring</span>
+        Runs along membranous interventricular septum. Divides into:
+      </div>
+      <div class="flow-step-label">↓ Divides at muscular septum</div>
+      <div class="two-col" style="margin:0">
+        <div class="flow-box rose">
+          <span class="lbl">RIGHT BUNDLE BRANCH (RBB)</span>
+          Thin, slender, long. Runs under endocardium → through <strong>moderator band</strong> → reaches anterior papillary muscle of RV
+        </div>
+        <div class="flow-box purple">
+          <span class="lbl">LEFT BUNDLE BRANCH (LBB)</span>
+          Fan-shaped, spreads widely. Divides: Anterior fascicle (thin) + Posterior fascicle (thick). Supplies LV
+        </div>
+      </div>
+      <div class="flow-step-label">↓ Both → Purkinje fibres (subendocardial plexus)</div>
+      <div class="flow-box green">
+        <span class="lbl">PURKINJE FIBRES — fastest conducting fibres</span>
+        Rate (if all above fail): 20–40 bpm | Speed: 4 m/s | Cause ventricular depolarisation from APEX upward (apex → base)
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Conduction Rates & Clinical Correlations</div>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Structure</th><th>Intrinsic Rate</th><th>Conduction Speed</th><th>Clinical</th></tr>
+        <tr><td>SA Node</td><td>60–100 bpm</td><td>—</td><td>Normal sinus rhythm; SSS = sick sinus syndrome</td></tr>
+        <tr><td>AV Node</td><td>40–60 bpm</td><td>0.05 m/s (slowest)</td><td>Heart block (1°/2°/3° AV block); WPW syndrome bypasses AV node via bundle of Kent</td></tr>
+        <tr><td>Bundle of His</td><td>—</td><td>2 m/s</td><td>His-Purkinje disease</td></tr>
+        <tr><td>Bundle branches</td><td>—</td><td>3–4 m/s</td><td>RBBB (rSR' in V1) / LBBB (broad, notched R in V6)</td></tr>
+        <tr><td>Purkinje fibres</td><td>20–40 bpm</td><td>4 m/s (fastest)</td><td>Idioventricular rhythm in complete heart block</td></tr>
+      </table>
+    </div>
+    <div class="clinical-box" style="margin-top:.75rem">
+      <div class="cbox-title">Triangle of Koch — AV Node Location</div>
+      <p>The AV node sits at the apex of the <strong>Triangle of Koch</strong>, bounded by: (1) tendon of Todaro (fibrous ridge), (2) tricuspid valve annulus (septal leaflet), (3) coronary sinus orifice. Important for: catheter ablation targeting in arrhythmias, surgical risk during tricuspid valve repair.</p>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════ S8: CORONARY ARTERIES ══════════════════════ -->
+<div id="s8">
+  <div class="section-header">
+    <div class="section-num">08</div>
+    <h2>Coronary <em>Arteries</em></h2>
+  </div>
+  <div class="wiki-img" style="text-align: center; margin: 24px 0;">
+    <div style="color:var(--accent);font-family:'JetBrains Mono',monospace;font-size:11px;margin-bottom:8px;">DIAGRAM 08 — Coronary Arteries</div>
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Gray498.png" alt="Coronary Arteries" loading="lazy" style="max-width: 100%; border-radius: 8px;">
+    <div class="wiki-caption" style="font-size:11px;color:var(--text2);text-align:center;margin-top:8px;">Coronary arteries and their branches — Gray's Anatomy</div>
+  </div>
+
+
+  <div class="keypoint">Both coronary arteries arise from the <strong>ascending aorta</strong> within the aortic sinuses (sinuses of Valsalva). They fill during <strong>diastole</strong> (when aortic valve is closed and sinuses are not obliterated). This is why HR matters — tachycardia shortens diastole → reduced coronary filling.</div>
+
+  <div class="card">
+    <div class="card-title">Coronary Artery Territories <span class="badge badge-fav">⭐ PYQ 2012-S, 2015, 2018, 2023</span></div>
+    <div class="two-col">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">Left Coronary Artery (LCA):</p>
+        <p style="font-size:12px;color:var(--text2);margin-bottom:8px">Arises from LEFT aortic sinus → short left main → divides into:</p>
+        <div style="background:rgba(74,158,232,.07);border:1px solid rgba(74,158,232,.2);border-radius:6px;padding:10px;margin-bottom:8px;">
+          <p style="font-size:12px;font-weight:700;color:var(--accent2);margin-bottom:4px">LAD (Left Anterior Descending) = "Artery of Sudden Death"</p>
+          <ul class="checklist" style="font-size:12px;">
+            <li>Runs in anterior interventricular groove</li>
+            <li>Supplies: anterior wall LV, anterior 2/3 of interventricular septum, apex, right bundle branch, anterior fascicle of LBB</li>
+            <li>Diagonal branches → lateral wall LV</li>
+            <li>Septal perforators → septum</li>
+            <li>Blocked in <strong>anterior MI</strong> → widest territory → most dangerous</li>
+          </ul>
+        </div>
+        <div style="background:rgba(74,158,232,.07);border:1px solid rgba(74,158,232,.2);border-radius:6px;padding:10px;">
+          <p style="font-size:12px;font-weight:700;color:var(--accent2);margin-bottom:4px">LCx (Left Circumflex)</p>
+          <ul class="checklist" style="font-size:12px;">
+            <li>Runs in left atrioventricular groove</li>
+            <li>Supplies: lateral wall LV, LA, posterior wall LV (if left-dominant)</li>
+            <li>SA node artery in 35–45% of cases (when from LCx)</li>
+            <li>Obtuse marginal branches → lateral LV</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--rose);margin-bottom:6px">Right Coronary Artery (RCA):</p>
+        <p style="font-size:12px;color:var(--text2);margin-bottom:8px">Arises from RIGHT aortic sinus → right atrioventricular groove:</p>
+        <div style="background:rgba(248,113,113,.07);border:1px solid rgba(248,113,113,.2);border-radius:6px;padding:10px;margin-bottom:8px;">
+          <ul class="checklist" style="font-size:12px;">
+            <li><strong>SA nodal artery:</strong> In 55–65% — from RCA (proximal right) → SA node</li>
+            <li><strong>Right marginal artery:</strong> Along inferior border of right ventricle</li>
+            <li>Acute marginal branch → anterior RV</li>
+            <li><strong>Posterior Descending Artery (PDA):</strong> In RIGHT DOMINANT (85%) pattern → posterior IVS (posterior 1/3 of septum)</li>
+            <li><strong>AV nodal artery:</strong> 90% from RCA (in right-dominant)</li>
+            <li>Supplies: RV free wall, posterior LV (right-dominant), posterior 1/3 septum</li>
+          </ul>
+        </div>
+        <div style="background:rgba(248,113,113,.07);border:1px solid rgba(248,113,113,.15);border-radius:6px;padding:10px;">
+          <p style="font-size:12px;font-weight:700;color:var(--rose);margin-bottom:4px">Coronary Dominance:</p>
+          <ul class="checklist" style="font-size:12px;">
+            <li><strong>Right dominant (85%):</strong> RCA gives PDA</li>
+            <li><strong>Left dominant (8%):</strong> LCx gives PDA</li>
+            <li><strong>Co-dominant (7%):</strong> Both contribute to PDA</li>
+            <li>Dominance = whichever vessel supplies the <strong>AV node + PDA</strong></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="table-wrap" style="margin-top:1rem">
+      <table>
+        <tr><th>Structure Supplied</th><th>Artery</th><th>Notes</th></tr>
+        <tr><td>SA Node</td><td>RCA (55–65%) OR LCx (35–45%)</td><td>Whichever is dominant SA artery comes first; RCA more common</td></tr>
+        <tr><td>AV Node</td><td>RCA (90% — right-dominant)</td><td>Why inferior MI (RCA) causes heart block!</td></tr>
+        <tr><td>Anterior 2/3 IVS</td><td>LAD (septal perforators)</td><td>LBBB, anterior MI pattern</td></tr>
+        <tr><td>Posterior 1/3 IVS</td><td>PDA (from RCA — right dominant)</td><td>Inferior MI → posterior septal infarct</td></tr>
+        <tr><td>Apex of heart</td><td>LAD predominantly</td><td>May be shared with RCA (apical wraparound)</td></tr>
+        <tr><td>LA appendage</td><td>LCx</td><td>Thrombus in AF — LCx territory</td></tr>
+        <tr><td>RBB (right bundle branch)</td><td>LAD</td><td>Anterior MI can cause RBBB</td></tr>
+      </table>
+    </div>
+
+    <div class="clinical-box" style="margin-top:.75rem">
+      <div class="cbox-title">Why Inferior MI Causes Heart Block</div>
+      <p>RCA supplies: SA node (55–65%), AV node (90% in right-dominant). Occlusion of RCA → inferior MI (leads II, III, aVF) + can knock out both nodal blood supplies → sick sinus syndrome + AV block simultaneously. Management: atropine, temporary pacing.</p>
+    </div>
+
+    <div class="card" style="margin-top: 1rem;">
+      <div class="card-title">Angina Pectoris vs Myocardial Infarction <span class="badge badge-pyq">PYQ</span></div>
+      <div class="table-wrap">
+        <table>
+          <tr><th>Feature</th><th>Angina Pectoris</th><th>Myocardial Infarction (MI)</th></tr>
+          <tr><td><strong>Pathology</strong></td><td>Transient ischemia (temporary lack of O2) to myocardium. Reversible.</td><td>Complete occlusion leading to myocardial necrosis (cell death). Irreversible.</td></tr>
+          <tr><td><strong>Pain Character</strong></td><td>Heavy, crushing chest pain. Induced by exertion, relieved by rest.</td><td>Severe, unrelenting crushing pain. Occurs at rest, not relieved by rest.</td></tr>
+          <tr><td><strong>Relief</strong></td><td>Sublingual nitroglycerin (vasodilator) provides rapid relief.</td><td>Nitroglycerin provides little to no relief. Requires immediate reperfusion.</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════ S9: CARDIAC VALVES ══════════════════════ -->
+<div id="s9">
+  <div class="section-header">
+    <div class="section-num">09</div>
+    <h2>Cardiac <em>Valves</em></h2>
+  </div>
+  <div class="wiki-img" style="text-align: center; margin: 24px 0;">
+    <div style="color:var(--accent);font-family:'JetBrains Mono',monospace;font-size:11px;margin-bottom:8px;">Cardiac Valves</div>
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Gray497.png" alt="Cardiac Valves" loading="lazy" style="max-width: 100%; border-radius: 8px;">
+    <div class="wiki-caption" style="font-size:11px;color:var(--text2);text-align:center;margin-top:8px;">Base of ventricular portion of heart showing valves — Gray's Anatomy</div>
+  </div>
+
+
+  <div class="card">
+    <div class="card-title">All 4 Valves — Position vs Auscultation Area <span class="badge badge-fav">⭐ PYQ 2011, 2016, 2021</span></div>
+    <div class="warn-box">The surface marking (where the valve lies) is <strong>DIFFERENT</strong> from the auscultation area (where you best hear it). Sounds travel in the direction of blood flow.</div>
+    <div class="table-wrap" style="margin-top:.75rem">
+      <table>
+        <tr><th>Valve</th><th>Type/Cusps</th><th>Anatomical Position</th><th>Best Auscultation Area</th><th>Key Clinical</th></tr>
+        <tr><td>Tricuspid (Right AV)</td><td>3 cusps: Anterior (largest), Posterior, Septal</td><td>Behind sternum, level 4th–5th ICS, right sternal border</td><td>Lower left sternal border (4th–5th ICS)</td><td>Murmur ↑ on inspiration (Carvallo's sign); Ebstein's anomaly — septal leaflet displaced</td></tr>
+        <tr><td>Pulmonary</td><td>3 semilunar cusps: Right anterior, Left anterior, Posterior</td><td>3rd ICS, left sternal border</td><td>2nd ICS, left sternal border</td><td>Pulmonary stenosis; 2nd heart sound P2 here</td></tr>
+        <tr><td>Mitral (Left AV / Bicuspid)</td><td>2 cusps: Anterior (aortic) — larger, Posterior (mural) — smaller</td><td>Behind 4th costal cartilage, left of sternum</td><td>Apex (5th ICS, midclavicular line)</td><td>MVP (mitral valve prolapse); mitral stenosis → opening snap; rheumatic fever most affects mitral</td></tr>
+        <tr><td>Aortic</td><td>3 semilunar cusps: Right (gives RCA), Left (gives LCA), Posterior (non-coronary)</td><td>Behind sternum, 3rd ICS right sternal border</td><td>2nd ICS, right sternal border (Erb's point: 3rd ICS LSB)</td><td>Aortic stenosis — ejection systolic murmur radiating to neck; 2nd heart sound A2 here</td></tr>
+      </table>
+    </div>
+    <div class="mnemonic-box">
+      <div class="mbox-title">Valve Mnemonic — Tricuspid First, Pulmonary Second, Mitral Third, Aortic Fourth</div>
+      <div class="mnemonic-highlight">"Try Pulling My Aorta" → Tricuspid, Pulmonary, Mitral, Aortic</div>
+      <p style="font-size:12px;color:var(--text2);margin-top:4px">Or for auscultation areas from right to left, top to bottom: <strong>"All Patients Take Medicine"</strong> = Aortic (2nd ICS right), Pulmonary (2nd ICS left), Tricuspid (4th ICS left), Mitral (apex)</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Mitral Valve Complex & Chordae Tendineae <span class="badge badge-pyq">PYQ 2024</span></div>
+    <p>The mitral (bicuspid) valve is more than just flaps of tissue — it is a complex of structures that function as a unit to ensure unidirectional blood flow during left ventricular systole.</p>
+    <div class="two-col">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">The Mitral Valve Complex Components:</p>
+        <ul class="checklist">
+          <li><strong>Fibrous Annulus:</strong> A fibrous ring surrounding the left AV orifice, anchoring the valve leaflets.</li>
+          <li><strong>Valve Leaflets (Cusps):</strong> Two main cusps:
+            <br>• <strong>Anterior (Aortic) Leaflet:</strong> Larger, semicircular, smooth; situated between the inflow and outflow tracts of the left ventricle.
+            <br>• <strong>Posterior (Mural) Leaflet:</strong> Smaller, rectangular, has three scallops (P1, P2, P3).
+          </li>
+          <li><strong>Chordae Tendineae:</strong> Fibrous cords that attach the papillary muscles to the ventricular surfaces and free margins of the leaflets.</li>
+          <li><strong>Papillary Muscles:</strong> Two large muscles (Anterolateral and Posteromedial) arising from the left ventricular wall.</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px">Chordae Tiers & Clinical Significance:</p>
+        <ul class="checklist">
+          <li><strong>Chordae Tendineae Tiers:</strong>
+            <br>• **Primary (Marginal) Chordae:** Attach to the free edge of the leaflets; prevent leaflet eversion.
+            <br>• **Secondary (Intermediate) Chordae:** Attach to the ventricular surface of the leaflets; distribute tension.
+            <br>• **Tertiary Chordae:** Found only at the base of the posterior leaflet, attaching to the ventricular wall.
+          </li>
+          <li><strong>Mechanism of Action:</strong> During ventricular systole, the papillary muscles contract first, pulling the chordae tendineae taut. This prevents the leaflets from everting/prolapsing back into the left atrium under the high ventricular pressure.</li>
+          <li><strong>Papillary Rupture:</strong> The **posteromedial papillary muscle** has a single blood supply (from the PDA), whereas the anterolateral has dual supply (LAD + LCx). Hence, posteromedial papillary rupture is a common, life-threatening complication of myocardial infarction, causing acute mitral regurgitation.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════ S10: PERICARDIUM & MEDIASTINUM ══════════════════════ -->
+<div id="s10">
+  <div class="section-header">
+    <div class="section-num">10</div>
+    <h2>Pericardium <em>& Mediastinum</em></h2>
+  </div>
+  <div class="wiki-img" style="text-align: center; margin: 24px 0;">
+    <div style="color:var(--accent);font-family:'JetBrains Mono',monospace;font-size:11px;margin-bottom:8px;">DIAGRAM 09 — Pericardial Sinuses</div>
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Gray490.png" alt="Pericardial Sinuses" loading="lazy" style="max-width: 100%; border-radius: 8px;">
+    <div class="wiki-caption" style="font-size:11px;color:var(--text2);text-align:center;margin-top:8px;">Posterior wall of the pericardial sac showing sinuses — Gray's Anatomy</div>
+  </div>
+
+
+  <div class="card">
+    <div class="card-title">Pericardium — Layers & Sinuses <span class="badge badge-pyq">PYQ 2014, 2019-S, 2022</span></div>
+    <div class="two-col">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">Pericardial Layers:</p>
+        <ul class="checklist">
+          <li><strong>Fibrous pericardium (outer):</strong> Strong, inelastic. Attached to: central tendon of diaphragm (below), great vessels (above). Prevents acute cardiac dilation. Supplied by phrenic nerve → referral to shoulder</li>
+          <li><strong>Serous pericardium — parietal:</strong> Lines inner surface of fibrous pericardium</li>
+          <li><strong>Serous pericardium — visceral (epicardium):</strong> Covers outer surface of heart. Reflected at great vessels</li>
+          <li><strong>Pericardial cavity:</strong> Between parietal + visceral serous layers. Contains 20–50 mL of clear fluid (lubricant)</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px">Pericardial Sinuses:</p>
+        <div style="background:rgba(251,191,36,.07);border:1px solid rgba(251,191,36,.2);border-radius:6px;padding:10px;margin-bottom:8px;">
+          <p style="font-size:12px;font-weight:700;color:var(--gold);">Transverse Sinus:</p>
+          <p style="font-size:12px;color:var(--text2);">Between: Ascending aorta + Pulmonary trunk (ANTERIOR) vs SVC + Pulmonary veins (POSTERIOR). A finger passed through transverse sinus can compress BOTH aorta and pulmonary trunk simultaneously → cardiac surgery manoeuvre (Pringle-type for heart)</p>
+        </div>
+        <div style="background:rgba(251,191,36,.07);border:1px solid rgba(251,191,36,.2);border-radius:6px;padding:10px;">
+          <p style="font-size:12px;font-weight:700;color:var(--gold);">Oblique Sinus:</p>
+          <p style="font-size:12px;color:var(--text2);">Blind J-shaped recess on posterior surface of LA. Bounded by: 4 pulmonary veins + IVC. Most dependent recess of pericardial cavity → fluid accumulates here first</p>
+        </div>
+        <div style="background:rgba(192,132,252,.07);border:1px solid rgba(192,132,252,.2);border-radius:6px;padding:10px;margin-top:8px;">
+          <p style="font-size:12px;font-weight:700;color:var(--purple);">Development of Transverse Pericardial Sinus: <span class="badge badge-pyq">PYQ 2014, 2019 supple</span></p>
+          <p style="font-size:12px;color:var(--text2);">Formed during embryological folding of the heart tube. Initially, the arterial and venous ends of the heart tube are anchored to the dorsal body wall by the <strong>dorsal mesocardium</strong>. As development proceeds, the central part of the dorsal mesocardium ruptures (degenerates), leaving a passage connecting the right and left sides of the pericardial cavity. This passage is the <strong>transverse pericardial sinus</strong>, which separates the outflow tract (arteries) from the inflow tract (veins).</p>
+        </div>
+      </div>
+    </div>
+    <div class="clinical-box">
+      <div class="cbox-title">Pericardial Effusion & Tamponade</div>
+      <p><strong>Beck's triad</strong> of cardiac tamponade: (1) Hypotension, (2) Muffled/distant heart sounds, (3) Raised JVP (distended neck veins).</p>
+      <p style="margin-top:4px"><strong>Pericardiocentesis:</strong> Needle inserted subxiphoid (subxiphisternal approach) at 45° angle toward LEFT shoulder. Passes through: skin → fat → linea alba → diaphragm → fibrous pericardium → parietal serous pericardium → pericardial cavity. ECG monitoring during procedure (ST elevation = needle touching myocardium).</p>
+    </div>
+  </div>
+
+  <!-- Development of IVC Card -->
+  <div class="card" style="margin-top:1rem">
+    <div class="card-title">Development of the Inferior Vena Cava (IVC) <span class="badge badge-pyq">PYQ 2014, 2019 supple</span></div>
+    <p>The IVC is a complex venous channel formed during the 6th to 8th weeks of embryonic life. Rather than developing from a single vessel, it is built from the fusion of segments from four embryonic venous systems: the <strong>vitelline</strong> system and three pairs of cardinal veins (<strong>subcardinal</strong>, <strong>supracardinal</strong>, and <strong>sacrocardinal</strong>).</p>
+    <div class="two-col" style="margin-top:.5rem">
+      <div>
+        <h4 style="color:var(--accent2); margin-bottom:5px;">Four Embryological Segments of IVC</h4>
+        <ul class="checklist">
+          <li><strong>Hepatic Segment:</strong> Derived from the <strong>right vitelline vein</strong> (proximal part) and the hepatic sinusoids.</li>
+          <li><strong>Prerenal Segment:</strong> Formed by the <strong>right subcardinal vein</strong>.</li>
+          <li><strong>Renal Segment:</strong> Formed by the anastomosis between the subcardinal and supracardinal veins.</li>
+          <li><strong>Postrenal (Infrarenal) Segment:</strong> Derived from the <strong>right supracardinal vein</strong> (lower portion). The left supracardinal vein degenerates.</li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="color:var(--accent2); margin-bottom:5px;">Congenital Anomalies & Development Details</h4>
+        <ul class="checklist">
+          <li><strong>Double IVC:</strong> Caused by failure of the left supracardinal vein to regress below the kidneys, resulting in two infrarenal IVCs.</li>
+          <li><strong>Absence of Hepatic Segment:</strong> Occurs when the right vitelline vein fails to connect with the subcardinal system. Blood from the lower body is diverted into the azygos/hemiazygos vein system to reach the SVC.</li>
+          <li><strong>Left IVC:</strong> Occurs when the right supracardinal vein regresses and the left persists, leading to an IVC on the left side that crosses the midline at the renal level.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="mnemonic-box" style="margin-top:10px">
+      <div class="mbox-title">IVC Segments Mnemonic (Hepatic to Postrenal)</div>
+      <div class="mnemonic-highlight">"Very Smart Sister Sues" → <strong>V</strong>itelline (Hepatic) · <strong>S</strong>ubcardinal (Prerenal) · <strong>S</strong>ub-Supra anastomosis (Renal) · <strong>S</strong>upracardinal (Postrenal).</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Mediastinum — Division & Contents <span class="badge badge-pyq">PYQ 2015, 2020, 2023</span></div>
+    <div class="keypoint">Mediastinum = Space between the two pleural sacs. Bounded: sternum (anterior), vertebral column (posterior), thoracic inlet (above), diaphragm (below).</div>
+    <div class="table-wrap" style="margin-top:.75rem">
+      <table>
+        <tr><th>Compartment</th><th>Boundaries</th><th>Key Contents</th></tr>
+        <tr><td>Superior</td><td>Thoracic inlet → Sternal angle (T4/T5)</td><td>Thymus, aortic arch + 3 branches (brachiocephalic, LCCA, LSA), SVC, brachiocephalic veins, Trachea + oesophagus, Thoracic duct, Phrenic + vagus nerves, Left recurrent laryngeal nerve (hooks under aortic arch)</td></tr>
+        <tr><td>Anterior (inferior)</td><td>Sternum → Pericardium</td><td>Thymus remnant (adults: fat), lymph nodes, internal thoracic vessels. EMPTY in adults</td></tr>
+        <tr><td>Middle (inferior)</td><td>Pericardial sac itself</td><td>Heart + pericardium, ascending aorta, SVC + IVC, pulmonary trunk + veins, phrenic nerves</td></tr>
+        <tr><td>Posterior (inferior)</td><td>Pericardium → Vertebral column</td><td>Descending thoracic aorta, Oesophagus + vagal plexus, Thoracic duct, Azygos + hemiazygos veins, Thoracic sympathetic chain + splanchnic nerves</td></tr>
+      </table>
+    </div>
+    <div class="mnemonic-box">
+      <div class="mbox-title">Anterior Mediastinal Masses — The 4 Ts</div>
+      <div class="mnemonic-highlight">"4 Ts of Anterior Mediastinum" → Thymoma, Teratoma (germ cell), Thyroid (retrosternal), Terrible lymphoma</div>
+      <p style="font-size:12px;color:var(--text2);margin-top:4px">Middle: Lymph nodes (sarcoid, metastases), bronchogenic cysts. Posterior: Neurogenic tumours (most common posterior mediastinal mass — schwannoma, neurofibroma)</p>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════ S10B: CONGENITAL ANOMALIES ══════════════════════ -->
+<div id="s10b">
+  <div class="section-header">
+    <div class="section-num">10B</div>
+    <h2>Congenital <em>Anomalies</em></h2>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Congenital Malformations <span class="badge badge-pyq">PYQ Frequent</span></div>
+    <div class="two-col">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">Cardiovascular Anomalies:</p>
+        <ul class="checklist">
+          <li><strong>Tetralogy of Fallot (TOF):</strong> Most common cyanotic heart defect. Four features (PROVe): <strong>P</strong>ulmonary stenosis, <strong>R</strong>ight ventricular hypertrophy, <strong>O</strong>verriding aorta, <strong>V</strong>entricular septal defect. Due to anterior displacement of the aorticopulmonary septum.</li>
+          <li><strong>Patent Ductus Arteriosus (PDA):</strong> Failure of ductus arteriosus (connecting pulmonary artery to aorta) to close after birth. Causes a continuous "machinery-like" murmur. Treated with indomethacin (prostaglandin inhibitor) to close it.</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px">Thoracic & GI Anomalies:</p>
+        <ul class="checklist">
+          <li><strong>Tracheo-oesophageal Fistula (TOF):</strong> Abnormal connection between trachea and oesophagus. Often associated with oesophageal atresia. Presents with choking, cyanosis, and regurgitation immediately upon first feed.</li>
+          <li><strong>Congenital Diaphragmatic Hernia:</strong> Failure of the pleuroperitoneal membrane to close (most commonly on the left — Foramen of Bochdalek). Abdominal organs herniate into the thorax, causing pulmonary hypoplasia.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════ S11: DIAPHRAGM ══════════════════════ -->
+
+
+<!-- ══════════════════════ S11: VIVA ══════════════════════ -->
+<div id="s11">
+  <div class="section-header">
+    <div class="section-num">13</div>
+    <h2>Viva <em>Q&A</em></h2>
+  </div>
+
+  <div class="viva-section">
+    <div class="viva-title-bar">Thoracic Wall & Pleura</div>
+
+    <details>
+      <summary><span class="viva-q">What structures pass through the sternal angle? What is its vertebral level?</span><span class="viva-year">PYQ Every Year</span></summary>
+      <div class="viva-ans">
+        <p>The <strong>sternal angle (angle of Louis)</strong> is the junction of manubrium and body of sternum, at the level of the <strong>T4/T5 intervertebral disc</strong>.</p>
+        <p>Structures at this level:</p>
+        <ul>
+          <li><strong>Trachea bifurcates</strong> → carina, right + left main bronchi</li>
+          <li><strong>Arch of aorta</strong> begins (from ascending) and ends (becoming descending thoracic aorta)</li>
+          <li><strong>Thoracic duct</strong> crosses from right to left</li>
+          <li><strong>Azygos vein</strong> arches over right lung root to join SVC</li>
+          <li>Upper border of <strong>SVC</strong></li>
+          <li><strong>Ligamentum arteriosum</strong> (ductus arteriosus remnant)</li>
+          <li><em>Clinical use: 2nd costal cartilage articulates here — count rib spaces from sternal angle</em></li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary><span class="viva-q">Where is the safe site for thoracocentesis? Why over the upper border of the rib?</span><span class="viva-year">PYQ 2019, 2023</span></summary>
+      <div class="viva-ans">
+        <p><strong>Site:</strong> Posterior axillary line, 7th–8th ICS, over the upper border of the lower rib.</p>
+        <p><strong>Why upper border:</strong> Intercostal neurovascular bundle (Vein-Artery-Nerve, from above) runs in the costal groove on the INFERIOR surface of the upper rib. Going over the upper border of the lower rib avoids this VAN bundle entirely.</p>
+        <p><strong>Why posterior axillary line:</strong> Avoids serratus anterior (medially) and latissimus dorsi (posteriorly). The costodiaphragmatic recess is deepest here.</p>
+        <p><em>Clinical: In supine patient, effusion accumulates in paravertebral gutter posteriorly. In sitting, it goes to costodiaphragmatic recess.</em></p>
+      </div>
+    </details>
+  </div>
+
+  <div class="viva-section">
+    <div class="viva-title-bar">Bronchopulmonary Segments & Lungs</div>
+
+    <details>
+      <summary><span class="viva-q">Define a bronchopulmonary segment. Why is it surgically important?</span><span class="viva-year">PYQ 2012, 2017, 2021</span></summary>
+      <div class="viva-ans">
+        <p>A <strong>bronchopulmonary segment</strong> is the smallest functionally independent unit of the lung supplied by its own: (1) segmental bronchus, (2) segmental artery, (3) lymphatics, (4) autonomic nerves.</p>
+        <p><strong>Surgical importance:</strong></p>
+        <ul>
+          <li>Veins are INTERSEGMENTAL — they run in the connective tissue planes between adjacent segments, serving as surgical landmarks for segmentectomy</li>
+          <li><strong>Segmentectomy:</strong> A diseased segment (localised tuberculosis, carcinoid tumour, sequestration) can be removed while preserving healthy lung tissue — this is only possible because each segment is an independent unit</li>
+          <li>Postural drainage: knowing which segment is affected allows correct patient positioning for gravity-assisted drainage</li>
+          <li>Foreign body location: knowing segment anatomy allows bronchoscopic retrieval</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary><span class="viva-q">Why do inhaled foreign bodies lodge more commonly in the right lung? And in which segment?</span><span class="viva-year">PYQ 2013-S, 2019</span></summary>
+      <div class="viva-ans">
+        <p><strong>Why right more common:</strong> The <strong>right main bronchus</strong> is: shorter (2.5 cm vs 5 cm), wider, more vertical (25° vs 45° from tracheal axis) — essentially a near-continuation of the trachea. A foreign body in free fall follows the straighter path.</p>
+        <p><strong>Which segment:</strong></p>
+        <ul>
+          <li><strong>Erect patient:</strong> Posterior basal segment (S10) of right lower lobe — gravity pulls downward + posteriorly</li>
+          <li><strong>Supine patient:</strong> Superior segment (S6) of right lower lobe — most dependent posterior segment when lying flat</li>
+          <li><strong>Right-side-down lateral position:</strong> Lateral basal segment (S9) of right lower lobe</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary><span class="viva-q">What is an eparterial bronchus? Where is it found?</span><span class="viva-year">PYQ 2016-S</span></summary>
+      <div class="viva-ans">
+        <p>An <strong>eparterial bronchus</strong> is one that arises ABOVE (epi = above) the pulmonary artery.</p>
+        <p>Found only in the <strong>RIGHT lung</strong> — the right upper lobe bronchus arises from the right main bronchus before (above) the right pulmonary artery. The azygos vein arches over this segment.</p>
+        <p>In the <strong>LEFT lung</strong>, all lobar bronchi arise BELOW the left pulmonary artery (hyparterial bronchi) — the left pulmonary artery arches over the left main bronchus.</p>
+        <p><em>Clinical: The eparterial bronchus is why the right hilum arrangement differs — bronchus tops the right hilum, while artery tops the left hilum.</em></p>
+      </div>
+    </details>
+  </div>
+
+  <div class="viva-section">
+    <div class="viva-title-bar">Heart, Coronary Arteries & Conducting System</div>
+
+    <details>
+      <summary><span class="viva-q">Where exactly is the SA node? What is its blood supply?</span><span class="viva-year">PYQ 2014, 2018, 2023</span></summary>
+      <div class="viva-ans">
+        <p><strong>Location:</strong> The SA node is a crescent-shaped structure in the <strong>upper right atrium, at the junction of the SVC and RA</strong>, just to the right of the crista terminalis. Depth: subepicardial.</p>
+        <p><strong>Blood supply:</strong></p>
+        <ul>
+          <li><strong>SA nodal artery from RCA:</strong> 55–65% of population (proximal RCA gives the SA nodal artery)</li>
+          <li><strong>SA nodal artery from LCx:</strong> 35–45% of population</li>
+          <li>The SA nodal artery passes through the centre of the node — compresses with increased atrial pressure (reflexly slows HR)</li>
+        </ul>
+        <p><em>Clinical significance: In RCA occlusion causing inferior MI, SA node ischaemia → sick sinus syndrome → bradycardia/tachycardia syndrome.</em></p>
+      </div>
+    </details>
+
+    <details>
+      <summary><span class="viva-q">Why does inferior myocardial infarction (MI) cause heart block?</span><span class="viva-year">PYQ 2017, 2022</span></summary>
+      <div class="viva-ans">
+        <p><strong>Inferior MI</strong> is caused by occlusion of the <strong>Right Coronary Artery (RCA)</strong>.</p>
+        <p>RCA supplies in right-dominant patients (85%):</p>
+        <ul>
+          <li><strong>SA node</strong> (55–65% from RCA) → SA nodal dysfunction → sinus bradycardia, sinus pause</li>
+          <li><strong>AV node</strong> (90% from RCA via AV nodal artery) → AV block (1°, 2° Mobitz I, or 3° AV block)</li>
+        </ul>
+        <p>Inferior MI ECG: ST elevation in leads <strong>II, III, aVF</strong> (inferior leads face inferior surface of LV = diaphragmatic surface).</p>
+        <p><strong>Management:</strong> Atropine (blocks vagal slowing), temporary pacemaker if haemodynamically unstable. Usually reversible with revascularisation as AV nodal ischaemia is transient.</p>
+        <p><em>Key point: This is the most common cause of complete AV block (3°) seen acutely in the CCU.</em></p>
+      </div>
+    </details>
+
+    <details>
+      <summary><span class="viva-q">What is the Triangle of Koch? What structure lies at its apex?</span><span class="viva-year">PYQ 2019-S, 2024</span></summary>
+      <div class="viva-ans">
+        <p>The <strong>Triangle of Koch</strong> is a triangular region on the floor of the right atrium, bounded by:</p>
+        <ul>
+          <li>Anteriorly: Tricuspid valve ring (septal leaflet)</li>
+          <li>Posterosuperiorly: Tendon of Todaro (a fibrous ridge running from Eustachian valve to membranous septum)</li>
+          <li>Inferiorly/Base: Coronary sinus orifice (os)</li>
+        </ul>
+        <p>The <strong>AV node</strong> lies at the <strong>apex</strong> of this triangle (where tendon of Todaro meets tricuspid valve ring).</p>
+        <p><strong>Clinical importance:</strong></p>
+        <ul>
+          <li>Radiofrequency catheter ablation targets this region for AV nodal re-entrant tachycardia (AVNRT)</li>
+          <li>Surgical risk: incisions near this triangle during tricuspid valve repair risk AV node damage → complete heart block</li>
+          <li>Anatomical guide for electrophysiologists during EP studies</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary><span class="viva-q">What is the 'artery of sudden death' and why is it called so?</span><span class="viva-year">PYQ 2015, 2020</span></summary>
+      <div class="viva-ans">
+        <p>The <strong>Left Anterior Descending (LAD)</strong> artery is called the "artery of sudden death."</p>
+        <p><strong>Reason:</strong> LAD supplies the LARGEST territory of any coronary artery:</p>
+        <ul>
+          <li>Anterior wall of the LEFT ventricle (the main pumping chamber)</li>
+          <li>Anterior 2/3 of the interventricular septum</li>
+          <li>Apex of the heart</li>
+          <li>Right bundle branch and anterior fascicle of LBB → occlusion causes RBBB + LAFB</li>
+        </ul>
+        <p>Acute LAD occlusion causes <strong>massive anterior MI</strong> — loss of the main pumping muscle → cardiogenic shock → ventricular fibrillation → sudden death.</p>
+        <p>On ECG: <em>ST elevation in V1–V4 (anterior leads)</em>. Mortality rate without reperfusion is much higher than inferior MI.</p>
+      </div>
+    </details>
+  </div>
+
+  <div class="viva-section">
+    <div class="viva-title-bar">Pericardium, Mediastinum & Diaphragm</div>
+
+    <details>
+      <summary><span class="viva-q">Name the structures passing through the diaphragm at T8, T10, and T12.</span><span class="viva-year">PYQ 2010, 2013, 2017, 2020, 2024</span></summary>
+      <div class="viva-ans">
+        <p><strong>T8 (IVC hiatus) — in central tendon:</strong> IVC + right phrenic nerve</p>
+        <p><strong>T10 (Oesophageal hiatus) — in right crus of diaphragm:</strong> Oesophagus + Left vagus (anterior) + Right vagus (posterior) + Oesophageal branches of left gastric artery and veins</p>
+        <p><strong>T12 (Aortic hiatus) — behind diaphragm:</strong> Descending aorta + Thoracic duct + Azygos vein (sometimes hemiazygos)</p>
+        <p><em>Mnemonic: "I 8 (ate) 10 EGGs At 12" → T8=IVC, T10=Esophagus+Gastric+vagi, T12=Aorta</em></p>
+        <p><strong>Why aorta is BEHIND diaphragm:</strong> The aortic "hiatus" is actually a space between the diaphragm and vertebral column — the aorta doesn't pierce the diaphragm, so diaphragm contractions do NOT compress aortic flow during inspiration.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary><span class="viva-q">What is the significance of the pericardial transverse sinus in cardiac surgery?</span><span class="viva-year">PYQ 2021</span></summary>
+      <div class="viva-ans">
+        <p><strong>Transverse sinus</strong> of the pericardium lies between:</p>
+        <ul>
+          <li>Anterior: Ascending aorta + Pulmonary trunk</li>
+          <li>Posterior: SVC + Pulmonary veins</li>
+        </ul>
+        <p><strong>Surgical significance:</strong> By passing a finger through the transverse sinus, the surgeon can simultaneously compress <strong>BOTH the ascending aorta AND the pulmonary trunk</strong> — allowing rapid control of the outflow of both ventricles. This is used in cardiac surgery (analogous to Pringle's manoeuvre for heart) to arrest blood flow before placing clamps on cardiopulmonary bypass.</p>
+        <p><em>The oblique sinus (J-shaped, behind LA) is the most dependent part of the pericardial cavity → accumulates haemopericardium after trauma or surgery.</em></p>
+      </div>
+    </details>
+
+    <div class="viva-title-bar" style="margin-top:1.5rem;">Clinical "Explain Why" Questions</div>
+
+    <details>
+      <summary><span class="viva-q">Explain why the central tendon of the diaphragm is fused with the fibrous pericardium.</span><span class="viva-year">PYQ 2014, 2018, 2020, 2025</span></summary>
+      <div class="viva-ans">
+        <p>This fusion has an **embryological basis**: both the central tendon of the diaphragm and the fibrous pericardium develop from the same embryological structure, the **septum transversum**. As the heart descends and the diaphragm forms, the fibrous pericardium remains anchored to the central tendon. Clinically, this means that during deep inspiration, the descent of the diaphragm pulls the pericardium and heart downwards, elongating the vena cava and facilitating venous return to the right atrium.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary><span class="viva-q">Explain why respiration in newborn infants is purely abdominal, not thoracic.</span><span class="viva-year">PYQ 2012, 2023</span></summary>
+      <div class="viva-ans">
+        <p>In newborn infants, the **ribs lie horizontally** (rather than obliquely downwards as in adults). When the intercostal muscles contract, they cannot elevate the horizontal ribs further to increase the transverse or anteroposterior diameters of the chest. Therefore, respiration is almost entirely dependent on the descent of the diaphragm (abdominal respiration). As the child begins to walk, gravity pulls the ribs into an oblique position, establishing the thoracic component of respiration by ~2 years of age.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary><span class="viva-q">Explain why bronchopulmonary segments 2 (apical segment of lower lobe) and 6 (superior segment of lower lobe) are the most common sites for lung abscess.</span><span class="viva-year">PYQ 2011, 2019 supple</span></summary>
+      <div class="viva-ans">
+        <p>This is due to **postural gravity drainage** in the supine position:</p>
+        <ul>
+          <li>When a patient is lying flat on their back (supine) — e.g., during anesthesia, coma, or deep sleep — the bronchi of **segment 2 (posterior segment of upper lobe)** and **segment 6 (superior segment of lower lobe)** point directly downwards (posteriorly).</li>
+          <li>Aspirated material (oropharyngeal secretions, vomit, blood) naturally flows under gravity straight into these dependent bronchi, making them the primary sites for aspiration pneumonia and lung abscess.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary><span class="viva-q">Explain why foreign bodies are more commonly inhaled into the right bronchus than the left.</span><span class="viva-year">PYQ Frequent</span></summary>
+      <div class="viva-ans">
+        <p>The right main bronchus is anatomically predisposed to receive aspirated foreign bodies because it is **wider, shorter, and runs more vertically** (at ~25° from the vertical trachea) compared to the left main bronchus, which is narrower, longer, and runs more obliquely (at ~45°) to clear the heart. Thus, the right main bronchus acts as a direct continuation of the trachea.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary><span class="viva-q">Explain why complete diaphragmatic paralysis is not achieved by simple phrenic nerve division in the neck.</span><span class="viva-year">PYQ 2011 supple</span></summary>
+      <div class="viva-ans">
+        <p>This is because of the presence of an **accessory phrenic nerve** (present in ~20–30% of individuals). The accessory phrenic nerve arises from the 5th cervical nerve root (or nerve to subclavius), runs a different course in the neck lateral to the main phrenic nerve, and joins the main phrenic nerve in the thoracic inlet. Simple division of the main phrenic nerve leaves the accessory branch intact, allowing partial diaphragm function. To achieve complete hemidiaphragmatic paralysis, the accessory phrenic nerve must also be identified and divided.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary><span class="viva-q">Explain why a coronary artery occlusion has a better prognosis in an elderly patient than in a young adult.</span><span class="viva-year">PYQ 2022, 2023</span></summary>
+      <div class="viva-ans">
+        <p>In elderly patients, gradual, long-term narrowing of the coronary arteries (atherosclerosis) allows time for **collateral anastomosis (collateral circulation)** to develop between adjacent coronary artery branches. If a major branch suddenly occludes, these pre-existing collaterals can immediately supply the ischemic myocardium, minimizing infarct size. In young adults, there are no pre-formed collaterals. A sudden coronary occlusion leads to immediate, massive myocardial infarction or fatal arrhythmia due to lack of alternative pathways.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary><span class="viva-q">Explain how a cervical rib can cause Thoracic Outlet Syndrome (TOS).</span><span class="viva-year">PYQ 2024</span></summary>
+      <div class="viva-ans">
+        <p>A **cervical rib** is a supernumerary rib arising from the C7 vertebra. It extends forward to attach to the first rib or sternum. This osseous structure compresses the **lower trunk of the brachial plexus (C8, T1)** and the **subclavian artery** as they cross the first rib. This leads to Thoracic Outlet Syndrome, presenting with: (1) wasting and weakness of intrinsic hand muscles (T1 fibers, claw hand), (2) paresthesia along the medial forearm/hand, and (3) ischemic symptoms in the upper limb (coldness, weakened radial pulse) due to subclavian compression.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary><span class="viva-q">Explain why a stab wound at the root of the neck can cause a tension pneumothorax.</span><span class="viva-year">PYQ 2024</span></summary>
+      <div class="viva-ans">
+        <p>The **cervical pleura (cupula)** and the **apex of the lung** project upwards into the root of the neck, extending about **2.5 cm above the medial 1/3 of the clavicle** (behind the sternocleidomastoid). A stab wound in this region easily pierces the suprapleural membrane (Sibson's fascia) and the cervical pleura, entering the pleural cavity. Air enters the pleural space during inspiration but cannot escape during expiration (valve-like mechanism), leading to a rapid accumulation of positive intrapleural pressure — a life-threatening **tension pneumothorax** and surgical emphysema.</p>
+      </div>
+    </details>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════════════ S14: EQ TEMPLATES + QUICKFIRE ══════════════════════ -->
+<div id="s14">
+  <div class="section-header">
+    <div class="section-num">14</div>
+    <h2>EQ Templates <em>& Quickfire</em></h2>
+  </div>
+
+  <div class="eq-box">
+    <div class="eq-title">EQ — Describe the Bronchopulmonary Segments [PYQ 2012, 2017, 2021-S, 2024]</div>
+    <div class="eq-statement">"Describe the bronchopulmonary segments with clinical importance."</div>
+    <div class="eq-answer">
+      <ol>
+        <li><span>Definition:</span> A bronchopulmonary segment is the smallest independently functioning unit of the lung, supplied by its own tertiary (segmental) bronchus, segmental artery, lymphatics, and autonomic nerves. Veins are intersegmental (run between segments — surgical importance).</li>
+        <li><span>Number:</span> Right lung = 10 segments. Left lung = 8 (classical) or 10 (some authorities) due to fusion of apical + posterior (S1+S2) and anteromedial basal (S7+S8).</li>
+        <li><span>Right Lung Segments:</span> Upper lobe (3): Apical, Posterior, Anterior. Middle lobe (2): Lateral, Medial. Lower lobe (5): Superior, Medial Basal, Anterior Basal, Lateral Basal, Posterior Basal.</li>
+        <li><span>Left Lung Segments:</span> Upper lobe (4+2 lingular): Apicoposterior, Anterior, Superior Lingular, Inferior Lingular. Lower lobe (4): Superior, Anteromedial Basal, Lateral Basal, Posterior Basal. No S7 alone; No middle lobe (lingula is functional equivalent).</li>
+        <li><span>Clinical Importance:</span> (a) Segmentectomy — each segment independently resectable (TB, carcinoid, sequestration). (b) Postural drainage — specific positioning drains specific segment. (c) Foreign body localisation — predicts which segment to bronchoscope. (d) CT reporting — radiological pulmonary anatomy uses segmental nomenclature.</li>
+        <li><span>Key Anatomical Points:</span> Segments are separated by intersegmental veins (surgical planes). Each segment is a complete, self-sustaining bronchopulmonary unit — disease in one does NOT necessarily spread to adjacent segment.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="eq-box">
+    <div class="eq-title">EQ — Coronary Arteries and Conducting System [PYQ 2015, 2018, 2023]</div>
+    <div class="eq-statement">"Describe the coronary arteries and their relation to the conducting system."</div>
+    <div class="eq-answer">
+      <ol>
+        <li><span>Origin:</span> Both coronary arteries arise from the ascending aorta within the aortic sinuses (sinuses of Valsalva). LCA from left aortic sinus; RCA from right aortic sinus. They fill during DIASTOLE.</li>
+        <li><span>Left Coronary Artery (LCA):</span> Short left main → LAD (anterior IVS, anterior LV wall, apex, septal perforators) + LCx (lateral wall LV, LA, SA node in 35–45%). LAD = "artery of sudden death" — supplies largest territory. Occlusion → massive anterior MI.</li>
+        <li><span>Right Coronary Artery (RCA):</span> Right AV groove → SA nodal artery (55–65%), right marginal, → PDA in right-dominant (85%). Supplies: RV free wall, inferior LV, posterior IVS (PDA), SA node (usually), AV node (90%).</li>
+        <li><span>Dominance:</span> The vessel supplying the PDA (posterior descending artery) determines dominance. Right dominant = 85%, Left dominant = 8%, Codominant = 7%. Dominance determines AV nodal supply.</li>
+        <li><span>Conducting System Supply:</span> SA node — RCA (55–65%) or LCx (35–45%). AV node — RCA (90%) in right-dominant. Bundle of His — dual supply (septal branches LAD + AV nodal artery). Bundle branches — LAD mainly.</li>
+        <li><span>Clinical Correlation:</span> Inferior MI (RCA occlusion) → SA + AV nodal ischaemia → bradycardia + AV block. Anterior MI (LAD) → RBBB (LAD supplies RBB). Complete AV block needs temporary pacing. Knowing coronary anatomy predicts arrhythmia type post-MI.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="eq-box">
+    <div class="eq-title">EQ — Conducting System of Heart [PYQ 2014-S, 2019, 2022]</div>
+    <div class="eq-statement">"Describe the conducting system of the heart with clinical significance."</div>
+    <div class="eq-answer">
+      <ol>
+        <li><span>Components (in order of impulse):</span> SA node → Internodal tracts → AV node → Bundle of His → Right + Left bundle branches → Purkinje fibres.</li>
+        <li><span>SA Node:</span> Pacemaker, upper right RA at SVC junction (crista terminalis). Rate 60–100 bpm. Blood supply: RCA (55–65%) or LCx (35–45%). Automaticity due to funny current (If). Only structure that initiates impulse normally.</li>
+        <li><span>AV Node:</span> Floor of RA in Triangle of Koch (bounded by tendon of Todaro, tricuspid valve ring, coronary sinus os). Delay of 0.1 sec allows atrial contraction to complete before ventricular systole. Rate 40–60 bpm. Blood supply: RCA (90% right-dominant). Target for catheter ablation in AVNRT.</li>
+        <li><span>Bundle of His to Purkinje:</span> Bundle of His pierces central fibrous body — ONLY electrical connection between atria and ventricles (fibrous ring otherwise insulates). RBB is thin and passes through MODERATOR BAND (RV) to anterior papillary muscle. LBB fans into anterior + posterior fascicles. Purkinje fibres fastest (4 m/s) and final delivery of impulse.</li>
+        <li><span>Clinical Significance:</span> SSS (sick sinus syndrome) → pacemaker. AV block (1°: prolonged PR; 2° Mobitz I: Wenckebach; 2° Mobitz II: sudden drop; 3° complete: no relationship P to QRS) → pacemaker if symptomatic. RBBB: S1Q3T3 pattern in PE, RBB vulnerable in anterior MI. WPW: accessory pathway (bundle of Kent) bypasses AV delay → pre-excitation, delta wave.</li>
+        <li><span>Embryological note:</span> Conducting tissue originates from working myocardium that becomes specialised. SA node forms from the sinus venosus. Congenital complete heart block can occur if anti-Ro/La antibodies (maternal SLE) cross placenta and damage AV node.</li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- QUICKFIRE TABLE -->
+  <div class="card" style="margin-top:1.5rem;border-color:var(--accent)">
+    <div class="card-title">🔥 High-Yield Quickfire — Module 04 Thorax</div>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Question</th><th>Answer</th></tr>
+        <tr><td>Sternal angle = what vertebral level?</td><td>T4/T5 intervertebral disc</td></tr>
+        <tr><td>Where does trachea bifurcate?</td><td>T4/T5 (carina) = sternal angle level</td></tr>
+        <tr><td>VAN order in intercostal space (from above)</td><td>Vein, Artery, Nerve — all in costal groove of upper rib</td></tr>
+        <tr><td>Safe needle insertion — upper or lower border of rib?</td><td>Upper border of LOWER rib (avoids VAN under upper rib)</td></tr>
+        <tr><td>Right main bronchus vs Left: which is more vertical?</td><td>Right (25° vs 45°) — shorter, wider, more vertical → foreign bodies</td></tr>
+        <tr><td>Eparterial bronchus: which side?</td><td>Right lung only (upper lobe bronchus above pulmonary artery)</td></tr>
+        <tr><td>Right hilum order from top: what's highest?</td><td>Eparterial bronchus (then artery, then veins)</td></tr>
+        <tr><td>Left hilum order from top: what's highest?</td><td>Pulmonary artery (arches over bronchus)</td></tr>
+        <tr><td>Number of bronchopulmonary segments: right / left</td><td>Right = 10; Left = 8 (classical)</td></tr>
+        <tr><td>SA node location</td><td>Upper right RA, junction of SVC and RA (crista terminalis)</td></tr>
+        <tr><td>SA node blood supply (more common)</td><td>RCA (55–65%)</td></tr>
+        <tr><td>AV node location</td><td>Floor of RA in Triangle of Koch (apex of triangle)</td></tr>
+        <tr><td>AV node blood supply</td><td>RCA (90%) in right-dominant heart</td></tr>
+        <tr><td>What runs through the moderator band?</td><td>Right bundle branch (RBB) of conducting system</td></tr>
+        <tr><td>Apex of heart: formed by which chamber?</td><td>Left ventricle (LV) — 5th ICS, midclavicular line</td></tr>
+        <tr><td>Base of heart: formed by which chamber?</td><td>Left atrium (LA) — receives 4 pulmonary veins</td></tr>
+        <tr><td>LAD = "artery of sudden death" — what does it supply?</td><td>Anterior LV wall, anterior 2/3 IVS, apex, RBB + anterior LBB fascicle</td></tr>
+        <tr><td>Why inferior MI causes heart block</td><td>RCA occlusion → SA node (55–65%) + AV node (90%) ischaemia</td></tr>
+        <tr><td>Transverse sinus: between what structures?</td><td>Aorta + pulmonary trunk (anterior) vs SVC + pulmonary veins (posterior)</td></tr>
+        <tr><td>Diaphragm openings: T8, T10, T12</td><td>T8=IVC, T10=Oesophagus+Vagi, T12=Aorta+Thoracic duct+Azygos</td></tr>
+        <tr><td>Nerve supply of diaphragm (motor)</td><td>Phrenic nerve (C3, C4, C5)</td></tr>
+        <tr><td>Referred pain from diaphragm → where?</td><td>Shoulder tip (C3/4 dermatome via phrenic nerve)</td></tr>
+        <tr><td>Most dependent pleural recess</td><td>Costodiaphragmatic recess (fluid collects here first)</td></tr>
+        <tr><td>Anterior mediastinal masses = 4 Ts</td><td>Thymoma, Teratoma, Thyroid, Terrible lymphoma</td></tr>
+        <tr><td>Beck's triad of cardiac tamponade</td><td>Hypotension + Muffled heart sounds + Raised JVP</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- Master Mnemonics -->
+  <div class="card" style="margin-top:1rem">
+    <div class="card-title">Module 04 Master Mnemonics</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:10px;margin-top:8px">
+      <div class="mnemonic-box" style="margin:0">
+        <div class="mbox-title">Sternal Angle Landmarks</div>
+        <div class="mnemonic-highlight">"ATLAS" — Aortic arch, Trachea bifurcates, Ligamentum arteriosum, Azygos vein, SVC upper border (all at T4/T5)</div>
+      </div>
+      <div class="mnemonic-box" style="margin:0">
+        <div class="mbox-title">Intercostal Space VAN</div>
+        <div class="mnemonic-highlight">"VAN — Vein above, Artery middle, Nerve below" → Insert needle over UPPER border of LOWER rib</div>
+      </div>
+      <div class="mnemonic-box" style="margin:0">
+        <div class="mbox-title">Diaphragm Openings</div>
+        <div class="mnemonic-highlight">"I 8 (ate) 10 EGGs At 12" → T8=IVC, T10=Esophagus+Gastric+vagi, T12=Aorta+Thoracic duct</div>
+      </div>
+      <div class="mnemonic-box" style="margin:0">
+        <div class="mbox-title">Cardiac Valves Auscultation</div>
+        <div class="mnemonic-highlight">"All Patients Take Medicine" → Aortic (2R), Pulmonary (2L), Tricuspid (4L), Mitral (Apex)</div>
+      </div>
+      <div class="mnemonic-box" style="margin:0">
+        <div class="mbox-title">Hilum Arrangements</div>
+        <div class="mnemonic-highlight">Right hilum: "BrAVe" (Bronchus→Artery→Veins) | Left hilum: "ABVe" (Artery→Bronchus→Veins)</div>
+      </div>
+      <div class="mnemonic-box" style="margin:0">
+        <div class="mbox-title">Anterior Mediastinum Masses</div>
+        <div class="mnemonic-highlight">"4 Ts" — Thymoma · Teratoma · Thyroid (retrosternal) · Terrible lymphoma</div>
+      </div>
+      <div class="mnemonic-box" style="margin:0">
+        <div class="mbox-title">C3,4,5 Diaphragm</div>
+        <div class="mnemonic-highlight">"C3, 4, 5 keeps the diaphragm alive" — phrenic nerve origin. Refer pain → shoulder tip</div>
+      </div>
+      <div class="mnemonic-box" style="margin:0">
+        <div class="mbox-title">Right Lower Lobe Segments</div>
+        <div class="mnemonic-highlight">"Sam Makes Apple Lemon Pie" → Superior, Medial basal, Anterior basal, Lateral basal, Posterior basal</div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /s14 -->
+</div><!-- /content -->
+
+<div class="footer">
+  <p>ANATOMY · MODULE 04 · THORAX</p>
+  <p style="margin-top:4px">Caffeine & Cadaver · First MBBS · PYQ Mapped 2010–2025</p>
+  <p style="margin-top:4px;color:var(--accent);font-size:11px">Mobile-optimised · No rotated text · Includes detailed anatomical diagrams</p>
+</div>
+
+<button class="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script>
+document.querySelectorAll('details').forEach(d=>{
+  d.addEventListener('toggle',()=>{
+    if(d.open){const c=d.querySelector('.viva-ans');if(c)c.style.animation='fadeIn .2s ease';}
+  });
+});
+</script>
+</body>
+</html>

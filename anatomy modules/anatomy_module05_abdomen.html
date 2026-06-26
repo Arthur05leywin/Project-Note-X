@@ -1,0 +1,1498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anatomy Module 05 — Abdomen | Caffeine & Cadaver</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=JetBrains+Mono:wght@400;600&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#080c14;--surface:#0d1220;--surface2:#121828;--surface3:#182030;
+  --accent:#c4784a;--accent2:#d4956e;--accent3:#e0b090;
+  --gold:#fbbf24;--teal:#34d399;--rose:#f87171;--purple:#c084fc;
+  --text:#e2e8f8;--text2:#8892b0;--text3:#445060;
+  --border:#1e2a40;--border2:#28384a;
+  --green:#4ade80;--orange:#fb923c;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{ overflow-wrap: break-word; word-break: break-word; background:var(--bg);color:var(--text);font-family:'Sora',sans-serif;font-size:15px;line-height:1.7;overflow-x:hidden;}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#060810 0%,#110e0a 55%,#080c14 100%);border-bottom:1px solid var(--border2);padding:3rem 1.5rem 2.5rem;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;top:-80px;right:-80px;width:360px;height:360px;background:radial-gradient(circle,rgba(196,120,74,.14) 0%,transparent 70%);pointer-events:none;}
+.hero::after{content:'';position:absolute;bottom:-40px;left:10%;width:260px;height:260px;background:radial-gradient(circle,rgba(251,191,36,.06) 0%,transparent 70%);pointer-events:none;}
+.module-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(196,120,74,.14);border:1px solid rgba(196,120,74,.38);color:var(--accent2);font-family:'JetBrains Mono',monospace;font-size:11px;padding:4px 12px;border-radius:3px;letter-spacing:2px;margin-bottom:1rem;}
+.dot{width:6px;height:6px;background:var(--accent);border-radius:50%;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.4;transform:scale(.7);}}
+.hero h1{font-family:'Crimson Pro',serif;font-size:clamp(2rem,6vw,3.2rem);font-weight:600;color:var(--text);line-height:1.15;margin-bottom:.5rem;}
+.hero h1 span{color:var(--accent2);}
+.hero-sub{color:var(--text2);font-size:13px;font-family:'JetBrains Mono',monospace;letter-spacing:.5px;margin-bottom:1.5rem;}
+.hero-pills{display: block; position: relative;flex-wrap:wrap;gap:8px;}
+.pill{background:var(--surface2);border:1px solid var(--border);color:var(--text2);font-size:11px;padding:4px 10px;border-radius:20px;font-family:'JetBrains Mono',monospace;}
+
+/* TOC */
+.toc{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent);margin:1.5rem;padding:1.25rem;border-radius:6px;}
+.toc-title{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--accent);text-transform:uppercase;margin-bottom:1rem;}
+.toc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;}
+.toc a{color:var(--text2);text-decoration:none;font-size:13px;padding:4px 8px;border-radius:4px;transition:all .2s;display: block; position: relative;align-items:center;gap:6px;}
+.toc a:hover{color:var(--accent2);background:rgba(196,120,74,.08);}
+.toc-num{color:var(--accent);font-family:'JetBrains Mono',monospace;font-size:11px;}
+
+/* LAYOUT */
+.content{padding:0 1.5rem 3rem;}
+.progress-bar{height:3px;background:linear-gradient(to right,var(--accent),var(--accent2),var(--teal));border-radius:2px;margin-bottom:2rem;animation:load 1.5s ease forwards;}
+@keyframes load{from{width:0;}to{width:100%;}}
+.section-header{display: block; position: relative;align-items:center;gap:12px;margin:2.5rem 0 1.5rem;padding-bottom:.75rem;border-bottom:1px solid var(--border);}
+.section-num{background:var(--accent);color:#fff;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;width:32px;height:32px;display: block; position: relative;align-items:center;justify-content:center;border-radius:6px;flex-shrink:0;}
+.section-header h2{font-family:'Crimson Pro',serif;font-size:clamp(1.3rem,4vw,1.8rem);font-weight:600;color:var(--text);}
+.section-header h2 em{color:var(--accent2);font-style:normal;}
+.divider{height:1px;background:var(--border);margin:2rem 0;}
+.two-col{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(280px, 100%),1fr));gap:1rem;margin:1rem 0;}
+
+/* BADGES */
+.badge{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-family:'JetBrains Mono',monospace;padding:2px 7px;border-radius:3px;vertical-align:middle;margin-left:4px;font-weight:600;letter-spacing:.5px;}
+.badge-rls{background:rgba(248,113,113,.18);color:var(--rose);border:1px solid rgba(248,113,113,.35);}
+.badge-pyq{background:rgba(52,211,153,.14);color:var(--teal);border:1px solid rgba(52,211,153,.3);}
+.badge-fav{background:rgba(251,191,36,.14);color:var(--gold);border:1px solid rgba(251,191,36,.3);}
+.badge-new{background:rgba(74,222,128,.14);color:var(--green);border:1px solid rgba(74,222,128,.3);}
+
+/* CARD */
+.card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:1.25rem;margin-bottom:1rem;}
+.card-title{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:.75rem;display: block; position: relative;align-items:center;gap:8px;}
+.card-title::after{content:'';flex:1;height:1px;background:var(--border);}
+
+/* FLOWCHART */
+.flowchart{background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:1.25rem;margin:1rem 0;}
+.flow-title{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--accent2);margin-bottom:1rem;display: block; position: relative;align-items:center;gap:8px;}
+.flow-title::before{content:'▶';font-size:8px;}
+.flow-v{display: block; position: relative;flex-direction:column;align-items:stretch;gap:0;}
+.flow-step-label{font-size:12px;color:var(--text2);text-align:center;padding:4px 8px;font-family:'JetBrains Mono',monospace;}
+.flow-step-label strong{color:var(--accent2);}
+.flow-arrow{text-align:center;color:var(--accent);font-size:20px;line-height:1;margin:2px 0;}
+.flow-box{ word-break: break-word; overflow-wrap: break-word; background:var(--surface3);border:1px solid var(--border2);border-radius:6px;padding:10px 14px;font-size:13px;width:100%;}
+.flow-box.accent{border-color:var(--accent);background:rgba(196,120,74,.1);color:var(--accent2);}
+.flow-box.gold{border-color:var(--gold);background:rgba(251,191,36,.08);color:var(--gold);}
+.flow-box.teal{border-color:var(--teal);background:rgba(52,211,153,.08);color:var(--teal);}
+.flow-box.rose{border-color:var(--rose);background:rgba(248,113,113,.08);color:var(--rose);}
+.flow-box.purple{border-color:var(--purple);background:rgba(192,132,252,.08);color:var(--purple);}
+.flow-box.green{border-color:var(--green);background:rgba(74,222,128,.08);color:var(--green);}
+.flow-box .lbl{font-size:10px;color:var(--text3);font-family:'JetBrains Mono',monospace;display:block;margin-bottom:2px;}
+.flow-box .sub{font-size:11px;color:var(--text2);display:block;margin-top:3px;}
+.flow-h{display: block; position: relative;flex-wrap:wrap;align-items:center;gap:6px;}
+.flow-h .flow-box{ word-break: break-word; overflow-wrap: break-word; flex:1 1 auto;min-width:100px;text-align:center;}
+.h-arrow{color:var(--accent);font-size:18px;flex-shrink:0;}
+
+/* TABLES */
+.table-wrap{overflow-x:auto;margin:1rem 0;border-radius:8px;}
+table{width:100%;border-collapse:collapse;}
+th{background:var(--surface3);color:var(--accent2);font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:10px 12px;text-align:left;border-bottom:2px solid var(--accent);}
+td{padding:9px 12px;border-bottom:1px solid var(--border);font-size:13px;vertical-align:top;}
+tr:hover td{background:rgba(196,120,74,.04);}
+td:first-child{color:var(--accent2);font-weight:600;}
+
+/* SPECIAL BOXES */
+.clinical-box{ word-break: break-word; overflow-wrap: break-word; background:rgba(52,211,153,.04);border:1px solid rgba(52,211,153,.22);border-left:4px solid var(--teal);border-radius:6px;padding:1rem 1.25rem;margin:1rem 0;}
+.cbox-title{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--teal);text-transform:uppercase;margin-bottom:.6rem;display: block; position: relative;align-items:center;gap:6px;}
+.cbox-title::before{content:'🩺';}
+.mnemonic-box{background:rgba(251,191,36,.05);border:1px solid rgba(251,191,36,.25);border-left:4px solid var(--gold);border-radius:6px;padding:1rem 1.25rem;margin:1rem 0;}
+.mbox-title{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:.6rem;display: block; position: relative;align-items:center;gap:6px;}
+.mbox-title::before{content:'🧠';}
+.mnemonic-highlight{ word-break: break-word; overflow-wrap: break-word; background:rgba(251,191,36,.1);border:1px dashed rgba(251,191,36,.3);border-radius:4px;padding:8px 12px;font-family:'Crimson Pro',serif;font-size:15px;font-weight:600;color:var(--gold);margin:6px 0;word-break:break-word;overflow-wrap:break-word;}
+.eq-box{background:rgba(192,132,252,.05);border:1px solid rgba(192,132,252,.25);border-left:4px solid var(--purple);border-radius:6px;padding:1rem 1.25rem;margin:1rem 0;}
+.eq-title{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--purple);text-transform:uppercase;margin-bottom:.75rem;display: block; position: relative;align-items:center;gap:6px;}
+.eq-title::before{content:'📝';}
+.eq-statement{background:var(--surface3);border-radius:4px;padding:8px 12px;font-family:'Crimson Pro',serif;font-size:15px;font-style:italic;color:var(--text);margin-bottom:10px;border-left:3px solid var(--purple);}
+.eq-answer ol{margin-left:18px;}
+.eq-answer li{margin-bottom:6px;font-size:13px;}
+.eq-answer li span{color:var(--purple);font-weight:600;}
+.keypoint { word-break: break-word; overflow-wrap: break-word; background:rgba(196,120,74,.07);border:1px solid rgba(196,120,74,.22);border-radius:6px;padding:10px 14px;margin:8px 0;font-size:13px;display: block; position: relative; padding-left: 34px;}
+.keypoint::before {content:'⚡';flex-shrink:0; position: absolute; left: 12px; top: 10px;}
+.warn-box { word-break: break-word; overflow-wrap: break-word; background:rgba(251,146,60,.07);border:1px solid rgba(251,146,60,.25);border-left:4px solid var(--orange);border-radius:6px;padding:10px 14px;margin:8px 0;font-size:13px;display: block; position: relative; padding-left: 34px;}
+.warn-box::before {content:'⚠️';flex-shrink:0; position: absolute; left: 10px; top: 10px;}
+ul.checklist{list-style:none;margin:.5rem 0;}
+ul.checklist li::before{content:'✦ ';color:var(--accent2);}
+ul.checklist li { margin-bottom: 14px; line-height: 1.6;font-size:13px;}
+.hl{color:var(--accent2);font-weight:600;}
+.hl-gold{color:var(--gold);font-weight:600;}
+.hl-teal{color:var(--teal);font-weight:600;}
+.hl-rose{color:var(--rose);font-weight:600;}
+.hl-purple{color:var(--purple);font-weight:600;}
+
+/* DIAGRAM PLACEHOLDER */
+.diagram-placeholder{border:2px dashed var(--border2);border-radius:8px;padding:2rem 1rem;margin:1rem 0;text-align:center;background:var(--surface2);}
+.diagram-placeholder .dp-num{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--accent);letter-spacing:2px;text-transform:uppercase;margin-bottom:.5rem;}
+.diagram-placeholder .dp-desc{font-size:12px;color:var(--text2);line-height:1.6;}
+
+/* VIVA */
+.viva-section{margin:1.5rem 0;}
+.viva-title-bar{background:rgba(196,120,74,.1);border:1px solid rgba(196,120,74,.28);border-radius:6px 6px 0 0;padding:10px 14px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--accent2);text-transform:uppercase;display: block; position: relative;align-items:center;gap:8px;}
+.viva-title-bar::before{content:'💬';font-size:14px;}
+details{border:1px solid var(--border);border-top:none;overflow:hidden;}
+details:last-child{border-radius:0 0 6px 6px;}
+summary{padding:10px 14px;cursor:pointer;font-size:13px;color:var(--text);background:var(--surface);list-style:none;display: block; position: relative;align-items:flex-start;gap:8px;user-select:none;transition:background .2s;}
+summary:hover{background:var(--surface2);}
+summary::before{content:'▶';color:var(--accent);font-size:10px;margin-top:3px;flex-shrink:0;transition:transform .2s;}
+details[open]>summary::before{transform:rotate(90deg);}
+.viva-q{font-weight:600;flex:1;}
+.viva-year{color:var(--teal);font-family:'JetBrains Mono',monospace;font-size:11px;flex-shrink:0;}
+.viva-ans{ word-break: break-word; overflow-wrap: break-word; padding:12px 16px 14px;background:var(--surface2);font-size:13px;line-height:1.75;border-top:1px solid var(--border);}
+.viva-ans p{margin-bottom:6px;}
+.viva-ans ul{margin:6px 0 6px 16px;}
+.viva-ans li{margin-bottom:4px;}
+.viva-ans strong{color:var(--accent2);}
+.viva-ans em{color:var(--gold);font-style:normal;font-weight:600;}
+
+/* LANDMARK ROW */
+.landmark-row{display: block; position: relative;align-items:center;gap:12px;padding:8px 12px;border-bottom:1px solid var(--border);font-size:13px;}
+.landmark-row:last-child{border-bottom:none;}
+.lm-level{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);font-weight:700;min-width:40px;flex-shrink:0;}
+.lm-content{flex:1;}
+
+/* COUINAUD GRID */
+.couinaud-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;margin:1rem 0;}
+.couinaud-seg{ word-break: break-word; overflow-wrap: break-word; background:var(--surface2);border:1px solid var(--border2);border-radius:6px;padding:10px 12px;text-align:center;}
+.couinaud-seg .seg-num{font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:700;color:var(--accent);display:block;margin-bottom:4px;}
+.couinaud-seg .seg-name{font-size:11px;color:var(--text2);line-height:1.4;}
+
+/* FOOTER */
+.footer{background:var(--surface);border-top:1px solid var(--border);text-align:center;padding:2rem 1.5rem;color:var(--text3);font-size:12px;font-family:'JetBrains Mono',monospace;}
+.top-btn{position:fixed;bottom:20px;right:20px;background:var(--accent);color:#fff;border:none;border-radius:50%;width:40px;height:40px;font-size:16px;cursor:pointer;box-shadow:0 4px 15px rgba(196,120,74,.4);z-index:100;display: block; position: relative;align-items:center;justify-content:center;font-weight:700;}
+.top-btn:hover{transform:translateY(-2px);}
+
+@media(max-width:600px){
+  .hero{padding:2rem 1rem;}
+  .content{padding:0 1rem 2rem;}
+  .toc{margin:1rem;}
+  .flow-h{flex-direction:column;}
+  .h-arrow{display:none;}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="module-tag"><span class="dot"></span>ANATOMY · MODULE 05</div>
+  <h1>Abdomen<br><span>Complete</span></h1>
+  <p class="hero-sub">ANATOMY · FIRST MBBS · PYQ MAPPED 2010–2025</p>
+  <div class="hero-pills">
+    <span class="pill">Anterior Abdominal Wall</span>
+    <span class="pill">Rectus Sheath</span>
+    <span class="pill">Inguinal Canal</span>
+    <span class="pill">Femoral Canal</span>
+    <span class="pill">Peritoneum</span>
+    <span class="pill">Stomach</span>
+    <span class="pill">Duodenum</span>
+    <span class="pill">Liver & Couinaud Segments</span>
+    <span class="pill">Portal-Systemic Anastomoses</span>
+    <span class="pill">Pancreas & Spleen</span>
+    <span class="pill">Kidneys & Suprarenal</span>
+    <span class="pill">Abdominal Aorta</span>
+  </div>
+</div>
+
+<!-- TOC -->
+<div class="toc">
+  <div class="toc-title">▸ Quick Navigate</div>
+  <div class="toc-grid">
+    <a href="#s1"><span class="toc-num">01</span> Anterior Abdominal Wall</a>
+    <a href="#s2"><span class="toc-num">02</span> Inguinal Region</a>
+    <a href="#s3"><span class="toc-num">03</span> Peritoneum</a>
+    <a href="#s4"><span class="toc-num">04</span> Stomach</a>
+    <a href="#s5"><span class="toc-num">05</span> Duodenum</a>
+    <a href="#s6"><span class="toc-num">06</span> Large Intestine</a>
+    <a href="#s7"><span class="toc-num">07</span> Liver & Biliary System</a>
+    <a href="#s8"><span class="toc-num">08</span> Portal-Systemic Anastomoses</a>
+    <a href="#s9"><span class="toc-num">09</span> Pancreas & Spleen</a>
+    <a href="#s10"><span class="toc-num">10</span> Kidneys & Suprarenal</a>
+    <a href="#s11"><span class="toc-num">11</span> Abdominal Aorta</a>
+    <a href="#s12"><span class="toc-num">12</span> Viva Q&A</a>
+    <a href="#s13"><span class="toc-num">13</span> EQ Templates</a>
+  </div>
+</div>
+
+<div class="content">
+<div class="progress-bar"></div>
+
+<!-- ══════════════ S1: ANTERIOR ABDOMINAL WALL ══════════════ -->
+<div id="s1">
+  <div class="section-header">
+    <div class="section-num">01</div>
+    <h2>Anterior Abdominal <em>Wall</em></h2>
+  </div>
+
+  <div class="keypoint">The anterior abdominal wall has <strong>9 layers</strong> (skin → peritoneum). The three flat muscles form a musculoaponeurotic sheet — their aponeuroses interdigitate at the <strong>linea alba</strong> and form the <strong>rectus sheath</strong> around rectus abdominis.</div>
+
+  <div class="card">
+    <div class="card-title">Layers of the Anterior Abdominal Wall <span class="badge badge-pyq">PYQ 2011, 2016, 2020</span></div>
+    <div class="flowchart" style="margin:0">
+      <div class="flow-title">From Superficial to Deep</div>
+      <div class="flow-v">
+        <div class="flow-box accent"><span class="lbl">1</span>Skin</div>
+        <div class="flow-step-label">↓</div>
+        <div class="flow-box"><span class="lbl">2</span>Superficial fascia — <strong>Camper's fascia</strong> (fatty layer, continuous with fat elsewhere) + <strong>Scarpa's fascia</strong> (membranous deep layer, attached to fascia lata at thigh)</div>
+        <div class="flow-step-label">↓</div>
+        <div class="flow-box gold"><span class="lbl">3</span><strong>External oblique</strong> — fibres run downward + medially ("hands in pockets"). Aponeurosis forms inguinal ligament (rolled lower free edge)</div>
+        <div class="flow-step-label">↓</div>
+        <div class="flow-box gold"><span class="lbl">4</span><strong>Internal oblique</strong> — fibres run upward + medially. Lower fibres arch over spermatic cord → join transversus aponeurosis → conjoint tendon</div>
+        <div class="flow-step-label">↓</div>
+        <div class="flow-box gold"><span class="lbl">5</span><strong>Transversus abdominis</strong> — fibres run horizontally. Forms the deepest flat muscle</div>
+        <div class="flow-step-label">↓</div>
+        <div class="flow-box"><span class="lbl">6</span>Transversalis fascia — lines abdominal cavity internally; contributes to <strong>internal spermatic fascia</strong></div>
+        <div class="flow-step-label">↓</div>
+        <div class="flow-box"><span class="lbl">7</span>Extraperitoneal fat</div>
+        <div class="flow-step-label">↓</div>
+        <div class="flow-box teal"><span class="lbl">8</span>Peritoneum (parietal)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="border-color:var(--gold)">
+    <div class="card-title" style="color:var(--gold)">Rectus Sheath — The Arcuate Line <span class="badge badge-fav">⭐ PYQ Every Year</span></div>
+    <div class="keypoint">The <strong>arcuate line (linea semicircularis)</strong> lies midway between umbilicus and pubic symphysis. It is the lower limit of the posterior wall of the rectus sheath.</div>
+
+    <div class="table-wrap">
+      <table>
+        <tr><th>Region</th><th>Anterior Wall</th><th>Posterior Wall</th></tr>
+        <tr><td>Above arcuate line</td><td>External oblique aponeurosis + anterior lamina of internal oblique aponeurosis</td><td>Posterior lamina of internal oblique + transversus abdominis aponeurosis + transversalis fascia</td></tr>
+        <tr><td>Below arcuate line</td><td>All three aponeuroses (EO + IO + TA) pass anterior to rectus</td><td>Absent — only transversalis fascia. Hence <strong>no posterior wall below arcuate line</strong></td></tr>
+      </table>
+    </div>
+
+    <div class="two-col" style="margin-top:1rem">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">Contents of Rectus Sheath:</p>
+        <ul class="checklist">
+          <li>Rectus abdominis muscle</li>
+          <li>Pyramidalis muscle (anterior to lower rectus, absent in 20%)</li>
+          <li>Superior epigastric artery (branch of internal thoracic)</li>
+          <li>Inferior epigastric artery (branch of external iliac)</li>
+          <li>Lower 6 intercostal nerves (T7–T12) + iliohypogastric nerve</li>
+          <li>Lymphatics</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px">Rectus Abdominis:</p>
+        <ul class="checklist">
+          <li>Origin: Pubic crest + pubic symphysis</li>
+          <li>Insertion: Costal cartilages of 5th, 6th, 7th ribs + xiphoid process</li>
+          <li>3 tendinous intersections — adherent to anterior wall only (not posterior)</li>
+          <li>Action: Flex trunk, compress abdomen, depress thorax</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="wiki-img" style="margin: 1.5rem 0; text-align: center; background: var(--surface2); padding: 1rem; border-radius: 8px; border: 1px solid var(--border);">
+      <div style="color:var(--accent);font-family:'JetBrains Mono',monospace;font-size:11px;margin-bottom:8px;text-align:left;">DIAGRAM 01 — Rectus Sheath Cross-sections</div>
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Gray393.png" alt="Rectus Sheath Cross-sections" loading="lazy" style="max-width: 100%; height: auto; border-radius: 8px;">
+      <div class="wiki-caption" style="font-size:11px;color:var(--text2);text-align:center;margin-top:8px;">Transverse section of rectus sheath — Gray's Anatomy</div>
+    </div>
+
+    <div class="clinical-box">
+      <div class="cbox-title">Rectus Sheath Haematoma</div>
+      <p>Tear of <strong>inferior epigastric artery</strong> (after trauma/cough/anticoagulants) → blood collects within rectus sheath. Below arcuate line it spreads freely (no posterior wall) but is confined by anterior wall. <strong>Fothergill's sign:</strong> mass does NOT cross midline, does NOT disappear on tensing abdominal muscles (unlike intraperitoneal mass).</p>
+    </div>
+
+    <div class="clinical-box">
+      <div class="cbox-title">Midline Incision & Incisional Hernia <span class="badge badge-pyq">PYQ 2011</span></div>
+      <p><strong>Linea Alba:</strong> A midline fibrous band running from the xiphoid process to the pubic symphysis, formed by the interlacing fibers of the aponeuroses of the external oblique, internal oblique, and transversus abdominis. It contains very few blood vessels and nerves.</p>
+      <p><strong>Median/Midline Incision:</strong> Made along the linea alba. It is the most common incision for emergency laparotomy because it is simple, bloodless, avoids major nerves/vessels, and provides rapid access to any part of the peritoneal cavity.</p>
+      <p><strong>Risk of Incisional Hernia:</strong> Because the linea alba is relatively <strong>avascular</strong>, it <strong>heals very slowly</strong>. In the presence of post-operative risk factors (coughing, wound infection, obesity, or abdominal distension), the wound edges can fail to unite, resulting in a weak scar through which abdominal contents herniate (incisional hernia).</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Abdominal Wall Regions & Planes <span class="badge badge-pyq">PYQ 2013, 2019</span></div>
+    <div class="two-col">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">9 Regions (2 sagittal + 2 horizontal planes):</p>
+        <ul class="checklist">
+          <li><strong>Upper 3:</strong> Right hypochondrium | Epigastric | Left hypochondrium</li>
+          <li><strong>Middle 3:</strong> Right lumbar (lateral) | Umbilical | Left lumbar</li>
+          <li><strong>Lower 3:</strong> Right iliac fossa | Hypogastric (pubic) | Left iliac fossa</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px">Important Vertebral Levels:</p>
+        <div class="flowchart" style="margin:0;padding:1rem">
+          <div class="flow-v">
+            <div class="landmark-row"><span class="lm-level">T10</span><span class="lm-content">Umbilicus (xiphoid tip)</span></div>
+            <div class="landmark-row"><span class="lm-level">L1</span><span class="lm-content">Transpyloric plane — pylorus, fundus of GB, neck of pancreas, hilum of kidney, duodenojejunal flexure</span></div>
+            <div class="landmark-row"><span class="lm-level">L2</span><span class="lm-content">Subcostal plane — origin of SMA, lower pole of kidneys</span></div>
+            <div class="landmark-row"><span class="lm-level">L3/4</span><span class="lm-content">Transtubercular plane — bifurcation of aorta, highest point of iliac crest</span></div>
+            <div class="landmark-row"><span class="lm-level">L4</span><span class="lm-content">Iliac crest highest point</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mnemonic-box">
+      <div class="mbox-title">Transpyloric Plane Structures (L1)</div>
+      <div class="mnemonic-highlight">"Pylorus Finds Good Neighbours — Duodenum Keeps Spleen"</div>
+      <p style="font-size:12px;color:var(--text2);margin-top:4px">Pylorus · Fundus of GB · hilum of kiDNey · neck of Pancreas · origin of SMA · Duodenojejunal flexure · hilus of Spleen</p>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════ S2: INGUINAL REGION ══════════════ -->
+<div id="s2">
+  <div class="section-header">
+    <div class="section-num">02</div>
+    <h2>Inguinal <em>Region</em></h2>
+  </div>
+
+  <div class="keypoint">The inguinal canal is the single most important topic in abdominal anatomy for MBBS exams. Appears in <strong>almost every annual paper</strong>. Master it completely.</div>
+
+  <div class="card" style="border-color:var(--gold)">
+    <div class="card-title" style="color:var(--gold)">Inguinal Canal — Complete <span class="badge badge-fav">⭐ PYQ EVERY YEAR</span></div>
+
+    <div class="keypoint">The inguinal canal is a <strong>4 cm oblique passage</strong> in the lower anterior abdominal wall, passing from the deep inguinal ring to the superficial inguinal ring. Runs parallel to and just above the medial half of the inguinal ligament.</div>
+
+    <div class="table-wrap">
+      <table>
+        <tr><th>Wall</th><th>Structure</th><th>Memory Hook</th></tr>
+        <tr><td>Anterior wall</td><td>External oblique aponeurosis (whole length) + internal oblique muscle (lateral 1/3 only)</td><td>"EO all the way, IO only laterally"</td></tr>
+        <tr><td>Posterior wall</td><td>Transversalis fascia (whole length) + conjoint tendon / inguinal falx (medial 1/3)</td><td>"TF all the way, Conjoint medially"</td></tr>
+        <tr><td>Roof (superior)</td><td>Arching fibres of internal oblique + transversus abdominis</td><td>"IO + TA arch over"</td></tr>
+        <tr><td>Floor (inferior)</td><td>Inguinal ligament + lacunar ligament (medial part)</td><td>"Floor = ligament below"</td></tr>
+      </table>
+    </div>
+
+    <div class="wiki-img" style="margin: 1.5rem 0; text-align: center; background: var(--surface2); padding: 1rem; border-radius: 8px; border: 1px solid var(--border);">
+      <div style="color:var(--accent);font-family:'JetBrains Mono',monospace;font-size:11px;margin-bottom:8px;text-align:left;">DIAGRAM 02 — Inguinal Canal Walls</div>
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Gray1146.png" alt="Inguinal Canal Walls" loading="lazy" style="max-width: 100%; height: auto; border-radius: 8px;">
+      <div class="wiki-caption" style="font-size:11px;color:var(--text2);text-align:center;margin-top:8px;">Inguinal canal and its relations — Gray's Anatomy</div>
+    </div>
+
+    <div class="two-col" style="margin-top:1rem">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">Two Rings:</p>
+        <ul class="checklist">
+          <li><strong>Deep (internal) ring:</strong> Opening in transversalis fascia, <strong>lateral to inferior epigastric artery</strong>. At midpoint of inguinal ligament</li>
+          <li><strong>Superficial (external) ring:</strong> V-shaped opening in EO aponeurosis, <strong>above and medial to pubic tubercle</strong>. Crura = medial crus + lateral crus, held by intercrural fibres</li>
+        </ul>
+        <p style="font-size:13px;font-weight:600;color:var(--teal);margin-bottom:6px;margin-top:.75rem">Contents — Male:</p>
+        <ul class="checklist">
+          <li>Spermatic cord (3 fasciae, 3 arteries, 3 nerves, 3 other)</li>
+          <li>Ilioinguinal nerve (in canal but NOT in cord)</li>
+          <li>Genital branch of genitofemoral nerve</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px">Spermatic Cord Contents:</p>
+        <ul class="checklist">
+          <li><strong>3 Fasciae:</strong> External spermatic (from EO), Cremasteric (from IO), Internal spermatic (from transversalis fascia)</li>
+          <li><strong>3 Arteries:</strong> Testicular (from aorta at L2), Cremasteric (from inferior epigastric), Artery to vas deferens (from superior vesical)</li>
+          <li><strong>3 Nerves:</strong> Genital branch of genitofemoral, Sympathetic fibres (T10–L1), Cremasteric nerve</li>
+          <li><strong>Others:</strong> Vas deferens (ductus deferens), Pampiniform plexus of veins, Lymphatics</li>
+        </ul>
+        <p style="font-size:13px;font-weight:600;color:var(--rose);margin-bottom:6px;margin-top:.75rem">Contents — Female:</p>
+        <ul class="checklist">
+          <li>Round ligament of uterus</li>
+          <li>Ilioinguinal nerve</li>
+          <li>Lymphatics from fundus of uterus</li>
+        </ul>
+      </div>
+    </div>
+    <div class="mnemonic-box">
+      <div class="mbox-title">Spermatic Cord — "3 × 3" Mnemonic</div>
+      <div class="mnemonic-highlight">"3 Fasciae: ECI (External, Cremasteric, Internal) | 3 Arteries: TCA (Testicular, Cremasteric, Artery to vas) | 3 Nerves: Genital + Sympathetic + Cremasteric"</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Hesselbach's Triangle (Inguinal Triangle) <span class="badge badge-pyq">PYQ 2014, 2018, 2022</span></div>
+    <div class="keypoint">The site of <strong>direct inguinal hernia</strong>. A weakness in the posterior wall of inguinal canal, medial to the inferior epigastric artery.</div>
+    <div class="flowchart" style="margin:0">
+      <div class="flow-title">Boundaries of Hesselbach's Triangle</div>
+      <div class="flow-h">
+        <div class="flow-box rose"><span class="lbl">Lateral border</span><strong>Inferior epigastric artery</strong></div>
+        <div class="h-arrow">+</div>
+        <div class="flow-box gold"><span class="lbl">Medial border</span><strong>Lateral border of rectus abdominis</strong> (linea semilunaris)</div>
+        <div class="h-arrow">+</div>
+        <div class="flow-box teal"><span class="lbl">Inferior border</span><strong>Inguinal ligament</strong></div>
+      </div>
+    </div>
+    <div class="mnemonic-box" style="margin-top:.75rem">
+      <div class="mbox-title">Hesselbach's Triangle</div>
+      <div class="mnemonic-highlight">"RIP" = Rectus (medial) · Inferior epigastric (lateral) · Poupart's ligament (inferior)</div>
+    </div>
+    <div class="clinical-box">
+      <div class="cbox-title">Direct vs Indirect Inguinal Hernia</div>
+      <div class="table-wrap" style="margin-top:.5rem">
+        <table>
+          <tr><th>Feature</th><th>Indirect (Oblique)</th><th>Direct</th></tr>
+          <tr><td>Path</td><td>Through deep ring → canal → superficial ring (complete path)</td><td>Through posterior wall of canal (Hesselbach's triangle) directly</td></tr>
+          <tr><td>Relation to IEA</td><td><strong>Lateral</strong> to inferior epigastric artery</td><td><strong>Medial</strong> to inferior epigastric artery</td></tr>
+          <tr><td>Age</td><td>Common in young (congenital patent processus vaginalis)</td><td>Common in elderly (muscle weakness)</td></tr>
+          <tr><td>Neck</td><td>Narrow, high risk of strangulation</td><td>Wide, rarely strangulates</td></tr>
+          <tr><td>Coverings</td><td>Has all 3 fasciae of cord + peritoneal sac</td><td>Only transversalis fascia + peritoneum (no cremasteric)</td></tr>
+          <tr><td>Occlusion test</td><td>Deep ring occlusion controls hernia</td><td>Deep ring occlusion does NOT control</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Femoral Canal & Femoral Hernia <span class="badge badge-pyq">PYQ 2015, 2021</span></div>
+    <div class="two-col">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">Femoral Sheath Contents (lateral to medial):</p>
+        <ul class="checklist">
+          <li><strong>Lateral compartment:</strong> Femoral artery</li>
+          <li><strong>Middle compartment:</strong> Femoral vein</li>
+          <li><strong>Medial compartment:</strong> Femoral canal (contains lymphatics + Cloquet's lymph node)</li>
+        </ul>
+        <div class="mnemonic-box" style="margin-top:.5rem">
+          <div class="mbox-title">Femoral Triangle Contents</div>
+          <div class="mnemonic-highlight">"NAVEL" = Nerve · Artery · Vein · Empty space · Lymphatics (lateral → medial)</div>
+        </div>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px">Femoral Ring Boundaries:</p>
+        <ul class="checklist">
+          <li><strong>Anterior:</strong> Inguinal ligament</li>
+          <li><strong>Posterior:</strong> Pectineal ligament (Cooper's ligament)</li>
+          <li><strong>Medial:</strong> Lacunar ligament (Gimbernat's)</li>
+          <li><strong>Lateral:</strong> Femoral vein</li>
+        </ul>
+        <div class="warn-box" style="margin-top:.5rem">
+          Femoral hernia is more common in <strong>women</strong> (wider pelvis → wider femoral ring). However, inguinal hernia is still the most common hernia overall in both sexes.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════ S3: PERITONEUM ══════════════ -->
+<div id="s3">
+  <div class="section-header">
+    <div class="section-num">03</div>
+    <h2><em>Peritoneum</em></h2>
+  </div>
+
+  <div class="keypoint">Peritoneum is a <strong>serous membrane</strong> lining the abdominal cavity (parietal) and covering abdominal viscera (visceral). Total surface area ~2 m² — similar to skin. The cavity contains only a thin film of fluid (~50 mL) normally.</div>
+
+  <div class="card">
+    <div class="card-title">Peritoneal Folds & Ligaments <span class="badge badge-pyq">PYQ 2012, 2017, 2020, 2024</span></div>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Structure</th><th>Type</th><th>Contents</th><th>Connects</th></tr>
+        <tr><td>Greater omentum</td><td>Double peritoneal fold (4 layers)</td><td>Fat, lymphatics — "policeman of abdomen"</td><td>Greater curvature of stomach → transverse colon</td></tr>
+        <tr><td>Lesser omentum</td><td>Double fold</td><td>Hepatic artery, portal vein, bile duct in free edge = <strong>porta hepatis</strong></td><td>Liver → lesser curvature of stomach + 1st 2.5 cm of duodenum</td></tr>
+        <tr><td>Falciform ligament</td><td>Peritoneal fold</td><td>Ligamentum teres hepatis (obliterated umbilical vein) in free edge</td><td>Anterior abdominal wall/diaphragm → liver</td></tr>
+        <tr><td>Gastrosplenic ligament</td><td>Double fold</td><td>Short gastric arteries, left gastroepiploic</td><td>Greater curvature (upper) → spleen</td></tr>
+        <tr><td>Splenorenal (lienorenal) ligament</td><td>Double fold</td><td>Splenic vessels, tail of pancreas</td><td>Spleen → left kidney</td></tr>
+        <tr><td>Hepatoduodenal ligament</td><td>Free edge of lesser omentum</td><td><strong>Portal triad:</strong> Portal vein (posterior), Hepatic artery (left), CBD (right)</td><td>Liver → duodenum</td></tr>
+        <tr><td>Mesentery</td><td>Double fold</td><td>SMA branches, lymphatics, fat</td><td>Posterior abdominal wall → jejunum/ileum</td></tr>
+        <tr><td>Transverse mesocolon</td><td>Double fold</td><td>Middle colic artery</td><td>Posterior wall → transverse colon</td></tr>
+        <tr><td>Sigmoid mesocolon</td><td>Double fold</td><td>Sigmoid arteries</td><td>Posterior wall → sigmoid colon</td></tr>
+      </table>
+    </div>
+    <div class="mnemonic-box">
+      <div class="mbox-title">Portal Triad in Hepatoduodenal Ligament</div>
+      <div class="mnemonic-highlight">"Portal vein is Posterior; Hepatic artery is Left (HAL); Bile duct is Right (BDR)"</div>
+      <p style="font-size:12px;color:var(--text2);margin-top:4px">Or: PVP — Portal Vein Posterior. "The Artery goes to Heaven (left), the Bile goes to the Right (bowels)"</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Peritoneal Pouches & Recesses <span class="badge badge-fav">⭐ PYQ 2013, 2018, 2021</span></div>
+    <div class="two-col">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">Subphrenic Spaces (Above Transverse Colon):</p>
+        <ul class="checklist">
+          <li><strong>Right subphrenic space:</strong> Between right lobe of liver + diaphragm. Site of right subphrenic abscess after perforated appendix/duodenal ulcer</li>
+          <li><strong>Left subphrenic space:</strong> Between left lobe of liver/stomach/spleen + diaphragm</li>
+          <li><strong>Hepatorenal pouch (Morrison's pouch):</strong> Between right lobe of liver and right kidney. <strong>Lowest space in supine position</strong> → fluid collects here first. Classic site of subhepatic abscess</li>
+          <li><strong>Lesser sac (omental bursa):</strong> Behind stomach/lesser omentum. Communicates with greater sac via <strong>epiploic foramen of Winslow</strong></li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px">Pelvic Pouches (Below Transverse Colon):</p>
+        <ul class="checklist">
+          <li><strong>Males:</strong> <strong>Rectovesical pouch</strong> — between rectum and bladder. Lowest point in male peritoneal cavity in erect position</li>
+          <li><strong>Females:</strong> <strong>Rectouterine pouch (Pouch of Douglas)</strong> — between rectum and uterus. Lowest point in female peritoneal cavity. Accessible via posterior vaginal fornix → culdocentesis</li>
+          <li><strong>Vesicouterine pouch:</strong> Between uterus and bladder (not as deep)</li>
+        </ul>
+        <div class="clinical-box" style="margin-top:.5rem">
+          <div class="cbox-title">Epiploic Foramen of Winslow</div>
+          <p>Gateway to lesser sac. Boundaries: <strong>Anterior</strong> = hepatoduodenal ligament (portal triad); <strong>Posterior</strong> = IVC; <strong>Superior</strong> = caudate lobe of liver; <strong>Inferior</strong> = 1st part of duodenum. Pringle's manoeuvre: compress hepatoduodenal ligament to stop liver bleeding.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Peritoneal Relations of Organs</div>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Relation</th><th>Organs</th></tr>
+        <tr><td>Intraperitoneal (have mesentery)</td><td>Stomach, Jejunum, Ileum, Caecum (usually), Appendix, Transverse colon, Sigmoid colon, Liver (mostly), Spleen, Ovaries, Uterine tubes, 1st 2.5 cm duodenum</td></tr>
+        <tr><td>Retroperitoneal (SADPUCKER)</td><td><strong>S</strong>uprarenal glands, <strong>A</strong>orta + IVC, <strong>D</strong>uodenum (2nd–4th), <strong>P</strong>ancreas (except tail), <strong>U</strong>reters, <strong>C</strong>olon (ascending + descending), <strong>K</strong>idneys, <strong>E</strong>sophagus (lower), <strong>R</strong>ectum (middle third)</td></tr>
+        <tr><td>Secondarily retroperitoneal</td><td>Duodenum (2nd–4th), Ascending colon, Descending colon, Pancreas — initially intraperitoneal but fused to posterior wall during development</td></tr>
+      </table>
+    </div>
+    <div class="mnemonic-box">
+      <div class="mbox-title">Retroperitoneal Organs</div>
+      <div class="mnemonic-highlight">"SAD PUCKER" — Suprarenal · Aorta/IVC · Duodenum(2-4) · Pancreas · Ureters · Colon(asc+desc) · Kidneys · Esophagus · Rectum</div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════ S4: STOMACH ══════════════ -->
+<div id="s4">
+  <div class="section-header">
+    <div class="section-num">04</div>
+    <h2><em>Stomach</em></h2>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Stomach — Anatomy <span class="badge badge-pyq">PYQ 2011, 2014, 2019</span></div>
+    <div class="two-col">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">Parts (Cardia → Pylorus):</p>
+        <ul class="checklist">
+          <li><strong>Cardia:</strong> Junction with oesophagus at T10 level behind 7th costal cartilage</li>
+          <li><strong>Fundus:</strong> Above cardia level (dome), contains swallowed air (gastric bubble on X-ray)</li>
+          <li><strong>Body:</strong> Main part between fundus and pyloric antrum</li>
+          <li><strong>Pyloric antrum:</strong> Funnel-shaped, leads to pyloric canal</li>
+          <li><strong>Pylorus:</strong> Thick muscular sphincter at L1 level (transpyloric plane)</li>
+        </ul>
+        <p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px;margin-top:.75rem">Curvatures:</p>
+        <ul class="checklist">
+          <li><strong>Lesser curvature:</strong> Right border; notch = angularis/incisura angularis; lesser omentum attached</li>
+          <li><strong>Greater curvature:</strong> Left border, longer; greater omentum + gastrosplenic ligament attached</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--teal);margin-bottom:6px">Blood Supply:</p>
+        <ul class="checklist">
+          <li><strong>Lesser curvature:</strong> Left gastric artery (from celiac trunk — largest supply) + Right gastric artery (from hepatic proper)</li>
+          <li><strong>Greater curvature:</strong> Left gastroepiploic (from splenic) + Right gastroepiploic (from gastroduodenal)</li>
+          <li><strong>Fundus:</strong> Short gastric arteries (from splenic artery)</li>
+          <li>All arteries anastomose freely → stomach rarely infarcted</li>
+        </ul>
+        <p style="font-size:13px;font-weight:600;color:var(--rose);margin-bottom:6px;margin-top:.75rem">Nerve Supply:</p>
+        <ul class="checklist">
+          <li><strong>Vagus (CN X):</strong> Left vagus → anterior surface; Right vagus → posterior surface. "LARP" = Left Anterior, Right Posterior</li>
+          <li><strong>Sympathetic:</strong> T6–T10 via greater splanchnic nerve → celiac plexus</li>
+        </ul>
+      </div>
+    </div>
+    <div class="clinical-box">
+      <div class="cbox-title">Pyloric Stenosis</div>
+      <p>Hypertrophy of pyloric smooth muscle (congenital — presents at 4–6 weeks as projectile vomiting). No bile (obstruction above Ampulla of Vater). <strong>Olive-shaped mass</strong> palpable in right epigastrium. Causes <strong>hypochloraemic hypokalaemic metabolic alkalosis</strong> (loss of HCl in vomit). Treatment: Ramstedt's pyloromyotomy.</p>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════ S5: DUODENUM ══════════════ -->
+<div id="s5">
+  <div class="section-header">
+    <div class="section-num">05</div>
+    <h2><em>Duodenum</em></h2>
+  </div>
+
+  <div class="keypoint">The duodenum is the most important part of the small intestine anatomically. <strong>C-shaped, 25 cm long</strong>, wraps around the head of pancreas. All parts except the 1st 2.5 cm are <strong>retroperitoneal</strong>.</div>
+
+  <div class="card">
+    <div class="card-title">Four Parts of Duodenum <span class="badge badge-fav">⭐ PYQ 2011-S, 2014, 2016, 2021</span></div>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Part</th><th>Length</th><th>Level</th><th>Key Relations / Facts</th></tr>
+        <tr><td>1st (Superior)</td><td>5 cm</td><td>L1</td><td>First 2.5 cm = <strong>duodenal cap/bulb</strong> — intraperitoneal, mobile, site of peptic ulcer. Posterior to it: gastroduodenal artery, portal vein, CBD. Peristalsis visible on barium = abnormal</td></tr>
+        <tr><td>2nd (Descending)</td><td>7.5 cm</td><td>L1–L3</td><td>Most important part. <strong>Ampulla of Vater (major duodenal papilla)</strong> opens on posteromedial wall at L2 — junction of CBD + main pancreatic duct (Wirsung). Minor papilla (Santorini/accessory duct) 2 cm above. Sphincter of Oddi controls flow</td></tr>
+        <tr><td>3rd (Horizontal)</td><td>10 cm</td><td>L3</td><td>Crosses spine horizontally. <strong>SMA and SMV cross anteriorly</strong>. SMA syndrome: compression of 3rd part between SMA and aorta → duodenal obstruction (cast syndrome)</td></tr>
+        <tr><td>4th (Ascending)</td><td>2.5 cm</td><td>L2–L3</td><td>Ascends to duodenojejunal flexure at L2 (left of midline). Supported by <strong>ligament of Treitz (suspensory muscle of duodenum)</strong>. Fixed point — surgical landmark separating upper GI from lower GI bleeding</td></tr>
+      </table>
+    </div>
+
+    <div class="wiki-img" style="margin: 1.5rem 0; text-align: center; background: var(--surface2); padding: 1rem; border-radius: 8px; border: 1px solid var(--border);">
+      <div style="color:var(--accent);font-family:'JetBrains Mono',monospace;font-size:11px;margin-bottom:8px;text-align:left;">DIAGRAM 03 — Duodenum and its relations</div>
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Gray1058.png" alt="Duodenum and its relations" loading="lazy" style="max-width: 100%; height: auto; border-radius: 8px;">
+      <div class="wiki-caption" style="font-size:11px;color:var(--text2);text-align:center;margin-top:8px;">The duodenum and pancreas — Gray's Anatomy</div>
+    </div>
+
+    <div class="clinical-box">
+      <div class="cbox-title">Duodenal Ulcer vs Gastric Ulcer</div>
+      <div class="table-wrap" style="margin-top:.5rem">
+        <table>
+          <tr><th>Feature</th><th>Duodenal Ulcer</th><th>Gastric Ulcer</th></tr>
+          <tr><td>Site</td><td>Anterior wall of 1st part — most common</td><td>Lesser curvature (most common)</td></tr>
+          <tr><td>Pain</td><td>Relieved by food, worse at night (2–3 AM)</td><td>Worse with food</td></tr>
+          <tr><td>Perforation</td><td>Anterior → peritonitis; Posterior → erodes gastroduodenal artery → haematemesis</td><td>Anterior → peritonitis</td></tr>
+          <tr><td>Malignancy risk</td><td>None</td><td>High (biopsy mandatory)</td></tr>
+          <tr><td>Blood supply eroded posteriorly</td><td>Gastroduodenal artery</td><td>Left gastric artery</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="border-color:var(--accent)">
+    <div class="card-title" style="color:var(--accent)">Duodenum — Second (Descending) Part <span class="badge badge-fav">⭐ PYQ 2010, 2015</span></div>
+    <div class="keypoint">The 2nd part of the duodenum (7.5 cm) is vertical, descending from L1 to L3. It is retroperitoneal and is the site where the biliary and pancreatic secretions enter the digestive tract. It forms the boundary between the foregut and midgut.</div>
+    <div class="two-col">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">Anatomical Relations:</p>
+        <ul class="checklist">
+          <li><strong>Anterior:</strong> Transverse colon, transverse mesocolon, and coils of jejunum. Crossed by the gall bladder/liver.</li>
+          <li><strong>Posterior:</strong> Anterior surface of right kidney (medial part), renal vessels, IVC, and right psoas major.</li>
+          <li><strong>Medial:</strong> Head of the pancreas and common bile duct.</li>
+          <li><strong>Lateral:</strong> Right colic (hepatic) flexure, ascending colon, and right lobe of liver.</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px">Luminal (Internal) Features:</p>
+        <ul class="checklist">
+          <li><strong>Plicae Circulares:</strong> Circular mucosal folds that are well developed here.</li>
+          <li><strong>Major Duodenal Papilla (Ampulla of Vater):</strong> Located on the posteromedial wall, 8–10 cm distal to the pylorus. It is the common opening of the **Common Bile Duct (CBD)** and the **Main Pancreatic Duct (Wirsung)**. Its opening is controlled by the **Sphincter of Oddi**.</li>
+          <li><strong>Minor Duodenal Papilla:</strong> Located 2 cm anterosuperior (proximal) to the major papilla. It is the opening of the **Accessory Pancreatic Duct (Santorini)**.</li>
+          <li><strong>Plica Longitudinalis:</strong> A longitudinal mucosal fold extending inferiorly from the major papilla, caused by the underlying CBD.</li>
+        </ul>
+      </div>
+    </div>
+    <p style="font-size:13px;font-weight:600;color:var(--teal);margin-bottom:6px;margin-top:.75rem">Dual Blood Supply (Foregut-Midgut Transition):</p>
+    <div class="keypoint">The major duodenal papilla represents the embryological transition point between the **foregut** and **midgut**. Consequently, the duodenum has a dual arterial supply:</div>
+    <ul class="checklist">
+      <li><strong>Proximal to Papilla (Foregut):</strong> Supplied by the <strong>Superior Pancreaticoduodenal Artery</strong> (branch of the Gastroduodenal Artery, which arises from the Common Hepatic Artery of the <strong>Celiac Trunk</strong>).</li>
+      <li><strong>Distal to Papilla (Midgut):</strong> Supplied by the <strong>Inferior Pancreaticoduodenal Artery</strong> (branch of the <strong>Superior Mesenteric Artery [SMA]</strong>).</li>
+      <li>These two arteries form anterior and posterior anastomotic arches (pancreaticoduodenal arcades) in the groove between the head of the pancreas and the duodenum, providing a rich collateral circulation.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Jejunum vs Ileum <span class="badge badge-pyq">PYQ 2013, 2019</span></div>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Feature</th><th>Jejunum</th><th>Ileum</th></tr>
+        <tr><td>Length</td><td>Upper 2/5 of SI (approx 2.5 m)</td><td>Lower 3/5 (approx 3.5 m)</td></tr>
+        <tr><td>Location</td><td>Upper left abdomen</td><td>Lower right abdomen + pelvis</td></tr>
+        <tr><td>Diameter</td><td>Wider (4 cm)</td><td>Narrower (3 cm)</td></tr>
+        <tr><td>Wall thickness</td><td>Thicker, more vascular (redder)</td><td>Thinner, less vascular (paler)</td></tr>
+        <tr><td>Vasa recta</td><td>Long, widely spaced</td><td>Short, close together</td></tr>
+        <tr><td>Arterial arcades</td><td>1–2 tiers (few large loops)</td><td>4–5 tiers (many loops)</td></tr>
+        <tr><td>Plicae circulares</td><td>Prominent, tall, close together</td><td>Fewer, less prominent, absent near terminal ileum</td></tr>
+        <tr><td>Peyer's patches</td><td>Absent / few</td><td>Prominent — aggregated lymphoid follicles on antimesenteric border</td></tr>
+        <tr><td>Fat in mesentery</td><td>Sparse — windows visible</td><td>Fat abundant — no windows</td></tr>
+      </table>
+    </div>
+    <div class="mnemonic-box">
+      <div class="mbox-title">Jejunum vs Ileum</div>
+      <div class="mnemonic-highlight">"JEJunum = Just Empty Jejunum" — wide, empty-looking, fewer arcades, long vasa recta. "ILeUM = ILeum has More (Peyer's patches, more arcades, more fat)"</div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════ S6: LARGE INTESTINE ══════════════ -->
+<div id="s6">
+  <div class="section-header">
+    <div class="section-num">06</div>
+    <h2>Large <em>Intestine</em></h2>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Large Intestine — Overview <span class="badge badge-pyq">PYQ 2012, 2017, 2022</span></div>
+    <div class="keypoint">Large intestine is ~1.5 m long, from ileocaecal junction to anus. Distinguished by: <strong>taeniae coli</strong> (3 longitudinal muscle bands), <strong>haustra</strong> (sacculations), <strong>appendices epiploicae</strong> (fat tags on serosa). Taeniae converge at the base of appendix — surgical landmark.</div>
+
+    <div class="table-wrap">
+      <table>
+        <tr><th>Part</th><th>Peritoneal Relation</th><th>Blood Supply</th><th>Key Facts</th></tr>
+        <tr><td>Caecum</td><td>Intraperitoneal (usually)</td><td>Ileocolic artery (SMA)</td><td>Right iliac fossa. McBurney's point: 1/3 from ASIS on line to umbilicus = appendix base</td></tr>
+        <tr><td>Appendix</td><td>Intraperitoneal (has mesoappendix)</td><td>Appendicular artery (from ileocolic — end artery!)</td><td>Average 9 cm. Positions: retrocaecal (65% — most common), pelvic, post-ileal, subcaecal, paracolic</td></tr>
+        <tr><td>Ascending colon</td><td><strong>Retroperitoneal</strong></td><td>Ileocolic + right colic (SMA)</td><td>Right paracolic gutter lateral to it</td></tr>
+        <tr><td>Transverse colon</td><td>Intraperitoneal (has transverse mesocolon)</td><td>Middle colic artery (SMA)</td><td>Most mobile part. Surgical watershed: right 2/3 = SMA, left 1/3 = IMA</td></tr>
+        <tr><td>Descending colon</td><td><strong>Retroperitoneal</strong></td><td>Left colic artery (IMA)</td><td>Left paracolic gutter lateral</td></tr>
+        <tr><td>Sigmoid colon</td><td>Intraperitoneal (has sigmoid mesocolon)</td><td>Sigmoid arteries (IMA)</td><td>Most common site of diverticulosis; sigmoid volvulus</td></tr>
+        <tr><td>Rectum</td><td>Upper 1/3 = intraperitoneal; Middle 1/3 = retroperitoneal anterior; Lower 1/3 = extraperitoneal</td><td>Superior rectal (IMA), Middle rectal (internal iliac), Inferior rectal (pudendal)</td><td>No taeniae, haustra, or appendices epiploicae — smooth muscle coat complete</td></tr>
+      </table>
+    </div>
+
+    <div class="mnemonic-box">
+      <div class="mbox-title">Appendix Positions</div>
+      <div class="mnemonic-highlight">"Retrocaecal Please — PRSP" = Retrocaecal (65%), Pelvic (30%), Subcaecal, Post-ileal, Paracolic</div>
+    </div>
+
+    <div class="clinical-box">
+      <div class="cbox-title">Appendicitis & McBurney's Point</div>
+      <p><strong>McBurney's point:</strong> Junction of lateral 1/3 and medial 2/3 of a line from right ASIS to umbilicus. Base of appendix always here (even if tip varies). <strong>Rovsing's sign:</strong> Pressure on LIF causes pain in RIF (peritoneal irritation). Retrocaecal appendix — psoas sign positive (hip extension causes pain). Pelvic appendix — rectal tenderness.</p>
+    </div>
+
+    <div class="keypoint"><strong>Watershed area of colon:</strong> Splenic flexure = junction of SMA and IMA territories. Griffiths' critical point. Most vulnerable in low-flow states → ischaemic colitis typically here. The <strong>marginal artery of Drummond</strong> runs along the inner margin of colon connecting SMA + IMA territories.</div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════ S7: LIVER & BILIARY ══════════════ -->
+<div id="s7">
+  <div class="section-header">
+    <div class="section-num">07</div>
+    <h2>Liver & <em>Biliary System</em></h2>
+  </div>
+
+  <div class="card" style="border-color:var(--gold)">
+    <div class="card-title" style="color:var(--gold)">Liver — Lobes & Surfaces <span class="badge badge-fav">⭐ PYQ 2010, 2013, 2016, 2019, 2023</span></div>
+    <div class="two-col">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">Anatomical (Morphological) Lobes — 4:</p>
+        <ul class="checklist">
+          <li><strong>Right lobe:</strong> Large, separated from left by falciform ligament (anteriorly) and fissure for ligamentum teres + ligamentum venosum (inferiorly)</li>
+          <li><strong>Left lobe:</strong> Smaller, more anterior</li>
+          <li><strong>Caudate lobe:</strong> On posterior surface, between IVC and ligamentum venosum. Gets blood from BOTH left and right portal branches — drains directly into IVC (not hepatic veins). Not involved in Budd-Chiari</li>
+          <li><strong>Quadrate lobe:</strong> On visceral surface, between GB fossa and ligamentum teres. Functionally belongs to LEFT lobe</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px">Porta Hepatis (Hilum of Liver):</p>
+        <ul class="checklist">
+          <li>On visceral (inferior) surface, between caudate and quadrate lobes</li>
+          <li>Contents (anterior → posterior): <strong>Hepatic ducts (R+L)</strong> → <strong>Hepatic arteries (R+L)</strong> → <strong>Portal vein</strong></li>
+          <li>Mnemonic: "Duct in front, Vein at back, Artery between" = DVA or HAD (Hepatic duct-Artery-portal vein in D A V order superficial to deep)</li>
+        </ul>
+        <p style="font-size:13px;font-weight:600;color:var(--teal);margin-bottom:6px;margin-top:.75rem">Blood Supply (Dual):</p>
+        <ul class="checklist">
+          <li><strong>Portal vein:</strong> 75% of total blood, 50% of oxygen</li>
+          <li><strong>Hepatic artery proper:</strong> 25% of blood, 50% of oxygen</li>
+          <li>Hepatic veins (3): Drain into IVC directly</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Couinaud's Segmental Anatomy <span class="badge badge-pyq">PYQ 2015, 2020, 2024</span></div>
+    <div class="keypoint">Couinaud divided the liver into <strong>8 functional segments</strong> based on hepatic vein and portal vein distribution. Each segment has its own portal triad (portal vein + hepatic artery + bile duct) and drains independently — can be resected separately.</div>
+
+    <div class="couinaud-grid">
+      <div class="couinaud-seg"><span class="seg-num">I</span><span class="seg-name">Caudate lobe<br>Drains to IVC</span></div>
+      <div class="couinaud-seg"><span class="seg-num">II</span><span class="seg-name">Left lobe<br>Left lateral (superior)</span></div>
+      <div class="couinaud-seg"><span class="seg-num">III</span><span class="seg-name">Left lobe<br>Left lateral (inferior)</span></div>
+      <div class="couinaud-seg"><span class="seg-num">IV</span><span class="seg-name">Left lobe<br>Quadrate (IVa superior, IVb inferior)</span></div>
+      <div class="couinaud-seg"><span class="seg-num">V</span><span class="seg-name">Right lobe<br>Anterior inferior</span></div>
+      <div class="couinaud-seg"><span class="seg-num">VI</span><span class="seg-name">Right lobe<br>Posterior inferior</span></div>
+      <div class="couinaud-seg"><span class="seg-num">VII</span><span class="seg-name">Right lobe<br>Posterior superior</span></div>
+      <div class="couinaud-seg"><span class="seg-num">VIII</span><span class="seg-name">Right lobe<br>Anterior superior</span></div>
+    </div>
+
+    <div class="keypoint">The <strong>3 hepatic veins</strong> (left, middle, right) divide liver into 4 sectors. The <strong>main portal fissure</strong> (containing middle hepatic vein) separates right and left functional lobes — this line (Cantlie's line) runs from GB fossa to IVC. Does NOT correspond to anatomical lobe boundary.</div>
+
+    <div class="wiki-img" style="margin: 1.5rem 0; text-align: center; background: var(--surface2); padding: 1rem; border-radius: 8px; border: 1px solid var(--border);">
+      <div style="color:var(--accent);font-family:'JetBrains Mono',monospace;font-size:11px;margin-bottom:8px;text-align:left;">DIAGRAM 04 — Couinaud's 8 Segments</div>
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Liver_04_Couinaud_classification.svg" alt="Couinaud's 8 Segments" loading="lazy" style="max-width: 100%; height: auto; border-radius: 8px;">
+      <div class="wiki-caption" style="font-size:11px;color:var(--text2);text-align:center;margin-top:8px;">Couinaud's segments of the liver</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Biliary System <span class="badge badge-pyq">PYQ 2012, 2018, 2022</span></div>
+    <div class="flowchart" style="margin:0">
+      <div class="flow-title">Bile Pathway</div>
+      <div class="flow-v">
+        <div class="flow-box accent"><span class="lbl">Liver canaliculi</span>Tiny channels between hepatocytes → collect bile</div>
+        <div class="flow-step-label">↓ drain into</div>
+        <div class="flow-box"><span class="lbl">Interlobular bile ducts → Intrahepatic ducts</span></div>
+        <div class="flow-step-label">↓ join to form</div>
+        <div class="flow-box gold"><span class="lbl">Right + Left Hepatic Ducts</span>Join at porta hepatis → <strong>Common Hepatic Duct (CHD)</strong></div>
+        <div class="flow-step-label">↓ CHD descends in free edge of lesser omentum</div>
+        <div class="flow-box"><span class="lbl">Cystic Duct (from GB) joins CHD</span>Spiral valve of Heister inside cystic duct</div>
+        <div class="flow-step-label">↓ union forms</div>
+        <div class="flow-box gold"><strong>Common Bile Duct (CBD)</strong> — runs in free edge of lesser omentum → behind 1st part of duodenum → groove on posterior pancreas → joins main pancreatic duct</div>
+        <div class="flow-step-label">↓ passes through sphincter of Oddi</div>
+        <div class="flow-box teal"><strong>Ampulla of Vater</strong> (hepatopancreatic ampulla) → opens on major duodenal papilla on posteromedial wall of 2nd part of duodenum at L2</div>
+      </div>
+    </div>
+    <div class="clinical-box" style="margin-top:.75rem">
+      <div class="cbox-title">Calot's Triangle (Cystohepatic Triangle)</div>
+      <p>Boundaries: <strong>Cystic duct (right)</strong>, <strong>Common hepatic duct (left)</strong>, <strong>Inferior surface of liver (above)</strong>. Contains: <strong>Cystic artery</strong> (usually from right hepatic artery) + Cystic lymph node (of Mascagni). Critical surgical landmark in cholecystectomy. Cystic artery MUST be identified in Calot's triangle before clipping.</p>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════ S8: PORTAL-SYSTEMIC ANASTOMOSES ══════════════ -->
+<div id="s8">
+  <div class="section-header">
+    <div class="section-num">08</div>
+    <h2>Portal-Systemic <em>Anastomoses</em></h2>
+  </div>
+
+  <div class="keypoint">Portal hypertension (normal portal pressure 5–10 mmHg, hypertension = >12 mmHg) causes blood to bypass the liver via collateral channels at 4 sites where portal and systemic veins communicate. These become varicosities when engorged. <strong>One of the highest-yield topics in abdominal anatomy.</strong></div>
+
+  <div class="card" style="border-color:var(--gold)">
+    <div class="card-title" style="color:var(--gold)">4 Sites of Porto-Systemic Anastomosis <span class="badge badge-fav">⭐ PYQ Every Year — Never Miss This</span></div>
+
+    <div class="flowchart" style="margin:0 0 1rem 0">
+      <div class="flow-title">Portal → Systemic at Each Site</div>
+      <div class="flow-v">
+        <div class="flow-box rose">
+          <span class="lbl">SITE 1 — Lower Oesophagus (Most Important Clinically)</span>
+          <strong>Portal:</strong> Left gastric vein (coronary vein)<br>
+          <strong>Systemic:</strong> Oesophageal tributaries of azygos → SVC<br>
+          <strong>Varices:</strong> Oesophageal varices — rupture causes <em>catastrophic haematemesis</em>. 30–40% mortality per bleed<br>
+          <span class="sub">Seen in lower 5 cm of oesophagus</span>
+        </div>
+        <div class="flow-step-label">↓</div>
+        <div class="flow-box gold">
+          <span class="lbl">SITE 2 — Umbilicus (Caput Medusae)</span>
+          <strong>Portal:</strong> Paraumbilical veins (in falciform ligament)<br>
+          <strong>Systemic:</strong> Superficial epigastric veins of abdominal wall → SVC/IVC<br>
+          <strong>Sign:</strong> <em>Caput Medusae</em> — dilated periumbilical veins radiating from umbilicus like Medusa's hair. Flow AWAY from umbilicus (differs from IVC obstruction — flow upward)
+        </div>
+        <div class="flow-step-label">↓</div>
+        <div class="flow-box teal">
+          <span class="lbl">SITE 3 — Anal Canal (Haemorrhoids)</span>
+          <strong>Portal:</strong> Superior rectal vein → IMV → portal<br>
+          <strong>Systemic:</strong> Middle + Inferior rectal veins → internal iliac → IVC<br>
+          <strong>Varices:</strong> Internal haemorrhoids (above dentate line — portal territory). Note: most haemorrhoids are NOT caused by portal hypertension — separate etiology
+        </div>
+        <div class="flow-step-label">↓</div>
+        <div class="flow-box purple">
+          <span class="lbl">SITE 4 — Retroperitoneum (Retzius Veins)</span>
+          <strong>Portal:</strong> Veins of colon, duodenum, pancreas, liver<br>
+          <strong>Systemic:</strong> Renal veins, lumbar veins, phrenic veins → IVC<br>
+          <strong>Varices:</strong> Retroperitoneal varices. Least clinically significant. Also: bare area of liver (between liver and diaphragm where portal veins communicate with phrenic veins)
+        </div>
+      </div>
+    </div>
+
+    <div class="wiki-img" style="margin: 1.5rem 0; text-align: center; background: var(--surface2); padding: 1rem; border-radius: 8px; border: 1px solid var(--border);">
+      <div style="color:var(--accent);font-family:'JetBrains Mono',monospace;font-size:11px;margin-bottom:8px;text-align:left;">DIAGRAM 05 — Porto-Systemic Anastomoses</div>
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Gray591.png" alt="Porto-Systemic Anastomoses" loading="lazy" style="max-width: 100%; height: auto; border-radius: 8px;">
+      <div class="wiki-caption" style="font-size:11px;color:var(--text2);text-align:center;margin-top:8px;">Portal vein and its tributaries — Gray's Anatomy</div>
+    </div>
+
+    <div class="mnemonic-box">
+      <div class="mbox-title">4 Sites Mnemonic</div>
+      <div class="mnemonic-highlight">"OURA" — Oesophagus · Umbilicus · Rectum/Anus · Retroperitoneum</div>
+      <p style="font-size:12px;color:var(--text2);margin-top:4px">Clinical severity order: Oesophageal varices > Haemorrhoids > Caput medusae > Retroperitoneal</p>
+    </div>
+
+    <div class="warn-box">
+      Caput medusae flow is <strong>AWAY</strong> from umbilicus in all directions. In IVC obstruction, flow is <strong>UPWARD</strong> on the abdominal wall (to drain into SVC). This distinction is tested in clinicals — differentiate by flow direction.
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Portal Vein — Formation & Tributaries <span class="badge badge-pyq">PYQ 2014, 2018</span></div>
+    <div class="flowchart" style="margin:0">
+      <div class="flow-title">Portal Vein Formation</div>
+      <div class="flow-h">
+        <div class="flow-box gold"><span class="lbl">Superior Mesenteric Vein</span>(from small intestine + right colon)</div>
+        <div class="h-arrow">+</div>
+        <div class="flow-box teal"><span class="lbl">Splenic Vein</span>(from spleen + IMV joins here)</div>
+        <div class="h-arrow"><span class="dir-arrow">→</span></div>
+        <div class="flow-box accent"><strong>Portal Vein</strong><span class="sub">Formed behind neck of pancreas at L2. 8 cm long. Lies in free edge of lesser omentum (most posterior)</span></div>
+      </div>
+    </div>
+    <div class="keypoint" style="margin-top:1rem">Portal vein has <strong>no valves</strong>. Normal portal pressure = 5–10 mmHg. Portal hypertension: pre-hepatic (portal vein thrombosis), intra-hepatic (cirrhosis — most common), post-hepatic (Budd-Chiari = hepatic vein obstruction).</div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════ S9: PANCREAS & SPLEEN ══════════════ -->
+<div id="s9">
+  <div class="section-header">
+    <div class="section-num">09</div>
+    <h2>Pancreas <em>& Spleen</em></h2>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Pancreas <span class="badge badge-fav">⭐ PYQ 2011, 2012, 2014, 2016, 2017, 2019, 2021</span></div>
+    <div class="keypoint">Pancreas is a <strong>retroperitoneal gland</strong> (except the tail which is intraperitoneal in splenorenal ligament). It lies at L1–L2 behind the stomach. <strong>Head</strong> is cradled in the C-curve of duodenum.</div>
+
+    <div class="two-col">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">Parts & Key Relations:</p>
+        <ul class="checklist">
+          <li><strong>Head:</strong> In concavity of duodenum (C-loop). Uncinate process projects from lower left of head, hooks behind SMA + SMV. CBD grooves its posterior surface</li>
+          <li><strong>Neck:</strong> Over portal vein formation (SMV + SV junction). At L1 (transpyloric plane)</li>
+          <li><strong>Body:</strong> Anterior surface covered by peritoneum forming posterior wall of lesser sac. Splenic vein runs in groove on posterior surface</li>
+          <li><strong>Tail:</strong> Only intraperitoneal part, reaches hilum of spleen in splenorenal ligament. Relationship to spleen important in splenectomy</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px">Duct System:</p>
+        <ul class="checklist">
+          <li><strong>Main duct of Wirsung:</strong> Runs through whole gland from tail → head. Joins CBD at ampulla of Vater</li>
+          <li><strong>Accessory duct of Santorini:</strong> Drains upper head/neck → opens at minor duodenal papilla (2 cm above major papilla)</li>
+          <li>Pancreas divisum: failure of duct fusion → most accessory duct carries most drainage → minor papilla too small → pancreatitis</li>
+        </ul>
+        <div class="clinical-box" style="margin-top:.5rem">
+          <div class="cbox-title">Acute Pancreatitis — Anatomy Basis</div>
+          <p><strong>Grey-Turner's sign:</strong> Flank bruising (retroperitoneal blood tracking to flank). <strong>Cullen's sign:</strong> Periumbilical bruising (blood tracking via falciform ligament to umbilicus). Both indicate severe haemorrhagic pancreatitis. Pseudocyst forms in lesser sac.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="two-col" style="margin-top:1.5rem">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--teal);margin-bottom:6px">Development & Anomalies:</p>
+        <ul class="checklist">
+          <li><strong>Buds:</strong> Develops from <strong>ventral</strong> and <strong>dorsal pancreatic buds</strong> of the foregut endoderm.
+            <ul>
+              <li><em>Ventral Bud:</em> Forms lower head & uncinate process. Relates to hepatic diverticulum.</li>
+              <li><em>Dorsal Bud:</em> Forms upper head, neck, body, and tail.</li>
+            </ul>
+          </li>
+          <li><strong>Fusion:</strong> Duodenal rotation brings ventral bud posterior to dorsal bud; they fuse. Main duct (Wirsung) = ventral duct + distal dorsal duct. Accessory duct (Santorini) = proximal dorsal duct.</li>
+          <li><strong>Annular Pancreas:</strong> Bilobed ventral bud rotates in opposite directions, encircling and compressing the <strong>2nd part of duodenum</strong> → duodenal obstruction (vomiting, double-bubble sign).</li>
+          <li><strong>Pancreas Divisum:</strong> Failure of dorsal & ventral duct fusion. Most pancreas drains via minor papilla → stenosis risk → chronic pancreatitis.</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent);margin-bottom:6px">Microanatomy & Blood Supply:</p>
+        <ul class="checklist">
+          <li><strong>Exocrine (99%):</strong> Serous acini. Simple pyramidal cells with basal basophilic cytoplasm (RER) and apical eosinophilic zymogen granules. Drained by intercalated ducts starting with <strong>centroacinar cells</strong> (distinctive for pancreas; no striated ducts).</li>
+          <li><strong>Endocrine (1%):</strong> Islets of Langerhans. Pale-staining spherical nests. α-cells (glucagon, 20%), β-cells (insulin, 70%), δ-cells (somatostatin, 5-10%), PP cells (1%). Rich fenestrated capillary network.</li>
+          <li><strong>Blood Supply:</strong> Dual arterial supply:
+            <ul>
+              <li><em>Head/Neck:</em> Anastomosing superior pancreaticoduodenal (from Gastroduodenal, branch of Celiac) & inferior pancreaticoduodenal (from SMA).</li>
+              <li><em>Body/Tail:</em> Multiple splenic artery branches (e.g., a. pancreatica magna).</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="clinical-box" style="margin-top:1rem">
+      <div class="cbox-title">Obstructive Jaundice in Carcinoma of Pancreatic Head <span class="badge badge-pyq">PYQ 2011, 2014, 2016, 2019</span></div>
+      <p><strong>Pathological Basis:</strong> The common bile duct (CBD) passes behind the head of the pancreas and is often embedded in a groove on its posterior surface. Carcinoma arising from the head of the pancreas easily compresses or invades the CBD, completely blocking bile flow into the duodenum.</p>
+      <p><strong>Clinical Signs & Courvoisier's Law:</strong></p>
+      <ul class="checklist">
+        <li><strong>Painless, Progressive Jaundice:</strong> Skin yellowing, scleral icterus, and severe pruritus (deposition of bile salts under the skin).</li>
+        <li><strong>Stool & Urine:</strong> Clay-colored (acholic) stools (lack of stercobilin) and dark tea-colored urine (excess conjugated bilirubin excreted by kidneys).</li>
+        <li><strong>Courvoisier's Law:</strong> In a patient with jaundice, if the gallbladder is palpably enlarged, it is typically NOT due to gallstones (as prior gallstone inflammation causes a scarred, non-distensible gallbladder). Instead, it is due to neoplastic obstruction of the distal CBD (e.g., Ca head of pancreas or cholangiocarcinoma), which distends the normal gallbladder.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Spleen <span class="badge badge-pyq">PYQ 2011, 2015, 2020</span></div>
+    <div class="two-col">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">Key Facts:</p>
+        <ul class="checklist">
+          <li><strong>Size rule:</strong> 1 × 3 × 5 inches, weighs 7 oz (~200 g), lies under <strong>9th, 10th, 11th ribs</strong> in left hypochondrium</li>
+          <li><strong>Intraperitoneal</strong> — covered by peritoneum except at hilum</li>
+          <li>Long axis along 10th rib; posterior end reaches T10, anterior end reaches mid-axillary line</li>
+          <li>Notched anterior border (2–3 notches) — distinguishes from other masses</li>
+          <li><strong>Hilum</strong> on medial surface — tail of pancreas reaches here; gastrosplenic + splenorenal ligaments attach here</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px">Relations:</p>
+        <ul class="checklist">
+          <li><strong>Anterior:</strong> Stomach (gastrosplenic ligament)</li>
+          <li><strong>Posterior:</strong> Left kidney, left suprarenal</li>
+          <li><strong>Medial:</strong> Tail of pancreas (via splenorenal ligament)</li>
+          <li><strong>Superior/Lateral:</strong> Diaphragm</li>
+          <li><strong>Inferior:</strong> Left colic (splenic) flexure of colon</li>
+        </ul>
+        <div class="clinical-box" style="margin-top:.5rem">
+          <div class="cbox-title">Spleen Enlargement Direction</div>
+          <p>Spleen enlarges toward <strong>right iliac fossa</strong> (diagonally). Notched anterior border palpable. Dullness extends below 9th rib in left flank. Cannot get above it (splenic dullness continuous with chest). Cannot ballot it (retroperitoneal = kidney; intraperitoneal = spleen).</p>
+        </div>
+      </div>
+    </div>
+    <div class="mnemonic-box">
+      <div class="mbox-title">Spleen Size Rule</div>
+      <div class="mnemonic-highlight">"1 × 3 × 5 | lies under 9, 10, 11 | weighs 7 oz | at T10 axis"</div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════ S10: KIDNEYS & SUPRARENAL ══════════════ -->
+<div id="s10">
+  <div class="section-header">
+    <div class="section-num">10</div>
+    <h2>Kidneys <em>& Suprarenal Glands</em></h2>
+  </div>
+
+  <div class="card" style="border-color:var(--teal)">
+    <div class="card-title" style="color:var(--teal)">Kidneys — Anatomy <span class="badge badge-fav">⭐ PYQ 2010, 2014, 2017, 2021, 2024</span></div>
+    <div class="keypoint">Kidneys are <strong>retroperitoneal</strong> organs lying on the posterior abdominal wall, embedded in perinephric fat within the renal fascia (Gerota's fascia). Right kidney is lower than left (displaced by liver).</div>
+
+    <div class="two-col">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">Vital Statistics:</p>
+        <ul class="checklist">
+          <li><strong>Size:</strong> 11 × 6 × 3 cm (roughly fist-sized)</li>
+          <li><strong>Weight:</strong> ~150 g each</li>
+          <li><strong>Right kidney:</strong> T12–L3 (lower than left by half vertebra)</li>
+          <li><strong>Left kidney:</strong> T11–L2 (higher)</li>
+          <li><strong>Hilum:</strong> Medial border, at <strong>L1 (transpyloric plane)</strong>, faces anteromedially</li>
+          <li>Hilus contents (anterior to posterior): Renal vein → Renal artery → Ureter (renal pelvis)</li>
+        </ul>
+        <div class="mnemonic-box" style="margin-top:.5rem">
+          <div class="mbox-title">Hilus Contents — VAN</div>
+          <div class="mnemonic-highlight">"Vein Artery iN" — Vein (anterior), Artery (middle), (pelvi)N (posterior)</div>
+        </div>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px">Anterior Relations:</p>
+        <div class="table-wrap" style="margin:0">
+          <table>
+            <tr><th>Right Kidney</th><th>Left Kidney</th></tr>
+            <tr><td>Adrenal gland (upper pole)</td><td>Adrenal gland (upper pole)</td></tr>
+            <tr><td>Right lobe of liver (upper 2/3)</td><td>Spleen</td></tr>
+            <tr><td>2nd part of duodenum (medial border)</td><td>Tail of pancreas (hilum level)</td></tr>
+            <tr><td>Right colic (hepatic) flexure</td><td>Stomach (upper pole)</td></tr>
+            <tr><td>Jejunum (lower pole)</td><td>Left colic (splenic) flexure, Descending colon</td></tr>
+          </table>
+        </div>
+        <p style="font-size:13px;font-weight:600;color:var(--teal);margin-bottom:6px;margin-top:.75rem">Posterior Relations (Same for Both):</p>
+        <ul class="checklist">
+          <li>Upper 1/3: Diaphragm (through diaphragm → 12th rib, pleura!)</li>
+          <li>Middle 1/3: Psoas major, quadratus lumborum</li>
+          <li>Lower 1/3: Iliacus</li>
+          <li>Nerves: Subcostal (T12), Iliohypogastric (L1), Ilioinguinal (L1)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="wiki-img" style="margin: 1.5rem 0; text-align: center; background: var(--surface2); padding: 1rem; border-radius: 8px; border: 1px solid var(--border);">
+      <div style="color:var(--accent);font-family:'JetBrains Mono',monospace;font-size:11px;margin-bottom:8px;text-align:left;">DIAGRAM 06 — Anterior Relations of Both Kidneys</div>
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Gray1120.png" alt="Anterior Relations of Both Kidneys" loading="lazy" style="max-width: 100%; height: auto; border-radius: 8px;">
+      <div class="wiki-caption" style="font-size:11px;color:var(--text2);text-align:center;margin-top:8px;">Anterior relations of kidneys — Gray's Anatomy</div>
+    </div>
+
+    <div class="clinical-box">
+      <div class="cbox-title">Renal Angle & Nephrectomy</div>
+      <p><strong>Renal angle (costovertebral angle):</strong> Between 12th rib and lateral border of erector spinae — site of palpation and punch tenderness in kidney disease. <strong>Lumbar incision for nephrectomy</strong> risks injury to 12th intercostal nerve (subcostal), iliohypogastric, and ilioinguinal nerves. The pleura is also at risk if 11th rib resected — pleural drainage may be needed.</p>
+    </div>
+  </div>
+
+  <div class="card" style="border-color:var(--accent)">
+    <div class="card-title" style="color:var(--accent)">Ureter — Anatomy, Histology & Development <span class="badge badge-pyq">PYQ 2010, 2012, 2013, 2017</span></div>
+    <div class="keypoint">The ureter is a muscular retroperitoneal tube (25 cm long) that propels urine from the renal pelvis to the urinary bladder. It consists of three parts (abdominal, pelvic, and intravesical) and is lined by transitional epithelium.</div>
+    <div class="two-col">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">Anatomical Course & Constrictions:</p>
+        <ul class="checklist">
+          <li><strong>Course:</strong> Begins at the renal pelvis (L1/L2), runs vertically down on psoas major, crosses the pelvic brim (common iliac bifurcation), runs along the lateral pelvic wall, and enters the posterolateral bladder wall obliquely.</li>
+          <li><strong>Three Anatomical Constrictions (Clinically vital for stone impaction):</strong>
+            <ol>
+              <li><strong>Pelviureteric Junction (PUJ):</strong> Where the renal pelvis becomes the ureter.</li>
+              <li><strong>Pelvic Brim crossing:</strong> Where the ureter crosses the bifurcation of the common iliac artery.</li>
+              <li><strong>Ureterovesical Junction (UVJ):</strong> Where the ureter obliquely traverses the bladder wall (acts as a physiological valve).</li>
+            </ol>
+          </li>
+          <li><strong>Blood Supply:</strong> Segmental (Renal artery → Gonadal artery → Abdominal aorta → Common iliac → Internal iliac → Superior/Inferior vesical arteries). Anastomoses run in the adventitia.</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px">Microanatomy (Histology):</p>
+        <ul class="checklist">
+          <li><strong>Mucosa:</strong> Lined by <strong>urothelium (transitional epithelium)</strong> (4–6 cell layers thick). Contains superficial <em>umbrella cells</em> with rigid plaques (uroplakin) that form a barrier to urine toxicity. No muscularis mucosae or submucosa.</li>
+          <li><strong>Muscularis:</strong> Outer circular and inner longitudinal smooth muscle layers (<strong>opposite to the gut!</strong>). In the lower 1/3 (pelvic/vesical part), a third <strong>outer longitudinal layer</strong> is added to assist in sphincter-like closure.</li>
+          <li><strong>Adventitia:</strong> Fibroelastic connective tissue carrying blood vessels, nerves, and lymphatics.</li>
+        </ul>
+        <p style="font-size:13px;font-weight:600;color:var(--teal);margin-bottom:6px;margin-top:.75rem">Embryological Development:</p>
+        <ul class="checklist">
+          <li>Arises from the <strong>ureteric bud</strong> (an outgrowth of the distal mesonephric duct/Wolffian duct).</li>
+          <li>The ureteric bud grows dorsocranially into the metanephric blastema, inducing kidney development.</li>
+          <li><strong>Derivative structures:</strong> Ureter, renal pelvis, major & minor calyces, and collecting ducts.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="wiki-img" style="margin: 1.5rem 0; text-align: center; background: var(--surface2); padding: 1rem; border-radius: 8px; border: 1px solid var(--border);">
+      <div style="color:var(--accent);font-family:'JetBrains Mono',monospace;font-size:11px;margin-bottom:8px;text-align:left;">DIAGRAM 06B — Ureteric Course and Bladder Entry</div>
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Gray1127.png" alt="Ureteric Course" loading="lazy" style="max-width: 100%; height: auto; border-radius: 8px;">
+      <div class="wiki-caption" style="font-size:11px;color:var(--text2);text-align:center;margin-top:8px;">Course of the ureter and its relations in the pelvis — Gray's Anatomy</div>
+    </div>
+
+    <div class="clinical-box">
+      <div class="cbox-title">Anatomical Basis of Loin-to-Groin Pain (Ureteric Colic)</div>
+      <p>When a ureteric calculus (stone) gets impacted (usually at one of the three constrictions), it causes hyperperistalsis and spasm of the smooth muscle, leading to excruciating, spasmodic <strong>ureteric colic</strong>.</p>
+      <p><strong>Referred Pain Pathway:</strong> The ureter is supplied by autonomic fibers from the renal, aortic, and hypogastric plexuses (sensory afferents enter spinal cord segments <strong>T11 to L2</strong>).</p>
+      <p>Pain is referred to the skin dermatomes of the same spinal segments (T11–L2):</p>
+      <ul class="checklist">
+        <li><strong>Loin (T11–T12):</strong> Posterior flank and subcostal region.</li>
+        <li><strong>Groin (L1–L2):</strong> Inguinal region, scrotum (in males) or labium majus (in females), and the anterior-medial aspect of the thigh (via the genitofemoral nerve).</li>
+      </ul>
+      <p>This explains the classic clinical radiation: pain starting in the <strong>loin</strong> and shooting down to the <strong>groin</strong>.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Suprarenal (Adrenal) Glands <span class="badge badge-pyq">PYQ 2013, 2019</span></div>
+    <div class="two-col">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">Anatomy:</p>
+        <ul class="checklist">
+          <li><strong>Right:</strong> Pyramidal shape, behind IVC and right lobe of liver. Vein drains directly into <strong>IVC</strong></li>
+          <li><strong>Left:</strong> Semilunar (crescent) shape, related to stomach + pancreatic tail. Vein drains into <strong>left renal vein</strong></li>
+          <li>Both enclosed in Gerota's fascia (with kidneys)</li>
+          <li>Blood supply: Superior suprarenal (inferior phrenic), Middle suprarenal (aorta), Inferior suprarenal (renal artery)</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px">Histology & Function:</p>
+        <ul class="checklist">
+          <li><strong>Cortex (mesodermal):</strong> GFR = Glomerulosa (Aldosterone), Fasciculata (Cortisol), Reticularis (Androgens)</li>
+          <li><strong>Medulla (neuroectodermal):</strong> Chromaffin cells → Adrenaline (80%) + Noradrenaline (20%)</li>
+          <li><strong>Pheochromocytoma:</strong> Catecholamine-secreting tumour → hypertensive crises, headache, palpitations, sweating. 10% rule: 10% bilateral, 10% malignant, 10% extra-adrenal</li>
+        </ul>
+        <div class="mnemonic-box" style="margin-top:.5rem">
+          <div class="mbox-title">Adrenal Cortex Zones</div>
+          <div class="mnemonic-highlight">"GFR = G Finds Aldosterone, F Finds Cortisol, R Finds Androgens" — or "Salt (Aldo), Sugar (Cortisol), Sex (Androgens)"</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════ S11: ABDOMINAL AORTA ══════════════ -->
+<div id="s11">
+  <div class="section-header">
+    <div class="section-num">11</div>
+    <h2>Abdominal <em>Aorta & Branches</em></h2>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Abdominal Aorta Branches — Complete <span class="badge badge-pyq">PYQ 2011, 2015, 2019, 2023</span></div>
+    <div class="keypoint">Abdominal aorta enters at T12 through aortic hiatus of diaphragm. Bifurcates into common iliac arteries at <strong>L4</strong> (transtubercular plane). Lies slightly left of midline on vertebral bodies.</div>
+
+    <div class="flowchart" style="margin:0">
+      <div class="flow-title">Abdominal Aorta — Branch Summary</div>
+      <div class="flow-v">
+        <div class="flow-box accent">
+          <span class="lbl">T12 — Aortic Hiatus Entry</span>
+          <strong>Unpaired branches (midline):</strong>
+        </div>
+        <div class="flow-step-label">↓ T12</div>
+        <div class="flow-box gold"><span class="lbl">CELIAC TRUNK (T12 — first unpaired branch)</span><strong>Left gastric</strong> (oesophageal + gastric supply) + <strong>Splenic</strong> (spleen, stomach, pancreas) + <strong>Common Hepatic</strong> (hepatic, gastroduodenal) — "Left Sister Calls Home"</div>
+        <div class="flow-step-label">↓ L1</div>
+        <div class="flow-box teal"><span class="lbl">SUPERIOR MESENTERIC ARTERY — L1 (transpyloric plane)</span>Supplies all of small intestine + right colon to splenic flexure. Branches: inferior pancreaticoduodenal, jejunal/ileal, ileocolic, right colic, middle colic</div>
+        <div class="flow-step-label">↓ L1–L2 (paired branches leave here)</div>
+        <div class="flow-box"><span class="lbl">Paired branches at L1: Suprarenal (middle), Renal arteries (L1/L2), Gonadal (Testicular/Ovarian at L2)</span></div>
+        <div class="flow-step-label">↓ L3</div>
+        <div class="flow-box purple"><span class="lbl">INFERIOR MESENTERIC ARTERY — L3</span>Supplies left colon from splenic flexure → upper rectum. Branches: Left colic, Sigmoid arteries (2–4), Superior rectal (continues as IMA)</div>
+        <div class="flow-step-label">↓ L4 — Bifurcation</div>
+        <div class="flow-box rose"><span class="lbl">L4 — Common Iliac Arteries (Paired)</span>→ External iliac → Femoral | → Internal iliac → Pelvic organs</div>
+      </div>
+    </div>
+
+    <div class="mnemonic-box" style="margin-top:1rem">
+      <div class="mbox-title">Celiac Trunk Branches</div>
+      <div class="mnemonic-highlight">"Left Sister Called Home" = Left gastric · Splenic · Common hepatic · (Hepatic proper)</div>
+    </div>
+
+    <div class="clinical-box">
+      <div class="cbox-title">Abdominal Aortic Aneurysm (AAA)</div>
+      <p>Infrarenal aorta most commonly affected (below renal arteries). Presents as pulsatile epigastric mass, back pain. Risk of rupture (retroperitoneal haemorrhage → ecchymosis in flank). Screening: USS for males >65 who smoked. Surgery if >5.5 cm or expanding rapidly. Endovascular repair (EVAR) vs open repair.</p>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════ S12: VIVA Q&A ══════════════ -->
+<div id="s12">
+  <div class="section-header">
+    <div class="section-num">12</div>
+    <h2>Viva <em>Q&A</em></h2>
+  </div>
+
+  <div class="viva-section">
+    <div class="viva-title-bar">Inguinal Region & Abdominal Wall</div>
+
+    <details>
+      <summary><span class="viva-q">What are the walls of the inguinal canal?</span><span class="viva-year">PYQ Every Year</span></summary>
+      <div class="viva-ans">
+        <p>The inguinal canal has <strong>4 walls, 2 openings</strong>:</p>
+        <ul>
+          <li><strong>Anterior:</strong> External oblique aponeurosis (full length) + Internal oblique (lateral 1/3 only)</li>
+          <li><strong>Posterior:</strong> Transversalis fascia (full length) + Conjoint tendon/inguinal falx (medial 1/3)</li>
+          <li><strong>Roof:</strong> Arching fibres of internal oblique + transversus abdominis</li>
+          <li><strong>Floor:</strong> Inguinal ligament + lacunar ligament medially</li>
+          <li><strong>Deep ring:</strong> In transversalis fascia, lateral to inferior epigastric artery</li>
+          <li><strong>Superficial ring:</strong> In EO aponeurosis, above pubic tubercle</li>
+        </ul>
+        <p><em>Examiner tip: The medial wall has the conjoint tendon — important in direct hernia repair (Bassini repair sutures conjoint tendon to inguinal ligament).</em></p>
+      </div>
+    </details>
+
+    <details>
+      <summary><span class="viva-q">What is the arcuate line? What is its significance?</span><span class="viva-year">PYQ 2014, 2019</span></summary>
+      <div class="viva-ans">
+        <p>The <strong>arcuate line (linea semicircularis of Douglas)</strong> is the curved lower border of the posterior lamina of rectus sheath, located midway between umbilicus and pubic symphysis.</p>
+        <p><strong>Significance:</strong></p>
+        <ul>
+          <li>Above it: posterior rectus sheath is present (formed by posterior lamina of IO + TA aponeurosis)</li>
+          <li>Below it: all 3 aponeuroses pass anterior → <strong>no posterior rectus sheath</strong>; only transversalis fascia protects posteriorly</li>
+          <li>Inferior epigastric vessels enter rectus sheath above this line</li>
+          <li>Clinical: in rectus sheath haematoma below arcuate line, blood spreads in the space of Retzius — can track down to thigh</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary><span class="viva-q">Differentiate direct from indirect inguinal hernia.</span><span class="viva-year">PYQ 2013, 2017, 2022</span></summary>
+      <div class="viva-ans">
+        <p><strong>Indirect (Oblique):</strong></p>
+        <ul>
+          <li>Enters deep ring → traverses full length of canal → exits superficial ring</li>
+          <li><strong>Lateral</strong> to inferior epigastric artery</li>
+          <li>Young patients, congenital (patent processus vaginalis)</li>
+          <li>Narrow neck → high strangulation risk</li>
+          <li>3 fascial coverings (from all layers of spermatic cord)</li>
+          <li>Deep ring compression <em>controls</em> the hernia</li>
+        </ul>
+        <p><strong>Direct:</strong></p>
+        <ul>
+          <li>Pushes directly through posterior wall (Hesselbach's triangle)</li>
+          <li><strong>Medial</strong> to inferior epigastric artery</li>
+          <li>Elderly, acquired (muscle weakness)</li>
+          <li>Wide neck → rarely strangulates</li>
+          <li>Only transversalis fascia + peritoneum</li>
+          <li>Deep ring compression does <em>not</em> control it</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+
+  <div class="viva-section">
+    <div class="viva-title-bar">Portal Circulation & Liver</div>
+
+    <details>
+      <summary><span class="viva-q">Enumerate the sites of porto-systemic anastomosis. What is their clinical significance?</span><span class="viva-year">PYQ Every Year — Never Skip</span></summary>
+      <div class="viva-ans">
+        <p><strong>4 Sites of Porto-Systemic Anastomosis:</strong></p>
+        <ul>
+          <li><strong>1. Lower oesophagus:</strong> Left gastric vein (portal) ↔ oesophageal tributaries of azygos (systemic). → <em>Oesophageal varices</em> — most dangerous, rupture causes massive haematemesis</li>
+          <li><strong>2. Umbilicus:</strong> Paraumbilical veins in falciform ligament (portal) ↔ superficial epigastric veins (systemic). → <em>Caput Medusae</em></li>
+          <li><strong>3. Anal canal:</strong> Superior rectal vein (portal) ↔ middle + inferior rectal veins (systemic). → Portal hypertensive <em>haemorrhoids</em></li>
+          <li><strong>4. Retroperitoneum:</strong> Veins of abdominal viscera ↔ renal/lumbar/phrenic veins. → Retroperitoneal varices (Retzius veins)</li>
+        </ul>
+        <p><em>In portal hypertension, blood bypasses liver → these collaterals engorge → varices. Most lethal = oesophageal varices (30% mortality per bleed). Treated with endoscopic banding, propranolol (↓ portal pressure), TIPS procedure.</em></p>
+      </div>
+    </details>
+
+    <details>
+      <summary><span class="viva-q">What are Couinaud's segments? Why are they surgically important?</span><span class="viva-year">PYQ 2015, 2020, 2024</span></summary>
+      <div class="viva-ans">
+        <p>Couinaud divided the liver into <strong>8 independent functional segments</strong> (I–VIII), each with its own:</p>
+        <ul>
+          <li>Portal vein branch</li>
+          <li>Hepatic artery branch</li>
+          <li>Bile duct</li>
+          <li>Hepatic vein drainage</li>
+        </ul>
+        <p><strong>Surgical importance:</strong></p>
+        <ul>
+          <li>Each segment can be <strong>resected independently</strong> without devascularising adjacent segments</li>
+          <li>Segmentectomy / anatomical hepatectomy preserves maximum functional parenchyma</li>
+          <li>Metastases, HCC localised to specific segments can be excised</li>
+          <li><strong>Segment I (caudate):</strong> Unique — drains directly to IVC, preserved in Budd-Chiari (hepatic vein obstruction affects all other segments)</li>
+          <li>Main lobar fissure (Cantlie's line) separates right (V–VIII) from left (I–IV) functional lobes — does NOT correspond to anatomical right/left lobe boundary</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary><span class="viva-q">What is the epiploic foramen of Winslow? What are its boundaries?</span><span class="viva-year">PYQ 2012, 2018</span></summary>
+      <div class="viva-ans">
+        <p>The <strong>epiploic foramen (foramen of Winslow)</strong> is the only normal communication between the greater sac and the lesser sac (omental bursa).</p>
+        <p><strong>Boundaries:</strong></p>
+        <ul>
+          <li><strong>Anterior:</strong> Free edge of lesser omentum (hepatoduodenal ligament) containing portal vein, hepatic artery, CBD</li>
+          <li><strong>Posterior:</strong> IVC (covered by peritoneum)</li>
+          <li><strong>Superior:</strong> Caudate lobe of liver</li>
+          <li><strong>Inferior:</strong> 1st part of duodenum</li>
+        </ul>
+        <p><em>Pringle's manoeuvre: Compress hepatoduodenal ligament (free edge of lesser omentum) between thumb and forefinger → controls hepatic blood flow → used to reduce bleeding during liver surgery. Fingers placed in epiploic foramen for this manoeuvre.</em></p>
+      </div>
+    </details>
+  </div>
+
+  <div class="viva-section">
+    <div class="viva-title-bar">Kidneys & Retroperitoneum</div>
+
+    <details>
+      <summary><span class="viva-q">What are the anterior relations of the right kidney? How does it differ from the left?</span><span class="viva-year">PYQ 2014, 2021</span></summary>
+      <div class="viva-ans">
+        <p><strong>Right kidney — anterior relations (top to bottom):</strong></p>
+        <ul>
+          <li>Right suprarenal gland (superiormedial)</li>
+          <li>Right lobe of liver (upper 2/3)</li>
+          <li>2nd part of duodenum (medial border)</li>
+          <li>Right colic (hepatic) flexure (lower pole)</li>
+          <li>Small intestine / jejunum (lower pole lateral)</li>
+        </ul>
+        <p><strong>Left kidney — anterior relations:</strong></p>
+        <ul>
+          <li>Left suprarenal gland (superiormedial)</li>
+          <li>Stomach (upper pole)</li>
+          <li>Spleen (upper lateral)</li>
+          <li>Tail of pancreas + splenic vessels (hilum level)</li>
+          <li>Left colic (splenic) flexure + descending colon (lower pole)</li>
+          <li>Small intestine (lower medial)</li>
+        </ul>
+        <p><em>Key difference: Right kidney is related to liver and duodenum; left kidney is related to spleen, stomach, and pancreatic tail. The 2nd part of duodenum is medial to right kidney — important in right nephrectomy.</em></p>
+      </div>
+    </details>
+
+    <details>
+      <summary><span class="viva-q">Why does pancreatitis present with Grey-Turner's sign and Cullen's sign?</span><span class="viva-year">PYQ 2016, 2021</span></summary>
+      <div class="viva-ans">
+        <p>In <strong>severe haemorrhagic pancreatitis</strong>, blood and pancreatic enzymes leak into surrounding retroperitoneal and peritoneal spaces:</p>
+        <ul>
+          <li><strong>Grey-Turner's sign:</strong> Bruising in <em>flanks</em> — haemorrhage tracks laterally in the retroperitoneal plane along the posterior pararenal space → discolours the skin of the flanks bilaterally</li>
+          <li><strong>Cullen's sign:</strong> Bruising around the <em>umbilicus</em> — blood tracks along the falciform ligament from the retroperitoneum to the periumbilical region, or through extraperitoneal fat around the umbilical ring</li>
+        </ul>
+        <p><em>Both are signs of retroperitoneal haemorrhage. They typically appear 24–48 hours after the onset of acute pancreatitis. Indicate severe disease — associated with high mortality. Ecchymosis can also appear in the scrotum (Cullen extension) or groin.</em></p>
+      </div>
+    </details>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ══════════════ S13: EQ TEMPLATES ══════════════ -->
+<div id="s13">
+  <div class="section-header">
+    <div class="section-num">13</div>
+    <h2>Essay Question <em>Templates</em></h2>
+  </div>
+
+  <div class="eq-box">
+    <div class="eq-title">EQ — Inguinal Canal [PYQ Almost Every Year]</div>
+    <div class="eq-statement">"Describe the inguinal canal. Add a note on its clinical importance."</div>
+    <div class="eq-answer">
+      <ol>
+        <li><span>Definition & Location:</span> The inguinal canal is a 4 cm oblique tunnel in the anterior abdominal wall, running from the deep inguinal ring (in transversalis fascia, lateral to inferior epigastric artery) to the superficial inguinal ring (in EO aponeurosis, above pubic tubercle). Runs parallel to and 1 cm above the medial half of the inguinal ligament.</li>
+        <li><span>Walls — APRF:</span> Anterior = EO aponeurosis (full) + IO muscle (lateral 1/3). Posterior = Transversalis fascia (full) + Conjoint tendon (medial 1/3). Roof = Arching IO + TA fibres. Floor = Inguinal ligament + lacunar ligament (medial).</li>
+        <li><span>Contents:</span> Male: Spermatic cord (3 fasciae: external spermatic, cremasteric, internal spermatic; 3 arteries: testicular, cremasteric, artery to vas; vas deferens; pampiniform plexus) + Ilioinguinal nerve (not in cord). Female: Round ligament of uterus + ilioinguinal nerve + lymphatics from fundus.</li>
+        <li><span>Mechanism of Patency/Protection:</span> The oblique direction (deep ring is not directly behind superficial ring) — increased intra-abdominal pressure causes anterior + posterior walls to be compressed together, closing canal. "Shutter mechanism" of arching IO fibres over deep ring prevents bowel herniation.</li>
+        <li><span>Clinical Importance — Hernia:</span> Indirect inguinal hernia enters deep ring (lateral to IEA), traverses canal, exits superficial ring. Direct inguinal hernia pushes through posterior wall of Hesselbach's triangle (medial to IEA). Indirect more common, young, narrow neck. Direct: elderly, wide neck, rarely strangulates.</li>
+        <li><span>Examiner High-Yield:</span> Inferior epigastric artery is the key landmark separating direct (medial) from indirect (lateral) hernias. Femoral hernia lies below inguinal ligament — do not confuse.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="eq-box">
+    <div class="eq-title">EQ — Porto-Systemic Anastomosis [PYQ Every Year — Group B/C]</div>
+    <div class="eq-statement">"Describe the sites of porto-systemic anastomosis. What happens when portal pressure rises?"</div>
+    <div class="eq-answer">
+      <ol>
+        <li><span>Introduction:</span> Portal hypertension (portal pressure >12 mmHg, normal 5–10) causes reversal of flow in portal tributaries. Blood bypasses the liver via pre-existing anastomoses between portal and systemic veins at 4 sites.</li>
+        <li><span>Site 1 — Lower Oesophagus:</span> Left gastric vein (portal) ↔ oesophageal tributaries of azygos (systemic). → Oesophageal varices — most dangerous. Rupture → massive haematemesis with 30–40% mortality per episode. Endoscopic banding/sclerotherapy; propranolol prophylaxis.</li>
+        <li><span>Site 2 — Umbilicus:</span> Paraumbilical veins in falciform ligament (portal) ↔ superficial epigastric + thoracoepigastric veins (systemic). → Caput Medusae — dilated tortuous veins radiating from umbilicus. Flow direction: AWAY from umbilicus in all directions (distinguish from IVC obstruction where flow is upward).</li>
+        <li><span>Site 3 — Anal Canal:</span> Superior rectal vein (portal territory via IMV) ↔ middle + inferior rectal veins (systemic via internal iliac). → Internal haemorrhoids at anorectal junction (above dentate line = painless portal territory).</li>
+        <li><span>Site 4 — Retroperitoneum:</span> Veins of bare area of liver, retroperitoneal colon, and pancreas ↔ renal, lumbar, and phrenic veins. → Retzius veins; least clinically significant.</li>
+        <li><span>Summary Concept:</span> All sites represent embryological communications that are normally vestigial. Portal hypertension (usually from hepatic cirrhosis) reactivates them. Treat underlying cause + manage varices acutely with terlipressin + banding; electively with propranolol or TIPS.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="eq-box">
+    <div class="eq-title">EQ — Kidney Relations [PYQ 2014, 2021]</div>
+    <div class="eq-statement">"Describe the anterior and posterior relations of the kidneys."</div>
+    <div class="eq-answer">
+      <ol>
+        <li><span>Position:</span> Retroperitoneal, on posterior abdominal wall in perirenal fat within Gerota's fascia. Right kidney: T12–L3 (lower by half a vertebra). Left kidney: T11–L2. Hilum at L1 (transpyloric plane), faces anteromedially. Hilum contents: Renal Vein (most anterior) → Renal Artery → Pelvis of ureter (most posterior) — "VAP".</li>
+        <li><span>Anterior Relations — Right Kidney:</span> Suprarenal gland (superomedial), right lobe of liver (upper 2/3), 2nd part of duodenum (along medial border), right colic flexure (inferolateral), jejunum (inferolateral).</li>
+        <li><span>Anterior Relations — Left Kidney:</span> Left suprarenal (superomedial), stomach (upper pole), spleen (upper lateral), tail of pancreas + splenic vessels (at hilum), left colic flexure + descending colon (lower lateral), loops of small intestine (lower medial).</li>
+        <li><span>Posterior Relations (Both Kidneys):</span> Upper 1/3: Diaphragm (separates kidney from 12th rib and costodiaphragmatic recess of pleura). Middle 1/3: Psoas major (medial) + quadratus lumborum (lateral) + transversus aponeurosis. Lower 1/3: Iliacus. Nerves behind: subcostal (T12), iliohypogastric (L1), ilioinguinal (L1) — can be damaged in lumbar approach to kidney.</li>
+        <li><span>Clinical Application:</span> Right kidney's relation to 2nd part of duodenum is relevant in right nephrectomy. Left kidney's relation to tail of pancreas means pancreatic pseudocysts or tumours can displace/invade the left kidney. The pleural reflection risk during nephrectomy via 11th rib approach — always check for pneumothorax post-op.</li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- QUICKFIRE TABLE -->
+  <div class="card" style="margin-top:1.5rem;border-color:var(--accent)">
+    <div class="card-title">🔥 High-Yield Quickfire Table — Module 05 Abdomen</div>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Question</th><th>Answer</th></tr>
+        <tr><td>Safe site for needle in intercostal drainage</td><td>Upper border of lower rib (avoids VAN bundle in costal groove)</td></tr>
+        <tr><td>Arcuate line significance</td><td>Below it = no posterior rectus sheath; all 3 aponeuroses pass anterior to rectus</td></tr>
+        <tr><td>Deep ring lies lateral/medial to inferior epigastric artery?</td><td>Lateral (direct hernia = medial; indirect = lateral)</td></tr>
+        <tr><td>Contents of femoral canal</td><td>Lymphatics + Cloquet's node (deep inguinal lymph node)</td></tr>
+        <tr><td>Most common position of appendix</td><td>Retrocaecal (65%)</td></tr>
+        <tr><td>Lowest peritoneal space in supine position</td><td>Hepatorenal pouch (Morrison's pouch)</td></tr>
+        <tr><td>Lowest peritoneal space in female (erect)</td><td>Pouch of Douglas (rectouterine pouch)</td></tr>
+        <tr><td>What opens at major duodenal papilla?</td><td>CBD + main pancreatic duct (Wirsung) via ampulla of Vater at L2</td></tr>
+        <tr><td>Ligament of Treitz</td><td>Suspensory muscle of duodenum at duodenojejunal flexure (L2); separates upper from lower GI bleed</td></tr>
+        <tr><td>Calot's triangle contents</td><td>Cystic artery (usually from right hepatic) + cystic lymph node (Mascagni)</td></tr>
+        <tr><td>Couinaud segment that survives in Budd-Chiari</td><td>Segment I (caudate lobe) — drains directly to IVC, bypassing hepatic veins</td></tr>
+        <tr><td>Portal vein formation</td><td>SMV + splenic vein, behind neck of pancreas at L2</td></tr>
+        <tr><td>Most dangerous porto-systemic anastomosis site</td><td>Lower oesophagus (oesophageal varices → haematemesis)</td></tr>
+        <tr><td>Spleen size rule</td><td>1 × 3 × 5 inches, 7 oz, lies under 9th–11th ribs, long axis along 10th rib</td></tr>
+        <tr><td>Right suprarenal drains into...</td><td>IVC directly (short vein). Left suprarenal → left renal vein</td></tr>
+        <tr><td>Abdominal aorta bifurcates at</td><td>L4 (transtubercular plane — at level of highest point of iliac crest)</td></tr>
+        <tr><td>Celiac trunk branches (3)</td><td>Left gastric + Splenic + Common hepatic</td></tr>
+        <tr><td>Caput Medusae flow direction</td><td>Away from umbilicus in all directions (IVC obstruction = upward flow)</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- MNEMONICS GRID -->
+  <div class="card" style="margin-top:1rem">
+    <div class="card-title">Module 05 — Master Mnemonics</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:10px;margin-top:8px">
+      <div class="mnemonic-box" style="margin:0">
+        <div class="mbox-title">Inguinal Canal Walls</div>
+        <div class="mnemonic-highlight">"Make The Roof Flat" = Muscles·Transversalis·Roof(IO+TA)·Floor(lig)</div>
+      </div>
+      <div class="mnemonic-box" style="margin:0">
+        <div class="mbox-title">Porto-Systemic Sites</div>
+        <div class="mnemonic-highlight">"OURA" = Oesophagus · Umbilicus · Rectum · Abdomen (retro)</div>
+      </div>
+      <div class="mnemonic-box" style="margin:0">
+        <div class="mbox-title">Retroperitoneal Organs</div>
+        <div class="mnemonic-highlight">"SAD PUCKER" = Suprarenal·Aorta·Duodenum(2-4)·Pancreas·Ureters·Colon·Kidneys·Esophagus·Rectum</div>
+      </div>
+      <div class="mnemonic-box" style="margin:0">
+        <div class="mbox-title">Femoral Sheath (lat→med)</div>
+        <div class="mnemonic-highlight">"NAVEL" = Nerve · Artery · Vein · Empty (canal) · Lymphatics</div>
+      </div>
+      <div class="mnemonic-box" style="margin:0">
+        <div class="mbox-title">Portal Triad in Hepatoduodenal Lig</div>
+        <div class="mnemonic-highlight">"HAD" — Hepatic duct (ant) · Artery (mid) · portal vein (Deep)</div>
+      </div>
+      <div class="mnemonic-box" style="margin:0">
+        <div class="mbox-title">Adrenal Cortex</div>
+        <div class="mnemonic-highlight">"Salt Sugar Sex" = Glomerulosa(Aldosterone)·Fasciculata(Cortisol)·Reticularis(Androgens)</div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /s13 -->
+</div><!-- /content -->
+
+<div class="footer">
+  <p>MODULE 05 · ANATOMY — ABDOMEN</p>
+  <p style="margin-top:4px">Caffeine & Cadaver · First MBBS Anatomy · PYQ Mapped 2010–2025</p>
+  <p style="margin-top:4px;color:var(--accent);font-size:11px">Mobile-optimised · No rotated text · Includes Gray's Anatomy diagrams</p>
+</div>
+
+<button class="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script>
+document.querySelectorAll('details').forEach(d=>{
+  d.addEventListener('toggle',()=>{
+    if(d.open){const c=d.querySelector('.viva-ans');if(c)c.style.animation='fadeIn .2s ease';}
+  });
+});
+</script>
+</body>
+</html>
