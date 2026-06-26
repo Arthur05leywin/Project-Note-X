@@ -130,3 +130,28 @@
     gap: 1rem;
   }
 }
+/* Auto-injected: Fix squashed tables and text overflows on mobile */
+@media (max-width: 768px) {
+  .comp-table, .table-wrap {
+    display: block !important;
+    width: 100% !important;
+    overflow-x: auto !important;
+  }
+  .comp-table, .table-wrap table {
+    min-width: 600px !important; /* Force horizontal scroll instead of squash */
+  }
+  .comp-table th, .comp-table td, .table-wrap th, .table-wrap td {
+    white-space: normal !important;
+    word-break: break-word !important;
+    min-width: 120px !important;
+  }
+  .comp-table td:first-child, .table-wrap td:first-child {
+    white-space: normal !important;
+  }
+}
+
+/* Checklist spacing fix */
+ul.checklist li {
+  margin-bottom: 14px !important;
+  line-height: 1.6 !important;
+}

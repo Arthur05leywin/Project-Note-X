@@ -106,9 +106,9 @@ td:first-child{color:var(--accent2);font-weight:600;}
 .eq-answer ol{margin-left:18px;}
 .eq-answer li{margin-bottom:6px;font-size:13px;}
 .eq-answer li span{color:var(--purple);font-weight:600;}
-.keypoint{word-break: break-word; overflow-wrap: break-word; background:rgba(232,96,154,.07);border:1px solid rgba(232,96,154,.22);border-radius:6px;padding:10px 14px 10px 34px;margin:8px 0;font-size:13px;display:block;position:relative;}
+.keypoint{word-break: break-word; overflow-wrap: break-word; background:rgba(232,96,154,.07);border:1px solid rgba(232,96,154,.22);border-radius:6px;padding:10px 14px 10px 34px;margin:8px 0;font-size:13px;display: flex; position: fixed;}
 .keypoint::before{content:'⚡';position:absolute;left:12px;top:10px;}
-.warn-box{word-break: break-word; overflow-wrap: break-word; background:rgba(251,146,60,.07);border:1px solid rgba(251,146,60,.25);border-left:4px solid var(--orange);border-radius:6px;padding:10px 14px 10px 34px;margin:8px 0;font-size:13px;display:block;position:relative;}
+.warn-box{word-break: break-word; overflow-wrap: break-word; background:rgba(251,146,60,.07);border:1px solid rgba(251,146,60,.25);border-left:4px solid var(--orange);border-radius:6px;padding:10px 14px 10px 34px;margin:8px 0;font-size:13px;display: flex; position: fixed;}
 .warn-box::before{content:'⚠️';position:absolute;left:10px;top:10px;}
 ul.checklist{list-style:none;margin:.5rem 0;}
 ul.checklist li::before{content:'✦ ';color:var(--accent2);}
@@ -159,7 +159,28 @@ details[open]>summary::before{transform:rotate(90deg);}
   .flow-h{flex-direction:column;}
   .h-arrow{display:none;}
 }
+
+/* --- UI FIXES & PRINT THEME --- */
+.table-wrap table { min-width: 600px; }
+th, td { word-break: normal !important; overflow-wrap: normal !important; }
+
+@media print {
+  :root {
+    --bg: #ffffff;
+    --surface: #f8fafc;
+    --surface2: #f1f5f9;
+    --text: #0f172a;
+    --text2: #334155;
+    --text3: #475569;
+    --border: #e2e8f0;
+    --border2: #cbd5e1;
+  }
+  body { background: var(--bg) !important; color: var(--text) !important; }
+  h1, h2, h3, .card-title, .section-title { font-family: 'Playfair Display', serif !important; color: #000 !important; }
+  .badge { border: 1px solid var(--border2) !important; color: var(--text2) !important; }
+}
 </style>
+
 </head>
 <body>
 

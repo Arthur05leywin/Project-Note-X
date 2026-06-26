@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="en">
 <head>
@@ -152,7 +152,7 @@ html {
 }
 
 /* Typography Isolation */
-body {
+body { overflow-wrap: break-word; word-break: break-word; 
   background: var(--bg);
   color: var(--text);
   line-height: 1.7;
@@ -225,7 +225,7 @@ p {
 
 .cover {
   min-height: 100vh;
-  display: flex;
+  display: block; position: relative;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
@@ -292,13 +292,13 @@ p {
 }
 
 .cover-meta {
-  display: flex;
+  display: block; position: relative;
   gap: 40px;
   flex-wrap: wrap;
 }
 
 .cover-meta-item {
-  display: flex;
+  display: block; position: relative;
   flex-direction: column;
   gap: 4px;
 }
@@ -344,7 +344,7 @@ p {
 }
 
 .section-header {
-  display: flex;
+  display: block; position: relative;
   align-items: center;
   gap: 16px;
   margin-bottom: 30px;
@@ -389,7 +389,7 @@ p {
 
 .pyq-box ul {
   list-style: none;
-  display: flex;
+  display: block; position: relative;
   flex-wrap: wrap;
   gap: 8px;
 }
@@ -482,7 +482,7 @@ p {
 }
 
 .key-fact {
-  display: flex;
+  display: block; position: relative;
   gap: 14px;
   align-items: flex-start;
   background: var(--surface);
@@ -570,7 +570,7 @@ p {
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-bottom: 20px;
-  display: flex;
+  display: block; position: relative;
   align-items: center;
   gap: 8px;
 }
@@ -791,7 +791,7 @@ svg text {
 }
 
 .hero-pills {
-  display: flex;
+  display: block; position: relative;
   flex-wrap: wrap;
   gap: 8px;
 }
@@ -838,7 +838,7 @@ svg text {
   padding: 4px 8px;
   border-radius: 4px;
   transition: all 0.2s;
-  display: flex;
+  display: block; position: relative;
   align-items: center;
   gap: 6px;
 }
@@ -863,7 +863,7 @@ svg text {
 
 /* Modern Section Headers */
 .content .section-header {
-  display: flex;
+  display: block; position: relative;
   align-items: center;
   gap: 12px;
   margin: 2.5rem 0 1.5rem;
@@ -879,7 +879,7 @@ svg text {
   font-weight: 700;
   width: 32px;
   height: 32px;
-  display: flex;
+  display: block; position: relative;
   align-items: center;
   justify-content: center;
   border-radius: 6px;
@@ -950,7 +950,7 @@ svg text {
   text-transform: uppercase;
   color: var(--accent);
   margin-bottom: 0.75rem;
-  display: flex;
+  display: block; position: relative;
   align-items: center;
   gap: 8px;
 }
@@ -979,7 +979,7 @@ svg text {
   text-transform: uppercase;
   color: var(--accent2);
   margin-bottom: 1rem;
-  display: flex;
+  display: block; position: relative;
   align-items: center;
   gap: 8px;
 }
@@ -990,13 +990,13 @@ svg text {
 }
 
 .flow-h {
-  display: flex;
+  display: block; position: relative;
   flex-wrap: wrap;
   align-items: center;
   gap: 4px;
 }
 
-.flow-box {
+.flow-box { word-break: break-word; overflow-wrap: break-word; 
   flex: 1 1 auto;
   background: var(--surface3);
   border: 1.5px solid var(--border);
@@ -1084,7 +1084,7 @@ svg text {
 }
 
 .flow-row {
-  display: flex;
+  display: block; position: relative;
   flex-direction: row;
   align-items: center;
   justify-content: center;
@@ -1094,7 +1094,7 @@ svg text {
 }
 
 .flow-arrow {
-  display: flex;
+  display: block; position: relative;
   align-items: center;
   justify-content: center;
   color: var(--accent);
@@ -1104,7 +1104,7 @@ svg text {
 }
 
 .flow-arrow.down {
-  display: flex;
+  display: block; position: relative;
   align-items: center;
   justify-content: center;
   margin: 8px auto;
@@ -1113,7 +1113,7 @@ svg text {
 }
 
 .flow-col {
-  display: flex;
+  display: block; position: relative;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -1121,7 +1121,7 @@ svg text {
 }
 
 .flow-down {
-  display: flex;
+  display: block; position: relative;
   align-items: center;
   justify-content: center;
   margin: 12px auto;
@@ -1132,13 +1132,13 @@ svg text {
 }
 
 .flow-v {
-  display: flex;
+  display: block; position: relative;
   flex-direction: column;
   align-items: center;
   gap: 0;
 }
 
-.flow-v .flow-box {
+.flow-v .flow-box { word-break: break-word; overflow-wrap: break-word; 
   width: 100%;
   max-width: 500px;
 }
@@ -1194,7 +1194,7 @@ svg text {
 }
 
 /* Modern Clinical & Mnemonic boxes inside .content */
-.content .clinical-box {
+.content .clinical-box { word-break: break-word; overflow-wrap: break-word; 
   background: linear-gradient(135deg, rgba(96, 165, 250, 0.05), rgba(96, 165, 250, 0.02));
   border: 1px solid rgba(96, 165, 250, 0.25);
   border-left: 4px solid var(--blue);
@@ -1210,7 +1210,7 @@ svg text {
   color: var(--blue);
   text-transform: uppercase;
   margin-bottom: 0.6rem;
-  display: flex;
+  display: block; position: relative;
   align-items: center;
   gap: 6px;
 }
@@ -1234,7 +1234,7 @@ svg text {
   color: var(--gold);
   text-transform: uppercase;
   margin-bottom: 0.6rem;
-  display: flex;
+  display: block; position: relative;
   align-items: center;
   gap: 6px;
 }
@@ -1242,7 +1242,7 @@ svg text {
   content: "🧠";
 }
 
-.mnemonic-highlight {
+.mnemonic-highlight { word-break: break-word; overflow-wrap: break-word; 
   background: rgba(244, 196, 100, 0.1);
   border: 1px dashed rgba(244, 196, 100, 0.3);
   border-radius: 4px;
@@ -1271,7 +1271,7 @@ svg text {
   color: var(--purple);
   text-transform: uppercase;
   margin-bottom: 0.75rem;
-  display: flex;
+  display: block; position: relative;
   align-items: center;
   gap: 6px;
 }
@@ -1305,27 +1305,27 @@ svg text {
   font-weight: 600;
 }
 
-.keypoint {
+.keypoint { word-break: break-word; overflow-wrap: break-word; 
   background: rgba(0, 200, 151, 0.07);
   border: 1px solid rgba(0, 200, 151, 0.22);
   border-radius: 6px;
   padding: 10px 14px;
   margin: 8px 0;
   font-size: 13px;
-  display: flex;
-  gap: 8px;
-  align-items: flex-start;
-}
-.theme-crimson .keypoint { background: rgba(232, 51, 74, 0.07); border-color: rgba(232, 51, 74, 0.22); }
-.theme-indigo .keypoint { background: rgba(99, 102, 241, 0.07); border-color: rgba(99, 102, 241, 0.22); }
-.theme-amber .keypoint { background: rgba(245, 158, 11, 0.07); border-color: rgba(245, 158, 11, 0.22); }
+  display: block; position: relative;
+  
+  
+ padding-left: 34px;}
+.theme-crimson .keypoint { word-break: break-word; overflow-wrap: break-word;  background: rgba(232, 51, 74, 0.07); border-color: rgba(232, 51, 74, 0.22);  padding-left: 34px;}
+.theme-indigo .keypoint { word-break: break-word; overflow-wrap: break-word;  background: rgba(99, 102, 241, 0.07); border-color: rgba(99, 102, 241, 0.22);  padding-left: 34px;}
+.theme-amber .keypoint { word-break: break-word; overflow-wrap: break-word;  background: rgba(245, 158, 11, 0.07); border-color: rgba(245, 158, 11, 0.22);  padding-left: 34px;}
 
 .keypoint::before {
   content: "⚡";
   flex-shrink: 0;
-}
+ position: absolute; left: 12px; top: 10px;}
 
-.warn-box {
+.warn-box { word-break: break-word; overflow-wrap: break-word; 
   background: rgba(251, 146, 60, 0.07);
   border: 1px solid rgba(251, 146, 60, 0.28);
   border-left: 4px solid var(--orange);
@@ -1333,14 +1333,14 @@ svg text {
   padding: 10px 14px;
   margin: 8px 0;
   font-size: 13px;
-  display: flex;
-  gap: 8px;
-}
+  display: block; position: relative;
+  
+ padding-left: 34px;}
 
 .warn-box::before {
   content: "⚠️";
   flex-shrink: 0;
-}
+ position: absolute; left: 10px; top: 10px;}
 
 .two-col {
   display: grid;
@@ -1365,8 +1365,7 @@ ul.checklist li::before {
   color: var(--accent);
 }
 
-ul.checklist li {
-  margin-bottom: 4px;
+ul.checklist li { margin-bottom: 14px; line-height: 1.6;
   font-size: 13px;
 }
 
@@ -1421,7 +1420,7 @@ ul.checklist li {
   letter-spacing: 2px;
   color: var(--accent2);
   text-transform: uppercase;
-  display: flex;
+  display: block; position: relative;
   align-items: center;
   gap: 8px;
 }
@@ -1452,7 +1451,7 @@ ul.checklist li {
   color: var(--text);
   background: var(--surface);
   list-style: none;
-  display: flex;
+  display: block; position: relative;
   align-items: flex-start;
   gap: 8px;
   user-select: none;
@@ -1488,7 +1487,7 @@ ul.checklist li {
   flex-shrink: 0;
 }
 
-.viva-ans {
+.viva-ans { word-break: break-word; overflow-wrap: break-word; 
   padding: 12px 16px 14px;
   background: var(--surface2);
   font-size: 13px;
@@ -1574,7 +1573,7 @@ ul.checklist li {
   cursor: pointer;
   box-shadow: 0 4px 15px rgba(232, 200, 74, 0.35);
   z-index: 100;
-  display: flex;
+  display: block; position: relative;
   align-items: center;
   justify-content: center;
   font-weight: 700;
@@ -1689,10 +1688,10 @@ ul.checklist li {
   .viva-section,
   .mnemonic,
   .graph-box,
-  .warn-box {
+  .warn-box { word-break: break-word; overflow-wrap: break-word; 
     padding: 20px 16px !important;
     margin: 20px 0 !important;
-  }
+   padding-left: 34px;}
 
   /* Typography Adjustments */
   h2.topic-head,
@@ -1722,7 +1721,7 @@ ul.checklist li {
     gap: 6px !important;
   }
 
-  .flow-box {
+  .flow-box { word-break: break-word; overflow-wrap: break-word; 
     width: 100% !important;
     min-width: unset !important;
     max-width: 100% !important;
@@ -1735,8 +1734,9 @@ ul.checklist li {
 
   .flow-arrow, .arrow {
     display: inline-block !important;
-    transform: rotate(90deg) !important;
-    margin: 8px 0 !important;
+    transform: none !important;
+    margin: 8px auto !important;
+    width: 100% !important;
     text-align: center !important;
   }
 
@@ -1807,7 +1807,7 @@ ul.checklist li {
   }
 
   .viva-a-text,
-  .viva-ans {
+  .viva-ans { word-break: break-word; overflow-wrap: break-word; 
     padding-left: 12px !important;
     font-size: 12px !important;
     margin-top: 6px !important;
@@ -1837,7 +1837,7 @@ ul.checklist li {
 }
 
 .revision-card-header {
-  display: flex;
+  display: block; position: relative;
   align-items: center;
   gap: 10px;
   margin-bottom: 12px;
@@ -1863,7 +1863,7 @@ ul.checklist li {
   color: var(--accent);
 }
 
-.revision-card-body {
+.revision-card-body { overflow-wrap: break-word; word-break: break-word; 
   font-size: 13.5px;
   line-height: 1.7;
 }
@@ -1954,7 +1954,7 @@ ul.checklist li {
     margin: 20mm 15mm 20mm 15mm !important;
   }
 
-  body {
+  body { overflow-wrap: break-word; word-break: break-word; 
     background: #ffffff !important;
     color: #111111 !important;
     font-size: 11pt !important;
@@ -2154,13 +2154,13 @@ ul.checklist li {
   .flowchart,
   .viva-section,
   .mnemonic,
-  .warn-box {
+  .warn-box { word-break: break-word; overflow-wrap: break-word; 
     padding: 12px 16px !important;
     margin: 10px 0 !important;
     border-radius: 4px !important;
     border: 1px solid #000000 !important;
     background: #f8f9fa !important;
-  }
+   padding-left: 34px;}
 
   .revision-card {
     background: #ffffff !important;
@@ -2209,8 +2209,8 @@ ul.checklist li {
   }
 
   .pyq-box { background: #fbf8eb !important; }
-  .clinical-box, .content .clinical-box { background: #fdf5f7 !important; }
-  .warn-box { background: #fff9f3 !important; }
+  .clinical-box, .content .clinical-box { word-break: break-word; overflow-wrap: break-word;  background: #fdf5f7 !important; }
+  .warn-box { word-break: break-word; overflow-wrap: break-word;  background: #fff9f3 !important;  padding-left: 34px;}
   .mnemonic, .mnemonic-box { background: #f4fbf7 !important; }
   .eq-box { background: #fdfbff !important; }
 
@@ -2222,7 +2222,7 @@ ul.checklist li {
   }
 
   /* Flowcharts print layout */
-  .flow-box {
+  .flow-box { word-break: break-word; overflow-wrap: break-word; 
     padding: 6px 12px !important;
     font-size: 11px !important;
     min-width: 110px !important;
@@ -2276,7 +2276,7 @@ ul.checklist li {
     display: block !important; /* Force print answer display */
   }
 
-  .viva-a-text, .viva-ans {
+  .viva-a-text, .viva-ans { word-break: break-word; overflow-wrap: break-word; 
     display: block !important;
     font-size: 11.5px !important;
     line-height: 1.4 !important;
@@ -2307,7 +2307,7 @@ ul.checklist li {
   top: 0;
   left: 0;
   right: 0;
-  display: flex;
+  display: block; position: relative;
   align-items: center;
   gap: 20px;
   padding: 18px 60px;
@@ -2328,7 +2328,7 @@ ul.checklist li {
 }
 
 .brand-bar-text {
-  display: flex;
+  display: block; position: relative;
   flex-direction: column;
   gap: 3px;
 }
@@ -2386,7 +2386,7 @@ ul.checklist li {
 <div class="cover">
 <!-- ═══ BRAND BAR ═══ -->
 <div class="brand-bar">
-<img alt="Caffeine &amp; Cadaver" class="brand-bar-logo" src="../../Caffeine &amp; Cadaver.jpg"/>
+<img alt="Caffeine &amp; Cadaver" class="brand-bar-logo" src="../../Caffeine%20%26%20Cadaver.jpg"/>
 <div class="brand-bar-text">
 <span class="brand-bar-name">Caffeine &amp; Cadaver</span>
 <span class="brand-bar-series">MBBS Biochemistry Notes Series</span>
@@ -2463,7 +2463,7 @@ ul.checklist li {
 <div class="flow-box white" style="font-size:12px;">Enzyme + Substrate<br/>(E + S)</div>
 <div class="flow-arrow">⇌ (k₁ / k₋₁)</div>
 <div class="flow-box yellow" style="font-size:12px;">Enzyme-Substrate Complex<br/>(ES)</div>
-<div class="flow-arrow">→ (k₂)</div>
+<div class="flow-arrow"><span class="dir-arrow">→</span> (k₂)</div>
 <div class="flow-box green" style="font-size:12px;">Enzyme + Product<br/>(E + P)</div>
 </div>
 </div>
@@ -2489,18 +2489,18 @@ ul.checklist li {
 <div class="key-fact">
 <span class="key-fact-icon">💾</span>
 <div class="key-fact-text">
-<strong>Conservation of Enzyme:</strong> Since free enzyme [E] cannot be measured directly, we express it in terms of total enzyme [E]t:
+<strong>Conservation of Enzyme:</strong> Since free enzyme [E] cannot be measured directly, we express it in terms of total enzyme [E]<sub>t</sub>:
       <div style="font-family:'IBM Plex Mono', monospace; margin: 10px 0; color:var(--accent4); text-align:center;">
-        [E] = [E]t - [ES]
+        [E] = [E]<sub>t</sub> - [ES]
       </div>
-      Substituting this into the Km equation yields: ([E]t - [ES])[S] = Km [ES].
+      Substituting this into the Km equation yields: ([E]<sub>t</sub> - [ES])[S] = Km [ES].
     </div>
 </div>
 <div class="key-fact">
 <span class="key-fact-icon">🚀</span>
 <div class="key-fact-text">
-<strong>Solving for [ES] &amp; Velocity:</strong> Solving for [ES] gives: [ES] = ([E]t[S]) / (Km + [S]).
-      Since velocity v = k₂[ES] and maximum velocity Vmax = k₂[E]t, we multiply both sides by k₂ to arrive at the <strong>Michaelis-Menten Equation</strong>:
+<strong>Solving for [ES] &amp; Velocity:</strong> Solving for [ES] gives: [ES] = ([E]<sub>t</sub>[S]) / (Km + [S]).
+      Since velocity v = k₂[ES] and maximum velocity Vmax = k₂[E]<sub>t</sub>, we multiply both sides by k₂ to arrive at the <strong>Michaelis-Menten Equation</strong>:
       <div style="font-family:'IBM Plex Mono', monospace; margin: 15px 0; color:var(--white); font-size:18px; font-weight:600; text-align:center;">
         v = (Vmax · [S]) / (Km + [S])
       </div>
@@ -2593,14 +2593,20 @@ ul.checklist li {
 <div class="flowchart-title">// Digestive Activation Cascade</div>
 <div class="flow-row">
 <div class="flow-box red" style="font-size:12px;">Trypsinogen<br/>(Inactive, from Pancreas)</div>
-<div class="flow-arrow">→ Enteropeptidase (Duodenal wall)</div>
+<div style="display: block; position: relative; flex-direction: column; align-items: center; justify-content: center; text-align: center; margin: 8px 0;">
+  <div class="flow-arrow" style="margin: 0;">→</div>
+  <div style="font-size: 11px; color: var(--accent); margin-top: 4px;">Enteropeptidase<br/>(Duodenal wall)</div>
+</div>
 <div class="flow-box green" style="font-size:12px;">Active Trypsin<br/>(Cleaves hexapeptide)</div>
 </div>
-<div class="flow-arrow down">↓ (Autocatalytic &amp; cross-activation)</div>
-<div style="display:flex; justify-content:space-around; gap:16px; margin-top:12px;">
-<div class="flow-box green" style="font-size:11px; flex:1;">Chymotrypsinogen → Chymotrypsin</div>
-<div class="flow-box green" style="font-size:11px; flex:1;">Proelastase → Elastase</div>
-<div class="flow-box green" style="font-size:11px; flex:1;">Procarboxypeptidase → Carboxypeptidase</div>
+<div style="display: block; position: relative; flex-direction: column; align-items: center; justify-content: center; text-align: center; margin: 16px 0;">
+  <div class="flow-arrow down" style="margin: 0;">↓</div>
+  <div style="font-size: 12px; color: var(--accent); margin-top: 4px;">(Autocatalytic &amp; cross-activation)</div>
+</div>
+<div style="display: block; position: relative; justify-content:center; gap:12px; margin-top:12px; flex-wrap: wrap;">
+<div class="flow-box green" style="font-size:11px; flex:1 1 150px; min-width:140px;">Chymotrypsinogen → Chymotrypsin</div>
+<div class="flow-box green" style="font-size:11px; flex:1 1 150px; min-width:140px;">Proelastase → Elastase</div>
+<div class="flow-box green" style="font-size:11px; flex:1 1 150px; min-width:140px;">Procarboxypeptidase → Carboxypeptidase</div>
 </div>
 </div>
 <div class="key-fact">
@@ -2620,20 +2626,20 @@ ul.checklist li {
 <div class="flow-row">
 <div class="flow-box yellow">ENZYME INHIBITION</div>
 </div>
-<div class="flow-arrow down">↓</div>
-<div style="display:flex; justify-content:space-around; margin-top:12px; gap:16px;">
-<div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:6px;">
+<div class="flow-arrow down"><span class="dir-arrow">↓</span></div>
+<div style="display: block; position: relative; justify-content:space-around; margin-top:12px; gap:16px;">
+<div style="flex:1; display: block; position: relative; flex-direction:column; align-items:center; gap:6px;">
 <div class="flow-box green" style="width:100%; max-width:220px;">REVERSIBLE</div>
-<div class="flow-arrow down">↓</div>
+<div class="flow-arrow down"><span class="dir-arrow">↓</span></div>
 <div class="flow-row" style="flex-direction:column; gap:6px; align-items:center; width:100%;">
 <div class="flow-box green" style="width:100%; max-width:180px; font-size:12px;">Competitive</div>
 <div class="flow-box green" style="width:100%; max-width:180px; font-size:12px;">Non-competitive</div>
 <div class="flow-box green" style="width:100%; max-width:180px; font-size:12px;">Uncompetitive</div>
 </div>
 </div>
-<div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:6px;">
+<div style="flex:1; display: block; position: relative; flex-direction:column; align-items:center; gap:6px;">
 <div class="flow-box red" style="width:100%; max-width:220px;">IRREVERSIBLE</div>
-<div class="flow-arrow down">↓</div>
+<div class="flow-arrow down"><span class="dir-arrow">↓</span></div>
 <div class="flow-row" style="flex-direction:column; gap:6px; align-items:center; width:100%;">
 <div class="flow-box red" style="width:100%; max-width:180px; font-size:12px;">Suicide Inhibitors</div>
 <div class="flow-box red" style="width:100%; max-width:180px; font-size:12px;">Heavy Metal Poisoning</div>
@@ -2653,15 +2659,15 @@ ul.checklist li {
 <div class="flowchart-title">// Mechanism — Competitive Inhibitor</div>
 <div class="flow-row">
 <div class="flow-box white" style="font-size:12px;">Inhibitor structurally similar<br/>to substrate</div>
-<div class="flow-arrow">→</div>
+<div class="flow-arrow"><span class="dir-arrow">→</span></div>
 <div class="flow-box yellow" style="font-size:12px;">Binds ACTIVE SITE<br/>of enzyme</div>
-<div class="flow-arrow">→</div>
+<div class="flow-arrow"><span class="dir-arrow">→</span></div>
 <div class="flow-box red" style="font-size:12px;">Blocks substrate<br/>from binding</div>
 </div>
-<div class="flow-arrow down">↓</div>
+<div class="flow-arrow down"><span class="dir-arrow">↓</span></div>
 <div class="flow-row">
 <div class="flow-box green" style="font-size:12px;">↑ [Substrate] can<br/>OVERCOME inhibition</div>
-<div class="flow-arrow">→</div>
+<div class="flow-arrow"><span class="dir-arrow">→</span></div>
 <div class="flow-box blue" style="font-size:12px;">Km ↑ (apparent)<br/>Vmax UNCHANGED</div>
 </div>
 </div>
@@ -2702,16 +2708,16 @@ ul.checklist li {
 <div class="flowchart-title">// Mechanism — Non-Competitive Inhibitor</div>
 <div class="flow-row">
 <div class="flow-box white" style="font-size:12px;">Inhibitor binds<br/>ALLOSTERIC SITE</div>
-<div class="flow-arrow">→</div>
+<div class="flow-arrow"><span class="dir-arrow">→</span></div>
 <div class="flow-box yellow" style="font-size:12px;">Binds BOTH free enzyme<br/>AND enzyme-substrate complex</div>
 </div>
-<div class="flow-arrow down">↓</div>
+<div class="flow-arrow down"><span class="dir-arrow">↓</span></div>
 <div class="flow-row">
 <div class="flow-box red" style="font-size:12px;">Changes enzyme<br/>conformation</div>
-<div class="flow-arrow">→</div>
+<div class="flow-arrow"><span class="dir-arrow">→</span></div>
 <div class="flow-box blue" style="font-size:12px;">Km UNCHANGED<br/>Vmax ↓↓</div>
 </div>
-<div class="flow-arrow down">↓</div>
+<div class="flow-arrow down"><span class="dir-arrow">↓</span></div>
 <div class="flow-row">
 <div class="flow-box red" style="font-size:12px;">↑ [Substrate] CANNOT overcome —<br/>inhibition is insurmountable</div>
 </div>
@@ -2807,15 +2813,15 @@ ul.checklist li {
 <div class="flowchart-title">// Suicide Inhibitor Mechanism</div>
 <div class="flow-row">
 <div class="flow-box white" style="font-size:12px;">Substrate analog<br/>(prodrug)</div>
-<div class="flow-arrow">→</div>
+<div class="flow-arrow"><span class="dir-arrow">→</span></div>
 <div class="flow-box yellow" style="font-size:12px;">Enzyme activates it<br/>(thinks it's substrate)</div>
-<div class="flow-arrow">→</div>
+<div class="flow-arrow"><span class="dir-arrow">→</span></div>
 <div class="flow-box red" style="font-size:12px;">Forms covalent bond<br/>with active site</div>
 </div>
-<div class="flow-arrow down">↓</div>
+<div class="flow-arrow down"><span class="dir-arrow">↓</span></div>
 <div class="flow-row">
 <div class="flow-box red" style="font-size:12px;">Enzyme permanently<br/>INACTIVATED ☠️</div>
-<div class="flow-arrow">→</div>
+<div class="flow-arrow"><span class="dir-arrow">→</span></div>
 <div class="flow-box blue" style="font-size:12px;">New enzyme synthesis<br/>needed for recovery</div>
 </div>
 </div>
@@ -3045,19 +3051,19 @@ ul.checklist li {
 <div class="flow-row">
 <div class="flow-box yellow" style="min-width:180px; font-size:12px;"><strong>Define</strong><br/>What is competitive inhibition?</div>
 </div>
-<div class="flow-arrow down">↓</div>
+<div class="flow-arrow down"><span class="dir-arrow">↓</span></div>
 <div class="flow-row">
 <div class="flow-box blue" style="min-width:180px; font-size:12px;"><strong>Mechanism Flowchart</strong><br/>MTX → mimics DHFA → binds DHFR active site → blocks tetrahydrofolate synthesis</div>
 </div>
-<div class="flow-arrow down">↓</div>
+<div class="flow-arrow down"><span class="dir-arrow">↓</span></div>
 <div class="flow-row">
 <div class="flow-box green" style="min-width:180px; font-size:12px;"><strong>Kinetics</strong><br/>Km ↑, Vmax unchanged<br/>Overcome by ↑ substrate</div>
 </div>
-<div class="flow-arrow down">↓</div>
+<div class="flow-arrow down"><span class="dir-arrow">↓</span></div>
 <div class="flow-row">
 <div class="flow-box red" style="min-width:180px; font-size:12px;"><strong>Clinical Consequence</strong><br/>↓ THF → ↓ purine synthesis → ↓ DNA synthesis → Anti-cancer / Anti-rheumatic</div>
 </div>
-<div class="flow-arrow down">↓</div>
+<div class="flow-arrow down"><span class="dir-arrow">↓</span></div>
 <div class="flow-row">
 <div class="flow-box white" style="min-width:180px; font-size:12px;"><strong>Rescue</strong><br/>Leucovorin (folinic acid) bypasses the block — used to rescue normal cells</div>
 </div>

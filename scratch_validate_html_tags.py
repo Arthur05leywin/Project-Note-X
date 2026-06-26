@@ -51,5 +51,7 @@ def validate_html(file_path):
     except Exception as e:
         print(f"  Failed to parse HTML: {e}")
 
-validate_html(r"c:\Users\sayan\Downloads\biochem Note X\modules\module-02\carb_metabolism_notes.html")
-validate_html(r"c:\Users\sayan\Downloads\biochem Note X\modules\module-02\carb_metabolism_notes X.html")
+validate_html(r"c:\Users\sayan\Downloads\biochem Note X\anatomy modules\module01_general_anatomy.html")
+validate_html(r"c:\Users\sayan\Downloads\biochem Note X\anatomy modules\anatomy_module02_upper_limb.html")
+validate_html(r"c:\Users\sayan\Downloads\biochem Note X\anatomy modules\anatomy_module03_lower_limb.html")
+validate_html(r"c:\Users\sayan\Downloads\biochem Note X\anatomy modules\anatomy_module04_thorax.html")

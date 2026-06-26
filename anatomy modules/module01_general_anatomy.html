@@ -104,7 +104,7 @@ body { overflow-wrap: break-word; word-break: break-word;
   margin-bottom: 1.75rem;
 }
 .hero-pills {
-  display: block; position: relative;
+  display: flex; position: fixed;
   flex-wrap: wrap;
   gap: 8px;
 }
@@ -151,7 +151,7 @@ body { overflow-wrap: break-word; word-break: break-word;
   gap: 6px;
 }
 .toc a {
-  display: block; position: relative;
+  display: flex; position: fixed;
   align-items: center;
   gap: 8px;
   color: var(--text2);
@@ -173,7 +173,7 @@ body { overflow-wrap: break-word; word-break: break-word;
 .content { padding: 0 1.5rem 4rem; }
 
 .section-header {
-  display: block; position: relative;
+  display: flex; position: fixed;
   align-items: center;
   gap: 12px;
   margin: 3rem 0 1.5rem;
@@ -187,7 +187,7 @@ body { overflow-wrap: break-word; word-break: break-word;
   font-family: 'JetBrains Mono', monospace;
   font-size: 12px;
   font-weight: 700;
-  display: block; position: relative; align-items: center; justify-content: center;
+  display: flex; position: fixed; align-items: center; justify-content: center;
   border-radius: 6px;
   flex-shrink: 0;
 }
@@ -235,7 +235,7 @@ body { overflow-wrap: break-word; word-break: break-word;
   text-transform: uppercase;
   color: var(--accent);
   margin-bottom: .75rem;
-  display: block; position: relative;
+  display: flex; position: fixed;
   align-items: center;
   gap: 8px;
 }
@@ -276,7 +276,7 @@ td:first-child { color: var(--accent2); font-weight: 600; }
   padding: 10px 14px;
   margin: 10px 0;
   font-size: 13px;
-  display: block; position: relative;
+  display: flex; position: fixed;
   gap: 10px;
   
  padding-left: 34px;}
@@ -297,7 +297,7 @@ td:first-child { color: var(--accent2); font-weight: 600; }
   color: var(--teal);
   text-transform: uppercase;
   margin-bottom: .6rem;
-  display: block; position: relative;
+  display: flex; position: fixed;
   align-items: center;
   gap: 6px;
 }
@@ -318,7 +318,7 @@ td:first-child { color: var(--accent2); font-weight: 600; }
   color: var(--gold);
   text-transform: uppercase;
   margin-bottom: .6rem;
-  display: block; position: relative;
+  display: flex; position: fixed;
   align-items: center;
   gap: 6px;
 }
@@ -343,7 +343,7 @@ td:first-child { color: var(--accent2); font-weight: 600; }
   padding: 10px 14px;
   margin: 10px 0;
   font-size: 13px;
-  display: block; position: relative;
+  display: flex; position: fixed;
   gap: 10px;
  padding-left: 34px;}
 .warn-box::before { content: '⚠️'; flex-shrink: 0;  position: absolute; left: 10px; top: 10px;}
@@ -363,7 +363,7 @@ td:first-child { color: var(--accent2); font-weight: 600; }
   color: var(--purple);
   text-transform: uppercase;
   margin-bottom: .75rem;
-  display: block; position: relative;
+  display: flex; position: fixed;
   align-items: center;
   gap: 6px;
 }
@@ -410,7 +410,7 @@ ul.check li::before { content: '▸ '; color: var(--accent2); }
   text-align: center;
   position: relative;
   min-height: 200px;
-  display: block; position: relative;
+  display: flex; position: fixed;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -463,7 +463,7 @@ ul.check li::before { content: '▸ '; color: var(--accent2); }
   color: var(--text2);
   background: var(--surface2);
   border-top: 1px solid var(--border);
-  display: block; position: relative;
+  display: flex; position: fixed;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
@@ -491,12 +491,12 @@ ul.check li::before { content: '▸ '; color: var(--accent2); }
   text-transform: uppercase;
   color: var(--accent2);
   margin-bottom: 1.25rem;
-  display: block; position: relative;
+  display: flex; position: fixed;
   align-items: center;
   gap: 6px;
 }
 .flow-title::before { content: '▶'; font-size: 8px; }
-.flow-v { display: block; position: relative; flex-direction: column; align-items: stretch; gap: 0; }
+.flow-v { display: flex; position: fixed; flex-direction: column; align-items: stretch; gap: 0; }
 .flow-box { word-break: break-word; overflow-wrap: break-word; 
   background: var(--surface3);
   border: 1px solid var(--border2);
@@ -535,7 +535,7 @@ ul.check li::before { content: '▸ '; color: var(--accent2); }
 .flow-arrow { text-align: center; color: var(--accent); font-size: 18px; margin: 2px 0; }
 
 .flow-h {
-  display: block; position: relative;
+  display: flex; position: fixed;
   flex-wrap: wrap;
   align-items: center;
   gap: 8px;
@@ -584,7 +584,7 @@ ul.check li::before { content: '▸ '; color: var(--accent2); }
   letter-spacing: 2px;
   color: var(--accent2);
   text-transform: uppercase;
-  display: block; position: relative;
+  display: flex; position: fixed;
   align-items: center;
   gap: 8px;
 }
@@ -602,7 +602,7 @@ summary {
   color: var(--text);
   background: var(--surface);
   list-style: none;
-  display: block; position: relative;
+  display: flex; position: fixed;
   align-items: flex-start;
   gap: 8px;
   user-select: none;
@@ -684,7 +684,7 @@ details[open] > summary::before { transform: rotate(90deg); }
   font-size: 17px;
   cursor: pointer;
   z-index: 100;
-  display: block; position: relative; align-items: center; justify-content: center;
+  display: flex; position: fixed; align-items: center; justify-content: center;
   font-weight: 700;
   box-shadow: 0 4px 18px rgba(232,113,74,.4);
   transition: transform .2s;
@@ -698,7 +698,28 @@ details[open] > summary::before { transform: rotate(90deg); }
   .flow-h { flex-direction: column; }
   .flow-h .h-arr { transform: rotate(90deg); }
 }
+
+/* --- UI FIXES & PRINT THEME --- */
+.table-wrap table { min-width: 600px; }
+th, td { word-break: normal !important; overflow-wrap: normal !important; }
+
+@media print {
+  :root {
+    --bg: #ffffff;
+    --surface: #f8fafc;
+    --surface2: #f1f5f9;
+    --text: #0f172a;
+    --text2: #334155;
+    --text3: #475569;
+    --border: #e2e8f0;
+    --border2: #cbd5e1;
+  }
+  body { background: var(--bg) !important; color: var(--text) !important; }
+  h1, h2, h3, .card-title, .section-title { font-family: 'Playfair Display', serif !important; color: #000 !important; }
+  .badge { border: 1px solid var(--border2) !important; color: var(--text2) !important; }
+}
 </style>
+
 </head>
 <body>
 
@@ -849,10 +870,10 @@ details[open] > summary::before { transform: rotate(90deg); }
 
   <!-- Wikimedia X-ray -->
   <div class="diagram-placeholder" style="border:none; padding:0; background:transparent;">
-    <img class="wiki-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/Knee_X-ray_lateral_view_Dr_Jan_Glaser.jpg" alt="Lateral knee X-ray showing bone structure" loading="lazy" style="max-width:100%;height:auto;border-radius:8px;margin-top:10px;">
+    <img class="wiki-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/Knee_radiograph.jpg" alt="Lateral knee X-ray showing bone structure" loading="lazy" style="max-width:100%;height:auto;border-radius:8px;margin-top:10px;">
     <div class="wiki-caption">
       <span>Lateral knee X-ray — note the cortical shell, medullary cavity, and epiphyseal architecture</span>
-      <a class="wiki-source" href="https://commons.wikimedia.org/wiki/File:Knee_X-ray_lateral_view_Dr_Jan_Glaser.jpg" target="_blank" rel="noopener">Wikimedia Commons (CC BY-SA)</a>
+      <a class="wiki-source" href="https://commons.wikimedia.org/wiki/File:Knee_radiograph.jpg" target="_blank" rel="noopener">Wikimedia Commons (CC BY-SA)</a>
     </div>
   </div>
 
@@ -892,10 +913,10 @@ details[open] > summary::before { transform: rotate(90deg); }
 
   <!-- DRAWING SLOT 4 -->
   <div class="diagram-placeholder" style="border:none; padding:0; background:transparent;">
-    <img class="wiki-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/Gray111_-_Skeleton.png" alt="Human Skeleton" loading="lazy" style="max-width:100%;height:auto;border-radius:8px;margin-top:10px;background: white;">
+    <img class="wiki-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/Human_skeleton_front_en.svg" alt="Human Skeleton" loading="lazy" style="max-width:100%;height:auto;border-radius:8px;margin-top:10px;background: white;">
     <div class="wiki-caption">
       <span>The Human Skeleton</span>
-      <a class="wiki-source" href="https://commons.wikimedia.org/wiki/File:Gray111_-_Skeleton.png" target="_blank" rel="noopener">Gray's Anatomy Plate 111 (Public Domain)</a>
+      <a class="wiki-source" href="https://commons.wikimedia.org/wiki/File:Human_skeleton_front_en.svg" target="_blank" rel="noopener">Gray's Anatomy Plate 111 (Public Domain)</a>
     </div>
   </div>
 
@@ -959,10 +980,10 @@ details[open] > summary::before { transform: rotate(90deg); }
 
   <!-- DRAWING SLOT 5 -->
   <div class="diagram-placeholder" style="border:none; padding:0; background:transparent;">
-    <img class="wiki-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/608_Endochondral_Ossification.jpg" alt="Endochondral Ossification" loading="lazy" style="max-width:100%;height:auto;border-radius:8px;margin-top:10px;">
+    <img class="wiki-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bone_growth.png" alt="Endochondral Ossification" loading="lazy" style="max-width:100%;height:auto;border-radius:8px;margin-top:10px;">
     <div class="wiki-caption">
       <span>Endochondral Ossification</span>
-      <a class="wiki-source" href="https://commons.wikimedia.org/wiki/File:608_Endochondral_Ossification.jpg" target="_blank" rel="noopener">OpenStax College (CC BY 3.0)</a>
+      <a class="wiki-source" href="https://commons.wikimedia.org/wiki/File:Bone_growth.png" target="_blank" rel="noopener">OpenStax College (CC BY 3.0)</a>
     </div>
   </div>
 
@@ -1005,10 +1026,10 @@ details[open] > summary::before { transform: rotate(90deg); }
 
   <!-- Wikimedia histology -->
   <div class="diagram-placeholder" style="border:none; padding:0; background:transparent;">
-    <img class="wiki-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/Hyaline_cartilage_-_very_high_mag.jpg" alt="Hyaline cartilage histology" loading="lazy" style="max-width:100%;height:auto;border-radius:8px;margin-top:10px;">
+    <img class="wiki-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/Hyaline_cartilage.jpg" alt="Hyaline cartilage histology" loading="lazy" style="max-width:100%;height:auto;border-radius:8px;margin-top:10px;">
     <div class="wiki-caption">
       <span>Hyaline cartilage histology — chondrocytes in lacunae, homogenous matrix, no visible fibres</span>
-      <a class="wiki-source" href="https://commons.wikimedia.org/wiki/File:Hyaline_cartilage_-_very_high_mag.jpg" target="_blank" rel="noopener">Wikimedia Commons (CC BY-SA)</a>
+      <a class="wiki-source" href="https://commons.wikimedia.org/wiki/File:Hyaline_cartilage.jpg" target="_blank" rel="noopener">Wikimedia Commons (CC BY-SA)</a>
     </div>
   </div>
 
@@ -1242,10 +1263,10 @@ details[open] > summary::before { transform: rotate(90deg); }
 
   <!-- Wikimedia muscle histology -->
   <div class="diagram-placeholder" style="border:none; padding:0; background:transparent;">
-    <img class="wiki-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/Skeletal_muscle_-_cross_section%2C_intermed_mag.jpg" alt="Skeletal muscle cross-section histology" loading="lazy" style="max-width:100%;height:auto;border-radius:8px;margin-top:10px;">
+    <img class="wiki-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/Muscle_tissue.jpg" alt="Skeletal muscle cross-section histology" loading="lazy" style="max-width:100%;height:auto;border-radius:8px;margin-top:10px;">
     <div class="wiki-caption">
       <span>Skeletal muscle cross-section — individual muscle fibres (myocytes) packed in fascicles, surrounded by perimysium</span>
-      <a class="wiki-source" href="https://commons.wikimedia.org/wiki/File:Skeletal_muscle_-_cross_section%2C_intermed_mag.jpg" target="_blank" rel="noopener">Wikimedia Commons (CC BY-SA)</a>
+      <a class="wiki-source" href="https://commons.wikimedia.org/wiki/File:Muscle_tissue.jpg" target="_blank" rel="noopener">Wikimedia Commons (CC BY-SA)</a>
     </div>
   </div>
 
