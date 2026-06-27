@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Module 01 — Nerve Muscle Physiology | Caffeine & Cadaver</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=JetBrains+Mono:wght@400;600&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#080c14;--surface:#0d1220;--surface2:#121828;--surface3:#182030;
+  --accent:#84cc16;--accent2:#a3e635;--accent3:#bef264;
+  --gold:#fbbf24;--teal:#34d399;--rose:#f87171;--purple:#c084fc;
+  --text:#e2e8f8;--text2:#8892b0;--text3:#445060;
+  --border:#1e2a40;--border2:#28384a;
+  --green:#4ade80;--orange:#fb923c;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Sora',sans-serif;font-size:15px;line-height:1.7;overflow-x:hidden;}
+
+/* PROGRESS BAR */
+.progress-bar{height:3px;background:linear-gradient(to right,var(--accent),var(--accent2),var(--teal));border-radius:2px;animation:load 1.5s ease forwards;}
+@keyframes load{from{width:0;}to{width:100%;}}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#060810 0%,#0a1108 55%,#080c14 100%);border-bottom:1px solid var(--border2);padding:3rem 1.5rem 2.5rem;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;top:-80px;right:-80px;width:360px;height:360px;background:radial-gradient(circle,rgba(132,204,22,.13) 0%,transparent 70%);pointer-events:none;}
+.hero::after{content:'';position:absolute;bottom:-40px;left:10%;width:260px;height:260px;background:radial-gradient(circle,rgba(163,230,53,.06) 0%,transparent 70%);pointer-events:none;}
+.module-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(132,204,22,.14);border:1px solid rgba(132,204,22,.38);color:var(--accent2);font-family:'JetBrains Mono',monospace;font-size:11px;padding:4px 12px;border-radius:3px;letter-spacing:2px;margin-bottom:1rem;}
+.dot{width:6px;height:6px;background:var(--accent);border-radius:50%;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.4;transform:scale(.7);}}
+.hero h1{font-family:'Crimson Pro',serif;font-size:clamp(2rem,6vw,3.2rem);font-weight:600;color:var(--text);line-height:1.15;margin-bottom:.5rem;}
+.hero h1 span{color:var(--accent2);}
+.hero-sub{color:var(--text2);font-size:13px;font-family:'JetBrains Mono',monospace;letter-spacing:.5px;margin-bottom:1.5rem;}
+.hero-pills{display:flex;flex-wrap:wrap;gap:8px;}
+.pill{background:var(--surface2);border:1px solid var(--border);color:var(--text2);font-size:11px;padding:4px 10px;border-radius:20px;font-family:'JetBrains Mono',monospace;}
+
+/* TOC */
+.toc{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent);margin:1.5rem;padding:1.25rem;border-radius:6px;}
+.toc-title{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--accent);text-transform:uppercase;margin-bottom:1rem;}
+.toc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px;}
+.toc a{color:var(--text2);text-decoration:none;font-size:13px;padding:4px 8px;border-radius:4px;transition:all .2s;display:flex;align-items:center;gap:6px;}
+.toc a:hover{color:var(--accent2);background:rgba(132,204,22,.08);}
+.toc-num{color:var(--accent);font-family:'JetBrains Mono',monospace;font-size:11px;}
+
+/* LAYOUT */
+.content{padding:0 1.5rem 3rem;}
+.section-header{display:flex;align-items:center;gap:12px;margin:2.5rem 0 1.5rem;padding-bottom:.75rem;border-bottom:1px solid var(--border);}
+.section-num{background:var(--accent);color:#0a0f00;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:6px;flex-shrink:0;}
+.section-header h2{font-family:'Crimson Pro',serif;font-size:clamp(1.3rem,4vw,1.8rem);font-weight:600;color:var(--text);}
+.section-header h2 em{color:var(--accent2);font-style:normal;}
+.divider{height:1px;background:var(--border);margin:2rem 0;}
+.two-col{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(280px, 100%),1fr));gap:1rem;margin:1rem 0;}
+
+/* BADGES */
+.badge{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-family:'JetBrains Mono',monospace;padding:2px 7px;border-radius:3px;vertical-align:middle;margin-left:4px;font-weight:600;letter-spacing:.5px;}
+.badge-rls{background:rgba(248,113,113,.18);color:var(--rose);border:1px solid rgba(248,113,113,.35);}
+.badge-pyq{background:rgba(52,211,153,.14);color:var(--teal);border:1px solid rgba(52,211,153,.3);}
+.badge-fav{background:rgba(251,191,36,.14);color:var(--gold);border:1px solid rgba(251,191,36,.3);}
+.badge-new{background:rgba(132,204,22,.14);color:var(--accent2);border:1px solid rgba(132,204,22,.3);}
+
+/* CARD */
+.card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:1.25rem;margin-bottom:1rem;}
+.card-title{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:.75rem;display:flex;align-items:center;gap:8px;}
+.card-title::after{content:'';flex:1;height:1px;background:var(--border);}
+
+/* FLOWCHART */
+.flowchart{background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:1.25rem;margin:1rem 0;}
+.flow-title{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--accent2);margin-bottom:1rem;display:flex;align-items:center;gap:8px;}
+.flow-title::before{content:'▶';font-size:8px;}
+.flow-v{display:flex;flex-direction:column;align-items:stretch;gap:0;}
+.flow-step-label{font-size:12px;color:var(--text2);text-align:center;padding:4px 8px;font-family:'JetBrains Mono',monospace;}
+.flow-step-label strong{color:var(--accent2);}
+.flow-arrow{text-align:center;color:var(--accent);font-size:20px;line-height:1;margin:2px 0;}
+.flow-box{background:var(--surface3);border:1px solid var(--border2);border-radius:6px;padding:10px 14px;font-size:13px;width:100%;}
+.flow-box.accent{border-color:var(--accent);background:rgba(132,204,22,.08);color:var(--accent2);}
+.flow-box.gold{border-color:var(--gold);background:rgba(251,191,36,.08);color:var(--gold);}
+.flow-box.teal{border-color:var(--teal);background:rgba(52,211,153,.08);color:var(--teal);}
+.flow-box.rose{border-color:var(--rose);background:rgba(248,113,113,.08);color:var(--rose);}
+.flow-box.purple{border-color:var(--purple);background:rgba(192,132,252,.08);color:var(--purple);}
+.flow-box.green{border-color:var(--green);background:rgba(74,222,128,.08);color:var(--green);}
+.flow-box .lbl{font-size:10px;color:var(--text3);font-family:'JetBrains Mono',monospace;display:block;margin-bottom:2px;}
+.flow-box .sub{font-size:11px;color:var(--text2);display:block;margin-top:3px;}
+.flow-h{display:flex;flex-wrap:wrap;align-items:center;gap:6px;}
+.flow-h .flow-box{flex:1 1 auto;min-width:100px;text-align:center;}
+.h-arrow{color:var(--accent);font-size:18px;flex-shrink:0;}
+
+/* TABLES */
+.table-wrap{overflow-x:auto;margin:1rem 0;border-radius:8px;}
+table{width:100%;border-collapse:collapse;}
+th{background:var(--surface3);color:var(--accent2);font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:10px 12px;text-align:left;border-bottom:2px solid var(--accent);}
+td{padding:9px 12px;border-bottom:1px solid var(--border);font-size:13px;vertical-align:top;}
+tr:hover td{background:rgba(132,204,22,.03);}
+td:first-child{color:var(--accent2);font-weight:600;}
+
+/* SPECIAL BOXES */
+.clinical-box{background:rgba(52,211,153,.04);border:1px solid rgba(52,211,153,.22);border-left:4px solid var(--teal);border-radius:6px;padding:1rem 1.25rem;margin:1rem 0;}
+.cbox-title{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--teal);text-transform:uppercase;margin-bottom:.6rem;display:flex;align-items:center;gap:6px;}
+.cbox-title::before{content:'🩺';}
+.mnemonic-box{background:rgba(251,191,36,.05);border:1px solid rgba(251,191,36,.25);border-left:4px solid var(--gold);border-radius:6px;padding:1rem 1.25rem;margin:1rem 0;}
+.mbox-title{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:.6rem;display:flex;align-items:center;gap:6px;}
+.mbox-title::before{content:'🧠';}
+.mnemonic-highlight{background:rgba(251,191,36,.1);border:1px dashed rgba(251,191,36,.3);border-radius:4px;padding:8px 12px;font-family:'Crimson Pro',serif;font-size:15px;font-weight:600;color:var(--gold);margin:6px 0;}
+.eq-box{background:rgba(192,132,252,.05);border:1px solid rgba(192,132,252,.25);border-left:4px solid var(--purple);border-radius:6px;padding:1rem 1.25rem;margin:1rem 0;}
+.eq-title{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--purple);text-transform:uppercase;margin-bottom:.75rem;display:flex;align-items:center;gap:6px;}
+.eq-title::before{content:'📝';}
+.eq-statement{background:var(--surface3);border-radius:4px;padding:8px 12px;font-family:'Crimson Pro',serif;font-size:15px;font-style:italic;color:var(--text);margin-bottom:10px;border-left:3px solid var(--purple);}
+.eq-answer ol{margin-left:18px;}
+.eq-answer li{margin-bottom:6px;font-size:13px;}
+.eq-answer li span{color:var(--purple);font-weight:600;}
+.keypoint{background:rgba(132,204,22,.07);border:1px solid rgba(132,204,22,.22);border-radius:6px;padding:10px 14px 10px 36px;margin:8px 0;font-size:13px;display:block;position:relative;word-break:break-word;overflow-wrap:break-word;}
+.keypoint::before{content:'⚡';position:absolute;left:12px;top:10px;}
+.warn-box{background:rgba(251,146,60,.07);border:1px solid rgba(251,146,60,.25);border-left:4px solid var(--orange);border-radius:6px;padding:10px 14px 10px 36px;margin:8px 0;font-size:13px;display:block;position:relative;word-break:break-word;overflow-wrap:break-word;}
+.warn-box::before{content:'⚠️';position:absolute;left:12px;top:10px;}
+ul.checklist{list-style:none;margin:.5rem 0;}
+ul.checklist li::before{content:'✦ ';color:var(--accent2);}
+ul.checklist li{margin-bottom:4px;font-size:13px;}
+.hl{color:var(--accent2);font-weight:600;}
+.hl-gold{color:var(--gold);font-weight:600;}
+.hl-teal{color:var(--teal);font-weight:600;}
+.hl-rose{color:var(--rose);font-weight:600;}
+.hl-purple{color:var(--purple);font-weight:600;}
+
+/* SVG */
+svg{width:100%;height:auto;display:block;margin:0 auto;}
+
+/* VIVA */
+.viva-section{margin:1.5rem 0;}
+.viva-title-bar{background:rgba(132,204,22,.1);border:1px solid rgba(132,204,22,.28);border-radius:6px 6px 0 0;padding:10px 14px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:2px;color:var(--accent2);text-transform:uppercase;display:flex;align-items:center;gap:8px;}
+.viva-title-bar::before{content:'💬';font-size:14px;}
+details{border:1px solid var(--border);border-top:none;overflow:hidden;}
+details:last-child{border-radius:0 0 6px 6px;}
+summary{padding:10px 14px;cursor:pointer;font-size:13px;color:var(--text);background:var(--surface);list-style:none;display:flex;align-items:flex-start;gap:8px;user-select:none;transition:background .2s;}
+summary:hover{background:var(--surface2);}
+summary::before{content:'▶';color:var(--accent);font-size:10px;margin-top:3px;flex-shrink:0;transition:transform .2s;}
+details[open]>summary::before{transform:rotate(90deg);}
+.viva-q{font-weight:600;flex:1;}
+.viva-year{color:var(--teal);font-family:'JetBrains Mono',monospace;font-size:11px;flex-shrink:0;}
+.viva-ans{padding:12px 16px 14px;background:var(--surface2);font-size:13px;line-height:1.75;border-top:1px solid var(--border);}
+.viva-ans p{margin-bottom:6px;}
+.viva-ans ul{margin:6px 0 6px 16px;}
+.viva-ans li{margin-bottom:4px;}
+.viva-ans strong{color:var(--accent2);}
+.viva-ans em{color:var(--gold);font-style:normal;font-weight:600;}
+
+/* FOOTER */
+.footer{background:var(--surface);border-top:1px solid var(--border);text-align:center;padding:2rem 1.5rem;color:var(--text3);font-size:12px;font-family:'JetBrains Mono',monospace;}
+.top-btn{position:fixed;bottom:20px;right:20px;background:var(--accent);color:#0a0f00;border:none;border-radius:50%;width:40px;height:40px;font-size:16px;cursor:pointer;box-shadow:0 4px 15px rgba(132,204,22,.4);z-index:100;display:flex;align-items:center;justify-content:center;font-weight:700;}
+.top-btn:hover{transform:translateY(-2px);}
+
+@media(max-width:600px){
+  .hero{padding:2rem 1rem;}
+  .content{padding:0 1rem 2rem;}
+  .toc{margin:1rem;}
+  .flow-h{flex-direction:column;}
+  .h-arrow{display:none;}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="module-tag"><span class="dot"></span>MODULE 01 · PHYSIOLOGY</div>
+  <h1>General &<br><span>Nerve Muscle Physiology</span></h1>
+  <p class="hero-sub">PHYSIOLOGY · PAPER 1 · PYQ 2010–2025</p>
+  <div class="hero-pills">
+    <span class="pill">Resting Membrane Potential</span>
+    <span class="pill">Action Potential</span>
+    <span class="pill">Neuromuscular Junction</span>
+    <span class="pill">Sliding Filament Theory</span>
+    <span class="pill">NM Blockers</span>
+    <span class="pill">Rigor Mortis</span>
+    <span class="pill">Tetanus & Tetany</span>
+    <span class="pill">Myasthenia Gravis</span>
+    <span class="pill">Ion Transport</span>
+    <span class="pill">Body Fluid Compartments</span>
+    <span class="pill">Excitation-Contraction Coupling</span>
+  </div>
+</div>
+
+<!-- TOC -->
+<div class="toc">
+  <div class="toc-title">▸ Quick Navigate</div>
+  <div class="toc-grid">
+    <a href="#s1"><span class="toc-num">01</span> Resting Membrane Potential</a>
+    <a href="#s2"><span class="toc-num">02</span> Action Potential</a>
+    <a href="#s3"><span class="toc-num">03</span> Neuromuscular Junction</a>
+    <a href="#s4"><span class="toc-num">04</span> Muscle Contraction</a>
+    <a href="#s5"><span class="toc-num">05</span> Excitation-Contraction Coupling</a>
+    <a href="#s6"><span class="toc-num">06</span> NM Blockers</a>
+    <a href="#s7"><span class="toc-num">07</span> Rigor Mortis & Tetanus</a>
+    <a href="#s8"><span class="toc-num">08</span> Myasthenia Gravis</a>
+    <a href="#s9"><span class="toc-num">09</span> Ion Transport</a>
+    <a href="#s10"><span class="toc-num">10</span> Body Fluid Compartments</a>
+    <a href="#s11"><span class="toc-num">11</span> Viva Q&A</a>
+    <a href="#s12"><span class="toc-num">12</span> EQ Templates</a>
+  </div>
+</div>
+
+<div class="content">
+<div class="progress-bar"></div>
+
+<!-- ═══ S1: RMP ═══ -->
+<div id="s1">
+  <div class="section-header">
+    <div class="section-num">01</div>
+    <h2>Resting Membrane <em>Potential</em></h2>
+  </div>
+
+  <div class="keypoint">RMP of a nerve fibre = <strong>–70 mV</strong> (skeletal muscle = –90 mV, cardiac = –90 mV). Inside is NEGATIVE relative to outside. Maintained by the Na⁺/K⁺-ATPase pump + differential membrane permeability.</div>
+
+  <div class="card">
+    <div class="card-title">Ionic Basis of RMP <span class="badge badge-fav">⭐ PYQ 2016-S, 2023</span></div>
+    <div class="two-col">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">Why is the inside NEGATIVE?</p>
+        <ul class="checklist">
+          <li>At rest, membrane is <strong>30× more permeable to K⁺</strong> than Na⁺</li>
+          <li>K⁺ diffuses OUT down concentration gradient → positive charges leave</li>
+          <li>Large anionic proteins (A⁻) trapped inside → cannot cross membrane</li>
+          <li>Na⁺/K⁺-ATPase pumps 3Na⁺ OUT for every 2K⁺ IN → electrogenic, net negative inside</li>
+          <li>Nernst equation for K⁺: E_K = –94 mV (close to RMP → K⁺ is the dominant ion)</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px">Na⁺/K⁺-ATPase Pump — Key Facts</p>
+        <ul class="checklist">
+          <li>Pumps 3Na⁺ OUT + 2K⁺ IN per ATP hydrolysed</li>
+          <li>Uses ~25–40% of cell's total ATP at rest</li>
+          <li>Net electrogenic contribution: –4 mV (small but critical)</li>
+          <li>Inhibited by: ouabain, digitalis, cyanide, hypoxia</li>
+          <li>Maintains cell volume by controlling osmotic balance</li>
+          <li>Blocked by digitalis → ↑ intracellular Na⁺ → ↑ intracellular Ca²⁺ via NCX → <strong>↑ cardiac contractility</strong></li>
+        </ul>
+      </div>
+    </div>
+    <div class="warn-box" style="margin-top:8px"><strong>EXAM TRAP:</strong> RMP is NOT due to Na⁺/K⁺ pump alone. The pump maintains the concentration gradients; the actual RMP is generated by K⁺ diffusion through leak channels. If only the pump stopped, RMP would decay slowly — not vanish instantly.</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Gibbs-Donnan Equilibrium <span class="badge badge-pyq">PYQ 2014, 2018</span></div>
+    <p style="font-size:13px">When a semipermeable membrane separates two solutions and one side contains non-diffusible charged ions (e.g., protein anions), an unequal distribution of diffusible ions results. At equilibrium: <strong>[K⁺]in × [Cl⁻]in = [K⁺]out × [Cl⁻]out</strong>. This creates a Donnan potential (inside negative). Relevant for: plasma proteins and the distribution of electrolytes between plasma and interstitial fluid.</p>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══ S2: ACTION POTENTIAL ═══ -->
+<div id="s2">
+  <div class="section-header">
+    <div class="section-num">02</div>
+    <h2>Action <em>Potential</em></h2>
+  </div>
+
+  <div class="keypoint">AP = a brief, self-propagating, all-or-none reversal of membrane potential. In nerve: peak = +35 mV. Duration ~1 ms. Propagates without decrement. Triggered when membrane reaches threshold (~–55 mV).</div>
+
+  <div class="card">
+    <div class="card-title">Phases of AP in Nerve <span class="badge badge-fav">⭐ PYQ 2016-S, 2023</span></div>
+    <div class="diagram-placeholder" style="border:none; padding:0; background:transparent; margin:1rem 0; text-align:center;">
+      <img class="wiki-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/Action_potential_schematic.svg" style="max-width:100%; max-height:300px; border-radius:6px;" alt="Action Potential">
+    </div>
+    <div class="flowchart" style="margin:0">
+      <div class="flow-title">Action Potential Phases — Nerve Fibre</div>
+      <div class="flow-v">
+        <div class="flow-box" style="border-color:var(--text2)">
+          <span class="lbl">Resting Phase</span>
+          Membrane at –70 mV. Voltage-gated Na⁺ channels CLOSED. K⁺ leak channels open. Na⁺/K⁺ pump active.
+        </div>
+        <div class="flow-step-label">↓ Stimulus reaches threshold (–55 mV)</div>
+        <div class="flow-box accent">
+          <span class="lbl">Depolarisation (Rising Phase)</span>
+          Voltage-gated Na⁺ channels open rapidly → <strong>Na⁺ rushes IN</strong> → inside becomes positive. Peak = <strong>+35 mV</strong> (not +60 mV = Na⁺ equilibrium, because K⁺ channels begin opening)
+        </div>
+        <div class="flow-step-label">↓ Na⁺ channel inactivation gate closes (h-gate)</div>
+        <div class="flow-box gold">
+          <span class="lbl">Repolarisation (Falling Phase)</span>
+          Voltage-gated <strong>K⁺ channels open slowly</strong> → K⁺ rushes OUT → membrane returns toward –70 mV. Na⁺ channels inactivated (cannot reopen until reset).
+        </div>
+        <div class="flow-step-label">↓ K⁺ channels slow to close</div>
+        <div class="flow-box rose">
+          <span class="lbl">After-Hyperpolarisation (Undershoot)</span>
+          K⁺ channels remain open briefly → membrane overshoots to ~–80 mV → <strong>Absolute Refractory Period ends, Relative Refractory Period</strong>
+        </div>
+        <div class="flow-step-label">↓ Na⁺/K⁺ pump restores ion gradients</div>
+        <div class="flow-box teal">
+          <span class="lbl">Return to RMP</span>
+          Na⁺ channels reset (m-gate closes, h-gate opens). Membrane returns to –70 mV. Ready for next AP.
+        </div>
+      </div>
+    </div>
+
+    <div class="warn-box" style="margin-top:8px"><strong>Why AP stops at +35 mV, NOT +60 mV (Na⁺ equilibrium)?</strong> Because voltage-gated K⁺ channels begin to open near the peak, pulling K⁺ out simultaneously. The two opposing currents prevent full Na⁺ equilibrium from being reached. <em>[PYQ 2025 Group-D: "Depolarisation stops at +35 mV"]</em></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Refractory Periods <span class="badge badge-pyq">PYQ 2023</span></div>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Period</th><th>Mechanism</th><th>Stimulus Response</th><th>Duration</th></tr>
+        <tr><td>Absolute Refractory Period (ARP)</td><td>Na⁺ channel in INACTIVATED state (h-gate closed) — cannot be reopened regardless of stimulus strength</td><td>No AP possible</td><td>~1 ms (coincides with depolarisation + early repolarisation)</td></tr>
+        <tr><td>Relative Refractory Period (RRP)</td><td>Na⁺ channels resetting; membrane hyperpolarised; some K⁺ channels still open</td><td>AP possible with stronger-than-normal stimulus</td><td>~5–15 ms</td></tr>
+        <tr><td>Supernormal Period</td><td>Membrane slightly depolarised (closer to threshold than RMP)</td><td>Subthreshold stimulus may fire AP</td><td>After RRP</td></tr>
+      </table>
+    </div>
+    <div class="mnemonic-box" style="margin-top:8px">
+      <div class="mbox-title">Why ARP ensures unidirectional propagation</div>
+      <div class="mnemonic-highlight">"The segment just fired = DEAD ZONE. Only the next unexcited segment can fire → wave moves in ONE direction only"</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">AP in Skeletal Muscle vs Cardiac Muscle <span class="badge badge-fav">⭐ PYQ 2015</span></div>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Feature</th><th>Skeletal Muscle</th><th>Cardiac (Ventricular) Muscle</th></tr>
+        <tr><td>RMP</td><td>–90 mV</td><td>–90 mV</td></tr>
+        <tr><td>Peak</td><td>+20 to +30 mV</td><td>+20 to +30 mV</td></tr>
+        <tr><td>Duration</td><td>~1–2 ms</td><td>~200–300 ms (long plateau)</td></tr>
+        <tr><td>Plateau Phase</td><td>ABSENT</td><td>PRESENT (Phase 2) — due to slow Ca²⁺ channels (L-type)</td></tr>
+        <tr><td>Refractory Period</td><td>Short (~2–5 ms) → can be tetanised</td><td>Long (~250 ms, nearly = contraction duration) → <strong>CANNOT be tetanised</strong></td></tr>
+        <tr><td>Why cannot tetanise heart?</td><td>N/A</td><td>ARP covers entire contraction → by the time next stimulus can work, muscle has already relaxed</td></tr>
+        <tr><td>Ion responsible for plateau</td><td>N/A</td><td>Ca²⁺ influx via L-type channels + reduced K⁺ efflux</td></tr>
+      </table>
+    </div>
+    <div class="clinical-box">
+      <div class="cbox-title">Why Heart Cannot Be Tetanised — Clinical Relevance</div>
+      <p>If the heart could be tetanised (sustained contraction), it could never relax to fill with blood → no cardiac output → death. The long ARP is therefore a life-saving physiological feature. <strong>Tetanus can be demonstrated easily in skeletal muscle (RRP is short)</strong> but NOT in cardiac muscle. [PYQ 2019 Group-D, 2025]</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Conduction Velocity & Nerve Fibre Types <span class="badge badge-pyq">PYQ 2013-S</span></div>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Fibre Type</th><th>Diameter</th><th>Velocity</th><th>Function</th></tr>
+        <tr><td>Aα (Type I)</td><td>12–20 µm</td><td>70–120 m/s</td><td>Motor (extrafusal), proprioception (muscle spindle Ia)</td></tr>
+        <tr><td>Aβ (Type II)</td><td>5–12 µm</td><td>30–70 m/s</td><td>Touch, pressure, proprioception (secondary spindle)</td></tr>
+        <tr><td>Aγ</td><td>3–6 µm</td><td>15–30 m/s</td><td>Motor to intrafusal (muscle spindle)</td></tr>
+        <tr><td>Aδ (Type III)</td><td>2–5 µm</td><td>5–30 m/s</td><td>Fast pain (sharp), cold, pressure</td></tr>
+        <tr><td>B fibres</td><td>1–3 µm</td><td>3–15 m/s</td><td>Preganglionic autonomic (myelinated)</td></tr>
+        <tr><td>C fibres (Type IV)</td><td>0.2–1 µm</td><td>0.5–2 m/s</td><td>Slow pain, warmth, postganglionic autonomic (UNMYELINATED)</td></tr>
+      </table>
+    </div>
+    <div class="keypoint"><strong>Conduction faster in thicker fibres</strong> because: (1) larger diameter → lower internal resistance → current spreads further ahead, (2) myelinated fibres conduct by saltatory conduction (node to node) → much faster than continuous conduction in unmyelinated fibres. [PYQ 2013-S Group-D]</div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══ S3: NMJ ═══ -->
+<div id="s3">
+  <div class="section-header">
+    <div class="section-num">03</div>
+    <h2>Neuromuscular <em>Junction</em></h2>
+  </div>
+
+  <div class="keypoint">NMJ = cholinergic synapse between motor nerve terminal and skeletal muscle motor end plate. Neurotransmitter: <strong>Acetylcholine (ACh)</strong>. Receptor: <strong>Nicotinic ACh receptor (nAChR)</strong> — ligand-gated Na⁺/K⁺ channel.</div>
+
+  <div class="card">
+    <div class="card-title">Structure of NMJ <span class="badge badge-fav">⭐ PYQ 2010 Group-A, 2013-S, 2020</span></div>
+    <div class="diagram-placeholder" style="border:none; padding:0; background:transparent; margin:1rem 0; text-align:center;">
+      <img class="wiki-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/Neuromuscular_junction.svg" style="max-width:100%; max-height:300px; border-radius:6px;" alt="Neuromuscular Junction">
+    </div>
+    <div class="two-col">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">Pre-synaptic (Motor Nerve Terminal):</p>
+        <ul class="checklist">
+          <li>Synaptic vesicles: each contains ~10,000 ACh molecules → quantal release</li>
+          <li>Active zones: ACh release sites aligned with junctional folds</li>
+          <li>Voltage-gated Ca²⁺ channels (P/Q-type): AP arrives → Ca²⁺ enters → triggers vesicle fusion (SNARE proteins: synaptobrevin, syntaxin, SNAP-25)</li>
+          <li>Mitochondria: rich supply for ACh synthesis and ATP</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px">Post-synaptic (Motor End Plate):</p>
+        <ul class="checklist">
+          <li>Junctional folds: increase surface area for nAChR</li>
+          <li>nAChR: pentameric ligand-gated channel (α₂βγδ or α₂βεδ) — 2 ACh molecules bind to 2 α-subunits to open</li>
+          <li>Acetylcholinesterase (AChE): in synaptic cleft, rapidly hydrolyses ACh → choline + acetate (terminated in <1 ms)</li>
+          <li>Choline re-uptake by hemicholinium-sensitive transporter</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="flowchart">
+    <div class="flow-title">NMJ Transmission — Step by Step</div>
+    <div class="flow-v">
+      <div class="flow-box accent">
+        <span class="lbl">Step 1 — AP arrives at motor nerve terminal</span>
+        Depolarisation opens <strong>voltage-gated Ca²⁺ channels (P/Q-type)</strong> → Ca²⁺ flows INTO terminal
+      </div>
+      <div class="flow-step-label">↓ Ca²⁺ triggers SNARE complex (synaptotagmin acts as Ca²⁺ sensor)</div>
+      <div class="flow-box gold">
+        <span class="lbl">Step 2 — Quantal release of ACh</span>
+        Synaptic vesicles fuse with presynaptic membrane → ACh released into synaptic cleft (~50–100 quanta per impulse)
+      </div>
+      <div class="flow-step-label">↓ ACh diffuses across 50 nm synaptic cleft</div>
+      <div class="flow-box teal">
+        <span class="lbl">Step 3 — Receptor binding → End Plate Potential (EPP)</span>
+        2 ACh molecules bind 2 α-subunits of nAChR → channel opens → Na⁺ flows IN + K⁺ flows OUT → <strong>EPP generated</strong> (depolarisation of end plate to ~–50 mV)
+      </div>
+      <div class="flow-step-label">↓ EPP reaches threshold → triggers AP in muscle</div>
+      <div class="flow-box accent">
+        <span class="lbl">Step 4 — Muscle AP and Termination</span>
+        Muscle AP generated → spreads along sarcolemma. Meanwhile, <strong>AChE hydrolyses ACh</strong> in &lt;1 ms → channels close → EPP terminated
+      </div>
+      <div class="flow-step-label">↓ Choline taken back up by nerve terminal → resynthesised into ACh (ChAT enzyme, needs acetyl-CoA)</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">NMJ vs Chemical Synapse — Key Differences <span class="badge badge-pyq">PYQ 2019-S</span></div>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Feature</th><th>NMJ</th><th>Central Synapse</th></tr>
+        <tr><td>Safety factor</td><td>HIGH (EPP >> threshold; always fires)</td><td>Lower (summation often needed)</td></tr>
+        <tr><td>Receptor type</td><td>Nicotinic (ionotropic) only</td><td>Ionotropic AND metabotropic</td></tr>
+        <tr><td>Result</td><td>Always excitatory</td><td>Can be excitatory (EPSP) or inhibitory (IPSP)</td></tr>
+        <tr><td>Fatigue</td><td>Rare (large vesicle reserve pool)</td><td>More prone to depletion</td></tr>
+        <tr><td>Neurotransmitter</td><td>ACh only</td><td>Multiple (glutamate, GABA, glycine, DA, etc.)</td></tr>
+        <tr><td>Inhibition</td><td>No presynaptic inhibition</td><td>Presynaptic inhibition common (GABA-B)</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══ S4: MUSCLE CONTRACTION ═══ -->
+<div id="s4">
+  <div class="section-header">
+    <div class="section-num">04</div>
+    <h2>Skeletal Muscle <em>Contraction</em></h2>
+  </div>
+
+  <div class="keypoint">Skeletal muscle contraction follows the <strong>Sliding Filament Theory</strong> (Huxley & Hanson, 1954). Thick filaments (myosin) slide over thin filaments (actin) — filament lengths do NOT change, but sarcomere shortens.</div>
+
+  <div class="card">
+    <div class="card-title">Sarcomere Structure & Banding <span class="badge badge-fav">⭐ PYQ 2024 Group-B</span></div>
+    <div class="diagram-placeholder" style="border:none; padding:0; background:transparent; margin:1rem 0; text-align:center;">
+      <img class="wiki-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/Sarcomere_diagram.svg" style="max-width:100%; max-height:300px; border-radius:6px;" alt="Sarcomere">
+    </div>
+    <div class="two-col">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">Bands & Lines:</p>
+        <ul class="checklist">
+          <li><strong>A band</strong> (Anisotropic, dark): Thick myosin filaments + overlapping actin. Does NOT shorten.</li>
+          <li><strong>I band</strong> (Isotropic, light): Thin actin only. SHORTENS on contraction.</li>
+          <li><strong>H zone</strong>: Central A band, myosin only (no actin). SHORTENS on contraction.</li>
+          <li><strong>M line</strong>: Centre of H zone — connects myosin filaments.</li>
+          <li><strong>Z line</strong> (Zwischenscheibe): Anchors actin, defines sarcomere boundary. MOVES CLOSER together.</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px">Contractile Proteins:</p>
+        <ul class="checklist">
+          <li><strong>Myosin (thick filament)</strong>: Heavy chain (rod + S1 head with ATPase activity + actin-binding site) + Light chains (regulatory). 300 myosin molecules per thick filament.</li>
+          <li><strong>Actin (thin filament)</strong>: F-actin (polymer of G-actin). Contains binding sites for myosin heads.</li>
+          <li><strong>Tropomyosin</strong>: Coiled-coil protein that blocks myosin-binding site on actin at rest.</li>
+          <li><strong>Troponin complex</strong>: TnT (attaches to tropomyosin), TnI (inhibitory), TnC (binds Ca²⁺ → causes conformational change → removes tropomyosin block).</li>
+          <li><strong>Titin</strong>: Elastic protein, anchors myosin to Z line, responsible for passive tension.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="flowchart">
+    <div class="flow-title">Sliding Filament Theory — Cross-Bridge Cycle</div>
+    <div class="flow-v">
+      <div class="flow-box accent">
+        <span class="lbl">Step 1 — Energised (Cocked) Myosin Head</span>
+        ATP binds myosin S1 head → hydrolysed to ADP + Pi → head "cocks" into 90° position (HIGH ENERGY state)
+      </div>
+      <div class="flow-step-label">↓ Ca²⁺ removes tropomyosin inhibition (see E-C coupling)</div>
+      <div class="flow-box gold">
+        <span class="lbl">Step 2 — Cross-Bridge Formation</span>
+        Energised myosin head binds to actin (weak binding initially → strong binding after Pi release)
+      </div>
+      <div class="flow-step-label">↓ Pi released → strong binding</div>
+      <div class="flow-box teal">
+        <span class="lbl">Step 3 — Power Stroke (Force Generation)</span>
+        Myosin head pivots from 90° → 45° (power stroke) → actin pulled toward M line by ~10 nm. ADP released.
+      </div>
+      <div class="flow-step-label">↓ ADP released; rigor state (no ATP)</div>
+      <div class="flow-box accent">
+        <span class="lbl">Step 4 — Detachment</span>
+        New ATP binds myosin → detachment from actin. ATP hydrolysed → head recocks. Cycle repeats if Ca²⁺ still present.
+      </div>
+      <div class="flow-step-label">↓ Without ATP → cross-bridges remain locked = RIGOR MORTIS</div>
+    </div>
+  </div>
+
+  <div class="warn-box"><strong>KEY EXAM POINT:</strong> ATP is needed for BOTH contraction (power stroke, repeated cycling) AND relaxation (detachment of cross-bridges + SERCA pump to resequester Ca²⁺). "Relaxation of muscle requires energy" [PYQ 2015-S, 2023 Group-D]</div>
+
+  <div class="card">
+    <div class="card-title">Fast vs Slow Muscle Fibres <span class="badge badge-pyq">PYQ 2017-S</span></div>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Feature</th><th>Type I (Slow Oxidative)</th><th>Type II (Fast Glycolytic)</th></tr>
+        <tr><td>Myosin ATPase</td><td>Slow</td><td>Fast</td></tr>
+        <tr><td>Metabolism</td><td>Oxidative (aerobic)</td><td>Glycolytic (anaerobic)</td></tr>
+        <tr><td>Mitochondria</td><td>Many (rich)</td><td>Few</td></tr>
+        <tr><td>Myoglobin</td><td>High (red muscle)</td><td>Low (white muscle)</td></tr>
+        <tr><td>Fatigue</td><td>Fatigue-resistant</td><td>Fatigues rapidly</td></tr>
+        <tr><td>Function</td><td>Posture, endurance (soleus)</td><td>Rapid, powerful movements (eye muscles, gastrocnemius)</td></tr>
+        <tr><td>SR development</td><td>Less developed</td><td>Highly developed (rapid Ca²⁺ release)</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══ S5: E-C COUPLING ═══ -->
+<div id="s5">
+  <div class="section-header">
+    <div class="section-num">05</div>
+    <h2>Excitation-Contraction <em>Coupling</em></h2>
+  </div>
+
+  <div class="keypoint">E-C Coupling = the sequence of events linking muscle AP (electrical event) to cross-bridge cycling (mechanical event). Key player: <strong>Ca²⁺</strong>. Key structures: T-tubules, Sarcoplasmic Reticulum (SR), DHPR, RyR1.</div>
+
+  <div class="flowchart">
+    <div class="flow-title">Excitation-Contraction Coupling — Skeletal Muscle</div>
+    <div class="flow-v">
+      <div class="flow-box accent">
+        <span class="lbl">AP spreads along sarcolemma → enters T-tubules</span>
+        T-tubules (transverse tubules) are invaginations of sarcolemma that penetrate deeply into muscle fibre → AP reaches the triad (T-tubule + 2 SR cisternae)
+      </div>
+      <div class="flow-step-label">↓ DHPR senses voltage change</div>
+      <div class="flow-box gold">
+        <span class="lbl">DHPR (Dihydropyridine Receptor = L-type Ca²⁺ channel) activation</span>
+        In skeletal muscle, DHPR acts as a <strong>VOLTAGE SENSOR</strong> (mechanical coupling, not Ca²⁺ entry like in cardiac). Conformational change in DHPR → physically opens RyR1.
+      </div>
+      <div class="flow-step-label">↓ RyR1 opens on SR terminal cisternae</div>
+      <div class="flow-box teal">
+        <span class="lbl">Ca²⁺ release from SR</span>
+        Massive Ca²⁺ release → cytosolic [Ca²⁺] rises from 0.1 µM → 10 µM. Ca²⁺ binds TnC → conformational change → tropomyosin moves → myosin-binding sites on actin EXPOSED.
+      </div>
+      <div class="flow-step-label">↓ Cross-bridge cycling (see S4)</div>
+      <div class="flow-box rose">
+        <span class="lbl">Relaxation — Ca²⁺ Resequestration</span>
+        <strong>SERCA pump</strong> (SR Ca²⁺-ATPase) actively pumps Ca²⁺ back into SR against gradient (ATP-dependent). [Ca²⁺] falls → TnC loses Ca²⁺ → tropomyosin re-blocks actin → contraction ends.
+      </div>
+    </div>
+  </div>
+
+  <div class="warn-box"><strong>Skeletal vs Cardiac E-C Coupling:</strong> In skeletal muscle, DHPR works by MECHANICAL coupling (no Ca²⁺ entry needed from outside). In cardiac muscle, Ca²⁺ enters via DHPR → triggers Ca²⁺-induced Ca²⁺ release (CICR) from RyR2. This is why hypocalcaemia does NOT affect skeletal muscle contraction (no extracellular Ca²⁺ needed) but DOES affect cardiac. [PYQ 2023 Group-D]</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══ S6: NM BLOCKERS ═══ -->
+<div id="s6">
+  <div class="section-header">
+    <div class="section-num">06</div>
+    <h2>Neuromuscular <em>Blockers</em></h2>
+  </div>
+
+  <div class="keypoint">NM blockers act at the motor end plate to prevent muscle contraction. Used clinically for <strong>muscle relaxation during surgery</strong> and intubation. Two types: depolarising and non-depolarising.</div>
+
+  <div class="card">
+    <div class="card-title">Classification & Mechanism <span class="badge badge-fav">⭐ PYQ 2012, 2016, 2017, 2020</span></div>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Feature</th><th>Depolarising (Phase I)</th><th>Non-Depolarising (Competitive)</th></tr>
+        <tr><td>Prototype</td><td>Succinylcholine (Suxamethonium)</td><td>d-Tubocurarine, Pancuronium, Vecuronium, Atracurium, Rocuronium</td></tr>
+        <tr><td>Mechanism</td><td>Binds nAChR → opens channel → SUSTAINED depolarisation (fasciculations first, then flaccid paralysis). AChE cannot hydrolyse it (no ester bond in same position)</td><td>Competes with ACh for nAChR binding sites WITHOUT activating the channel → blocks ACh from binding</td></tr>
+        <tr><td>Initial effect</td><td>Fasciculations (brief muscle twitches) → flaccid paralysis</td><td>Flaccid paralysis (no fasciculations)</td></tr>
+        <tr><td>Reversal</td><td>NOT reversed by AChE inhibitors (neostigmine). More ACh worsens block in Phase II. Spontaneous when succinylcholine degraded by pseudocholinesterase</td><td>Reversed by AChE inhibitors (neostigmine, pyridostigmine) → ↑ ACh → outcompetes blocker</td></tr>
+        <tr><td>Use</td><td>Rapid sequence intubation (fastest onset ~60 sec)</td><td>Prolonged surgical relaxation</td></tr>
+        <tr><td>Side effects</td><td>Hyperkalaemia, malignant hyperthermia (with halothane), bradycardia, ↑ IOP/ICP</td><td>Histamine release (d-TC), vagal block (pancuronium)</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Other Agents Acting at NMJ</div>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Agent</th><th>Site of Action</th><th>Mechanism</th></tr>
+        <tr><td>Botulinum toxin</td><td>Presynaptic</td><td>Cleaves SNARE proteins (SNAP-25) → prevents ACh vesicle fusion → no ACh release → flaccid paralysis</td></tr>
+        <tr><td>Hemicholinium</td><td>Presynaptic</td><td>Blocks choline reuptake → depletes ACh synthesis → transmission failure</td></tr>
+        <tr><td>Organophosphates (nerve agents)</td><td>Synaptic cleft</td><td>Irreversibly inhibit AChE → ACh accumulates → persistent depolarisation → SLUDGE syndrome</td></tr>
+        <tr><td>Neostigmine/Pyridostigmine</td><td>Synaptic cleft</td><td>Reversibly inhibit AChE → ↑ ACh → used to reverse non-depolarising block + treat MG</td></tr>
+        <tr><td>Ca²⁺ channel blockers (aminoglycosides, Mg²⁺)</td><td>Presynaptic</td><td>Block voltage-gated Ca²⁺ channels → ↓ ACh release → NM block</td></tr>
+        <tr><td>Black widow spider venom (α-latrotoxin)</td><td>Presynaptic</td><td>Massive ACh release → initial fasciculations → depletion</td></tr>
+      </table>
+    </div>
+
+    <div class="clinical-box" style="margin-top:8px">
+      <div class="cbox-title">SLUDGE Syndrome — Organophosphate Toxicity</div>
+      <p><strong>S</strong>alivation · <strong>L</strong>acrimation · <strong>U</strong>rination · <strong>D</strong>efecation · <strong>G</strong>I cramps · <strong>E</strong>mesis. Cause: AChE inhibition → ACh accumulates at all cholinergic synapses (muscarinic + nicotinic). Treatment: Atropine (muscarinic blocker) + Pralidoxime (reactivates AChE before aging).</p>
+    </div>
+  </div>
+
+  <div class="mnemonic-box">
+    <div class="mbox-title">Non-Depolarising Blockers Mnemonic</div>
+    <div class="mnemonic-highlight">"Very Rare Patients Avoid Complications" = Vecuronium, Rocuronium, Pancuronium, Atracurium, Cisatracurium</div>
+    <p style="font-size:12px;color:var(--text2);margin-top:4px">Reversed by: <strong>Neostigmine + Glycopyrrolate</strong> (glyco- to block muscarinic side effects of neostigmine)</p>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══ S7: RIGOR MORTIS & TETANUS ═══ -->
+<div id="s7">
+  <div class="section-header">
+    <div class="section-num">07</div>
+    <h2>Rigor Mortis <em>& Tetanus</em></h2>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Rigor Mortis <span class="badge badge-fav">⭐ PYQ 2011, 2014-S, 2019</span></div>
+    <p style="font-size:13px;margin-bottom:8px"><strong>Definition:</strong> Stiffening of muscles after death, caused by permanent cross-bridge formation due to depletion of ATP.</p>
+    <div class="two-col">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">Mechanism:</p>
+        <ul class="checklist">
+          <li>After death: ATP production ceases (no oxidative phosphorylation, glycolysis)</li>
+          <li>Without ATP: myosin heads cannot DETACH from actin (no Step 4 of cross-bridge cycle)</li>
+          <li>Ca²⁺ leaks from SR (cannot be pumped back without ATP)</li>
+          <li>Ca²⁺ activates troponin → cross-bridges form and LOCK → rigor</li>
+          <li>Muscle STIFF and INEXTENSIBLE</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px">Timeline & Resolution:</p>
+        <ul class="checklist">
+          <li>Onset: 3–6 hours after death (ATP residual depleted)</li>
+          <li>Fully established: 12 hours</li>
+          <li>Resolves: 48–72 hours (proteolytic enzymes from lysosomes digest muscle proteins)</li>
+          <li>Affected first: small muscles (face, jaw), then large (limbs)</li>
+          <li>Medico-legal importance: used to estimate time of death</li>
+        </ul>
+      </div>
+    </div>
+    <div class="warn-box" style="margin-top:8px"><strong>Rigor mortis ≠ Contracture.</strong> Rigor = permanent, no electrical activity. Contracture = sustained contraction WITH electrical activity (e.g., in myotonia). Also: Rigor mortis is worsened by warm environment (faster ATP depletion) and delayed in cold (preserves ATP).</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Tetanus vs Tetany <span class="badge badge-pyq">PYQ 2018-S, 2019</span></div>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Feature</th><th>Tetanus (Physiology)</th><th>Tetany (Pathology)</th></tr>
+        <tr><td>Definition</td><td>Sustained muscle contraction from rapid, repeated stimulation (summation of twitches)</td><td>Involuntary muscle spasms due to hyperexcitability from hypocalcaemia</td></tr>
+        <tr><td>Cause</td><td>High-frequency stimulation → Ca²⁺ builds up before SR resequesters it</td><td>↓ ionised Ca²⁺ → ↑ Na⁺ permeability → spontaneous AP firing</td></tr>
+        <tr><td>Types</td><td>Incomplete (unfused) tetanus: partial relaxation between stimuli; Complete (fused) tetanus: no relaxation</td><td>Carpopedal spasm, laryngospasm, Chvostek's sign, Trousseau's sign</td></tr>
+        <tr><td>Causes of tetany</td><td>N/A</td><td>Hypoparathyroidism, alkalosis (↓ ionised Ca²⁺), Vitamin D deficiency, post-thyroidectomy</td></tr>
+        <tr><td>Can cardiac muscle tetanise?</td><td>NO — ARP of cardiac muscle = duration of contraction → next stimulus cannot arrive during this period</td><td>N/A</td></tr>
+      </table>
+    </div>
+    <div class="keypoint"><strong>Why tetanus is easily demonstrated in skeletal muscle:</strong> Short ARP (~2 ms) vs contraction duration (~100 ms) → stimulus can arrive during mechanical relaxation phase → summation occurs. [PYQ 2019]</div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══ S8: MYASTHENIA GRAVIS ═══ -->
+<div id="s8">
+  <div class="section-header">
+    <div class="section-num">08</div>
+    <h2>Myasthenia Gravis <em>& Lambert-Eaton</em></h2>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Myasthenia Gravis (MG) <span class="badge badge-fav">⭐ PYQ 2010, 2011, 2014, 2023 Group-B</span></div>
+    <div class="two-col">
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--accent2);margin-bottom:6px">Pathophysiology:</p>
+        <ul class="checklist">
+          <li>Autoimmune: <strong>IgG antibodies against nAChR α-subunit</strong> (postsynaptic)</li>
+          <li>Antibodies cause: (1) receptor blockade, (2) receptor degradation (↑ endocytosis), (3) complement-mediated destruction of end plate</li>
+          <li>Result: <strong>↓ functional nAChR</strong> → EPP below threshold → muscle fails to contract</li>
+          <li>Safety factor is reduced → first few APs generate weak contractions; muscle fatigues rapidly with repeated stimulation</li>
+          <li>EMG: decremental response on repetitive stimulation (amplitude decreases)</li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:13px;font-weight:600;color:var(--gold);margin-bottom:6px">Clinical Features:</p>
+        <ul class="checklist">
+          <li>Fatigable weakness: worse with use, better with rest</li>
+          <li>Ptosis (drooping eyelid), diplopia (early)</li>
+          <li>Dysphagia, dysarthria, facial weakness</li>
+          <li>Proximal limb weakness</li>
+          <li>Myasthenic crisis: respiratory failure (life-threatening)</li>
+          <li>Associated with thymoma in 10–15%</li>
+          <li>Diagnosis: Edrophonium (Tensilon) test — short-acting AChE inhibitor → transient improvement</li>
+        </ul>
+      </div>
+    </div>
+    <div class="flowchart" style="margin-top:1rem">
+      <div class="flow-title">Treatment of MG</div>
+      <div class="flow-h">
+        <div class="flow-box accent" style="text-align:center;min-width:120px;font-size:12px;"><span class="lbl">Symptomatic</span>Neostigmine / Pyridostigmine (AChE inhibitors)</div>
+        <div class="h-arrow">→</div>
+        <div class="flow-box gold" style="text-align:center;min-width:120px;font-size:12px;"><span class="lbl">Immunosuppression</span>Corticosteroids, Azathioprine, Mycophenolate</div>
+        <div class="h-arrow">→</div>
+        <div class="flow-box teal" style="text-align:center;min-width:120px;font-size:12px;"><span class="lbl">Surgical</span>Thymectomy (if thymoma or in generalised MG &lt;60 yrs)</div>
+        <div class="h-arrow">→</div>
+        <div class="flow-box purple" style="text-align:center;min-width:120px;font-size:12px;"><span class="lbl">Crisis</span>Plasmapheresis / IVIG (rapid effect)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Lambert-Eaton Myasthenic Syndrome (LEMS) <span class="badge badge-pyq">PYQ 2010, 2023</span></div>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Feature</th><th>Myasthenia Gravis (MG)</th><th>Lambert-Eaton (LEMS)</th></tr>
+        <tr><td>Antibody target</td><td>Post-synaptic nAChR</td><td>Pre-synaptic P/Q-type voltage-gated Ca²⁺ channels (VGCC)</td></tr>
+        <tr><td>Mechanism</td><td>↓ receptor numbers at end plate</td><td>↓ Ca²⁺ entry → ↓ ACh vesicle release (quantal content reduced)</td></tr>
+        <tr><td>EMG pattern</td><td>Decremental response</td><td>Incremental (facilitating) response on rapid repetitive stimulation — post-tetanic potentiation</td></tr>
+        <tr><td>Weakness pattern</td><td>Fatigable, worse with exercise; ocular muscles early</td><td>Proximal limb weakness; improves BRIEFLY with exercise (muscle potentiates itself)</td></tr>
+        <tr><td>Autonomic features</td><td>Absent</td><td>Present (dry mouth, constipation, impotence) — autonomic VGCCs also affected</td></tr>
+        <tr><td>Association</td><td>Thymoma, autoimmune diseases</td><td>Small cell lung cancer (paraneoplastic) in 60%</td></tr>
+        <tr><td>Treatment</td><td>AChE inhibitors effective</td><td>AChE inhibitors less effective; 3,4-DAP (diaminopyridine — blocks K⁺ channels → prolongs AP → ↑ Ca²⁺ entry)</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══ S9: ION TRANSPORT ═══ -->
+<div id="s9">
+  <div class="section-header">
+    <div class="section-num">09</div>
+    <h2>Ion Transport <em>& Cell Membrane</em></h2>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Types of Membrane Transport <span class="badge badge-pyq">PYQ 2015-S, 2019-S</span></div>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Type</th><th>Energy</th><th>Example</th><th>Key Features</th></tr>
+        <tr><td>Simple Diffusion</td><td>No (passive)</td><td>O₂, CO₂, lipid-soluble drugs</td><td>Down concentration gradient; no carrier; rate ∝ concentration difference</td></tr>
+        <tr><td>Facilitated Diffusion</td><td>No (passive)</td><td>GLUT1 (glucose in RBC/brain), GLUT2 (liver/pancreas), water via aquaporins</td><td>Carrier-mediated; saturable; stereospecific; no energy; down gradient</td></tr>
+        <tr><td>Primary Active Transport</td><td>YES (ATP direct)</td><td>Na⁺/K⁺-ATPase, Ca²⁺-ATPase (SERCA), H⁺/K⁺-ATPase (gastric parietal)</td><td>Against concentration gradient; uses ATP directly</td></tr>
+        <tr><td>Secondary Active Transport</td><td>YES (ion gradient)</td><td>Na⁺-glucose (SGLT1 in gut/kidney), Na⁺-amino acid</td><td>Driven by Na⁺ gradient (generated by Na⁺/K⁺-ATPase); cotransport</td></tr>
+        <tr><td>Endocytosis</td><td>YES (ATP)</td><td>Receptor-mediated (LDL receptor), pinocytosis, phagocytosis</td><td>Large particles; clathrin-coated pits (receptor-mediated)</td></tr>
+        <tr><td>Exocytosis</td><td>YES (ATP)</td><td>ACh vesicle fusion at NMJ, insulin secretion</td><td>SNARE proteins; Ca²⁺-triggered</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">GLUT Transporters <span class="badge badge-pyq">PYQ 2011, 2016-S</span></div>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Transporter</th><th>Location</th><th>Km for Glucose</th><th>Key Feature</th></tr>
+        <tr><td>GLUT1</td><td>RBC, brain (blood-brain barrier), placenta, fetal tissues</td><td>Low (1 mM)</td><td>Always active; ensures constant basal glucose uptake</td></tr>
+        <tr><td>GLUT2</td><td>Liver, pancreatic β-cells, small intestine, kidney</td><td>HIGH (15–20 mM)</td><td>Glucose SENSOR; works only after a meal (high glucose) — basis of glucokinase being a glucose sensor</td></tr>
+        <tr><td>GLUT3</td><td>Neurons (major neuronal transporter)</td><td>Very low (1 mM)</td><td>Ensures neurons always have glucose</td></tr>
+        <tr><td>GLUT4</td><td>Skeletal muscle, adipose tissue, heart</td><td>Low-moderate (5 mM)</td><td>Insulin-responsive — stored in intracellular vesicles; insulin → translocation to membrane</td></tr>
+        <tr><td>SGLT1/2</td><td>Intestinal epithelium (SGLT1), proximal tubule (SGLT2)</td><td>—</td><td>Na⁺-glucose COTRANSPORTER; basis of ORS [PYQ Group-D]; SGLT2 inhibitors (flozins) treat diabetes</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="clinical-box">
+    <div class="cbox-title">Why ORS Contains Glucose</div>
+    <p>Glucose in ORS co-transports Na⁺ via SGLT1 (secondary active transport) in intestinal mucosa. This Na⁺ absorption drives osmotic water reabsorption. Crucially, this mechanism works even during cholera (where CFTR-mediated Cl⁻ secretion is activated) because SGLT1 is unaffected. Glucose doesn't primarily provide energy here — it drives the transporter. [PYQ 2019 Group-D — Biochemistry module cross-reference]</p>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══ S10: BODY FLUID ═══ -->
+<div id="s10">
+  <div class="section-header">
+    <div class="section-num">10</div>
+    <h2>Body Fluid <em>Compartments</em></h2>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Total Body Water Distribution <span class="badge badge-pyq">PYQ 2023</span></div>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Compartment</th><th>% Body Weight (70 kg man)</th><th>Volume</th><th>Marker Used</th></tr>
+        <tr><td>Total Body Water (TBW)</td><td>60%</td><td>42 L</td><td>Heavy water (D₂O), tritium, antipyrine</td></tr>
+        <tr><td>Intracellular Fluid (ICF)</td><td>40%</td><td>28 L</td><td>TBW − ECF</td></tr>
+        <tr><td>Extracellular Fluid (ECF)</td><td>20%</td><td>14 L</td><td>Inulin, mannitol, sucrose</td></tr>
+        <tr><td>Interstitial Fluid</td><td>15%</td><td>10.5 L</td><td>ECF − Plasma</td></tr>
+        <tr><td>Plasma Volume</td><td>5%</td><td>3.5 L</td><td>Evans blue (T-1824), radioiodinated albumin</td></tr>
+        <tr><td>Blood Volume</td><td>~8%</td><td>~5.5 L</td><td>Plasma vol / (1 − Hct)</td></tr>
+        <tr><td>Transcellular Fluid</td><td>~1–2%</td><td>~1–2 L</td><td>CSF, synovial, pleural, peritoneal</td></tr>
+      </table>
+    </div>
+    <div class="mnemonic-box" style="margin-top:8px">
+      <div class="mbox-title">Rule of 60-40-20-15-5</div>
+      <div class="mnemonic-highlight">TBW=60% → ICF=40% → ECF=20% → Interstitial=15% → Plasma=5%</div>
+      <p style="font-size:12px;color:var(--text2);margin-top:4px">Women: TBW = 50% (more adipose tissue, less water). Neonates: TBW = 75–80%.</p>
+    </div>
+  </div>
+
+  <div class="keypoint"><strong>Principle of measurement:</strong> Volume = Amount of substance / Concentration (dilution principle). The marker must be: non-toxic, freely distributed in compartment only, not metabolised, not excreted during measurement, and easy to measure.</div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══ S11: VIVA Q&A ═══ -->
+<div id="s11">
+  <div class="section-header">
+    <div class="section-num">11</div>
+    <h2>Viva & Exam <em>Q&A</em></h2>
+  </div>
+
+  <div class="viva-section">
+    <div class="viva-title-bar">RMP, Action Potential & Conduction</div>
+
+    <details>
+      <summary><span class="viva-q">What is RMP? Explain its ionic basis.</span><span class="viva-year">PYQ 2016-S, 2023</span></summary>
+      <div class="viva-ans">
+        <p><strong>RMP</strong> of nerve = –70 mV (inside negative relative to outside).</p>
+        <p><strong>Basis:</strong></p>
+        <ul>
+          <li>Membrane at rest: 30× more permeable to K⁺ than Na⁺ (via leak channels)</li>
+          <li>K⁺ diffuses out → positive charges leave → inside becomes negative</li>
+          <li>Large intracellular anions (proteins, A⁻) cannot cross → trapped inside → contribute to negativity</li>
+          <li>Na⁺/K⁺-ATPase: pumps 3Na⁺ out + 2K⁺ in → electrogenic contribution (–4 mV) + maintains gradients</li>
+          <li>Equilibrium for K⁺ (Nernst potential) ≈ –94 mV; for Na⁺ ≈ +60 mV</li>
+          <li>Actual RMP = weighted average of all ion equilibrium potentials (Goldman equation)</li>
+        </ul>
+        <p><em>Key exam point: K⁺ is the DOMINANT ion determining RMP. Na⁺/K⁺ pump MAINTAINS the gradients but is not the primary generator of RMP.</em></p>
+      </div>
+    </details>
+
+    <details>
+      <summary><span class="viva-q">Why does the AP stop at +35 mV and not reach Na⁺ equilibrium of +60 mV?</span><span class="viva-year">PYQ 2025</span></summary>
+      <div class="viva-ans">
+        <p>Because <strong>voltage-gated K⁺ channels begin to open near the peak</strong> of depolarisation. As Na⁺ rushes in and membrane reaches +35 mV, K⁺ channels are already opening and K⁺ starts flowing OUT. This opposing outward K⁺ current prevents the membrane from reaching full Na⁺ equilibrium. Additionally, Na⁺ channel inactivation (h-gate closure) also limits further Na⁺ entry.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary><span class="viva-q">Why is conduction faster in thicker nerve fibres?</span><span class="viva-year">PYQ 2013-S</span></summary>
+      <div class="viva-ans">
+        <p>Two reasons:</p>
+        <ul>
+          <li><strong>Lower internal resistance:</strong> Thicker diameter → larger cross-sectional area → less resistance to longitudinal current flow → current spreads further ahead → more of the axon reaches threshold in one step</li>
+          <li><strong>Saltatory conduction (in myelinated fibres):</strong> Current jumps from node of Ranvier to node, skipping internodal segments (insulated by myelin) → much faster than point-to-point conduction</li>
+        </ul>
+        <p><em>Example: Aα fibre (12–20 µm, myelinated) conducts at 70–120 m/s vs C fibres (0.2–1 µm, unmyelinated) at 0.5–2 m/s.</em></p>
+      </div>
+    </details>
+  </div>
+
+  <div class="viva-section">
+    <div class="viva-title-bar">NMJ, Muscle Contraction & NM Blockers</div>
+
+    <details>
+      <summary><span class="viva-q">Describe the sequence of events at the NMJ from AP to muscle contraction.</span><span class="viva-year">PYQ 2010, 2013-S, 2020</span></summary>
+      <div class="viva-ans">
+        <p>1. AP arrives at motor nerve terminal → VG Ca²⁺ channels (P/Q-type) open → Ca²⁺ enters</p>
+        <p>2. Ca²⁺ triggers SNARE complex → ACh vesicles fuse → ACh released into cleft (~quantal)</p>
+        <p>3. ACh binds 2 α-subunits of nAChR → channel opens → Na⁺ in + K⁺ out → EPP generated</p>
+        <p>4. EPP exceeds threshold → AP propagates along sarcolemma + into T-tubules</p>
+        <p>5. T-tubule AP → DHPR (voltage sensor) → mechanically opens RyR1 → Ca²⁺ released from SR</p>
+        <p>6. Ca²⁺ binds TnC → tropomyosin moves → actin binding sites exposed → cross-bridge cycling → contraction</p>
+        <p>7. AChE hydrolyses ACh → EPP terminates; SERCA pump resequesters Ca²⁺ → relaxation</p>
+        <p><em>Note the "safety factor" — EPP is normally well above threshold, so each nerve AP reliably produces a muscle AP.</em></p>
+      </div>
+    </details>
+
+    <details>
+      <summary><span class="viva-q">Why does relaxation of muscle require ATP? Why is rigor mortis a permanent state?</span><span class="viva-year">PYQ 2015-S, 2018, 2019, 2023</span></summary>
+      <div class="viva-ans">
+        <p><strong>Relaxation needs ATP for TWO reasons:</strong></p>
+        <ul>
+          <li><strong>Cross-bridge detachment:</strong> New ATP must bind the myosin head to detach it from actin (Step 4 of cross-bridge cycle). Without ATP, cross-bridges remain locked (rigor)</li>
+          <li><strong>SERCA pump:</strong> Ca²⁺ must be pumped back into SR against concentration gradient → requires ATP hydrolysis</li>
+        </ul>
+        <p><strong>Rigor Mortis:</strong> After death, ATP production stops. Existing ATP depleted in ~3–6 hours. Without ATP, myosin heads cannot detach from actin → permanent cross-bridge lock → stiffness. Eventually resolves (48–72 hr) when lysosomal proteases autolyse the muscle proteins.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary><span class="viva-q">Differentiate Myasthenia Gravis from Lambert-Eaton Syndrome.</span><span class="viva-year">PYQ 2010 Group-A, 2023</span></summary>
+      <div class="viva-ans">
+        <p>Key differences:</p>
+        <ul>
+          <li><strong>Antibody target:</strong> MG → post-synaptic nAChR; LEMS → pre-synaptic VGCC (P/Q-type)</li>
+          <li><strong>EMG:</strong> MG → decremental; LEMS → incremental (facilitating) on rapid repetitive stimulation</li>
+          <li><strong>Exercise effect:</strong> MG → worse with exercise; LEMS → brief improvement with exercise</li>
+          <li><strong>Association:</strong> MG → thymoma; LEMS → small cell lung cancer (paraneoplastic)</li>
+          <li><strong>Autonomic features:</strong> MG → absent; LEMS → dry mouth, impotence, constipation</li>
+          <li><strong>Treatment response:</strong> MG → responds well to AChE inhibitors; LEMS → poor response to AChE inhibitors, uses 3,4-DAP</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary><span class="viva-q">Differentiate depolarising from non-depolarising NM blockers. Which is reversed by neostigmine?</span><span class="viva-year">PYQ 2012, 2016, 2017</span></summary>
+      <div class="viva-ans">
+        <p><strong>Depolarising (Succinylcholine):</strong> Activates nAChR → sustained end plate depolarisation → fasciculations → flaccid paralysis. NOT reversed by neostigmine (more ACh worsens Phase II block). Reversed spontaneously when pseudocholinesterase metabolises it.</p>
+        <p><strong>Non-depolarising (d-TC, vecuronium, etc.):</strong> COMPETES with ACh for nAChR but does NOT activate it → no fasciculations → flaccid paralysis. REVERSED by neostigmine (↑ ACh → outcompetes blocker).</p>
+        <p><em>Clinical tip: Always administer glycopyrrolate (anticholinergic) with neostigmine to prevent muscarinic side effects (bradycardia, salivation) when reversing NM block.</em></p>
+      </div>
+    </details>
+  </div>
+
+  <div class="viva-section">
+    <div class="viva-title-bar">Ion Transport & Applied</div>
+
+    <details>
+      <summary><span class="viva-q">Why does hypocalcaemia NOT affect skeletal muscle contraction but DOES affect cardiac?</span><span class="viva-year">PYQ 2023</span></summary>
+      <div class="viva-ans">
+        <p><strong>Skeletal muscle:</strong> E-C coupling is mechanical (DHPR → RyR1 via direct conformational coupling). Ca²⁺ comes entirely from SR. No extracellular Ca²⁺ is needed for contraction. Therefore, hypocalcaemia does NOT affect force of contraction.</p>
+        <p>However, hypocalcaemia INCREASES neuronal excitability (Ca²⁺ stabilises Na⁺ channels → less Ca²⁺ = lower threshold) → spontaneous APs → tetany (involuntary muscle spasms).</p>
+        <p><strong>Cardiac muscle:</strong> E-C coupling depends on Ca²⁺-induced Ca²⁺ release (CICR). Extracellular Ca²⁺ enters via L-type DHPR → triggers RyR2 → SR Ca²⁺ release. Lower extracellular Ca²⁺ → less trigger Ca²⁺ → weaker CICR → reduced force of contraction.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary><span class="viva-q">Why does digitalis increase cardiac contractility?</span><span class="viva-year">PYQ 2017 Group-D</span></summary>
+      <div class="viva-ans">
+        <p>Digitalis (ouabain, digoxin) <strong>inhibits Na⁺/K⁺-ATPase</strong> → Na⁺ accumulates inside cell → Na⁺ gradient decreases → Na⁺/Ca²⁺ exchanger (NCX) has less driving force to expel Ca²⁺ → intracellular Ca²⁺ rises → more Ca²⁺ available for SR loading → stronger contraction (positive inotropy).</p>
+        <p>Clinically used in heart failure and atrial fibrillation. Toxic dose → dangerous hyperkalaemia and arrhythmias.</p>
+      </div>
+    </details>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══ S12: EQ TEMPLATES ═══ -->
+<div id="s12">
+  <div class="section-header">
+    <div class="section-num">12</div>
+    <h2>Essay Question <em>Templates</em></h2>
+  </div>
+
+  <div class="eq-box">
+    <div class="eq-title">EQ — Describe NMJ + AP Generation in Muscle + Myasthenia Gravis [PYQ 2010 Group-A]</div>
+    <div class="eq-statement">"Describe the NMJ with diagram. How does an AP in the motor nerve produce an AP in muscles? What is Myasthenia Gravis and Lambert-Eaton Syndrome?"</div>
+    <div class="eq-answer">
+      <ol>
+        <li><span>Structure of NMJ:</span> Motor nerve terminal (synaptic vesicles with ACh, active zones, VG Ca²⁺ channels) → synaptic cleft (50 nm, contains AChE) → motor end plate (junctional folds, nAChR, high mitochondrial density). Draw and label.</li>
+        <li><span>Mechanism of transmission:</span> AP → Ca²⁺ entry → quantal ACh release → binds nAChR → EPP → muscle AP → E-C coupling → contraction. AChE rapidly terminates signal.</li>
+        <li><span>Myasthenia Gravis:</span> Autoimmune (IgG anti-nAChR antibodies) → ↓ functional receptors → EPP below threshold → fatigable weakness. EMG: decremental response. Treat with AChE inhibitors, immunosuppression, thymectomy.</li>
+        <li><span>Lambert-Eaton:</span> Autoimmune (anti-VGCC antibodies) → ↓ Ca²⁺ entry → ↓ ACh release. EMG: incremental response. Associated with SCLC. Treat with 3,4-DAP.</li>
+        <li><span>Key difference:</span> MG = post-synaptic; LEMS = pre-synaptic. MG = worse with exercise; LEMS = briefly better.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="eq-box">
+    <div class="eq-title">EQ — Sarcomere + Sliding Filament Theory [PYQ 2024 Group-B]</div>
+    <div class="eq-statement">"What is a sarcomere? Describe banding pattern. Briefly describe mechanism of contraction with flowchart."</div>
+    <div class="eq-answer">
+      <ol>
+        <li><span>Sarcomere definition:</span> Functional and structural unit of skeletal muscle, bounded by two Z lines. Contains thick (myosin) and thin (actin) filaments arranged in parallel.</li>
+        <li><span>Banding pattern:</span> A band (dark, myosin ± actin), I band (light, actin only, shortens), H zone (myosin only, shortens), M line (centre), Z line (anchors actin, moves closer).</li>
+        <li><span>Proteins:</span> Thick = myosin (S1 head has ATPase + actin-binding). Thin = actin + tropomyosin + troponin (TnT, TnI, TnC). Titin (elastic). Nebulin (template for actin).</li>
+        <li><span>Mechanism — cross-bridge cycle:</span> (a) ATP → ADP+Pi, head cocks; (b) Ca²⁺ removes tropomyosin block; (c) head binds actin (strong bond after Pi release); (d) Power stroke: 90°→45° rotation, ~10 nm movement; (e) New ATP binds → detachment → recocking. Cycle repeats while Ca²⁺ present.</li>
+        <li><span>Relaxation:</span> SERCA pump resequesters Ca²⁺ (ATP-dependent). TnC loses Ca²⁺ → tropomyosin re-blocks → cross-bridges stop cycling.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="eq-box">
+    <div class="eq-title">EQ — "Relaxation of Muscle Requires Energy" [PYQ 2015-S, 2023]</div>
+    <div class="eq-statement">"Justify: Relaxation of muscle requires energy."</div>
+    <div class="eq-answer">
+      <ol>
+        <li><span>The intuitive error:</span> Students often think only contraction requires ATP (for cross-bridge cycling). But relaxation is equally energy-dependent.</li>
+        <li><span>Reason 1 — Cross-bridge detachment:</span> After the power stroke, the myosin head remains ATTACHED to actin (rigor state) until a new ATP molecule binds. ATP binding → weak binding → detachment → head can re-cock. Without ATP: permanent attachment = rigor mortis.</li>
+        <li><span>Reason 2 — SERCA pump:</span> To relax, [Ca²⁺] must fall below 0.1 µM. SERCA (SR Ca²⁺-ATPase) pumps Ca²⁺ back against a 10,000:1 concentration gradient into SR lumen. This requires direct ATP hydrolysis.</li>
+        <li><span>Reason 3 — Plasma membrane NCX and PMCA:</span> A small amount of Ca²⁺ exits via the NCX (secondary active) and PMCA (primary active, ATP-dependent) to maintain long-term ionic balance.</li>
+        <li><span>Clinical proof:</span> In rigor mortis, ATP depletion leads to permanent cross-bridge attachment → stiffness = failure of RELAXATION, not contraction.</li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- HIGH YIELD QUICKFIRE TABLE -->
+  <div class="card" style="margin-top:1.5rem;border-color:var(--accent)">
+    <div class="card-title">🔥 Exam Day High-Yield Quickfire — Module 01</div>
+    <div class="table-wrap">
+      <table>
+        <tr><th>Question</th><th>Answer</th></tr>
+        <tr><td>RMP of nerve fibre</td><td>–70 mV (inside negative)</td></tr>
+        <tr><td>RMP of skeletal muscle</td><td>–90 mV</td></tr>
+        <tr><td>Peak of nerve AP</td><td>+35 mV (not +60 mV because K⁺ channels open before full Na⁺ equilibrium)</td></tr>
+        <tr><td>Ion responsible for RMP</td><td>K⁺ diffusion out (membrane 30× more permeable to K⁺ than Na⁺ at rest)</td></tr>
+        <tr><td>Na⁺/K⁺-ATPase pumps</td><td>3 Na⁺ OUT, 2 K⁺ IN per ATP</td></tr>
+        <tr><td>Threshold potential</td><td>~–55 mV (for nerve)</td></tr>
+        <tr><td>ARP basis</td><td>Na⁺ channels in inactivated (h-gate closed) state — cannot reopen</td></tr>
+        <tr><td>Why cardiac muscle can't tetanise</td><td>ARP duration ≈ contraction duration → next AP can't arrive during mechanical contraction</td></tr>
+        <tr><td>Plateau phase of cardiac AP — ion</td><td>Ca²⁺ influx via L-type (DHPR) channels</td></tr>
+        <tr><td>Neurotransmitter at NMJ</td><td>Acetylcholine (nicotinic receptor — ionotropic)</td></tr>
+        <tr><td>E-C coupling key structure</td><td>DHPR → RyR1 (mechanical coupling in skeletal, CICR in cardiac)</td></tr>
+        <tr><td>Ca²⁺ sensor in thin filament</td><td>Troponin C (TnC)</td></tr>
+        <tr><td>Ca²⁺ pump back into SR</td><td>SERCA (ATP-dependent) — required for relaxation</td></tr>
+        <tr><td>MG antibody target</td><td>Post-synaptic nAChR (α-subunit)</td></tr>
+        <tr><td>LEMS antibody target</td><td>Pre-synaptic VGCC (P/Q-type)</td></tr>
+        <tr><td>MG EMG pattern</td><td>Decremental response on repetitive stimulation</td></tr>
+        <tr><td>LEMS EMG pattern</td><td>Incremental (facilitating) response</td></tr>
+        <tr><td>Depolarising NM blocker</td><td>Succinylcholine — fasciculations first; NOT reversed by neostigmine</td></tr>
+        <tr><td>Non-depolarising NM blocker reversal</td><td>Neostigmine (AChE inhibitor)</td></tr>
+        <tr><td>Rigor mortis onset</td><td>3–6 hours post-death; resolves 48–72 hours</td></tr>
+        <tr><td>Why hypocalcaemia doesn't affect skeletal contraction</td><td>Skeletal E-C coupling = mechanical (DHPR→RyR1); no extracellular Ca²⁺ needed</td></tr>
+        <tr><td>Total Body Water (70 kg man)</td><td>42 L (60% body weight); ICF=28L; ECF=14L</td></tr>
+        <tr><td>GLUT4 — insulin effect</td><td>Insulin → GLUT4 vesicles translocate to plasma membrane → ↑ glucose uptake</td></tr>
+        <tr><td>Botulinum toxin mechanism</td><td>Cleaves SNAP-25 (SNARE protein) → no ACh release → flaccid paralysis</td></tr>
+        <tr><td>Organophosphate toxicity treatment</td><td>Atropine (muscarinic block) + Pralidoxime (AChE reactivation)</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- MNEMONICS -->
+  <div class="card" style="margin-top:1rem">
+    <div class="card-title">Module 01 Master Mnemonics</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:10px;margin-top:8px">
+      <div class="mnemonic-box" style="margin:0">
+        <div class="mbox-title">AP Phases</div>
+        <div class="mnemonic-highlight">"DRRA" = Depolarisation → Repolarisation → Relative RP → Absolute RP (reversed order going backwards)</div>
+      </div>
+      <div class="mnemonic-box" style="margin:0">
+        <div class="mbox-title">Troponin Subunits</div>
+        <div class="mnemonic-highlight">"TnI = Inhibitory, TnT = Ties to Tropomyosin, TnC = Calcium sensor"</div>
+      </div>
+      <div class="mnemonic-box" style="margin:0">
+        <div class="mbox-title">NM Blocker Types</div>
+        <div class="mnemonic-highlight">"Succinyl DEPOLARISES, Curare COMPETES" — Sux = depolarising; Curare/Vec = competitive/non-depolarising</div>
+      </div>
+      <div class="mnemonic-box" style="margin:0">
+        <div class="mbox-title">Body Fluid Rule</div>
+        <div class="mnemonic-highlight">"60-40-20" = TBW 60%, ICF 40%, ECF 20% of body weight</div>
+      </div>
+      <div class="mnemonic-box" style="margin:0">
+        <div class="mbox-title">MG vs LEMS Location</div>
+        <div class="mnemonic-highlight">"MG = muscle Gets no signal (POST-synaptic); LEMS = Less Emission from the Motor pre-synapse"</div>
+      </div>
+      <div class="mnemonic-box" style="margin:0">
+        <div class="mbox-title">SLUDGE — Organophosphate</div>
+        <div class="mnemonic-highlight">Salivation · Lacrimation · Urination · Defaecation · GI cramps · Emesis</div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /s12 -->
+</div><!-- /content -->
+
+<div class="footer">
+  <p>MODULE 01 · PHYSIOLOGY · GENERAL & NERVE MUSCLE</p>
+  <p style="margin-top:4px;color:var(--accent);font-size:11px">Caffeine & Cadaver · PYQ 2010–2025</p>
+</div>
+
+<button class="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script>
+document.querySelectorAll('details').forEach(d=>{
+  d.addEventListener('toggle',()=>{
+    if(d.open){const c=d.querySelector('.viva-ans');if(c)c.style.animation='fadeIn .2s ease';}
+  });
+});
+</script>
+</body>
+</html>
