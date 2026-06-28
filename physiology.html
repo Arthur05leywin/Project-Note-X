@@ -121,7 +121,20 @@ body::before {
   margin-bottom: 1rem;
   animation: fadeUp .7s .1s ease both;
 }
-.hero h1 .accent-word { color: var(--m01); font-style: italic; }
+.hero h1 .accent-word {
+  background: linear-gradient(90deg, var(--m01), #bef264, var(--m01));
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shine 3s linear infinite;
+  font-style: italic;
+}
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
 
 .hero-sub {
   font-family: 'JetBrains Mono', monospace;
@@ -813,8 +826,7 @@ nav.main-nav {
   </div>
 
   <h1>
-    Physio<br>
-    <span class="accent-word">logy</span>
+    Physio<span class="accent-word">logy</span>
   </h1>
 
   <p class="hero-sub">
