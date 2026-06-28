@@ -2,7 +2,7 @@ import os
 import sys
 import re
 import argparse
-from playwright.sync_api import sync_playwright
+from weasyprint import HTML, CSS
 
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -98,45 +98,62 @@ def compile_pdf(module_id):
     print(f"            Target: {os.path.basename(pdf_out_path)}")
     print(f"=======================================================")
 
-    with sync_playwright() as p:
-        browser = p.chromium.launch()
-        page = browser.new_page()
+    try:
+        with open(html_path, 'r', encoding='utf-8') as f:
+            html_content = f.read()
+            
+        # WeasyPrint does not execute JS, so we manually open <details> tags
+        html_content = html_content.replace('<details>', '<details open>')
         
+        # Inject CSS for page margins, headers and footers
+        page_css = f"""
+        @page {{
+            size: A4;
+            margin: 20mm 10mm;
+            @top-left {{
+                content: "MBBS ANATOMY NOTES";
+                font-size: 8px;
+                font-family: 'IBM Plex Mono', monospace;
+                color: #8a90a8;
+            }}
+            @top-right {{
+                content: "{label} · MODULE {module_id:02d}";
+                font-size: 8px;
+                font-family: 'IBM Plex Mono', monospace;
+                color: #8a90a8;
+            }}
+            @bottom-left {{
+                content: "{meta['title']}";
+                font-size: 8px;
+                font-family: 'IBM Plex Mono', monospace;
+                color: #8a90a8;
+            }}
+            @bottom-right {{
+                content: "Page " counter(page) " of " counter(pages);
+                font-size: 8px;
+                font-family: 'IBM Plex Mono', monospace;
+                color: #8a90a8;
+            }}
+        }}
+        """
+        
+        # Insert CSS before closing head tag, or fallback to prepending
+        if '</head>' in html_content:
+            html_content = html_content.replace('</head>', f'<style>\n{page_css}\n</style>\n</head>')
+        else:
+            html_content = f'<style>\n{page_css}\n</style>\n' + html_content
+            
         file_url = f"file:///{os.path.abspath(html_path).replace('\\', '/')}"
-        page.goto(file_url, wait_until="networkidle")
         
-        header_html = f"""
-        <div style="font-size: 8px; font-family: 'IBM Plex Mono', monospace; width: 100%; display: flex; justify-content: space-between; padding: 0 16mm; color: #8a90a8;">
-          <span>MBBS ANATOMY NOTES</span>
-          <span>{label} · MODULE {module_id:02d}</span>
-        </div>
-        """
-        
-        footer_html = f"""
-        <div style="font-size: 8px; font-family: 'IBM Plex Mono', monospace; width: 100%; display: flex; justify-content: space-between; padding: 0 16mm; color: #8a90a8;">
-          <span>{meta['title']}</span>
-          <span>Page <span class="pageNumber"></span> of <span class="totalPages"></span></span>
-        </div>
-        """
-        
-        page.evaluate("() => document.querySelectorAll('details').forEach(d => d.open = true)")
-        
-        page.pdf(
-            path=pdf_out_path,
-            format="A4",
-            print_background=True,
-            margin={"top": "20mm", "bottom": "20mm", "left": "10mm", "right": "10mm"},
-            display_header_footer=True,
-            header_template=header_html,
-            footer_template=footer_html
-        )
+        HTML(string=html_content, base_url=file_url).write_pdf(pdf_out_path)
         print(f"[SUCCESS] PDF generated successfully at {pdf_out_path}")
         
         page_count = count_pdf_pages(pdf_out_path)
         print(f"               - Total Page Count: {page_count} pages")
-
-        browser.close()
         return True
+    except Exception as e:
+        print(f"[ERROR] Failed to compile PDF: {e}")
+        return False
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Programmatic PDF Note Compiler for Anatomy")

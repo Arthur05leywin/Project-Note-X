@@ -2,7 +2,7 @@ import os
 import sys
 import re
 import argparse
-from playwright.sync_api import sync_playwright
+from weasyprint import HTML, CSS
 
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -98,46 +98,43 @@ def compile_pdf(module_id):
     print(f"            Target: {os.path.basename(pdf_out_path)}")
     print(f"=======================================================")
 
-    with sync_playwright() as p:
-        browser = p.chromium.launch()
-        page = browser.new_page()
+    try:
+        with open(html_path, 'r', encoding='utf-8') as f:
+            html_content = f.read()
+            
+        html_content = html_content.replace('<details>', '<details open>')
         
-        file_url = f"file:///{os.path.abspath(html_path).replace('\\', '/')}"
-        page.goto(file_url, wait_until="networkidle")
-        
-        # Inject CSS to make it compact
-        compact_css = """
-        @media print {
-            body {
+        page_css = f"""
+        @media print {{
+            body {{
                 font-size: 10px !important;
                 line-height: 1.25 !important;
-            }
-            .card {
+            }}
+            .card {{
                 padding: 10px 14px !important;
                 margin-bottom: 10px !important;
                 break-inside: avoid;
-            }
-            .section-header {
+            }}
+            .section-header {{
                 padding: 12px 15px !important;
                 margin-top: 15px !important;
                 margin-bottom: 10px !important;
-            }
-            h1 { font-size: 20px !important; margin-bottom: 10px !important; }
-            h2 { font-size: 16px !important; margin-bottom: 8px !important; }
-            h3 { font-size: 14px !important; margin-bottom: 6px !important; }
-            .hero {
+            }}
+            h1 {{ font-size: 20px !important; margin-bottom: 10px !important; }}
+            h2 {{ font-size: 16px !important; margin-bottom: 8px !important; }}
+            h3 {{ font-size: 14px !important; margin-bottom: 6px !important; }}
+            .hero {{
                 padding: 20px 20px !important;
                 min-height: auto !important;
-            }
-            .hero h1 {
+            }}
+            .hero h1 {{
                 font-size: 26px !important;
-            }
-            .two-col {
+            }}
+            .two-col {{
                 grid-template-columns: repeat(2, 1fr) !important;
                 gap: 12px !important;
-            }
-            /* Make keypoint and clinical-box smaller */
-            .keypoint, .clinical-box, .mnemonic-box, .warn-box {
+            }}
+            .keypoint, .clinical-box, .mnemonic-box, .warn-box {{
                 padding: 10px 12px 10px 35px !important;
                 margin-bottom: 8px !important;
                 font-size: 9.5px !important;
@@ -145,72 +142,82 @@ def compile_pdf(module_id):
                 position: relative !important;
                 page-break-inside: avoid;
                 word-break: normal !important;
-            }
-            .keypoint::before, .clinical-box::before, .mnemonic-box::before, .warn-box::before {
+            }}
+            .keypoint::before, .clinical-box::before, .mnemonic-box::before, .warn-box::before {{
                 font-size: 14px !important;
                 left: 10px !important;
                 top: 10px !important;
-            }
-            table th, table td {
+            }}
+            table th, table td {{
                 padding: 6px 8px !important;
                 font-size: 9.5px !important;
-            }
-            ul, ol {
+            }}
+            ul, ol {{
                 padding-left: 20px !important;
                 margin-bottom: 6px !important;
-            }
-            li {
+            }}
+            li {{
                 margin-bottom: 3px !important;
-            }
-            img.wiki-img {
+            }}
+            img.wiki-img {{
                 max-width: 80% !important;
                 margin: 5px auto !important;
-            }
-            .toc {
+            }}
+            .toc {{
                 padding: 12px !important;
                 columns: 2;
-            }
-            .toc-link {
+            }}
+            .toc-link {{
                 padding: 4px 8px !important;
                 font-size: 10px !important;
-            }
-        }
+            }}
+        }}
+        @page {{
+            size: A4;
+            margin: 12mm 10mm;
+            @top-left {{
+                content: "MBBS ANATOMY NOTES";
+                font-size: 7px;
+                font-family: 'IBM Plex Mono', monospace;
+                color: #8a90a8;
+            }}
+            @top-right {{
+                content: "{label} · MODULE {module_id:02d}";
+                font-size: 7px;
+                font-family: 'IBM Plex Mono', monospace;
+                color: #8a90a8;
+            }}
+            @bottom-left {{
+                content: "{meta['title']}";
+                font-size: 7px;
+                font-family: 'IBM Plex Mono', monospace;
+                color: #8a90a8;
+            }}
+            @bottom-right {{
+                content: "Page " counter(page) " of " counter(pages);
+                font-size: 7px;
+                font-family: 'IBM Plex Mono', monospace;
+                color: #8a90a8;
+            }}
+        }}
         """
-        page.add_style_tag(content=compact_css)
         
-        header_html = f"""
-        <div style="font-size: 7px; font-family: 'IBM Plex Mono', monospace; width: 100%; display: flex; justify-content: space-between; padding: 0 10mm; color: #8a90a8;">
-          <span>MBBS ANATOMY NOTES</span>
-          <span>{label} · MODULE {module_id:02d}</span>
-        </div>
-        """
+        if '</head>' in html_content:
+            html_content = html_content.replace('</head>', f'<style>\n{page_css}\n</style>\n</head>')
+        else:
+            html_content = f'<style>\n{page_css}\n</style>\n' + html_content
+            
+        file_url = f"file:///{os.path.abspath(html_path).replace('\\', '/')}"
         
-        footer_html = f"""
-        <div style="font-size: 7px; font-family: 'IBM Plex Mono', monospace; width: 100%; display: flex; justify-content: space-between; padding: 0 10mm; color: #8a90a8;">
-          <span>{meta['title']}</span>
-          <span>Page <span class="pageNumber"></span> of <span class="totalPages"></span></span>
-        </div>
-        """
-        
-        page.evaluate("() => document.querySelectorAll('details').forEach(d => d.open = true)")
-        
-        # We also adjust the PDF margins to be much smaller
-        page.pdf(
-            path=pdf_out_path,
-            format="A4",
-            print_background=True,
-            margin={"top": "12mm", "bottom": "12mm", "left": "10mm", "right": "10mm"},
-            display_header_footer=True,
-            header_template=header_html,
-            footer_template=footer_html
-        )
+        HTML(string=html_content, base_url=file_url).write_pdf(pdf_out_path)
         print(f"[SUCCESS] PDF generated successfully at {pdf_out_path}")
         
         page_count = count_pdf_pages(pdf_out_path)
         print(f"               - Total Page Count: {page_count} pages")
-
-        browser.close()
         return True
+    except Exception as e:
+        print(f"[ERROR] Failed to compile PDF: {e}")
+        return False
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Programmatic PDF Note Compiler for Anatomy (Compact)")
