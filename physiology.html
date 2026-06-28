@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Physiology — Caffeine & Cadaver</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=JetBrains+Mono:wght@400;600&family=Crimson+Pro:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #080c14;
+  --surface: #0d1220;
+  --surface2: #121828;
+  --surface3: #182030;
+  --text: #e2e8f8;
+  --text2: #8892b0;
+  --text3: #445060;
+  --border: #1e2a40;
+  --border2: #28384a;
+  /* Module accent colours */
+  --m01: #84cc16;
+  --m02: #f43f5e;
+  --m03: #f97316;
+  --m04: #06b6d4;
+  --m05: #a855f7;
+  --m06: #3b82f6;
+  --m07: #ec4899;
+  --m08: #14b8a6;
+  --m09: #eab308;
+  --m10: #8b5cf6;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Sora', sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ─── NOISE OVERLAY ─── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.4;
+}
+
+/* ─── HERO ─── */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(2rem, 8vw, 5rem) clamp(1.25rem, 6vw, 4rem);
+  overflow: hidden;
+}
+
+.hero-orb-1 {
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: min(700px, 90vw);
+  height: min(700px, 90vw);
+  background: radial-gradient(circle, rgba(132,204,22,.12) 0%, rgba(132,204,22,.04) 40%, transparent 70%);
+  pointer-events: none;
+  animation: drift 12s ease-in-out infinite alternate;
+}
+.hero-orb-2 {
+  position: absolute;
+  bottom: -15%;
+  left: -5%;
+  width: min(500px, 80vw);
+  height: min(500px, 80vw);
+  background: radial-gradient(circle, rgba(244,63,94,.08) 0%, transparent 65%);
+  pointer-events: none;
+  animation: drift 16s ease-in-out infinite alternate-reverse;
+}
+@keyframes drift {
+  from { transform: translate(0,0) scale(1); }
+  to   { transform: translate(30px,-20px) scale(1.05); }
+}
+
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--m01);
+  border: 1px solid rgba(132,204,22,.3);
+  background: rgba(132,204,22,.06);
+  padding: 5px 14px;
+  border-radius: 3px;
+  margin-bottom: 2rem;
+  width: fit-content;
+  animation: fadeUp .6s ease both;
+}
+.hero-tag-dot {
+  width: 5px; height: 5px;
+  background: var(--m01);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(.7)} }
+
+.hero h1 {
+  font-family: 'Crimson Pro', serif;
+  font-size: clamp(3.5rem, 11vw, 8rem);
+  font-weight: 600;
+  line-height: 1.0;
+  color: var(--text);
+  margin-bottom: 1rem;
+  animation: fadeUp .7s .1s ease both;
+}
+.hero h1 .accent-word { color: var(--m01); font-style: italic; }
+
+.hero-sub {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: clamp(11px, 1.5vw, 13px);
+  color: var(--text2);
+  letter-spacing: .5px;
+  margin-bottom: 2.5rem;
+  max-width: 560px;
+  line-height: 1.9;
+  animation: fadeUp .7s .2s ease both;
+}
+
+.hero-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  animation: fadeUp .7s .3s ease both;
+}
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.stat-val {
+  font-family: 'Crimson Pro', serif;
+  font-size: 2.2rem;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--text);
+}
+.stat-val .unit { font-size: 1rem; color: var(--text2); font-family: 'JetBrains Mono', monospace; }
+.stat-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text3);
+}
+
+.hero-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  animation: fadeUp .7s .4s ease both;
+}
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--m01);
+  color: #0a0f00;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 11px 22px;
+  border-radius: 4px;
+  transition: all .2s;
+  border: none;
+  cursor: pointer;
+}
+.btn-primary:hover { background: #a3e635; transform: translateY(-1px); box-shadow: 0 8px 24px rgba(132,204,22,.3); }
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--text2);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 11px 22px;
+  border-radius: 4px;
+  border: 1px solid var(--border2);
+  transition: all .2s;
+  cursor: pointer;
+}
+.btn-ghost:hover { border-color: var(--text3); color: var(--text); }
+
+.hero-scroll {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--text3);
+  animation: fadeIn 1s 1s ease both;
+}
+.scroll-line {
+  width: 1px; height: 40px;
+  background: linear-gradient(to bottom, var(--border2), transparent);
+  animation: scrollBounce 2s infinite;
+}
+@keyframes scrollBounce {
+  0%,100%{ transform: scaleY(1); opacity:1; }
+  50%{ transform: scaleY(0.5); opacity:0.4; }
+}
+
+@keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+@keyframes fadeIn { from{opacity:0} to{opacity:1} }
+
+/* ─── PROGRESS BANNER ─── */
+.progress-banner {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 1.5rem clamp(1.25rem, 6vw, 4rem);
+  overflow: hidden;
+}
+.progress-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.progress-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text3);
+  white-space: nowrap;
+}
+.progress-track {
+  flex: 1;
+  min-width: 200px;
+  height: 3px;
+  background: var(--surface3);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  width: 20%;
+  background: linear-gradient(to right, var(--m01), var(--m02));
+  border-radius: 2px;
+  transition: width 1.5s cubic-bezier(.4,0,.2,1);
+  position: relative;
+}
+.progress-fill::after {
+  content: '';
+  position: absolute;
+  right: 0; top: 0; bottom: 0;
+  width: 30px;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,.3));
+  animation: shimmer 2s infinite;
+}
+@keyframes shimmer { from{opacity:0} 50%{opacity:1} to{opacity:0} }
+
+.progress-count {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1.2rem;
+  color: var(--m01);
+  white-space: nowrap;
+}
+
+/* ─── SECTION WRAPPER ─── */
+.section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: clamp(3rem, 8vw, 5rem) clamp(1.25rem, 6vw, 4rem);
+}
+
+.section-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text3);
+  margin-bottom: .75rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.section-eyebrow::before {
+  content: '';
+  display: block;
+  width: 24px; height: 1px;
+  background: var(--border2);
+}
+.section-title {
+  font-family: 'Crimson Pro', serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.15;
+  margin-bottom: 2.5rem;
+}
+.section-title em { font-style: italic; }
+
+/* ─── PAPER DIVIDER ─── */
+.paper-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: .75rem;
+}
+.paper-chip {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 3px;
+}
+.paper-chip.p1 {
+  background: rgba(132,204,22,.1);
+  border: 1px solid rgba(132,204,22,.3);
+  color: var(--m01);
+}
+.paper-chip.p2 {
+  background: rgba(244,63,94,.08);
+  border: 1px solid rgba(244,63,94,.25);
+  color: var(--m02);
+}
+.paper-line { flex: 1; height: 1px; background: var(--border); }
+.paper-topics {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--text3);
+  letter-spacing: .5px;
+}
+
+/* ─── MODULE GRID ─── */
+.modules-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+/* ─── MODULE CARD ─── */
+.module-card {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.5rem;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  overflow: hidden;
+  transition: transform .2s, border-color .2s, box-shadow .2s;
+  cursor: pointer;
+}
+.module-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--card-accent, var(--border));
+  transition: height .3s;
+}
+.module-card.done { --card-accent: var(--c); }
+.module-card.done:hover {
+  transform: translateY(-3px);
+  border-color: var(--c);
+  box-shadow: 0 12px 40px rgba(0,0,0,.3);
+}
+.module-card.done:hover::before { height: 3px; }
+.module-card.coming { opacity: .55; cursor: default; }
+.module-card.coming::before { background: var(--border); }
+
+.card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.card-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--text3);
+}
+.card-status {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 3px;
+}
+.card-status.done {
+  background: rgba(132,204,22,.1);
+  border: 1px solid rgba(132,204,22,.25);
+  color: var(--m01);
+}
+.card-status.soon {
+  background: rgba(255,255,255,.04);
+  border: 1px solid var(--border);
+  color: var(--text3);
+}
+.card-status.hot {
+  background: rgba(249,115,22,.1);
+  border: 1px solid rgba(249,115,22,.3);
+  color: var(--m03);
+  animation: hotPulse 2s infinite;
+}
+@keyframes hotPulse { 0%,100%{opacity:1} 50%{opacity:.6} }
+
+.card-accent-bar {
+  width: 28px; height: 2px;
+  border-radius: 1px;
+  background: var(--c, var(--border));
+  margin-bottom: .6rem;
+  transition: width .3s;
+}
+.module-card.done:hover .card-accent-bar { width: 48px; }
+
+.card-title {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.2;
+  margin-bottom: .5rem;
+}
+.card-sub {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--c, var(--text3));
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  opacity: .7;
+}
+.card-topics {
+  font-size: 12px;
+  color: var(--text2);
+  line-height: 1.65;
+  flex: 1;
+  margin-bottom: 1.25rem;
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+.card-pyq {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--text3);
+}
+.card-arrow {
+  font-size: 14px;
+  color: var(--c, var(--text3));
+  transition: transform .2s;
+}
+.module-card.done:hover .card-arrow { transform: translateX(4px); }
+
+/* Colour vars per card */
+.c-lime  { --c: var(--m01); }
+.c-rose  { --c: var(--m02); }
+.c-orange{ --c: var(--m03); }
+.c-cyan  { --c: var(--m04); }
+.c-purple{ --c: var(--m05); }
+.c-blue  { --c: var(--m06); }
+.c-pink  { --c: var(--m07); }
+.c-teal  { --c: var(--m08); }
+.c-gold  { --c: var(--m09); }
+.c-violet{ --c: var(--m10); }
+
+/* ─── TOPIC PILLS ─── */
+.topics-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 1.5rem;
+}
+.topic-pill {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--text3);
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+/* ─── HOW IT WORKS ─── */
+.how-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.how-item {
+  background: var(--surface);
+  padding: 1.75rem;
+  transition: background .2s;
+}
+.how-item:hover { background: var(--surface2); }
+.how-num {
+  font-family: 'Crimson Pro', serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--m01);
+  opacity: .25;
+  line-height: 1;
+  margin-bottom: .75rem;
+}
+.how-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text);
+  margin-bottom: .5rem;
+}
+.how-desc { font-size: 12.5px; color: var(--text2); line-height: 1.7; }
+
+/* ─── BRAND STRIP ─── */
+.brand-strip {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 1.5rem clamp(1.25rem, 6vw, 4rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.brand-logo {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+.brand-logo span { color: var(--m01); font-style: italic; }
+.brand-sep { color: var(--border2); font-family: 'JetBrains Mono', monospace; }
+.brand-series {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text3);
+}
+.brand-dot {
+  width: 6px; height: 6px;
+  background: var(--m01);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+/* ─── FOOTER ─── */
+.footer {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  padding: 2.5rem clamp(1.25rem, 6vw, 4rem);
+  text-align: center;
+}
+.footer-logo {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: .5rem;
+}
+.footer-logo em { color: var(--m01); font-style: italic; }
+.footer-sub {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--text3);
+  letter-spacing: 1.5px;
+}
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: .5rem 1.5rem;
+  margin: 1.5rem 0;
+}
+.footer-nav a {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--text3);
+  text-decoration: none;
+  transition: color .2s;
+}
+.footer-nav a:hover { color: var(--m01); }
+.footer-copy {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--text3);
+  margin-top: 1rem;
+  opacity: .5;
+}
+
+/* ─── SCROLL TO TOP ─── */
+.top-btn {
+  position: fixed;
+  bottom: 20px; right: 20px;
+  background: var(--m01);
+  color: #0a0f00;
+  border: none;
+  border-radius: 50%;
+  width: 40px; height: 40px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(132,204,22,.35);
+  transition: transform .2s;
+  z-index: 100;
+}
+.top-btn:hover { transform: translateY(-3px); }
+
+/* ─── COMING SOON SHIMMER ─── */
+.shimmer-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,.015) 50%, transparent 60%);
+  background-size: 200% 100%;
+  animation: shimmerSlide 3s infinite;
+}
+@keyframes shimmerSlide { from{background-position:200% 0} to{background-position:-200% 0} }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 600px) {
+  .hero h1 { font-size: clamp(3rem, 14vw, 5rem); }
+  .hero-stats { gap: 1rem; }
+  .stat-val { font-size: 1.6rem; }
+  .how-grid { grid-template-columns: 1fr; }
+  .modules-grid { grid-template-columns: 1fr; }
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 clamp(16px, 5vw, 60px);
+  height: 56px;
+  background: rgba(10,8,8,0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.nav-logo-mark {
+  width: 28px; height: 28px;
+  background: var(--m01);
+  border-radius: 4px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--bg);
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
+}
+
+.nav-logo-text {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 0.3px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 3vw, 32px);
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 13px;
+  color: var(--text2);
+  transition: color .2s;
+  font-weight: 400;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--m01);
+}
+
+.nav-links a.active {
+  border-bottom: 2px solid var(--m01);
+  padding-bottom: 2px;
+}
+
+/* ── NAV TOGGLE ── */
+.nav-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  flex-direction: column;
+  gap: 4px;
+}
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+@media (max-width: 768px) {
+  .nav-toggle { display: flex; }
+  .nav-links {
+    position: absolute;
+    top: 56px;
+    left: 0;
+    right: 0;
+    background: rgba(10,8,8,0.95);
+    backdrop-filter: blur(12px);
+    flex-direction: column;
+    padding: 20px;
+    border-bottom: 1px solid var(--border);
+    display: none;
+  }
+  .nav-links.open { display: flex; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-mark">C&C</div>
+    <span class="nav-logo-text">Caffeine & Cadaver</span>
+  </a>
+  <button class="nav-toggle" type="button" aria-label="Toggle navigation">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links site-nav">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="biochemistry.html">Biochemistry</a></li>
+    <li><a href="anatomy.html">Anatomy</a></li>
+    <li><a href="physiology.html" class="active">Physiology</a></li>
+    <li><a href="sample.html">Sample</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section class="hero">
+  <div class="hero-orb-1"></div>
+  <div class="hero-orb-2"></div>
+
+  <div class="hero-tag">
+    <span class="hero-tag-dot"></span>
+    Physiology Series · Live
+  </div>
+
+  <h1>
+    Physio<br>
+    <span class="accent-word">logy</span>
+  </h1>
+
+  <p class="hero-sub">
+    PYQ-first. Exam-oriented. Built for the night before.<br>
+    10 modules · 2 papers · every pathway that's ever been asked.
+  </p>
+
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-val">2 <span class="unit">/ 10</span></div>
+      <div class="stat-label">Modules Live</div>
+    </div>
+    <div class="stat">
+      <div class="stat-val">15+</div>
+      <div class="stat-label">Years PYQs Mapped</div>
+    </div>
+    <div class="stat">
+      <div class="stat-val">2</div>
+      <div class="stat-label">Papers Covered</div>
+    </div>
+  </div>
+
+  <div class="hero-cta-row">
+    <a href="#modules" class="btn-primary">Browse Modules ↓</a>
+    <a href="#how" class="btn-ghost">How it's built</a>
+  </div>
+
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    SCROLL
+  </div>
+</section>
+
+<!-- ─── BRAND STRIP ─── -->
+<div class="brand-strip">
+  <div class="brand-logo">Caffeine <span>& Cadaver</span></div>
+  <div class="brand-sep">|</div>
+  <div class="brand-series">Physiology Module Series</div>
+  <div class="brand-dot"></div>
+  <div class="brand-series">First Year MBBS</div>
+</div>
+
+<!-- ─── PROGRESS BANNER ─── -->
+<div class="progress-banner">
+  <div class="progress-inner">
+    <span class="progress-label">Series Progress</span>
+    <div class="progress-track">
+      <div class="progress-fill" id="pFill"></div>
+    </div>
+    <span class="progress-count">2 of 10 complete</span>
+  </div>
+</div>
+
+<!-- ─── MODULES ─── -->
+<div id="modules" class="section">
+  <div class="section-eyebrow">Module Library</div>
+  <div class="section-title">Everything that's <em>ever been asked.</em></div>
+
+  <!-- PAPER 1 -->
+  <div class="paper-header">
+    <div class="paper-chip p1">Paper I</div>
+    <div class="paper-line"></div>
+    <div class="paper-topics">General · Nerve–Muscle · Blood · CVS · Respiratory · GIT</div>
+  </div>
+
+  <div class="modules-grid">
+
+    <!-- 01 — DONE -->
+    <a href="module01_general_nerve_muscle.html" class="module-card done c-lime">
+      <div class="card-top">
+        <span class="card-num">MODULE 01</span>
+        <span class="card-status done">✓ Live</span>
+      </div>
+      <div class="card-accent-bar"></div>
+      <div class="card-title">General Physiology & Nerve–Muscle</div>
+      <div class="card-sub">Paper I · Foundation</div>
+      <div class="card-topics">
+        Cell membrane transport · Action potential · Synapse · Neuromuscular junction · Muscle contraction · Resting membrane potential
+      </div>
+      <div class="topics-row">
+        <span class="topic-pill">Action Potential</span>
+        <span class="topic-pill">NMJ</span>
+        <span class="topic-pill">Sliding Filament</span>
+        <span class="topic-pill">RMP</span>
+      </div>
+      <div class="card-footer">
+        <span class="card-pyq">PYQ 2010–2025</span>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- 02 — DONE -->
+    <a href="module02_hematology_blood.html" class="module-card done c-rose">
+      <div class="card-top">
+        <span class="card-num">MODULE 02</span>
+        <span class="card-status done">✓ Live</span>
+      </div>
+      <div class="card-accent-bar"></div>
+      <div class="card-title">Hematology & Blood</div>
+      <div class="card-sub">Paper I · Blood</div>
+      <div class="card-topics">
+        Haemopoiesis · RBC physiology · Haemoglobin · WBC & immunity · Platelets · Coagulation cascade · Blood groups
+      </div>
+      <div class="topics-row">
+        <span class="topic-pill">Erythropoiesis</span>
+        <span class="topic-pill">Coagulation</span>
+        <span class="topic-pill">ABO / Rh</span>
+        <span class="topic-pill">Anaemia</span>
+      </div>
+      <div class="card-footer">
+        <span class="card-pyq">PYQ 2010–2025</span>
+        <span class="card-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- 03 — COMING -->
+    <div class="module-card coming c-orange">
+      <div class="shimmer-bg"></div>
+      <div class="card-top">
+        <span class="card-num">MODULE 03</span>
+        <span class="card-status hot">Writing…</span>
+      </div>
+      <div class="card-accent-bar"></div>
+      <div class="card-title">Cardiovascular System</div>
+      <div class="card-sub">Paper I · CVS</div>
+      <div class="card-topics">
+        Cardiac cycle · Heart sounds · Cardiac output · Blood pressure · ECG · Regulation of CVS · Heart failure physiology
+      </div>
+      <div class="topics-row">
+        <span class="topic-pill">Cardiac Cycle</span>
+        <span class="topic-pill">ECG</span>
+        <span class="topic-pill">BP Regulation</span>
+        <span class="topic-pill">Frank-Starling</span>
+      </div>
+      <div class="card-footer">
+        <span class="card-pyq">Coming soon</span>
+        <span class="card-arrow" style="opacity:.3">→</span>
+      </div>
+    </div>
+
+    <!-- 04 — COMING -->
+    <div class="module-card coming c-cyan">
+      <div class="shimmer-bg"></div>
+      <div class="card-top">
+        <span class="card-num">MODULE 04</span>
+        <span class="card-status soon">Upcoming</span>
+      </div>
+      <div class="card-accent-bar"></div>
+      <div class="card-title">Respiratory System</div>
+      <div class="card-sub">Paper I · Respiration</div>
+      <div class="card-topics">
+        Mechanics of breathing · Lung volumes · Gas exchange · O₂ & CO₂ transport · Control of respiration · Hypoxia
+      </div>
+      <div class="topics-row">
+        <span class="topic-pill">Lung Volumes</span>
+        <span class="topic-pill">Oxygen Cascade</span>
+        <span class="topic-pill">Hypoxia</span>
+        <span class="topic-pill">VQ Ratio</span>
+      </div>
+      <div class="card-footer">
+        <span class="card-pyq">Upcoming</span>
+        <span class="card-arrow" style="opacity:.3">→</span>
+      </div>
+    </div>
+
+    <!-- 05 — COMING -->
+    <div class="module-card coming c-purple">
+      <div class="shimmer-bg"></div>
+      <div class="card-top">
+        <span class="card-num">MODULE 05</span>
+        <span class="card-status soon">Upcoming</span>
+      </div>
+      <div class="card-accent-bar"></div>
+      <div class="card-title">GIT Physiology</div>
+      <div class="card-sub">Paper I · Digestion</div>
+      <div class="card-topics">
+        Saliva & gastric secretion · Pancreatic juice · Bile · Intestinal absorption · GIT motility · Enteric nervous system
+      </div>
+      <div class="topics-row">
+        <span class="topic-pill">GIT Hormones</span>
+        <span class="topic-pill">Absorption</span>
+        <span class="topic-pill">Motility</span>
+        <span class="topic-pill">Bile Salts</span>
+      </div>
+      <div class="card-footer">
+        <span class="card-pyq">Upcoming</span>
+        <span class="card-arrow" style="opacity:.3">→</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- PAPER 2 -->
+  <div class="paper-header" style="margin-top: 1rem;">
+    <div class="paper-chip p2">Paper II</div>
+    <div class="paper-line"></div>
+    <div class="paper-topics">Renal · Endocrine · Reproductive · CNS · Special Senses</div>
+  </div>
+
+  <div class="modules-grid">
+
+    <!-- 06 -->
+    <div class="module-card coming c-blue">
+      <div class="shimmer-bg"></div>
+      <div class="card-top">
+        <span class="card-num">MODULE 06</span>
+        <span class="card-status soon">Upcoming</span>
+      </div>
+      <div class="card-accent-bar"></div>
+      <div class="card-title">Renal Physiology</div>
+      <div class="card-sub">Paper II · Kidneys</div>
+      <div class="card-topics">
+        GFR · Tubular reabsorption · Urine concentration · Acid-base regulation · Renin-angiotensin-aldosterone · JGA
+      </div>
+      <div class="topics-row">
+        <span class="topic-pill">GFR</span>
+        <span class="topic-pill">Countercurrent</span>
+        <span class="topic-pill">RAAS</span>
+        <span class="topic-pill">Acid-Base</span>
+      </div>
+      <div class="card-footer">
+        <span class="card-pyq">Upcoming</span>
+        <span class="card-arrow" style="opacity:.3">→</span>
+      </div>
+    </div>
+
+    <!-- 07 -->
+    <div class="module-card coming c-pink">
+      <div class="shimmer-bg"></div>
+      <div class="card-top">
+        <span class="card-num">MODULE 07</span>
+        <span class="card-status soon">Upcoming</span>
+      </div>
+      <div class="card-accent-bar"></div>
+      <div class="card-title">Endocrinology</div>
+      <div class="card-sub">Paper II · Hormones</div>
+      <div class="card-topics">
+        Pituitary · Thyroid · Adrenal cortex & medulla · Pancreatic hormones · Parathyroid · Hormone action mechanisms
+      </div>
+      <div class="topics-row">
+        <span class="topic-pill">Hypothalamus-Pit</span>
+        <span class="topic-pill">Thyroid Hormones</span>
+        <span class="topic-pill">Insulin</span>
+        <span class="topic-pill">Cortisol</span>
+      </div>
+      <div class="card-footer">
+        <span class="card-pyq">Upcoming</span>
+        <span class="card-arrow" style="opacity:.3">→</span>
+      </div>
+    </div>
+
+    <!-- 08 -->
+    <div class="module-card coming c-teal">
+      <div class="shimmer-bg"></div>
+      <div class="card-top">
+        <span class="card-num">MODULE 08</span>
+        <span class="card-status soon">Upcoming</span>
+      </div>
+      <div class="card-accent-bar"></div>
+      <div class="card-title">Reproductive Physiology</div>
+      <div class="card-sub">Paper II · Reproduction</div>
+      <div class="card-topics">
+        Male reproductive physiology · Menstrual cycle · Fertilisation · Pregnancy physiology · Lactation · Puberty & menopause
+      </div>
+      <div class="topics-row">
+        <span class="topic-pill">Menstrual Cycle</span>
+        <span class="topic-pill">Spermatogenesis</span>
+        <span class="topic-pill">Pregnancy</span>
+        <span class="topic-pill">Lactation</span>
+      </div>
+      <div class="card-footer">
+        <span class="card-pyq">Upcoming</span>
+        <span class="card-arrow" style="opacity:.3">→</span>
+      </div>
+    </div>
+
+    <!-- 09 -->
+    <div class="module-card coming c-gold">
+      <div class="shimmer-bg"></div>
+      <div class="card-top">
+        <span class="card-num">MODULE 09</span>
+        <span class="card-status soon">Upcoming</span>
+      </div>
+      <div class="card-accent-bar"></div>
+      <div class="card-title">CNS Physiology</div>
+      <div class="card-sub">Paper II · Nervous System</div>
+      <div class="card-topics">
+        Nerve fibres · Sensory & motor pathways · Cerebellum · Basal ganglia · Sleep · Higher functions · EEG
+      </div>
+      <div class="topics-row">
+        <span class="topic-pill">Motor Pathways</span>
+        <span class="topic-pill">Cerebellum</span>
+        <span class="topic-pill">Sleep Stages</span>
+        <span class="topic-pill">EEG</span>
+      </div>
+      <div class="card-footer">
+        <span class="card-pyq">Upcoming</span>
+        <span class="card-arrow" style="opacity:.3">→</span>
+      </div>
+    </div>
+
+    <!-- 10 -->
+    <div class="module-card coming c-violet">
+      <div class="shimmer-bg"></div>
+      <div class="card-top">
+        <span class="card-num">MODULE 10</span>
+        <span class="card-status soon">Upcoming</span>
+      </div>
+      <div class="card-accent-bar"></div>
+      <div class="card-title">Special Senses</div>
+      <div class="card-sub">Paper II · Senses</div>
+      <div class="card-topics">
+        Vision & retina · Ear & hearing · Taste & smell · Pain physiology · Proprioception · Vestibular system
+      </div>
+      <div class="topics-row">
+        <span class="topic-pill">Visual Pathway</span>
+        <span class="topic-pill">Cochlea</span>
+        <span class="topic-pill">Pain</span>
+        <span class="topic-pill">Vestibular</span>
+      </div>
+      <div class="card-footer">
+        <span class="card-pyq">Upcoming</span>
+        <span class="card-arrow" style="opacity:.3">→</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ─── HOW IT'S BUILT ─── -->
+<div id="how" style="background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+  <div class="section">
+    <div class="section-eyebrow">Methodology</div>
+    <div class="section-title">Built around what <em>examiners actually ask.</em></div>
+
+    <div class="how-grid">
+      <div class="how-item">
+        <div class="how-num">01</div>
+        <div class="how-title">PYQ Mapping First</div>
+        <div class="how-desc">Every topic starts with 15 years of past questions. If it's never been asked, it's low priority. If it's asked every year, it gets a full flowchart and EQ template.</div>
+      </div>
+      <div class="how-item">
+        <div class="how-num">02</div>
+        <div class="how-title">Flowcharts Over Text</div>
+        <div class="how-desc">Examiners give marks for structured flow. Every major pathway gets a mobile-safe, properly labelled HTML flowchart — no SVG hacks, no rotated text.</div>
+      </div>
+      <div class="how-item">
+        <div class="how-num">03</div>
+        <div class="how-title">Viva Ready</div>
+        <div class="how-desc">Collapsible Q&A at the end of every section — framed exactly like a professor's follow-up question, with the answer structured for a 2-minute viva response.</div>
+      </div>
+      <div class="how-item">
+        <div class="how-num">04</div>
+        <div class="how-title">Essay Templates</div>
+        <div class="how-desc">Group-D EQ templates for every major topic. Definition → Mechanism → Clinical significance → Examiner tip. Write the template once; score every time.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── FOOTER ─── -->
+<footer class="footer">
+  <div class="footer-logo">Caffeine <em>& Cadaver</em></div>
+  <div class="footer-sub">Physiology Series · First Year MBBS · PYQ 2010–2025</div>
+  <nav class="footer-nav">
+    <a href="#">Biochemistry Series</a>
+    <a href="#">Anatomy Series</a>
+    <a href="#">Physiology Series</a>
+    <a href="#modules">Modules</a>
+  </nav>
+  <div class="footer-copy">Study smart. Score high. Rest is noise.</div>
+</footer>
+
+<button class="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+// Animate progress bar on load
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.getElementById('pFill').style.width = '20%';
+  }, 400);
+});
+
+// Animate module cards on scroll
+const cards = document.querySelectorAll('.module-card');
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      e.target.style.animationDelay = (i * 0.05) + 's';
+      e.target.style.animation = 'fadeUp .5s ease both';
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+cards.forEach(c => obs.observe(c));
+</script>
+
+</body>
+</html>
