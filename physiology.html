@@ -58,7 +58,7 @@ body::before {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: clamp(2rem, 8vw, 5rem) clamp(1.25rem, 6vw, 4rem);
+  padding: clamp(90px, 12vw, 120px) clamp(1.25rem, 6vw, 4rem) clamp(2rem, 8vw, 5rem);
   overflow: hidden;
 }
 
@@ -678,7 +678,7 @@ body::before {
 }
 
 /* ── NAV ── */
-nav {
+nav.main-nav {
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 100;
@@ -784,7 +784,7 @@ nav {
 </head>
 <body>
 
-<nav>
+<nav class="main-nav">
   <a href="index.html" class="nav-logo">
     <div class="nav-logo-mark">C&C</div>
     <span class="nav-logo-text">Caffeine & Cadaver</span>
