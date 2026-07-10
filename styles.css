@@ -1612,38 +1612,6 @@ ul.checklist li {
   line-height: 1.6 !important;
 }
 
-/* Testimonials */
-.testimonials {
-  padding-top: 2rem;
-}
-
-.testimonial-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1.25rem;
-  margin-top: 2rem;
-}
-
-.testimonial-card {
-  padding: 1.5rem;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.testimonial-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
-}
-
-.testimonial-header {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
 }
 
 .testimonial-avatar {
@@ -1687,4 +1655,77 @@ ul.checklist li {
   color: #f5a623;
   font-size: 1.1rem;
   letter-spacing: 2px;
+/* Testimonials */
+.testimonials {
+  padding-top: 2rem;
+}
+
+.testimonial-marquee-wrapper {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  margin-top: 2rem;
+  padding: 10px 0;
+}
+
+.testimonial-marquee-wrapper::before,
+.testimonial-marquee-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 60px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.testimonial-marquee-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, var(--bg), transparent);
+}
+
+.testimonial-marquee-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, var(--bg), transparent);
+}
+
+.testimonial-marquee-track {
+  display: flex;
+  gap: 1.25rem;
+  width: max-content;
+  animation: scroll-left-to-right 40s linear infinite;
+}
+
+.testimonial-marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-left-to-right {
+  0% { transform: translateX(calc(-50% - 0.625rem)); }
+  100% { transform: translateX(0); }
+}
+
+.testimonial-card {
+  width: 340px;
+  flex-shrink: 0;
+  white-space: normal;
+  padding: 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+}
+
+.testimonial-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 }
